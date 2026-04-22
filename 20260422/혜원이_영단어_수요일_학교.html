@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>혜원이의 영단어 모험 🏫 수요일 - 학교</title>
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Gaegu:wght@400;700&family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body {
+    font-family: 'Jua', 'Gaegu', system-ui, sans-serif;
+    background: linear-gradient(180deg, #fff8dc 0%, #f5deb3 45%, #8fbc8f 100%);
+    min-height: 100vh; overflow-x: hidden;
+    color: #2d4a2b;
+    user-select: none; -webkit-user-select: none;
+  }
+  .app {
+    max-width: 480px; margin: 0 auto;
+    min-height: 100vh; position: relative;
+    padding-bottom: 30px;
+  }
+
+  /* ---------- 공통 UI ---------- */
+  .screen { display: none; padding: 20px; animation: fadeIn 0.4s ease; }
+  .screen.active { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px);} to { opacity: 1; transform: translateY(0);} }
+
+  .header {
+    text-align: center; padding: 20px 10px 15px;
+  }
+  .header h1 {
+    font-size: 28px; color: #1b4332;
+    text-shadow: 2px 2px 0 #fff;
+  }
+  .header .sub {
+    font-size: 16px; color: #2d5a3d; margin-top: 5px;
+    font-family: 'Gaegu', sans-serif;
+  }
+
+  /* ---------- 시작 화면 ---------- */
+  #start .hero {
+    background: linear-gradient(135deg, #fff8e7, #ffe8a8);
+    border-radius: 30px; padding: 30px 20px;
+    box-shadow: 0 8px 20px rgba(45,90,61,0.2);
+    text-align: center;
+    border: 4px solid #fff;
+  }
+  #start .mascot { font-size: 100px; animation: bob 2s ease-in-out infinite; }
+  @keyframes bob { 0%,100% {transform: translateY(0) rotate(-3deg);} 50% {transform: translateY(-10px) rotate(3deg);} }
+  #start .speech {
+    background: #fff; border-radius: 20px; padding: 18px;
+    margin: 15px auto; position: relative;
+    font-family: 'Gaegu', sans-serif; font-size: 18px;
+    color: #2d4a2b; line-height: 1.5;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  }
+  #start .speech::before {
+    content: ''; position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+    border-left: 12px solid transparent; border-right: 12px solid transparent;
+    border-bottom: 12px solid #fff;
+  }
+  #start .info-chips {
+    display: flex; justify-content: center; gap: 10px; margin: 15px 0;
+    flex-wrap: wrap;
+  }
+  .chip {
+    background: #fff; padding: 8px 15px; border-radius: 20px;
+    font-size: 14px; color: #1b4332; font-weight: 600;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    font-family: 'Fredoka', sans-serif;
+  }
+  .chip .num { color: #e63946; font-size: 18px; }
+
+  .btn-big {
+    display: block; width: 100%;
+    background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+    color: white; border: none;
+    padding: 18px; border-radius: 20px;
+    font-family: 'Jua', sans-serif; font-size: 22px;
+    box-shadow: 0 6px 0 #c1121f, 0 10px 20px rgba(0,0,0,0.15);
+    cursor: pointer; transition: all 0.1s;
+    margin-top: 20px;
+  }
+  .btn-big:active { transform: translateY(4px); box-shadow: 0 2px 0 #c1121f, 0 4px 10px rgba(0,0,0,0.1); }
+
+  /* ---------- 진행 바 ---------- */
+  .top-bar {
+    display: flex; align-items: center; gap: 10px;
+    padding: 15px; background: rgba(255,255,255,0.6);
+    border-radius: 0 0 20px 20px; backdrop-filter: blur(10px);
+  }
+  .progress-outer {
+    flex: 1; height: 14px; background: #fff;
+    border-radius: 10px; overflow: hidden;
+    border: 2px solid #2d5a3d;
+  }
+  .progress-inner {
+    height: 100%;
+    background: linear-gradient(90deg, #52b788, #40916c);
+    width: 0%; transition: width 0.4s ease;
+    box-shadow: inset 0 -4px 0 rgba(0,0,0,0.1);
+  }
+  .progress-text {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700; color: #1b4332;
+    font-size: 15px;
+  }
+  .tree-indicator { font-size: 24px; }
+
+  /* ---------- 단어 카드 ---------- */
+  .card {
+    background: #fff; border-radius: 28px;
+    margin: 20px 10px; padding: 25px 20px;
+    box-shadow: 0 10px 25px rgba(45,90,61,0.2);
+    border: 4px solid #fff;
+    position: relative; overflow: hidden;
+  }
+  .card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 8px; background: linear-gradient(90deg, #ffd54f, #ff6b6b, #52b788, #4ea8de);
+  }
+  .card .emoji-big {
+    text-align: center; font-size: 90px;
+    margin: 10px 0 15px; line-height: 1;
+    animation: pop 0.5s ease;
+  }
+  @keyframes pop { 0% { transform: scale(0);} 80% { transform: scale(1.1);} 100% { transform: scale(1);} }
+
+  .word-main {
+    text-align: center; font-family: 'Fredoka', sans-serif;
+    font-size: 46px; font-weight: 700;
+    color: #1b4332; letter-spacing: 1px;
+    text-shadow: 2px 2px 0 #c8e6c9;
+  }
+  .word-ipa {
+    text-align: center; font-family: 'Fredoka', sans-serif;
+    font-size: 18px; color: #6b7280; margin-top: 5px;
+  }
+  .word-meaning {
+    text-align: center; font-size: 32px; color: #e63946;
+    margin: 15px 0; font-family: 'Jua', sans-serif;
+  }
+
+  /* ---------- 발음 버튼 ---------- */
+  .speak-area {
+    background: linear-gradient(135deg, #fff3c4, #fce38a);
+    border-radius: 20px; padding: 15px;
+    margin: 15px 0; text-align: center;
+  }
+  .speak-area .label {
+    font-size: 14px; color: #7f4f24; margin-bottom: 8px;
+    font-family: 'Gaegu', sans-serif; font-weight: 700;
+  }
+  .speak-btn {
+    width: 80px; height: 80px; border-radius: 50%;
+    border: none; cursor: pointer;
+    background: linear-gradient(135deg, #4ea8de, #1e6091);
+    color: white; font-size: 40px;
+    box-shadow: 0 6px 0 #184e77, 0 10px 20px rgba(30,96,145,0.3);
+    transition: all 0.1s;
+    position: relative;
+  }
+  .speak-btn:active { transform: translateY(4px); box-shadow: 0 2px 0 #184e77; }
+  .speak-btn.done {
+    background: linear-gradient(135deg, #52b788, #2d5a3d);
+    box-shadow: 0 6px 0 #1b4332;
+    animation: shine 1s ease infinite;
+  }
+  @keyframes shine { 0%,100% { box-shadow: 0 6px 0 #1b4332, 0 10px 25px rgba(82,183,136,0.5);} 50% {box-shadow: 0 6px 0 #1b4332, 0 10px 30px rgba(82,183,136,0.9);} }
+
+  .speak-count {
+    display: flex; justify-content: center; gap: 6px;
+    margin-top: 12px;
+  }
+  .dot {
+    width: 18px; height: 18px; border-radius: 50%;
+    background: #e9ecef; transition: all 0.3s;
+    border: 2px solid #fff;
+    box-shadow: inset 0 2px 3px rgba(0,0,0,0.1);
+  }
+  .dot.filled {
+    background: linear-gradient(135deg, #ffd54f, #ff9800);
+    transform: scale(1.2);
+    box-shadow: 0 0 10px #ffd54f, inset 0 2px 3px rgba(255,255,255,0.5);
+  }
+
+  /* ---------- 예문 / 팁 ---------- */
+  .example {
+    background: #e8f5e9; border-left: 5px solid #52b788;
+    padding: 15px; border-radius: 12px;
+    margin-top: 15px;
+  }
+  .example .en {
+    font-family: 'Fredoka', sans-serif; font-size: 19px;
+    color: #1b4332; line-height: 1.4;
+  }
+  .example .ko {
+    font-family: 'Gaegu', sans-serif; font-size: 17px;
+    color: #6b8e23; margin-top: 6px; line-height: 1.4;
+  }
+  .fun-fact {
+    background: linear-gradient(135deg, #ffeef8, #fce4ec);
+    border-radius: 15px; padding: 14px;
+    margin-top: 12px;
+    border: 2px dashed #ff6b9d;
+  }
+  .fun-fact .title {
+    color: #c2185b; font-size: 15px; font-weight: 700;
+    margin-bottom: 5px;
+  }
+  .fun-fact .text {
+    font-family: 'Gaegu', sans-serif; font-size: 17px;
+    color: #4a4a4a; line-height: 1.45;
+  }
+
+  /* ---------- 다음 버튼 ---------- */
+  .next-wrap { padding: 0 10px; margin-top: 15px; }
+  .next-btn {
+    width: 100%; padding: 18px;
+    background: #bdbdbd; color: #757575;
+    border: none; border-radius: 20px;
+    font-family: 'Jua', sans-serif; font-size: 20px;
+    cursor: not-allowed; transition: all 0.3s;
+    box-shadow: 0 4px 0 #9e9e9e;
+  }
+  .next-btn.ready {
+    background: linear-gradient(135deg, #52b788, #40916c);
+    color: white; cursor: pointer;
+    box-shadow: 0 6px 0 #1b4332, 0 10px 20px rgba(82,183,136,0.4);
+    animation: pulse 1s ease infinite;
+  }
+  @keyframes pulse { 0%,100% { transform: scale(1);} 50% {transform: scale(1.03);} }
+  .next-btn.ready:active { transform: translateY(4px); box-shadow: 0 2px 0 #1b4332; }
+
+  .hint-text {
+    text-align: center; font-family: 'Gaegu', sans-serif;
+    color: #2d5a3d; font-size: 16px; margin-top: 10px;
+    font-weight: 700;
+  }
+
+  /* ---------- 완료 화면 ---------- */
+  #complete { text-align: center; padding-top: 30px; }
+  #complete .celebrate { font-size: 110px; animation: celebrate 1s ease; }
+  @keyframes celebrate { 0% { transform: scale(0) rotate(0); opacity: 0;} 50% { transform: scale(1.3) rotate(10deg);} 100% { transform: scale(1) rotate(0); opacity: 1;} }
+  #complete h2 {
+    font-size: 32px; color: #1b4332;
+    text-shadow: 2px 2px 0 #fff;
+    margin: 10px 0;
+  }
+  .stats-box {
+    background: #fff; border-radius: 25px;
+    padding: 25px 20px; margin: 20px 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  }
+  .stats-row {
+    display: flex; justify-content: space-around;
+    margin: 15px 0; flex-wrap: wrap; gap: 10px;
+  }
+  .stat {
+    flex: 1; min-width: 100px;
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    padding: 15px 10px; border-radius: 15px;
+  }
+  .stat .big {
+    font-family: 'Fredoka', sans-serif; font-size: 32px;
+    font-weight: 700; color: #1b4332;
+  }
+  .stat .lbl { font-size: 13px; color: #2d5a3d; margin-top: 3px; }
+
+  .badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #ffd54f, #ff9800);
+    color: white; padding: 10px 20px;
+    border-radius: 30px; margin: 10px 5px;
+    font-size: 16px; font-weight: 700;
+    box-shadow: 0 4px 10px rgba(255,152,0,0.4);
+    animation: badgeIn 0.5s ease;
+  }
+  @keyframes badgeIn { from {transform: scale(0) rotate(-180deg);} to {transform: scale(1) rotate(0);} }
+
+  .quiz-preview {
+    background: linear-gradient(135deg, #fff3c4, #ffd54f);
+    border-radius: 20px; padding: 20px;
+    margin: 20px 10px;
+    border: 3px dashed #e65100;
+  }
+  .quiz-preview .title {
+    font-size: 20px; color: #bf360c; margin-bottom: 8px;
+  }
+  .quiz-preview .text {
+    font-family: 'Gaegu', sans-serif; font-size: 17px;
+    color: #4a4a4a; line-height: 1.5;
+  }
+
+  /* ---------- 나무 성장 ---------- */
+  .tree-grow {
+    font-size: 80px; margin: 15px 0;
+    transition: all 0.5s;
+  }
+
+  /* ---------- 컨페티 ---------- */
+  .confetti {
+    position: fixed; width: 10px; height: 10px;
+    top: -20px; pointer-events: none;
+    animation: fall linear forwards;
+  }
+  @keyframes fall {
+    to { transform: translateY(110vh) rotate(720deg); }
+  }
+
+  /* ---------- 반응형 ---------- */
+  @media (max-width: 380px) {
+    .word-main { font-size: 38px; }
+    .word-meaning { font-size: 26px; }
+    .card .emoji-big { font-size: 70px; }
+  }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- 시작 화면 -->
+  <section class="screen active" id="start">
+    <div class="header">
+      <h1>🏫 영단어 모험 ✏️</h1>
+      <div class="sub">수요일 · Day 3 · 학교</div>
+    </div>
+    <div class="hero">
+      <div class="mascot">🦜</div>
+      <div class="speech">
+        안녕 혜원아! 나는 <b style="color:#e63946">폴리</b>야.<br>
+        오늘은 재미있는 <b>학교</b> 단어 <b>20개</b>를 함께 외워볼 거야!<br>
+        단어를 하나 외울 때마다 <b>나무</b>가 자라나.<br>
+        오늘 다 외우면 <b>숲</b>이 완성될 거야! 🌱→🌳
+      </div>
+      <div class="info-chips">
+        <div class="chip">📚 <span class="num">20</span>개 단어</div>
+        <div class="chip">🔊 <span class="num">5</span>번 듣기</div>
+        <div class="chip">⏱ 약 <span class="num">15</span>분</div>
+      </div>
+      <button class="btn-big" onclick="startLearning()">
+        모험 시작하기! 🚀
+      </button>
+    </div>
+  </section>
+
+  <!-- 학습 화면 -->
+  <section class="screen" id="learn">
+    <div class="top-bar">
+      <span class="tree-indicator" id="treeIcon">🌱</span>
+      <div class="progress-outer">
+        <div class="progress-inner" id="progressBar"></div>
+      </div>
+      <span class="progress-text" id="progressText">1/20</span>
+    </div>
+
+    <div class="card" id="card">
+      <!-- JS가 채워줌 -->
+    </div>
+
+    <div class="next-wrap">
+      <button class="next-btn" id="nextBtn" disabled onclick="nextWord()">
+        🔒 발음 5번 듣기 (<span id="clickCount">0</span>/5)
+      </button>
+      <div class="hint-text" id="hintText">🔊 파란 버튼을 <b>5번</b> 눌러봐!</div>
+    </div>
+  </section>
+
+  <!-- 완료 화면 -->
+  <section class="screen" id="complete">
+    <div class="celebrate">🎉</div>
+    <h2>대단해, 혜원아!</h2>
+    <div class="tree-grow">🌳🌲🌳🌲🌳</div>
+    <div style="font-family:'Gaegu',sans-serif;font-size:20px;color:#2d5a3d;margin:10px 20px;line-height:1.5">
+      오늘 20개 단어를 모두 외웠어!<br>
+      폴리가 아주 자랑스러워하고 있어! 🦜💚
+    </div>
+
+    <div class="stats-box">
+      <div style="font-size:20px;color:#1b4332;margin-bottom:10px;">📊 오늘의 학습</div>
+      <div class="stats-row">
+        <div class="stat">
+          <div class="big" id="finalWords">20</div>
+          <div class="lbl">외운 단어</div>
+        </div>
+        <div class="stat">
+          <div class="big" id="finalListens">100</div>
+          <div class="lbl">발음 듣기</div>
+        </div>
+        <div class="stat">
+          <div class="big" id="finalTime">0</div>
+          <div class="lbl">걸린 시간(분)</div>
+        </div>
+      </div>
+      <div style="margin-top:15px">
+        <div class="badge">🏆 첫날 완주</div>
+        <div class="badge">🌳 숲지기</div>
+        <div class="badge">🔊 발음 마스터</div>
+      </div>
+    </div>
+
+    <div class="stats-box" style="margin-top:10px">
+      <div style="font-size:18px;color:#1b4332;margin-bottom:10px;">⏰ 학습 시간 기록</div>
+      <div style="font-family:'Gaegu',sans-serif;font-size:17px;color:#2d5a3d;line-height:1.8">
+        <div>🟢 시작: <b id="showStart">-</b></div>
+        <div>🔴 종료: <b id="showEnd">-</b></div>
+        <div style="color:#e63946">💾 이 기록은 오후 퀴즈가 끝날 때 함께 저장돼요!</div>
+      </div>
+    </div>
+
+    <div class="quiz-preview">
+      <div class="title">📮 이제 오후 퀴즈를 풀어볼까?</div>
+      <div class="text">
+        오늘 외운 20개 단어로 퀴즈가 준비됐어요!<br>
+        같은 폴더의 <b>"혜원이_영단어_수요일_퀴즈.html"</b>을 열면 돼요. 📝
+      </div>
+    </div>
+
+    <div style="padding: 0 10px">
+      <button class="btn-big" onclick="reviewWords()" style="background:linear-gradient(135deg,#4ea8de,#1e6091);box-shadow:0 6px 0 #184e77;">
+        🔄 한 번 더 복습하기
+      </button>
+    </div>
+  </section>
+
+</div>
+
+<script>
+// ============ 단어 데이터 ============
+const WORDS = [
+  { word: "school", ipa: "/skuːl/", meaning: "학교", emoji: "🏫",
+    example: "I go to school every day.",
+    exampleKo: "나는 매일 학교에 가요.",
+    fact: "'school'은 원래 그리스어로 '여가 시간'이라는 뜻이었대요! 옛날엔 공부가 취미였나봐요." },
+  { word: "teacher", ipa: "/ˈtiːtʃər/", meaning: "선생님", emoji: "👩‍🏫",
+    example: "My teacher is very kind.",
+    exampleKo: "우리 선생님은 정말 친절하세요.",
+    fact: "'teach(가르치다)' + 'er(사람)' = teacher! 영어는 이렇게 단어를 조립해요." },
+  { word: "student", ipa: "/ˈstuːdənt/", meaning: "학생", emoji: "🎒",
+    example: "I am a student.",
+    exampleKo: "저는 학생이에요.",
+    fact: "'study(공부하다)' 와 'student(학생)' 는 뿌리가 같아요! 라틴어 'studere'에서 왔어요." },
+  { word: "friend", ipa: "/frend/", meaning: "친구", emoji: "👫",
+    example: "She is my best friend.",
+    exampleKo: "그녀는 내 가장 친한 친구예요.",
+    fact: "친구가 있는 사람은 더 오래 산대요! 과학적으로 증명된 사실이에요." },
+  { word: "classroom", ipa: "/ˈklæsruːm/", meaning: "교실", emoji: "🪑",
+    example: "Our classroom is on the second floor.",
+    exampleKo: "우리 교실은 2층에 있어요.",
+    fact: "'class(반)' + 'room(방)' = classroom! 두 단어를 합친 거예요." },
+  { word: "book", ipa: "/bʊk/", meaning: "책", emoji: "📖",
+    example: "I read a book every night.",
+    exampleKo: "나는 매일 밤 책을 읽어요.",
+    fact: "세상에서 가장 작은 책은 쌀 한 톨보다 작대요! 현미경으로 봐야 읽을 수 있어요." },
+  { word: "pencil", ipa: "/ˈpensəl/", meaning: "연필", emoji: "✏️",
+    example: "I write with a pencil.",
+    exampleKo: "나는 연필로 써요.",
+    fact: "연필 한 자루로 약 45km 길이의 선을 그을 수 있대요!" },
+  { word: "eraser", ipa: "/ɪˈreɪsər/", meaning: "지우개", emoji: "🧽",
+    example: "Can I borrow your eraser?",
+    exampleKo: "네 지우개 좀 빌려줄래?",
+    fact: "'erase(지우다)' + 'er(하는 것)' = eraser! 연필을 지우는 것이란 뜻이에요." },
+  { word: "desk", ipa: "/desk/", meaning: "책상", emoji: "🪑",
+    example: "My desk is next to the window.",
+    exampleKo: "내 책상은 창문 옆에 있어요.",
+    fact: "'desk'는 라틴어 'discus(원반)'에서 왔대요. 원래는 둥근 모양이었어요!" },
+  { word: "chair", ipa: "/tʃer/", meaning: "의자", emoji: "💺",
+    example: "Please sit on the chair.",
+    exampleKo: "의자에 앉아 주세요.",
+    fact: "옛날엔 아주 중요한 사람만 의자에 앉을 수 있었대요. 나머지는 바닥에!" },
+  { word: "bag", ipa: "/bæɡ/", meaning: "가방", emoji: "🎒",
+    example: "My bag is heavy today.",
+    exampleKo: "오늘 내 가방은 무거워요.",
+    fact: "학생 가방은 몸무게의 10%를 넘으면 안 된대요. 건강을 위해서요!" },
+  { word: "notebook", ipa: "/ˈnoʊtbʊk/", meaning: "공책, 노트", emoji: "📓",
+    example: "I write notes in my notebook.",
+    exampleKo: "나는 공책에 필기를 해요.",
+    fact: "'note(메모)' + 'book(책)' = notebook! 메모하는 책이에요." },
+  { word: "ruler", ipa: "/ˈruːlər/", meaning: "자", emoji: "📏",
+    example: "Use a ruler to draw a line.",
+    exampleKo: "선을 그을 때는 자를 써요.",
+    fact: "'ruler'는 '지배자, 왕'이라는 뜻도 있어요! 자가 길이를 '지배'해서래요." },
+  { word: "board", ipa: "/bɔːrd/", meaning: "칠판, 판", emoji: "📋",
+    example: "The teacher writes on the board.",
+    exampleKo: "선생님이 칠판에 쓰세요.",
+    fact: "예전 칠판은 진짜 '검은색 슬레이트 돌'로 만들었대요. 그래서 blackboard!" },
+  { word: "read", ipa: "/riːd/", meaning: "읽다", emoji: "👀",
+    example: "I read books at the library.",
+    exampleKo: "나는 도서관에서 책을 읽어요.",
+    fact: "과거형은 read인데 발음이 /red/로 바뀌어요! 철자는 같지만 소리가 달라요." },
+  { word: "write", ipa: "/raɪt/", meaning: "쓰다", emoji: "✍️",
+    example: "I write my name in English.",
+    exampleKo: "나는 내 이름을 영어로 써요.",
+    fact: "'w'는 발음 안 해요! 'right(오른쪽)'과 소리가 똑같지만 뜻은 완전 달라요." },
+  { word: "learn", ipa: "/lɜːrn/", meaning: "배우다", emoji: "🧠",
+    example: "I learn English at school.",
+    exampleKo: "나는 학교에서 영어를 배워요.",
+    fact: "새로운 것을 배우면 뇌에 실제로 새 길이 생긴대요! 공부할수록 뇌가 똑똑해져요." },
+  { word: "study", ipa: "/ˈstʌdi/", meaning: "공부하다", emoji: "📚",
+    example: "I study math every evening.",
+    exampleKo: "나는 매일 저녁 수학을 공부해요.",
+    fact: "25분 공부 + 5분 휴식이 가장 효율적이래요! (뽀모도로 학습법)" },
+  { word: "listen", ipa: "/ˈlɪsən/", meaning: "듣다", emoji: "👂",
+    example: "Listen to the teacher carefully.",
+    exampleKo: "선생님 말씀을 잘 들으세요.",
+    fact: "'t'는 발음 안 해요! 소리 내면 안 돼요 → /리슨/이 아니라 /리슨/이에요." },
+  { word: "answer", ipa: "/ˈænsər/", meaning: "대답하다, 답", emoji: "🙋",
+    example: "Please answer my question.",
+    exampleKo: "제 질문에 대답해 주세요.",
+    fact: "'w'는 발음 안 해요! /앤서/로 소리내요. 영어엔 이런 묵음 글자가 참 많아요." }
+];
+
+// ============ 상태 관리 ============
+let currentIdx = 0;
+let clickCount = 0;
+const CLICKS_NEEDED = 5;
+let totalListens = 0;
+let startTime = null;
+
+// ============ 화면 전환 ============
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function startLearning() {
+  startTime = Date.now();
+  currentIdx = 0;
+  totalListens = 0;
+  showScreen('learn');
+  renderCard();
+}
+
+// ============ 카드 렌더링 ============
+function renderCard() {
+  const w = WORDS[currentIdx];
+  clickCount = 0;
+
+  // 진행 바
+  const pct = ((currentIdx) / WORDS.length) * 100;
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressText').textContent = (currentIdx + 1) + '/' + WORDS.length;
+
+  // 나무 성장 아이콘
+  const stages = ['🌱','🌱','🌱','🌱','🌿','🌿','🌿','🌿','🌳','🌳','🌳','🌳','🌲','🌲','🌲','🌳','🌲','🌳','🌲','🌳'];
+  document.getElementById('treeIcon').textContent = stages[currentIdx] || '🌳';
+
+  // 카드 내용
+  document.getElementById('card').innerHTML = `
+    <div class="emoji-big">${w.emoji}</div>
+    <div class="word-main">${w.word}</div>
+    <div class="word-ipa">${w.ipa}</div>
+    <div class="word-meaning">${w.meaning}</div>
+
+    <div class="speak-area">
+      <div class="label">🔊 발음을 5번 들어보자!</div>
+      <button class="speak-btn" id="speakBtn" onclick="speakWord()">🔊</button>
+      <div class="speak-count" id="dots">
+        ${Array(CLICKS_NEEDED).fill(0).map(() => '<div class="dot"></div>').join('')}
+      </div>
+    </div>
+
+    <div class="example">
+      <div class="en">💬 ${w.example}</div>
+      <div class="ko">${w.exampleKo}</div>
+    </div>
+
+    <div class="fun-fact">
+      <div class="title">✨ 알고 있었니?</div>
+      <div class="text">${w.fact}</div>
+    </div>
+  `;
+
+  // 다음 버튼 초기화
+  const btn = document.getElementById('nextBtn');
+  btn.classList.remove('ready');
+  btn.disabled = true;
+  btn.innerHTML = `🔒 발음 5번 듣기 (<span id="clickCount">0</span>/5)`;
+  document.getElementById('hintText').innerHTML = '🔊 파란 버튼을 <b>5번</b> 눌러봐!';
+}
+
+// ============ 발음 ============
+function speakWord() {
+  const w = WORDS[currentIdx];
+
+  // 발음 재생 (Web Speech API)
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
+    const utter = new SpeechSynthesisUtterance(w.word);
+    utter.lang = 'en-US';
+    utter.rate = 0.85; // 천천히
+    utter.pitch = 1.1;
+    window.speechSynthesis.speak(utter);
+  }
+
+  // 클릭 카운트
+  if (clickCount < CLICKS_NEEDED) {
+    clickCount++;
+    totalListens++;
+
+    // 점 채우기
+    const dots = document.querySelectorAll('#dots .dot');
+    dots[clickCount - 1].classList.add('filled');
+
+    // 버튼 텍스트 업데이트
+    const cc = document.getElementById('clickCount');
+    if (cc) cc.textContent = clickCount;
+
+    // 5회 채움
+    if (clickCount >= CLICKS_NEEDED) {
+      document.getElementById('speakBtn').classList.add('done');
+      const btn = document.getElementById('nextBtn');
+      btn.classList.add('ready');
+      btn.disabled = false;
+      if (currentIdx >= WORDS.length - 1) {
+        btn.innerHTML = '🎉 완주하기!';
+      } else {
+        btn.innerHTML = `✨ 다음 단어로! (${currentIdx + 2}/${WORDS.length})`;
+      }
+      document.getElementById('hintText').innerHTML = '👏 잘했어! 이제 다음 단어로 넘어가자!';
+
+      // 진행 바 업데이트 (이 단어 완료)
+      const pct = ((currentIdx + 1) / WORDS.length) * 100;
+      document.getElementById('progressBar').style.width = pct + '%';
+    }
+  }
+}
+
+// ============ 다음 단어 ============
+function nextWord() {
+  if (currentIdx < WORDS.length - 1) {
+    currentIdx++;
+    renderCard();
+  } else {
+    finishLearning();
+  }
+}
+
+// ============ 완료 ============
+function finishLearning() {
+  const endTime = Date.now();
+  const elapsed = Math.max(1, Math.round((endTime - startTime) / 60000));
+  document.getElementById('finalWords').textContent = WORDS.length;
+  document.getElementById('finalListens').textContent = totalListens;
+  document.getElementById('finalTime').textContent = elapsed;
+
+  showScreen('complete');
+  launchConfetti();
+
+  // 시작/종료 시간 화면에 표시
+  const shortTime = (ts) => {
+    const d = new Date(ts);
+    const pad = (n) => n.toString().padStart(2, '0');
+    return `${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+  };
+  document.getElementById('showStart').textContent = shortTime(startTime);
+  document.getElementById('showEnd').textContent = shortTime(endTime);
+
+  // 🔑 학습 기록을 저장 (퀴즈 완료 후 Google Sheets로 함께 전송됨)
+  const fmt = (ts) => {
+    const d = new Date(ts);
+    const pad = (n) => n.toString().padStart(2, '0');
+    return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+  };
+  const today = new Date().toISOString().split('T')[0];
+  const record = {
+    date: today,
+    day: 'Wednesday',
+    dayIdx: 3,
+    theme: '학교',
+    startTime: fmt(startTime),
+    endTime: fmt(endTime),
+    minutes: elapsed,
+    wordsLearned: WORDS.length,
+    listens: totalListens,
+    words: WORDS.map(w => w.word)
+  };
+
+  try {
+    // 오늘의 단어장 학습 기록을 저장 (퀴즈 페이지가 이걸 읽어서 함께 전송)
+    localStorage.setItem('hyewon_today_vocab_' + today, JSON.stringify(record));
+
+    // 누적 기록도 저장
+    const history = JSON.parse(localStorage.getItem('hyewon_vocab_history') || '[]');
+    history.push(record);
+    localStorage.setItem('hyewon_vocab_history', JSON.stringify(history));
+
+    console.log('[단어장] 학습 기록 저장됨:', record);
+  } catch(e) {
+    console.warn('기록 저장 실패:', e);
+  }
+}
+
+// ============ 복습 ============
+function reviewWords() {
+  startTime = Date.now();
+  currentIdx = 0;
+  totalListens = 0;
+  showScreen('learn');
+  renderCard();
+}
+
+// ============ 컨페티 ============
+function launchConfetti() {
+  const colors = ['#ff6b6b','#52b788','#ffd54f','#4ea8de','#ff6b9d','#ffa500'];
+  for (let i = 0; i < 50; i++) {
+    setTimeout(() => {
+      const c = document.createElement('div');
+      c.className = 'confetti';
+      c.style.left = Math.random() * 100 + 'vw';
+      c.style.background = colors[Math.floor(Math.random() * colors.length)];
+      c.style.animationDuration = (2 + Math.random() * 2) + 's';
+      c.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+      document.body.appendChild(c);
+      setTimeout(() => c.remove(), 4000);
+    }, i * 50);
+  }
+}
+
+// ============ 음성 워밍업 (모바일 대응) ============
+window.addEventListener('click', function warmup() {
+  if ('speechSynthesis' in window) {
+    const s = new SpeechSynthesisUtterance('');
+    window.speechSynthesis.speak(s);
+  }
+  window.removeEventListener('click', warmup);
+}, { once: true });
+
+</script>
+</body>
+</html>
