@@ -3,375 +3,787 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🌟 혜원이 영단어 학습소 🌟</title>
-<link href="https://fonts.googleapis.com/css2?family=Jua&family=Gaegu:wght@400;700&family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+<title>🐱 혜원이의 영어 놀이터 🌸</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Gaegu:wght@400;700&family=Fredoka:wght@400;500;600;700&family=Single+Day&display=swap" rel="stylesheet">
 <style>
+  :root {
+    --pink: #ffc0d4;
+    --pink-deep: #ff8fb5;
+    --pink-light: #ffe4ed;
+    --lavender: #d4baff;
+    --lavender-light: #ede0ff;
+    --mint: #b5ead7;
+    --mint-light: #dff7ec;
+    --peach: #ffd4b5;
+    --peach-light: #ffebd8;
+    --yellow: #fff3bf;
+    --cream: #fff8f3;
+    --text: #5d4c6d;
+    --text-soft: #9a8bad;
+    --shadow: 0 4px 0 rgba(150, 110, 140, 0.15);
+    --shadow-lg: 0 8px 0 rgba(150, 110, 140, 0.12);
+  }
+
   * { box-sizing: border-box; margin: 0; padding: 0; }
+
   body {
-    font-family: 'Jua', 'Gaegu', sans-serif;
-    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 50%, #ff9a9e 100%);
-    min-height: 100vh;
-    color: #3d2817;
-    padding: 20px 15px;
+    font-family: 'Jua', 'Gaegu', 'Fredoka', sans-serif;
+    background: linear-gradient(180deg, #ffe4ed 0%, #ede0ff 50%, #dff7ec 100%);
     background-attachment: fixed;
-  }
-  .container { max-width: 640px; margin: 0 auto; }
-  header {
-    text-align: center;
-    padding: 25px 15px 20px;
-    background: rgba(255, 255, 255, 0.55);
-    border-radius: 24px;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    margin-bottom: 20px;
-  }
-  header h1 {
-    font-size: 2.1em;
-    color: #e83e8c;
-    text-shadow: 2px 2px 0 #fff;
-    margin-bottom: 6px;
-  }
-  header .subtitle {
-    font-family: 'Gaegu', sans-serif;
-    font-size: 1.15em;
-    color: #6d4c41;
-  }
-  header .date-badge {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 6px 16px;
-    background: #ff7043;
-    color: #fff;
-    border-radius: 50px;
-    font-size: 0.95em;
-    box-shadow: 0 3px 8px rgba(255,112,67,0.4);
-  }
-
-  /* 오늘의 학습 (하이라이트) */
-  .today-section {
-    background: linear-gradient(135deg, #fff176 0%, #ffb74d 100%);
-    border-radius: 22px;
-    padding: 22px 20px;
-    margin-bottom: 22px;
-    box-shadow: 0 10px 24px rgba(255,152,0,0.25);
+    min-height: 100vh;
+    color: var(--text);
+    padding: 20px 16px 60px;
+    overflow-x: hidden;
     position: relative;
-    overflow: hidden;
-  }
-  .today-section::before {
-    content: "✨";
-    position: absolute;
-    top: -10px; right: -10px;
-    font-size: 7em;
-    opacity: 0.15;
-    transform: rotate(20deg);
-  }
-  .today-section h2 {
-    font-size: 1.5em;
-    color: #bf360c;
-    margin-bottom: 6px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .today-section .theme {
-    font-family: 'Gaegu', sans-serif;
-    font-size: 1.1em;
-    color: #5d4037;
-    margin-bottom: 14px;
-  }
-  .today-section .no-today {
-    font-family: 'Gaegu', sans-serif;
-    color: #8d6e63;
-    padding: 10px 0;
-    font-size: 1.05em;
   }
 
-  /* 링크 카드 */
-  .link-card {
-    display: block;
-    background: rgba(255,255,255,0.95);
-    border-radius: 16px;
-    padding: 16px 18px;
-    margin-bottom: 10px;
-    text-decoration: none;
-    color: #3d2817;
-    transition: transform 0.15s, box-shadow 0.15s;
-    border: 2px solid transparent;
+  /* 배경 별/하트 장식 */
+  .bg-decor {
+    position: fixed;
+    pointer-events: none;
+    opacity: 0.5;
+    z-index: 0;
+    font-size: 24px;
+    animation: float 4s ease-in-out infinite;
+  }
+  .bg-decor.s1 { top: 5%; left: 5%; animation-delay: 0s; }
+  .bg-decor.s2 { top: 15%; right: 8%; animation-delay: 0.7s; }
+  .bg-decor.s3 { top: 40%; left: 3%; animation-delay: 1.4s; }
+  .bg-decor.s4 { top: 60%; right: 5%; animation-delay: 2.1s; }
+  .bg-decor.s5 { bottom: 15%; left: 8%; animation-delay: 0.3s; }
+  .bg-decor.s6 { bottom: 30%; right: 10%; animation-delay: 1.8s; }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-15px) rotate(10deg); }
+  }
+
+  .container {
+    max-width: 520px;
+    margin: 0 auto;
     position: relative;
     z-index: 1;
   }
-  .link-card:active { transform: scale(0.98); }
-  .link-card:hover { transform: translateY(-2px); box-shadow: 0 6px 14px rgba(0,0,0,0.1); }
-  .link-card .label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 1.15em;
-    font-weight: bold;
-  }
-  .link-card .desc {
-    font-family: 'Gaegu', sans-serif;
-    color: #757575;
-    font-size: 0.95em;
-    margin-top: 4px;
-    margin-left: 32px;
-  }
-  .link-card.morning { border-left: 5px solid #ffa726; }
-  .link-card.afternoon { border-left: 5px solid #e91e63; }
 
-  /* 주간 커리큘럼 */
-  .section {
-    background: rgba(255, 255, 255, 0.65);
-    border-radius: 20px;
-    padding: 22px 20px;
-    margin-bottom: 20px;
-    backdrop-filter: blur(6px);
-  }
-  .section h2 {
-    color: #6a1b9a;
-    font-size: 1.3em;
-    margin-bottom: 14px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .week-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 6px;
-  }
-  .day-cell {
-    background: #fff;
-    border-radius: 12px;
-    padding: 10px 4px;
-    text-align: center;
-    font-size: 0.75em;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    border: 2px solid #f0e8ff;
-  }
-  .day-cell.today {
-    background: linear-gradient(135deg, #ff7043, #ff9a9e);
-    color: #fff;
-    border-color: #ff7043;
-    transform: scale(1.08);
-    box-shadow: 0 4px 10px rgba(255,112,67,0.4);
-  }
-  .day-cell.past { background: #e8f5e9; border-color: #a5d6a7; }
-  .day-cell.past::after { content: "✓"; display:block; color:#2e7d32; font-size:1.1em; margin-top:2px; }
-  .day-cell .day-name { font-family: 'Jua'; font-size: 1.2em; }
-  .day-cell .day-date { font-family: 'Gaegu'; font-size: 0.9em; margin-top: 2px; }
-
-  /* 전체 기록 */
-  .all-days { display: grid; gap: 10px; }
-  .day-row {
+  /* ===== 헤더 ===== */
+  .top-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(255,255,255,0.85);
-    padding: 14px 16px;
-    border-radius: 14px;
-    border-left: 4px solid #ce93d8;
+    margin-bottom: 24px;
   }
-  .day-row .info { flex: 1; }
-  .day-row .date { font-size: 0.9em; color: #888; font-family: 'Gaegu'; }
-  .day-row .theme { font-size: 1.05em; font-weight: bold; color: #4a148c; margin-top: 2px; }
-  .day-row .links { display: flex; gap: 6px; }
-  .day-row .pill {
-    display: inline-block;
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 0.8em;
-    text-decoration: none;
-    font-family: 'Fredoka', 'Jua';
+  .logo-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    padding: 8px 14px 8px 8px;
+    border-radius: 50px;
+    box-shadow: var(--shadow);
+    border: 2px solid var(--pink-deep);
   }
-  .day-row .pill.vocab { background: #ffe0b2; color: #e65100; }
-  .day-row .pill.quiz { background: #f8bbd0; color: #ad1457; }
-
-  /* 푸터 */
-  footer {
-    text-align: center;
-    padding: 20px 10px;
-    font-family: 'Gaegu';
-    color: #5d4037;
+  .logo-box .cat-avatar {
+    width: 34px;
+    height: 34px;
+    background: var(--peach);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+  .logo-box span {
+    font-family: 'Jua', sans-serif;
     font-size: 0.95em;
-    line-height: 1.8;
+    color: var(--text);
   }
-  footer .heart {
-    display: inline-block;
-    animation: beat 1.3s ease-in-out infinite;
-  }
-  @keyframes beat {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.2); }
+  .date-chip {
+    background: white;
+    padding: 8px 14px;
+    border-radius: 50px;
+    font-family: 'Gaegu', sans-serif;
+    font-size: 0.9em;
+    font-weight: 700;
+    color: var(--text);
+    box-shadow: var(--shadow);
+    border: 2px solid var(--lavender);
   }
 
-  @media (max-width: 480px) {
-    header h1 { font-size: 1.7em; }
-    .today-section h2 { font-size: 1.3em; }
-    .week-grid { gap: 4px; }
-    .day-cell { padding: 8px 2px; font-size: 0.7em; }
+  /* ===== 인사 섹션 ===== */
+  .greeting-card {
+    background: white;
+    border: 3px solid var(--pink);
+    border-radius: 28px;
+    padding: 24px 20px 20px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .greeting-cat {
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+    animation: wobble 3s ease-in-out infinite;
+  }
+  @keyframes wobble {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+  }
+  .greeting-text {
+    flex: 1;
+  }
+  .greeting-text h1 {
+    font-family: 'Jua', sans-serif;
+    font-size: 1.5em;
+    color: var(--text);
+    line-height: 1.3;
+    margin-bottom: 4px;
+  }
+  .greeting-text h1 span {
+    color: var(--pink-deep);
+  }
+  .greeting-text p {
+    font-family: 'Gaegu', sans-serif;
+    font-size: 1em;
+    color: var(--text-soft);
+  }
+  .speech-bubble {
+    position: absolute;
+    top: -18px;
+    right: 20px;
+    background: var(--yellow);
+    border: 2px solid var(--peach);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-family: 'Gaegu', sans-serif;
+    font-size: 0.85em;
+    font-weight: 700;
+    box-shadow: 0 2px 0 rgba(150,110,140,0.1);
+    animation: bounce 2s ease-in-out infinite;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+  }
+
+  /* ===== 통계 카드 ===== */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+  .stat-card {
+    background: white;
+    border-radius: 22px;
+    padding: 14px 8px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    border: 2.5px solid transparent;
+    transition: transform 0.2s;
+  }
+  .stat-card:hover { transform: translateY(-3px); }
+  .stat-card.pink { border-color: var(--pink); background: var(--pink-light); }
+  .stat-card.mint { border-color: var(--mint); background: var(--mint-light); }
+  .stat-card.peach { border-color: var(--peach); background: var(--peach-light); }
+  .stat-cat {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 6px;
+  }
+  .stat-value {
+    font-family: 'Jua', sans-serif;
+    font-size: 1.5em;
+    line-height: 1;
+    color: var(--text);
+  }
+  .stat-value .unit {
+    font-family: 'Gaegu', sans-serif;
+    font-size: 0.55em;
+    margin-left: 2px;
+  }
+  .stat-label {
+    font-family: 'Gaegu', sans-serif;
+    font-weight: 700;
+    font-size: 0.85em;
+    color: var(--text-soft);
+    margin-top: 4px;
+  }
+
+  /* ===== 오늘 카드 ===== */
+  .today-big {
+    background: linear-gradient(135deg, #ffd4e5 0%, #e0ccff 50%, #c8f5e7 100%);
+    border: 3px solid white;
+    border-radius: 32px;
+    padding: 24px 20px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
+  }
+  .today-big .today-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+  .today-big .today-title .badge {
+    background: white;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-family: 'Jua', sans-serif;
+    font-size: 0.75em;
+    color: var(--pink-deep);
+    border: 2px solid var(--pink-deep);
+    animation: wobble 2s ease-in-out infinite;
+  }
+  .today-big h2 {
+    font-family: 'Jua', sans-serif;
+    font-size: 1.7em;
+    color: var(--text);
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+  .today-big .today-sub {
+    font-family: 'Gaegu', sans-serif;
+    color: var(--text-soft);
+    margin-bottom: 18px;
+  }
+  .today-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  @media (max-width: 420px) {
+    .today-links { grid-template-columns: 1fr; }
+  }
+  .today-link {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: white;
+    padding: 14px 14px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: var(--text);
+    box-shadow: var(--shadow);
+    transition: transform 0.15s;
+    border: 2px solid transparent;
+    position: relative;
+  }
+  .today-link:hover { transform: translateY(-3px) rotate(-1deg); border-color: var(--pink-deep); }
+  .today-link .link-cat {
+    width: 38px;
+    height: 38px;
+    margin-bottom: 6px;
+  }
+  .today-link .link-title {
+    font-family: 'Jua', sans-serif;
+    font-size: 1em;
+    margin-bottom: 2px;
+  }
+  .today-link .link-desc {
+    font-family: 'Gaegu', sans-serif;
+    font-size: 0.85em;
+    color: var(--text-soft);
+  }
+  .today-no-class {
+    background: white;
+    padding: 16px;
+    border-radius: 20px;
+    font-family: 'Gaegu', sans-serif;
+    text-align: center;
+    font-size: 1.05em;
+  }
+
+  /* ===== 섹션 헤더 ===== */
+  .sec-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 8px 12px;
+  }
+  .sec-head h3 {
+    font-family: 'Jua', sans-serif;
+    font-size: 1.15em;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .sec-head .hint {
+    font-family: 'Gaegu', sans-serif;
+    font-size: 0.85em;
+    color: var(--text-soft);
+  }
+
+  /* ===== 달력 ===== */
+  .cal-card {
+    background: white;
+    border-radius: 26px;
+    padding: 20px 18px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
+    border: 2.5px solid var(--lavender-light);
+  }
+  .cal-month {
+    font-family: 'Jua', sans-serif;
+    font-size: 1.15em;
+    text-align: center;
+    margin-bottom: 14px;
+    color: var(--text);
+  }
+  .cal-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    margin-bottom: 6px;
+  }
+  .cal-weekdays div {
+    text-align: center;
+    font-family: 'Gaegu', sans-serif;
+    font-size: 0.8em;
+    font-weight: 700;
+    color: var(--text-soft);
+    padding: 4px 0;
+  }
+  .cal-weekdays div.sun { color: var(--pink-deep); }
+  .cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+  }
+  .cal-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Gaegu', sans-serif;
+    font-size: 0.9em;
+    font-weight: 700;
+    color: var(--text-soft);
+    border-radius: 14px;
+    position: relative;
+    background: var(--cream);
+  }
+  .cal-day.empty { visibility: hidden; }
+  .cal-day.learned {
+    background: var(--mint);
+    color: var(--text);
+  }
+  .cal-day.learned::before {
+    content: "🐾";
+    position: absolute;
+    top: -2px;
+    right: 2px;
+    font-size: 10px;
+  }
+  .cal-day.today {
+    background: linear-gradient(135deg, var(--pink-deep), var(--lavender));
+    color: white;
+    transform: scale(1.08);
+    box-shadow: 0 3px 0 rgba(255,143,181,0.4);
+    z-index: 2;
+  }
+
+  /* ===== 지난 학습 ===== */
+  .archive {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .arc-item {
+    background: white;
+    border-radius: 22px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: var(--shadow);
+    transition: transform 0.15s;
+    border-left: 5px solid var(--pink);
+  }
+  .arc-item:nth-child(2n) { border-left-color: var(--mint); }
+  .arc-item:nth-child(3n) { border-left-color: var(--lavender); }
+  .arc-item:nth-child(4n) { border-left-color: var(--peach); }
+  .arc-item:hover { transform: translateX(4px); }
+  .arc-cat {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+  }
+  .arc-info { flex: 1; min-width: 0; }
+  .arc-theme {
+    font-family: 'Jua', sans-serif;
+    font-size: 1em;
+  }
+  .arc-date {
+    font-family: 'Gaegu', sans-serif;
+    font-size: 0.85em;
+    color: var(--text-soft);
+  }
+  .arc-btns {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+  .arc-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 15px;
+    transition: transform 0.15s;
+    box-shadow: 0 2px 0 rgba(150,110,140,0.1);
+  }
+  .arc-btn:hover { transform: scale(1.15) rotate(-10deg); }
+  .arc-btn.vocab { background: var(--peach); }
+  .arc-btn.quiz { background: var(--pink); }
+
+  /* ===== 푸터 ===== */
+  .footer {
+    margin-top: 40px;
+    text-align: center;
+    font-family: 'Gaegu', sans-serif;
+    color: var(--text-soft);
+  }
+  .footer .cats {
+    font-size: 1.8em;
+    margin-bottom: 8px;
+    letter-spacing: 4px;
+  }
+  .footer .cats span {
+    display: inline-block;
+    animation: bounce 1.5s ease-in-out infinite;
+  }
+  .footer .cats span:nth-child(2) { animation-delay: 0.2s; }
+  .footer .cats span:nth-child(3) { animation-delay: 0.4s; }
+  .footer p { font-size: 1em; line-height: 1.6; }
+
+  /* 귀여움 추가! 기본 로드 애니메이션 */
+  .greeting-card, .stats-row, .today-big, .cal-card, .archive {
+    opacity: 0;
+    animation: popin 0.5s ease-out forwards;
+  }
+  .greeting-card { animation-delay: 0.1s; }
+  .stats-row { animation-delay: 0.2s; }
+  .today-big { animation-delay: 0.3s; }
+  .cal-card { animation-delay: 0.4s; }
+  .archive { animation-delay: 0.5s; }
+
+  @keyframes popin {
+    from { opacity: 0; transform: translateY(20px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  /* 고양이 꼬리 흔들 */
+  .tail-wag {
+    animation: wagtail 1.2s ease-in-out infinite;
+    transform-origin: center;
+  }
+  @keyframes wagtail {
+    0%, 100% { transform: rotate(0); }
+    25% { transform: rotate(-15deg); }
+    75% { transform: rotate(15deg); }
   }
 </style>
 </head>
 <body>
+
+<!-- 배경 장식 -->
+<div class="bg-decor s1">⭐</div>
+<div class="bg-decor s2">💕</div>
+<div class="bg-decor s3">☁️</div>
+<div class="bg-decor s4">🌸</div>
+<div class="bg-decor s5">✨</div>
+<div class="bg-decor s6">🌈</div>
+
 <div class="container">
 
-  <!-- 헤더 -->
-  <header>
-    <h1>🌟 혜원이 영단어 학습소 🌟</h1>
-    <div class="subtitle">매일매일 즐겁게 영어 단어를 배워봐요!</div>
-    <div class="date-badge" id="todayBadge">오늘 날짜 로딩중...</div>
-  </header>
+  <!-- 탑 바 -->
+  <div class="top-bar">
+    <div class="logo-box">
+      <div class="cat-avatar">😸</div>
+      <span>혜원이의 영어 놀이터</span>
+    </div>
+    <div class="date-chip" id="dateChip">—</div>
+  </div>
+
+  <!-- 인사 카드 -->
+  <div class="greeting-card">
+    <div class="speech-bubble">안녕 혜원아! 🎀</div>
+    <!-- 메인 마스코트 고양이 (분홍 고양이) -->
+    <svg class="greeting-cat" viewBox="0 0 100 100">
+      <!-- 꼬리 -->
+      <path class="tail-wag" d="M 80 70 Q 95 50 85 35" stroke="#ffb6c1" stroke-width="8" fill="none" stroke-linecap="round"/>
+      <!-- 몸통 -->
+      <ellipse cx="50" cy="65" rx="28" ry="22" fill="#ffc0d4"/>
+      <!-- 머리 -->
+      <circle cx="50" cy="40" r="22" fill="#ffc0d4"/>
+      <!-- 귀 -->
+      <path d="M 32 30 L 28 15 L 42 25 Z" fill="#ffc0d4"/>
+      <path d="M 68 30 L 72 15 L 58 25 Z" fill="#ffc0d4"/>
+      <path d="M 34 28 L 32 20 L 39 25 Z" fill="#ff9eb8"/>
+      <path d="M 66 28 L 68 20 L 61 25 Z" fill="#ff9eb8"/>
+      <!-- 볼 (분홍) -->
+      <circle cx="38" cy="45" r="4" fill="#ff8fa3" opacity="0.6"/>
+      <circle cx="62" cy="45" r="4" fill="#ff8fa3" opacity="0.6"/>
+      <!-- 눈 (웃는 눈) -->
+      <path d="M 40 38 Q 43 35 46 38" stroke="#4a3a5a" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M 54 38 Q 57 35 60 38" stroke="#4a3a5a" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <!-- 입 -->
+      <path d="M 47 47 Q 50 51 53 47" stroke="#4a3a5a" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <!-- 발 -->
+      <ellipse cx="40" cy="84" rx="6" ry="4" fill="#ff9eb8"/>
+      <ellipse cx="60" cy="84" rx="6" ry="4" fill="#ff9eb8"/>
+    </svg>
+    <div class="greeting-text">
+      <h1>오늘도 <span>반짝반짝</span> 🌟<br>영어 놀이하자!</h1>
+      <p>20개 단어랑 신나는 퀴즈가 기다려요~</p>
+    </div>
+  </div>
+
+  <!-- 통계 카드 -->
+  <div class="stats-row">
+    <div class="stat-card pink">
+      <!-- 주황 고양이 -->
+      <svg class="stat-cat" viewBox="0 0 60 60">
+        <ellipse cx="30" cy="42" rx="18" ry="14" fill="#ffb380"/>
+        <circle cx="30" cy="25" r="14" fill="#ffb380"/>
+        <path d="M 20 18 L 17 8 L 26 15 Z" fill="#ffb380"/>
+        <path d="M 40 18 L 43 8 L 34 15 Z" fill="#ffb380"/>
+        <circle cx="23" cy="29" r="2.5" fill="#4a3a5a"/>
+        <circle cx="37" cy="29" r="2.5" fill="#4a3a5a"/>
+        <circle cx="20" cy="33" r="2.5" fill="#ff6b6b" opacity="0.5"/>
+        <circle cx="40" cy="33" r="2.5" fill="#ff6b6b" opacity="0.5"/>
+        <path d="M 28 33 Q 30 35 32 33" stroke="#4a3a5a" stroke-width="1.2" fill="none"/>
+        <!-- 줄무늬 -->
+        <path d="M 24 22 L 22 24" stroke="#ff8c42" stroke-width="1.5"/>
+        <path d="M 36 22 L 38 24" stroke="#ff8c42" stroke-width="1.5"/>
+      </svg>
+      <div class="stat-value" id="statWords">0<span class="unit">개</span></div>
+      <div class="stat-label">배운 단어</div>
+    </div>
+    <div class="stat-card mint">
+      <!-- 회색 고양이 -->
+      <svg class="stat-cat" viewBox="0 0 60 60">
+        <ellipse cx="30" cy="42" rx="18" ry="14" fill="#c7d6e0"/>
+        <circle cx="30" cy="25" r="14" fill="#c7d6e0"/>
+        <path d="M 20 18 L 17 8 L 26 15 Z" fill="#c7d6e0"/>
+        <path d="M 40 18 L 43 8 L 34 15 Z" fill="#c7d6e0"/>
+        <circle cx="23" cy="29" r="2.5" fill="#4a3a5a"/>
+        <circle cx="37" cy="29" r="2.5" fill="#4a3a5a"/>
+        <circle cx="20" cy="33" r="2.5" fill="#ff8fa3" opacity="0.5"/>
+        <circle cx="40" cy="33" r="2.5" fill="#ff8fa3" opacity="0.5"/>
+        <path d="M 28 34 Q 30 36 32 34" stroke="#4a3a5a" stroke-width="1.2" fill="none"/>
+      </svg>
+      <div class="stat-value" id="statDays">0<span class="unit">일</span></div>
+      <div class="stat-label">학습한 날</div>
+    </div>
+    <div class="stat-card peach">
+      <!-- 흰 고양이 -->
+      <svg class="stat-cat" viewBox="0 0 60 60">
+        <ellipse cx="30" cy="42" rx="18" ry="14" fill="#fff" stroke="#e0c3ff" stroke-width="1.5"/>
+        <circle cx="30" cy="25" r="14" fill="#fff" stroke="#e0c3ff" stroke-width="1.5"/>
+        <path d="M 20 18 L 17 8 L 26 15 Z" fill="#fff" stroke="#e0c3ff" stroke-width="1"/>
+        <path d="M 40 18 L 43 8 L 34 15 Z" fill="#fff" stroke="#e0c3ff" stroke-width="1"/>
+        <circle cx="23" cy="29" r="2.5" fill="#4a3a5a"/>
+        <circle cx="37" cy="29" r="2.5" fill="#4a3a5a"/>
+        <circle cx="20" cy="33" r="2.5" fill="#ffb6c1" opacity="0.7"/>
+        <circle cx="40" cy="33" r="2.5" fill="#ffb6c1" opacity="0.7"/>
+        <path d="M 28 34 Q 30 36 32 34" stroke="#4a3a5a" stroke-width="1.2" fill="none"/>
+        <!-- 리본 -->
+        <path d="M 25 50 L 22 48 L 22 52 Z" fill="#ff9eb8"/>
+        <path d="M 35 50 L 38 48 L 38 52 Z" fill="#ff9eb8"/>
+        <circle cx="30" cy="50" r="2" fill="#ff9eb8"/>
+      </svg>
+      <div class="stat-value" id="statNext">-<span class="unit"></span></div>
+      <div class="stat-label">다음 학습</div>
+    </div>
+  </div>
 
   <!-- 오늘의 학습 -->
-  <div class="today-section">
-    <h2>📖 오늘의 학습</h2>
-    <div class="theme" id="todayTheme">오늘 날짜에 맞는 학습을 준비하고 있어요...</div>
-    <div id="todayLinks"></div>
+  <div class="today-big">
+    <div class="today-title">
+      <span class="badge" id="todayBadge">오늘의 수업</span>
+    </div>
+    <h2 id="todayTitle">오늘은 뭐 할까?</h2>
+    <div class="today-sub" id="todaySub">—</div>
+    <div id="todayContent"></div>
   </div>
 
-  <!-- 주간 커리큘럼 -->
-  <div class="section">
-    <h2>🗓️ 이번 주 커리큘럼</h2>
-    <div class="week-grid" id="weekGrid"></div>
+  <!-- 학습 달력 -->
+  <div class="sec-head">
+    <h3>🗓️ 학습 달력</h3>
+    <span class="hint">🐾 공부한 날</span>
+  </div>
+  <div class="cal-card">
+    <div class="cal-month" id="calMonth">—</div>
+    <div class="cal-weekdays">
+      <div class="sun">일</div><div>월</div><div>화</div><div>수</div>
+      <div>목</div><div>금</div><div>토</div>
+    </div>
+    <div class="cal-grid" id="calGrid"></div>
   </div>
 
-  <!-- 전체 학습 기록 -->
-  <div class="section">
-    <h2>📚 전체 학습 기록</h2>
-    <div class="all-days" id="allDays"></div>
+  <!-- 지난 학습 -->
+  <div class="sec-head">
+    <h3>📚 지난 학습</h3>
+    <span class="hint" id="archiveHint">—</span>
   </div>
+  <div class="archive" id="archiveList"></div>
 
   <!-- 푸터 -->
-  <footer>
-    <p>혜원이의 영어 실력이 쑥쑥 자라나고 있어요 <span class="heart">💕</span></p>
-    <p>매일 꾸준히 하면 분명 잘 할 수 있어요!</p>
-  </footer>
+  <div class="footer">
+    <div class="cats"><span>🐱</span><span>😺</span><span>😻</span></div>
+    <p>매일매일 조금씩~<br>혜원이 영어 실력 쑥쑥 자라요! 💕</p>
+  </div>
 
 </div>
 
 <script>
-// ===== 학습 데이터 =====
-// 새로운 날짜 추가할 때 이 배열에 새 항목 넣으면 자동으로 홈페이지에 반영돼요
+// ========== 학습 일정 ==========
 const SCHEDULE = [
   {
-    date: "2026-04-21",
-    dayKo: "화",
-    dayEn: "Tuesday",
-    theme: "동물과 자연 2탄 🌊",
-    themeShort: "동물과 자연 2",
+    date: "2026-04-21", dayKo: "화", dayEn: "Tue",
+    theme: "동물과 자연 2탄", emoji: "🌊",
     folder: "20260421",
     vocab: "혜원이_영단어_화요일_동물과자연2.html",
-    quiz: "혜원이_영단어_화요일_퀴즈.html",
-    color: "#4a90e2"
+    quiz: "혜원이_영단어_화요일_퀴즈.html"
   },
   {
-    date: "2026-04-22",
-    dayKo: "수",
-    dayEn: "Wednesday",
-    theme: "학교 🏫",
-    themeShort: "학교",
+    date: "2026-04-22", dayKo: "수", dayEn: "Wed",
+    theme: "학교", emoji: "🏫",
     folder: "20260422",
     vocab: "혜원이_영단어_수요일_학교.html",
-    quiz: "혜원이_영단어_수요일_퀴즈.html",
-    color: "#8fbc8f"
-  },
-  {
-    date: "2026-04-27",
-    dayKo: "월",
-    dayEn: "Monday",
-    theme: "동물과 자연 1탄 🌳",
-    themeShort: "동물과 자연 1",
-    folder: "20260427",
-    vocab: "혜원이_영단어_월요일_동물과자연.html",
-    quiz: "혜원이_영단어_월요일_퀴즈.html",
-    color: "#76c893"
+    quiz: "혜원이_영단어_수요일_퀴즈.html"
   }
 ];
 
-// ===== 오늘 날짜 구하기 =====
+// ========== 귀여운 고양이 SVG (작은 사이즈) ==========
+const miniCats = {
+  pink: `<svg viewBox="0 0 60 60"><ellipse cx="30" cy="42" rx="18" ry="14" fill="#ffc0d4"/><circle cx="30" cy="25" r="14" fill="#ffc0d4"/><path d="M 20 18 L 17 8 L 26 15 Z" fill="#ffc0d4"/><path d="M 40 18 L 43 8 L 34 15 Z" fill="#ffc0d4"/><circle cx="23" cy="29" r="2.5" fill="#4a3a5a"/><circle cx="37" cy="29" r="2.5" fill="#4a3a5a"/><circle cx="20" cy="33" r="2.5" fill="#ff8fa3" opacity="0.6"/><circle cx="40" cy="33" r="2.5" fill="#ff8fa3" opacity="0.6"/><path d="M 28 34 Q 30 36 32 34" stroke="#4a3a5a" stroke-width="1.2" fill="none"/></svg>`,
+  mint: `<svg viewBox="0 0 60 60"><ellipse cx="30" cy="42" rx="18" ry="14" fill="#b5ead7"/><circle cx="30" cy="25" r="14" fill="#b5ead7"/><path d="M 20 18 L 17 8 L 26 15 Z" fill="#b5ead7"/><path d="M 40 18 L 43 8 L 34 15 Z" fill="#b5ead7"/><circle cx="23" cy="29" r="2.5" fill="#4a3a5a"/><circle cx="37" cy="29" r="2.5" fill="#4a3a5a"/><circle cx="20" cy="33" r="2.5" fill="#ff8fa3" opacity="0.5"/><circle cx="40" cy="33" r="2.5" fill="#ff8fa3" opacity="0.5"/><path d="M 28 34 Q 30 36 32 34" stroke="#4a3a5a" stroke-width="1.2" fill="none"/></svg>`,
+  lavender: `<svg viewBox="0 0 60 60"><ellipse cx="30" cy="42" rx="18" ry="14" fill="#d4baff"/><circle cx="30" cy="25" r="14" fill="#d4baff"/><path d="M 20 18 L 17 8 L 26 15 Z" fill="#d4baff"/><path d="M 40 18 L 43 8 L 34 15 Z" fill="#d4baff"/><circle cx="23" cy="29" r="2.5" fill="#4a3a5a"/><circle cx="37" cy="29" r="2.5" fill="#4a3a5a"/><circle cx="20" cy="33" r="2.5" fill="#ff8fa3" opacity="0.5"/><circle cx="40" cy="33" r="2.5" fill="#ff8fa3" opacity="0.5"/><path d="M 28 34 Q 30 36 32 34" stroke="#4a3a5a" stroke-width="1.2" fill="none"/></svg>`,
+  peach: `<svg viewBox="0 0 60 60"><ellipse cx="30" cy="42" rx="18" ry="14" fill="#ffd4b5"/><circle cx="30" cy="25" r="14" fill="#ffd4b5"/><path d="M 20 18 L 17 8 L 26 15 Z" fill="#ffd4b5"/><path d="M 40 18 L 43 8 L 34 15 Z" fill="#ffd4b5"/><circle cx="23" cy="29" r="2.5" fill="#4a3a5a"/><circle cx="37" cy="29" r="2.5" fill="#4a3a5a"/><circle cx="20" cy="33" r="2.5" fill="#ff8fa3" opacity="0.5"/><circle cx="40" cy="33" r="2.5" fill="#ff8fa3" opacity="0.5"/><path d="M 28 34 Q 30 36 32 34" stroke="#4a3a5a" stroke-width="1.2" fill="none"/></svg>`,
+  // 작은 아이콘용 고양이 (아침/퀴즈)
+  sunny: `<svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="15" fill="#fff3bf"/><circle cx="15" cy="18" r="2" fill="#4a3a5a"/><circle cx="25" cy="18" r="2" fill="#4a3a5a"/><path d="M 17 23 Q 20 26 23 23" stroke="#4a3a5a" stroke-width="1.5" fill="none"/><path d="M 8 15 L 12 12 L 12 18 Z" fill="#fff3bf"/><path d="M 32 15 L 28 12 L 28 18 Z" fill="#fff3bf"/></svg>`,
+  star: `<svg viewBox="0 0 40 40"><ellipse cx="20" cy="26" rx="11" ry="9" fill="#d4baff"/><circle cx="20" cy="16" r="9" fill="#d4baff"/><path d="M 14 12 L 12 6 L 17 10 Z" fill="#d4baff"/><path d="M 26 12 L 28 6 L 23 10 Z" fill="#d4baff"/><circle cx="16" cy="18" r="1.8" fill="#4a3a5a"/><circle cx="24" cy="18" r="1.8" fill="#4a3a5a"/><path d="M 18 21 Q 20 23 22 21" stroke="#4a3a5a" stroke-width="1.3" fill="none"/></svg>`
+};
+
+// ========== 날짜 ==========
 const today = new Date();
 const yyyy = today.getFullYear();
 const mm = String(today.getMonth() + 1).padStart(2, '0');
 const dd = String(today.getDate()).padStart(2, '0');
 const todayStr = `${yyyy}-${mm}-${dd}`;
-const dayNames = ['일','월','화','수','목','금','토'];
-const todayKoDay = dayNames[today.getDay()];
+const koDayNames = ['일','월','화','수','목','금','토'];
+document.getElementById('dateChip').textContent = `${parseInt(mm)}월 ${parseInt(dd)}일 ${koDayNames[today.getDay()]}요일`;
 
-// ===== 오늘 날짜 배지 =====
-document.getElementById('todayBadge').textContent =
-  `📅 ${yyyy}년 ${parseInt(mm)}월 ${parseInt(dd)}일 (${todayKoDay}요일)`;
+// ========== 통계 ==========
+const WORDS_PER_DAY = 20;
+const pastItems = SCHEDULE.filter(s => s.date <= todayStr);
+document.getElementById('statWords').innerHTML = `${pastItems.length * WORDS_PER_DAY}<span class="unit">개</span>`;
+document.getElementById('statDays').innerHTML = `${pastItems.length}<span class="unit">일</span>`;
 
-// ===== 오늘의 학습 섹션 =====
+const upcoming = SCHEDULE.filter(s => s.date > todayStr).sort((a,b) => a.date.localeCompare(b.date))[0];
+const nextEl = document.getElementById('statNext');
+if (upcoming) {
+  const diffDays = Math.ceil((new Date(upcoming.date) - today) / (1000*60*60*24));
+  if (diffDays === 0) nextEl.innerHTML = `오늘<span class="unit"></span>`;
+  else if (diffDays === 1) nextEl.innerHTML = `내일<span class="unit"></span>`;
+  else nextEl.innerHTML = `${diffDays}<span class="unit">일 뒤</span>`;
+} else {
+  nextEl.innerHTML = `준비중<span class="unit"></span>`;
+}
+
+// ========== 오늘의 학습 ==========
 const todayItem = SCHEDULE.find(s => s.date === todayStr);
-const todayThemeEl = document.getElementById('todayTheme');
-const todayLinksEl = document.getElementById('todayLinks');
+const todayBadge = document.getElementById('todayBadge');
+const todayTitle = document.getElementById('todayTitle');
+const todaySub = document.getElementById('todaySub');
+const todayContent = document.getElementById('todayContent');
 
 if (todayItem) {
-  todayThemeEl.textContent = `📚 오늘의 주제: ${todayItem.theme}`;
-  todayLinksEl.innerHTML = `
-    <a class="link-card morning" href="${todayItem.folder}/${encodeURIComponent(todayItem.vocab)}">
-      <div class="label">🌅 아침 단어장</div>
-      <div class="desc">새로운 20개 단어를 배워요</div>
-    </a>
-    <a class="link-card afternoon" href="${todayItem.folder}/${encodeURIComponent(todayItem.quiz)}">
-      <div class="label">🌆 오후 퀴즈</div>
-      <div class="desc">배운 단어로 문제를 풀어봐요</div>
-    </a>
+  todayBadge.textContent = `오늘의 수업 ✨`;
+  todayTitle.innerHTML = `${todayItem.theme} ${todayItem.emoji}`;
+  todaySub.textContent = `새로운 20개 단어가 기다려요!`;
+  todayContent.innerHTML = `
+    <div class="today-links">
+      <a class="today-link" href="${todayItem.folder}/${encodeURIComponent(todayItem.vocab)}">
+        <div class="link-cat">${miniCats.sunny}</div>
+        <div class="link-title">🌅 아침 단어장</div>
+        <div class="link-desc">단어 20개 배우기</div>
+      </a>
+      <a class="today-link" href="${todayItem.folder}/${encodeURIComponent(todayItem.quiz)}">
+        <div class="link-cat">${miniCats.star}</div>
+        <div class="link-title">✨ 오후 퀴즈</div>
+        <div class="link-desc">문제 풀기 도전!</div>
+      </a>
+    </div>
   `;
 } else {
-  todayThemeEl.innerHTML = `<div class="no-today">😊 오늘은 정규 학습일이 아니에요!<br>아래 '전체 학습 기록'에서 원하는 날을 골라 복습해보세요.</div>`;
+  todayBadge.textContent = `쉬는 날`;
+  todayTitle.textContent = `오늘은 쉬어가요 🍵`;
+  todaySub.textContent = `아래에서 지난 단어 복습해볼까요?`;
+  todayContent.innerHTML = `<div class="today-no-class">😸 내일은 새 단어가 있을지도 몰라요!</div>`;
 }
 
-// ===== 주간 커리큘럼 그리드 =====
-// 이번 주 월~일 만들기
-function getWeekStart(d) {
-  const date = new Date(d);
-  const day = date.getDay();
-  const diff = date.getDate() - day + (day === 0 ? -6 : 1); // 월요일 시작
-  date.setDate(diff);
-  return date;
+// ========== 달력 ==========
+const calMonth = today.getMonth();
+const calYear = today.getFullYear();
+document.getElementById('calMonth').textContent = `${calYear}년 ${calMonth+1}월`;
+
+const firstDay = new Date(calYear, calMonth, 1).getDay();
+const lastDate = new Date(calYear, calMonth+1, 0).getDate();
+const calGrid = document.getElementById('calGrid');
+
+for (let i = 0; i < firstDay; i++) {
+  calGrid.innerHTML += `<div class="cal-day empty"></div>`;
 }
-const weekStart = getWeekStart(today);
-const weekGrid = document.getElementById('weekGrid');
-const weekLabels = ['월','화','수','목','금','토','일'];
-for (let i = 0; i < 7; i++) {
-  const d = new Date(weekStart);
-  d.setDate(weekStart.getDate() + i);
-  const ds = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
-  const item = SCHEDULE.find(s => s.date === ds);
+for (let d = 1; d <= lastDate; d++) {
+  const ds = `${calYear}-${String(calMonth+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+  const learned = SCHEDULE.find(s => s.date === ds);
   const isToday = ds === todayStr;
-  const isPast = d < today && !isToday;
-  let cls = 'day-cell';
+  let cls = 'cal-day';
   if (isToday) cls += ' today';
-  else if (isPast && item) cls += ' past';
-  weekGrid.innerHTML += `
-    <div class="${cls}">
-      <div class="day-name">${weekLabels[i]}</div>
-      <div class="day-date">${d.getMonth()+1}/${d.getDate()}</div>
-    </div>
-  `;
+  else if (learned) cls += ' learned';
+  calGrid.innerHTML += `<div class="${cls}">${d}</div>`;
 }
 
-// ===== 전체 학습 기록 =====
-const allDaysEl = document.getElementById('allDays');
-// 날짜 내림차순 정렬
-const sorted = [...SCHEDULE].sort((a, b) => b.date.localeCompare(a.date));
-sorted.forEach(item => {
-  const isToday = item.date === todayStr;
-  allDaysEl.innerHTML += `
-    <div class="day-row" style="${isToday ? 'border-left-color: #ff7043;' : ''}">
-      <div class="info">
-        <div class="date">${item.date} (${item.dayKo}) ${isToday ? '⭐ 오늘' : ''}</div>
-        <div class="theme">${item.theme}</div>
+// ========== 지난 학습 ==========
+const archiveList = document.getElementById('archiveList');
+const pastLearning = SCHEDULE.filter(s => s.date <= todayStr).sort((a,b) => b.date.localeCompare(a.date));
+document.getElementById('archiveHint').textContent = `총 ${pastLearning.length}번 학습`;
+
+if (pastLearning.length === 0) {
+  archiveList.innerHTML = `<div class="today-no-class" style="background:white; border-radius:22px; box-shadow:var(--shadow);">아직 학습 기록이 없어요 😿</div>`;
+} else {
+  const catVariants = ['pink', 'mint', 'lavender', 'peach'];
+  pastLearning.forEach((item, idx) => {
+    const catType = catVariants[idx % catVariants.length];
+    archiveList.innerHTML += `
+      <div class="arc-item">
+        <div class="arc-cat">${miniCats[catType]}</div>
+        <div class="arc-info">
+          <div class="arc-theme">${item.theme} ${item.emoji}</div>
+          <div class="arc-date">${item.date} · ${item.dayKo}요일 · 20단어</div>
+        </div>
+        <div class="arc-btns">
+          <a class="arc-btn vocab" href="${item.folder}/${encodeURIComponent(item.vocab)}" title="단어장">📚</a>
+          <a class="arc-btn quiz" href="${item.folder}/${encodeURIComponent(item.quiz)}" title="퀴즈">📝</a>
+        </div>
       </div>
-      <div class="links">
-        <a class="pill vocab" href="${item.folder}/${encodeURIComponent(item.vocab)}">📚 단어장</a>
-        <a class="pill quiz" href="${item.folder}/${encodeURIComponent(item.quiz)}">📝 퀴즈</a>
-      </div>
-    </div>
-  `;
-});
+    `;
+  });
+}
 </script>
 </body>
 </html>
