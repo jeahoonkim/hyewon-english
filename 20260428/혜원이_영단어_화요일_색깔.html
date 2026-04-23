@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>🌸 화요일 - 색깔</title>
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Gaegu:wght@400;700&family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body {
+    font-family: 'Jua', 'Gaegu', system-ui, sans-serif;
+    background: linear-gradient(180deg, #ff9a9e 0%, #fecfef 45%, #a0c4ff 100%);
+    min-height: 100vh; overflow-x: hidden;
+    color: #2d4a2b;
+    user-select: none; -webkit-user-select: none;
+  }
+  .app {
+    max-width: 480px; margin: 0 auto;
+    min-height: 100vh; position: relative;
+    padding-bottom: 30px;
+  }
+
+  /* ---------- 공통 UI ---------- */
+  .screen { display: none; padding: 20px; animation: fadeIn 0.4s ease; }
+  .screen.active { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px);} to { opacity: 1; transform: translateY(0);} }
+
+  .header {
+    text-align: center; padding: 20px 10px 15px;
+  }
+  .header h1 {
+    font-size: 28px; color: #1b4332;
+    text-shadow: 2px 2px 0 #fff;
+  }
+  .header .sub {
+    font-size: 16px; color: #2d5a3d; margin-top: 5px;
+    font-family: 'Gaegu', sans-serif;
+  }
+
+  /* ---------- 시작 화면 ---------- */
+  #start .hero {
+    background: linear-gradient(135deg, #fff8e7, #ffe8a8);
+    border-radius: 30px; padding: 30px 20px;
+    box-shadow: 0 8px 20px rgba(45,90,61,0.2);
+    text-align: center;
+    border: 4px solid #fff;
+  }
+  #start .mascot { font-size: 100px; animation: bob 2s ease-in-out infinite; }
+  @keyframes bob { 0%,100% {transform: translateY(0) rotate(-3deg);} 50% {transform: translateY(-10px) rotate(3deg);} }
+  #start .speech {
+    background: #fff; border-radius: 20px; padding: 18px;
+    margin: 15px auto; position: relative;
+    font-family: 'Gaegu', sans-serif; font-size: 18px;
+    color: #2d4a2b; line-height: 1.5;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  }
+  #start .speech::before {
+    content: ''; position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+    border-left: 12px solid transparent; border-right: 12px solid transparent;
+    border-bottom: 12px solid #fff;
+  }
+  #start .info-chips {
+    display: flex; justify-content: center; gap: 10px; margin: 15px 0;
+    flex-wrap: wrap;
+  }
+  .chip {
+    background: #fff; padding: 8px 15px; border-radius: 20px;
+    font-size: 14px; color: #1b4332; font-weight: 600;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    font-family: 'Fredoka', sans-serif;
+  }
+  .chip .num { color: #e63946; font-size: 18px; }
+
+  .btn-big {
+    display: block; width: 100%;
+    background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+    color: white; border: none;
+    padding: 18px; border-radius: 20px;
+    font-family: 'Jua', sans-serif; font-size: 22px;
+    box-shadow: 0 6px 0 #c1121f, 0 10px 20px rgba(0,0,0,0.15);
+    cursor: pointer; transition: all 0.1s;
+    margin-top: 20px;
+  }
+  .btn-big:active { transform: translateY(4px); box-shadow: 0 2px 0 #c1121f, 0 4px 10px rgba(0,0,0,0.1); }
+
+  /* ---------- 진행 바 ---------- */
+  .top-bar {
+    display: flex; align-items: center; gap: 10px;
+    padding: 15px; background: rgba(255,255,255,0.6);
+    border-radius: 0 0 20px 20px; backdrop-filter: blur(10px);
+  }
+  .progress-outer {
+    flex: 1; height: 14px; background: #fff;
+    border-radius: 10px; overflow: hidden;
+    border: 2px solid #2d5a3d;
+  }
+  .progress-inner {
+    height: 100%;
+    background: linear-gradient(90deg, #52b788, #40916c);
+    width: 0%; transition: width 0.4s ease;
+    box-shadow: inset 0 -4px 0 rgba(0,0,0,0.1);
+  }
+  .progress-text {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700; color: #1b4332;
+    font-size: 15px;
+  }
+  .tree-indicator { font-size: 24px; }
+
+  /* ---------- 단어 카드 ---------- */
+  .card {
+    background: #fff; border-radius: 28px;
+    margin: 20px 10px; padding: 25px 20px;
+    box-shadow: 0 10px 25px rgba(45,90,61,0.2);
+    border: 4px solid #fff;
+    position: relative; overflow: hidden;
+  }
+  .card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 8px; background: linear-gradient(90deg, #ffd54f, #ff6b6b, #52b788, #4ea8de);
+  }
+  .card .emoji-big {
+    text-align: center; font-size: 90px;
+    margin: 10px 0 15px; line-height: 1;
+    animation: pop 0.5s ease;
+  }
+  @keyframes pop { 0% { transform: scale(0);} 80% { transform: scale(1.1);} 100% { transform: scale(1);} }
+
+  .word-main {
+    text-align: center; font-family: 'Fredoka', sans-serif;
+    font-size: 46px; font-weight: 700;
+    color: #1b4332; letter-spacing: 1px;
+    text-shadow: 2px 2px 0 #c8e6c9;
+  }
+  .word-ipa {
+    text-align: center; font-family: 'Fredoka', sans-serif;
+    font-size: 18px; color: #6b7280; margin-top: 5px;
+  }
+  .word-meaning {
+    text-align: center; font-size: 32px; color: #e63946;
+    margin: 15px 0; font-family: 'Jua', sans-serif;
+  }
+
+  /* ---------- 발음 버튼 ---------- */
+  .speak-area {
+    background: linear-gradient(135deg, #fff3c4, #fce38a);
+    border-radius: 20px; padding: 15px;
+    margin: 15px 0; text-align: center;
+  }
+  .speak-area .label {
+    font-size: 14px; color: #7f4f24; margin-bottom: 8px;
+    font-family: 'Gaegu', sans-serif; font-weight: 700;
+  }
+  .speak-btn {
+    width: 80px; height: 80px; border-radius: 50%;
+    border: none; cursor: pointer;
+    background: linear-gradient(135deg, #4ea8de, #1e6091);
+    color: white; font-size: 40px;
+    box-shadow: 0 6px 0 #184e77, 0 10px 20px rgba(30,96,145,0.3);
+    transition: all 0.1s;
+    position: relative;
+  }
+  .speak-btn:active { transform: translateY(4px); box-shadow: 0 2px 0 #184e77; }
+  .speak-btn.done {
+    background: linear-gradient(135deg, #52b788, #2d5a3d);
+    box-shadow: 0 6px 0 #1b4332;
+    animation: shine 1s ease infinite;
+  }
+  @keyframes shine { 0%,100% { box-shadow: 0 6px 0 #1b4332, 0 10px 25px rgba(82,183,136,0.5);} 50% {box-shadow: 0 6px 0 #1b4332, 0 10px 30px rgba(82,183,136,0.9);} }
+
+  .speak-count {
+    display: flex; justify-content: center; gap: 6px;
+    margin-top: 12px;
+  }
+  .dot {
+    width: 18px; height: 18px; border-radius: 50%;
+    background: #e9ecef; transition: all 0.3s;
+    border: 2px solid #fff;
+    box-shadow: inset 0 2px 3px rgba(0,0,0,0.1);
+  }
+  .dot.filled {
+    background: linear-gradient(135deg, #ffd54f, #ff9800);
+    transform: scale(1.2);
+    box-shadow: 0 0 10px #ffd54f, inset 0 2px 3px rgba(255,255,255,0.5);
+  }
+
+  /* ---------- 예문 / 팁 ---------- */
+  .example {
+    background: #e8f5e9; border-left: 5px solid #52b788;
+    padding: 15px; border-radius: 12px;
+    margin-top: 15px;
+  }
+  .example .en {
+    font-family: 'Fredoka', sans-serif; font-size: 19px;
+    color: #1b4332; line-height: 1.4;
+  }
+  .example .ko {
+    font-family: 'Gaegu', sans-serif; font-size: 17px;
+    color: #6b8e23; margin-top: 6px; line-height: 1.4;
+  }
+  .fun-fact {
+    background: linear-gradient(135deg, #ffeef8, #fce4ec);
+    border-radius: 15px; padding: 14px;
+    margin-top: 12px;
+    border: 2px dashed #ff6b9d;
+  }
+  .fun-fact .title {
+    color: #c2185b; font-size: 15px; font-weight: 700;
+    margin-bottom: 5px;
+  }
+  .fun-fact .text {
+    font-family: 'Gaegu', sans-serif; font-size: 17px;
+    color: #4a4a4a; line-height: 1.45;
+  }
+
+  /* ---------- 다음 버튼 ---------- */
+  .next-wrap { padding: 0 10px; margin-top: 15px; }
+  .next-btn {
+    width: 100%; padding: 18px;
+    background: #bdbdbd; color: #757575;
+    border: none; border-radius: 20px;
+    font-family: 'Jua', sans-serif; font-size: 20px;
+    cursor: not-allowed; transition: all 0.3s;
+    box-shadow: 0 4px 0 #9e9e9e;
+  }
+  .next-btn.ready {
+    background: linear-gradient(135deg, #52b788, #40916c);
+    color: white; cursor: pointer;
+    box-shadow: 0 6px 0 #1b4332, 0 10px 20px rgba(82,183,136,0.4);
+    animation: pulse 1s ease infinite;
+  }
+  @keyframes pulse { 0%,100% { transform: scale(1);} 50% {transform: scale(1.03);} }
+  .next-btn.ready:active { transform: translateY(4px); box-shadow: 0 2px 0 #1b4332; }
+
+  .hint-text {
+    text-align: center; font-family: 'Gaegu', sans-serif;
+    color: #2d5a3d; font-size: 16px; margin-top: 10px;
+    font-weight: 700;
+  }
+
+  /* ---------- 완료 화면 ---------- */
+  #complete { text-align: center; padding-top: 30px; }
+  #complete .celebrate { font-size: 110px; animation: celebrate 1s ease; }
+  @keyframes celebrate { 0% { transform: scale(0) rotate(0); opacity: 0;} 50% { transform: scale(1.3) rotate(10deg);} 100% { transform: scale(1) rotate(0); opacity: 1;} }
+  #complete h2 {
+    font-size: 32px; color: #1b4332;
+    text-shadow: 2px 2px 0 #fff;
+    margin: 10px 0;
+  }
+  .stats-box {
+    background: #fff; border-radius: 25px;
+    padding: 25px 20px; margin: 20px 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  }
+  .stats-row {
+    display: flex; justify-content: space-around;
+    margin: 15px 0; flex-wrap: wrap; gap: 10px;
+  }
+  .stat {
+    flex: 1; min-width: 100px;
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    padding: 15px 10px; border-radius: 15px;
+  }
+  .stat .big {
+    font-family: 'Fredoka', sans-serif; font-size: 32px;
+    font-weight: 700; color: #1b4332;
+  }
+  .stat .lbl { font-size: 13px; color: #2d5a3d; margin-top: 3px; }
+
+  .badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #ffd54f, #ff9800);
+    color: white; padding: 10px 20px;
+    border-radius: 30px; margin: 10px 5px;
+    font-size: 16px; font-weight: 700;
+    box-shadow: 0 4px 10px rgba(255,152,0,0.4);
+    animation: badgeIn 0.5s ease;
+  }
+  @keyframes badgeIn { from {transform: scale(0) rotate(-180deg);} to {transform: scale(1) rotate(0);} }
+
+  .quiz-preview {
+    background: linear-gradient(135deg, #fff3c4, #ffd54f);
+    border-radius: 20px; padding: 20px;
+    margin: 20px 10px;
+    border: 3px dashed #e65100;
+  }
+  .quiz-preview .title {
+    font-size: 20px; color: #bf360c; margin-bottom: 8px;
+  }
+  .quiz-preview .text {
+    font-family: 'Gaegu', sans-serif; font-size: 17px;
+    color: #4a4a4a; line-height: 1.5;
+  }
+
+  /* ---------- 나무 성장 ---------- */
+  .tree-grow {
+    font-size: 80px; margin: 15px 0;
+    transition: all 0.5s;
+  }
+
+  /* ---------- 컨페티 ---------- */
+  .confetti {
+    position: fixed; width: 10px; height: 10px;
+    top: -20px; pointer-events: none;
+    animation: fall linear forwards;
+  }
+  @keyframes fall {
+    to { transform: translateY(110vh) rotate(720deg); }
+  }
+
+  /* ---------- 반응형 ---------- */
+  @media (max-width: 380px) {
+    .word-main { font-size: 38px; }
+    .word-meaning { font-size: 26px; }
+    .card .emoji-big { font-size: 70px; }
+  }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- 시작 화면 -->
+  <section class="screen active" id="start">
+    <div class="header">
+      <h1>🎨 영단어 모험 🌈</h1>
+      <div class="sub">화요일 · Day 2 · 색깔</div>
+    </div>
+    <div class="hero">
+      <div class="mascot">🦜</div>
+      <div class="speech">
+        안녕 혜원아! 나는 <b style="color:#e63946">폴리</b>야.<br>
+        오늘은 재미있는 <b>색깔</b> 단어 <b>20개</b>를 함께 외워볼 거야!<br>
+        단어를 하나 외울 때마다 <b>나무</b>가 자라나.<br>
+        오늘 다 외우면 <b>숲</b>이 완성될 거야! 🌱→🌳
+      </div>
+      <div class="info-chips">
+        <div class="chip">📚 <span class="num">20</span>개 단어</div>
+        <div class="chip">🔊 <span class="num">5</span>번 듣기</div>
+        <div class="chip">⏱ 약 <span class="num">15</span>분</div>
+      </div>
+      <button class="btn-big" onclick="startLearning()">
+        모험 시작하기! 🚀
+      </button>
+    </div>
+  </section>
+
+  <!-- 학습 화면 -->
+  <section class="screen" id="learn">
+    <div class="top-bar">
+      <span class="tree-indicator" id="treeIcon">🌱</span>
+      <div class="progress-outer">
+        <div class="progress-inner" id="progressBar"></div>
+      </div>
+      <span class="progress-text" id="progressText">1/20</span>
+    </div>
+
+    <div class="card" id="card">
+      <!-- JS가 채워줌 -->
+    </div>
+
+    <div class="next-wrap">
+      <button class="next-btn" id="nextBtn" disabled onclick="nextWord()">
+        🔒 발음 5번 듣기 (<span id="clickCount">0</span>/5)
+      </button>
+      <div class="hint-text" id="hintText">🔊 파란 버튼을 <b>5번</b> 눌러봐!</div>
+    </div>
+  </section>
+
+  <!-- 완료 화면 -->
+  <section class="screen" id="complete">
+    <div class="celebrate">🎉</div>
+    <h2>대단해, 혜원아!</h2>
+    <div class="tree-grow">🌳🌲🌳🌲🌳</div>
+    <div style="font-family:'Gaegu',sans-serif;font-size:20px;color:#2d5a3d;margin:10px 20px;line-height:1.5">
+      오늘 20개 단어를 모두 외웠어!<br>
+      폴리가 아주 자랑스러워하고 있어! 🦜💚
+    </div>
+
+    <div class="stats-box">
+      <div style="font-size:20px;color:#1b4332;margin-bottom:10px;">📊 오늘의 학습</div>
+      <div class="stats-row">
+        <div class="stat">
+          <div class="big" id="finalWords">20</div>
+          <div class="lbl">외운 단어</div>
+        </div>
+        <div class="stat">
+          <div class="big" id="finalListens">100</div>
+          <div class="lbl">발음 듣기</div>
+        </div>
+        <div class="stat">
+          <div class="big" id="finalTime">0</div>
+          <div class="lbl">걸린 시간(분)</div>
+        </div>
+      </div>
+      <div style="margin-top:15px">
+        <div class="badge">🏆 첫날 완주</div>
+        <div class="badge">🌳 숲지기</div>
+        <div class="badge">🔊 발음 마스터</div>
+      </div>
+    </div>
+
+    <div class="stats-box" style="margin-top:10px">
+      <div style="font-size:18px;color:#1b4332;margin-bottom:10px;">⏰ 학습 시간 기록</div>
+      <div style="font-family:'Gaegu',sans-serif;font-size:17px;color:#2d5a3d;line-height:1.8">
+        <div>🟢 시작: <b id="showStart">-</b></div>
+        <div>🔴 종료: <b id="showEnd">-</b></div>
+        <div style="color:#e63946">💾 이 기록은 오후 퀴즈가 끝날 때 함께 저장돼요!</div>
+      </div>
+    </div>
+
+    <div class="quiz-preview">
+      <div class="title">📮 이제 오후 퀴즈를 풀어볼까?</div>
+      <div class="text">
+        오늘 외운 20개 단어로 퀴즈가 준비됐어요!<br>
+        같은 폴더의 <b>"혜원이_영단어_화요일_퀴즈.html"</b>을 열면 돼요. 📝
+      </div>
+    </div>
+
+    <div style="padding: 0 10px">
+      <button class="btn-big" onclick="reviewWords()" style="background:linear-gradient(135deg,#4ea8de,#1e6091);box-shadow:0 6px 0 #184e77;">
+        🔄 한 번 더 복습하기
+      </button>
+    </div>
+  </section>
+
+</div>
+
+<script>
+// ============ 단어 데이터 ============
+const WORDS = [
+  { word: "color", ipa: "/ˈkʌlər/", meaning: "색깔", emoji: "🎨",
+    example: "What is your favorite color?",
+    exampleKo: "가장 좋아하는 색깔이 뭐예요?",
+    fact: "영국에서는 'colour'라고 철자해요. 미국식 color랑 영국식 colour, 뜻은 같아요!" },
+  { word: "red", ipa: "/red/", meaning: "빨간색", emoji: "🔴",
+    example: "The apple is red.",
+    exampleKo: "사과는 빨간색이에요.",
+    fact: "빨간색은 전 세계 국기에서 가장 많이 쓰이는 색이에요! 용기와 열정을 뜻해요." },
+  { word: "blue", ipa: "/bluː/", meaning: "파란색", emoji: "🔵",
+    example: "The sky is blue.",
+    exampleKo: "하늘은 파란색이에요.",
+    fact: "blue는 '슬프다'는 뜻도 있어요! 'I feel blue' = 기분이 우울해요." },
+  { word: "yellow", ipa: "/ˈjeloʊ/", meaning: "노란색", emoji: "🟡",
+    example: "The sun is yellow.",
+    exampleKo: "해는 노란색이에요.",
+    fact: "노란색은 행복과 기쁨을 상징해요. 이모지 😊도 노란색이죠!" },
+  { word: "green", ipa: "/ɡriːn/", meaning: "초록색", emoji: "🟢",
+    example: "Trees are green.",
+    exampleKo: "나무는 초록색이에요.",
+    fact: "사람 눈은 초록색을 가장 잘 구별해요! 그래서 초록 칠판에 글씨가 잘 보여요." },
+  { word: "pink", ipa: "/pɪŋk/", meaning: "분홍색", emoji: "🌸",
+    example: "I love pink flowers.",
+    exampleKo: "나는 분홍색 꽃을 좋아해요.",
+    fact: "pink는 원래 꽃 이름이었어요! 그 꽃 색이 너무 예뻐서 색 이름이 됐답니다." },
+  { word: "purple", ipa: "/ˈpɜːrpəl/", meaning: "보라색", emoji: "🟣",
+    example: "Grapes are purple.",
+    exampleKo: "포도는 보라색이에요.",
+    fact: "옛날 보라색 염료는 엄청 비싸서 왕족만 입을 수 있었대요! 그래서 '왕의 색'이에요." },
+  { word: "brown", ipa: "/braʊn/", meaning: "갈색", emoji: "🟤",
+    example: "Chocolate is brown.",
+    exampleKo: "초콜릿은 갈색이에요.",
+    fact: "brown은 '곰(bear)'과 어원이 같아요! 옛날 사람들이 곰의 털 색깔로 지은 거예요." },
+  { word: "black", ipa: "/blæk/", meaning: "검은색", emoji: "⚫",
+    example: "My hair is black.",
+    exampleKo: "내 머리카락은 검은색이에요.",
+    fact: "검은색은 사실 '색이 없는 것'이 아니라 모든 색이 합쳐진 것이에요!" },
+  { word: "white", ipa: "/waɪt/", meaning: "흰색", emoji: "⚪",
+    example: "Snow is white.",
+    exampleKo: "눈은 흰색이에요.",
+    fact: "햇빛이 흰색으로 보이지만 사실 무지개의 7색이 다 들어있어요!" },
+  { word: "gray", ipa: "/ɡreɪ/", meaning: "회색", emoji: "🩶",
+    example: "The cloud is gray.",
+    exampleKo: "구름이 회색이에요.",
+    fact: "gray(미국)와 grey(영국)는 같은 색이에요! 철자만 달라요. 둘 다 맞아요." },
+  { word: "gold", ipa: "/ɡoʊld/", meaning: "금색, 금", emoji: "🥇",
+    example: "She has a gold medal.",
+    exampleKo: "그녀는 금메달을 갖고 있어요.",
+    fact: "금색은 성공과 승리를 상징해요. 올림픽 1등이 gold medal을 받는 이유!" },
+  { word: "rainbow", ipa: "/ˈreɪnboʊ/", meaning: "무지개", emoji: "🌈",
+    example: "I see a rainbow after the rain.",
+    exampleKo: "비 온 뒤 무지개가 보여요.",
+    fact: "무지개는 항상 7가지 색! 빨주노초파남보 (ROYGBIV in English)." },
+  { word: "light", ipa: "/laɪt/", meaning: "밝은, 빛", emoji: "💡",
+    example: "The room is light.",
+    exampleKo: "방이 밝아요.",
+    fact: "light는 '밝다'는 뜻도 있고 '가볍다'는 뜻도 있어요! 한 단어에 두 뜻." },
+  { word: "dark", ipa: "/dɑːrk/", meaning: "어두운", emoji: "🌑",
+    example: "The sky is dark at night.",
+    exampleKo: "밤에는 하늘이 어두워요.",
+    fact: "dark chocolate(다크 초콜릿)은 진한 색 초콜릿! 색이 진하다는 뜻으로도 써요." },
+  { word: "bright", ipa: "/braɪt/", meaning: "빛나는, 밝은", emoji: "✨",
+    example: "The stars are bright.",
+    exampleKo: "별들이 반짝반짝 빛나요.",
+    fact: "bright는 '밝다'와 '똑똑하다' 둘 다 돼요! 'She is bright' = 그녀는 똑똑해." },
+  { word: "paint", ipa: "/peɪnt/", meaning: "칠하다, 물감", emoji: "🖌️",
+    example: "I paint a picture.",
+    exampleKo: "나는 그림을 그려요 (색칠해요).",
+    fact: "paint는 동사(칠하다)도 명사(물감)도 돼요! 한 단어에 두 역할." },
+  { word: "draw", ipa: "/drɔː/", meaning: "그리다", emoji: "✏️",
+    example: "I draw a cat.",
+    exampleKo: "나는 고양이를 그려요.",
+    fact: "draw는 '그리다' 말고도 '잡아당기다'라는 뜻이 있어요! 옛날엔 연필선을 잡아당긴다는 뜻." },
+  { word: "crayon", ipa: "/ˈkreɪɒn/", meaning: "크레용", emoji: "🖍️",
+    example: "I have 24 crayons.",
+    exampleKo: "나는 크레용 24개가 있어요.",
+    fact: "크레용은 프랑스어 'craie(분필)'에서 왔어요. 원래 색깔 있는 분필이었대요!" },
+  { word: "beautiful", ipa: "/ˈbjuːtɪfəl/", meaning: "아름다운", emoji: "💖",
+    example: "The rainbow is beautiful.",
+    exampleKo: "무지개는 아름다워요.",
+    fact: "beautiful = beauty(아름다움) + ful(가득한) = 아름다움이 가득한! 단어 조립이에요." }
+];
+
+// ============ 상태 관리 ============
+let currentIdx = 0;
+let clickCount = 0;
+const CLICKS_NEEDED = 5;
+let totalListens = 0;
+let startTime = null;
+
+// ============ 화면 전환 ============
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function startLearning() {
+  startTime = Date.now();
+  currentIdx = 0;
+  totalListens = 0;
+  showScreen('learn');
+  renderCard();
+}
+
+// ============ 카드 렌더링 ============
+function renderCard() {
+  const w = WORDS[currentIdx];
+  clickCount = 0;
+
+  // 진행 바
+  const pct = ((currentIdx) / WORDS.length) * 100;
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressText').textContent = (currentIdx + 1) + '/' + WORDS.length;
+
+  // 나무 성장 아이콘
+  const stages = ['🌱','🌱','🌱','🌱','🌿','🌿','🌿','🌿','🌳','🌳','🌳','🌳','🌲','🌲','🌲','🌳','🌲','🌳','🌲','🌳'];
+  document.getElementById('treeIcon').textContent = stages[currentIdx] || '🌳';
+
+  // 카드 내용
+  document.getElementById('card').innerHTML = `
+    <div class="emoji-big">${w.emoji}</div>
+    <div class="word-main">${w.word}</div>
+    <div class="word-ipa">${w.ipa}</div>
+    <div class="word-meaning">${w.meaning}</div>
+
+    <div class="speak-area">
+      <div class="label">🔊 발음을 5번 들어보자!</div>
+      <button class="speak-btn" id="speakBtn" onclick="speakWord()">🔊</button>
+      <div class="speak-count" id="dots">
+        ${Array(CLICKS_NEEDED).fill(0).map(() => '<div class="dot"></div>').join('')}
+      </div>
+    </div>
+
+    <div class="example">
+      <div class="en">💬 ${w.example}</div>
+      <div class="ko">${w.exampleKo}</div>
+    </div>
+
+    <div class="fun-fact">
+      <div class="title">✨ 알고 있었니?</div>
+      <div class="text">${w.fact}</div>
+    </div>
+  `;
+
+  // 다음 버튼 초기화
+  const btn = document.getElementById('nextBtn');
+  btn.classList.remove('ready');
+  btn.disabled = true;
+  btn.innerHTML = `🔒 발음 5번 듣기 (<span id="clickCount">0</span>/5)`;
+  document.getElementById('hintText').innerHTML = '🔊 파란 버튼을 <b>5번</b> 눌러봐!';
+}
+
+// ============ 발음 ============
+function speakWord() {
+  const w = WORDS[currentIdx];
+
+  // 발음 재생 (Web Speech API)
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
+    const utter = new SpeechSynthesisUtterance(w.word);
+    utter.lang = 'en-US';
+    utter.rate = 0.85; // 천천히
+    utter.pitch = 1.1;
+    window.speechSynthesis.speak(utter);
+  }
+
+  // 클릭 카운트
+  if (clickCount < CLICKS_NEEDED) {
+    clickCount++;
+    totalListens++;
+
+    // 점 채우기
+    const dots = document.querySelectorAll('#dots .dot');
+    dots[clickCount - 1].classList.add('filled');
+
+    // 버튼 텍스트 업데이트
+    const cc = document.getElementById('clickCount');
+    if (cc) cc.textContent = clickCount;
+
+    // 5회 채움
+    if (clickCount >= CLICKS_NEEDED) {
+      document.getElementById('speakBtn').classList.add('done');
+      const btn = document.getElementById('nextBtn');
+      btn.classList.add('ready');
+      btn.disabled = false;
+      if (currentIdx >= WORDS.length - 1) {
+        btn.innerHTML = '🎉 완주하기!';
+      } else {
+        btn.innerHTML = `✨ 다음 단어로! (${currentIdx + 2}/${WORDS.length})`;
+      }
+      document.getElementById('hintText').innerHTML = '👏 잘했어! 이제 다음 단어로 넘어가자!';
+
+      // 진행 바 업데이트 (이 단어 완료)
+      const pct = ((currentIdx + 1) / WORDS.length) * 100;
+      document.getElementById('progressBar').style.width = pct + '%';
+    }
+  }
+}
+
+// ============ 다음 단어 ============
+function nextWord() {
+  if (currentIdx < WORDS.length - 1) {
+    currentIdx++;
+    renderCard();
+  } else {
+    finishLearning();
+  }
+}
+
+// ============ 완료 ============
+function finishLearning() {
+  const endTime = Date.now();
+  const elapsed = Math.max(1, Math.round((endTime - startTime) / 60000));
+  document.getElementById('finalWords').textContent = WORDS.length;
+  document.getElementById('finalListens').textContent = totalListens;
+  document.getElementById('finalTime').textContent = elapsed;
+
+  showScreen('complete');
+  launchConfetti();
+
+  // 시작/종료 시간 화면에 표시
+  const shortTime = (ts) => {
+    const d = new Date(ts);
+    const pad = (n) => n.toString().padStart(2, '0');
+    return `${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+  };
+  document.getElementById('showStart').textContent = shortTime(startTime);
+  document.getElementById('showEnd').textContent = shortTime(endTime);
+
+  // 🔑 학습 기록을 저장 (퀴즈 완료 후 Google Sheets로 함께 전송됨)
+  const fmt = (ts) => {
+    const d = new Date(ts);
+    const pad = (n) => n.toString().padStart(2, '0');
+    return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+  };
+  const today = new Date().toISOString().split('T')[0];
+  const record = {
+    date: today,
+    day: 'Tuesday',
+    dayIdx: 2,
+    theme: '색깔',
+    startTime: fmt(startTime),
+    endTime: fmt(endTime),
+    minutes: elapsed,
+    wordsLearned: WORDS.length,
+    listens: totalListens,
+    words: WORDS.map(w => w.word)
+  };
+
+  try {
+    // 오늘의 단어장 학습 기록을 저장 (퀴즈 페이지가 이걸 읽어서 함께 전송)
+    localStorage.setItem('hyewon_today_vocab_' + today, JSON.stringify(record));
+
+    // 누적 기록도 저장
+    const history = JSON.parse(localStorage.getItem('hyewon_vocab_history') || '[]');
+    history.push(record);
+    localStorage.setItem('hyewon_vocab_history', JSON.stringify(history));
+
+    console.log('[단어장] 학습 기록 저장됨:', record);
+  } catch(e) {
+    console.warn('기록 저장 실패:', e);
+  }
+}
+
+// ============ 복습 ============
+function reviewWords() {
+  startTime = Date.now();
+  currentIdx = 0;
+  totalListens = 0;
+  showScreen('learn');
+  renderCard();
+}
+
+// ============ 컨페티 ============
+function launchConfetti() {
+  const colors = ['#ff6b6b','#52b788','#ffd54f','#4ea8de','#ff6b9d','#ffa500'];
+  for (let i = 0; i < 50; i++) {
+    setTimeout(() => {
+      const c = document.createElement('div');
+      c.className = 'confetti';
+      c.style.left = Math.random() * 100 + 'vw';
+      c.style.background = colors[Math.floor(Math.random() * colors.length)];
+      c.style.animationDuration = (2 + Math.random() * 2) + 's';
+      c.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+      document.body.appendChild(c);
+      setTimeout(() => c.remove(), 4000);
+    }, i * 50);
+  }
+}
+
+// ============ 음성 워밍업 (모바일 대응) ============
+window.addEventListener('click', function warmup() {
+  if ('speechSynthesis' in window) {
+    const s = new SpeechSynthesisUtterance('');
+    window.speechSynthesis.speak(s);
+  }
+  window.removeEventListener('click', warmup);
+}, { once: true });
+
+</script>
+</body>
+</html>
