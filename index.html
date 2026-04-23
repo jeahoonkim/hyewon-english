@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌟 혜원이 영단어 학습소 🌟</title>
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Gaegu:wght@400;700&family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Jua', 'Gaegu', sans-serif;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 50%, #ff9a9e 100%);
+    min-height: 100vh;
+    color: #3d2817;
+    padding: 20px 15px;
+    background-attachment: fixed;
+  }
+  .container { max-width: 640px; margin: 0 auto; }
+  header {
+    text-align: center;
+    padding: 25px 15px 20px;
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 24px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+  }
+  header h1 {
+    font-size: 2.1em;
+    color: #e83e8c;
+    text-shadow: 2px 2px 0 #fff;
+    margin-bottom: 6px;
+  }
+  header .subtitle {
+    font-family: 'Gaegu', sans-serif;
+    font-size: 1.15em;
+    color: #6d4c41;
+  }
+  header .date-badge {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 16px;
+    background: #ff7043;
+    color: #fff;
+    border-radius: 50px;
+    font-size: 0.95em;
+    box-shadow: 0 3px 8px rgba(255,112,67,0.4);
+  }
+
+  /* 오늘의 학습 (하이라이트) */
+  .today-section {
+    background: linear-gradient(135deg, #fff176 0%, #ffb74d 100%);
+    border-radius: 22px;
+    padding: 22px 20px;
+    margin-bottom: 22px;
+    box-shadow: 0 10px 24px rgba(255,152,0,0.25);
+    position: relative;
+    overflow: hidden;
+  }
+  .today-section::before {
+    content: "✨";
+    position: absolute;
+    top: -10px; right: -10px;
+    font-size: 7em;
+    opacity: 0.15;
+    transform: rotate(20deg);
+  }
+  .today-section h2 {
+    font-size: 1.5em;
+    color: #bf360c;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .today-section .theme {
+    font-family: 'Gaegu', sans-serif;
+    font-size: 1.1em;
+    color: #5d4037;
+    margin-bottom: 14px;
+  }
+  .today-section .no-today {
+    font-family: 'Gaegu', sans-serif;
+    color: #8d6e63;
+    padding: 10px 0;
+    font-size: 1.05em;
+  }
+
+  /* 링크 카드 */
+  .link-card {
+    display: block;
+    background: rgba(255,255,255,0.95);
+    border-radius: 16px;
+    padding: 16px 18px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #3d2817;
+    transition: transform 0.15s, box-shadow 0.15s;
+    border: 2px solid transparent;
+    position: relative;
+    z-index: 1;
+  }
+  .link-card:active { transform: scale(0.98); }
+  .link-card:hover { transform: translateY(-2px); box-shadow: 0 6px 14px rgba(0,0,0,0.1); }
+  .link-card .label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.15em;
+    font-weight: bold;
+  }
+  .link-card .desc {
+    font-family: 'Gaegu', sans-serif;
+    color: #757575;
+    font-size: 0.95em;
+    margin-top: 4px;
+    margin-left: 32px;
+  }
+  .link-card.morning { border-left: 5px solid #ffa726; }
+  .link-card.afternoon { border-left: 5px solid #e91e63; }
+
+  /* 주간 커리큘럼 */
+  .section {
+    background: rgba(255, 255, 255, 0.65);
+    border-radius: 20px;
+    padding: 22px 20px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(6px);
+  }
+  .section h2 {
+    color: #6a1b9a;
+    font-size: 1.3em;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .week-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+  }
+  .day-cell {
+    background: #fff;
+    border-radius: 12px;
+    padding: 10px 4px;
+    text-align: center;
+    font-size: 0.75em;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border: 2px solid #f0e8ff;
+  }
+  .day-cell.today {
+    background: linear-gradient(135deg, #ff7043, #ff9a9e);
+    color: #fff;
+    border-color: #ff7043;
+    transform: scale(1.08);
+    box-shadow: 0 4px 10px rgba(255,112,67,0.4);
+  }
+  .day-cell.past { background: #e8f5e9; border-color: #a5d6a7; }
+  .day-cell.past::after { content: "✓"; display:block; color:#2e7d32; font-size:1.1em; margin-top:2px; }
+  .day-cell .day-name { font-family: 'Jua'; font-size: 1.2em; }
+  .day-cell .day-date { font-family: 'Gaegu'; font-size: 0.9em; margin-top: 2px; }
+
+  /* 전체 기록 */
+  .all-days { display: grid; gap: 10px; }
+  .day-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,255,255,0.85);
+    padding: 14px 16px;
+    border-radius: 14px;
+    border-left: 4px solid #ce93d8;
+  }
+  .day-row .info { flex: 1; }
+  .day-row .date { font-size: 0.9em; color: #888; font-family: 'Gaegu'; }
+  .day-row .theme { font-size: 1.05em; font-weight: bold; color: #4a148c; margin-top: 2px; }
+  .day-row .links { display: flex; gap: 6px; }
+  .day-row .pill {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    text-decoration: none;
+    font-family: 'Fredoka', 'Jua';
+  }
+  .day-row .pill.vocab { background: #ffe0b2; color: #e65100; }
+  .day-row .pill.quiz { background: #f8bbd0; color: #ad1457; }
+
+  /* 푸터 */
+  footer {
+    text-align: center;
+    padding: 20px 10px;
+    font-family: 'Gaegu';
+    color: #5d4037;
+    font-size: 0.95em;
+    line-height: 1.8;
+  }
+  footer .heart {
+    display: inline-block;
+    animation: beat 1.3s ease-in-out infinite;
+  }
+  @keyframes beat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+  }
+
+  @media (max-width: 480px) {
+    header h1 { font-size: 1.7em; }
+    .today-section h2 { font-size: 1.3em; }
+    .week-grid { gap: 4px; }
+    .day-cell { padding: 8px 2px; font-size: 0.7em; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- 헤더 -->
+  <header>
+    <h1>🌟 혜원이 영단어 학습소 🌟</h1>
+    <div class="subtitle">매일매일 즐겁게 영어 단어를 배워봐요!</div>
+    <div class="date-badge" id="todayBadge">오늘 날짜 로딩중...</div>
+  </header>
+
+  <!-- 오늘의 학습 -->
+  <div class="today-section">
+    <h2>📖 오늘의 학습</h2>
+    <div class="theme" id="todayTheme">오늘 날짜에 맞는 학습을 준비하고 있어요...</div>
+    <div id="todayLinks"></div>
+  </div>
+
+  <!-- 주간 커리큘럼 -->
+  <div class="section">
+    <h2>🗓️ 이번 주 커리큘럼</h2>
+    <div class="week-grid" id="weekGrid"></div>
+  </div>
+
+  <!-- 전체 학습 기록 -->
+  <div class="section">
+    <h2>📚 전체 학습 기록</h2>
+    <div class="all-days" id="allDays"></div>
+  </div>
+
+  <!-- 푸터 -->
+  <footer>
+    <p>혜원이의 영어 실력이 쑥쑥 자라나고 있어요 <span class="heart">💕</span></p>
+    <p>매일 꾸준히 하면 분명 잘 할 수 있어요!</p>
+  </footer>
+
+</div>
+
+<script>
+// ===== 학습 데이터 =====
+// 새로운 날짜 추가할 때 이 배열에 새 항목 넣으면 자동으로 홈페이지에 반영돼요
+const SCHEDULE = [
+  {
+    date: "2026-04-21",
+    dayKo: "화",
+    dayEn: "Tuesday",
+    theme: "동물과 자연 2탄 🌊",
+    themeShort: "동물과 자연 2",
+    folder: "20260421",
+    vocab: "혜원이_영단어_화요일_동물과자연2.html",
+    quiz: "혜원이_영단어_화요일_퀴즈.html",
+    color: "#4a90e2"
+  },
+  {
+    date: "2026-04-22",
+    dayKo: "수",
+    dayEn: "Wednesday",
+    theme: "학교 🏫",
+    themeShort: "학교",
+    folder: "20260422",
+    vocab: "혜원이_영단어_수요일_학교.html",
+    quiz: "혜원이_영단어_수요일_퀴즈.html",
+    color: "#8fbc8f"
+  },
+  {
+    date: "2026-04-27",
+    dayKo: "월",
+    dayEn: "Monday",
+    theme: "동물과 자연 1탄 🌳",
+    themeShort: "동물과 자연 1",
+    folder: "20260427",
+    vocab: "혜원이_영단어_월요일_동물과자연.html",
+    quiz: "혜원이_영단어_월요일_퀴즈.html",
+    color: "#76c893"
+  }
+];
+
+// ===== 오늘 날짜 구하기 =====
+const today = new Date();
+const yyyy = today.getFullYear();
+const mm = String(today.getMonth() + 1).padStart(2, '0');
+const dd = String(today.getDate()).padStart(2, '0');
+const todayStr = `${yyyy}-${mm}-${dd}`;
+const dayNames = ['일','월','화','수','목','금','토'];
+const todayKoDay = dayNames[today.getDay()];
+
+// ===== 오늘 날짜 배지 =====
+document.getElementById('todayBadge').textContent =
+  `📅 ${yyyy}년 ${parseInt(mm)}월 ${parseInt(dd)}일 (${todayKoDay}요일)`;
+
+// ===== 오늘의 학습 섹션 =====
+const todayItem = SCHEDULE.find(s => s.date === todayStr);
+const todayThemeEl = document.getElementById('todayTheme');
+const todayLinksEl = document.getElementById('todayLinks');
+
+if (todayItem) {
+  todayThemeEl.textContent = `📚 오늘의 주제: ${todayItem.theme}`;
+  todayLinksEl.innerHTML = `
+    <a class="link-card morning" href="${todayItem.folder}/${encodeURIComponent(todayItem.vocab)}">
+      <div class="label">🌅 아침 단어장</div>
+      <div class="desc">새로운 20개 단어를 배워요</div>
+    </a>
+    <a class="link-card afternoon" href="${todayItem.folder}/${encodeURIComponent(todayItem.quiz)}">
+      <div class="label">🌆 오후 퀴즈</div>
+      <div class="desc">배운 단어로 문제를 풀어봐요</div>
+    </a>
+  `;
+} else {
+  todayThemeEl.innerHTML = `<div class="no-today">😊 오늘은 정규 학습일이 아니에요!<br>아래 '전체 학습 기록'에서 원하는 날을 골라 복습해보세요.</div>`;
+}
+
+// ===== 주간 커리큘럼 그리드 =====
+// 이번 주 월~일 만들기
+function getWeekStart(d) {
+  const date = new Date(d);
+  const day = date.getDay();
+  const diff = date.getDate() - day + (day === 0 ? -6 : 1); // 월요일 시작
+  date.setDate(diff);
+  return date;
+}
+const weekStart = getWeekStart(today);
+const weekGrid = document.getElementById('weekGrid');
+const weekLabels = ['월','화','수','목','금','토','일'];
+for (let i = 0; i < 7; i++) {
+  const d = new Date(weekStart);
+  d.setDate(weekStart.getDate() + i);
+  const ds = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+  const item = SCHEDULE.find(s => s.date === ds);
+  const isToday = ds === todayStr;
+  const isPast = d < today && !isToday;
+  let cls = 'day-cell';
+  if (isToday) cls += ' today';
+  else if (isPast && item) cls += ' past';
+  weekGrid.innerHTML += `
+    <div class="${cls}">
+      <div class="day-name">${weekLabels[i]}</div>
+      <div class="day-date">${d.getMonth()+1}/${d.getDate()}</div>
+    </div>
+  `;
+}
+
+// ===== 전체 학습 기록 =====
+const allDaysEl = document.getElementById('allDays');
+// 날짜 내림차순 정렬
+const sorted = [...SCHEDULE].sort((a, b) => b.date.localeCompare(a.date));
+sorted.forEach(item => {
+  const isToday = item.date === todayStr;
+  allDaysEl.innerHTML += `
+    <div class="day-row" style="${isToday ? 'border-left-color: #ff7043;' : ''}">
+      <div class="info">
+        <div class="date">${item.date} (${item.dayKo}) ${isToday ? '⭐ 오늘' : ''}</div>
+        <div class="theme">${item.theme}</div>
+      </div>
+      <div class="links">
+        <a class="pill vocab" href="${item.folder}/${encodeURIComponent(item.vocab)}">📚 단어장</a>
+        <a class="pill quiz" href="${item.folder}/${encodeURIComponent(item.quiz)}">📝 퀴즈</a>
+      </div>
+    </div>
+  `;
+});
+</script>
+</body>
+</html>
