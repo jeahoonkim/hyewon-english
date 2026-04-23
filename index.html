@@ -382,6 +382,18 @@
     right: 2px;
     font-size: 10px;
   }
+  .cal-day.upcoming {
+    background: var(--yellow);
+    color: #92400e;
+    border: 1.5px dashed #f59e0b;
+  }
+  .cal-day.upcoming::before {
+    content: "📅";
+    position: absolute;
+    top: -2px;
+    right: 2px;
+    font-size: 9px;
+  }
   .cal-day.today {
     background: linear-gradient(135deg, var(--pink-deep), var(--lavender));
     color: white;
@@ -622,7 +634,7 @@
   <!-- 학습 달력 -->
   <div class="sec-head">
     <h3>🗓️ 학습 달력</h3>
-    <span class="hint">🐾 공부한 날</span>
+    <span class="hint">🐾 공부한 날 · 📅 예정</span>
   </div>
   <div class="cal-card">
     <div class="cal-month" id="calMonth">—</div>
@@ -801,9 +813,11 @@ for (let d = 1; d <= lastDate; d++) {
   const ds = `${calYear}-${String(calMonth+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
   const learned = SCHEDULE.find(s => s.date === ds);
   const isToday = ds === todayStr;
+  const isPast = ds < todayStr;
   let cls = 'cal-day';
   if (isToday) cls += ' today';
-  else if (learned) cls += ' learned';
+  else if (learned && isPast) cls += ' learned';       // 과거 + 스케줄 있음 → 학습 완료 (민트)
+  else if (learned && !isPast) cls += ' upcoming';     // 미래 + 스케줄 있음 → 학습 예정 (노랑 점선)
   calGrid.innerHTML += `<div class="${cls}">${d}</div>`;
 }
 
