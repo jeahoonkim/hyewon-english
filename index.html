@@ -33,6 +33,59 @@
     background: linear-gradient(180deg, #ffe4ed 0%, #ede0ff 50%, #dff7ec 100%);
     background-attachment: fixed;
     min-height: 100vh;
+    transition: background 1s ease;
+  }
+
+  /* ===== 🌸 봄 테마 (3~5월) - 기본 ===== */
+  body.season-spring {
+    background: linear-gradient(180deg, #ffe4ed 0%, #ede0ff 50%, #dff7ec 100%);
+  }
+
+  /* ===== ☀️ 여름 테마 (6~8월) ===== */
+  body.season-summer {
+    background: linear-gradient(180deg, #fff9c4 0%, #b3e5fc 45%, #80deea 100%);
+  }
+  body.season-summer .logo-box { border-color: #00acc1; }
+  body.season-summer .date-chip { border-color: #fbc02d; }
+  body.season-summer .greeting-card { border-color: #4fc3f7; }
+  body.season-summer .greeting-text h1 span { color: #00838f; }
+  body.season-summer .speech-bubble {
+    background: #fff59d;
+    border-color: #f9a825;
+  }
+
+  /* ===== 🍂 가을 테마 (9~11월) ===== */
+  body.season-autumn {
+    background: linear-gradient(180deg, #fff3e0 0%, #ffcc80 45%, #d7a577 100%);
+  }
+  body.season-autumn .logo-box { border-color: #e65100; }
+  body.season-autumn .date-chip { border-color: #bf360c; }
+  body.season-autumn .greeting-card { border-color: #ff8a65; }
+  body.season-autumn .greeting-text h1 span { color: #bf360c; }
+  body.season-autumn .speech-bubble {
+    background: #fff3e0;
+    border-color: #ff8a65;
+  }
+
+  /* ===== ❄️ 겨울 테마 (12~2월) ===== */
+  body.season-winter {
+    background: linear-gradient(180deg, #e1f5fe 0%, #cfd8dc 45%, #d1c4e9 100%);
+  }
+  body.season-winter .logo-box { border-color: #5e35b1; }
+  body.season-winter .date-chip { border-color: #0277bd; }
+  body.season-winter .greeting-card { border-color: #90caf9; }
+  body.season-winter .greeting-text h1 span { color: #5e35b1; }
+  body.season-winter .speech-bubble {
+    background: #ede7f6;
+    border-color: #b39ddb;
+  }
+  body.season-winter .bg-decor {
+    animation: snowfall 6s linear infinite;
+  }
+  @keyframes snowfall {
+    0% { transform: translateY(-20px); opacity: 0.5; }
+    50% { transform: translateY(50vh) rotate(180deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0.3; }
     color: var(--text);
     padding: 20px 16px 60px;
     overflow-x: hidden;
@@ -744,6 +797,65 @@ const today = new Date();
 const yyyy = today.getFullYear();
 const mm = String(today.getMonth() + 1).padStart(2, '0');
 const dd = String(today.getDate()).padStart(2, '0');
+
+// ========== 🎨 계절 자동 감지 & 테마 적용 ==========
+const monthNum = today.getMonth() + 1; // 1~12
+let season, seasonData;
+if (monthNum >= 3 && monthNum <= 5) {
+  season = 'spring';
+  seasonData = {
+    decorations: ['🌸', '🦋', '🌷', '🌈', '✨', '🌿'],
+    greeting: '오늘도 <span>반짝반짝</span> 🌟<br>영어 놀이하자!',
+    subtitle: '봄바람과 함께 20개 단어가 기다려요~',
+    speech: '봄 인사! 🌸',
+    emoji: '🌸'
+  };
+} else if (monthNum >= 6 && monthNum <= 8) {
+  season = 'summer';
+  seasonData = {
+    decorations: ['☀️', '🌊', '🍉', '🌻', '🏖️', '🐚'],
+    greeting: '시원한 <span>여름 바다</span> ☀️<br>영어로 뜨겁게!',
+    subtitle: '햇살 가득한 20개 단어 모험~',
+    speech: '여름 안녕! ☀️',
+    emoji: '☀️'
+  };
+} else if (monthNum >= 9 && monthNum <= 11) {
+  season = 'autumn';
+  seasonData = {
+    decorations: ['🍂', '🍁', '🌰', '🎃', '🌾', '🍄'],
+    greeting: '낙엽처럼 쌓이는 <span>단어들</span> 🍂<br>차곡차곡 공부하자!',
+    subtitle: '단풍 구경하며 20개 단어 모험~',
+    speech: '가을 인사! 🍁',
+    emoji: '🍁'
+  };
+} else {
+  season = 'winter';
+  seasonData = {
+    decorations: ['❄️', '⛄', '🎄', '🌨️', '🦌', '⭐'],
+    greeting: '포근한 <span>겨울밤</span> ❄️<br>따뜻하게 공부하자!',
+    subtitle: '눈송이 내리는 20개 단어 시간~',
+    speech: '겨울 인사! ❄️',
+    emoji: '❄️'
+  };
+}
+
+// Body에 계절 클래스 적용
+document.body.classList.add('season-' + season);
+
+// 배경 장식 이모지 계절별로 교체
+document.querySelectorAll('.bg-decor').forEach((el, idx) => {
+  el.textContent = seasonData.decorations[idx % seasonData.decorations.length];
+});
+
+// 인사말·부제·말풍선 교체
+setTimeout(() => {
+  const greetingH1 = document.querySelector('.greeting-text h1');
+  const greetingP = document.querySelector('.greeting-text p');
+  const speechBubble = document.querySelector('.speech-bubble');
+  if (greetingH1) greetingH1.innerHTML = seasonData.greeting;
+  if (greetingP) greetingP.textContent = seasonData.subtitle;
+  if (speechBubble) speechBubble.textContent = seasonData.speech;
+}, 0);
 const todayStr = `${yyyy}-${mm}-${dd}`;
 const koDayNames = ['일','월','화','수','목','금','토'];
 document.getElementById('dateChip').textContent = `${parseInt(mm)}월 ${parseInt(dd)}일 ${koDayNames[today.getDay()]}요일`;
