@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe4ed"/>
+      <stop offset="50%" stop-color="#ede0ff"/>
+      <stop offset="100%" stop-color="#dff7ec"/>
+    </linearGradient>
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.85"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 배경 -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- 배경 장식 -->
+  <text x="100" y="120" font-size="60" opacity="0.4">🌸</text>
+  <text x="1050" y="100" font-size="50" opacity="0.4">🦋</text>
+  <text x="80" y="540" font-size="55" opacity="0.4">🌷</text>
+  <text x="1080" y="560" font-size="60" opacity="0.4">✨</text>
+  <text x="950" y="280" font-size="40" opacity="0.3">🌈</text>
+  <text x="150" y="330" font-size="45" opacity="0.3">🌿</text>
+
+  <!-- 메인 카드 -->
+  <rect x="100" y="120" width="1000" height="390" rx="40" fill="url(#cardBg)" stroke="#ff8fb5" stroke-width="4"/>
+
+  <!-- 큰 고양이 (메인 마스코트) -->
+  <g transform="translate(220, 240)">
+    <!-- 꼬리 -->
+    <path d="M 130 80 Q 180 30 160 -10" stroke="#ffb6c1" stroke-width="14" fill="none" stroke-linecap="round"/>
+    <!-- 몸통 -->
+    <ellipse cx="80" cy="100" rx="55" ry="45" fill="#ffc0d4"/>
+    <!-- 머리 -->
+    <circle cx="80" cy="50" r="42" fill="#ffc0d4"/>
+    <!-- 귀 -->
+    <path d="M 50 30 L 42 5 L 65 25 Z" fill="#ffc0d4"/>
+    <path d="M 110 30 L 118 5 L 95 25 Z" fill="#ffc0d4"/>
+    <path d="M 53 27 L 50 18 L 60 24 Z" fill="#ff9eb8"/>
+    <path d="M 107 27 L 110 18 L 100 24 Z" fill="#ff9eb8"/>
+    <!-- 볼 -->
+    <circle cx="60" cy="60" r="7" fill="#ff8fa3" opacity="0.6"/>
+    <circle cx="100" cy="60" r="7" fill="#ff8fa3" opacity="0.6"/>
+    <!-- 눈 -->
+    <path d="M 65 50 Q 70 45 75 50" stroke="#4a3a5a" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M 85 50 Q 90 45 95 50" stroke="#4a3a5a" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- 입 -->
+    <path d="M 75 65 Q 80 70 85 65" stroke="#4a3a5a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- 메인 텍스트 -->
+  <text x="450" y="240" font-family="'Jua', sans-serif" font-size="72" font-weight="bold" fill="#5d4c6d">
+    혜원이의
+  </text>
+  <text x="450" y="320" font-family="'Jua', sans-serif" font-size="86" font-weight="bold" fill="#ff8fb5">
+    영어 놀이터 🌸
+  </text>
+  <text x="450" y="380" font-family="'Gaegu', cursive" font-size="36" fill="#9a8bad">
+    매일 20개 단어 + 퀴즈로 쑥쑥!
+  </text>
+
+  <!-- 학습 일정 라벨 -->
+  <g transform="translate(450, 415)">
+    <rect x="0" y="0" width="160" height="50" rx="25" fill="#fff3bf" stroke="#ffd54f" stroke-width="2"/>
+    <text x="80" y="33" font-family="'Jua', sans-serif" font-size="22" fill="#5d4c6d" text-anchor="middle">📚 단어장</text>
+  </g>
+  <g transform="translate(625, 415)">
+    <rect x="0" y="0" width="140" height="50" rx="25" fill="#fce7f3" stroke="#f8bbd0" stroke-width="2"/>
+    <text x="70" y="33" font-family="'Jua', sans-serif" font-size="22" fill="#5d4c6d" text-anchor="middle">📝 퀴즈</text>
+  </g>
+  <g transform="translate(780, 415)">
+    <rect x="0" y="0" width="160" height="50" rx="25" fill="#e0f2f1" stroke="#80cbc4" stroke-width="2"/>
+    <text x="80" y="33" font-family="'Jua', sans-serif" font-size="22" fill="#5d4c6d" text-anchor="middle">🏆 종합시험</text>
+  </g>
+
+  <!-- 하단 URL -->
+  <text x="600" y="585" font-family="'Fredoka', sans-serif" font-size="28" fill="#7a6f8a" text-anchor="middle">
+    hyewon-english.pages.dev
+  </text>
+</svg>

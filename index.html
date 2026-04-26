@@ -7,6 +7,21 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jua&family=Gaegu:wght@400;700&family=Fredoka:wght@400;500;600;700&family=Single+Day&display=swap" rel="stylesheet">
+
+<!-- 🐱 카톡/페이스북/트위터 미리보기 (Open Graph) -->
+<meta property="og:title" content="🐱 혜원이의 영어 놀이터 🌸">
+<meta property="og:description" content="매일매일 20개 단어와 신나는 퀴즈로 영어 실력 쑥쑥! 🎀">
+<meta property="og:url" content="https://hyewon-english.pages.dev/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://hyewon-english.pages.dev/og-image.svg">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="혜원이의 영어 놀이터">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="🐱 혜원이의 영어 놀이터 🌸">
+<meta name="twitter:description" content="매일 20개 단어 + 퀴즈! 🎀">
+<meta name="theme-color" content="#ff8fb5">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='80' font-size='80'%3E🐱%3C/text%3E%3C/svg%3E">
+
 <style>
   :root {
     --pink: #ffc0d4;
@@ -428,24 +443,44 @@
     background: var(--mint);
     color: var(--text);
   }
-  .cal-day.learned::before {
-    content: "🐾";
-    position: absolute;
-    top: -2px;
-    right: 2px;
-    font-size: 10px;
-  }
   .cal-day.upcoming {
     background: var(--yellow);
     color: #92400e;
     border: 1.5px dashed #f59e0b;
   }
-  .cal-day.upcoming::before {
-    content: "📅";
-    position: absolute;
-    top: -2px;
-    right: 2px;
-    font-size: 9px;
+  /* 학습 자료 있는 날짜는 클릭 가능 */
+  a.cal-day {
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+    overflow: hidden;
+  }
+  a.cal-day:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 4px 12px rgba(150,110,140,0.2);
+    z-index: 5;
+  }
+  .cal-day .cal-num {
+    font-size: 0.85em;
+    line-height: 1;
+  }
+  .cal-day .cal-icon {
+    font-size: 1em;
+    line-height: 1;
+    margin-top: 2px;
+  }
+  .cal-day.today .cal-icon { font-size: 0.9em; }
+  .cal-day.exam {
+    background: linear-gradient(135deg, #fff3bf, #ffe082);
+    border: 2px solid #ffc107;
+    color: #5d4c6d;
+    font-weight: 700;
+  }
+  .cal-day.review {
+    background: linear-gradient(135deg, #e0f2f1, #c5e1a5);
+    border: 1.5px solid #81c784;
+    color: #2e7d32;
+    font-weight: 700;
   }
   .cal-day.today {
     background: linear-gradient(135deg, var(--pink-deep), var(--lavender));
@@ -687,7 +722,7 @@
   <!-- 학습 달력 -->
   <div class="sec-head">
     <h3>🗓️ 학습 달력</h3>
-    <span class="hint">🐾 공부한 날 · 📅 예정</span>
+    <span class="hint">📚 단어장 · 🏆 시험 · 🌻 복습</span>
   </div>
   <div class="cal-card">
     <div class="cal-month" id="calMonth">—</div>
@@ -888,9 +923,20 @@ const todayStr = `${yyyy}-${mm}-${dd}`;
 const koDayNames = ['일','월','화','수','목','금','토'];
 document.getElementById('dateChip').textContent = `${parseInt(mm)}월 ${parseInt(dd)}일 ${koDayNames[today.getDay()]}요일`;
 
-// ========== 통계 ==========
+// ========== 통계 (정확한 계산) ==========
+// 규칙:
+//   1) 종합시험·복습은 '복습'이라 새 단어 학습이 아님 → 제외
+//   2) 오늘은 아직 학습 시작 전일 수 있음 → 어제까지만 카운트
+//   3) 결과: 평일 단어장 (월~금) × 20단어
 const WORDS_PER_DAY = 20;
-const pastItems = SCHEDULE.filter(s => s.date <= todayStr);
+const pastItems = SCHEDULE.filter(s => {
+  // 종합시험·복습 제외 (이미 배운 단어 다시 보는 것이라 누적 X)
+  if (s.theme && (s.theme.indexOf('종합시험') !== -1 || s.theme.indexOf('복습') !== -1)) {
+    return false;
+  }
+  // 오늘 미만 (어제까지) — 오늘은 아직 안 했을 수 있음
+  return s.date < todayStr;
+});
 document.getElementById('statWords').innerHTML = `${pastItems.length * WORDS_PER_DAY}<span class="unit">개</span>`;
 document.getElementById('statDays').innerHTML = `${pastItems.length}<span class="unit">일</span>`;
 
@@ -955,10 +1001,43 @@ for (let d = 1; d <= lastDate; d++) {
   const isToday = ds === todayStr;
   const isPast = ds < todayStr;
   let cls = 'cal-day';
+  let icon = '';
+
+  if (learned) {
+    // 학습 종류별 아이콘
+    if (learned.theme && learned.theme.indexOf('종합시험') !== -1) {
+      icon = '🏆';
+    } else if (learned.theme && learned.theme.indexOf('복습') !== -1) {
+      icon = '🌻';
+    } else {
+      icon = '📚'; // 평일 단어장
+    }
+  }
+
   if (isToday) cls += ' today';
-  else if (learned && isPast) cls += ' learned';       // 과거 + 스케줄 있음 → 학습 완료 (민트)
-  else if (learned && !isPast) cls += ' upcoming';     // 미래 + 스케줄 있음 → 학습 예정 (노랑 점선)
-  calGrid.innerHTML += `<div class="${cls}">${d}</div>`;
+  else if (learned && isPast) cls += ' learned';
+  else if (learned && !isPast) cls += ' upcoming';
+
+  // 종합시험/복습은 별도 스타일 (강조)
+  if (learned && learned.theme && learned.theme.indexOf('종합시험') !== -1 && !isToday) {
+    cls += ' exam';
+  } else if (learned && learned.theme && learned.theme.indexOf('복습') !== -1 && !isToday) {
+    cls += ' review';
+  }
+
+  if (learned) {
+    // 클릭 가능한 a 태그 (해당 날짜 학습 페이지로 이동)
+    const targetFile = learned.vocab; // 단어장 우선
+    const linkUrl = `${learned.folder}/${encodeURIComponent(targetFile)}`;
+    const tip = `${learned.theme} ${learned.emoji}`;
+    calGrid.innerHTML += `
+      <a href="${linkUrl}" class="${cls}" title="${tip}">
+        <span class="cal-num">${d}</span>
+        <span class="cal-icon">${icon}</span>
+      </a>`;
+  } else {
+    calGrid.innerHTML += `<div class="${cls}">${d}</div>`;
+  }
 }
 
 // ========== 지난 학습 ==========
