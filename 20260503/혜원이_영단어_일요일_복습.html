@@ -1273,10 +1273,51 @@ function updateCombo(isCorrect) {
     if (comboCount >= 3) showComboBadge();
     // 마일스톤 폭죽
     if ([5, 10, 15, 20].indexOf(comboCount) !== -1) celebrateCombo();
+
+    // 🎁 포인트 적립: 정답 = 10P + 콤보 카운트
+    const earned = 10 + comboCount;
+    addPoints(earned);
+    showQuizPoints(earned);
   } else {
     comboCount = 0;
     hideComboBadge();
   }
+}
+
+// ============ 🎁 포인트 시스템 ============
+function addPoints(amount) {
+  try {
+    const cur = parseInt(localStorage.getItem('hyewon_points') || '0');
+    const newTotal = cur + amount;
+    localStorage.setItem('hyewon_points', String(newTotal));
+    return newTotal;
+  } catch(e) {
+    return 0;
+  }
+}
+
+function showQuizPoints(amount) {
+  // 화면 우상단 콤보 배지 아래에 잠깐 +N 표시
+  const div = document.createElement('div');
+  div.textContent = '+' + amount + 'P';
+  div.style.cssText = `
+    position: fixed; top: 60px; right: 20px;
+    background: linear-gradient(135deg, #ffd700, #ffa502);
+    color: white; padding: 6px 14px; border-radius: 20px;
+    font-family: 'Jua', sans-serif; font-size: 1em;
+    box-shadow: 0 4px 12px rgba(255, 165, 0, 0.4);
+    z-index: 1500; pointer-events: none;
+    animation: ptFloat 1.2s ease-out forwards;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.15);
+  `;
+  if (!document.getElementById('ptFloatStyle')) {
+    const s = document.createElement('style');
+    s.id = 'ptFloatStyle';
+    s.textContent = '@keyframes ptFloat { 0% { transform: scale(0) translateY(0); opacity: 0; } 30% { transform: scale(1.2) translateY(-10px); opacity: 1; } 100% { transform: scale(1) translateY(-50px); opacity: 0; } }';
+    document.head.appendChild(s);
+  }
+  document.body.appendChild(div);
+  setTimeout(() => div.remove(), 1200);
 }
 
 function showComboBadge() {

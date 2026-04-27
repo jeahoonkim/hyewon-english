@@ -283,6 +283,132 @@
     margin-top: 4px;
   }
 
+  /* ===== 💎 포인트 카드 ===== */
+  .points-card {
+    width: 100%;
+    background: linear-gradient(135deg, #ffd700 0%, #ffa502 50%, #ff6b6b 100%);
+    border: 3px solid white;
+    border-radius: 28px;
+    padding: 18px 22px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    box-shadow: 0 12px 28px rgba(255, 165, 0, 0.35);
+    color: white;
+    font-family: 'Jua', sans-serif;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .points-card:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 16px 36px rgba(255, 165, 0, 0.5);
+  }
+  .points-card:active { transform: translateY(0) scale(0.98); }
+  .points-card::before {
+    content: "✨";
+    position: absolute;
+    top: 10px; right: 14px;
+    font-size: 1.2em;
+    animation: twinkle 2s ease-in-out infinite;
+  }
+  .points-icon {
+    font-size: 3em;
+    line-height: 1;
+    flex-shrink: 0;
+    filter: drop-shadow(0 4px 8px rgba(255,200,0,0.4));
+    animation: gemSpin 4s ease-in-out infinite;
+  }
+  @keyframes gemSpin {
+    0%, 100% { transform: rotate(-8deg); }
+    50% { transform: rotate(8deg); }
+  }
+  .points-info { flex: 1; }
+  .points-label {
+    font-size: 0.9em;
+    opacity: 0.95;
+    margin-bottom: 2px;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.15);
+  }
+  .points-value {
+    font-size: 2em;
+    line-height: 1;
+    text-shadow: 2px 3px 0 rgba(193, 66, 0, 0.3);
+    margin-bottom: 2px;
+  }
+  .points-value .pt-unit {
+    font-size: 0.55em;
+    margin-left: 4px;
+    opacity: 0.9;
+  }
+  .points-hint {
+    font-family: 'Gaegu', sans-serif;
+    font-size: 0.85em;
+    opacity: 0.95;
+    margin-top: 2px;
+  }
+  .points-arrow {
+    font-size: 1.6em;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+    text-shadow: 1px 2px 0 rgba(0,0,0,0.15);
+  }
+  .points-card:hover .points-arrow { transform: translateX(4px); }
+
+  /* ===== 🎁 선물 교환소 ===== */
+  .gift-coming-soon {
+    text-align: center;
+    padding: 40px 20px;
+  }
+  .gift-coming-soon .big-emoji {
+    font-size: 4em;
+    margin-bottom: 12px;
+    animation: bounce 2s ease-in-out infinite;
+  }
+  .gift-coming-soon h3 {
+    font-family: 'Jua', sans-serif;
+    font-size: 1.4em;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+  .gift-coming-soon p {
+    font-family: 'Gaegu', sans-serif;
+    color: var(--text-soft);
+    line-height: 1.7;
+    font-size: 1.05em;
+  }
+  .gift-list-mock {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .gift-item {
+    background: linear-gradient(135deg, var(--peach-light), white);
+    border: 2px dashed var(--peach);
+    border-radius: 16px;
+    padding: 14px;
+    text-align: center;
+    opacity: 0.7;
+  }
+  .gift-item .gift-emoji {
+    font-size: 2em;
+    margin-bottom: 4px;
+  }
+  .gift-item .gift-cost {
+    font-family: 'Jua', sans-serif;
+    color: var(--pink-deep);
+    font-size: 1em;
+    margin-top: 4px;
+  }
+  .gift-item .gift-name {
+    font-family: 'Gaegu', sans-serif;
+    color: var(--text-soft);
+    font-size: 0.85em;
+  }
+
   /* ===== 🔥 연속 학습 스트릭 카드 ===== */
   .streak-card {
     background: linear-gradient(135deg, #ff6b6b 0%, #ffa502 50%, #ffd93d 100%);
@@ -988,6 +1114,63 @@
     </div>
   </div>
 
+  <!-- 💎 포인트 카드 (선물 교환) -->
+  <button class="points-card" id="pointsCard">
+    <div class="points-icon">💎</div>
+    <div class="points-info">
+      <div class="points-label">내 포인트</div>
+      <div class="points-value"><span id="pointsValue">0</span><span class="pt-unit">P</span></div>
+      <div class="points-hint">🎁 누르면 선물 교환소!</div>
+    </div>
+    <div class="points-arrow">→</div>
+  </button>
+
+  <!-- 🎁 선물 교환소 모달 -->
+  <div id="giftModal" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2>🎁 선물 교환소</h2>
+        <button class="modal-close" id="closeGiftBtn">✕</button>
+      </div>
+      <div class="modal-summary">
+        💎 현재 포인트: <b><span id="modalPoints">0</span>P</b>
+      </div>
+      <div class="archive">
+        <div class="gift-coming-soon">
+          <div class="big-emoji">🎀</div>
+          <h3>선물 준비 중!</h3>
+          <p>
+            곧 멋진 선물들이 추가될 거예요!<br>
+            엄마 아빠한테 받고 싶은<br>
+            선물 말해보세요 💕
+          </p>
+          <div class="gift-list-mock">
+            <div class="gift-item">
+              <div class="gift-emoji">🍦</div>
+              <div class="gift-name">아이스크림</div>
+              <div class="gift-cost">??? P</div>
+            </div>
+            <div class="gift-item">
+              <div class="gift-emoji">📚</div>
+              <div class="gift-name">새 책</div>
+              <div class="gift-cost">??? P</div>
+            </div>
+            <div class="gift-item">
+              <div class="gift-emoji">🎮</div>
+              <div class="gift-name">놀이공원</div>
+              <div class="gift-cost">??? P</div>
+            </div>
+            <div class="gift-item">
+              <div class="gift-emoji">🎁</div>
+              <div class="gift-name">??? 비밀</div>
+              <div class="gift-cost">??? P</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- 🔥 연속 학습 스트릭 -->
   <div class="streak-card" id="streakCard">
     <div class="streak-flame">🔥</div>
@@ -1233,6 +1416,40 @@ setTimeout(() => {
 const todayStr = `${yyyy}-${mm}-${dd}`;
 const koDayNames = ['일','월','화','수','목','금','토'];
 document.getElementById('dateChip').textContent = `${parseInt(mm)}월 ${parseInt(dd)}일 ${koDayNames[today.getDay()]}요일`;
+
+// ========== 💎 포인트 표시 ==========
+function getPoints() {
+  try {
+    return parseInt(localStorage.getItem('hyewon_points') || '0');
+  } catch(e) { return 0; }
+}
+
+const currentPoints = getPoints();
+document.getElementById('pointsValue').textContent = currentPoints.toLocaleString();
+document.getElementById('modalPoints').textContent = currentPoints.toLocaleString();
+
+// ========== 🎁 선물 모달 열기/닫기 ==========
+const giftModal = document.getElementById('giftModal');
+const pointsCardBtn = document.getElementById('pointsCard');
+const closeGiftBtn = document.getElementById('closeGiftBtn');
+
+pointsCardBtn.addEventListener('click', function() {
+  // 최신 포인트로 갱신
+  document.getElementById('modalPoints').textContent = getPoints().toLocaleString();
+  giftModal.classList.add('show');
+  document.body.style.overflow = 'hidden';
+});
+closeGiftBtn.addEventListener('click', function() {
+  giftModal.classList.remove('show');
+  document.body.style.overflow = '';
+});
+giftModal.addEventListener('click', function(e) {
+  if (e.target === giftModal) {
+    giftModal.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+});
+
 
 // ========== 🔥 연속 학습 스트릭 ==========
 function calculateStreak() {
