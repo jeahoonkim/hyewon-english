@@ -283,6 +283,158 @@
     margin-top: 4px;
   }
 
+  /* ===== 🔥 연속 학습 스트릭 카드 ===== */
+  .streak-card {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ffa502 50%, #ffd93d 100%);
+    border-radius: 28px;
+    padding: 22px 22px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 12px 28px rgba(255, 107, 107, 0.3);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid rgba(255,255,255,0.4);
+  }
+  .streak-card::before {
+    content: "✨";
+    position: absolute;
+    top: 12px; right: 18px;
+    font-size: 1.3em;
+    opacity: 0.6;
+    animation: twinkle 2s ease-in-out infinite;
+  }
+  .streak-card::after {
+    content: "⭐";
+    position: absolute;
+    bottom: 14px; left: 16px;
+    font-size: 1em;
+    opacity: 0.5;
+    animation: twinkle 2.5s ease-in-out infinite reverse;
+  }
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+  }
+  .streak-flame {
+    font-size: 4em;
+    line-height: 1;
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 16px rgba(255, 200, 0, 0.6));
+    animation: flicker 1.2s ease-in-out infinite;
+  }
+  @keyframes flicker {
+    0%, 100% { transform: scale(1) rotate(-2deg); }
+    25% { transform: scale(1.1) rotate(3deg); }
+    50% { transform: scale(1.05) rotate(-1deg); }
+    75% { transform: scale(1.15) rotate(2deg); }
+  }
+  .streak-info { flex: 1; min-width: 0; }
+  .streak-num {
+    font-family: 'Jua', sans-serif;
+    font-size: 2.6em;
+    line-height: 1;
+    text-shadow: 2px 3px 0 rgba(193, 66, 0, 0.4);
+  }
+  .streak-num small {
+    font-size: 0.42em;
+    margin-left: 4px;
+    font-family: 'Gaegu', sans-serif;
+    font-weight: 700;
+  }
+  .streak-label {
+    font-family: 'Jua', sans-serif;
+    font-size: 1.05em;
+    margin-top: 4px;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
+  }
+  .streak-message {
+    font-family: 'Gaegu', sans-serif;
+    font-size: 0.9em;
+    margin-top: 4px;
+    opacity: 0.95;
+  }
+  .streak-card.zero {
+    background: linear-gradient(135deg, #cfd8dc 0%, #b0bec5 100%);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+  .streak-card.zero .streak-flame {
+    filter: grayscale(0.8);
+    opacity: 0.7;
+  }
+
+  /* ===== 🐱 고양이 친구 컬렉션 ===== */
+  .cats-collection {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  .cat-friend {
+    background: white;
+    border-radius: 18px;
+    padding: 10px 6px 8px;
+    text-align: center;
+    border: 2.5px solid var(--lavender-light);
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    position: relative;
+    cursor: default;
+  }
+  .cat-friend.unlocked {
+    border-color: var(--pink);
+    background: linear-gradient(135deg, white, var(--pink-light));
+    box-shadow: 0 4px 10px rgba(255, 143, 181, 0.18);
+  }
+  .cat-friend.unlocked:hover {
+    transform: translateY(-4px) rotate(-3deg);
+    box-shadow: 0 8px 16px rgba(255, 143, 181, 0.3);
+  }
+  .cat-friend.unlocked.just-unlocked {
+    animation: catBounce 0.6s ease-in-out;
+    border-color: #ffd93d;
+  }
+  @keyframes catBounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2) rotate(8deg); }
+  }
+  .cat-friend.locked {
+    opacity: 0.55;
+    filter: grayscale(0.85);
+  }
+  .cat-friend.locked::after {
+    content: "🔒";
+    position: absolute;
+    top: 4px; right: 4px;
+    font-size: 0.85em;
+  }
+  .cat-svg {
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 2px;
+  }
+  .cat-name {
+    font-family: 'Jua', sans-serif;
+    font-size: 0.78em;
+    line-height: 1.2;
+    color: var(--text);
+  }
+  .cat-status {
+    font-family: 'Gaegu', sans-serif;
+    font-size: 0.7em;
+    color: var(--text-soft);
+    margin-top: 2px;
+  }
+  .cat-friend.unlocked .cat-status { color: var(--pink-deep); font-weight: 700; }
+
+  @media (max-width: 420px) {
+    .cats-collection { grid-template-columns: repeat(4, 1fr); gap: 6px; }
+    .cat-svg { width: 44px; height: 44px; }
+    .cat-name { font-size: 0.7em; }
+    .cat-status { font-size: 0.65em; }
+  }
+
   /* ===== 오늘 카드 ===== */
   .today-big {
     background: linear-gradient(135deg, #ffd4e5 0%, #e0ccff 50%, #c8f5e7 100%);
@@ -836,6 +988,23 @@
     </div>
   </div>
 
+  <!-- 🔥 연속 학습 스트릭 -->
+  <div class="streak-card" id="streakCard">
+    <div class="streak-flame">🔥</div>
+    <div class="streak-info">
+      <div class="streak-num"><span id="streakCount">0</span><small>일 연속</small></div>
+      <div class="streak-label" id="streakLabel">학습 시작!</div>
+      <div class="streak-message" id="streakMessage">매일 한 번씩 학습하면 불꽃이 자라요!</div>
+    </div>
+  </div>
+
+  <!-- 🐱 고양이 친구 컬렉션 -->
+  <div class="sec-head">
+    <h3>🐱 내 고양이 친구들</h3>
+    <span class="hint" id="catCount">0/8 마리</span>
+  </div>
+  <div class="cats-collection" id="catsCollection"></div>
+
   <!-- 오늘의 학습 -->
   <div class="today-big">
     <div class="today-title">
@@ -894,6 +1063,13 @@
 // ========== 학습 일정 ==========
 const SCHEDULE = [
   {
+    date: "2026-04-27", dayKo: "월", dayEn: "Mon",
+    theme: "동물과 자연 1탄", emoji: "🌳",
+    folder: "20260427",
+    vocab: "혜원이_영단어_월요일_동물과자연.html",
+    quiz: "혜원이_영단어_월요일_퀴즈.html"
+  },
+  {
     date: "2026-04-21", dayKo: "화", dayEn: "Tue",
     theme: "동물과 자연 2탄", emoji: "🌊",
     folder: "20260421",
@@ -920,13 +1096,6 @@ const SCHEDULE = [
     folder: "20260424",
     vocab: "혜원이_영단어_금요일_음식.html",
     quiz: "혜원이_영단어_금요일_퀴즈.html"
-  },
-  {
-    date: "2026-04-27", dayKo: "월", dayEn: "Mon",
-    theme: "동물과 자연 1탄", emoji: "🌳",
-    folder: "20260427",
-    vocab: "혜원이_영단어_월요일_동물과자연.html",
-    quiz: "혜원이_영단어_월요일_퀴즈.html"
   },
   {
     date: "2026-04-28", dayKo: "화", dayEn: "Tue",
@@ -964,18 +1133,18 @@ const SCHEDULE = [
     quiz: "혜원이_영단어_토요일_종합시험.html"
   },
   {
-    date: "2026-04-26", dayKo: "일", dayEn: "Sun",
-    theme: "일요일 복습 (Week 1)", emoji: "🌻",
-    folder: "20260426",
-    vocab: "혜원이_영단어_일요일_복습.html",
-    quiz: "혜원이_영단어_일요일_복습.html"
-  },
-  {
     date: "2026-05-02", dayKo: "토", dayEn: "Sat",
     theme: "종합시험 (Week 2)", emoji: "🏆",
     folder: "20260502",
     vocab: "혜원이_영단어_토요일_종합시험.html",
     quiz: "혜원이_영단어_토요일_종합시험.html"
+  },
+  {
+    date: "2026-04-26", dayKo: "일", dayEn: "Sun",
+    theme: "일요일 복습 (Week 1)", emoji: "🌻",
+    folder: "20260426",
+    vocab: "혜원이_영단어_일요일_복습.html",
+    quiz: "혜원이_영단어_일요일_복습.html"
   },
   {
     date: "2026-05-03", dayKo: "일", dayEn: "Sun",
@@ -1065,6 +1234,74 @@ const todayStr = `${yyyy}-${mm}-${dd}`;
 const koDayNames = ['일','월','화','수','목','금','토'];
 document.getElementById('dateChip').textContent = `${parseInt(mm)}월 ${parseInt(dd)}일 ${koDayNames[today.getDay()]}요일`;
 
+// ========== 🔥 연속 학습 스트릭 ==========
+function calculateStreak() {
+  try {
+    const history = JSON.parse(localStorage.getItem('hyewon_vocab_history') || '[]');
+    if (history.length === 0) return 0;
+
+    // 학습 날짜만 추출 (중복 제거 + 정렬)
+    const dates = [...new Set(history.map(r => r.date))].sort();
+    if (dates.length === 0) return 0;
+
+    // 오늘 / 어제 날짜
+    const t = new Date();
+    const todayD = `${t.getFullYear()}-${String(t.getMonth()+1).padStart(2,'0')}-${String(t.getDate()).padStart(2,'0')}`;
+    const y = new Date(t); y.setDate(t.getDate()-1);
+    const yestD = `${y.getFullYear()}-${String(y.getMonth()+1).padStart(2,'0')}-${String(y.getDate()).padStart(2,'0')}`;
+
+    // 가장 최근 학습일이 오늘 또는 어제가 아니면 streak 끊김
+    const last = dates[dates.length - 1];
+    if (last !== todayD && last !== yestD) return 0;
+
+    // 역순으로 연속 일수 카운트
+    let streak = 1;
+    for (let i = dates.length - 1; i > 0; i--) {
+      const cd = new Date(dates[i]);
+      const pd = new Date(dates[i-1]);
+      const diff = Math.round((cd - pd) / 86400000);
+      if (diff === 1) streak++;
+      else break;
+    }
+    return streak;
+  } catch(e) {
+    return 0;
+  }
+}
+
+const streak = calculateStreak();
+document.getElementById('streakCount').textContent = streak;
+
+// 스트릭 메시지 + 라벨
+const streakCard = document.getElementById('streakCard');
+const streakLabel = document.getElementById('streakLabel');
+const streakMessage = document.getElementById('streakMessage');
+
+if (streak === 0) {
+  streakCard.classList.add('zero');
+  streakLabel.textContent = '오늘 시작해 봐요!';
+  streakMessage.textContent = '매일 한 번씩 학습하면 불꽃이 자라요 🌱';
+} else if (streak === 1) {
+  streakLabel.textContent = '첫 학습 완료!';
+  streakMessage.textContent = '내일도 만나자! 🎉';
+} else if (streak < 7) {
+  streakLabel.textContent = `${streak}일 연속!`;
+  streakMessage.textContent = `일주일까지 ${7-streak}일 남았어요! 💪`;
+} else if (streak === 7) {
+  streakLabel.textContent = '🏆 일주일 달성!';
+  streakMessage.textContent = '진짜 멋진 혜원이! 🌟';
+} else if (streak < 30) {
+  streakLabel.textContent = `${streak}일 연속!`;
+  streakMessage.textContent = `한 달까지 ${30-streak}일 더! 🚀`;
+} else if (streak < 100) {
+  streakLabel.textContent = `🌟 ${streak}일 챔피언!`;
+  streakMessage.textContent = '한 달 넘게 매일! 진짜 대단해요! 👑';
+} else {
+  streakLabel.textContent = `👑 ${streak}일 레전드!`;
+  streakMessage.textContent = '믿을 수 없어요! 진짜 천재! ✨';
+}
+
+
 // ========== 통계 (정확한 계산) ==========
 // 규칙:
 //   1) 종합시험·복습은 '복습'이라 새 단어 학습이 아님 → 제외
@@ -1081,6 +1318,57 @@ const pastItems = SCHEDULE.filter(s => {
 });
 document.getElementById('statWords').innerHTML = `${pastItems.length * WORDS_PER_DAY}<span class="unit">개</span>`;
 document.getElementById('statDays').innerHTML = `${pastItems.length}<span class="unit">일</span>`;
+
+// ========== 🐱 고양이 친구들 컬렉션 ==========
+const CAT_FRIENDS = [
+  { unlock:   0, name: '핑키',     color: '#ffc0d4', emoji: '🌸', desc: '첫 친구!' },
+  { unlock:  20, name: '버터',     color: '#ffd4b5', emoji: '🍯', desc: '20단어!' },
+  { unlock:  50, name: '민트',     color: '#b5ead7', emoji: '🌿', desc: '50단어!' },
+  { unlock: 100, name: '라벤더',   color: '#d4baff', emoji: '💜', desc: '100단어!' },
+  { unlock: 200, name: '레모니',   color: '#fff3bf', emoji: '🍋', desc: '200단어!' },
+  { unlock: 300, name: '클라우드', color: '#cfd8dc', emoji: '☁️', desc: '300단어!' },
+  { unlock: 500, name: '레인보우', color: '#ff8fb5', emoji: '🌈', desc: '500단어!' },
+  { unlock: 1000,name: '골디',     color: '#ffd700', emoji: '👑', desc: '1000!' }
+];
+
+function makeCatSVG(color, locked) {
+  const fill = locked ? '#bbb' : color;
+  const innerFill = locked ? '#999' : color;
+  return `<svg viewBox="0 0 60 60" class="cat-svg">
+    <ellipse cx="30" cy="42" rx="18" ry="14" fill="${fill}"/>
+    <circle cx="30" cy="25" r="14" fill="${fill}"/>
+    <path d="M 20 18 L 17 8 L 26 15 Z" fill="${fill}"/>
+    <path d="M 40 18 L 43 8 L 34 15 Z" fill="${fill}"/>
+    <circle cx="23" cy="29" r="2.5" fill="#4a3a5a"/>
+    <circle cx="37" cy="29" r="2.5" fill="#4a3a5a"/>
+    <circle cx="20" cy="33" r="2.5" fill="${locked ? '#888' : '#ff8fa3'}" opacity="${locked ? '0.3' : '0.5'}"/>
+    <circle cx="40" cy="33" r="2.5" fill="${locked ? '#888' : '#ff8fa3'}" opacity="${locked ? '0.3' : '0.5'}"/>
+    <path d="M 28 34 Q 30 36 32 34" stroke="#4a3a5a" stroke-width="1.2" fill="none"/>
+  </svg>`;
+}
+
+const wordsLearned = pastItems.length * WORDS_PER_DAY;
+const catsContainer = document.getElementById('catsCollection');
+let unlockedCount = 0;
+
+CAT_FRIENDS.forEach(cat => {
+  const isUnlocked = wordsLearned >= cat.unlock;
+  if (isUnlocked) unlockedCount++;
+  const remaining = cat.unlock - wordsLearned;
+  const status = isUnlocked
+    ? `${cat.desc} ${cat.emoji}`
+    : `${remaining}개 더!`;
+
+  catsContainer.innerHTML += `
+    <div class="cat-friend ${isUnlocked ? 'unlocked' : 'locked'}" title="${cat.name}">
+      ${makeCatSVG(cat.color, !isUnlocked)}
+      <div class="cat-name">${isUnlocked ? cat.name : '???'}</div>
+      <div class="cat-status">${status}</div>
+    </div>
+  `;
+});
+
+document.getElementById('catCount').textContent = `${unlockedCount}/${CAT_FRIENDS.length} 마리`;
 
 const upcoming = SCHEDULE.filter(s => s.date > todayStr).sort((a,b) => a.date.localeCompare(b.date))[0];
 const nextEl = document.getElementById('statNext');

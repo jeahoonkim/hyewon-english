@@ -211,6 +211,71 @@
   @keyframes shake { 0%,100%{transform:translateX(0);} 25%{transform:translateX(-8px);} 75%{transform:translateX(8px);} }
 
   /* ---------- 결과 화면 (문제별) ---------- */
+  /* ===== 🔥 콤보 배지 ===== */
+  .combo-badge {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    background: linear-gradient(135deg, #ff6b6b, #ffa502);
+    color: white;
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-family: 'Jua', sans-serif;
+    font-size: 1.1em;
+    box-shadow: 0 6px 20px rgba(255,107,107,0.5);
+    z-index: 1500;
+    display: none;
+    align-items: center;
+    gap: 6px;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.15);
+  }
+  .combo-badge.show {
+    display: flex;
+    animation: comboPop 0.4s ease-out;
+  }
+  .combo-badge.combo-5 {
+    background: linear-gradient(135deg, #ffd93d, #ff6b6b, #ff8fb5);
+    font-size: 1.25em;
+    padding: 10px 22px;
+  }
+  .combo-badge.combo-10 {
+    background: linear-gradient(135deg, #ff6ec7, #ffa502, #ffd93d, #6ec7ff);
+    background-size: 200% 200%;
+    font-size: 1.4em;
+    padding: 12px 26px;
+    animation: comboPop 0.6s ease-out, rainbowShift 2s linear infinite;
+  }
+  @keyframes comboPop {
+    0% { transform: scale(0) rotate(-12deg); }
+    60% { transform: scale(1.3) rotate(8deg); }
+    100% { transform: scale(1) rotate(0); }
+  }
+  @keyframes rainbowShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* 콤보 폭죽 효과 */
+  .combo-celebration {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1400;
+    display: none;
+  }
+  .combo-celebration.show { display: block; }
+  .combo-celebration .spark {
+    position: absolute;
+    font-size: 2.5em;
+    pointer-events: none;
+    animation: sparkFly 1.4s ease-out forwards;
+  }
+  @keyframes sparkFly {
+    0% { transform: translate(0,0) scale(0) rotate(0); opacity: 1; }
+    50% { opacity: 1; }
+    100% { transform: translate(var(--dx), var(--dy)) scale(1.6) rotate(var(--rot)); opacity: 0; }
+  }
+
   .result-overlay {
     position: fixed; inset: 0;
     background: rgba(0,0,0,0.6);
@@ -424,6 +489,10 @@
     </div>
   </section>
 
+  <!-- 🔥 콤보 시스템 -->
+  <div class="combo-badge" id="comboBadge"></div>
+  <div class="combo-celebration" id="comboCelebration"></div>
+
   <!-- ④ 결과 오버레이 -->
   <div class="result-overlay" id="resultOverlay">
     <div class="result-box">
@@ -479,7 +548,7 @@ const WORDS = [
   { word: "school", ipa: "/skuːl/", meaning: "학교", emoji: "🏫",
     example: "I go to school every day.",
     exampleKo: "나는 매일 학교에 가요.",
-    fact: "'school'은 원래 그리스어로 '여가 시간'이라는 뜻이었대요! 옛날엔 공부가 취미였나봐요." },
+    fact: "'school'은 원래 그리스어로 '여가 시간'이라는 뜻이었대요!" },
   { word: "teacher", ipa: "/ˈtiːtʃər/", meaning: "선생님", emoji: "👩‍🏫",
     example: "My teacher is very kind.",
     exampleKo: "우리 선생님은 정말 친절하세요.",
@@ -487,7 +556,7 @@ const WORDS = [
   { word: "student", ipa: "/ˈstuːdənt/", meaning: "학생", emoji: "🎒",
     example: "I am a student.",
     exampleKo: "저는 학생이에요.",
-    fact: "'study(공부하다)' 와 'student(학생)' 는 뿌리가 같아요! 라틴어 'studere'에서 왔어요." },
+    fact: "'study'와 'student'는 뿌리가 같아요! 라틴어 'studere'에서 왔어요." },
   { word: "friend", ipa: "/frend/", meaning: "친구", emoji: "👫",
     example: "She is my best friend.",
     exampleKo: "그녀는 내 가장 친한 친구예요.",
@@ -499,7 +568,7 @@ const WORDS = [
   { word: "book", ipa: "/bʊk/", meaning: "책", emoji: "📖",
     example: "I read a book every night.",
     exampleKo: "나는 매일 밤 책을 읽어요.",
-    fact: "세상에서 가장 작은 책은 쌀 한 톨보다 작대요! 현미경으로 봐야 읽을 수 있어요." },
+    fact: "세상에서 가장 작은 책은 쌀 한 톨보다 작대요!" },
   { word: "pencil", ipa: "/ˈpensəl/", meaning: "연필", emoji: "✏️",
     example: "I write with a pencil.",
     exampleKo: "나는 연필로 써요.",
@@ -507,55 +576,55 @@ const WORDS = [
   { word: "eraser", ipa: "/ɪˈreɪsər/", meaning: "지우개", emoji: "🧽",
     example: "Can I borrow your eraser?",
     exampleKo: "네 지우개 좀 빌려줄래?",
-    fact: "'erase(지우다)' + 'er(하는 것)' = eraser! 연필을 지우는 것이란 뜻이에요." },
+    fact: "'erase(지우다)' + 'er(하는 것)' = eraser!" },
   { word: "desk", ipa: "/desk/", meaning: "책상", emoji: "🪑",
     example: "My desk is next to the window.",
     exampleKo: "내 책상은 창문 옆에 있어요.",
-    fact: "'desk'는 라틴어 'discus(원반)'에서 왔대요. 원래는 둥근 모양이었어요!" },
+    fact: "'desk'는 라틴어 'discus(원반)'에서 왔대요." },
   { word: "chair", ipa: "/tʃer/", meaning: "의자", emoji: "💺",
     example: "Please sit on the chair.",
     exampleKo: "의자에 앉아 주세요.",
-    fact: "옛날엔 아주 중요한 사람만 의자에 앉을 수 있었대요. 나머지는 바닥에!" },
+    fact: "옛날엔 아주 중요한 사람만 의자에 앉을 수 있었대요!" },
   { word: "bag", ipa: "/bæɡ/", meaning: "가방", emoji: "🎒",
     example: "My bag is heavy today.",
     exampleKo: "오늘 내 가방은 무거워요.",
-    fact: "학생 가방은 몸무게의 10%를 넘으면 안 된대요. 건강을 위해서요!" },
+    fact: "학생 가방은 몸무게의 10%를 넘으면 안 된대요!" },
   { word: "notebook", ipa: "/ˈnoʊtbʊk/", meaning: "공책, 노트", emoji: "📓",
     example: "I write notes in my notebook.",
     exampleKo: "나는 공책에 필기를 해요.",
-    fact: "'note(메모)' + 'book(책)' = notebook! 메모하는 책이에요." },
+    fact: "'note(메모)' + 'book(책)' = notebook!" },
   { word: "ruler", ipa: "/ˈruːlər/", meaning: "자", emoji: "📏",
     example: "Use a ruler to draw a line.",
     exampleKo: "선을 그을 때는 자를 써요.",
-    fact: "'ruler'는 '지배자, 왕'이라는 뜻도 있어요! 자가 길이를 '지배'해서래요." },
+    fact: "'ruler'는 '지배자, 왕'이라는 뜻도 있어요!" },
   { word: "board", ipa: "/bɔːrd/", meaning: "칠판, 판", emoji: "📋",
     example: "The teacher writes on the board.",
     exampleKo: "선생님이 칠판에 쓰세요.",
-    fact: "예전 칠판은 진짜 '검은색 슬레이트 돌'로 만들었대요. 그래서 blackboard!" },
+    fact: "예전 칠판은 진짜 '검은색 슬레이트 돌'로 만들었대요!" },
   { word: "read", ipa: "/riːd/", meaning: "읽다", emoji: "👀",
     example: "I read books at the library.",
     exampleKo: "나는 도서관에서 책을 읽어요.",
-    fact: "과거형은 read인데 발음이 /red/로 바뀌어요! 철자는 같지만 소리가 달라요." },
+    fact: "과거형은 read인데 발음이 /red/로 바뀌어요!" },
   { word: "write", ipa: "/raɪt/", meaning: "쓰다", emoji: "✍️",
     example: "I write my name in English.",
     exampleKo: "나는 내 이름을 영어로 써요.",
-    fact: "'w'는 발음 안 해요! 'right(오른쪽)'과 소리가 똑같지만 뜻은 완전 달라요." },
+    fact: "'w'는 발음 안 해요! 'right(오른쪽)'과 소리가 똑같아요." },
   { word: "learn", ipa: "/lɜːrn/", meaning: "배우다", emoji: "🧠",
     example: "I learn English at school.",
     exampleKo: "나는 학교에서 영어를 배워요.",
-    fact: "새로운 것을 배우면 뇌에 실제로 새 길이 생긴대요! 공부할수록 뇌가 똑똑해져요." },
+    fact: "새로운 것을 배우면 뇌에 실제로 새 길이 생긴대요!" },
   { word: "study", ipa: "/ˈstʌdi/", meaning: "공부하다", emoji: "📚",
     example: "I study math every evening.",
     exampleKo: "나는 매일 저녁 수학을 공부해요.",
-    fact: "25분 공부 + 5분 휴식이 가장 효율적이래요! (뽀모도로 학습법)" },
+    fact: "25분 공부 + 5분 휴식이 가장 효율적이래요!" },
   { word: "listen", ipa: "/ˈlɪsən/", meaning: "듣다", emoji: "👂",
     example: "Listen to the teacher carefully.",
     exampleKo: "선생님 말씀을 잘 들으세요.",
-    fact: "'t'는 발음 안 해요! 소리 내면 안 돼요 → /리슨/이 아니라 /리슨/이에요." },
+    fact: "'t'는 발음 안 해요! /리슨/이에요." },
   { word: "answer", ipa: "/ˈænsər/", meaning: "대답하다, 답", emoji: "🙋",
     example: "Please answer my question.",
     exampleKo: "제 질문에 대답해 주세요.",
-    fact: "'w'는 발음 안 해요! /앤서/로 소리내요. 영어엔 이런 묵음 글자가 참 많아요." }
+    fact: "'w'는 발음 안 해요! /앤서/로 소리내요." }
 ];
 
 // ============ 설정 ============
@@ -761,8 +830,66 @@ function answer(idx) {
   setTimeout(() => showResult(isCorrect, q), 700);
 }
 
+// ============ 🔥 콤보 시스템 ============
+let comboCount = 0;
+let maxCombo = 0;
+
+function updateCombo(isCorrect) {
+  if (isCorrect) {
+    comboCount++;
+    if (comboCount > maxCombo) maxCombo = comboCount;
+    if (comboCount >= 3) showComboBadge();
+    // 마일스톤 폭죽
+    if ([5, 10, 15, 20].indexOf(comboCount) !== -1) celebrateCombo();
+  } else {
+    comboCount = 0;
+    hideComboBadge();
+  }
+}
+
+function showComboBadge() {
+  const badge = document.getElementById('comboBadge');
+  let cls = 'combo-badge show';
+  let emoji = '🔥';
+  if (comboCount >= 10) { cls += ' combo-10'; emoji = '🌈'; }
+  else if (comboCount >= 5) { cls += ' combo-5'; emoji = '⭐'; }
+  badge.className = cls;
+  badge.innerHTML = emoji + ' 콤보 ' + comboCount + '!';
+  // 살짝 흔들림 재생
+  badge.style.animation = 'none';
+  void badge.offsetWidth;
+  badge.style.animation = '';
+}
+
+function hideComboBadge() {
+  document.getElementById('comboBadge').classList.remove('show');
+}
+
+function celebrateCombo() {
+  const cel = document.getElementById('comboCelebration');
+  cel.classList.add('show');
+  cel.innerHTML = '';
+  const sparks = ['🎉','✨','⭐','🌟','💫','🎇','🎊'];
+  const count = comboCount >= 10 ? 30 : 20;
+  for (let i = 0; i < count; i++) {
+    const s = document.createElement('div');
+    s.className = 'spark';
+    s.textContent = sparks[Math.floor(Math.random() * sparks.length)];
+    s.style.left = (40 + Math.random() * 20) + '%';
+    s.style.top = (35 + Math.random() * 15) + '%';
+    s.style.setProperty('--dx', (Math.random() * 600 - 300) + 'px');
+    s.style.setProperty('--dy', (Math.random() * 600 - 300) + 'px');
+    s.style.setProperty('--rot', (Math.random() * 720 - 360) + 'deg');
+    cel.appendChild(s);
+  }
+  setTimeout(() => cel.classList.remove('show'), 1400);
+}
+
 // ============ 결과 화면 ============
 function showResult(isCorrect, q) {
+  // 🔥 콤보 업데이트 먼저
+  updateCombo(isCorrect);
+
   const overlay = document.getElementById('resultOverlay');
   const photo = document.getElementById('resultPhoto');
   const title = document.getElementById('resultTitle');
