@@ -339,32 +339,38 @@
   .gifts-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    gap: 14px;
     padding: 14px 18px 22px;
   }
   .gift-card {
     background: white;
-    border: 2.5px solid var(--lavender-light);
+    border: 3px solid #e0e0e0;
     border-radius: 20px;
-    padding: 16px 12px;
+    padding: 14px 10px;
     text-align: center;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
     font-family: 'Jua', sans-serif;
     color: var(--text);
     position: relative;
+    box-shadow: 0 6px 0 rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.06);
   }
-  .gift-card.gift-lotteworld { background: linear-gradient(135deg, #fff, #ffe5e5); border-color: #e60012; }
-  .gift-card.gift-kidzania { background: linear-gradient(135deg, #fff, #ffe5ec); border-color: #a32035; }
-  .gift-card.gift-baskin { background: linear-gradient(135deg, #fff, #fce7f3); border-color: #ff6ec7; }
-  .gift-card.gift-cash { background: linear-gradient(135deg, #fff, #e8f5e9); border-color: #52b788; }
-  .gift-card:not(.locked):hover {
-    transform: translateY(-4px) rotate(-1deg);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+  /* 각 카드 색상 - 선명한 테두리 + 살짝의 색감 (배경은 흰색 유지!) */
+  .gift-card.gift-lotteworld { border-color: #e60012; box-shadow: 0 6px 0 rgba(230,0,18,0.15), 0 4px 14px rgba(230,0,18,0.1); }
+  .gift-card.gift-kidzania   { border-color: #a32035; box-shadow: 0 6px 0 rgba(163,32,53,0.15), 0 4px 14px rgba(163,32,53,0.1); }
+  .gift-card.gift-baskin     { border-color: #ff6ec7; box-shadow: 0 6px 0 rgba(255,110,199,0.18), 0 4px 14px rgba(255,110,199,0.1); }
+  .gift-card.gift-cash       { border-color: #52b788; box-shadow: 0 6px 0 rgba(82,183,136,0.18), 0 4px 14px rgba(82,183,136,0.1); }
+
+  .gift-card:not(.locked):not(.sold-out):hover {
+    transform: translateY(-5px) rotate(-1deg);
+    box-shadow: 0 10px 0 rgba(0,0,0,0.12), 0 12px 24px rgba(0,0,0,0.15);
   }
+  .gift-card:active { transform: translateY(0); }
+
+  /* 포인트 부족 = 잠김 */
   .gift-card.locked {
-    opacity: 0.55;
-    filter: grayscale(0.4);
+    opacity: 0.6;
+    filter: grayscale(0.5);
     cursor: not-allowed;
   }
   .gift-card.locked::before {
@@ -372,21 +378,49 @@
     position: absolute;
     top: 8px; right: 10px;
     font-size: 1em;
+    z-index: 5;
   }
+
+  /* SOLD OUT — 이미 보유 중인 쿠폰 */
+  .gift-card.sold-out {
+    opacity: 0.55;
+    filter: grayscale(0.85);
+    cursor: not-allowed;
+  }
+  .gift-card.sold-out::after {
+    content: "SOLD OUT";
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) rotate(-12deg);
+    background: #c62828;
+    color: white;
+    padding: 6px 18px;
+    border-radius: 8px;
+    font-family: 'Jua', sans-serif;
+    font-size: 1.05em;
+    border: 3px solid white;
+    box-shadow: 0 4px 12px rgba(198,40,40,0.5);
+    z-index: 20;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+  }
+
   .gift-icon {
-    font-size: 3em;
+    font-size: 3.2em;
     line-height: 1;
     margin-bottom: 6px;
-    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.12));
   }
   .gift-img {
     width: 100%;
-    height: 90px;
+    height: 110px;
     object-fit: contain;
     margin-bottom: 8px;
     border-radius: 12px;
+    padding: 6px;
     background: white;
-    padding: 4px;
+    /* 살짝 그림자로 입체감 */
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
   }
   .gift-name {
     font-size: 0.95em;
@@ -406,6 +440,7 @@
   }
   .gift-status.ok { color: #2e7d32; font-weight: 700; }
   .gift-status.need { color: #c62828; }
+  .gift-status.sold { color: #757575; font-weight: 700; }
 
   /* ===== 🎫 쿠폰 아이템 ===== */
   .coupon-item {
@@ -1536,7 +1571,7 @@
   <!-- 학습 달력 -->
   <div class="sec-head">
     <h3>🗓️ 학습 달력</h3>
-    <span class="hint">✅ 완료 · 😴 안함 · 📅 예정</span>
+    <span class="hint">민트=완료 · 회색=안함 · 노랑=예정</span>
   </div>
   <div class="cal-card">
     <div class="cal-month" id="calMonth">—</div>
@@ -1790,14 +1825,29 @@ refreshRewardCards();
 // ========== 🎁 선물 카드 상태 갱신 ==========
 function refreshGiftCards() {
   const points = getPoints();
+  const coupons = getCoupons();
+  // 보유 중(미사용) 쿠폰 type 모음
+  const ownedTypes = new Set(coupons.filter(c => !c.used).map(c => c.type));
+
   document.querySelectorAll('.gift-card').forEach(card => {
     const giftId = card.dataset.gift;
     const gift = GIFTS[giftId];
     const status = card.querySelector('.gift-status');
+
+    // 0) 클래스 초기화
+    card.classList.remove('locked', 'sold-out');
+
+    // 1) 이미 보유 중인 쿠폰이면 SOLD OUT (현금 제외)
+    if (giftId !== 'cash' && ownedTypes.has(giftId)) {
+      card.classList.add('sold-out');
+      status.className = 'gift-status sold';
+      status.textContent = '🎫 보유 중!';
+      return;
+    }
+
+    // 2) 포인트 부족 체크
     if (giftId === 'cash') {
-      // 현금은 가변
       if (points >= 100) {
-        card.classList.remove('locked');
         status.className = 'gift-status ok';
         status.textContent = '환전 가능 ✨';
       } else {
@@ -1806,7 +1856,6 @@ function refreshGiftCards() {
         status.textContent = `${100 - points}P 더!`;
       }
     } else if (points >= gift.cost) {
-      card.classList.remove('locked');
       status.className = 'gift-status ok';
       status.textContent = '교환 가능 ✨';
     } else {
@@ -1862,6 +1911,10 @@ document.querySelectorAll('.gift-card').forEach(card => {
   card.addEventListener('click', function() {
     if (this.classList.contains('locked')) {
       alert('포인트가 부족해요! 더 모아주세요 💪');
+      return;
+    }
+    if (this.classList.contains('sold-out')) {
+      alert('이미 쿠폰을 보유 중이에요! 🎫\n쿠폰함에서 확인하거나 사용한 후에 다시 살 수 있어요.');
       return;
     }
     const giftId = this.dataset.gift;
@@ -1977,6 +2030,7 @@ function renderCoupons() {
         setCoupons(coupons);
         renderCoupons();
         refreshRewardCards();
+        refreshGiftCards();  // SOLD OUT 해제 갱신
         showCelebration('🎉 쿠폰을 사용했어요!\n엄마/아빠한테 보여주세요!');
       }
     });
@@ -2238,13 +2292,22 @@ for (let d = 1; d <= lastDate; d++) {
     }
   }
 
+  // 학습 기록이 1건이라도 있는지 체크 (없으면 missed 표시 비활성화)
+  const hasAnyHistory = studiedDates.size > 0;
+
   if (isToday) {
     cls += ' today';
   } else if (learned && wasActuallyStudied) {
     cls += ' learned';   // ✅ 실제로 학습 완료 (민트)
   } else if (learned && isPast && !wasActuallyStudied) {
-    cls += ' missed';    // ❌ 학습 콘텐츠는 있지만 안 함 (회색 점선)
-    icon = '😴';         // 안 한 표시
+    // 이 폰에 학습 기록이 1건이라도 있을 때만 "안 함" 표시
+    // (처음 접속한 폰에서 모든 과거 날짜가 missed로 보이는 것 방지)
+    if (hasAnyHistory) {
+      cls += ' missed';
+      icon = '😴';
+    } else {
+      cls += ' upcoming';  // 기록 0건이면 "예정"으로 부드럽게
+    }
   } else if (learned && !isPast) {
     cls += ' upcoming';  // 📅 예정 (노랑 점선)
   }
