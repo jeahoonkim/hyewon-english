@@ -128,6 +128,7 @@ def main():
     html = html.replace("day: 'Monday',", f"day: '{config['dayEn']}',")
     html = html.replace('dayIdx: 1,', f'dayIdx: {config["dayIdx"]},')
     html = html.replace("quizRec.day || 'Monday'", f"quizRec.day || '{config['dayEn']}'")
+    html = html.replace("const QUIZ_SCHEDULED_DATE = '2026-04-27';", f"const QUIZ_SCHEDULED_DATE = '{config['date']}';")
 
     # 4. 배경색 변경 (무지개 느낌)
     html = re.sub(

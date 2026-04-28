@@ -1011,8 +1011,10 @@ function finishQuiz() {
   showScreen('complete');
 
   // 기록 누적 저장
+  const QUIZ_SCHEDULED_DATE = '2026-04-27';
   const quizRecord = {
     date: today,
+    scheduledDate: QUIZ_SCHEDULED_DATE,
     day: 'Monday',
     dayIdx: 1,
     attemptNumber,

@@ -664,8 +664,11 @@ function finishLearning() {
     return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
   };
   const today = new Date().toISOString().split('T')[0];
+  // 이 콘텐츠의 원래 학습 예정일 (지난 날짜 복습해도 그 날짜로 매칭됨)
+  const SCHEDULED_DATE = '2026-04-24';
   const record = {
     date: today,
+    scheduledDate: SCHEDULED_DATE,
     day: 'Friday',
     dayIdx: 5,
     theme: '음식',

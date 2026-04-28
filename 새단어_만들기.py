@@ -108,6 +108,8 @@ def generate_vocab_html(data):
     html = html.replace("day: 'Monday',", f"day: '{data['dayEn']}',")
     html = html.replace('dayIdx: 1,', f'dayIdx: {data["dayIdx"]},')
     html = html.replace("theme: '동물과 자연',", f"theme: '{data['theme']}',")
+    # SCHEDULED_DATE 교체 (단어장)
+    html = html.replace("const SCHEDULED_DATE = '2026-04-27';", f"const SCHEDULED_DATE = '{data['date']}';")
 
     # 3. 배경 그라데이션 교체
     html = re.sub(
@@ -172,6 +174,8 @@ def generate_quiz_html(data):
     html = html.replace("day: 'Monday',", f"day: '{data['dayEn']}',")
     html = html.replace('dayIdx: 1,', f'dayIdx: {data["dayIdx"]},')
     html = html.replace("quizRec.day || 'Monday'", f"quizRec.day || '{data['dayEn']}'")
+    # SCHEDULED_DATE 교체 (퀴즈)
+    html = html.replace("const QUIZ_SCHEDULED_DATE = '2026-04-27';", f"const QUIZ_SCHEDULED_DATE = '{data['date']}';")
 
     # 4. 배경 그라데이션 교체 (단어장과 맞춤)
     html = re.sub(
