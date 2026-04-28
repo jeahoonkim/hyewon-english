@@ -344,22 +344,22 @@
   }
   .gift-card {
     background: white;
-    border: 3px solid #e0e0e0;
-    border-radius: 20px;
-    padding: 14px 10px;
+    border: 4px solid #e0e0e0;
+    border-radius: 22px;
+    padding: 12px 10px;
     text-align: center;
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
     font-family: 'Jua', sans-serif;
     color: var(--text);
     position: relative;
-    box-shadow: 0 6px 0 rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.06);
+    box-shadow: 0 8px 0 rgba(0,0,0,0.1), 0 6px 20px rgba(0,0,0,0.08);
   }
-  /* 각 카드 색상 - 선명한 테두리 + 살짝의 색감 (배경은 흰색 유지!) */
-  .gift-card.gift-lotteworld { border-color: #e60012; box-shadow: 0 6px 0 rgba(230,0,18,0.15), 0 4px 14px rgba(230,0,18,0.1); }
-  .gift-card.gift-kidzania   { border-color: #a32035; box-shadow: 0 6px 0 rgba(163,32,53,0.15), 0 4px 14px rgba(163,32,53,0.1); }
-  .gift-card.gift-baskin     { border-color: #ff6ec7; box-shadow: 0 6px 0 rgba(255,110,199,0.18), 0 4px 14px rgba(255,110,199,0.1); }
-  .gift-card.gift-cash       { border-color: #52b788; box-shadow: 0 6px 0 rgba(82,183,136,0.18), 0 4px 14px rgba(82,183,136,0.1); }
+  /* 각 카드 색상 - 진한 테두리 + 강한 그림자 = 또렷! */
+  .gift-card.gift-lotteworld { border-color: #e60012; box-shadow: 0 8px 0 rgba(230,0,18,0.22), 0 8px 24px rgba(230,0,18,0.15); }
+  .gift-card.gift-kidzania   { border-color: #a32035; box-shadow: 0 8px 0 rgba(163,32,53,0.22), 0 8px 24px rgba(163,32,53,0.15); }
+  .gift-card.gift-baskin     { border-color: #ff6ec7; box-shadow: 0 8px 0 rgba(255,110,199,0.25), 0 8px 24px rgba(255,110,199,0.18); }
+  .gift-card.gift-cash       { border-color: #52b788; box-shadow: 0 8px 0 rgba(82,183,136,0.25), 0 8px 24px rgba(82,183,136,0.18); }
 
   .gift-card:not(.locked):not(.sold-out):hover {
     transform: translateY(-5px) rotate(-1deg);
@@ -413,14 +413,22 @@
   }
   .gift-img {
     width: 100%;
-    height: 110px;
+    height: 130px;
     object-fit: contain;
-    margin-bottom: 8px;
-    border-radius: 12px;
-    padding: 6px;
+    margin-bottom: 10px;
+    border-radius: 14px;
+    padding: 0;
     background: white;
-    /* 살짝 그림자로 입체감 */
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+    display: block;
+    /* 더 선명하게 — 명도/채도 살짝 강화 */
+    filter: contrast(1.08) saturate(1.15) brightness(1.02);
+  }
+  .gift-card:not(.locked):not(.sold-out) .gift-img {
+    /* 활성 카드는 더 또렷 */
+    filter: contrast(1.12) saturate(1.2) brightness(1.03);
+  }
+  .gift-card:not(.locked):not(.sold-out):hover .gift-img {
+    filter: contrast(1.15) saturate(1.3) brightness(1.05);
   }
   .gift-name {
     font-size: 0.95em;
@@ -1551,13 +1559,6 @@
     </div>
   </div>
 
-  <!-- 🐱 고양이 친구 컬렉션 -->
-  <div class="sec-head">
-    <h3>🐱 내 고양이 친구들</h3>
-    <span class="hint" id="catCount">0/8 마리</span>
-  </div>
-  <div class="cats-collection" id="catsCollection"></div>
-
   <!-- 오늘의 학습 -->
   <div class="today-big">
     <div class="today-title">
@@ -2149,7 +2150,9 @@ const pastItems = SCHEDULE.filter(s => {
 document.getElementById('statWords').innerHTML = `${pastItems.length * WORDS_PER_DAY}<span class="unit">개</span>`;
 document.getElementById('statDays').innerHTML = `${pastItems.length}<span class="unit">일</span>`;
 
-// ========== 🐱 고양이 친구들 컬렉션 ==========
+// ========== 🐱 고양이 친구들 컬렉션 (제거됨 — 코드는 유지) ==========
+/* 고양이 친구 컬렉션 섹션을 홈페이지에서 제거함.
+   필요하면 HTML에 <div id="catsCollection"></div> 다시 추가하면 작동. */
 const CAT_FRIENDS = [
   { unlock:   0, name: '핑키',     color: '#ffc0d4', emoji: '🌸', desc: '첫 친구!' },
   { unlock:  20, name: '버터',     color: '#ffd4b5', emoji: '🍯', desc: '20단어!' },
@@ -2178,27 +2181,26 @@ function makeCatSVG(color, locked) {
 }
 
 const wordsLearned = pastItems.length * WORDS_PER_DAY;
+// 고양이 컬렉션 섹션 제거됨 — 안전 가드
 const catsContainer = document.getElementById('catsCollection');
-let unlockedCount = 0;
-
-CAT_FRIENDS.forEach(cat => {
-  const isUnlocked = wordsLearned >= cat.unlock;
-  if (isUnlocked) unlockedCount++;
-  const remaining = cat.unlock - wordsLearned;
-  const status = isUnlocked
-    ? `${cat.desc} ${cat.emoji}`
-    : `${remaining}개 더!`;
-
-  catsContainer.innerHTML += `
-    <div class="cat-friend ${isUnlocked ? 'unlocked' : 'locked'}" title="${cat.name}">
-      ${makeCatSVG(cat.color, !isUnlocked)}
-      <div class="cat-name">${isUnlocked ? cat.name : '???'}</div>
-      <div class="cat-status">${status}</div>
-    </div>
-  `;
-});
-
-document.getElementById('catCount').textContent = `${unlockedCount}/${CAT_FRIENDS.length} 마리`;
+if (catsContainer) {
+  let unlockedCount = 0;
+  CAT_FRIENDS.forEach(cat => {
+    const isUnlocked = wordsLearned >= cat.unlock;
+    if (isUnlocked) unlockedCount++;
+    const remaining = cat.unlock - wordsLearned;
+    const status = isUnlocked ? `${cat.desc} ${cat.emoji}` : `${remaining}개 더!`;
+    catsContainer.innerHTML += `
+      <div class="cat-friend ${isUnlocked ? 'unlocked' : 'locked'}" title="${cat.name}">
+        ${makeCatSVG(cat.color, !isUnlocked)}
+        <div class="cat-name">${isUnlocked ? cat.name : '???'}</div>
+        <div class="cat-status">${status}</div>
+      </div>
+    `;
+  });
+  const catCountEl = document.getElementById('catCount');
+  if (catCountEl) catCountEl.textContent = `${unlockedCount}/${CAT_FRIENDS.length} 마리`;
+}
 
 const upcoming = SCHEDULE.filter(s => s.date > todayStr).sort((a,b) => a.date.localeCompare(b.date))[0];
 const nextEl = document.getElementById('statNext');
