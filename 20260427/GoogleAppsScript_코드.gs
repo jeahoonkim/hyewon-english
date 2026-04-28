@@ -12,6 +12,8 @@
 const SHEET_ID = "1wqob-TM5UfWs1eDNDzADeg9tkHjErB1MdghCLg1b1Cg";
 const VOCAB_SHEET_NAME = "단어장기록";
 const QUIZ_SHEET_NAME = "퀴즈기록";
+const ACTIVITY_SHEET_NAME = "활동기록";   // 🆕 모든 활동 시간순
+const STATUS_SHEET_NAME = "현재상태";     // 🆕 요약 대시보드
 
 // ============ 카톡 발송 URL (기존 재님 Apps Script) ============
 const LEGACY_APPS_URL = "https://script.google.com/macros/s/AKfycbzBGQgFRhsSdQimr8UwIbFXF1pubMLSuMFXketQ_XJGvsA5fNh3oo_JQ9cviWQSKbAPyg/exec";
@@ -27,14 +29,90 @@ function doPost(e) {
   try {
     const data = JSON.parse(e.postData.contents);
     const result = { ok: true, actions: [] };
-    if (data.vocab) { saveVocabRecord(data.vocab); result.actions.push('vocab_saved'); }
-    if (data.quiz)  { saveQuizRecord(data.quiz);  result.actions.push('quiz_saved'); }
+    if (data.vocab)    { saveVocabRecord(data.vocab); result.actions.push('vocab_saved'); }
+    if (data.quiz)     { saveQuizRecord(data.quiz);   result.actions.push('quiz_saved'); }
+    if (data.activity) { saveActivity(data.activity); result.actions.push('activity_saved'); }
+    if (data.status)   { updateStatus(data.status);   result.actions.push('status_updated'); }
     return ContentService.createTextOutput(JSON.stringify(result))
       .setMimeType(ContentService.MimeType.JSON);
   } catch (err) {
     return ContentService.createTextOutput(JSON.stringify({ ok: false, error: err.toString() }))
       .setMimeType(ContentService.MimeType.JSON);
   }
+}
+
+
+// =====================================================
+// 🆕 [활동기록] 모든 활동 시간순 기록
+// =====================================================
+function saveActivity(act) {
+  const ss = SpreadsheetApp.openById(SHEET_ID);
+  let sheet = ss.getSheetByName(ACTIVITY_SHEET_NAME);
+  if (!sheet) {
+    sheet = ss.insertSheet(ACTIVITY_SHEET_NAME);
+    sheet.appendRow([
+      '날짜', '시간', '종류', '내용',
+      '변동(P)', '포인트잔액', '쿠폰수', '지갑(원)'
+    ]);
+    sheet.getRange(1, 1, 1, 8).setBackground('#fff3bf').setFontWeight('bold');
+    sheet.setFrozenRows(1);
+    sheet.setColumnWidth(1, 100);
+    sheet.setColumnWidth(2, 70);
+    sheet.setColumnWidth(3, 110);
+    sheet.setColumnWidth(4, 200);
+    sheet.setColumnWidth(5, 80);
+    sheet.setColumnWidth(6, 100);
+    sheet.setColumnWidth(7, 70);
+    sheet.setColumnWidth(8, 90);
+  }
+  sheet.appendRow([
+    act.date || '',
+    act.time || '',
+    act.type || '',
+    act.detail || '',
+    act.delta || 0,
+    act.points || 0,
+    act.coupons || 0,
+    act.wallet || 0
+  ]);
+}
+
+
+// =====================================================
+// 🆕 [현재상태] 요약 대시보드 (한 줄씩 덮어쓰기)
+// =====================================================
+function updateStatus(status) {
+  const ss = SpreadsheetApp.openById(SHEET_ID);
+  let sheet = ss.getSheetByName(STATUS_SHEET_NAME);
+  if (!sheet) {
+    sheet = ss.insertSheet(STATUS_SHEET_NAME);
+    sheet.setColumnWidth(1, 220);
+    sheet.setColumnWidth(2, 200);
+  }
+  // 모두 클리어 후 다시 쓰기
+  sheet.clearContents();
+  sheet.appendRow(['🐱 혜원이 학습 현재 상태', '']);
+  sheet.getRange(1, 1, 1, 2).setBackground('#ff8fb5').setFontWeight('bold').setFontColor('white');
+
+  const rows = [
+    ['🕐 마지막 업데이트', status.timestamp || ''],
+    ['', ''],
+    ['💎 현재 포인트', (status.points || 0) + ' P'],
+    ['🎫 쿠폰 (사용가능 / 전체)', (status.unusedCoupons || 0) + ' / ' + (status.totalCoupons || 0)],
+    ['💰 지갑 잔액', (status.wallet || 0) + ' 원'],
+    ['', ''],
+    ['🔥 연속 학습', (status.streak || 0) + ' 일'],
+    ['📅 마지막 학습일', status.lastDate || '없음'],
+    ['📚 누적 학습일', (status.totalDays || 0) + ' 일'],
+    ['🎯 누적 단어 수', (status.totalWords || 0) + ' 개'],
+    ['', ''],
+    ['🏆 누적 퀴즈 점수', (status.totalScore || 0) + ' / ' + (status.maxScore || 0) + ' 점']
+  ];
+
+  rows.forEach(r => sheet.appendRow(r));
+  // 강조
+  sheet.getRange(3, 1, 1, 2).setBackground('#fff3bf').setFontWeight('bold');
+  sheet.getRange(7, 1, 1, 2).setBackground('#ffd4e5').setFontWeight('bold');
 }
 
 function saveVocabRecord(v) {

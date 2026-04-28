@@ -1788,10 +1788,80 @@ const todayStr = `${yyyy}-${mm}-${dd}`;
 const koDayNames = ['일','월','화','수','목','금','토'];
 document.getElementById('dateChip').textContent = `${parseInt(mm)}월 ${parseInt(dd)}일 ${koDayNames[today.getDay()]}요일`;
 
+// ========== 📊 Google Sheets 동기화 URL ==========
+const GAS_URL = "https://script.google.com/macros/s/AKfycbyg0RNvnjzeUpWBu3KDrwre_ngHxjfSINUnI-JNEULMHSPYsVChf3eEogE7crF14BdpJg/exec";
+
 // ========== 💎🎫💰 보상 시스템 ==========
 function getPoints()  { try { return parseInt(localStorage.getItem('hyewon_points')  || '0'); } catch(e) { return 0; } }
 function getWallet()  { try { return parseInt(localStorage.getItem('hyewon_wallet')  || '0'); } catch(e) { return 0; } }
 function getCoupons() { try { return JSON.parse (localStorage.getItem('hyewon_coupons') || '[]'); } catch(e) { return []; } }
+
+// ========== 📊 시트 동기화 헬퍼 ==========
+function syncToSheet(activityType, detail, delta) {
+  if (!GAS_URL) return;
+
+  const now = new Date();
+  const pad = n => String(n).padStart(2, '0');
+  const dateStr = `${now.getFullYear()}-${pad(now.getMonth()+1)}-${pad(now.getDate())}`;
+  const timeStr = `${pad(now.getHours())}:${pad(now.getMinutes())}`;
+  const stamp   = `${dateStr} ${timeStr}:${pad(now.getSeconds())}`;
+
+  const points  = getPoints();
+  const cps     = getCoupons();
+  const wallet  = getWallet();
+  const unused  = cps.filter(c => !c.used).length;
+
+  // 누적 학습 데이터 계산
+  let lastDate = '없음', totalDays = 0, totalWords = 0, totalScore = 0, maxScore = 0;
+  try {
+    const vh = JSON.parse(localStorage.getItem('hyewon_vocab_history') || '[]');
+    const dates = new Set(vh.map(r => r.scheduledDate || r.date));
+    totalDays  = dates.size;
+    totalWords = vh.reduce((s,r) => s + (r.wordsLearned || 20), 0);
+    if (vh.length > 0) {
+      const sorted = [...dates].sort();
+      lastDate = sorted[sorted.length - 1];
+    }
+    const qh = JSON.parse(localStorage.getItem('hyewon_quiz_history') || '[]');
+    qh.forEach(q => {
+      totalScore += (q.correctCount || 0);
+      maxScore   += (q.total || 20);
+    });
+  } catch(e) {}
+
+  const payload = {
+    activity: {
+      date:    dateStr,
+      time:    timeStr,
+      type:    activityType,
+      detail:  detail || '',
+      delta:   delta || 0,
+      points:  points,
+      coupons: unused,
+      wallet:  wallet
+    },
+    status: {
+      timestamp:     stamp,
+      points:        points,
+      unusedCoupons: unused,
+      totalCoupons:  cps.length,
+      wallet:        wallet,
+      streak:        (typeof calculateStreak === 'function' ? calculateStreak() : 0),
+      lastDate:      lastDate,
+      totalDays:     totalDays,
+      totalWords:    totalWords,
+      totalScore:    totalScore,
+      maxScore:      maxScore
+    }
+  };
+
+  fetch(GAS_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'text/plain' },
+    body: JSON.stringify(payload)
+  }).catch(err => console.warn('[시트 동기화 실패]', err));
+}
 
 function setPoints(v)  { localStorage.setItem('hyewon_points',  String(v)); }
 function setWallet(v)  { localStorage.setItem('hyewon_wallet',  String(v)); }
@@ -1822,6 +1892,19 @@ function refreshRewardCards() {
 
 // 초기 표시
 refreshRewardCards();
+
+// 📊 홈페이지 열릴 때 현재 상태를 시트에 자동 동기화 (5초 후)
+// 너무 자주 호출 안 하도록 마지막 동기화 5분 이내면 스킵
+setTimeout(function() {
+  try {
+    const lastSync = parseInt(localStorage.getItem('hyewon_last_sync') || '0');
+    const now = Date.now();
+    if (now - lastSync > 300000) {  // 5분 이상 지났으면
+      syncToSheet('🏠 홈 접속', '홈페이지 방문', 0);
+      localStorage.setItem('hyewon_last_sync', String(now));
+    }
+  } catch(e) {}
+}, 3000);
 
 // ========== 🎁 선물 카드 상태 갱신 ==========
 function refreshGiftCards() {
@@ -1949,6 +2032,9 @@ document.querySelectorAll('.gift-card').forEach(card => {
     refreshRewardCards();
     refreshGiftCards();
     showCelebration(`🎉 ${gift.name}\n쿠폰을 받았어요! 🎫`);
+
+    // 📊 시트 동기화
+    syncToSheet('🎫 쿠폰 구매', gift.name, -gift.cost);
   });
 });
 
@@ -1975,6 +2061,9 @@ document.querySelectorAll('.cash-btn').forEach(btn => {
     refreshRewardCards();
     refreshCashButtons();
     showCelebration(`💰 ${amount.toLocaleString()}원이\n지갑에 들어왔어요!`);
+
+    // 📊 시트 동기화
+    syncToSheet('💵 현금 환전', `${amount.toLocaleString()}원`, -amount);
   });
 });
 
@@ -2033,6 +2122,9 @@ function renderCoupons() {
         refreshRewardCards();
         refreshGiftCards();  // SOLD OUT 해제 갱신
         showCelebration('🎉 쿠폰을 사용했어요!\n엄마/아빠한테 보여주세요!');
+
+        // 📊 시트 동기화
+        syncToSheet('✅ 쿠폰 사용', coupons[idx].name, 0);
       }
     });
   });
