@@ -153,7 +153,16 @@ function doGet(e) {
   if (e && e.parameter && e.parameter.action === 'check_bonus') {
     const lastRow = parseInt(e.parameter.last_row || '1');
     const result = getNewBonuses(lastRow);
-    return ContentService.createTextOutput(JSON.stringify(result))
+    const json = JSON.stringify(result);
+
+    // JSONP 응답 (CORS 우회) — callback 파라미터 있으면
+    if (e.parameter.callback) {
+      return ContentService.createTextOutput(
+        e.parameter.callback + '(' + json + ');'
+      ).setMimeType(ContentService.MimeType.JAVASCRIPT);
+    }
+    // 일반 JSON 응답
+    return ContentService.createTextOutput(json)
       .setMimeType(ContentService.MimeType.JSON);
   }
   return ContentService.createTextOutput("혜원이 영단어 서버 정상 작동 중 🌟");
