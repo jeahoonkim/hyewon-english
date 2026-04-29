@@ -1893,21 +1893,20 @@ function refreshRewardCards() {
 // 초기 표시
 refreshRewardCards();
 
-// 📊 홈페이지 열릴 때 현재 상태를 시트에 자동 동기화 (5초 후)
+// 📊 홈페이지 열릴 때 현재 상태를 시트에 자동 동기화 (3초 후, 매번 실행)
 setTimeout(function() {
   try {
-    const lastSync = parseInt(localStorage.getItem('hyewon_last_sync') || '0');
-    const now = Date.now();
-    if (now - lastSync > 300000) {  // 5분 이상 지났으면
-      syncToSheet('🏠 홈 접속', '홈페이지 방문', 0);
-      localStorage.setItem('hyewon_last_sync', String(now));
-    }
-  } catch(e) {}
+    syncToSheet('🏠 홈 접속', '홈페이지 방문', 0);
+    localStorage.setItem('hyewon_last_sync', String(Date.now()));
+  } catch(e) { console.warn('[홈 동기화 실패]', e); }
 }, 3000);
 
 // 🎁 엄마/아빠 보너스 자동 확인 (JSONP 방식 — CORS 우회)
-function checkAdminBonus() {
-  if (!GAS_URL) return;
+function checkAdminBonus(verbose) {
+  if (!GAS_URL) {
+    if (verbose) alert('❌ GAS_URL이 설정되지 않았어요');
+    return;
+  }
 
   const lastRow = parseInt(localStorage.getItem('hyewon_last_bonus_row') || '2');
   const callbackName = 'hyewonBonus_' + Date.now();
@@ -1944,9 +1943,11 @@ function checkAdminBonus() {
       } else if (data.lastRow) {
         // 새 보너스 없음 — lastRow만 업데이트
         localStorage.setItem('hyewon_last_bonus_row', String(data.lastRow));
+        if (verbose) alert('✅ 시트 확인 완료\n새 보너스 없음');
       }
     } catch (err) {
       console.error('[보너스 처리 실패]', err);
+      if (verbose) alert('❌ 보너스 처리 실패\n' + err.message);
     } finally {
       delete window[callbackName];
       if (s && s.parentNode) s.parentNode.removeChild(s);
@@ -1958,9 +1959,31 @@ function checkAdminBonus() {
   s.src = GAS_URL + '?action=check_bonus&last_row=' + lastRow + '&callback=' + callbackName;
   s.onerror = function() {
     console.warn('[보너스 확인 실패: 스크립트 로드 에러]');
+    if (verbose) alert('❌ 시트 연결 실패!\nApps Script 새 버전 배포 확인 필요');
     delete window[callbackName];
   };
   document.head.appendChild(s);
+}
+
+// 포인트 카드 길게 누르면(2초) 강제 보너스 체크 (디버그용)
+let pointsCardTimer = null;
+const pointsCardEl = document.getElementById('pointsCard');
+if (pointsCardEl) {
+  pointsCardEl.addEventListener('mousedown', function() {
+    pointsCardTimer = setTimeout(function() {
+      checkAdminBonus(true);  // verbose 모드로 호출
+    }, 2000);
+  });
+  pointsCardEl.addEventListener('touchstart', function() {
+    pointsCardTimer = setTimeout(function() {
+      checkAdminBonus(true);
+    }, 2000);
+  });
+  ['mouseup', 'mouseleave', 'touchend', 'touchcancel'].forEach(function(ev) {
+    pointsCardEl.addEventListener(ev, function() {
+      if (pointsCardTimer) clearTimeout(pointsCardTimer);
+    });
+  });
 }
 
 setTimeout(checkAdminBonus, 1500);
