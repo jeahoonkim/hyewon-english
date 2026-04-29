@@ -628,7 +628,7 @@
   /* 각 카드 색상 - 진한 테두리 + 강한 그림자 = 또렷! */
   .gift-card.gift-lotteworld { border-color: #e60012; box-shadow: 0 8px 0 rgba(230,0,18,0.22), 0 8px 24px rgba(230,0,18,0.15); }
   .gift-card.gift-kidzania   { border-color: #a32035; box-shadow: 0 8px 0 rgba(163,32,53,0.22), 0 8px 24px rgba(163,32,53,0.15); }
-  .gift-card.gift-baskin     { border-color: #ff6ec7; box-shadow: 0 8px 0 rgba(255,110,199,0.25), 0 8px 24px rgba(255,110,199,0.18); }
+  .gift-card.gift-robucks    { border-color: #00b06f; box-shadow: 0 8px 0 rgba(0,176,111,0.25), 0 8px 24px rgba(0,176,111,0.18); }
   .gift-card.gift-cash       { border-color: #52b788; box-shadow: 0 8px 0 rgba(82,183,136,0.25), 0 8px 24px rgba(82,183,136,0.18); }
 
   .gift-card:not(.locked):not(.sold-out):hover {
@@ -1698,12 +1698,12 @@
           <div class="gift-cost">20,000 P</div>
           <div class="gift-status"></div>
         </button>
-        <button class="gift-card gift-baskin" data-gift="baskin">
-          <img class="gift-img" src="gifts/baskinrobbins.jpg" alt="배스킨라빈스"
+        <button class="gift-card gift-robucks" data-gift="robucks">
+          <img class="gift-img" src="gifts/Robucks.jpg" alt="Robucks"
                onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-          <div class="gift-icon" style="display:none;">🍦</div>
-          <div class="gift-name">배스킨라빈스</div>
-          <div class="gift-cost">5,000 P</div>
+          <div class="gift-icon" style="display:none;">🎮</div>
+          <div class="gift-name">400 Robux<br>(Roblox)</div>
+          <div class="gift-cost">15,000 P</div>
           <div class="gift-status"></div>
         </button>
         <button class="gift-card gift-cash" data-gift="cash">
@@ -2283,7 +2283,7 @@ function setCoupons(v) { localStorage.setItem('hyewon_coupons', JSON.stringify(v
 const GIFTS = {
   'lotteworld': { name: '롯데월드 어드벤처', emoji: '🎢', cost: 40000 },
   'kidzania':   { name: '키자니아 코리아',   emoji: '🏙️', cost: 20000 },
-  'baskin':     { name: '배스킨라빈스',       emoji: '🍦', cost: 5000  },
+  'robucks':    { name: '400 Robux',          emoji: '🎮', cost: 15000 },
   'cash':       { name: '현금 5,000원',        emoji: '💵', cost: 5000  }
 };
 
