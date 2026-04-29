@@ -322,6 +322,155 @@
     margin-bottom: 24px;
   }
   .stats-row.single { grid-template-columns: 1fr; margin-bottom: 8px; }
+  .stats-row.with-event { grid-template-columns: 1.6fr 1fr; gap: 10px; margin-bottom: 8px; }
+
+  /* ===== 🎯 이벤트 카드 ===== */
+  .event-card {
+    background: linear-gradient(135deg, #ffd93d 0%, #ff8fb5 50%, #d4baff 100%);
+    border: 3px solid white;
+    border-radius: 22px;
+    padding: 12px 10px;
+    cursor: pointer;
+    text-align: center;
+    color: white;
+    font-family: 'Jua', sans-serif;
+    box-shadow: 0 8px 22px rgba(255, 143, 181, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    animation: eventPulse 2s ease-in-out infinite;
+  }
+  @keyframes eventPulse {
+    0%, 100% { box-shadow: 0 8px 22px rgba(255, 143, 181, 0.3); }
+    50% { box-shadow: 0 12px 30px rgba(255, 217, 61, 0.5); }
+  }
+  .event-card::before {
+    content: "✨";
+    position: absolute;
+    top: 6px; right: 8px;
+    font-size: 0.9em;
+    animation: twinkle 1.5s ease-in-out infinite;
+  }
+  .event-card:hover { transform: translateY(-3px) scale(1.03); }
+  .event-card:active { transform: scale(0.98); }
+  .event-card.completed {
+    background: linear-gradient(135deg, #95d5b2, #52b788);
+    animation: none;
+  }
+  .event-card.no-event {
+    background: linear-gradient(135deg, #cfd8dc, #b0bec5);
+    cursor: default;
+    animation: none;
+  }
+  .event-icon {
+    font-size: 1.8em;
+    line-height: 1;
+    margin-bottom: 2px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+  }
+  .event-info { width: 100%; }
+  .event-label {
+    font-size: 0.72em;
+    opacity: 0.95;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.15);
+    margin-bottom: 1px;
+  }
+  .event-theme {
+    font-size: 0.95em;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+    line-height: 1.1;
+    margin-bottom: 3px;
+  }
+  .event-bonus {
+    font-size: 0.7em;
+    background: rgba(255,255,255,0.25);
+    padding: 2px 8px;
+    border-radius: 50px;
+    display: inline-block;
+    backdrop-filter: blur(4px);
+  }
+
+  /* ===== 이벤트 모달 디테일 ===== */
+  .event-detail {
+    padding: 24px 20px;
+    text-align: center;
+  }
+  .event-big-icon {
+    font-size: 5em;
+    line-height: 1;
+    margin-bottom: 8px;
+    animation: bounce 2s ease-in-out infinite;
+  }
+  .event-big-theme {
+    font-family: 'Jua', sans-serif;
+    font-size: 1.5em;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+  .event-rule {
+    background: linear-gradient(135deg, #fff8e7, #fff3bf);
+    border: 2px dashed #ffc107;
+    border-radius: 18px;
+    padding: 14px 18px;
+    margin: 12px 0 18px;
+    text-align: left;
+  }
+  .rule-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Gaegu', sans-serif;
+    font-size: 1.05em;
+    color: var(--text);
+    padding: 4px 0;
+  }
+  .rule-row b { color: var(--pink-deep); }
+  .rule-emoji { font-size: 1.4em; flex-shrink: 0; }
+
+  .event-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .event-btn {
+    display: block;
+    padding: 14px 16px;
+    border-radius: 16px;
+    text-decoration: none;
+    font-family: 'Jua', sans-serif;
+    font-size: 1.05em;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.15s;
+    text-align: center;
+  }
+  .event-btn:hover { transform: translateY(-2px); }
+  .event-btn.primary {
+    background: linear-gradient(135deg, #ff8fb5, #d4baff);
+    color: white;
+    box-shadow: 0 6px 16px rgba(255,143,181,0.3);
+  }
+  .event-btn.secondary {
+    background: white;
+    color: var(--pink-deep);
+    border: 2px solid var(--pink-deep);
+  }
+  .event-status {
+    margin-top: 14px;
+    font-family: 'Gaegu', sans-serif;
+    color: var(--text-soft);
+    font-size: 0.95em;
+  }
+  .event-status.done {
+    color: #2e7d32;
+    font-weight: 700;
+  }
   .stat-card.full-card {
     display: flex;
     align-items: center;
@@ -1472,8 +1621,8 @@
     </div>
   </div>
 
-  <!-- 📚 메인 통계 카드 (배운 단어 큼지막하게) -->
-  <div class="stats-row single">
+  <!-- 📚 메인 통계 + 🎯 이벤트 카드 (배운 단어 옆에 이벤트) -->
+  <div class="stats-row with-event">
     <div class="stat-card pink full-card">
       <svg class="stat-cat" viewBox="0 0 60 60">
         <ellipse cx="30" cy="42" rx="18" ry="14" fill="#ffb380"/>
@@ -1488,9 +1637,17 @@
       </svg>
       <div class="stat-info-wrap">
         <div class="stat-value" id="statWords">0<span class="unit">개</span></div>
-        <div class="stat-label">지금까지 배운 단어 📚</div>
+        <div class="stat-label">배운 단어 📚</div>
       </div>
     </div>
+    <button class="event-card" id="eventCard">
+      <div class="event-icon" id="eventIcon">🎯</div>
+      <div class="event-info">
+        <div class="event-label">오늘의 이벤트</div>
+        <div class="event-theme" id="eventTheme">곧 시작!</div>
+        <div class="event-bonus" id="eventBonus">최대 +200P 🎁</div>
+      </div>
+    </button>
   </div>
 
   <!-- 작은 인포 줄 (학습 일수 + 다음 학습) -->
@@ -1574,6 +1731,44 @@
   </div>
 
   <!-- 💰 지갑 모달 제거됨 — 현금은 이제 쿠폰으로 발급 -->
+
+  <!-- 🎯 이벤트 모달 -->
+  <div id="eventModal" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2>🎯 오늘의 이벤트 퀴즈</h2>
+        <button class="modal-close" id="closeEventBtn">✕</button>
+      </div>
+      <div class="modal-summary" id="eventSummary">— 오늘의 보너스 퀴즈! —</div>
+      <div class="event-detail">
+        <div class="event-big-icon" id="eventBigIcon">🎯</div>
+        <div class="event-big-theme" id="eventBigTheme">국어 퀴즈</div>
+        <div class="event-rule">
+          <div class="rule-row">
+            <span class="rule-emoji">📝</span>
+            <span>총 20문제!</span>
+          </div>
+          <div class="rule-row">
+            <span class="rule-emoji">💎</span>
+            <span>맞출 때마다 <b>+10P 획득!</b></span>
+          </div>
+          <div class="rule-row">
+            <span class="rule-emoji">🎁</span>
+            <span>최대 <b>200P 받기 가능!</b></span>
+          </div>
+        </div>
+        <div class="event-actions">
+          <a class="event-btn primary" id="eventStartBtn" target="_blank">
+            🚀 퀴즈 풀러 가기
+          </a>
+          <button class="event-btn secondary" id="eventScoreBtn">
+            📝 점수 입력하고 포인트 받기
+          </button>
+        </div>
+        <div class="event-status" id="eventStatus"></div>
+      </div>
+    </div>
+  </div>
 
   <!-- 🔥 연속 학습 스트릭 -->
   <div class="streak-card" id="streakCard">
@@ -2255,6 +2450,126 @@ function closeModal(id) {
 // 카드 클릭 → 모달 열기
 document.getElementById('pointsCard').addEventListener('click', () => openModal('giftModal'));
 document.getElementById('couponCard').addEventListener('click', () => openModal('couponModal'));
+
+// ========== 🎯 이벤트 시스템 ==========
+const EVENTS = {
+  '2026-04-29': { theme: '국어 퀴즈',         file: '혜원이_국어퀴즈_20260429.html',       icon: '📖' },
+  '2026-04-30': { theme: '사회/역사 퀴즈',     file: '혜원이_사회역사_퀴즈_20260430.html',   icon: '🏛️' },
+  '2026-05-01': { theme: '영어 단어 퀴즈',      file: '혜원이_영어단어_퀴즈_20260501.html',   icon: '🇺🇸' },
+  '2026-05-02': { theme: '수학 분수/소수',      file: '혜원이_수학분수소수_퀴즈_20260502.html', icon: '🔢' },
+  '2026-05-03': { theme: '넌센스 퀴즈 3탄',     file: '혜원이_넌센스퀴즈_3탄_20260503.html',   icon: '🤔' }
+};
+
+const todayEvent = EVENTS[todayStr];
+const eventCard = document.getElementById('eventCard');
+const eventCompletedKey = 'hyewon_event_done_' + todayStr;
+const eventDoneInfo = (function() {
+  try { return JSON.parse(localStorage.getItem(eventCompletedKey) || 'null'); } catch(e) { return null; }
+})();
+
+function refreshEventCard() {
+  const iconEl = document.getElementById('eventIcon');
+  const themeEl = document.getElementById('eventTheme');
+  const bonusEl = document.getElementById('eventBonus');
+
+  if (!todayEvent) {
+    eventCard.classList.add('no-event');
+    iconEl.textContent = '😴';
+    themeEl.textContent = '오늘 이벤트 없음';
+    bonusEl.textContent = '내일 또 만나요!';
+    return;
+  }
+
+  eventCard.classList.remove('no-event');
+  iconEl.textContent = todayEvent.icon;
+  themeEl.textContent = todayEvent.theme;
+
+  const done = (function() {
+    try { return JSON.parse(localStorage.getItem(eventCompletedKey) || 'null'); } catch(e) { return null; }
+  })();
+  if (done) {
+    eventCard.classList.add('completed');
+    bonusEl.textContent = '✅ +' + done.earned + 'P 받음!';
+  } else {
+    eventCard.classList.remove('completed');
+    bonusEl.textContent = '최대 +200P 🎁';
+  }
+}
+refreshEventCard();
+
+// 이벤트 카드 클릭 → 모달 열기
+eventCard.addEventListener('click', function() {
+  if (!todayEvent) {
+    alert('오늘은 이벤트가 없어요! 😊\n내일 다시 와주세요!');
+    return;
+  }
+  // 모달 내용 채우기
+  document.getElementById('eventBigIcon').textContent = todayEvent.icon;
+  document.getElementById('eventBigTheme').textContent = todayEvent.theme;
+  document.getElementById('eventStartBtn').href = 'events/' + encodeURIComponent(todayEvent.file);
+
+  // 이미 했으면 상태 표시
+  const done = (function() {
+    try { return JSON.parse(localStorage.getItem(eventCompletedKey) || 'null'); } catch(e) { return null; }
+  })();
+  const statusEl = document.getElementById('eventStatus');
+  if (done) {
+    statusEl.className = 'event-status done';
+    statusEl.innerHTML = '✅ 오늘 이미 풀었어요!<br>정답 ' + done.score + '개 · +' + done.earned + 'P 받음';
+  } else {
+    statusEl.className = 'event-status';
+    statusEl.textContent = '📝 풀고 나서 점수 입력하세요!';
+  }
+  openModal('eventModal');
+});
+
+// 이벤트 모달 닫기
+document.getElementById('closeEventBtn').addEventListener('click', () => closeModal('eventModal'));
+document.getElementById('eventModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal('eventModal');
+});
+
+// 📝 점수 입력하고 포인트 받기
+document.getElementById('eventScoreBtn').addEventListener('click', function() {
+  if (!todayEvent) return;
+
+  const done = (function() {
+    try { return JSON.parse(localStorage.getItem(eventCompletedKey) || 'null'); } catch(e) { return null; }
+  })();
+  if (done) {
+    if (!confirm('오늘 이미 ' + done.earned + 'P 받았어요!\n다시 입력할까요? (이전 기록은 사라져요)')) return;
+  }
+
+  const ans = prompt('🎯 ' + todayEvent.theme + '\n정답 몇 개 맞췄어요? (0~20)', '15');
+  if (ans === null) return;
+  const num = parseInt(ans);
+  if (isNaN(num) || num < 0 || num > 20) {
+    alert('0~20 사이로 입력해주세요!');
+    return;
+  }
+
+  const earned = num * 10;
+  // 만약 다시 입력이면 이전 포인트 차감 후 새로 적립
+  if (done) {
+    setPoints(Math.max(0, getPoints() - done.earned));
+  }
+  setPoints(getPoints() + earned);
+  localStorage.setItem(eventCompletedKey, JSON.stringify({
+    score: num,
+    earned: earned,
+    time: new Date().toISOString(),
+    theme: todayEvent.theme
+  }));
+
+  refreshRewardCards();
+  refreshEventCard();
+  closeModal('eventModal');
+  showCelebration('🎯 ' + todayEvent.theme + '\n정답 ' + num + '/20개\n\n🎁 +' + earned + 'P 적립!');
+
+  if (typeof syncToSheet === 'function') {
+    syncToSheet('🎯 이벤트 퀴즈', todayEvent.theme + ' (' + num + '/20)', earned);
+  }
+});
 
 // 모달 닫기
 document.getElementById('closeGiftBtn').addEventListener('click', () => closeModal('giftModal'));
