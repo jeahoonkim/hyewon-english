@@ -866,6 +866,14 @@ const WORDS = [
     exampleKo: "우리는 함께 저녁을 먹어요.",
     fact: "옛날엔 dinner가 하루 중 가장 큰 식사 한 번을 뜻했어요. 지금은 저녁으로 굳어졌죠!" }
 ];
+// 🎲 종합시험: 매번 풀 때마다 문제 순서 랜덤!
+(function shuffleExam(){
+  for(var i=WORDS.length-1; i>0; i--){
+    var j=Math.floor(Math.random()*(i+1));
+    var t=WORDS[i]; WORDS[i]=WORDS[j]; WORDS[j]=t;
+  }
+})();
+
 
 // ============ 설정 ============
 // 🔑 Google Apps Script 웹앱 URL (새로 만든 "혜원이 영단어 기록" 시트용)

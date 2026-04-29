@@ -24,6 +24,7 @@ if sys.platform == 'win32':
 ROOT = Path(__file__).parent.resolve()
 TEMPLATE_DIR = ROOT / "20260427"
 QUIZ_TEMPLATE = TEMPLATE_DIR / "혜원이_영단어_월요일_퀴즈.html"
+VOCAB_TEMPLATE = TEMPLATE_DIR / "혜원이_영단어_월요일_동물과자연.html"
 INDEX_HTML = ROOT / "index.html"
 DATA_DIR = ROOT / "data"
 
@@ -51,6 +52,83 @@ def build_words_array(words):
     lines.append("];")
     return "\n".join(lines)
 
+
+# ──────────────────────────────────────────────────
+# 단어장 복습 모드: 토요일 틀린 단어만 보여주기
+# ──────────────────────────────────────────────────
+VOCAB_FILTER_SCRIPT = """
+// ═══════════════════════════════════════════════
+// 🌻 일요일 단어장 복습: 어제 토요일에 틀린 단어만 학습
+// ═══════════════════════════════════════════════
+(function initReviewVocab() {
+  try {
+    const history = JSON.parse(localStorage.getItem('hyewon_quiz_history') || '[]');
+    const saturdays = history.filter(q =>
+      q.day === 'Saturday' || (q.day && q.day.indexOf('Sat') !== -1)
+    );
+
+    if (saturdays.length === 0) {
+      WORDS.length = 0;
+      window.__VOCAB_REVIEW_STATE__ = 'no_saturday';
+      return;
+    }
+
+    const mostRecent = saturdays[saturdays.length - 1];
+    const wrongList = mostRecent.wrongWords || [];
+
+    if (wrongList.length === 0) {
+      WORDS.length = 0;
+      window.__VOCAB_REVIEW_STATE__ = 'perfect';
+      return;
+    }
+
+    const filtered = WORDS.filter(w => wrongList.includes(w.word));
+    WORDS.length = 0;
+    filtered.forEach(w => WORDS.push(w));
+    window.__VOCAB_REVIEW_STATE__ = 'ready';
+  } catch (e) {
+    console.error('단어장 복습 초기화 실패:', e);
+    WORDS.length = 0;
+    window.__VOCAB_REVIEW_STATE__ = 'error';
+  }
+})();
+
+// 빈 상태일 때 안내 메시지 표시
+window.addEventListener('DOMContentLoaded', function() {
+  const state = window.__VOCAB_REVIEW_STATE__;
+  if (state === 'ready') return;
+  setTimeout(function() {
+    const container = document.querySelector('.container') || document.body;
+    let html = '';
+    if (state === 'no_saturday') {
+      html = `<div style="text-align:center; padding:60px 20px; font-family:'Jua',sans-serif;">
+        <div style="font-size:5em; margin-bottom:20px;">🤔</div>
+        <h2 style="color:#d63384; font-size:1.8em; margin-bottom:15px;">토요일 시험을 먼저!</h2>
+        <p style="color:#666; font-size:1.1em; margin-bottom:30px; line-height:1.7;">
+          일요일 복습 단어장은 토요일에 틀린 단어로 만들어요 📝<br>
+          먼저 토요일 종합시험을 풀고 와주세요!
+        </p>
+        <a href="../" style="display:inline-block; background:#ff8fb5; color:white;
+           padding:14px 28px; border-radius:30px; text-decoration:none;
+           font-size:1.1em; font-family:'Jua',sans-serif;">🏠 홈으로 가기</a>
+      </div>`;
+    } else if (state === 'perfect') {
+      html = `<div style="text-align:center; padding:60px 20px; font-family:'Jua',sans-serif;">
+        <div style="font-size:6em; margin-bottom:20px;">🏆</div>
+        <h2 style="color:#d63384; font-size:2em; margin-bottom:15px;">완벽했어요!!! 🎉</h2>
+        <p style="color:#555; font-size:1.15em; margin-bottom:20px; line-height:1.7;">
+          토요일 종합시험에서 <b style="color:#ff8fb5;">100점</b>!<br>
+          복습할 단어가 하나도 없어요 👏
+        </p>
+        <a href="../" style="display:inline-block; background:#ff8fb5; color:white;
+           padding:14px 28px; border-radius:30px; text-decoration:none;
+           font-size:1.1em; font-family:'Jua',sans-serif;">🏠 홈으로 가기</a>
+      </div>`;
+    }
+    if (html) container.innerHTML = html;
+  }, 100);
+});
+"""
 
 # ──────────────────────────────────────────────────
 # 복습 모드: WORDS 배열을 localStorage 기반으로 필터링
@@ -169,6 +247,76 @@ window.addEventListener('DOMContentLoaded', function() {
 """
 
 
+def generate_review_vocab(config, all_words):
+    """일요일 복습 단어장 생성 (토요일 틀린 단어만)"""
+    print(f"\n📚 일요일 복습 단어장 생성 중...")
+    if not VOCAB_TEMPLATE.exists():
+        fail(f"단어장 템플릿 없음: {VOCAB_TEMPLATE}")
+        return None
+
+    with open(VOCAB_TEMPLATE, 'r', encoding='utf-8') as f:
+        html = f.read()
+
+    # 1. WORDS 배열 교체 + 필터링 스크립트 주입
+    new_words = build_words_array(all_words)
+    html = re.sub(
+        r'const WORDS = \[.*?\];',
+        new_words + "\n" + VOCAB_FILTER_SCRIPT,
+        html,
+        count=1,
+        flags=re.DOTALL
+    )
+
+    # 2. 제목/요일/테마 교체
+    html = re.sub(
+        r'<title>.*?</title>',
+        f'<title>🌻 일요일 단어장 복습</title>',
+        html, count=1
+    )
+    html = re.sub(
+        r'월요일 · Day 1 · 동물과 자연</div>',
+        '일요일 · 어제 틀린 단어 다시 보기</div>',
+        html
+    )
+    html = html.replace('재미있는 <b>동물과 자연</b>', '어제 틀린 <b>단어 복습</b>')
+    # 단어장에서 퀴즈로 가는 링크 (일요일 복습 퀴즈로)
+    html = html.replace(
+        '"혜원이_영단어_월요일_퀴즈.html"',
+        f'"{config["quizFileName"]}"'
+    )
+    html = html.replace("day: 'Monday',", f"day: '{config['dayEn']}',")
+    html = html.replace('dayIdx: 1,', f'dayIdx: {config["dayIdx"]},')
+    html = html.replace("theme: '동물과 자연',", f"theme: '일요일 복습 단어장',")
+    html = html.replace("const SCHEDULED_DATE = '2026-04-27';", f"const SCHEDULED_DATE = '{config['date']}';")
+
+    # 3. 배경 그라데이션
+    html = re.sub(
+        r'background:\s*linear-gradient\(180deg,\s*#87ceeb\s*0%,\s*#b5e48c\s*50%,\s*#76c893\s*100%\);',
+        f'background: {config["bgGradient"]}',
+        html
+    )
+
+    # 4. 헤더 제목
+    html = re.sub(
+        r'<h1>🌳 영단어 모험 🌳</h1>',
+        f'<h1>🌻 일요일 복습 📚</h1>',
+        html
+    )
+
+    # 저장
+    dest_folder = ROOT / config['folderName']
+    dest_folder.mkdir(exist_ok=True)
+    vocab_filename = config.get('vocabFileName', '혜원이_영단어_일요일_복습단어장.html')
+    dest = dest_folder / vocab_filename
+    with open(dest, 'w', encoding='utf-8') as f:
+        f.write(html)
+
+    size = os.path.getsize(dest) / 1024
+    ok(f"단어장 저장 완료 ({size:.1f} KB)")
+    print(f"       → {dest.relative_to(ROOT)}")
+    return dest
+
+
 def main():
     header("🌻 혜원이 일요일 복습 생성기 📚")
 
@@ -262,16 +410,20 @@ def main():
     ok(f"저장 완료 ({size:.1f} KB)")
     print(f"       → {dest.relative_to(ROOT)}")
 
+    # 🆕 일요일 단어장도 같이 생성!
+    generate_review_vocab(config, all_words)
+
     # index.html 업데이트
     print(f"\n🏠 홈페이지 SCHEDULE 업데이트 중...")
     with open(INDEX_HTML, 'r', encoding='utf-8') as f:
         idx_html = f.read()
 
+    vocab_file = config.get('vocabFileName', config['quizFileName'])
     new_entry = f'''  {{
     date: "{config['date']}", dayKo: "{config['dayKo']}", dayEn: "{config['dayEn'][:3]}",
     theme: "일요일 복습 ({config['weekLabel']})", emoji: "🌻",
     folder: "{config['folderName']}",
-    vocab: "{config['quizFileName']}",
+    vocab: "{vocab_file}",
     quiz: "{config['quizFileName']}"
   }}'''
 

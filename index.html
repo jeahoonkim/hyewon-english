@@ -553,6 +553,71 @@
     margin-top: 4px;
   }
 
+  /* ===== 🎁 매일 출첵 럭키박스 ===== */
+  .lucky-banner {
+    width: 100%;
+    background: linear-gradient(135deg, #ff6ec7 0%, #ffd93d 50%, #ff8fb5 100%);
+    background-size: 200% 200%;
+    border: 3px solid white;
+    border-radius: 22px;
+    padding: 12px 18px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    color: white;
+    font-family: 'Jua', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    box-shadow: 0 8px 24px rgba(255, 110, 199, 0.4);
+    animation: rainbowBg 3s ease infinite, luckyBounce 1.2s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+  }
+  .lucky-banner::before {
+    content: "✨";
+    position: absolute;
+    top: 8px; right: 18px;
+    font-size: 1.3em;
+    animation: twinkle 1.5s ease-in-out infinite;
+  }
+  @keyframes rainbowBg {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  @keyframes luckyBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+  }
+  .lucky-banner.opened {
+    background: linear-gradient(135deg, #95d5b2, #52b788);
+    animation: none;
+    cursor: default;
+    opacity: 0.9;
+  }
+  .lucky-banner.opened::before { content: "✓"; }
+  .lucky-banner-icon {
+    font-size: 2em;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));
+    flex-shrink: 0;
+  }
+  .lucky-banner-text { flex: 1; line-height: 1.2; }
+  .lucky-banner-title {
+    font-size: 1.05em;
+    text-shadow: 1px 2px 0 rgba(0,0,0,0.2);
+    margin-bottom: 2px;
+  }
+  .lucky-banner-sub {
+    font-family: 'Gaegu', sans-serif;
+    font-size: 0.88em;
+    opacity: 0.95;
+  }
+  .lucky-banner-arrow {
+    font-size: 1.4em;
+    text-shadow: 1px 2px 0 rgba(0,0,0,0.2);
+    flex-shrink: 0;
+  }
+
   /* ===== 💎 보상 카드 행 (포인트/쿠폰) ===== */
   .rewards-row {
     display: grid;
@@ -1692,6 +1757,16 @@
     <span>🔥 다음: <b id="statNext">-</b></span>
   </div>
 
+  <!-- 🎁 매일 출첵 럭키박스 -->
+  <button class="lucky-banner" id="luckyBanner" style="display:none;">
+    <div class="lucky-banner-icon">🎁</div>
+    <div class="lucky-banner-text">
+      <div class="lucky-banner-title" id="luckyTitle">오늘의 럭키박스!</div>
+      <div class="lucky-banner-sub" id="luckySub">탭하면 깜짝 보너스! 50~500P 🎲</div>
+    </div>
+    <div class="lucky-banner-arrow">▶</div>
+  </button>
+
   <!-- 💎🎫 보상 카드 2개 -->
   <div class="rewards-row">
     <button class="reward-card points" id="pointsCard">
@@ -1957,14 +2032,14 @@ const SCHEDULE = [
     date: "2026-04-26", dayKo: "일", dayEn: "Sun",
     theme: "일요일 복습 (Week 1)", emoji: "🌻",
     folder: "20260426",
-    vocab: "혜원이_영단어_일요일_복습.html",
+    vocab: "혜원이_영단어_일요일_복습단어장.html",
     quiz: "혜원이_영단어_일요일_복습.html"
   },
   {
     date: "2026-05-03", dayKo: "일", dayEn: "Sun",
     theme: "일요일 복습 (Week 2)", emoji: "🌻",
     folder: "20260503",
-    vocab: "혜원이_영단어_일요일_복습.html",
+    vocab: "혜원이_영단어_일요일_복습단어장.html",
     quiz: "혜원이_영단어_일요일_복습.html"
   }
 ];
@@ -2489,6 +2564,70 @@ function closeModal(id) {
 // 카드 클릭 → 모달 열기
 document.getElementById('pointsCard').addEventListener('click', () => openModal('giftModal'));
 document.getElementById('couponCard').addEventListener('click', () => openModal('couponModal'));
+
+// ========== 🎁 매일 출첵 럭키박스 ==========
+const luckyBanner = document.getElementById('luckyBanner');
+const luckyKey = 'hyewon_lucky_' + todayStr;
+
+function refreshLuckyBanner() {
+  const got = localStorage.getItem(luckyKey);
+  if (got) {
+    let info = null;
+    try { info = JSON.parse(got); } catch(e) {}
+    luckyBanner.classList.add('opened');
+    document.getElementById('luckyTitle').textContent = '✓ 오늘 럭키박스 받음!';
+    document.getElementById('luckySub').textContent = info ? '+' + info.earned + 'P 받음 · 내일 또 와요!' : '내일 또 와요!';
+    luckyBanner.style.display = 'flex';
+  } else {
+    luckyBanner.classList.remove('opened');
+    document.getElementById('luckyTitle').textContent = '🎁 오늘의 럭키박스!';
+    document.getElementById('luckySub').textContent = '탭하면 깜짝 보너스! 50~500P 🎲';
+    luckyBanner.style.display = 'flex';
+  }
+}
+refreshLuckyBanner();
+
+luckyBanner.addEventListener('click', function() {
+  if (localStorage.getItem(luckyKey)) {
+    // 이미 받음
+    const got = JSON.parse(localStorage.getItem(luckyKey));
+    showCelebration('🎁 오늘은 이미 받았어요!\n+' + got.earned + 'P\n\n내일 또 만나요! 💕');
+    return;
+  }
+
+  // 50~500P 50 단위 랜덤 (가중치 적용 - 작은 게 자주, 큰 건 드물게)
+  const possibilities = [
+    50, 50, 50, 100, 100, 100, 100,    // 흔함
+    150, 150, 200, 200, 250, 250,       // 보통
+    300, 350,                            // 좀 드뭄
+    400, 450,                            // 드뭄
+    500                                  // 잭팟!
+  ];
+  const earned = possibilities[Math.floor(Math.random() * possibilities.length)];
+
+  setPoints(getPoints() + earned);
+  localStorage.setItem(luckyKey, JSON.stringify({
+    earned: earned,
+    time: new Date().toISOString()
+  }));
+
+  refreshRewardCards();
+  refreshLuckyBanner();
+
+  // 결과별 다른 메시지
+  let msg;
+  if (earned >= 500) msg = '🎊 대박 잭팟! +' + earned + 'P!\n오늘 진짜 운 좋아요! ✨';
+  else if (earned >= 400) msg = '🎉 와! +' + earned + 'P!\n진짜 짱이에요! 🌟';
+  else if (earned >= 250) msg = '🎁 오! +' + earned + 'P!\n좋아요! ✨';
+  else if (earned >= 150) msg = '🎁 +' + earned + 'P 받았어요!\n내일은 더 큰 거 받자! 🍀';
+  else msg = '🎁 +' + earned + 'P 받았어요!\n내일 다시 와요! 💕';
+
+  showCelebration(msg);
+
+  if (typeof syncToSheet === 'function') {
+    syncToSheet('🎁 매일 출첵 럭키박스', '랜덤 보너스', earned);
+  }
+});
 
 // ========== 🎯 이벤트 시스템 ==========
 const EVENTS = {

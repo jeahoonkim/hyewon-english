@@ -102,11 +102,21 @@ def main():
     with open(QUIZ_TEMPLATE, 'r', encoding='utf-8') as f:
         html = f.read()
 
-    # 1. WORDS 배열 교체 (80개 단어)
+    # 1. WORDS 배열 교체 (80~100개 단어) + 매번 셔플 코드 삽입
     new_words = build_words_array(all_words)
+    # 매번 풀 때마다 다른 순서 (페이지 로드 시 셔플)
+    shuffle_code = """
+// 🎲 종합시험: 매번 풀 때마다 문제 순서 랜덤!
+(function shuffleExam(){
+  for(var i=WORDS.length-1; i>0; i--){
+    var j=Math.floor(Math.random()*(i+1));
+    var t=WORDS[i]; WORDS[i]=WORDS[j]; WORDS[j]=t;
+  }
+})();
+"""
     html = re.sub(
         r'const WORDS = \[.*?\];',
-        new_words,
+        new_words + shuffle_code,
         html,
         count=1,
         flags=re.DOTALL
