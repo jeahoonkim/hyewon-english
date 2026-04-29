@@ -1257,7 +1257,42 @@
     box-shadow: var(--shadow);
     border: 2.5px solid var(--lavender-light);
   }
+  .cal-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    padding: 0 8px;
+  }
+  .cal-nav-btn {
+    background: var(--pink-light);
+    border: 2px solid var(--pink);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-family: 'Jua', sans-serif;
+    color: var(--pink-deep);
+    transition: all 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .cal-nav-btn:hover {
+    background: var(--pink);
+    transform: scale(1.1);
+  }
+  .cal-nav-btn:active {
+    transform: scale(0.95);
+  }
   .cal-month {
+    font-family: 'Jua', sans-serif;
+    flex: 1;
+    text-align: center;
+  }
+  .cal-month-orig {
     font-family: 'Jua', sans-serif;
     font-size: 1.15em;
     text-align: center;
@@ -1796,7 +1831,11 @@
     <span class="hint">민트=완료 · 회색=안함 · 노랑=예정</span>
   </div>
   <div class="cal-card">
-    <div class="cal-month" id="calMonth">—</div>
+    <div class="cal-nav">
+      <button class="cal-nav-btn" id="calPrev" title="이전 달">◀</button>
+      <div class="cal-month" id="calMonth">—</div>
+      <button class="cal-nav-btn" id="calNext" title="다음 달">▶</button>
+    </div>
     <div class="cal-weekdays">
       <div class="sun">일</div><div>월</div><div>화</div><div>수</div>
       <div>목</div><div>금</div><div>토</div>
@@ -3071,84 +3110,133 @@ try {
   });
 } catch(e) {}
 
-// ========== 달력 ==========
-const calMonth = today.getMonth();
-const calYear = today.getFullYear();
-document.getElementById('calMonth').textContent = `${calYear}년 ${calMonth+1}월`;
-
-const firstDay = new Date(calYear, calMonth, 1).getDay();
-const lastDate = new Date(calYear, calMonth+1, 0).getDate();
+// ========== 달력 (◀ ▶ 화살표로 월 이동) ==========
+let displayedYear = today.getFullYear();
+let displayedMonth = today.getMonth();
 const calGrid = document.getElementById('calGrid');
 
-for (let i = 0; i < firstDay; i++) {
-  calGrid.innerHTML += `<div class="cal-day empty"></div>`;
-}
-for (let d = 1; d <= lastDate; d++) {
-  const ds = `${calYear}-${String(calMonth+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
-  const learned = SCHEDULE.find(s => s.date === ds);
-  const isToday = ds === todayStr;
-  const isPast = ds < todayStr;
+function renderCalendar() {
+  document.getElementById('calMonth').textContent = `${displayedYear}년 ${displayedMonth+1}월`;
+  calGrid.innerHTML = '';  // 기존 내용 비우기
 
-  // 🎯 실제로 학습한 날인지 체크 (localStorage 기반)
-  const wasActuallyStudied = studiedDates.has(ds);
+  const firstDay = new Date(displayedYear, displayedMonth, 1).getDay();
+  const lastDate = new Date(displayedYear, displayedMonth+1, 0).getDate();
 
-  let cls = 'cal-day';
-  let icon = '';
+  for (let i = 0; i < firstDay; i++) {
+    calGrid.innerHTML += `<div class="cal-day empty"></div>`;
+  }
+  for (let d = 1; d <= lastDate; d++) {
+    const ds = `${displayedYear}-${String(displayedMonth+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    const learned = SCHEDULE.find(s => s.date === ds);
+    const isToday = ds === todayStr;
+    const isPast = ds < todayStr;
+    const wasActuallyStudied = studiedDates.has(ds);
 
-  if (learned) {
-    // 학습 종류별 아이콘
-    if (learned.theme && learned.theme.indexOf('종합시험') !== -1) {
-      icon = '🏆';
-    } else if (learned.theme && learned.theme.indexOf('복습') !== -1) {
-      icon = '🌻';
+    let cls = 'cal-day';
+    let icon = '';
+
+    if (learned) {
+      if (learned.theme && learned.theme.indexOf('종합시험') !== -1) {
+        icon = '🏆';
+      } else if (learned.theme && learned.theme.indexOf('복습') !== -1) {
+        icon = '🌻';
+      } else {
+        icon = '📚';
+      }
+    }
+
+    const hasAnyHistory = studiedDates.size > 0;
+
+    if (isToday) {
+      cls += ' today';
+    } else if (learned && wasActuallyStudied) {
+      cls += ' learned';
+    } else if (learned && isPast && !wasActuallyStudied) {
+      if (hasAnyHistory) {
+        cls += ' missed';
+        icon = '😴';
+      } else {
+        cls += ' upcoming';
+      }
+    } else if (learned && !isPast) {
+      cls += ' upcoming';
+    }
+
+    if (learned && wasActuallyStudied && learned.theme) {
+      if (learned.theme.indexOf('종합시험') !== -1 && !isToday) {
+        cls += ' exam';
+      } else if (learned.theme.indexOf('복습') !== -1 && !isToday) {
+        cls += ' review';
+      }
+    }
+
+    if (learned) {
+      const targetFile = learned.vocab;
+      const linkUrl = `${learned.folder}/${encodeURIComponent(targetFile)}`;
+      const tip = `${learned.theme} ${learned.emoji}`;
+      calGrid.innerHTML += `
+        <a href="${linkUrl}" class="${cls}" title="${tip}">
+          <span class="cal-num">${d}</span>
+          <span class="cal-icon">${icon}</span>
+        </a>`;
     } else {
-      icon = '📚'; // 평일 단어장
+      calGrid.innerHTML += `<div class="${cls}">${d}</div>`;
     }
   }
 
-  // 학습 기록이 1건이라도 있는지 체크 (없으면 missed 표시 비활성화)
-  const hasAnyHistory = studiedDates.size > 0;
-
-  if (isToday) {
-    cls += ' today';
-  } else if (learned && wasActuallyStudied) {
-    cls += ' learned';   // ✅ 실제로 학습 완료 (민트)
-  } else if (learned && isPast && !wasActuallyStudied) {
-    // 이 폰에 학습 기록이 1건이라도 있을 때만 "안 함" 표시
-    // (처음 접속한 폰에서 모든 과거 날짜가 missed로 보이는 것 방지)
-    if (hasAnyHistory) {
-      cls += ' missed';
-      icon = '😴';
-    } else {
-      cls += ' upcoming';  // 기록 0건이면 "예정"으로 부드럽게
-    }
-  } else if (learned && !isPast) {
-    cls += ' upcoming';  // 📅 예정 (노랑 점선)
-  }
-
-  // 종합시험/복습은 별도 스타일 (강조) — 단, 학습 안 했으면 missed 우선
-  if (learned && wasActuallyStudied && learned.theme) {
-    if (learned.theme.indexOf('종합시험') !== -1 && !isToday) {
-      cls += ' exam';
-    } else if (learned.theme.indexOf('복습') !== -1 && !isToday) {
-      cls += ' review';
-    }
-  }
-
-  if (learned) {
-    // 클릭 가능한 a 태그 (해당 날짜 학습 페이지로 이동)
-    const targetFile = learned.vocab; // 단어장 우선
-    const linkUrl = `${learned.folder}/${encodeURIComponent(targetFile)}`;
-    const tip = `${learned.theme} ${learned.emoji}`;
-    calGrid.innerHTML += `
-      <a href="${linkUrl}" class="${cls}" title="${tip}">
-        <span class="cal-num">${d}</span>
-        <span class="cal-icon">${icon}</span>
-      </a>`;
-  } else {
-    calGrid.innerHTML += `<div class="${cls}">${d}</div>`;
-  }
+  // 화살표 버튼 비활성/활성 표시 (옵션 - 너무 옛날/먼 미래 차단)
+  // 기본은 자유롭게 이동 가능
+  updateCalNavButtons();
 }
+
+function updateCalNavButtons() {
+  const prev = document.getElementById('calPrev');
+  const next = document.getElementById('calNext');
+  // 현재 보고 있는 달이 오늘 달이 아니면 "오늘로" 버튼 추가 가능
+  const isCurrentMonth = (displayedYear === today.getFullYear() && displayedMonth === today.getMonth());
+  if (prev) prev.disabled = false;
+  if (next) next.disabled = false;
+}
+
+// ◀ 이전 달
+const calPrev = document.getElementById('calPrev');
+if (calPrev) {
+  calPrev.addEventListener('click', function() {
+    displayedMonth--;
+    if (displayedMonth < 0) {
+      displayedMonth = 11;
+      displayedYear--;
+    }
+    renderCalendar();
+  });
+}
+
+// ▶ 다음 달
+const calNext = document.getElementById('calNext');
+if (calNext) {
+  calNext.addEventListener('click', function() {
+    displayedMonth++;
+    if (displayedMonth > 11) {
+      displayedMonth = 0;
+      displayedYear++;
+    }
+    renderCalendar();
+  });
+}
+
+// 월 이름 클릭 시 오늘 달로 돌아가기 (보너스!)
+const calMonthLabel = document.getElementById('calMonth');
+if (calMonthLabel) {
+  calMonthLabel.style.cursor = 'pointer';
+  calMonthLabel.title = '오늘 달로 돌아가기';
+  calMonthLabel.addEventListener('click', function() {
+    displayedYear = today.getFullYear();
+    displayedMonth = today.getMonth();
+    renderCalendar();
+  });
+}
+
+renderCalendar();
 
 // ========== 지난 학습 ==========
 const archiveList = document.getElementById('archiveList');
