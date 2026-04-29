@@ -1894,7 +1894,6 @@ function refreshRewardCards() {
 refreshRewardCards();
 
 // 📊 홈페이지 열릴 때 현재 상태를 시트에 자동 동기화 (5초 후)
-// 너무 자주 호출 안 하도록 마지막 동기화 5분 이내면 스킵
 setTimeout(function() {
   try {
     const lastSync = parseInt(localStorage.getItem('hyewon_last_sync') || '0');
@@ -1905,6 +1904,53 @@ setTimeout(function() {
     }
   } catch(e) {}
 }, 3000);
+
+// 🎁 엄마/아빠 보너스 자동 확인 (1초 후)
+async function checkAdminBonus() {
+  if (!GAS_URL) return;
+  try {
+    const lastRow = parseInt(localStorage.getItem('hyewon_last_bonus_row') || '2');
+    const url = GAS_URL + '?action=check_bonus&last_row=' + lastRow;
+    const res = await fetch(url, { method: 'GET' });
+    const data = await res.json();
+
+    if (!data || !data.bonuses || data.bonuses.length === 0) {
+      // 아직 새 보너스 없음
+      if (data && data.lastRow) {
+        localStorage.setItem('hyewon_last_bonus_row', String(data.lastRow));
+      }
+      return;
+    }
+
+    // 새 보너스 적립!
+    let totalDelta = 0;
+    let messages = [];
+    data.bonuses.forEach(b => {
+      totalDelta += b.points;
+      const sign = b.points > 0 ? '+' : '';
+      messages.push(`${sign}${b.points}P · ${b.message || '(메시지 없음)'}`);
+    });
+
+    const cur = getPoints();
+    const newTotal = Math.max(0, cur + totalDelta);  // 음수 방지
+    setPoints(newTotal);
+    localStorage.setItem('hyewon_last_bonus_row', String(data.lastRow));
+
+    refreshRewardCards();
+    if (typeof refreshGiftCards === 'function') refreshGiftCards();
+
+    // 알림
+    const sign = totalDelta > 0 ? '🎁 엄마/아빠 보너스!' : '📝 포인트 조정';
+    showCelebration(`${sign}\n${totalDelta > 0 ? '+' : ''}${totalDelta.toLocaleString()}P\n\n${messages.join('\n')}`);
+
+    // 시트에도 활동 기록 남기기
+    syncToSheet('🎁 관리자 보너스', messages.join(' / '), totalDelta);
+  } catch(e) {
+    console.warn('[보너스 확인 실패]', e);
+  }
+}
+
+setTimeout(checkAdminBonus, 1500);
 
 // ========== 🎁 선물 카드 상태 갱신 ==========
 function refreshGiftCards() {

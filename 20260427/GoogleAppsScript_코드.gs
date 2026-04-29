@@ -148,8 +148,72 @@ function saveQuizRecord(q) {
   ]);
 }
 
-function doGet() {
+function doGet(e) {
+  // 🎁 보너스 확인 요청 처리
+  if (e && e.parameter && e.parameter.action === 'check_bonus') {
+    const lastRow = parseInt(e.parameter.last_row || '1');
+    const result = getNewBonuses(lastRow);
+    return ContentService.createTextOutput(JSON.stringify(result))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
   return ContentService.createTextOutput("혜원이 영단어 서버 정상 작동 중 🌟");
+}
+
+
+// =====================================================
+// 🎁 [관리자_보너스] 시트에서 새 보너스 가져오기
+// =====================================================
+const BONUS_SHEET_NAME = "관리자_보너스";
+
+function getNewBonuses(lastSeenRow) {
+  const ss = SpreadsheetApp.openById(SHEET_ID);
+  let sheet = ss.getSheetByName(BONUS_SHEET_NAME);
+
+  // 시트 없으면 자동 생성 (헤더 + 안내)
+  if (!sheet) {
+    sheet = ss.insertSheet(BONUS_SHEET_NAME);
+    sheet.appendRow(['날짜', '포인트', '메시지', '지급 완료?']);
+    sheet.getRange(1, 1, 1, 4).setBackground('#fff3bf').setFontWeight('bold');
+    sheet.setFrozenRows(1);
+    sheet.setColumnWidth(1, 110);
+    sheet.setColumnWidth(2, 90);
+    sheet.setColumnWidth(3, 250);
+    sheet.setColumnWidth(4, 130);
+    sheet.appendRow(['(여기 아래에 입력)', '', '', '']);
+    sheet.getRange('A2:D2').setFontStyle('italic').setFontColor('#999');
+    return { bonuses: [], lastRow: 2 };
+  }
+
+  const lastSheetRow = sheet.getLastRow();
+  if (lastSheetRow < 3) return { bonuses: [], lastRow: lastSheetRow };
+
+  // 데이터 행은 3행부터 (1=헤더, 2=안내)
+  const startRow = Math.max(3, lastSeenRow + 1);
+  if (startRow > lastSheetRow) return { bonuses: [], lastRow: lastSheetRow };
+
+  const range = sheet.getRange(startRow, 1, lastSheetRow - startRow + 1, 4);
+  const data = range.getValues();
+  const bonuses = [];
+
+  data.forEach((row, idx) => {
+    const rowNum = startRow + idx;
+    const points = parseInt(row[1]);
+    const completed = String(row[3] || '').trim();
+
+    // 포인트가 숫자이고 아직 처리 안 된 줄만
+    if (!isNaN(points) && points !== 0 && !completed) {
+      bonuses.push({
+        rowNum: rowNum,
+        date: row[0] ? Utilities.formatDate(new Date(row[0]), 'Asia/Seoul', 'yyyy-MM-dd') : '',
+        points: points,
+        message: row[2] || ''
+      });
+      // "지급 완료" 표시 (중복 방지)
+      sheet.getRange(rowNum, 4).setValue('✅ ' + Utilities.formatDate(new Date(), 'Asia/Seoul', 'MM-dd HH:mm'));
+    }
+  });
+
+  return { bonuses: bonuses, lastRow: lastSheetRow };
 }
 
 
