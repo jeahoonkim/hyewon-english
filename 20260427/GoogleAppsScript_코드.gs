@@ -129,6 +129,19 @@ function saveVocabRecord(v) {
     v.date, v.day, v.theme || '', v.startTime, v.endTime,
     v.minutes, v.wordsLearned, v.listens, (v.words || []).join(', ')
   ]);
+
+  // ⭐ 활동기록 시트에도 자동 추가 (단어장 완료 = +100P)
+  try {
+    const tm = v.endTime ? String(v.endTime).split(' ')[1] || '' : '';
+    saveActivity({
+      date: v.date,
+      time: tm.substring(0, 5),
+      type: '📚 단어장 완료',
+      detail: (v.theme || '') + ' · ' + (v.minutes || 0) + '분 · ' + (v.wordsLearned || 0) + '단어 (발음 ' + (v.listens || 0) + '회)',
+      delta: 100,
+      points: 0, coupons: 0, wallet: 0
+    });
+  } catch(e) { Logger.log('활동기록 추가 실패(단어장): ' + e); }
 }
 
 function saveQuizRecord(q) {
@@ -146,6 +159,23 @@ function saveQuizRecord(q) {
     q.minutes, q.score, q.total, q.correctCount, q.wrongCount,
     (q.wrongWords || []).join(', ')
   ]);
+
+  // ⭐ 활동기록 시트에도 자동 추가 (퀴즈 정답마다 +10P + 콤보 보너스)
+  try {
+    const tm = q.endTime ? String(q.endTime).split(' ')[1] || '' : '';
+    // pointsEarned가 HTML에서 보내졌으면 사용, 없으면 추정 (정답 1개당 평균 약 13P)
+    const earned = (typeof q.pointsEarned === 'number') ? q.pointsEarned : ((q.correctCount || 0) * 13);
+    const comboInfo = q.maxCombo ? ' · 최고콤보 ' + q.maxCombo : '';
+    saveActivity({
+      date: q.date,
+      time: tm.substring(0, 5),
+      type: '📝 퀴즈 완료',
+      detail: (q.attemptNumber || 1) + '차 · ' + q.score + '/' + q.total +
+              ' · 정답 ' + q.correctCount + '개' + comboInfo,
+      delta: earned,
+      points: 0, coupons: 0, wallet: 0
+    });
+  } catch(e) { Logger.log('활동기록 추가 실패(퀴즈): ' + e); }
 }
 
 function doGet(e) {

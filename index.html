@@ -1442,9 +1442,6 @@
 </head>
 <body>
 
-<!-- 🎨 테마 전환 버튼 (계절 자동 ↔ 시원한 바다) -->
-<button class="theme-toggle" id="themeToggle" title="테마 전환">🌊</button>
-
 <!-- 배경 장식 -->
 <div class="bg-decor s1">⭐</div>
 <div class="bg-decor s2">💕</div>
@@ -1533,7 +1530,7 @@
                onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
           <div class="gift-icon" style="display:none;">🎢</div>
           <div class="gift-name">롯데월드<br>어드벤처</div>
-          <div class="gift-cost">20,000 P</div>
+          <div class="gift-cost">40,000 P</div>
           <div class="gift-status"></div>
         </button>
         <button class="gift-card gift-kidzania" data-gift="kidzania">
@@ -1541,7 +1538,7 @@
                onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
           <div class="gift-icon" style="display:none;">🏙️</div>
           <div class="gift-name">키자니아<br>코리아</div>
-          <div class="gift-cost">15,000 P</div>
+          <div class="gift-cost">20,000 P</div>
           <div class="gift-status"></div>
         </button>
         <button class="gift-card gift-baskin" data-gift="baskin">
@@ -1796,58 +1793,21 @@ if (monthNum >= 3 && monthNum <= 5) {
   };
 }
 
-// Body에 계절 클래스 적용 (또는 저장된 사용자 테마)
-const savedTheme = localStorage.getItem('hyewon_theme');
-if (savedTheme === 'ocean') {
-  document.body.classList.add('theme-ocean');
-} else {
-  document.body.classList.add('season-' + season);
-}
+// 🌊 영구 바다 모드 — 항상 바다 배경
+document.body.classList.add('theme-ocean');
 
-// 🎨 테마 토글 버튼 (계절 자동 ↔ 바다)
-const themeBtn = document.getElementById('themeToggle');
-function updateThemeBtn() {
-  const isOcean = document.body.classList.contains('theme-ocean');
-  if (themeBtn) themeBtn.textContent = isOcean ? '🌸' : '🌊';
-}
-updateThemeBtn();
-
-if (themeBtn) {
-  themeBtn.addEventListener('click', function() {
-    const isOcean = document.body.classList.contains('theme-ocean');
-    if (isOcean) {
-      document.body.classList.remove('theme-ocean', 'has-bg-photo');
-      document.body.classList.add('season-' + season);
-      localStorage.setItem('hyewon_theme', 'auto');
-    } else {
-      document.body.classList.remove('season-spring','season-summer','season-autumn','season-winter');
-      document.body.classList.add('theme-ocean');
-      localStorage.setItem('hyewon_theme', 'ocean');
-      checkBackgroundPhoto();  // 사진 있으면 적용
-    }
-    updateThemeBtn();
-  });
-}
-
-// 🌊 backgrounds/beach.jpg 파일 있는지 체크 → 있으면 사진 배경 적용
+// backgrounds/beach.jpg 사진이 있으면 사진 배경 사용 (없으면 그라데이션 폴백)
 function checkBackgroundPhoto() {
   const img = new Image();
   img.onload = function() {
-    if (document.body.classList.contains('theme-ocean')) {
-      document.body.classList.add('has-bg-photo');
-    }
+    document.body.classList.add('has-bg-photo');
   };
   img.onerror = function() {
-    // 파일 없으면 그라데이션 폴백
     document.body.classList.remove('has-bg-photo');
   };
-  img.src = 'backgrounds/beach.jpg?t=' + Date.now();  // 캐시 방지
+  img.src = 'backgrounds/beach.jpg?t=' + Date.now();
 }
-
-// 처음 로드 시 바다 모드면 사진 체크
-if (document.body.classList.contains('theme-ocean')) {
-  checkBackgroundPhoto();
-}
+checkBackgroundPhoto();
 
 // 배경 장식 이모지 계절별로 교체
 document.querySelectorAll('.bg-decor').forEach((el, idx) => {
@@ -2126,8 +2086,8 @@ function setCoupons(v) { localStorage.setItem('hyewon_coupons', JSON.stringify(v
 
 // 선물 정의 (현금은 5,000P 단위 쿠폰)
 const GIFTS = {
-  'lotteworld': { name: '롯데월드 어드벤처', emoji: '🎢', cost: 20000 },
-  'kidzania':   { name: '키자니아 코리아',   emoji: '🏙️', cost: 15000 },
+  'lotteworld': { name: '롯데월드 어드벤처', emoji: '🎢', cost: 40000 },
+  'kidzania':   { name: '키자니아 코리아',   emoji: '🏙️', cost: 20000 },
   'baskin':     { name: '배스킨라빈스',       emoji: '🍦', cost: 5000  },
   'cash':       { name: '현금 5,000원',        emoji: '💵', cost: 5000  }
 };

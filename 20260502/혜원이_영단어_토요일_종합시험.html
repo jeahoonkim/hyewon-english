@@ -1153,6 +1153,7 @@ function answer(idx) {
 // ============ 🔥 콤보 시스템 ============
 let comboCount = 0;
 let maxCombo = 0;
+let pointsEarnedThisQuiz = 0;  // 이번 퀴즈에서 적립한 총 포인트
 
 function updateCombo(isCorrect) {
   if (isCorrect) {
@@ -1165,6 +1166,7 @@ function updateCombo(isCorrect) {
     // 🎁 포인트 적립: 정답 = 10P + 콤보 카운트
     const earned = 10 + comboCount;
     addPoints(earned);
+    pointsEarnedThisQuiz += earned;
     showQuizPoints(earned);
   } else {
     comboCount = 0;
@@ -1385,7 +1387,9 @@ function finishQuiz() {
     total: questions.length,
     correctCount: score,
     wrongCount: wrongList.length,
-    wrongWords: wrongList
+    wrongWords: wrongList,
+    maxCombo: maxCombo,
+    pointsEarned: pointsEarnedThisQuiz
   };
   try {
     const h = JSON.parse(localStorage.getItem('hyewon_quiz_history') || '[]');
