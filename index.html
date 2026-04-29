@@ -2529,6 +2529,76 @@ document.getElementById('eventModal').addEventListener('click', function(e) {
   if (e.target === this) closeModal('eventModal');
 });
 
+// 🎯 이벤트 자동 적립 체크 (퀴즈 풀고 돌아왔을 때)
+function checkEventAutoCredit() {
+  if (!todayEvent) return;
+  const pendingKey = 'hyewon_event_pending_' + todayStr;
+  let pending = null;
+  try {
+    const raw = localStorage.getItem(pendingKey);
+    if (raw) pending = JSON.parse(raw);
+  } catch(e) { return; }
+  if (!pending || typeof pending.score !== 'number') return;
+
+  // 이미 적립 완료한 점수인지 체크
+  let done = null;
+  try {
+    const rawDone = localStorage.getItem(eventCompletedKey);
+    if (rawDone) done = JSON.parse(rawDone);
+  } catch(e) {}
+
+  // 이미 적립한 timestamp랑 같으면 스킵
+  if (done && done.timestamp === pending.timestamp) return;
+
+  const earned = pending.score * 10;
+  // 기존에 받은 게 있으면 차감 후 새로 적립
+  if (done && done.earned) {
+    setPoints(Math.max(0, getPoints() - done.earned));
+  }
+  setPoints(getPoints() + earned);
+
+  // 적립 완료 기록
+  localStorage.setItem(eventCompletedKey, JSON.stringify({
+    score: pending.score,
+    total: pending.total,
+    earned: earned,
+    time: new Date().toISOString(),
+    theme: todayEvent.theme,
+    timestamp: pending.timestamp
+  }));
+
+  refreshRewardCards();
+  refreshEventCard();
+
+  // 화려한 팝업 (1.5초 뒤)
+  setTimeout(function() {
+    showCelebration(
+      '🎯 ' + todayEvent.theme + ' 완료!\n' +
+      '정답 ' + pending.score + '/' + pending.total + '개\n\n' +
+      '🎁 +' + earned + 'P 자동 적립! ✨'
+    );
+  }, 1500);
+
+  if (typeof syncToSheet === 'function') {
+    syncToSheet('🎯 이벤트 퀴즈', todayEvent.theme + ' (' + pending.score + '/' + pending.total + ')', earned);
+  }
+}
+
+// 페이지 로드 시 자동 체크
+checkEventAutoCredit();
+
+// 탭 다시 활성화될 때도 체크 (퀴즈 새 창에서 풀고 돌아왔을 때)
+document.addEventListener('visibilitychange', function() {
+  if (!document.hidden) {
+    setTimeout(checkEventAutoCredit, 300);
+  }
+});
+
+// 윈도우 포커스 들어왔을 때도 체크
+window.addEventListener('focus', function() {
+  setTimeout(checkEventAutoCredit, 300);
+});
+
 // 📝 점수 입력하고 포인트 받기
 document.getElementById('eventScoreBtn').addEventListener('click', function() {
   if (!todayEvent) return;

@@ -217,6 +217,20 @@ function showFinal(){
   var ds=now.getFullYear()+"-"+String(now.getMonth()+1).padStart(2,"0")+"-"+String(now.getDate()).padStart(2,"0");
   var ts=String(now.getHours()).padStart(2,"0")+":"+String(now.getMinutes()).padStart(2,"0");
   try{fetch(APPS_URL+"?subject="+encodeURIComponent(SUBJECT)+"&score="+score+"&total="+n+"&percent="+pct+"&date="+ds+"&time="+ts).catch(function(){});}catch(e){}
+  // 🎯 이벤트 점수 자동 저장 (홈페이지가 읽어서 자동 적립)
+  try {
+    var eventKey = 'hyewon_event_pending_' + ds;
+    localStorage.setItem(eventKey, JSON.stringify({
+      score: score,
+      total: n,
+      percent: pct,
+      subject: SUBJECT,
+      date: ds,
+      time: ts,
+      timestamp: Date.now()
+    }));
+  } catch(e) { console.warn('이벤트 점수 저장 실패:', e); }
+
   var stars,msg,emoji;
   if(pct>=90){stars="★★★★★";msg="완벽해요! 맞춤법 천재 혜원이! 우리말을 정확하게 쓸 줄 아네요!";emoji="🏆";}
   else if(pct>=70){stars="★★★★";msg="잘했어요! 맞춤법을 잘 알고 있어요! 조금만 더 연습하면 완벽해질 거예요!";emoji="✏️";}
