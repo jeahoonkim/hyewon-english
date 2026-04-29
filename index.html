@@ -69,6 +69,80 @@
     border-color: #f9a825;
   }
 
+  /* ===== 🌊 시원한 바다 모드 (수동 토글) ===== */
+  /* 사진이 있으면 사진, 없으면 그라데이션 자동 폴백 */
+  body.theme-ocean {
+    background:
+      linear-gradient(180deg,
+        rgba(255,255,255,0.15) 0%,
+        rgba(255,255,255,0.05) 50%,
+        rgba(255,255,255,0.15) 100%
+      ),
+      linear-gradient(180deg,
+        #87cefa 0%,
+        #5cb8d4 25%,
+        #7ed8e6 50%,
+        #b8e3ec 70%,
+        #f5e6c8 90%,
+        #ede0c4 100%
+      );
+    background-size: cover, cover;
+    background-position: center, center;
+    background-attachment: fixed, fixed;
+  }
+  /* backgrounds/beach.jpg 파일 있으면 사진 사용 */
+  body.theme-ocean.has-bg-photo {
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.1), rgba(255,255,255,0.0) 50%, rgba(255,255,255,0.15) 100%),
+      url('backgrounds/beach.jpg');
+    background-size: cover, cover;
+    background-position: center, center;
+    background-attachment: fixed, fixed;
+  }
+  body.theme-ocean::before {
+    background: radial-gradient(circle, rgba(255,255,255,0.3), transparent 70%);
+  }
+  body.theme-ocean .logo-box { border-color: #0077b6; background: rgba(255,255,255,0.95); }
+  body.theme-ocean .date-chip { border-color: #00b4d8; background: rgba(255,255,255,0.95); }
+  body.theme-ocean .greeting-card {
+    border-color: #48cae4;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(8px);
+  }
+  body.theme-ocean .greeting-text h1 span { color: #0077b6; }
+  body.theme-ocean .speech-bubble {
+    background: #caf0f8;
+    border-color: #00b4d8;
+  }
+  body.theme-ocean .bg-decor { font-size: 30px; }
+  /* 바다 모드에서 카드들도 약간 투명 글래스 효과 */
+  body.theme-ocean .stat-card,
+  body.theme-ocean .cal-card,
+  body.theme-ocean .modal-card,
+  body.theme-ocean .archive-btn-main {
+    background: rgba(255,255,255,0.94);
+    backdrop-filter: blur(6px);
+  }
+
+  /* 🎨 테마 토글 버튼 */
+  .theme-toggle {
+    position: fixed;
+    top: 14px;
+    right: 14px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid var(--pink-deep);
+    cursor: pointer;
+    z-index: 100;
+    font-size: 1.3em;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    transition: transform 0.2s;
+  }
+  .theme-toggle:hover { transform: rotate(20deg) scale(1.1); }
+  .theme-toggle:active { transform: scale(0.95); }
+
   /* ===== 🍂 가을 테마 (9~11월) ===== */
   body.season-autumn {
     background: linear-gradient(180deg, #fff3e0 0%, #ffcc80 45%, #d7a577 100%);
@@ -192,12 +266,13 @@
     align-items: center;
     gap: 14px;
   }
-  .greeting-cat {
-    width: 90px;
-    height: 90px;
+  .greeting-cat, .greeting-mascot {
+    width: 100px;
+    height: 100px;
     flex-shrink: 0;
     animation: wobble 3s ease-in-out infinite;
   }
+  .greeting-mascot svg { width: 100%; height: 100%; }
   @keyframes wobble {
     0%, 100% { transform: rotate(-3deg); }
     50% { transform: rotate(3deg); }
@@ -246,6 +321,52 @@
     gap: 10px;
     margin-bottom: 24px;
   }
+  .stats-row.single { grid-template-columns: 1fr; margin-bottom: 8px; }
+  .stat-card.full-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 22px;
+    text-align: left;
+    background: linear-gradient(135deg, #ffe5cc 0%, #fff3bf 100%);
+    border-color: #ff9a4d;
+    box-shadow: 0 6px 18px rgba(255, 154, 77, 0.2);
+  }
+  .stat-card.full-card .stat-cat {
+    width: 64px;
+    height: 64px;
+    margin: 0;
+    flex-shrink: 0;
+    filter: drop-shadow(0 3px 6px rgba(0,0,0,0.1));
+  }
+  .stat-card.full-card .stat-info-wrap { flex: 1; }
+  .stat-card.full-card .stat-value {
+    font-size: 2.2em;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat-card.full-card .stat-value .unit {
+    font-size: 0.5em;
+    margin-left: 4px;
+  }
+  .stat-card.full-card .stat-label {
+    font-size: 0.95em;
+    margin-top: 0;
+  }
+
+  /* 작은 인포 줄 */
+  .meta-info {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    font-family: 'Gaegu', sans-serif;
+    color: var(--text-soft);
+    font-size: 0.95em;
+    margin-bottom: 20px;
+    padding: 6px 12px;
+  }
+  .meta-info b { color: var(--text); font-weight: 700; }
+  .meta-info .dot { opacity: 0.5; }
   .stat-card {
     background: white;
     border-radius: 22px;
@@ -283,11 +404,11 @@
     margin-top: 4px;
   }
 
-  /* ===== 💎 보상 카드 행 (포인트/쿠폰/지갑) ===== */
+  /* ===== 💎 보상 카드 행 (포인트/쿠폰) ===== */
   .rewards-row {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr;
-    gap: 8px;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
     margin-bottom: 16px;
   }
   .reward-card {
@@ -1321,6 +1442,9 @@
 </head>
 <body>
 
+<!-- 🎨 테마 전환 버튼 (계절 자동 ↔ 시원한 바다) -->
+<button class="theme-toggle" id="themeToggle" title="테마 전환">🌊</button>
+
 <!-- 배경 장식 -->
 <div class="bg-decor s1">⭐</div>
 <div class="bg-decor s2">💕</div>
@@ -1342,42 +1466,18 @@
 
   <!-- 인사 카드 -->
   <div class="greeting-card">
-    <div class="speech-bubble">안녕 혜원아! 🎀</div>
-    <!-- 메인 마스코트 고양이 (분홍 고양이) -->
-    <svg class="greeting-cat" viewBox="0 0 100 100">
-      <!-- 꼬리 -->
-      <path class="tail-wag" d="M 80 70 Q 95 50 85 35" stroke="#ffb6c1" stroke-width="8" fill="none" stroke-linecap="round"/>
-      <!-- 몸통 -->
-      <ellipse cx="50" cy="65" rx="28" ry="22" fill="#ffc0d4"/>
-      <!-- 머리 -->
-      <circle cx="50" cy="40" r="22" fill="#ffc0d4"/>
-      <!-- 귀 -->
-      <path d="M 32 30 L 28 15 L 42 25 Z" fill="#ffc0d4"/>
-      <path d="M 68 30 L 72 15 L 58 25 Z" fill="#ffc0d4"/>
-      <path d="M 34 28 L 32 20 L 39 25 Z" fill="#ff9eb8"/>
-      <path d="M 66 28 L 68 20 L 61 25 Z" fill="#ff9eb8"/>
-      <!-- 볼 (분홍) -->
-      <circle cx="38" cy="45" r="4" fill="#ff8fa3" opacity="0.6"/>
-      <circle cx="62" cy="45" r="4" fill="#ff8fa3" opacity="0.6"/>
-      <!-- 눈 (웃는 눈) -->
-      <path d="M 40 38 Q 43 35 46 38" stroke="#4a3a5a" stroke-width="2" fill="none" stroke-linecap="round"/>
-      <path d="M 54 38 Q 57 35 60 38" stroke="#4a3a5a" stroke-width="2" fill="none" stroke-linecap="round"/>
-      <!-- 입 -->
-      <path d="M 47 47 Q 50 51 53 47" stroke="#4a3a5a" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-      <!-- 발 -->
-      <ellipse cx="40" cy="84" rx="6" ry="4" fill="#ff9eb8"/>
-      <ellipse cx="60" cy="84" rx="6" ry="4" fill="#ff9eb8"/>
-    </svg>
+    <div class="speech-bubble" id="speechBubble">안녕 혜원아! 🎀</div>
+    <!-- 메인 마스코트 (요일별 다른 동물 자동 렌더링) -->
+    <div class="greeting-mascot" id="greetingMascot"></div>
     <div class="greeting-text">
       <h1>오늘도 <span>반짝반짝</span> 🌟<br>영어 놀이하자!</h1>
       <p>20개 단어랑 신나는 퀴즈가 기다려요~</p>
     </div>
   </div>
 
-  <!-- 통계 카드 -->
-  <div class="stats-row">
-    <div class="stat-card pink">
-      <!-- 주황 고양이 -->
+  <!-- 📚 메인 통계 카드 (배운 단어 큼지막하게) -->
+  <div class="stats-row single">
+    <div class="stat-card pink full-card">
       <svg class="stat-cat" viewBox="0 0 60 60">
         <ellipse cx="30" cy="42" rx="18" ry="14" fill="#ffb380"/>
         <circle cx="30" cy="25" r="14" fill="#ffb380"/>
@@ -1388,52 +1488,22 @@
         <circle cx="20" cy="33" r="2.5" fill="#ff6b6b" opacity="0.5"/>
         <circle cx="40" cy="33" r="2.5" fill="#ff6b6b" opacity="0.5"/>
         <path d="M 28 33 Q 30 35 32 33" stroke="#4a3a5a" stroke-width="1.2" fill="none"/>
-        <!-- 줄무늬 -->
-        <path d="M 24 22 L 22 24" stroke="#ff8c42" stroke-width="1.5"/>
-        <path d="M 36 22 L 38 24" stroke="#ff8c42" stroke-width="1.5"/>
       </svg>
-      <div class="stat-value" id="statWords">0<span class="unit">개</span></div>
-      <div class="stat-label">배운 단어</div>
-    </div>
-    <div class="stat-card mint">
-      <!-- 회색 고양이 -->
-      <svg class="stat-cat" viewBox="0 0 60 60">
-        <ellipse cx="30" cy="42" rx="18" ry="14" fill="#c7d6e0"/>
-        <circle cx="30" cy="25" r="14" fill="#c7d6e0"/>
-        <path d="M 20 18 L 17 8 L 26 15 Z" fill="#c7d6e0"/>
-        <path d="M 40 18 L 43 8 L 34 15 Z" fill="#c7d6e0"/>
-        <circle cx="23" cy="29" r="2.5" fill="#4a3a5a"/>
-        <circle cx="37" cy="29" r="2.5" fill="#4a3a5a"/>
-        <circle cx="20" cy="33" r="2.5" fill="#ff8fa3" opacity="0.5"/>
-        <circle cx="40" cy="33" r="2.5" fill="#ff8fa3" opacity="0.5"/>
-        <path d="M 28 34 Q 30 36 32 34" stroke="#4a3a5a" stroke-width="1.2" fill="none"/>
-      </svg>
-      <div class="stat-value" id="statDays">0<span class="unit">일</span></div>
-      <div class="stat-label">학습한 날</div>
-    </div>
-    <div class="stat-card peach">
-      <!-- 흰 고양이 -->
-      <svg class="stat-cat" viewBox="0 0 60 60">
-        <ellipse cx="30" cy="42" rx="18" ry="14" fill="#fff" stroke="#e0c3ff" stroke-width="1.5"/>
-        <circle cx="30" cy="25" r="14" fill="#fff" stroke="#e0c3ff" stroke-width="1.5"/>
-        <path d="M 20 18 L 17 8 L 26 15 Z" fill="#fff" stroke="#e0c3ff" stroke-width="1"/>
-        <path d="M 40 18 L 43 8 L 34 15 Z" fill="#fff" stroke="#e0c3ff" stroke-width="1"/>
-        <circle cx="23" cy="29" r="2.5" fill="#4a3a5a"/>
-        <circle cx="37" cy="29" r="2.5" fill="#4a3a5a"/>
-        <circle cx="20" cy="33" r="2.5" fill="#ffb6c1" opacity="0.7"/>
-        <circle cx="40" cy="33" r="2.5" fill="#ffb6c1" opacity="0.7"/>
-        <path d="M 28 34 Q 30 36 32 34" stroke="#4a3a5a" stroke-width="1.2" fill="none"/>
-        <!-- 리본 -->
-        <path d="M 25 50 L 22 48 L 22 52 Z" fill="#ff9eb8"/>
-        <path d="M 35 50 L 38 48 L 38 52 Z" fill="#ff9eb8"/>
-        <circle cx="30" cy="50" r="2" fill="#ff9eb8"/>
-      </svg>
-      <div class="stat-value" id="statNext">-<span class="unit"></span></div>
-      <div class="stat-label">다음 학습</div>
+      <div class="stat-info-wrap">
+        <div class="stat-value" id="statWords">0<span class="unit">개</span></div>
+        <div class="stat-label">지금까지 배운 단어 📚</div>
+      </div>
     </div>
   </div>
 
-  <!-- 💎🎫💰 보상 카드 3개 -->
+  <!-- 작은 인포 줄 (학습 일수 + 다음 학습) -->
+  <div class="meta-info">
+    <span>📅 <b id="statDays">0</b>일 학습</span>
+    <span class="dot">·</span>
+    <span>🔥 다음: <b id="statNext">-</b></span>
+  </div>
+
+  <!-- 💎🎫 보상 카드 2개 -->
   <div class="rewards-row">
     <button class="reward-card points" id="pointsCard">
       <div class="reward-icon">💎</div>
@@ -1444,11 +1514,6 @@
       <div class="reward-icon">🎫</div>
       <div class="reward-label">쿠폰함</div>
       <div class="reward-value"><span id="couponValue">0</span><span class="small">개</span></div>
-    </button>
-    <button class="reward-card wallet" id="walletCard">
-      <div class="reward-icon">💰</div>
-      <div class="reward-label">지갑</div>
-      <div class="reward-value"><span id="walletValue">0</span><span class="small">원</span></div>
     </button>
   </div>
 
@@ -1488,11 +1553,11 @@
           <div class="gift-status"></div>
         </button>
         <button class="gift-card gift-cash" data-gift="cash">
-          <img class="gift-img" src="gifts/money.jpg" alt="현금"
+          <img class="gift-img" src="gifts/money.jpg" alt="현금 5천원"
                onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
           <div class="gift-icon" style="display:none;">💵</div>
-          <div class="gift-name">포인트를<br>현금으로</div>
-          <div class="gift-cost">100P 단위</div>
+          <div class="gift-name">현금 5,000원<br>쿠폰</div>
+          <div class="gift-cost">5,000 P</div>
           <div class="gift-status"></div>
         </button>
       </div>
@@ -1511,43 +1576,7 @@
     </div>
   </div>
 
-  <!-- 💰 지갑 모달 -->
-  <div id="walletModal" class="modal-overlay">
-    <div class="modal-card">
-      <div class="modal-header">
-        <h2>💰 내 지갑</h2>
-        <button class="modal-close" id="closeWalletBtn">✕</button>
-      </div>
-      <div class="wallet-balance">
-        <div class="balance-label">현재 잔액</div>
-        <div class="balance-value"><span id="walletAmount">0</span><small>원</small></div>
-      </div>
-      <div class="cash-options">
-        <div class="cash-options-title">💎 포인트를 현금으로 환전</div>
-        <div class="cash-grid">
-          <button class="cash-btn" data-cash="100">
-            <div class="cash-amount">100원</div>
-            <div class="cash-pt">100P 사용</div>
-          </button>
-          <button class="cash-btn" data-cash="500">
-            <div class="cash-amount">500원</div>
-            <div class="cash-pt">500P 사용</div>
-          </button>
-          <button class="cash-btn" data-cash="1000">
-            <div class="cash-amount">1,000원</div>
-            <div class="cash-pt">1,000P 사용</div>
-          </button>
-          <button class="cash-btn" data-cash="5000">
-            <div class="cash-amount">5,000원</div>
-            <div class="cash-pt">5,000P 사용</div>
-          </button>
-        </div>
-        <div style="text-align:center; font-family:'Gaegu',sans-serif; color:var(--text-soft); font-size:0.85em; margin-top:14px;">
-          💡 1포인트 = 1원 / 100P 단위로 환전
-        </div>
-      </div>
-    </div>
-  </div>
+  <!-- 💰 지갑 모달 제거됨 — 현금은 이제 쿠폰으로 발급 -->
 
   <!-- 🔥 연속 학습 스트릭 -->
   <div class="streak-card" id="streakCard">
@@ -1767,8 +1796,58 @@ if (monthNum >= 3 && monthNum <= 5) {
   };
 }
 
-// Body에 계절 클래스 적용
-document.body.classList.add('season-' + season);
+// Body에 계절 클래스 적용 (또는 저장된 사용자 테마)
+const savedTheme = localStorage.getItem('hyewon_theme');
+if (savedTheme === 'ocean') {
+  document.body.classList.add('theme-ocean');
+} else {
+  document.body.classList.add('season-' + season);
+}
+
+// 🎨 테마 토글 버튼 (계절 자동 ↔ 바다)
+const themeBtn = document.getElementById('themeToggle');
+function updateThemeBtn() {
+  const isOcean = document.body.classList.contains('theme-ocean');
+  if (themeBtn) themeBtn.textContent = isOcean ? '🌸' : '🌊';
+}
+updateThemeBtn();
+
+if (themeBtn) {
+  themeBtn.addEventListener('click', function() {
+    const isOcean = document.body.classList.contains('theme-ocean');
+    if (isOcean) {
+      document.body.classList.remove('theme-ocean', 'has-bg-photo');
+      document.body.classList.add('season-' + season);
+      localStorage.setItem('hyewon_theme', 'auto');
+    } else {
+      document.body.classList.remove('season-spring','season-summer','season-autumn','season-winter');
+      document.body.classList.add('theme-ocean');
+      localStorage.setItem('hyewon_theme', 'ocean');
+      checkBackgroundPhoto();  // 사진 있으면 적용
+    }
+    updateThemeBtn();
+  });
+}
+
+// 🌊 backgrounds/beach.jpg 파일 있는지 체크 → 있으면 사진 배경 적용
+function checkBackgroundPhoto() {
+  const img = new Image();
+  img.onload = function() {
+    if (document.body.classList.contains('theme-ocean')) {
+      document.body.classList.add('has-bg-photo');
+    }
+  };
+  img.onerror = function() {
+    // 파일 없으면 그라데이션 폴백
+    document.body.classList.remove('has-bg-photo');
+  };
+  img.src = 'backgrounds/beach.jpg?t=' + Date.now();  // 캐시 방지
+}
+
+// 처음 로드 시 바다 모드면 사진 체크
+if (document.body.classList.contains('theme-ocean')) {
+  checkBackgroundPhoto();
+}
 
 // 배경 장식 이모지 계절별로 교체
 document.querySelectorAll('.bg-decor').forEach((el, idx) => {
@@ -1787,6 +1866,184 @@ setTimeout(() => {
 const todayStr = `${yyyy}-${mm}-${dd}`;
 const koDayNames = ['일','월','화','수','목','금','토'];
 document.getElementById('dateChip').textContent = `${parseInt(mm)}월 ${parseInt(dd)}일 ${koDayNames[today.getDay()]}요일`;
+
+// ========== 🐾 요일별 동물 친구들 ==========
+const ANIMAL_FRIENDS = {
+  shiba: {
+    name: '시바', body: '#ffa94d', dark: '#e67e22', white: '#fff5e1',
+    cheek: '#ff8fa3', greeting: '왈왈! 안녕 혜원아 🐶',
+    parts: function(c, d, w, ch) { return `
+      <ellipse cx="50" cy="65" rx="28" ry="22" fill="${c}"/>
+      <ellipse cx="50" cy="72" rx="20" ry="14" fill="${w}"/>
+      <circle cx="50" cy="40" r="22" fill="${c}"/>
+      <ellipse cx="50" cy="48" rx="14" ry="10" fill="${w}"/>
+      <path d="M 30 28 L 26 12 L 42 22 Z" fill="${c}"/>
+      <path d="M 70 28 L 74 12 L 58 22 Z" fill="${c}"/>
+      <path d="M 32 25 L 30 17 L 38 22 Z" fill="${d}"/>
+      <path d="M 68 25 L 70 17 L 62 22 Z" fill="${d}"/>
+      <circle cx="38" cy="48" r="4" fill="${ch}" opacity="0.7"/>
+      <circle cx="62" cy="48" r="4" fill="${ch}" opacity="0.7"/>
+      <ellipse cx="42" cy="40" rx="3" ry="3.5" fill="#3a2a4a"/>
+      <ellipse cx="58" cy="40" rx="3" ry="3.5" fill="#3a2a4a"/>
+      <circle cx="43" cy="39" r="1" fill="#fff"/>
+      <circle cx="59" cy="39" r="1" fill="#fff"/>
+      <ellipse cx="50" cy="50" rx="2" ry="1.5" fill="#3a2a4a"/>
+      <path d="M 47 53 Q 50 56 53 53" stroke="#3a2a4a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <ellipse cx="40" cy="84" rx="6" ry="4" fill="${d}"/>
+      <ellipse cx="60" cy="84" rx="6" ry="4" fill="${d}"/>
+    `; }
+  },
+  cat: {
+    name: '고양이', body: '#ffc0d4', dark: '#ff9eb8', white: '#fff5f8',
+    cheek: '#ff8fa3', greeting: '냐옹~ 안녕 혜원아 🐱',
+    parts: function(c, d, w, ch) { return `
+      <path d="M 80 70 Q 95 50 85 35" stroke="${d}" stroke-width="8" fill="none" stroke-linecap="round"/>
+      <ellipse cx="50" cy="65" rx="28" ry="22" fill="${c}"/>
+      <circle cx="50" cy="40" r="22" fill="${c}"/>
+      <path d="M 32 30 L 28 15 L 42 25 Z" fill="${c}"/>
+      <path d="M 68 30 L 72 15 L 58 25 Z" fill="${c}"/>
+      <path d="M 34 28 L 32 20 L 39 25 Z" fill="${d}"/>
+      <path d="M 66 28 L 68 20 L 61 25 Z" fill="${d}"/>
+      <circle cx="38" cy="48" r="4" fill="${ch}" opacity="0.6"/>
+      <circle cx="62" cy="48" r="4" fill="${ch}" opacity="0.6"/>
+      <path d="M 40 40 Q 43 37 46 40" stroke="#3a2a4a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M 54 40 Q 57 37 60 40" stroke="#3a2a4a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M 47 50 Q 50 53 53 50" stroke="#3a2a4a" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <ellipse cx="40" cy="84" rx="6" ry="4" fill="${d}"/>
+      <ellipse cx="60" cy="84" rx="6" ry="4" fill="${d}"/>
+    `; }
+  },
+  capybara: {
+    name: '카피바라', body: '#a0826a', dark: '#7a5e48', white: '#d4b896',
+    cheek: '#ff9999', greeting: '뽀룸~ 평화로운 하루 🦫',
+    parts: function(c, d, w, ch) { return `
+      <ellipse cx="50" cy="68" rx="32" ry="22" fill="${c}"/>
+      <ellipse cx="50" cy="42" rx="26" ry="22" fill="${c}"/>
+      <ellipse cx="34" cy="22" rx="6" ry="4" fill="${d}"/>
+      <ellipse cx="66" cy="22" rx="6" ry="4" fill="${d}"/>
+      <circle cx="36" cy="50" r="4" fill="${ch}" opacity="0.6"/>
+      <circle cx="64" cy="50" r="4" fill="${ch}" opacity="0.6"/>
+      <ellipse cx="42" cy="40" rx="3" ry="4" fill="#3a2a4a"/>
+      <ellipse cx="58" cy="40" rx="3" ry="4" fill="#3a2a4a"/>
+      <circle cx="43" cy="39" r="1.2" fill="#fff"/>
+      <circle cx="59" cy="39" r="1.2" fill="#fff"/>
+      <ellipse cx="50" cy="55" rx="14" ry="9" fill="${d}"/>
+      <ellipse cx="46" cy="54" rx="1.5" ry="1" fill="#3a2a4a"/>
+      <ellipse cx="54" cy="54" rx="1.5" ry="1" fill="#3a2a4a"/>
+      <path d="M 47 60 Q 50 63 53 60" stroke="#3a2a4a" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <ellipse cx="38" cy="86" rx="6" ry="3" fill="${d}"/>
+      <ellipse cx="62" cy="86" rx="6" ry="3" fill="${d}"/>
+    `; }
+  },
+  parrot: {
+    name: '앵무새', body: '#ff6b6b', dark: '#c0392b', white: '#ffd93d',
+    cheek: '#ffb3b3', greeting: '꽥꽥! 알록달록 🦜',
+    parts: function(c, d, w, ch) { return `
+      <ellipse cx="50" cy="65" rx="28" ry="22" fill="${c}"/>
+      <path d="M 24 55 Q 18 70 28 78 Q 26 65 30 60 Z" fill="${w}"/>
+      <path d="M 76 55 Q 82 70 72 78 Q 74 65 70 60 Z" fill="${w}"/>
+      <circle cx="50" cy="40" r="22" fill="${c}"/>
+      <ellipse cx="50" cy="32" rx="18" ry="10" fill="${w}"/>
+      <ellipse cx="50" cy="22" rx="10" ry="6" fill="#52b788"/>
+      <circle cx="38" cy="48" r="4" fill="${ch}" opacity="0.7"/>
+      <circle cx="62" cy="48" r="4" fill="${ch}" opacity="0.7"/>
+      <ellipse cx="42" cy="38" rx="3.5" ry="4" fill="#3a2a4a"/>
+      <ellipse cx="58" cy="38" rx="3.5" ry="4" fill="#3a2a4a"/>
+      <circle cx="43" cy="37" r="1.2" fill="#fff"/>
+      <circle cx="59" cy="37" r="1.2" fill="#fff"/>
+      <polygon points="44,48 56,48 50,58" fill="#ff8c1a"/>
+      <line x1="50" y1="48" x2="50" y2="55" stroke="#c0392b" stroke-width="1"/>
+      <ellipse cx="40" cy="84" rx="6" ry="4" fill="${d}"/>
+      <ellipse cx="60" cy="84" rx="6" ry="4" fill="${d}"/>
+    `; }
+  },
+  rabbit: {
+    name: '토끼', body: '#fff5f8', dark: '#ffc0d4', white: '#ffeef3',
+    cheek: '#ff8fa3', greeting: '토끼처럼 폴짝 🐰',
+    parts: function(c, d, w, ch) { return `
+      <ellipse cx="50" cy="65" rx="26" ry="22" fill="${c}" stroke="${d}" stroke-width="1.5"/>
+      <ellipse cx="35" cy="18" rx="6" ry="20" fill="${c}" stroke="${d}" stroke-width="1.5"/>
+      <ellipse cx="65" cy="18" rx="6" ry="20" fill="${c}" stroke="${d}" stroke-width="1.5"/>
+      <ellipse cx="35" cy="22" rx="2.5" ry="14" fill="${ch}"/>
+      <ellipse cx="65" cy="22" rx="2.5" ry="14" fill="${ch}"/>
+      <circle cx="50" cy="44" r="22" fill="${c}" stroke="${d}" stroke-width="1.5"/>
+      <circle cx="38" cy="52" r="4" fill="${ch}" opacity="0.6"/>
+      <circle cx="62" cy="52" r="4" fill="${ch}" opacity="0.6"/>
+      <ellipse cx="42" cy="42" rx="3" ry="4" fill="#3a2a4a"/>
+      <ellipse cx="58" cy="42" rx="3" ry="4" fill="#3a2a4a"/>
+      <circle cx="43" cy="41" r="1.2" fill="#fff"/>
+      <circle cx="59" cy="41" r="1.2" fill="#fff"/>
+      <ellipse cx="50" cy="51" rx="2" ry="1.5" fill="${ch}"/>
+      <path d="M 47 55 Q 50 58 53 55" stroke="#3a2a4a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <ellipse cx="40" cy="86" rx="6" ry="4" fill="${d}"/>
+      <ellipse cx="60" cy="86" rx="6" ry="4" fill="${d}"/>
+    `; }
+  },
+  hamster: {
+    name: '햄스터', body: '#f5deb3', dark: '#d4af74', white: '#fff5e1',
+    cheek: '#ff9999', greeting: '쪼끄만 햄스터! 🐹',
+    parts: function(c, d, w, ch) { return `
+      <ellipse cx="50" cy="68" rx="32" ry="22" fill="${c}"/>
+      <ellipse cx="50" cy="74" rx="22" ry="14" fill="${w}"/>
+      <circle cx="50" cy="42" r="24" fill="${c}"/>
+      <circle cx="32" cy="24" r="7" fill="${c}"/>
+      <circle cx="68" cy="24" r="7" fill="${c}"/>
+      <circle cx="32" cy="24" r="3.5" fill="${ch}" opacity="0.6"/>
+      <circle cx="68" cy="24" r="3.5" fill="${ch}" opacity="0.6"/>
+      <circle cx="35" cy="50" r="6" fill="${ch}" opacity="0.6"/>
+      <circle cx="65" cy="50" r="6" fill="${ch}" opacity="0.6"/>
+      <ellipse cx="42" cy="40" rx="3" ry="4" fill="#3a2a4a"/>
+      <ellipse cx="58" cy="40" rx="3" ry="4" fill="#3a2a4a"/>
+      <circle cx="43" cy="39" r="1.2" fill="#fff"/>
+      <circle cx="59" cy="39" r="1.2" fill="#fff"/>
+      <ellipse cx="50" cy="50" rx="2" ry="1.5" fill="#3a2a4a"/>
+      <path d="M 47 54 Q 50 57 53 54" stroke="#3a2a4a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <ellipse cx="40" cy="86" rx="6" ry="4" fill="${d}"/>
+      <ellipse cx="60" cy="86" rx="6" ry="4" fill="${d}"/>
+    `; }
+  },
+  penguin: {
+    name: '펭귄', body: '#3a3a3a', dark: '#1a1a1a', white: '#ffffff',
+    cheek: '#ff8fa3', greeting: '뒤뚱뒤뚱 🐧',
+    parts: function(c, d, w, ch) { return `
+      <ellipse cx="50" cy="68" rx="30" ry="24" fill="${c}"/>
+      <ellipse cx="50" cy="72" rx="22" ry="18" fill="${w}"/>
+      <circle cx="50" cy="40" r="22" fill="${c}"/>
+      <ellipse cx="50" cy="50" rx="14" ry="10" fill="${w}"/>
+      <circle cx="38" cy="50" r="3" fill="${ch}" opacity="0.6"/>
+      <circle cx="62" cy="50" r="3" fill="${ch}" opacity="0.6"/>
+      <circle cx="42" cy="38" r="3.5" fill="#fff"/>
+      <circle cx="58" cy="38" r="3.5" fill="#fff"/>
+      <circle cx="42" cy="38" r="2" fill="#3a2a4a"/>
+      <circle cx="58" cy="38" r="2" fill="#3a2a4a"/>
+      <circle cx="43" cy="37" r="0.8" fill="#fff"/>
+      <circle cx="59" cy="37" r="0.8" fill="#fff"/>
+      <polygon points="46,48 54,48 50,55" fill="#ff8c1a"/>
+      <ellipse cx="40" cy="88" rx="7" ry="3" fill="#ff8c1a"/>
+      <ellipse cx="60" cy="88" rx="7" ry="3" fill="#ff8c1a"/>
+    `; }
+  }
+};
+
+// 요일별 동물 선정 (일=0, 월=1, ...)
+const DAY_ANIMALS = ['capybara', 'shiba', 'cat', 'parrot', 'rabbit', 'hamster', 'penguin'];
+
+function makeAnimalSVG(type) {
+  const a = ANIMAL_FRIENDS[type] || ANIMAL_FRIENDS.cat;
+  return `<svg viewBox="0 0 100 100">${a.parts(a.body, a.dark, a.white, a.cheek)}</svg>`;
+}
+
+function renderTodayMascot() {
+  const dayIdx = new Date().getDay();
+  const type = DAY_ANIMALS[dayIdx];
+  const a = ANIMAL_FRIENDS[type];
+  const mascotEl = document.getElementById('greetingMascot');
+  if (mascotEl) mascotEl.innerHTML = makeAnimalSVG(type);
+  const speechEl = document.getElementById('speechBubble');
+  if (speechEl && a.greeting) speechEl.textContent = a.greeting;
+}
+renderTodayMascot();
+
 
 // ========== 📊 Google Sheets 동기화 URL ==========
 const GAS_URL = "https://script.google.com/macros/s/AKfycbyg0RNvnjzeUpWBu3KDrwre_ngHxjfSINUnI-JNEULMHSPYsVChf3eEogE7crF14BdpJg/exec";
@@ -1867,27 +2124,25 @@ function setPoints(v)  { localStorage.setItem('hyewon_points',  String(v)); }
 function setWallet(v)  { localStorage.setItem('hyewon_wallet',  String(v)); }
 function setCoupons(v) { localStorage.setItem('hyewon_coupons', JSON.stringify(v)); }
 
-// 선물 정의
+// 선물 정의 (현금은 5,000P 단위 쿠폰)
 const GIFTS = {
   'lotteworld': { name: '롯데월드 어드벤처', emoji: '🎢', cost: 20000 },
   'kidzania':   { name: '키자니아 코리아',   emoji: '🏙️', cost: 15000 },
   'baskin':     { name: '배스킨라빈스',       emoji: '🍦', cost: 5000  },
-  'cash':       { name: '현금 환전',          emoji: '💵', cost: 0     }  // 가변
+  'cash':       { name: '현금 5,000원',        emoji: '💵', cost: 5000  }
 };
 
-// 모든 카드 갱신 (포인트/쿠폰/지갑)
+// 모든 카드 갱신 (포인트/쿠폰)
 function refreshRewardCards() {
   const pt = getPoints();
-  const wal = getWallet();
   const cps = getCoupons().filter(c => !c.used).length;
-  document.getElementById('pointsValue').textContent = pt.toLocaleString();
-  document.getElementById('couponValue').textContent = cps;
-  document.getElementById('walletValue').textContent = wal.toLocaleString();
+  const ptEl = document.getElementById('pointsValue');
+  const cpEl = document.getElementById('couponValue');
+  if (ptEl) ptEl.textContent = pt.toLocaleString();
+  if (cpEl) cpEl.textContent = cps;
   // 모달 안 표시도 갱신
   const mp = document.getElementById('modalPoints');
   if (mp) mp.textContent = pt.toLocaleString();
-  const wa = document.getElementById('walletAmount');
-  if (wa) wa.textContent = wal.toLocaleString();
 }
 
 // 초기 표시
@@ -2003,7 +2258,7 @@ function refreshGiftCards() {
     // 0) 클래스 초기화
     card.classList.remove('locked', 'sold-out');
 
-    // 1) 이미 보유 중인 쿠폰이면 SOLD OUT (현금 제외)
+    // 1) 보유 중인 쿠폰이면 SOLD OUT (현금은 여러 장 가능 → 제외)
     if (giftId !== 'cash' && ownedTypes.has(giftId)) {
       card.classList.add('sold-out');
       status.className = 'gift-status sold';
@@ -2012,16 +2267,7 @@ function refreshGiftCards() {
     }
 
     // 2) 포인트 부족 체크
-    if (giftId === 'cash') {
-      if (points >= 100) {
-        status.className = 'gift-status ok';
-        status.textContent = '환전 가능 ✨';
-      } else {
-        card.classList.add('locked');
-        status.className = 'gift-status need';
-        status.textContent = `${100 - points}P 더!`;
-      }
-    } else if (points >= gift.cost) {
+    if (points >= gift.cost) {
       status.className = 'gift-status ok';
       status.textContent = '교환 가능 ✨';
     } else {
@@ -2049,23 +2295,21 @@ function closeModal(id) {
 // 카드 클릭 → 모달 열기
 document.getElementById('pointsCard').addEventListener('click', () => openModal('giftModal'));
 document.getElementById('couponCard').addEventListener('click', () => openModal('couponModal'));
-document.getElementById('walletCard').addEventListener('click', () => openModal('walletModal'));
 
 // 모달 닫기
 document.getElementById('closeGiftBtn').addEventListener('click', () => closeModal('giftModal'));
 document.getElementById('closeCouponBtn').addEventListener('click', () => closeModal('couponModal'));
-document.getElementById('closeWalletBtn').addEventListener('click', () => closeModal('walletModal'));
 
 // 배경 클릭 시 닫기
-['giftModal','couponModal','walletModal'].forEach(id => {
+['giftModal','couponModal'].forEach(id => {
   const m = document.getElementById(id);
-  m.addEventListener('click', e => { if (e.target === m) closeModal(id); });
+  if (m) m.addEventListener('click', e => { if (e.target === m) closeModal(id); });
 });
 
 // ESC 키로 모든 모달 닫기
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') {
-    ['giftModal','couponModal','walletModal','archiveModal'].forEach(id => {
+    ['giftModal','couponModal','archiveModal'].forEach(id => {
       const m = document.getElementById(id);
       if (m && m.classList.contains('show')) closeModal(id);
     });
@@ -2079,17 +2323,12 @@ document.querySelectorAll('.gift-card').forEach(card => {
       alert('포인트가 부족해요! 더 모아주세요 💪');
       return;
     }
-    if (this.classList.contains('sold-out')) {
+    // 현금 쿠폰은 SOLD OUT 차단 안 함 (여러 장 살 수 있게)
+    if (this.classList.contains('sold-out') && this.dataset.gift !== 'cash') {
       alert('이미 쿠폰을 보유 중이에요! 🎫\n쿠폰함에서 확인하거나 사용한 후에 다시 살 수 있어요.');
       return;
     }
     const giftId = this.dataset.gift;
-    if (giftId === 'cash') {
-      // 지갑 모달로 이동
-      closeModal('giftModal');
-      setTimeout(() => openModal('walletModal'), 300);
-      return;
-    }
     const gift = GIFTS[giftId];
     if (!confirm(`${gift.emoji} ${gift.name}을(를)\n${gift.cost.toLocaleString()}P로 교환할까요?`)) return;
 
@@ -2120,34 +2359,9 @@ document.querySelectorAll('.gift-card').forEach(card => {
   });
 });
 
-// ========== 💰 현금 환전 ==========
-function refreshCashButtons() {
-  const points = getPoints();
-  document.querySelectorAll('.cash-btn').forEach(btn => {
-    const cost = parseInt(btn.dataset.cash);
-    btn.disabled = (points < cost);
-  });
-}
-
-document.querySelectorAll('.cash-btn').forEach(btn => {
-  btn.addEventListener('click', function() {
-    if (this.disabled) return;
-    const amount = parseInt(this.dataset.cash);
-    const points = getPoints();
-    if (points < amount) { alert('포인트 부족!'); return; }
-    if (!confirm(`💎 ${amount.toLocaleString()}P를 💵 ${amount.toLocaleString()}원으로 바꿀까요?`)) return;
-
-    setPoints(points - amount);
-    setWallet(getWallet() + amount);
-
-    refreshRewardCards();
-    refreshCashButtons();
-    showCelebration(`💰 ${amount.toLocaleString()}원이\n지갑에 들어왔어요!`);
-
-    // 📊 시트 동기화
-    syncToSheet('💵 현금 환전', `${amount.toLocaleString()}원`, -amount);
-  });
-});
+// ========== 💰 현금 환전 — 제거됨 (이제 5,000P 쿠폰으로 발급) ==========
+// 호환성 위해 빈 함수 유지
+function refreshCashButtons() {}
 
 // ========== 🎫 쿠폰 리스트 렌더링 ==========
 function renderCoupons() {
@@ -2193,20 +2407,59 @@ function renderCoupons() {
   list.querySelectorAll('.coupon-use-btn').forEach(btn => {
     btn.addEventListener('click', function() {
       const cid = this.dataset.cid;
-      if (!confirm('이 쿠폰을 사용할까요?\n(엄마/아빠한테 보여주고 사용!)')) return;
       const coupons = getCoupons();
       const idx = coupons.findIndex(c => c.id === cid);
-      if (idx !== -1) {
-        coupons[idx].used = true;
-        coupons[idx].usedDate = new Date().toISOString().slice(0,10);
+      if (idx === -1) return;
+      const c = coupons[idx];
+
+      // 💵 현금 쿠폰: 여러 장 보유 가능 → 몇 장 쓸지 물어봄
+      if (c.type === 'cash') {
+        const cashCount = coupons.filter(cc => cc.type === 'cash').length;
+        let useCount = 1;
+        if (cashCount > 1) {
+          const ans = prompt(
+            '💵 현금 5,000원 쿠폰 ' + cashCount + '장 보유 중!\n' +
+            '몇 장을 사용할까요? (1~' + cashCount + ')',
+            '1'
+          );
+          if (ans === null) return;
+          useCount = parseInt(ans);
+          if (isNaN(useCount) || useCount < 1 || useCount > cashCount) {
+            alert('1~' + cashCount + ' 사이로 입력해주세요!');
+            return;
+          }
+        }
+        const totalAmount = useCount * 5000;
+        if (!confirm(
+          '💵 현금 ' + totalAmount.toLocaleString() + '원 받기?\n' +
+          '쿠폰 ' + useCount + '장 사용\n\n' +
+          '엄마/아빠한테 보여주세요!'
+        )) return;
+
+        // 미사용 현금 쿠폰을 useCount만큼 제거
+        let removed = 0;
+        for (let i = coupons.length - 1; i >= 0 && removed < useCount; i--) {
+          if (coupons[i].type === 'cash') {
+            coupons.splice(i, 1);
+            removed++;
+          }
+        }
         setCoupons(coupons);
         renderCoupons();
         refreshRewardCards();
-        refreshGiftCards();  // SOLD OUT 해제 갱신
-        showCelebration('🎉 쿠폰을 사용했어요!\n엄마/아빠한테 보여주세요!');
-
-        // 📊 시트 동기화
-        syncToSheet('✅ 쿠폰 사용', coupons[idx].name, 0);
+        refreshGiftCards();
+        showCelebration('💵 현금 ' + totalAmount.toLocaleString() + '원!\n쿠폰 ' + useCount + '장 사용 🎉');
+        syncToSheet('💵 현금 쿠폰 사용', useCount + '장 (' + totalAmount + '원)', 0);
+      } else {
+        // 🎫 일반 쿠폰: 사용 시 사라짐
+        if (!confirm(c.emoji + ' ' + c.name + '\n사용할까요?\n\n엄마/아빠한테 보여주세요!')) return;
+        coupons.splice(idx, 1);  // 완전 제거
+        setCoupons(coupons);
+        renderCoupons();
+        refreshRewardCards();
+        refreshGiftCards();
+        showCelebration('🎉 ' + c.name + '\n사용했어요!');
+        syncToSheet('✅ 쿠폰 사용', c.name, 0);
       }
     });
   });
@@ -2282,6 +2535,43 @@ const streakCard = document.getElementById('streakCard');
 const streakLabel = document.getElementById('streakLabel');
 const streakMessage = document.getElementById('streakMessage');
 
+// 🎁 5일마다 1,000P 보너스 체크
+//    → 스트릭이 끊겼다가 다시 5일 도달하면 또 받을 수 있음!
+function checkStreakReward(currentStreak) {
+  try {
+    let lastRewarded = parseInt(localStorage.getItem('hyewon_last_streak_reward') || '0');
+
+    // ⭐ 스트릭이 끊겨서 줄어들었으면 → lastRewarded도 0으로 리셋 (다시 5일 도달 시 또 받기)
+    if (currentStreak < lastRewarded) {
+      lastRewarded = 0;
+      localStorage.setItem('hyewon_last_streak_reward', '0');
+    }
+
+    // 현재 도달한 5의 배수 마일스톤
+    const currentMilestone = Math.floor(currentStreak / 5) * 5;
+    if (currentMilestone > lastRewarded && currentMilestone >= 5) {
+      const milestonesGained = (currentMilestone - lastRewarded) / 5;
+      const bonus = milestonesGained * 1000;
+      // 포인트 적립
+      setPoints(getPoints() + bonus);
+      localStorage.setItem('hyewon_last_streak_reward', String(currentMilestone));
+      // 화려한 팝업 (1.2초 뒤)
+      setTimeout(function() {
+        showCelebration(
+          '🔥 ' + currentMilestone + '일 연속 학습 달성!\n\n' +
+          '🎁 보너스 +' + bonus.toLocaleString() + 'P!\n' +
+          (milestonesGained > 1 ? '(' + milestonesGained + '개 마일스톤 한 번에!)' : '계속 가자! 💪')
+        );
+      }, 1200);
+      // 시트 동기화
+      if (typeof syncToSheet === 'function') {
+        syncToSheet('🔥 연속학습 보너스', currentMilestone + '일 달성', bonus);
+      }
+      if (typeof refreshRewardCards === 'function') refreshRewardCards();
+    }
+  } catch(e) { console.warn('스트릭 보상 확인 실패:', e); }
+}
+
 if (streak === 0) {
   streakCard.classList.add('zero');
   streakLabel.textContent = '오늘 시작해 봐요!';
@@ -2305,6 +2595,9 @@ if (streak === 0) {
   streakLabel.textContent = `👑 ${streak}일 레전드!`;
   streakMessage.textContent = '믿을 수 없어요! 진짜 천재! ✨';
 }
+
+// 🎁 5일마다 1,000P 보너스 자동 체크
+checkStreakReward(streak);
 
 
 // ========== 통계 (정확한 계산) ==========

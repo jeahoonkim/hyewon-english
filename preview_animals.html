@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🐾 동물 친구 미리보기 🌊</title>
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Gaegu:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Jua', sans-serif;
+    background: linear-gradient(180deg, #ffe4ed 0%, #ede0ff 50%, #dff7ec 100%);
+    min-height: 100vh;
+    padding: 30px 20px 60px;
+    transition: background 1s ease;
+  }
+  body.ocean {
+    background: linear-gradient(180deg, #caf0f8 0%, #90e0ef 30%, #00b4d8 70%, #0077b6 100%);
+  }
+
+  .container { max-width: 920px; margin: 0 auto; }
+
+  h1 {
+    text-align: center;
+    color: #5d4c6d;
+    font-size: 2.2em;
+    margin-bottom: 8px;
+  }
+  .subtitle {
+    text-align: center;
+    font-family: 'Gaegu', sans-serif;
+    color: #5d4c6d;
+    margin-bottom: 30px;
+    font-size: 1.15em;
+  }
+
+  .toggle-btn {
+    display: block;
+    margin: 0 auto 30px;
+    background: white;
+    border: 3px solid #ff8fb5;
+    border-radius: 50px;
+    padding: 12px 30px;
+    font-family: 'Jua', sans-serif;
+    font-size: 1.1em;
+    color: #5d4c6d;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+  }
+  .toggle-btn:hover { transform: translateY(-3px) scale(1.05); }
+  body.ocean .toggle-btn { border-color: #0077b6; color: #0077b6; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+  }
+  .card {
+    background: white;
+    border: 3px solid #ffc0d4;
+    border-radius: 24px;
+    padding: 18px 16px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.25s;
+  }
+  .card:hover { transform: translateY(-6px) rotate(-2deg); }
+  body.ocean .card { border-color: #48cae4; }
+
+  .day-label {
+    display: inline-block;
+    background: #ff8fb5;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.85em;
+    margin-bottom: 10px;
+  }
+  body.ocean .day-label { background: #0077b6; }
+
+  .animal-svg {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto;
+    display: block;
+  }
+  .animal-name {
+    font-size: 1.2em;
+    color: #5d4c6d;
+    margin-top: 8px;
+  }
+  .greeting {
+    font-family: 'Gaegu', sans-serif;
+    font-size: 0.95em;
+    color: #9a8bad;
+    margin-top: 4px;
+    font-weight: 700;
+  }
+
+  .info-box {
+    margin-top: 40px;
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    text-align: center;
+    font-family: 'Gaegu', sans-serif;
+    color: #5d4c6d;
+    line-height: 1.7;
+  }
+  .info-box h3 {
+    font-family: 'Jua', sans-serif;
+    margin-bottom: 8px;
+    color: #ff8fb5;
+  }
+  body.ocean .info-box h3 { color: #0077b6; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>🐾 동물 친구 7마리 미리보기 🌸</h1>
+  <p class="subtitle">매일매일 다른 친구가 혜원이를 반겨요!</p>
+
+  <button class="toggle-btn" id="toggleBtn">🌊 바다 모드로 보기</button>
+
+  <div class="grid" id="grid"></div>
+
+  <div class="info-box">
+    <h3>💡 어떻게 작동하나요?</h3>
+    <p>
+      혜원이가 홈페이지를 열면<br>
+      <b>오늘 요일에 맞는 동물</b>이 자동으로 인사해요!<br><br>
+      예: 오늘이 화요일이면 → 🐱 고양이 등장<br>
+      메시지도 동물별로 다르게!
+    </p>
+  </div>
+</div>
+
+<script>
+const ANIMAL_FRIENDS = {
+  shiba: {
+    name: '시바', body: '#ffa94d', dark: '#e67e22', white: '#fff5e1',
+    cheek: '#ff8fa3', greeting: '왈왈! 안녕 혜원아 🐶',
+    parts: function(c, d, w, ch) { return `
+      <ellipse cx="50" cy="65" rx="28" ry="22" fill="${c}"/>
+      <ellipse cx="50" cy="72" rx="20" ry="14" fill="${w}"/>
+      <circle cx="50" cy="40" r="22" fill="${c}"/>
+      <ellipse cx="50" cy="48" rx="14" ry="10" fill="${w}"/>
+      <path d="M 30 28 L 26 12 L 42 22 Z" fill="${c}"/>
+      <path d="M 70 28 L 74 12 L 58 22 Z" fill="${c}"/>
+      <path d="M 32 25 L 30 17 L 38 22 Z" fill="${d}"/>
+      <path d="M 68 25 L 70 17 L 62 22 Z" fill="${d}"/>
+      <circle cx="38" cy="48" r="4" fill="${ch}" opacity="0.7"/>
+      <circle cx="62" cy="48" r="4" fill="${ch}" opacity="0.7"/>
+      <ellipse cx="42" cy="40" rx="3" ry="3.5" fill="#3a2a4a"/>
+      <ellipse cx="58" cy="40" rx="3" ry="3.5" fill="#3a2a4a"/>
+      <circle cx="43" cy="39" r="1" fill="#fff"/>
+      <circle cx="59" cy="39" r="1" fill="#fff"/>
+      <ellipse cx="50" cy="50" rx="2" ry="1.5" fill="#3a2a4a"/>
+      <path d="M 47 53 Q 50 56 53 53" stroke="#3a2a4a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <ellipse cx="40" cy="84" rx="6" ry="4" fill="${d}"/>
+      <ellipse cx="60" cy="84" rx="6" ry="4" fill="${d}"/>
+    `; }
+  },
+  cat: {
+    name: '고양이', body: '#ffc0d4', dark: '#ff9eb8', white: '#fff5f8',
+    cheek: '#ff8fa3', greeting: '냐옹~ 안녕 혜원아 🐱',
+    parts: function(c, d, w, ch) { return `
+      <path d="M 80 70 Q 95 50 85 35" stroke="${d}" stroke-width="8" fill="none" stroke-linecap="round"/>
+      <ellipse cx="50" cy="65" rx="28" ry="22" fill="${c}"/>
+      <circle cx="50" cy="40" r="22" fill="${c}"/>
+      <path d="M 32 30 L 28 15 L 42 25 Z" fill="${c}"/>
+      <path d="M 68 30 L 72 15 L 58 25 Z" fill="${c}"/>
+      <path d="M 34 28 L 32 20 L 39 25 Z" fill="${d}"/>
+      <path d="M 66 28 L 68 20 L 61 25 Z" fill="${d}"/>
+      <circle cx="38" cy="48" r="4" fill="${ch}" opacity="0.6"/>
+      <circle cx="62" cy="48" r="4" fill="${ch}" opacity="0.6"/>
+      <path d="M 40 40 Q 43 37 46 40" stroke="#3a2a4a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M 54 40 Q 57 37 60 40" stroke="#3a2a4a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M 47 50 Q 50 53 53 50" stroke="#3a2a4a" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <ellipse cx="40" cy="84" rx="6" ry="4" fill="${d}"/>
+      <ellipse cx="60" cy="84" rx="6" ry="4" fill="${d}"/>
+    `; }
+  },
+  capybara: {
+    name: '카피바라', body: '#a0826a', dark: '#7a5e48', white: '#d4b896',
+    cheek: '#ff9999', greeting: '뽀룸~ 평화로운 하루 🦫',
+    parts: function(c, d, w, ch) { return `
+      <ellipse cx="50" cy="68" rx="32" ry="22" fill="${c}"/>
+      <ellipse cx="50" cy="42" rx="26" ry="22" fill="${c}"/>
+      <ellipse cx="34" cy="22" rx="6" ry="4" fill="${d}"/>
+      <ellipse cx="66" cy="22" rx="6" ry="4" fill="${d}"/>
+      <circle cx="36" cy="50" r="4" fill="${ch}" opacity="0.6"/>
+      <circle cx="64" cy="50" r="4" fill="${ch}" opacity="0.6"/>
+      <ellipse cx="42" cy="40" rx="3" ry="4" fill="#3a2a4a"/>
+      <ellipse cx="58" cy="40" rx="3" ry="4" fill="#3a2a4a"/>
+      <circle cx="43" cy="39" r="1.2" fill="#fff"/>
+      <circle cx="59" cy="39" r="1.2" fill="#fff"/>
+      <ellipse cx="50" cy="55" rx="14" ry="9" fill="${d}"/>
+      <ellipse cx="46" cy="54" rx="1.5" ry="1" fill="#3a2a4a"/>
+      <ellipse cx="54" cy="54" rx="1.5" ry="1" fill="#3a2a4a"/>
+      <path d="M 47 60 Q 50 63 53 60" stroke="#3a2a4a" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <ellipse cx="38" cy="86" rx="6" ry="3" fill="${d}"/>
+      <ellipse cx="62" cy="86" rx="6" ry="3" fill="${d}"/>
+    `; }
+  },
+  parrot: {
+    name: '앵무새', body: '#ff6b6b', dark: '#c0392b', white: '#ffd93d',
+    cheek: '#ffb3b3', greeting: '꽥꽥! 알록달록 🦜',
+    parts: function(c, d, w, ch) { return `
+      <ellipse cx="50" cy="65" rx="28" ry="22" fill="${c}"/>
+      <path d="M 24 55 Q 18 70 28 78 Q 26 65 30 60 Z" fill="${w}"/>
+      <path d="M 76 55 Q 82 70 72 78 Q 74 65 70 60 Z" fill="${w}"/>
+      <circle cx="50" cy="40" r="22" fill="${c}"/>
+      <ellipse cx="50" cy="32" rx="18" ry="10" fill="${w}"/>
+      <ellipse cx="50" cy="22" rx="10" ry="6" fill="#52b788"/>
+      <circle cx="38" cy="48" r="4" fill="${ch}" opacity="0.7"/>
+      <circle cx="62" cy="48" r="4" fill="${ch}" opacity="0.7"/>
+      <ellipse cx="42" cy="38" rx="3.5" ry="4" fill="#3a2a4a"/>
+      <ellipse cx="58" cy="38" rx="3.5" ry="4" fill="#3a2a4a"/>
+      <circle cx="43" cy="37" r="1.2" fill="#fff"/>
+      <circle cx="59" cy="37" r="1.2" fill="#fff"/>
+      <polygon points="44,48 56,48 50,58" fill="#ff8c1a"/>
+      <line x1="50" y1="48" x2="50" y2="55" stroke="#c0392b" stroke-width="1"/>
+      <ellipse cx="40" cy="84" rx="6" ry="4" fill="${d}"/>
+      <ellipse cx="60" cy="84" rx="6" ry="4" fill="${d}"/>
+    `; }
+  },
+  rabbit: {
+    name: '토끼', body: '#fff5f8', dark: '#ffc0d4', white: '#ffeef3',
+    cheek: '#ff8fa3', greeting: '토끼처럼 폴짝 🐰',
+    parts: function(c, d, w, ch) { return `
+      <ellipse cx="50" cy="65" rx="26" ry="22" fill="${c}" stroke="${d}" stroke-width="1.5"/>
+      <ellipse cx="35" cy="18" rx="6" ry="20" fill="${c}" stroke="${d}" stroke-width="1.5"/>
+      <ellipse cx="65" cy="18" rx="6" ry="20" fill="${c}" stroke="${d}" stroke-width="1.5"/>
+      <ellipse cx="35" cy="22" rx="2.5" ry="14" fill="${ch}"/>
+      <ellipse cx="65" cy="22" rx="2.5" ry="14" fill="${ch}"/>
+      <circle cx="50" cy="44" r="22" fill="${c}" stroke="${d}" stroke-width="1.5"/>
+      <circle cx="38" cy="52" r="4" fill="${ch}" opacity="0.6"/>
+      <circle cx="62" cy="52" r="4" fill="${ch}" opacity="0.6"/>
+      <ellipse cx="42" cy="42" rx="3" ry="4" fill="#3a2a4a"/>
+      <ellipse cx="58" cy="42" rx="3" ry="4" fill="#3a2a4a"/>
+      <circle cx="43" cy="41" r="1.2" fill="#fff"/>
+      <circle cx="59" cy="41" r="1.2" fill="#fff"/>
+      <ellipse cx="50" cy="51" rx="2" ry="1.5" fill="${ch}"/>
+      <path d="M 47 55 Q 50 58 53 55" stroke="#3a2a4a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <ellipse cx="40" cy="86" rx="6" ry="4" fill="${d}"/>
+      <ellipse cx="60" cy="86" rx="6" ry="4" fill="${d}"/>
+    `; }
+  },
+  hamster: {
+    name: '햄스터', body: '#f5deb3', dark: '#d4af74', white: '#fff5e1',
+    cheek: '#ff9999', greeting: '쪼끄만 햄스터! 🐹',
+    parts: function(c, d, w, ch) { return `
+      <ellipse cx="50" cy="68" rx="32" ry="22" fill="${c}"/>
+      <ellipse cx="50" cy="74" rx="22" ry="14" fill="${w}"/>
+      <circle cx="50" cy="42" r="24" fill="${c}"/>
+      <circle cx="32" cy="24" r="7" fill="${c}"/>
+      <circle cx="68" cy="24" r="7" fill="${c}"/>
+      <circle cx="32" cy="24" r="3.5" fill="${ch}" opacity="0.6"/>
+      <circle cx="68" cy="24" r="3.5" fill="${ch}" opacity="0.6"/>
+      <circle cx="35" cy="50" r="6" fill="${ch}" opacity="0.6"/>
+      <circle cx="65" cy="50" r="6" fill="${ch}" opacity="0.6"/>
+      <ellipse cx="42" cy="40" rx="3" ry="4" fill="#3a2a4a"/>
+      <ellipse cx="58" cy="40" rx="3" ry="4" fill="#3a2a4a"/>
+      <circle cx="43" cy="39" r="1.2" fill="#fff"/>
+      <circle cx="59" cy="39" r="1.2" fill="#fff"/>
+      <ellipse cx="50" cy="50" rx="2" ry="1.5" fill="#3a2a4a"/>
+      <path d="M 47 54 Q 50 57 53 54" stroke="#3a2a4a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <ellipse cx="40" cy="86" rx="6" ry="4" fill="${d}"/>
+      <ellipse cx="60" cy="86" rx="6" ry="4" fill="${d}"/>
+    `; }
+  },
+  penguin: {
+    name: '펭귄', body: '#3a3a3a', dark: '#1a1a1a', white: '#ffffff',
+    cheek: '#ff8fa3', greeting: '뒤뚱뒤뚱 🐧',
+    parts: function(c, d, w, ch) { return `
+      <ellipse cx="50" cy="68" rx="30" ry="24" fill="${c}"/>
+      <ellipse cx="50" cy="72" rx="22" ry="18" fill="${w}"/>
+      <circle cx="50" cy="40" r="22" fill="${c}"/>
+      <ellipse cx="50" cy="50" rx="14" ry="10" fill="${w}"/>
+      <circle cx="38" cy="50" r="3" fill="${ch}" opacity="0.6"/>
+      <circle cx="62" cy="50" r="3" fill="${ch}" opacity="0.6"/>
+      <circle cx="42" cy="38" r="3.5" fill="#fff"/>
+      <circle cx="58" cy="38" r="3.5" fill="#fff"/>
+      <circle cx="42" cy="38" r="2" fill="#3a2a4a"/>
+      <circle cx="58" cy="38" r="2" fill="#3a2a4a"/>
+      <circle cx="43" cy="37" r="0.8" fill="#fff"/>
+      <circle cx="59" cy="37" r="0.8" fill="#fff"/>
+      <polygon points="46,48 54,48 50,55" fill="#ff8c1a"/>
+      <ellipse cx="40" cy="88" rx="7" ry="3" fill="#ff8c1a"/>
+      <ellipse cx="60" cy="88" rx="7" ry="3" fill="#ff8c1a"/>
+    `; }
+  }
+};
+
+const ORDER = [
+  { day: '일요일', key: 'capybara' },
+  { day: '월요일', key: 'shiba' },
+  { day: '화요일', key: 'cat' },
+  { day: '수요일', key: 'parrot' },
+  { day: '목요일', key: 'rabbit' },
+  { day: '금요일', key: 'hamster' },
+  { day: '토요일', key: 'penguin' }
+];
+
+function makeAnimalSVG(type) {
+  const a = ANIMAL_FRIENDS[type];
+  return `<svg viewBox="0 0 100 100" class="animal-svg">${a.parts(a.body, a.dark, a.white, a.cheek)}</svg>`;
+}
+
+const grid = document.getElementById('grid');
+ORDER.forEach(item => {
+  const a = ANIMAL_FRIENDS[item.key];
+  grid.innerHTML += `
+    <div class="card">
+      <div class="day-label">${item.day}</div>
+      ${makeAnimalSVG(item.key)}
+      <div class="animal-name">${a.name}</div>
+      <div class="greeting">${a.greeting}</div>
+    </div>
+  `;
+});
+
+// 토글 버튼
+const btn = document.getElementById('toggleBtn');
+btn.addEventListener('click', function() {
+  document.body.classList.toggle('ocean');
+  btn.textContent = document.body.classList.contains('ocean')
+    ? '🌸 봄 모드로 돌아가기'
+    : '🌊 바다 모드로 보기';
+});
+</script>
+</body>
+</html>
