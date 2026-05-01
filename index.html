@@ -2451,34 +2451,22 @@ function refreshRewardCards() {
 // 초기 표시
 refreshRewardCards();
 
-// 🙏 일회성 사과 보너스 (오류로 인한 데이터 손실 보상)
-(function checkApologyBonus() {
-  const KEY = 'hyewon_apology_500p_v1';
-  if (localStorage.getItem(KEY)) return;  // 이미 받음
+// 🙏 일회성 사과 알림 (팝업만 — 포인트는 이미 별도 지급됨)
+(function showApologyPopup() {
+  const KEY = 'hyewon_apology_popup_v2';
+  if (localStorage.getItem(KEY)) return;  // 이미 본 사람은 안 뜸
+  localStorage.setItem(KEY, '1');
 
-  // 500P 적립
-  setPoints(getPoints() + 500);
-  localStorage.setItem(KEY, JSON.stringify({
-    given: 500,
-    time: new Date().toISOString()
-  }));
-  refreshRewardCards();
-
-  // 팝업 (2초 뒤 - 페이지 로드 다 된 후)
+  // 팝업 (2초 뒤)
   setTimeout(function() {
     showCelebration(
       '🙏 미안해 혜원아!\n' +
       '시작할 때 오류가 있었어요\n\n' +
       '🎁 사과의 의미로\n' +
-      '+500P 드려요!\n\n' +
-      '혜원이 화이팅! 💕'
+      '+500P 드렸어요!\n\n' +
+      '확인해보세요 💕'
     );
   }, 2000);
-
-  // 시트 기록
-  if (typeof syncToSheet === 'function') {
-    syncToSheet('🙏 사과 보너스', '오류 보상 (1회성)', 500);
-  }
 })();
 
 // 📊 홈페이지 열릴 때 현재 상태를 시트에 자동 동기화 (3초 후, 매번 실행)
