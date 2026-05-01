@@ -236,6 +236,37 @@
     justify-content: center;
     font-size: 20px;
   }
+  /* 🎀 혜원이 프로필 사진 (헤더) - 오뚜기 까딱까딱! */
+  .profile-pic {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2.5px solid var(--pink-deep);
+    flex-shrink: 0;
+    box-shadow: 0 3px 8px rgba(255, 143, 181, 0.3);
+    animation: bobbleHead 1.8s ease-in-out infinite;
+    transform-origin: center bottom;
+  }
+  .profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  @keyframes bobbleHead {
+    0%, 100% { transform: rotate(-8deg); }
+    50% { transform: rotate(8deg); }
+  }
+  /* 호버하면 더 신나게 */
+  .profile-pic:hover {
+    animation: bobbleFast 0.4s ease-in-out infinite;
+    cursor: pointer;
+  }
+  @keyframes bobbleFast {
+    0%, 100% { transform: rotate(-15deg) scale(1.1); }
+    50% { transform: rotate(15deg) scale(1.1); }
+  }
   .logo-box span {
     font-family: 'Jua', sans-serif;
     font-size: 0.95em;
@@ -1704,7 +1735,10 @@
   <!-- 탑 바 -->
   <div class="top-bar">
     <div class="logo-box">
-      <div class="cat-avatar">😸</div>
+      <div class="profile-pic" title="혜원이">
+        <img src="hyewon/profile.jpg" alt="혜원이"
+             onerror="this.parentElement.innerHTML='😸';this.parentElement.style.fontSize='24px';this.parentElement.style.background='var(--peach)';">
+      </div>
       <span>혜원이의 영어 놀이터</span>
     </div>
     <div class="date-chip" id="dateChip">—</div>
@@ -2184,7 +2218,7 @@ const ANIMAL_FRIENDS = {
   },
   capybara: {
     name: '카피바라', body: '#a0826a', dark: '#7a5e48', white: '#d4b896',
-    cheek: '#ff9999', greeting: '뽀룸~ 평화로운 하루 🦫',
+    cheek: '#ff9999', greeting: '뽀룸~ 혜원아, 평화로운 하루! 🦫',
     parts: function(c, d, w, ch) { return `
       <ellipse cx="50" cy="68" rx="32" ry="22" fill="${c}"/>
       <ellipse cx="50" cy="42" rx="26" ry="22" fill="${c}"/>
@@ -2206,7 +2240,7 @@ const ANIMAL_FRIENDS = {
   },
   parrot: {
     name: '앵무새', body: '#ff6b6b', dark: '#c0392b', white: '#ffd93d',
-    cheek: '#ffb3b3', greeting: '꽥꽥! 알록달록 🦜',
+    cheek: '#ffb3b3', greeting: '꽥꽥! 혜원아, 알록달록한 하루! 🦜',
     parts: function(c, d, w, ch) { return `
       <ellipse cx="50" cy="65" rx="28" ry="22" fill="${c}"/>
       <path d="M 24 55 Q 18 70 28 78 Q 26 65 30 60 Z" fill="${w}"/>
@@ -2228,7 +2262,7 @@ const ANIMAL_FRIENDS = {
   },
   rabbit: {
     name: '토끼', body: '#fff5f8', dark: '#ffc0d4', white: '#ffeef3',
-    cheek: '#ff8fa3', greeting: '토끼처럼 폴짝 🐰',
+    cheek: '#ff8fa3', greeting: '혜원아 폴짝폴짝~ 같이 놀자! 🐰',
     parts: function(c, d, w, ch) { return `
       <ellipse cx="50" cy="65" rx="26" ry="22" fill="${c}" stroke="${d}" stroke-width="1.5"/>
       <ellipse cx="35" cy="18" rx="6" ry="20" fill="${c}" stroke="${d}" stroke-width="1.5"/>
@@ -2250,7 +2284,7 @@ const ANIMAL_FRIENDS = {
   },
   hamster: {
     name: '햄스터', body: '#f5deb3', dark: '#d4af74', white: '#fff5e1',
-    cheek: '#ff9999', greeting: '쪼끄만 햄스터! 🐹',
+    cheek: '#ff9999', greeting: '혜원아 안녕! 쪼끄만 햄스터야 🐹',
     parts: function(c, d, w, ch) { return `
       <ellipse cx="50" cy="68" rx="32" ry="22" fill="${c}"/>
       <ellipse cx="50" cy="74" rx="22" ry="14" fill="${w}"/>
@@ -2273,7 +2307,7 @@ const ANIMAL_FRIENDS = {
   },
   penguin: {
     name: '펭귄', body: '#3a3a3a', dark: '#1a1a1a', white: '#ffffff',
-    cheek: '#ff8fa3', greeting: '뒤뚱뒤뚱 🐧',
+    cheek: '#ff8fa3', greeting: '혜원아~ 뒤뚱뒤뚱 만나자! 🐧',
     parts: function(c, d, w, ch) { return `
       <ellipse cx="50" cy="68" rx="30" ry="24" fill="${c}"/>
       <ellipse cx="50" cy="72" rx="22" ry="18" fill="${w}"/>
@@ -2614,10 +2648,10 @@ luckyBanner.addEventListener('click', function() {
   refreshRewardCards();
   refreshLuckyBanner();
 
-  // 결과별 다른 메시지
+  // 결과별 다른 메시지 (큰 보상엔 이름!)
   let msg;
-  if (earned >= 500) msg = '🎊 대박 잭팟! +' + earned + 'P!\n오늘 진짜 운 좋아요! ✨';
-  else if (earned >= 400) msg = '🎉 와! +' + earned + 'P!\n진짜 짱이에요! 🌟';
+  if (earned >= 500) msg = '🎊 혜원아 대박 잭팟!\n+' + earned + 'P!\n오늘 진짜 운 좋아! ✨';
+  else if (earned >= 400) msg = '🎉 혜원아 와!\n+' + earned + 'P!\n진짜 짱이야! 🌟';
   else if (earned >= 250) msg = '🎁 오! +' + earned + 'P!\n좋아요! ✨';
   else if (earned >= 150) msg = '🎁 +' + earned + 'P 받았어요!\n내일은 더 큰 거 받자! 🍀';
   else msg = '🎁 +' + earned + 'P 받았어요!\n내일 다시 와요! 💕';
@@ -2629,16 +2663,32 @@ luckyBanner.addEventListener('click', function() {
   }
 });
 
-// ========== 🎯 이벤트 시스템 ==========
-const EVENTS = {
-  '2026-04-29': { theme: '국어 퀴즈',         file: '혜원이_국어퀴즈_20260429.html',       icon: '📖' },
-  '2026-04-30': { theme: '사회/역사 퀴즈',     file: '혜원이_사회역사_퀴즈_20260430.html',   icon: '🏛️' },
-  '2026-05-01': { theme: '영어 단어 퀴즈',      file: '혜원이_영어단어_퀴즈_20260501.html',   icon: '🇺🇸' },
-  '2026-05-02': { theme: '수학 분수/소수',      file: '혜원이_수학분수소수_퀴즈_20260502.html', icon: '🔢' },
-  '2026-05-03': { theme: '넌센스 퀴즈 3탄',     file: '혜원이_넌센스퀴즈_3탄_20260503.html',   icon: '🤔' }
-};
+// ========== 🎯 이벤트 시스템 (manifest.json 자동 로드) ==========
+let EVENTS = {};
 
-const todayEvent = EVENTS[todayStr];
+// 📥 manifest.json 자동 로드 (events 폴더 자동 동기화)
+fetch('events/manifest.json?t=' + Date.now())
+  .then(r => r.json())
+  .then(data => {
+    EVENTS = data.events || {};
+    console.log('[이벤트] ' + Object.keys(EVENTS).length + '개 등록됨');
+    refreshEventCard();
+    checkEventAutoCredit();
+  })
+  .catch(err => {
+    console.warn('[이벤트] manifest.json 로드 실패:', err);
+    refreshEventCard();
+  });
+
+// 헬퍼: 오늘 이벤트 가져오기 (매번 EVENTS에서 다시 조회)
+function getTodayEvent() {
+  return EVENTS[todayStr];
+}
+
+// 호환성용: todayEvent 변수 (getter 역할)
+Object.defineProperty(window, 'todayEvent', {
+  get: function() { return EVENTS[todayStr]; }
+});
 const eventCard = document.getElementById('eventCard');
 const eventCompletedKey = 'hyewon_event_done_' + todayStr;
 const eventDoneInfo = (function() {
@@ -3078,12 +3128,12 @@ function checkStreakReward(currentStreak) {
       // 포인트 적립
       setPoints(getPoints() + bonus);
       localStorage.setItem('hyewon_last_streak_reward', String(currentMilestone));
-      // 화려한 팝업 (1.2초 뒤)
+      // 화려한 팝업 (1.2초 뒤) - 큰 보상에 이름 부르기!
       setTimeout(function() {
         showCelebration(
-          '🔥 ' + currentMilestone + '일 연속 학습 달성!\n\n' +
+          '🔥 혜원아 ' + currentMilestone + '일 연속 달성!\n\n' +
           '🎁 보너스 +' + bonus.toLocaleString() + 'P!\n' +
-          (milestonesGained > 1 ? '(' + milestonesGained + '개 마일스톤 한 번에!)' : '계속 가자! 💪')
+          (milestonesGained > 1 ? '(' + milestonesGained + '개 마일스톤 한 번에!)' : '진짜 대단해! 💪')
         );
       }, 1200);
       // 시트 동기화

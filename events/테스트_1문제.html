@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>테스트 퀴즈 🧪</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: 'Nanum Gothic', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .card {
+    background: white; border-radius: 20px;
+    padding: 40px; max-width: 480px; width: 90%;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    text-align: center;
+  }
+  .emoji { font-size: 3.5em; margin-bottom: 12px; }
+  h2 { font-size: 1.4em; color: #333; margin-bottom: 8px; }
+  .sub { color: #888; font-size: 0.9em; margin-bottom: 28px; }
+  .q { font-size: 1.25em; font-weight: 700; color: #222; margin-bottom: 24px; line-height: 1.5; }
+  .choices { display: grid; gap: 12px; }
+  .btn {
+    padding: 14px; border-radius: 10px; border: 2px solid #ddd;
+    background: #f8f8f8; font-size: 1em; font-weight: 700;
+    cursor: pointer; transition: all 0.18s;
+  }
+  .btn:hover { background: #667eea; color: white; border-color: #667eea; transform: translateY(-1px); }
+  .btn.correct { background: #d4edda; border-color: #28a745; color: #155724; }
+  .btn.wrong   { background: #f8d7da; border-color: #dc3545; color: #721c24; }
+  .result { margin-top: 24px; padding: 16px; border-radius: 12px; font-size: 1em; line-height: 1.7; }
+  .result.ok { background: #e8f5e9; color: #2e7d32; }
+  .result.ng { background: #fce4ec; color: #880e4f; }
+  .sending { color: #888; font-size: 0.85em; margin-top: 10px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="emoji">🧪</div>
+  <h2>알림 테스트 퀴즈</h2>
+  <div class="sub">이메일 · 카카오톡 전송 확인용</div>
+  <div class="q">대한민국의 수도는 어디인가요?</div>
+  <div class="choices">
+    <button class="btn" onclick="answer(this, false)">① 부산</button>
+    <button class="btn" onclick="answer(this, true)">② 서울</button>
+    <button class="btn" onclick="answer(this, false)">③ 인천</button>
+    <button class="btn" onclick="answer(this, false)">④ 대전</button>
+  </div>
+  <div id="result"></div>
+  <div class="sending" id="sending"></div>
+</div>
+
+<script>
+const APPS_URL = "https://script.google.com/macros/s/AKfycbzBGQgFRhsSdQimr8UwIbFXF1pubMLSuMFXketQ_XJGvsA5fNh3oo_JQ9cviWQSKbAPyg/exec";
+
+function answer(btn, isCorrect) {
+  document.querySelectorAll('.btn').forEach(b => b.disabled = true);
+  btn.classList.add(isCorrect ? 'correct' : 'wrong');
+  if (!isCorrect) document.querySelectorAll('.btn')[1].classList.add('correct');
+
+  const res = document.getElementById('result');
+  res.className = 'result ' + (isCorrect ? 'ok' : 'ng');
+  res.innerHTML = isCorrect
+    ? '🎉 정답이에요! 서울이 맞아요!<br>이메일과 카카오톡으로 결과를 전송 중...'
+    : '😅 아쉬워요! 정답은 ② 서울이에요!<br>이메일과 카카오톡으로 결과를 전송 중...';
+
+  document.getElementById('sending').textContent = '📡 전송 중...';
+
+  const score   = isCorrect ? 1 : 0;
+  const percent = isCorrect ? 100 : 0;
+  const url = APPS_URL
+    + '?subject=' + encodeURIComponent('🧪 테스트 퀴즈')
+    + '&score='   + score
+    + '&total=1'
+    + '&percent=' + percent;
+
+  fetch(url)
+    .then(r => r.text())
+    .then(() => {
+      document.getElementById('sending').innerHTML =
+        '✅ 전송 완료! 이메일과 카카오톡을 확인해보세요 😊';
+    })
+    .catch(() => {
+      document.getElementById('sending').innerHTML =
+        '⚠️ 전송 실패. Apps Script URL을 확인해주세요.';
+    });
+}
+</script>
+</body>
+</html>
