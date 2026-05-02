@@ -227,10 +227,12 @@ def git_upload():
     print()
     print("  📝 변경된 파일들:")
     print("  " + "─" * 50)
-    for line in status.stdout.strip().split('\n')[:20]:
+    status_lines = status.stdout.strip().split('\n')
+    for line in status_lines[:20]:
         print(f"    {line}")
-    if len(status.stdout.strip().split('\n')) > 20:
-        print(f"    ... 외 {len(status.stdout.strip().split('\n')) - 20}개")
+    if len(status_lines) > 20:
+        extra_count = len(status_lines) - 20
+        print(f"    ... 외 {extra_count}개")
     print("  " + "─" * 50)
 
     # 커밋 메시지 자동
@@ -243,7 +245,7 @@ def git_upload():
         commit_msg = user_input.replace('"', '').replace("'", '')
 
     # git add
-    print("\n  1/3) git add ...")
+    print("\n  1/4) git add ...")
     r = run_shell("git add .")
     if r.returncode != 0:
         fail(f"git add 실패\n{r.stderr}")
@@ -251,18 +253,38 @@ def git_upload():
     ok("스테이징 완료")
 
     # git commit
-    print("  2/3) git commit ...")
+    print("  2/4) git commit ...")
     r = run_shell(f'git commit -m "{commit_msg}"')
     if r.returncode != 0:
         fail(f"git commit 실패\n{r.stderr or r.stdout}")
         return False
     ok("커밋 완료")
 
+    # git pull --rebase (먼저 GitHub 최신 받기 - 충돌 자동 방지)
+    print("  3/4) GitHub 최신 받기 (rebase)...")
+    pull_result = run_shell("git pull --rebase -X ours")
+    if pull_result.returncode != 0:
+        # 자동 해결 실패 시 abort 후 안내
+        run_shell("git rebase --abort")
+        fail("⚠️  GitHub와 충돌이 발생했어요!")
+        print()
+        print("  [해결 방법]")
+        print("  1) '🆘_충돌해결_업로드.bat' 더블클릭")
+        print("  2) 또는 cmd에서 차례로:")
+        print("     git pull --rebase")
+        print("     (충돌 시) git checkout --ours <파일>")
+        print("     git rebase --continue")
+        print("     git push")
+        return False
+    ok("머지 완료")
+
     # git push
-    print("  3/3) git push ...")
+    print("  4/4) git push ...")
     push_result = subprocess.run("git push", shell=True, cwd=str(ROOT))
     if push_result.returncode != 0:
         fail("git push 실패 - 인터넷 / 로그인 / 권한 확인하세요")
+        print()
+        print("  💡 'rejected' 에러면 '🆘_충돌해결_업로드.bat' 사용하세요!")
         return False
     ok("GitHub 푸시 완료!")
     return True
@@ -308,3 +330,4 @@ if __name__ == "__main__":
         import traceback
         traceback.print_exc()
         input("\n엔터를 누르면 종료합니다...")
+   

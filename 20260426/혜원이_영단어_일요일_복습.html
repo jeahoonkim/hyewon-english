@@ -1139,7 +1139,7 @@ function renderQuestion() {
     <div class="question-word">${q.word}</div>
     <div class="question-ipa">${q.ipa}</div>
     <button class="listen-btn" onclick="speakWordAgain('${q.word}')">🔊</button>
-    <div style="text-align:center;font-family:'Gaegu',sans-serif;font-size:14px;color:#888;margin-top:4px">발음 듣기</div>
+    <div style="text-align:center;font-family:'Gaegu',sans-serif;font-size:14px;color:#888;margin-top:4px">🔊를 누르면 다시 들려요</div>
     <div class="question-prompt">💭 이 단어의 뜻은 무엇일까?</div>
     <div class="options">
       ${q.choices.map((c, i) => `
@@ -1150,15 +1150,55 @@ function renderQuestion() {
       `).join('')}
     </div>
   `;
+  // 🔊 자동으로 단어 발음 들려주기
+  autoSpeakWord(q.word);
+}
+
+// 🔊 발음 시스템 - 모바일 호환 강화
+let _voicesReady = false;
+let _voicesCache = [];
+function _loadVoices() {
+  if (!('speechSynthesis' in window)) return;
+  _voicesCache = window.speechSynthesis.getVoices();
+  if (_voicesCache.length > 0) _voicesReady = true;
+}
+if ('speechSynthesis' in window) {
+  _loadVoices();
+  window.speechSynthesis.onvoiceschanged = _loadVoices;
+}
+
+function _pickEnglishVoice() {
+  if (_voicesCache.length === 0) _loadVoices();
+  return _voicesCache.find(v => v.lang === 'en-US' && /Google|Samantha|Karen|Daniel/i.test(v.name))
+      || _voicesCache.find(v => v.lang === 'en-US')
+      || _voicesCache.find(v => v.lang && v.lang.startsWith('en'));
 }
 
 function speakWordAgain(word) {
-  if ('speechSynthesis' in window) {
+  if (!('speechSynthesis' in window)) return;
+  try {
     window.speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(word);
-    u.lang = 'en-US'; u.rate = 0.85; u.pitch = 1.1;
-    window.speechSynthesis.speak(u);
-  }
+    setTimeout(function() {
+      const u = new SpeechSynthesisUtterance(word);
+      u.lang = 'en-US';
+      u.rate = 0.85;
+      u.pitch = 1.1;
+      u.volume = 1.0;
+      const v = _pickEnglishVoice();
+      if (v) u.voice = v;
+      window.speechSynthesis.speak(u);
+    }, 60);
+  } catch(e) { console.warn('🔊 speak error:', e); }
+}
+
+// 자동 발음 (문제 보이자마자) - 모바일 첫 클릭 후부터 동작
+let _autoSpeakEnabled = false;
+window.addEventListener('click', function() { _autoSpeakEnabled = true; }, { once: false, capture: true });
+window.addEventListener('touchstart', function() { _autoSpeakEnabled = true; }, { once: false, capture: true });
+
+function autoSpeakWord(word) {
+  if (!_autoSpeakEnabled) return;
+  setTimeout(function() { speakWordAgain(word); }, 350);
 }
 
 // ============ 답 선택 ============
