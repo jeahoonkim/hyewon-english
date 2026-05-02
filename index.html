@@ -2063,20 +2063,6 @@ const SCHEDULE = [
     quiz: "혜원이_영단어_토요일_종합시험.html"
   },
   {
-    date: "2026-04-26", dayKo: "일", dayEn: "Sun",
-    theme: "일요일 복습 (Week 1)", emoji: "🌻",
-    folder: "20260426",
-    vocab: "혜원이_영단어_일요일_복습단어장.html",
-    quiz: "혜원이_영단어_일요일_복습.html"
-  },
-  {
-    date: "2026-05-03", dayKo: "일", dayEn: "Sun",
-    theme: "일요일 복습 (Week 2)", emoji: "🌻",
-    folder: "20260503",
-    vocab: "혜원이_영단어_일요일_복습단어장.html",
-    quiz: "혜원이_영단어_일요일_복습.html"
-  },
-  {
     date: "2026-05-04", dayKo: "월", dayEn: "Mon",
     theme: "교통수단", emoji: "🚌",
     folder: "20260504",
@@ -2119,10 +2105,24 @@ const SCHEDULE = [
     quiz: "혜원이_영단어_토요일_종합시험.html"
   },
   {
+    date: "2026-04-26", dayKo: "일", dayEn: "Sun",
+    theme: "일요일 복습 (Week 1)", emoji: "🌻",
+    folder: "20260426",
+    vocab: "혜원이_영단어_일요일_복습.html",
+    quiz: "혜원이_영단어_일요일_복습.html"
+  },
+  {
+    date: "2026-05-03", dayKo: "일", dayEn: "Sun",
+    theme: "일요일 복습 (Week 2)", emoji: "🌻",
+    folder: "20260503",
+    vocab: "혜원이_영단어_일요일_복습.html",
+    quiz: "혜원이_영단어_일요일_복습.html"
+  },
+  {
     date: "2026-05-10", dayKo: "일", dayEn: "Sun",
     theme: "일요일 복습 (Week 3)", emoji: "🌻",
     folder: "20260510",
-    vocab: "혜원이_영단어_일요일_복습단어장.html",
+    vocab: "혜원이_영단어_일요일_복습.html",
     quiz: "혜원이_영단어_일요일_복습.html"
   }
 ];
@@ -2472,9 +2472,126 @@ function syncToSheet(activityType, detail, delta) {
   }).catch(err => console.warn('[시트 동기화 실패]', err));
 }
 
-function setPoints(v)  { localStorage.setItem('hyewon_points',  String(v)); }
-function setWallet(v)  { localStorage.setItem('hyewon_wallet',  String(v)); }
-function setCoupons(v) { localStorage.setItem('hyewon_coupons', JSON.stringify(v)); }
+function setPoints(v)  {
+  localStorage.setItem('hyewon_points', String(v));
+  syncStateToSheet({ points: v });
+}
+function setWallet(v)  {
+  localStorage.setItem('hyewon_wallet', String(v));
+  syncStateToSheet({ wallet: v });
+}
+function setCoupons(v) {
+  localStorage.setItem('hyewon_coupons', JSON.stringify(v));
+}
+
+// 🌐 다중 기기 동기화 헬퍼 (POST 비동기)
+function syncStateToSheet(state) {
+  if (typeof GAS_URL === 'undefined' || !GAS_URL) return;
+  try {
+    fetch(GAS_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify({ sync_state: state })
+    }).catch(function(){});
+  } catch(e) {}
+}
+function syncCouponAddToSheet(coupon) {
+  if (typeof GAS_URL === 'undefined' || !GAS_URL) return;
+  try {
+    fetch(GAS_URL, {
+      method: 'POST', mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify({ coupon_add: coupon })
+    }).catch(function(){});
+  } catch(e) {}
+}
+function syncCouponUseToSheet(couponId) {
+  if (typeof GAS_URL === 'undefined' || !GAS_URL) return;
+  try {
+    fetch(GAS_URL, {
+      method: 'POST', mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify({ coupon_use: couponId })
+    }).catch(function(){});
+  } catch(e) {}
+}
+
+// 🌐 페이지 열 때 시트에서 최신 상태 가져오기 (JSONP - CORS 우회)
+function fetchStateFromSheet(callback) {
+  if (typeof GAS_URL === 'undefined' || !GAS_URL) {
+    if (callback) callback(null);
+    return;
+  }
+  const cbName = 'hyewonState_' + Date.now();
+  let scriptEl = null;
+
+  const timer = setTimeout(function() {
+    if (window[cbName]) delete window[cbName];
+    if (scriptEl && scriptEl.parentNode) scriptEl.parentNode.removeChild(scriptEl);
+    if (callback) callback(null);
+  }, 5000);
+
+  window[cbName] = function(data) {
+    clearTimeout(timer);
+    delete window[cbName];
+    if (scriptEl && scriptEl.parentNode) scriptEl.parentNode.removeChild(scriptEl);
+    if (callback) callback(data);
+  };
+
+  scriptEl = document.createElement('script');
+  scriptEl.src = GAS_URL + '?action=get_state&callback=' + cbName;
+  scriptEl.onerror = function() {
+    clearTimeout(timer);
+    if (window[cbName]) delete window[cbName];
+    if (callback) callback(null);
+  };
+  document.head.appendChild(scriptEl);
+}
+
+// 🌐 시트 데이터로 localStorage 업데이트 (시트가 마스터)
+function applySheetState(data) {
+  if (!data) return;
+  console.log('[🌐 동기화] 시트에서 받음:', data);
+
+  if (typeof data.points === 'number' && data.points >= 0) {
+    localStorage.setItem('hyewon_points', String(data.points));
+  }
+  if (typeof data.wallet === 'number' && data.wallet >= 0) {
+    localStorage.setItem('hyewon_wallet', String(data.wallet));
+  }
+  if (typeof data.last_streak_reward === 'number') {
+    localStorage.setItem('hyewon_last_streak_reward', String(data.last_streak_reward));
+  }
+  if (data.lucky_received_date) {
+    const luckyKey = 'hyewon_lucky_' + data.lucky_received_date;
+    if (!localStorage.getItem(luckyKey)) {
+      localStorage.setItem(luckyKey, JSON.stringify({ from_sheet: true, date: data.lucky_received_date }));
+    }
+  }
+  // 쿠폰: 시트가 마스터 (전부 덮어쓰기)
+  if (Array.isArray(data.coupons)) {
+    localStorage.setItem('hyewon_coupons', JSON.stringify(data.coupons));
+  }
+
+  // UI 갱신
+  if (typeof refreshRewardCards === 'function') refreshRewardCards();
+  if (typeof refreshGiftCards === 'function') refreshGiftCards();
+  if (typeof refreshLuckyBanner === 'function') refreshLuckyBanner();
+  if (typeof renderCoupons === 'function') renderCoupons();
+}
+
+// 🌐 페이지 로드 1초 후 자동 동기화 (시트 마스터)
+setTimeout(function() {
+  fetchStateFromSheet(function(data) {
+    if (data) {
+      applySheetState(data);
+      console.log('[🌐 동기화] 완료 - 모든 기기 동일 상태!');
+    } else {
+      console.warn('[🌐 동기화] 실패 - 오프라인 또는 Apps Script 새 버전 배포 필요');
+    }
+  });
+}, 1000);
 
 // 선물 정의 (현금은 5,000P 단위 쿠폰)
 const GIFTS = {
@@ -2711,6 +2828,9 @@ luckyBanner.addEventListener('click', function() {
     earned: earned,
     time: new Date().toISOString()
   }));
+
+  // 🌐 다른 기기와도 동기화 (오늘 받았다는 정보)
+  syncStateToSheet({ lucky_received_date: todayStr });
 
   refreshRewardCards();
   refreshLuckyBanner();
@@ -2979,7 +3099,7 @@ document.querySelectorAll('.gift-card').forEach(card => {
 
     // 쿠폰함에 추가
     const coupons = getCoupons();
-    coupons.push({
+    const newCoupon = {
       id: 'C' + Date.now(),
       type: giftId,
       name: gift.name,
@@ -2987,14 +3107,18 @@ document.querySelectorAll('.gift-card').forEach(card => {
       cost: gift.cost,
       date: new Date().toISOString().slice(0, 10),
       used: false
-    });
+    };
+    coupons.push(newCoupon);
     setCoupons(coupons);
+
+    // 🌐 다른 기기와도 쿠폰함 동기화 (개별 추가)
+    syncCouponAddToSheet(newCoupon);
 
     refreshRewardCards();
     refreshGiftCards();
     showCelebration(`🎉 ${gift.name}\n쿠폰을 받았어요! 🎫`);
 
-    // 📊 시트 동기화
+    // 📊 활동 로그 동기화
     syncToSheet('🎫 쿠폰 구매', gift.name, -gift.cost);
   });
 });
@@ -3078,13 +3202,19 @@ function renderCoupons() {
 
         // 미사용 현금 쿠폰을 useCount만큼 제거
         let removed = 0;
+        const removedIds = [];
         for (let i = coupons.length - 1; i >= 0 && removed < useCount; i--) {
           if (coupons[i].type === 'cash') {
+            removedIds.push(coupons[i].id);
             coupons.splice(i, 1);
             removed++;
           }
         }
         setCoupons(coupons);
+
+        // 🌐 다른 기기와도 쿠폰 사용 동기화
+        removedIds.forEach(function(rid) { syncCouponUseToSheet(rid); });
+
         renderCoupons();
         refreshRewardCards();
         refreshGiftCards();
@@ -3093,8 +3223,13 @@ function renderCoupons() {
       } else {
         // 🎫 일반 쿠폰: 사용 시 사라짐
         if (!confirm(c.emoji + ' ' + c.name + '\n사용할까요?\n\n엄마/아빠한테 보여주세요!')) return;
+        const usedId = c.id;
         coupons.splice(idx, 1);  // 완전 제거
         setCoupons(coupons);
+
+        // 🌐 다른 기기와도 쿠폰 사용 동기화
+        syncCouponUseToSheet(usedId);
+
         renderCoupons();
         refreshRewardCards();
         refreshGiftCards();
@@ -3195,6 +3330,8 @@ function checkStreakReward(currentStreak) {
       // 포인트 적립
       setPoints(getPoints() + bonus);
       localStorage.setItem('hyewon_last_streak_reward', String(currentMilestone));
+      // 🌐 다른 기기와도 동기화 (스트릭 보상 받았다는 정보)
+      syncStateToSheet({ last_streak_reward: currentMilestone });
       // 화려한 팝업 (1.2초 뒤) - 큰 보상에 이름 부르기!
       setTimeout(function() {
         showCelebration(
