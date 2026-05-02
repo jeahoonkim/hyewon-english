@@ -14,6 +14,8 @@ const VOCAB_SHEET_NAME = "단어장기록";
 const QUIZ_SHEET_NAME = "퀴즈기록";
 const ACTIVITY_SHEET_NAME = "활동기록";   // 🆕 모든 활동 시간순
 const STATUS_SHEET_NAME = "현재상태";     // 🆕 요약 대시보드
+const COUPONS_SHEET_NAME = "쿠폰목록";    // 🆕 모든 기기 동기화용
+const SYNC_SHEET_NAME = "동기화상태";     // 🆕 포인트/지갑/스트릭 마스터
 
 // ============ 카톡 발송 URL (기존 재님 Apps Script) ============
 const LEGACY_APPS_URL = "https://script.google.com/macros/s/AKfycbzBGQgFRhsSdQimr8UwIbFXF1pubMLSuMFXketQ_XJGvsA5fNh3oo_JQ9cviWQSKbAPyg/exec";
@@ -29,10 +31,14 @@ function doPost(e) {
   try {
     const data = JSON.parse(e.postData.contents);
     const result = { ok: true, actions: [] };
-    if (data.vocab)    { saveVocabRecord(data.vocab); result.actions.push('vocab_saved'); }
-    if (data.quiz)     { saveQuizRecord(data.quiz);   result.actions.push('quiz_saved'); }
-    if (data.activity) { saveActivity(data.activity); result.actions.push('activity_saved'); }
-    if (data.status)   { updateStatus(data.status);   result.actions.push('status_updated'); }
+    if (data.vocab)        { saveVocabRecord(data.vocab); result.actions.push('vocab_saved'); }
+    if (data.quiz)         { saveQuizRecord(data.quiz);   result.actions.push('quiz_saved'); }
+    if (data.activity)     { saveActivity(data.activity); result.actions.push('activity_saved'); }
+    if (data.status)       { updateStatus(data.status);   result.actions.push('status_updated'); }
+    // 🌐 다중 기기 동기화 액션들
+    if (data.sync_state)   { syncSetState(data.sync_state); result.actions.push('state_synced'); }
+    if (data.coupon_add)   { syncCouponAdd(data.coupon_add); result.actions.push('coupon_added'); }
+    if (data.coupon_use)   { syncCouponUse(data.coupon_use); result.actions.push('coupon_used'); }
     return ContentService.createTextOutput(JSON.stringify(result))
       .setMimeType(ContentService.MimeType.JSON);
   } catch (err) {
@@ -179,23 +185,185 @@ function saveQuizRecord(q) {
 }
 
 function doGet(e) {
-  // 🎁 보너스 확인 요청 처리
-  if (e && e.parameter && e.parameter.action === 'check_bonus') {
-    const lastRow = parseInt(e.parameter.last_row || '1');
-    const result = getNewBonuses(lastRow);
-    const json = JSON.stringify(result);
+  if (e && e.parameter) {
+    const action = e.parameter.action;
+    let result = null;
 
-    // JSONP 응답 (CORS 우회) — callback 파라미터 있으면
-    if (e.parameter.callback) {
-      return ContentService.createTextOutput(
-        e.parameter.callback + '(' + json + ');'
-      ).setMimeType(ContentService.MimeType.JAVASCRIPT);
+    if (action === 'check_bonus') {
+      const lastRow = parseInt(e.parameter.last_row || '1');
+      result = getNewBonuses(lastRow);
+    } else if (action === 'get_state') {
+      // 🌐 다중 기기 동기화: 현재 상태 + 쿠폰 목록 가져오기
+      result = getFullState();
     }
-    // 일반 JSON 응답
-    return ContentService.createTextOutput(json)
-      .setMimeType(ContentService.MimeType.JSON);
+
+    if (result !== null) {
+      const json = JSON.stringify(result);
+      if (e.parameter.callback) {
+        return ContentService.createTextOutput(
+          e.parameter.callback + '(' + json + ');'
+        ).setMimeType(ContentService.MimeType.JAVASCRIPT);
+      }
+      return ContentService.createTextOutput(json)
+        .setMimeType(ContentService.MimeType.JSON);
+    }
   }
   return ContentService.createTextOutput("혜원이 영단어 서버 정상 작동 중 🌟");
+}
+
+
+// =====================================================
+// 🌐 [동기화] 모든 기기에서 동일한 데이터 사용
+// =====================================================
+
+// 마스터 상태 시트 (동기화용 - 포인트/지갑/스트릭/마지막업데이트)
+function _getSyncSheet() {
+  const ss = SpreadsheetApp.openById(SHEET_ID);
+  let sheet = ss.getSheetByName(SYNC_SHEET_NAME);
+  if (!sheet) {
+    sheet = ss.insertSheet(SYNC_SHEET_NAME);
+    sheet.appendRow(['항목', '값', '마지막 업데이트']);
+    sheet.getRange(1, 1, 1, 3).setBackground('#c8e6c9').setFontWeight('bold');
+    sheet.appendRow(['points', 0, '']);
+    sheet.appendRow(['wallet', 0, '']);
+    sheet.appendRow(['streak', 0, '']);
+    sheet.appendRow(['lucky_received_date', '', '']);
+    sheet.appendRow(['last_streak_reward', 0, '']);
+    sheet.setColumnWidth(1, 200);
+    sheet.setColumnWidth(2, 120);
+    sheet.setColumnWidth(3, 180);
+  }
+  return sheet;
+}
+
+function _getSyncValue(key) {
+  const sheet = _getSyncSheet();
+  const data = sheet.getRange(2, 1, sheet.getLastRow() - 1, 2).getValues();
+  for (let i = 0; i < data.length; i++) {
+    if (data[i][0] === key) return data[i][1];
+  }
+  return null;
+}
+
+function _setSyncValue(key, value) {
+  const sheet = _getSyncSheet();
+  const data = sheet.getRange(2, 1, sheet.getLastRow() - 1, 1).getValues();
+  const now = Utilities.formatDate(new Date(), 'Asia/Seoul', 'yyyy-MM-dd HH:mm:ss');
+  for (let i = 0; i < data.length; i++) {
+    if (data[i][0] === key) {
+      sheet.getRange(i + 2, 2).setValue(value);
+      sheet.getRange(i + 2, 3).setValue(now);
+      return;
+    }
+  }
+  // 없으면 추가
+  sheet.appendRow([key, value, now]);
+}
+
+// 쿠폰 시트
+function _getCouponsSheet() {
+  const ss = SpreadsheetApp.openById(SHEET_ID);
+  let sheet = ss.getSheetByName(COUPONS_SHEET_NAME);
+  if (!sheet) {
+    sheet = ss.insertSheet(COUPONS_SHEET_NAME);
+    sheet.appendRow(['ID', '종류', '이름', '이모지', '가격(P)', '발급일', '사용여부', '사용일']);
+    sheet.getRange(1, 1, 1, 8).setBackground('#fce7f3').setFontWeight('bold');
+    sheet.setFrozenRows(1);
+    sheet.setColumnWidth(1, 160);
+    sheet.setColumnWidth(2, 100);
+    sheet.setColumnWidth(3, 180);
+    sheet.setColumnWidth(4, 60);
+    sheet.setColumnWidth(5, 80);
+    sheet.setColumnWidth(6, 110);
+    sheet.setColumnWidth(7, 80);
+    sheet.setColumnWidth(8, 110);
+  }
+  return sheet;
+}
+
+// 🌐 모든 기기에서 가져오는 풀 상태
+function getFullState() {
+  const points = parseInt(_getSyncValue('points') || '0');
+  const wallet = parseInt(_getSyncValue('wallet') || '0');
+  const streak = parseInt(_getSyncValue('streak') || '0');
+  const lucky = String(_getSyncValue('lucky_received_date') || '');
+  const lastStreakReward = parseInt(_getSyncValue('last_streak_reward') || '0');
+
+  // 쿠폰 목록 (사용 안 한 것 + 사용한 것 모두)
+  const sheet = _getCouponsSheet();
+  const lastRow = sheet.getLastRow();
+  const coupons = [];
+  if (lastRow > 1) {
+    const rows = sheet.getRange(2, 1, lastRow - 1, 8).getValues();
+    rows.forEach(function(r) {
+      if (r[0]) {  // ID 있는 것만
+        coupons.push({
+          id: r[0],
+          type: r[1],
+          name: r[2],
+          emoji: r[3],
+          cost: parseInt(r[4]) || 0,
+          date: r[5] ? Utilities.formatDate(new Date(r[5]), 'Asia/Seoul', 'yyyy-MM-dd') : '',
+          used: !!r[6],
+          usedDate: r[7] ? Utilities.formatDate(new Date(r[7]), 'Asia/Seoul', 'yyyy-MM-dd') : null
+        });
+      }
+    });
+  }
+
+  return {
+    points: points,
+    wallet: wallet,
+    streak: streak,
+    lucky_received_date: lucky,
+    last_streak_reward: lastStreakReward,
+    coupons: coupons,
+    server_time: Utilities.formatDate(new Date(), 'Asia/Seoul', 'yyyy-MM-dd HH:mm:ss')
+  };
+}
+
+// 폰에서 쿠폰 발급/사용 시 호출 (doPost에서 처리)
+function syncCouponAdd(coupon) {
+  const sheet = _getCouponsSheet();
+  // 이미 있는 ID인지 체크
+  const lastRow = sheet.getLastRow();
+  if (lastRow > 1) {
+    const ids = sheet.getRange(2, 1, lastRow - 1, 1).getValues().map(r => r[0]);
+    if (ids.indexOf(coupon.id) !== -1) return;  // 중복 방지
+  }
+  sheet.appendRow([
+    coupon.id,
+    coupon.type || '',
+    coupon.name || '',
+    coupon.emoji || '',
+    coupon.cost || 0,
+    coupon.date || Utilities.formatDate(new Date(), 'Asia/Seoul', 'yyyy-MM-dd'),
+    coupon.used ? 'YES' : '',
+    coupon.usedDate || ''
+  ]);
+}
+
+function syncCouponUse(couponId) {
+  const sheet = _getCouponsSheet();
+  const lastRow = sheet.getLastRow();
+  if (lastRow <= 1) return;
+  const ids = sheet.getRange(2, 1, lastRow - 1, 1).getValues();
+  for (let i = 0; i < ids.length; i++) {
+    if (ids[i][0] === couponId) {
+      const rowNum = i + 2;
+      sheet.getRange(rowNum, 7).setValue('YES');
+      sheet.getRange(rowNum, 8).setValue(Utilities.formatDate(new Date(), 'Asia/Seoul', 'yyyy-MM-dd'));
+      return;
+    }
+  }
+}
+
+function syncSetState(state) {
+  if (state.points !== undefined) _setSyncValue('points', state.points);
+  if (state.wallet !== undefined) _setSyncValue('wallet', state.wallet);
+  if (state.streak !== undefined) _setSyncValue('streak', state.streak);
+  if (state.lucky_received_date !== undefined) _setSyncValue('lucky_received_date', state.lucky_received_date);
+  if (state.last_streak_reward !== undefined) _setSyncValue('last_streak_reward', state.last_streak_reward);
 }
 
 

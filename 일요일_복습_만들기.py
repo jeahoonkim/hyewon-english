@@ -410,8 +410,7 @@ def main():
     ok(f"저장 완료 ({size:.1f} KB)")
     print(f"       → {dest.relative_to(ROOT)}")
 
-    # 🆕 일요일 단어장도 같이 생성!
-    generate_review_vocab(config, all_words)
+    # 일요일은 시험(퀴즈)만, 단어장 X — generate_review_vocab() 호출 안 함
 
     # index.html 업데이트
     print(f"\n🏠 홈페이지 SCHEDULE 업데이트 중...")

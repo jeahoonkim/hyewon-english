@@ -8,7 +8,6 @@
   "weekLabel": "Week 1",
   "themeSummary": "어제 틀린 단어 복습",
   "quizFileName": "혜원이_영단어_일요일_복습.html",
-  "vocabFileName": "혜원이_영단어_일요일_복습단어장.html",
   "includeDates": ["20260421", "20260422", "20260423", "20260424"],
   "bgGradient": "linear-gradient(180deg, #e0f2f1 0%, #c5e1a5 45%, #81c784 100%);",
   "headerTitle": "🌻 일요일 복습 📚"
