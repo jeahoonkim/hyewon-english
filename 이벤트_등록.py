@@ -156,27 +156,43 @@ def main():
     patched_count = 0
     total_events = 0
 
+    updated_count = 0
     for folder in date_folders:
         date_key = folder.name  # "20260504"
         # YYYY-MM-DD 형식으로 변환
         date_iso = f"{date_key[:4]}-{date_key[4:6]}-{date_key[6:8]}"
 
-        # 폴더 안의 HTML 파일 찾기
-        html_files = list(folder.glob("*.html"))
+        # 폴더 안의 HTML 파일 찾기 (가장 최근 수정된 파일 우선)
+        html_files = sorted(folder.glob("*.html"),
+                           key=lambda f: f.stat().st_mtime,
+                           reverse=True)
         if not html_files:
             continue
 
-        # 가장 최근 HTML 파일 사용 (보통 1개만)
         src_file = html_files[0]
         dst_file = EVENTS_DIR / src_file.name
 
-        # 복사 (없으면)
+        # 🔄 복사 결정 (없거나 / 원본이 더 최신이면 덮어쓰기)
+        should_copy = False
+        copy_reason = ''
         if not dst_file.exists():
-            shutil.copy2(src_file, dst_file)
+            should_copy = True
+            copy_reason = '새로 복사'
             new_count += 1
-            print(f"  📄 복사: {src_file.name}")
+        else:
+            src_mtime = src_file.stat().st_mtime
+            dst_mtime = dst_file.stat().st_mtime
+            # 원본이 1초 이상 더 최신이면 갱신
+            if src_mtime > dst_mtime + 1:
+                should_copy = True
+                copy_reason = '갱신 (원본 더 최신)'
+                updated_count += 1
 
-        # 패치 (자동 저장 코드 삽입)
+        if should_copy:
+            shutil.copy2(src_file, dst_file)
+            print(f"  📄 {copy_reason}: {src_file.name}")
+
+        # 패치 (자동 저장 코드 삽입 - 갱신된 파일은 다시 패치 필요)
         if patch_file(dst_file):
             patched_count += 1
             print(f"  🔧 패치: {dst_file.name}")
@@ -199,6 +215,7 @@ def main():
     print("=" * 56)
     print(f"  📊 총 이벤트: {total_events}개")
     print(f"  📄 새로 복사: {new_count}개")
+    print(f"  🔄 갱신됨: {updated_count}개")
     print(f"  🔧 새로 패치: {patched_count}개")
     print(f"  📋 manifest.json: {MANIFEST.name}")
     print()
