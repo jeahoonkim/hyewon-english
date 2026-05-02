@@ -3465,23 +3465,46 @@ const todaySub = document.getElementById('todaySub');
 const todayContent = document.getElementById('todayContent');
 
 if (todayItem) {
-  todayBadge.textContent = `오늘의 수업 ✨`;
-  todayTitle.innerHTML = `${todayItem.theme} ${todayItem.emoji}`;
-  todaySub.textContent = `새로운 20개 단어가 기다려요!`;
-  todayContent.innerHTML = `
-    <div class="today-links">
-      <a class="today-link" href="${todayItem.folder}/${encodeURIComponent(todayItem.vocab)}">
-        <div class="link-cat">${miniCats.sunny}</div>
-        <div class="link-title">🌅 아침 단어장</div>
-        <div class="link-desc">단어 20개 배우기</div>
-      </a>
-      <a class="today-link" href="${todayItem.folder}/${encodeURIComponent(todayItem.quiz)}">
-        <div class="link-cat">${miniCats.star}</div>
-        <div class="link-title">✨ 오후 퀴즈</div>
-        <div class="link-desc">문제 풀기 도전!</div>
-      </a>
-    </div>
-  `;
+  // 주말 = 시험/복습만 (단어장 X) — 토(종합시험) / 일(일요일 복습)
+  const isWeekendExam = (todayItem.dayKo === '토' || todayItem.dayKo === '일');
+
+  if (isWeekendExam) {
+    // 토요일: 종합시험, 일요일: 복습 퀴즈
+    const isSat = todayItem.dayKo === '토';
+    todayBadge.textContent = isSat ? `오늘은 시험 날! 🏆` : `오늘은 복습 날! 🌻`;
+    todayTitle.innerHTML = `${todayItem.theme} ${todayItem.emoji}`;
+    todaySub.textContent = isSat
+      ? `이번 주 배운 단어로 종합시험 도전!`
+      : `이번 주 틀린 단어만 복습해봐요!`;
+    todayContent.innerHTML = `
+      <div class="today-links single">
+        <a class="today-link wide" href="${todayItem.folder}/${encodeURIComponent(todayItem.quiz)}">
+          <div class="link-cat">${miniCats.star}</div>
+          <div class="link-title">${isSat ? '🏆 종합시험 시작!' : '🌻 복습 퀴즈 시작!'}</div>
+          <div class="link-desc">${isSat ? '한 주 마무리 도전!' : '틀린 것 다시 맞춰봐요!'}</div>
+        </a>
+      </div>
+    `;
+  } else {
+    // 평일 (월~금): 단어장 + 퀴즈 둘 다
+    todayBadge.textContent = `오늘의 수업 ✨`;
+    todayTitle.innerHTML = `${todayItem.theme} ${todayItem.emoji}`;
+    todaySub.textContent = `새로운 20개 단어가 기다려요!`;
+    todayContent.innerHTML = `
+      <div class="today-links">
+        <a class="today-link" href="${todayItem.folder}/${encodeURIComponent(todayItem.vocab)}">
+          <div class="link-cat">${miniCats.sunny}</div>
+          <div class="link-title">🌅 아침 단어장</div>
+          <div class="link-desc">단어 20개 배우기</div>
+        </a>
+        <a class="today-link" href="${todayItem.folder}/${encodeURIComponent(todayItem.quiz)}">
+          <div class="link-cat">${miniCats.star}</div>
+          <div class="link-title">✨ 오후 퀴즈</div>
+          <div class="link-desc">문제 풀기 도전!</div>
+        </a>
+      </div>
+    `;
+  }
 } else {
   todayBadge.textContent = `쉬는 날`;
   todayTitle.textContent = `오늘은 쉬어가요 🍵`;
@@ -3680,16 +3703,24 @@ if (pastLearning.length === 0) {
   const catVariants = ['pink', 'mint', 'lavender', 'peach'];
   pastLearning.forEach((item, idx) => {
     const catType = catVariants[idx % catVariants.length];
+    // 주말은 단어장 버튼 X (시험/복습만)
+    const isWeekendExam = (item.dayKo === '토' || item.dayKo === '일');
+    const dateLabel = isWeekendExam
+      ? `${item.date} · ${item.dayKo}요일 · ${item.dayKo === '토' ? '종합시험' : '복습퀴즈'}`
+      : `${item.date} · ${item.dayKo}요일 · 20단어`;
+    const btnsHtml = isWeekendExam
+      ? `<a class="arc-btn quiz" href="${item.folder}/${encodeURIComponent(item.quiz)}" title="${item.dayKo === '토' ? '종합시험' : '복습퀴즈'}">📝</a>`
+      : `<a class="arc-btn vocab" href="${item.folder}/${encodeURIComponent(item.vocab)}" title="단어장">📚</a>
+         <a class="arc-btn quiz" href="${item.folder}/${encodeURIComponent(item.quiz)}" title="퀴즈">📝</a>`;
     archiveList.innerHTML += `
       <div class="arc-item">
         <div class="arc-cat">${miniCats[catType]}</div>
         <div class="arc-info">
           <div class="arc-theme">${item.theme} ${item.emoji}</div>
-          <div class="arc-date">${item.date} · ${item.dayKo}요일 · 20단어</div>
+          <div class="arc-date">${dateLabel}</div>
         </div>
         <div class="arc-btns">
-          <a class="arc-btn vocab" href="${item.folder}/${encodeURIComponent(item.vocab)}" title="단어장">📚</a>
-          <a class="arc-btn quiz" href="${item.folder}/${encodeURIComponent(item.quiz)}" title="퀴즈">📝</a>
+          ${btnsHtml}
         </div>
       </div>
     `;
