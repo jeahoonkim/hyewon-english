@@ -3632,6 +3632,70 @@ if (todayItem) {
   todayContent.innerHTML = `<div class="today-no-class">😸 내일은 새 단어가 있을지도 몰라요!</div>`;
 }
 
+// ════════════════════════════════════════════════
+// 🇺🇸 매일 영어 표현 퀴즈 카드 (월~일 매일 표시)
+// ════════════════════════════════════════════════
+(function injectEnglishExpressionCard() {
+  const todayDateStr = todayStr.replace(/-/g, '');  // 2026-05-11 → 20260511
+  const quizFile = `english_quiz/영어퀴즈_${todayDateStr}.html`;
+
+  // todayCard 영역 다음에 별도 박스 삽입
+  const todayCard = document.querySelector('#todayCard') || document.getElementById('todayContent')?.closest('.card-block') || document.getElementById('todayContent');
+  if (!todayCard) return;
+
+  // 한글 요일
+  const dayKoMap = ['일','월','화','수','목','금','토'];
+  const todayDay = dayKoMap[new Date().getDay()];
+
+  // 날짜별 영어 퀴즈 주제 (직접 매핑 - 정확함!)
+  const dateThemes = {
+    '2026-05-04': { theme: '인사 · 자기소개', emoji: '👋' },
+    '2026-05-05': { theme: '어린이날 특집 🎉', emoji: '🎈' },
+    '2026-05-06': { theme: '학교 생활', emoji: '🏫' },
+    '2026-05-07': { theme: '색깔 · 모양', emoji: '🎨' },
+    '2026-05-08': { theme: '동물 친구들', emoji: '🐶' },
+    '2026-05-09': { theme: '운동 · 놀이', emoji: '⚽' },
+    '2026-05-10': { theme: '날씨 · 계절', emoji: '☀️' },
+    '2026-05-11': { theme: '시간 표현', emoji: '🕐' },
+    '2026-05-12': { theme: '장소 · 길찾기', emoji: '📍' },
+    '2026-05-13': { theme: '부탁 · 요청', emoji: '🙏' },
+    '2026-05-14': { theme: '감정 · 기분', emoji: '😊' },
+    '2026-05-15': { theme: '일상 활동', emoji: '🏃' },
+    '2026-05-16': { theme: '음식 · 주문', emoji: '🍔' },
+    '2026-05-17': { theme: '가족 · 친구', emoji: '👨‍👩‍👧' }
+  };
+  const todayInfo = dateThemes[todayStr] || { theme: '영어 표현', emoji: '🇺🇸' };
+
+  // 카드 생성
+  const card = document.createElement('div');
+  card.id = 'englishQuizCard';
+  card.style.cssText = `
+    background: linear-gradient(135deg, #74b9ff 0%, #a29bfe 50%, #fd79a8 100%);
+    color: white; border-radius: 22px; padding: 18px 18px;
+    margin: 14px auto; max-width: 560px;
+    box-shadow: 0 6px 0 rgba(150, 110, 140, 0.15), 0 6px 20px rgba(116, 185, 255, 0.3);
+    display: flex; align-items: center; gap: 14px;
+    cursor: pointer; transition: transform 0.18s ease;
+    border: 2.5px solid white;
+  `;
+  card.onmouseover = () => card.style.transform = 'translateY(-2px) scale(1.01)';
+  card.onmouseout = () => card.style.transform = '';
+  card.onclick = () => { window.location.href = quizFile; };
+
+  card.innerHTML = `
+    <div style="font-size:2.5em;">${todayInfo.emoji}</div>
+    <div style="flex:1;">
+      <div style="font-size:0.78em;opacity:0.9;font-family:'Jua',sans-serif;">🇺🇸 매일 영어 표현 퀴즈</div>
+      <div style="font-size:1.15em;font-weight:bold;font-family:'Jua',sans-serif;">${todayInfo.theme}</div>
+      <div style="font-size:0.78em;opacity:0.85;margin-top:2px;">20문제 · 정답 +10P · 🔊 발음 · 💡 힌트</div>
+    </div>
+    <div style="font-size:1.5em;background:rgba(255,255,255,0.2);border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center;">▶</div>
+  `;
+
+  // todayCard 바로 다음에 삽입
+  todayCard.parentNode.insertBefore(card, todayCard.nextSibling);
+})();
+
 // ========== 🎯 실제 학습한 날짜 모음 (localStorage 기반) ==========
 // 단어장 또는 퀴즈를 실제로 완료한 날짜들 (scheduledDate 우선, 없으면 date)
 const studiedDates = new Set();

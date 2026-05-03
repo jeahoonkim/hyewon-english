@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>🇺🇸 영어 표현 퀴즈 - 부탁·요청 표현</title>
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Gaegu:wght@400;700&family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  min-height:100vh;
+  background:linear-gradient(180deg,#74b9ff 0%,#a29bfe 50%,#fd79a8 100%);
+  font-family:'Jua','Gaegu',sans-serif;
+  color:#fff; overflow-x:hidden;
+}
+.wrap{max-width:560px;margin:0 auto;padding:18px 14px 60px;position:relative;}
+.screen{display:none;}.screen.active{display:block;}
+
+/* ── 표지 ── */
+.cover{min-height:90vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 20px;}
+.cover-icon{font-size:90px;margin-bottom:14px;animation:bobble 2s ease-in-out infinite;filter:drop-shadow(0 6px 16px rgba(0,0,0,0.3));}
+@keyframes bobble{0%,100%{transform:rotate(-8deg);}50%{transform:rotate(8deg);}}
+.cover-badge{display:inline-block;background:#fff;color:#0984e3;font-size:.85em;font-weight:800;border-radius:20px;padding:6px 18px;margin-bottom:14px;font-family:'Jua',cursive;}
+.cover-title{font-family:'Jua',cursive;font-size:2.4em;line-height:1.2;text-shadow:2px 4px 10px rgba(0,0,0,0.3);margin-bottom:6px;}
+.cover-day{font-size:1em;color:rgba(255,255,255,0.85);margin-bottom:8px;}
+.cover-sub{font-size:.92em;color:rgba(255,255,255,0.85);margin-bottom:28px;}
+.cover-card{background:rgba(255,255,255,0.17);backdrop-filter:blur(10px);border:1.5px solid rgba(255,255,255,0.3);border-radius:18px;padding:18px 22px;margin-bottom:28px;max-width:380px;}
+.cover-card p{font-size:.95em;line-height:1.7;color:#fff;}
+.cover-info{font-size:.85em;color:rgba(255,255,255,0.8);margin-top:10px;}
+.btn-start{background:#fff;color:#0984e3;border:none;border-radius:50px;padding:16px 50px;font-size:1.25em;font-weight:800;cursor:pointer;font-family:'Jua',cursive;box-shadow:0 6px 20px rgba(0,0,0,0.3);transition:.2s;}
+.btn-start:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 10px 28px rgba(0,0,0,0.4);}
+
+/* ── 진행 바 ── */
+.prog-wrap{margin-bottom:14px;padding-top:8px;}
+.prog-bg{height:10px;background:rgba(255,255,255,0.2);border-radius:10px;overflow:hidden;}
+.prog-bar{height:100%;background:linear-gradient(90deg,#fff,#fdcb6e);border-radius:10px;transition:.4s;}
+.prog-label{font-size:.85em;color:rgba(255,255,255,0.85);text-align:right;margin-top:4px;}
+.score-bar{display:flex;justify-content:space-between;margin-bottom:10px;font-size:.9em;}
+.score-bar span{background:rgba(255,255,255,0.18);padding:5px 12px;border-radius:12px;font-family:'Jua',sans-serif;}
+
+/* ── 문제 카드 ── */
+.q-num{font-size:.9em;color:rgba(255,255,255,0.7);margin-bottom:6px;font-family:'Jua',sans-serif;}
+.q-card{background:rgba(255,255,255,0.96);color:#2c3e50;border-radius:20px;padding:22px 18px;margin-bottom:14px;box-shadow:0 6px 20px rgba(0,0,0,0.2);}
+.en-row{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.en-text{flex:1;font-family:'Fredoka',sans-serif;font-size:1.4em;font-weight:600;line-height:1.3;color:#2c3e50;}
+.speak-btn{background:linear-gradient(135deg,#74b9ff,#0984e3);color:#fff;border:none;border-radius:50%;width:46px;height:46px;font-size:20px;cursor:pointer;box-shadow:0 4px 0 #0652a3,0 4px 10px rgba(9,132,227,0.4);transition:all 0.15s ease;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;}
+.speak-btn:active{transform:translateY(2px);box-shadow:0 2px 0 #0652a3;}
+.speak-btn.speaking{background:linear-gradient(135deg,#ffd700,#ff8c42);transform:scale(0.95);}
+.hint-row{display:flex;justify-content:flex-end;margin:6px 0 12px;}
+.hint-btn{background:#fff3bf;color:#92400e;border:1.5px solid #fbc02d;border-radius:14px;padding:6px 14px;font-size:.85em;cursor:pointer;font-family:'Jua',sans-serif;}
+.hint-btn:hover{background:#ffe066;}
+.hint-box{background:#fff8d8;border:1px dashed #fbc02d;border-radius:12px;padding:10px 14px;margin-bottom:12px;color:#92400e;font-size:.92em;display:none;}
+.hint-box.show{display:block;}
+
+.choice{display:block;width:100%;background:rgba(255,255,255,0.96);color:#2c3e50;border:2px solid rgba(255,255,255,0.5);border-radius:14px;padding:14px 16px;font-size:1em;font-weight:600;text-align:left;cursor:pointer;margin-top:10px;transition:.18s;font-family:'Gaegu',sans-serif;}
+.choice:hover:not(:disabled){background:#fff;border-color:#fdcb6e;transform:translateX(4px);}
+.choice.correct{background:#d1f7e2;border-color:#00b894;color:#00665e;}
+.choice.wrong{background:#ffd6d6;border-color:#e17055;color:#a32d20;}
+
+/* ── 결과 팝업 ── */
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.65);z-index:200;align-items:center;justify-content:center;padding:20px;}
+.overlay.show{display:flex;}
+.pop{background:#fff;border-radius:24px;padding:26px 22px;max-width:380px;width:100%;text-align:center;color:#2c3e50;animation:popIn .35s cubic-bezier(.34,1.56,.64,1);}
+@keyframes popIn{from{transform:scale(.55);opacity:0;}to{transform:scale(1);opacity:1;}}
+.pop-emoji{font-size:64px;margin-bottom:8px;}
+.pop-title{font-family:'Jua',cursive;font-size:2em;margin-bottom:6px;}
+.pop-title.ok{color:#00b894;}.pop-title.ng{color:#e17055;}
+.pop-points{display:inline-block;background:#fff3bf;color:#92400e;padding:5px 14px;border-radius:14px;font-weight:700;margin-bottom:10px;}
+.pop-explain{font-size:.95em;color:#34495e;line-height:1.6;margin-bottom:20px;}
+.btn-next{background:linear-gradient(135deg,#74b9ff,#0984e3);color:#fff;border:none;border-radius:50px;padding:13px 36px;font-size:1.05em;font-weight:800;cursor:pointer;font-family:'Jua',cursive;box-shadow:0 4px 12px rgba(9,132,227,0.4);}
+
+/* ── 결과 화면 ── */
+.final{text-align:center;padding:40px 20px;}
+.final-emoji{font-size:90px;margin-bottom:14px;}
+.final-title{font-family:'Jua',cursive;font-size:2em;margin-bottom:8px;}
+.final-score{font-family:'Jua',cursive;font-size:3em;color:#fdcb6e;margin-bottom:4px;text-shadow:2px 4px 8px rgba(0,0,0,0.3);}
+.final-pts{font-size:1.1em;color:#fff;margin-bottom:14px;font-family:'Jua',sans-serif;}
+.final-pts b{color:#fdcb6e;font-size:1.4em;}
+.final-stars{font-size:1.8em;color:#fdcb6e;margin-bottom:14px;letter-spacing:6px;}
+.final-msg{font-size:1em;line-height:1.7;color:#fff;margin-bottom:20px;max-width:380px;margin-left:auto;margin-right:auto;}
+.btn-home{background:rgba(255,255,255,0.95);color:#0984e3;border:none;border-radius:50px;padding:13px 36px;font-size:1.05em;font-weight:800;cursor:pointer;font-family:'Jua',cursive;text-decoration:none;display:inline-block;margin:6px 4px;}
+.btn-retry{background:#fdcb6e;color:#2c3e50;border:none;border-radius:50px;padding:13px 36px;font-size:1.05em;font-weight:800;cursor:pointer;font-family:'Jua',cursive;margin:6px 4px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- 표지 -->
+<div id="startScreen" class="screen active">
+  <div class="cover">
+    <div class="cover-icon">🙏</div>
+    <div class="cover-badge">✨ 초등 5학년 영어</div>
+    <div class="cover-title">부탁·요청 표현</div>
+    <div class="cover-day">2026-05-13 (수)</div>
+    <div class="cover-sub">📝 총 20문제 · 🎁 정답 +10P</div>
+    <div class="cover-card"><p>도와주세요! 같이 해요!<br>🔊 발음 듣기 & 💡 힌트도 있어요!</p></div>
+    <button class="btn-start" onclick="startQuiz()">🚀 시작하기!</button>
+  </div>
+</div>
+
+<!-- 퀴즈 -->
+<div id="quizScreen" class="screen">
+  <div class="prog-wrap">
+    <div class="prog-bg"><div class="prog-bar" id="progBar" style="width:0%"></div></div>
+    <div class="prog-label" id="progLabel">1 / 20</div>
+  </div>
+  <div class="score-bar">
+    <span>📝 문제 <b id="qNum">1</b></span>
+    <span>⭐ 점수 <b id="liveScore">0</b></span>
+    <span>🎁 +<b id="livePts">0</b>P</span>
+  </div>
+  <div class="q-card">
+    <div class="en-row">
+      <div class="en-text" id="qText"></div>
+      <button class="speak-btn" id="speakBtn" onclick="speakCurrent()">🔊</button>
+    </div>
+    <div class="hint-row">
+      <button class="hint-btn" onclick="showHint()">💡 힌트 보기</button>
+    </div>
+    <div class="hint-box" id="hintBox"></div>
+  </div>
+  <div id="choices"></div>
+</div>
+
+<!-- 결과 -->
+<div id="finalScreen" class="screen">
+  <div class="final">
+    <div class="final-emoji" id="finalEmoji">🏆</div>
+    <div class="final-title" id="finalTitle">완료!</div>
+    <div class="final-score" id="scoreNum">0/20</div>
+    <div class="final-stars" id="finalStars"></div>
+    <div class="final-pts">획득: <b id="finalPts">0</b>P</div>
+    <div class="final-msg" id="finalMsg"></div>
+    <a class="btn-home" href="../">🏠 홈으로</a>
+    <button class="btn-retry" onclick="restartQuiz()">🔄 다시!</button>
+  </div>
+</div>
+
+</div>
+
+<!-- 결과 팝업 -->
+<div class="overlay" id="overlay">
+  <div class="pop">
+    <div class="pop-emoji" id="popEmoji">🎉</div>
+    <div class="pop-title" id="popTitle">정답!</div>
+    <div class="pop-points" id="popPoints">+10P</div>
+    <div class="pop-explain" id="popExplain"></div>
+    <button class="btn-next" onclick="nextQuestion()">다음 문제 →</button>
+  </div>
+</div>
+
+<script>
+// ═══════ 데이터 ═══════
+const QUESTIONS = [
+  {
+    "en": "Can you help me?",
+    "choices": [
+      "도와주실래요?",
+      "만나서 반가워요",
+      "잘 가요",
+      "이게 뭐예요?"
+    ],
+    "ans": 0,
+    "hint": [
+      "help",
+      "돕다"
+    ],
+    "explain": "Can you ~? = ~해 주실래요?"
+  },
+  {
+    "en": "Sure, no problem.",
+    "choices": [
+      "아니요, 안 돼요",
+      "네, 문제없어요",
+      "잘 모르겠어요",
+      "죄송해요"
+    ],
+    "ans": 1,
+    "hint": [
+      "problem",
+      "문제"
+    ],
+    "explain": "No problem = 문제없어요, 괜찮아요"
+  },
+  {
+    "en": "Could you open the door?",
+    "choices": [
+      "문을 열어주실래요?",
+      "문을 닫아주실래요?",
+      "문이 어디예요?",
+      "문이 잠겼어요"
+    ],
+    "ans": 0,
+    "hint": [
+      "open",
+      "열다"
+    ],
+    "explain": "Could you ~? = Can you 보다 더 정중한 부탁"
+  },
+  {
+    "en": "Please pass the salt.",
+    "choices": [
+      "소금 좀 주세요",
+      "소금이 어디예요?",
+      "소금 사세요",
+      "소금 만드세요"
+    ],
+    "ans": 0,
+    "hint": [
+      "pass",
+      "건네주다"
+    ],
+    "explain": "pass = 건네주다, salt = 소금"
+  },
+  {
+    "en": "May I borrow your pen?",
+    "choices": [
+      "펜 사도 돼요?",
+      "펜 빌려도 돼요?",
+      "펜 어디 있어요?",
+      "펜 줘요"
+    ],
+    "ans": 1,
+    "hint": [
+      "borrow",
+      "빌리다"
+    ],
+    "explain": "May I ~? = ~해도 돼요? (정중한 허락)"
+  },
+  {
+    "en": "Of course, here you go.",
+    "choices": [
+      "아니요, 안 돼요",
+      "당연하죠, 여기 있어요",
+      "잠시만요",
+      "다음에요"
+    ],
+    "ans": 1,
+    "hint": [
+      "of course",
+      "물론"
+    ],
+    "explain": "Of course = 물론이죠. Here you go = 여기 있어요"
+  },
+  {
+    "en": "Can I have some water?",
+    "choices": [
+      "물 마실래요?",
+      "물 좀 주실래요?",
+      "물이 어디예요?",
+      "물 좋아해요"
+    ],
+    "ans": 1,
+    "hint": [
+      "have",
+      "가지다 / 받다"
+    ],
+    "explain": "Can I have ~? = ~ 좀 주세요"
+  },
+  {
+    "en": "Could you say it again?",
+    "choices": [
+      "다시 한번 말해주실래요?",
+      "조용히 해주실래요?",
+      "크게 말해주실래요?",
+      "쓰세요"
+    ],
+    "ans": 0,
+    "hint": [
+      "again",
+      "다시"
+    ],
+    "explain": "say it again = 다시 말하다"
+  },
+  {
+    "en": "Speak more slowly, please.",
+    "choices": [
+      "더 빨리 말해주세요",
+      "더 천천히 말해주세요",
+      "크게 말해주세요",
+      "조용히 해주세요"
+    ],
+    "ans": 1,
+    "hint": [
+      "slowly",
+      "천천히"
+    ],
+    "explain": "slowly = 천천히"
+  },
+  {
+    "en": "I don't understand.",
+    "choices": [
+      "알겠어요",
+      "이해 못했어요",
+      "좋아요",
+      "모르겠어요"
+    ],
+    "ans": 1,
+    "hint": [
+      "understand",
+      "이해하다"
+    ],
+    "explain": "don't understand = 이해 못해요"
+  },
+  {
+    "en": "Let's play together!",
+    "choices": [
+      "혼자 놀자!",
+      "같이 놀자!",
+      "집에 가자!",
+      "공부하자!"
+    ],
+    "ans": 1,
+    "hint": [
+      "together",
+      "함께"
+    ],
+    "explain": "Let's ~! = ~하자!"
+  },
+  {
+    "en": "Don't worry.",
+    "choices": [
+      "걱정 마세요",
+      "일하세요",
+      "웃어요",
+      "자세요"
+    ],
+    "ans": 0,
+    "hint": [
+      "worry",
+      "걱정하다"
+    ],
+    "explain": "Don't worry = 걱정하지 마"
+  },
+  {
+    "en": "Please be quiet.",
+    "choices": [
+      "조용히 해주세요",
+      "더 크게 말해주세요",
+      "웃어주세요",
+      "일어나주세요"
+    ],
+    "ans": 0,
+    "hint": [
+      "quiet",
+      "조용한"
+    ],
+    "explain": "quiet = 조용한"
+  },
+  {
+    "en": "Wait a minute, please.",
+    "choices": [
+      "빨리요",
+      "잠시만 기다려주세요",
+      "지금 가세요",
+      "앉으세요"
+    ],
+    "ans": 1,
+    "hint": [
+      "wait",
+      "기다리다"
+    ],
+    "explain": "Wait a minute = 잠시만 기다려"
+  },
+  {
+    "en": "Hold on, please.",
+    "choices": [
+      "놓아주세요",
+      "잠시만 (전화)",
+      "잡아주세요",
+      "일어나주세요"
+    ],
+    "ans": 1,
+    "hint": [
+      "hold on",
+      "잠시 멈추다 / 기다리다"
+    ],
+    "explain": "Hold on = 잠깐 기다려요 (전화에서 자주 씀)"
+  },
+  {
+    "en": "Could you repeat that?",
+    "choices": [
+      "그거 다시 한번 말해주실래요?",
+      "반복하지 마세요",
+      "쓰세요",
+      "노래하세요"
+    ],
+    "ans": 0,
+    "hint": [
+      "repeat",
+      "반복하다"
+    ],
+    "explain": "repeat = 반복하다"
+  },
+  {
+    "en": "Show me, please.",
+    "choices": [
+      "보여주세요",
+      "말해주세요",
+      "만들어주세요",
+      "주세요"
+    ],
+    "ans": 0,
+    "hint": [
+      "show",
+      "보여주다"
+    ],
+    "explain": "show = 보여주다"
+  },
+  {
+    "en": "Listen to me carefully.",
+    "choices": [
+      "저를 보세요",
+      "조심해서 들어주세요",
+      "조용히 해주세요",
+      "말씀하세요"
+    ],
+    "ans": 1,
+    "hint": [
+      "carefully",
+      "조심해서, 신중히"
+    ],
+    "explain": "carefully = 신중히, 잘"
+  },
+  {
+    "en": "Try it again.",
+    "choices": [
+      "다시 해보세요",
+      "그만하세요",
+      "시작하세요",
+      "보세요"
+    ],
+    "ans": 0,
+    "hint": [
+      "try",
+      "시도하다"
+    ],
+    "explain": "try again = 다시 시도하다"
+  },
+  {
+    "en": "You can do it!",
+    "choices": [
+      "넌 할 수 있어!",
+      "너는 잘 못해",
+      "너 어디 있어?",
+      "넌 누구야?"
+    ],
+    "ans": 0,
+    "hint": [
+      "can do",
+      "할 수 있다"
+    ],
+    "explain": "You can do it! = 응원하는 표현! 넌 할 수 있어!"
+  }
+];
+const TOTAL = QUESTIONS.length;
+const POINTS_PER_CORRECT = 10;
+
+// ═══════ 상태 ═══════
+let currentQ = 0;
+let score = 0;
+let pointsEarned = 0;
+let answered = false;
+
+// ═══════ 발음 시스템 (단어장과 동일 - 안정성↑) ═══════
+let _voicesCache = [];
+let _userInteracted = false;
+function _loadVoices() {
+  if (!('speechSynthesis' in window)) return;
+  _voicesCache = window.speechSynthesis.getVoices();
+}
+if ('speechSynthesis' in window) {
+  _loadVoices();
+  if (window.speechSynthesis.onvoiceschanged !== undefined) {
+    window.speechSynthesis.onvoiceschanged = _loadVoices;
+  }
+}
+function _pickVoice() {
+  if (_voicesCache.length === 0) _loadVoices();
+  return _voicesCache.find(v => v.lang === 'en-US' && /Google|Samantha|Karen|Daniel|Microsoft/i.test(v.name))
+      || _voicesCache.find(v => v.lang === 'en-US')
+      || _voicesCache.find(v => v.lang && v.lang.startsWith('en'));
+}
+function _primeSpeech() {
+  if (_userInteracted) return;
+  _userInteracted = true;
+  if (!('speechSynthesis' in window)) return;
+  try {
+    const warm = new SpeechSynthesisUtterance(' ');
+    warm.volume = 0.01;
+    window.speechSynthesis.speak(warm);
+  } catch(e) {}
+}
+document.addEventListener('click', _primeSpeech, {capture: true});
+document.addEventListener('touchstart', _primeSpeech, {capture: true, passive: true});
+
+function speakSentence(sentence, btn) {
+  if (!('speechSynthesis' in window)) {
+    alert('🔊 이 브라우저는 영어 발음을 지원하지 않아요!\n크롬이나 사파리에서 열어주세요.');
+    return;
+  }
+  try {
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(sentence);
+    u.lang = 'en-US';
+    u.rate = 0.85;
+    u.pitch = 1.0;
+    u.volume = 1.0;
+    if (_voicesCache.length === 0) _loadVoices();
+    const v = _pickVoice();
+    if (v) u.voice = v;
+    if (btn) btn.classList.add('speaking');
+    u.onend = function() { if (btn) btn.classList.remove('speaking'); };
+    u.onerror = function() { if (btn) btn.classList.remove('speaking'); };
+    window.speechSynthesis.speak(u);
+  } catch(e) {
+    if (btn) btn.classList.remove('speaking');
+  }
+}
+
+function speakCurrent() {
+  const q = QUESTIONS[currentQ];
+  speakSentence(q.en, document.getElementById('speakBtn'));
+}
+
+// ═══════ 힌트 ═══════
+function showHint() {
+  const q = QUESTIONS[currentQ];
+  const box = document.getElementById('hintBox');
+  if (q.hint && q.hint.length === 2) {
+    box.innerHTML = '💡 <b>' + q.hint[0] + '</b> = ' + q.hint[1];
+  } else {
+    box.innerHTML = '💡 (힌트 없음)';
+  }
+  box.classList.add('show');
+}
+
+// ═══════ 퀴즈 시작 ═══════
+function startQuiz() {
+  document.getElementById('startScreen').classList.remove('active');
+  document.getElementById('quizScreen').classList.add('active');
+  currentQ = 0;
+  score = 0;
+  pointsEarned = 0;
+  renderQuestion();
+}
+
+// ═══════ 문제 렌더 ═══════
+function renderQuestion() {
+  const q = QUESTIONS[currentQ];
+  answered = false;
+  // 진행 바
+  document.getElementById('progBar').style.width = ((currentQ / TOTAL) * 100) + '%';
+  document.getElementById('progLabel').textContent = (currentQ + 1) + ' / ' + TOTAL;
+  document.getElementById('qNum').textContent = currentQ + 1;
+  document.getElementById('liveScore').textContent = score;
+  document.getElementById('livePts').textContent = pointsEarned;
+  // 문장
+  document.getElementById('qText').textContent = q.en;
+  document.getElementById('hintBox').classList.remove('show');
+  document.getElementById('hintBox').innerHTML = '';
+  // 보기
+  const choicesDiv = document.getElementById('choices');
+  choicesDiv.innerHTML = '';
+  q.choices.forEach(function(choice, i) {
+    const btn = document.createElement('button');
+    btn.className = 'choice';
+    btn.textContent = (i+1) + '. ' + choice;
+    btn.onclick = function() { answer(i); };
+    choicesDiv.appendChild(btn);
+  });
+  // 자동 발음 (사용자 터치 후부터)
+  if (_userInteracted) {
+    setTimeout(function() { speakCurrent(); }, 250);
+  }
+}
+
+// ═══════ 답 선택 ═══════
+function answer(idx) {
+  if (answered) return;
+  answered = true;
+  const q = QUESTIONS[currentQ];
+  const isCorrect = (idx === q.ans);
+  const buttons = document.querySelectorAll('.choice');
+  buttons.forEach(function(b) { b.disabled = true; });
+  if (isCorrect) {
+    buttons[idx].classList.add('correct');
+    score++;
+    pointsEarned += POINTS_PER_CORRECT;
+    addPoints(POINTS_PER_CORRECT);
+  } else {
+    buttons[idx].classList.add('wrong');
+    buttons[q.ans].classList.add('correct');
+  }
+  setTimeout(function() { showResult(isCorrect, q); }, 700);
+}
+
+// ═══════ 결과 팝업 ═══════
+function showResult(isCorrect, q) {
+  const overlay = document.getElementById('overlay');
+  document.getElementById('popEmoji').textContent = isCorrect ? '🎉' : '😢';
+  const title = document.getElementById('popTitle');
+  title.textContent = isCorrect ? '정답!' : '아쉬워요';
+  title.className = 'pop-title ' + (isCorrect ? 'ok' : 'ng');
+  document.getElementById('popPoints').style.display = isCorrect ? 'inline-block' : 'none';
+  document.getElementById('popPoints').textContent = '+' + POINTS_PER_CORRECT + 'P';
+  document.getElementById('popExplain').innerHTML = '📖 ' + q.explain;
+  overlay.classList.add('show');
+}
+
+// ═══════ 다음 문제 ═══════
+function nextQuestion() {
+  document.getElementById('overlay').classList.remove('show');
+  currentQ++;
+  if (currentQ >= TOTAL) {
+    finishQuiz();
+  } else {
+    renderQuestion();
+  }
+}
+
+// ═══════ 완료 ═══════
+function finishQuiz() {
+  document.getElementById('quizScreen').classList.remove('active');
+  document.getElementById('finalScreen').classList.add('active');
+
+  document.getElementById('scoreNum').textContent = score + ' / ' + TOTAL;
+  document.getElementById('finalPts').textContent = pointsEarned;
+
+  const pct = (score / TOTAL) * 100;
+  let stars = 0;
+  if (pct === 100) stars = 5;
+  else if (pct >= 90) stars = 4;
+  else if (pct >= 75) stars = 3;
+  else if (pct >= 60) stars = 2;
+  else if (pct >= 40) stars = 1;
+  document.getElementById('finalStars').textContent = '⭐'.repeat(stars) + '☆'.repeat(5-stars);
+
+  let emoji = '🎉', title = '잘했어요!', msg = '계속 연습하면 더 잘할 수 있어요! 💪';
+  if (pct === 100) { emoji = '🏆'; title = '완벽해요!'; msg = '와! 모두 정답! 혜원이 영어 천재! 🌟'; }
+  else if (pct >= 90) { emoji = '🌟'; title = '굉장해요!'; msg = '거의 다 맞췄어요! 정말 멋져요!'; }
+  else if (pct >= 75) { emoji = '✨'; title = '잘했어요!'; msg = '훌륭해요! 조금만 더 연습하면 완벽!'; }
+  else if (pct >= 60) { emoji = '👍'; title = '좋아요!'; msg = '괜찮아요! 다시 도전하면 더 잘 될 거예요!'; }
+  else { emoji = '💪'; title = '괜찮아!'; msg = '오늘 배운 것 잘 기억해요! 다시 해보면 더 잘할 수 있어요!'; }
+
+  document.getElementById('finalEmoji').textContent = emoji;
+  document.getElementById('finalTitle').textContent = title;
+  document.getElementById('finalMsg').innerHTML = msg;
+
+  // 학습 기록 저장 (스트릭/홈 화면 카운트용)
+  try {
+    const history = JSON.parse(localStorage.getItem('hyewon_quiz_history') || '[]');
+    history.push({
+      date: '2026-05-13',
+      day: '수',
+      type: '영어표현퀴즈',
+      theme: '부탁·요청 표현',
+      score: score,
+      total: TOTAL,
+      pointsEarned: pointsEarned,
+      time: new Date().toISOString()
+    });
+    localStorage.setItem('hyewon_quiz_history', JSON.stringify(history));
+  } catch(e) {}
+}
+
+// ═══════ 다시 시작 ═══════
+function restartQuiz() {
+  document.getElementById('finalScreen').classList.remove('active');
+  startQuiz();
+}
+
+// ═══════ 포인트 적립 (홈 화면과 자동 동기화) ═══════
+function addPoints(amt) {
+  try {
+    const cur = parseInt(localStorage.getItem('hyewon_points') || '0');
+    const nv = cur + amt;
+    localStorage.setItem('hyewon_points', String(nv));
+    // 시트에도 동기화 (있으면)
+    if (typeof GAS_URL !== 'undefined' && GAS_URL) {
+      fetch(GAS_URL, {
+        method: 'POST', mode: 'no-cors',
+        headers: {'Content-Type': 'text/plain'},
+        body: JSON.stringify({sync_state: {points: nv}})
+      }).catch(function(){});
+    }
+  } catch(e) {}
+}
+
+// 시트 동기화용 GAS_URL (홈과 동일)
+const GAS_URL = "https://script.google.com/macros/s/AKfycbyg0RNvnjzeUpWBu3KDrwre_ngHxjfSINUnI-JNEULMHSPYsVChf3eEogE7crF14BdpJg/exec";
+</script>
+</body>
+</html>
