@@ -3345,11 +3345,19 @@ function showCelebration(message) {
 // ========== 🔥 연속 학습 스트릭 ==========
 function calculateStreak() {
   try {
-    const history = JSON.parse(localStorage.getItem('hyewon_vocab_history') || '[]');
-    if (history.length === 0) return 0;
+    // 🌟 단어장 + 퀴즈 둘 다 합쳐서 학습일로 인정
+    // (평일: 단어장 OR 퀴즈 / 주말: 시험 또는 복습 퀴즈)
+    const vocabH = JSON.parse(localStorage.getItem('hyewon_vocab_history') || '[]');
+    const quizH = JSON.parse(localStorage.getItem('hyewon_quiz_history') || '[]');
+    const allDates = [
+      ...vocabH.map(r => r.date),
+      ...quizH.map(r => r.date)
+    ].filter(d => d);
+
+    if (allDates.length === 0) return 0;
 
     // 학습 날짜만 추출 (중복 제거 + 정렬)
-    const dates = [...new Set(history.map(r => r.date))].sort();
+    const dates = [...new Set(allDates)].sort();
     if (dates.length === 0) return 0;
 
     // 오늘 / 어제 날짜
