@@ -643,9 +643,10 @@ body{{
 
 </div>
 
-<!-- 결과 팝업 -->
+<!-- 결과 팝업 (혜원이 사진 포함!) -->
 <div class="overlay" id="overlay">
   <div class="pop">
+    <img class="pop-photo" id="popPhoto" src="" alt="" style="display:none;width:130px;height:130px;border-radius:50%;object-fit:cover;border:4px solid #74b9ff;margin-bottom:10px;box-shadow:0 4px 18px rgba(0,0,0,0.25);">
     <div class="pop-emoji" id="popEmoji">🎉</div>
     <div class="pop-title" id="popTitle">정답!</div>
     <div class="pop-points" id="popPoints">+10P</div>
@@ -659,6 +660,26 @@ body{{
 const QUESTIONS = {questions_js};
 const TOTAL = QUESTIONS.length;
 const POINTS_PER_CORRECT = 10;
+
+// ═══════ 혜원이 사진 (랜덤) - hyewon/correct/, hyewon/wrong/ 폴더에서 ═══════
+const CORRECT_PHOTOS = [
+  '../hyewon/correct/photo_01.jpg',
+  '../hyewon/correct/photo_02.jpg',
+  '../hyewon/correct/photo_03.jpg',
+  '../hyewon/correct/photo_04.jpg',
+  '../hyewon/correct/photo_05.jpg'
+];
+const WRONG_PHOTOS = [
+  '../hyewon/wrong/photo_01.jpg',
+  '../hyewon/wrong/photo_02.jpg',
+  '../hyewon/wrong/photo_03.jpg',
+  '../hyewon/wrong/photo_04.jpg',
+  '../hyewon/wrong/photo_05.jpg'
+];
+function pickRandomPhoto(type) {{
+  const arr = (type === 'correct') ? CORRECT_PHOTOS : WRONG_PHOTOS;
+  return arr[Math.floor(Math.random() * arr.length)];
+}}
 
 // ═══════ 상태 ═══════
 let currentQ = 0;
@@ -799,10 +820,26 @@ function answer(idx) {{
   setTimeout(function() {{ showResult(isCorrect, q); }}, 700);
 }}
 
-// ═══════ 결과 팝업 ═══════
+// ═══════ 결과 팝업 (혜원이 사진 + 이모지) ═══════
 function showResult(isCorrect, q) {{
   const overlay = document.getElementById('overlay');
-  document.getElementById('popEmoji').textContent = isCorrect ? '🎉' : '😢';
+  const photoEl = document.getElementById('popPhoto');
+  const emojiEl = document.getElementById('popEmoji');
+
+  // 🖼️ 혜원이 사진 (랜덤)
+  const photoUrl = pickRandomPhoto(isCorrect ? 'correct' : 'wrong');
+  photoEl.src = photoUrl;
+  photoEl.style.display = 'block';
+  photoEl.style.borderColor = isCorrect ? '#00b894' : '#e17055';
+  // 이모지는 작게
+  emojiEl.style.fontSize = '38px';
+  emojiEl.textContent = isCorrect ? '🎉' : '😢';
+  // 사진 로드 실패 시 이모지로 폴백
+  photoEl.onerror = function() {{
+    photoEl.style.display = 'none';
+    emojiEl.style.fontSize = '64px';
+  }};
+
   const title = document.getElementById('popTitle');
   title.textContent = isCorrect ? '정답!' : '아쉬워요';
   title.className = 'pop-title ' + (isCorrect ? 'ok' : 'ng');
