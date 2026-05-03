@@ -2550,45 +2550,45 @@ function fetchStateFromSheet(callback) {
 }
 
 // 🌐 시트 데이터로 localStorage 업데이트
-// 정책: 시트가 마스터지만, 시트가 0/비어있으면 로컬 보존 + 시트로 푸시 (데이터 손실 방지)
-//       포인트/지갑은 max(시트, 로컬) - 누적값이라 안전. 단, 정상 동기화 직후엔 같음.
-//       쿠폰은 시트가 마스터 (감소도 가능해야 함)
+// 정책 (개선): 시트가 진짜 마스터. 단, 시트가 0인데 로컬이 더 크면 → "초기화 안 됨" 가정 → 로컬 보존
+//             즉, 시트에 값이 한 번이라도 들어가면 → 그게 진실
 function applySheetState(data) {
   if (!data) return;
   console.log('[🌐 동기화] 시트에서 받음:', data);
 
-  // ─── 포인트: max wins (누적값이니까 더 큰 게 맞음) ───
+  // ─── 포인트: 시트가 마스터 (시트가 0인 경우만 로컬 보호) ───
   if (typeof data.points === 'number' && data.points >= 0) {
     const localPoints = parseInt(localStorage.getItem('hyewon_points') || '0');
     const sheetPoints = data.points;
-    const finalPoints = Math.max(localPoints, sheetPoints);
-    localStorage.setItem('hyewon_points', String(finalPoints));
-    // 로컬이 더 크면 시트도 업데이트 (복구)
-    if (localPoints > sheetPoints) {
-      console.log('[🌐 동기화] 로컬 포인트 더 큼 - 시트 복구:', localPoints);
-      syncStateToSheet({ points: finalPoints });
+    if (sheetPoints === 0 && localPoints > 0) {
+      // 시트가 0 → 초기화 안 된 상태로 보고 로컬 보존 + 시트 복구
+      console.log('[🌐 동기화] 시트가 0 - 로컬 ' + localPoints + 'P 보존');
+      syncStateToSheet({ points: localPoints });
+    } else {
+      // 시트가 마스터
+      localStorage.setItem('hyewon_points', String(sheetPoints));
     }
   }
 
-  // ─── 지갑: max wins ───
+  // ─── 지갑: 시트가 마스터 ───
   if (typeof data.wallet === 'number' && data.wallet >= 0) {
     const localWallet = parseInt(localStorage.getItem('hyewon_wallet') || '0');
     const sheetWallet = data.wallet;
-    const finalWallet = Math.max(localWallet, sheetWallet);
-    localStorage.setItem('hyewon_wallet', String(finalWallet));
-    if (localWallet > sheetWallet) {
-      syncStateToSheet({ wallet: finalWallet });
+    if (sheetWallet === 0 && localWallet > 0) {
+      syncStateToSheet({ wallet: localWallet });
+    } else {
+      localStorage.setItem('hyewon_wallet', String(sheetWallet));
     }
   }
 
-  // ─── 스트릭 보상 단계: max wins ───
+  // ─── 스트릭 보상 단계: 시트가 마스터 ───
   if (typeof data.last_streak_reward === 'number') {
     const localLSR = parseInt(localStorage.getItem('hyewon_last_streak_reward') || '0');
     const sheetLSR = data.last_streak_reward;
-    const finalLSR = Math.max(localLSR, sheetLSR);
-    localStorage.setItem('hyewon_last_streak_reward', String(finalLSR));
-    if (localLSR > sheetLSR) {
-      syncStateToSheet({ last_streak_reward: finalLSR });
+    if (sheetLSR === 0 && localLSR > 0) {
+      syncStateToSheet({ last_streak_reward: localLSR });
+    } else {
+      localStorage.setItem('hyewon_last_streak_reward', String(sheetLSR));
     }
   }
 
@@ -2641,14 +2641,51 @@ function applySheetState(data) {
   }
 }
 
+// 🔄 강제 시트 동기화 (응급용 - 로컬 데이터 무시하고 시트 값으로 통일)
+function forceResyncFromSheet() {
+  if (!confirm('🔄 시트의 값으로 강제 통일할까요?\n\n현재 폰의 데이터는 무시되고\n구글 시트의 값으로 덮어씁니다.\n\n(다른 기기와 안 맞을 때 사용)')) return;
+
+  // localStorage 핵심 값들 비우기
+  localStorage.removeItem('hyewon_points');
+  localStorage.removeItem('hyewon_wallet');
+  localStorage.removeItem('hyewon_last_streak_reward');
+  // 럭키박스 키들 다 비우기
+  for (let i = localStorage.length - 1; i >= 0; i--) {
+    const k = localStorage.key(i);
+    if (k && k.startsWith('hyewon_lucky_')) localStorage.removeItem(k);
+  }
+  localStorage.removeItem('hyewon_coupons');
+
+  // 시트에서 다시 가져오기
+  fetchStateFromSheet(function(data) {
+    if (data) {
+      // 시트값 무조건 적용 (max-wins 우회)
+      if (typeof data.points === 'number') localStorage.setItem('hyewon_points', String(data.points));
+      if (typeof data.wallet === 'number') localStorage.setItem('hyewon_wallet', String(data.wallet));
+      if (typeof data.last_streak_reward === 'number') localStorage.setItem('hyewon_last_streak_reward', String(data.last_streak_reward));
+      if (data.lucky_received_date) {
+        localStorage.setItem('hyewon_lucky_' + data.lucky_received_date, JSON.stringify({ from_sheet: true }));
+      }
+      if (Array.isArray(data.coupons)) localStorage.setItem('hyewon_coupons', JSON.stringify(data.coupons));
+
+      alert('✅ 시트 값으로 강제 동기화 완료!\n포인트: ' + data.points + 'P\n쿠폰: ' + (data.coupons ? data.coupons.length : 0) + '개');
+      location.reload();
+    } else {
+      alert('⚠️ 시트에서 못 받아왔어요. 인터넷 확인하세요.');
+    }
+  });
+}
+
 // 🌐 페이지 로드 즉시 동기화 (시트 마스터, 0.5초로 단축)
 setTimeout(function() {
-  // 동기화 표시 추가 (한 번만)
+  // 동기화 표시 추가 (한 번만) - 클릭하면 강제 재동기화!
   if (!document.getElementById('syncIndicator')) {
     const ind = document.createElement('div');
     ind.id = 'syncIndicator';
-    ind.style.cssText = 'position:fixed;top:8px;right:10px;background:rgba(255,255,255,0.95);padding:5px 10px;border-radius:14px;font-family:Jua,sans-serif;font-size:11px;color:#888;z-index:9999;box-shadow:0 2px 6px rgba(0,0,0,0.1);';
+    ind.title = '클릭하면 시트에서 강제로 다시 가져옴';
+    ind.style.cssText = 'position:fixed;top:8px;right:10px;background:rgba(255,255,255,0.95);padding:5px 10px;border-radius:14px;font-family:Jua,sans-serif;font-size:11px;color:#888;z-index:9999;box-shadow:0 2px 6px rgba(0,0,0,0.1);cursor:pointer;';
     ind.textContent = '🌐 동기화 중...';
+    ind.addEventListener('click', forceResyncFromSheet);
     document.body.appendChild(ind);
   }
 
