@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>🐱 펫 & 만화 데모</title>
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Gaegu:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  background:linear-gradient(135deg,#ffe4ed 0%,#ede0ff 100%);
+  font-family:'Jua','Gaegu',sans-serif;
+  min-height:100vh;padding:20px;
+  color:#5d4c6d;
+}
+.wrap{max-width:900px;margin:0 auto;}
+h1{text-align:center;font-size:2em;margin-bottom:10px;}
+.sub{text-align:center;color:#888;margin-bottom:30px;}
+.section{
+  background:white;
+  border-radius:20px;
+  padding:24px;
+  margin-bottom:24px;
+  box-shadow:0 6px 20px rgba(150,110,140,0.1);
+}
+.section h2{
+  color:#ff8fb5;
+  margin-bottom:6px;
+  font-size:1.4em;
+}
+.section .desc{font-size:.9em;color:#888;margin-bottom:18px;font-family:'Gaegu',sans-serif;}
+.option-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;}
+.option-card{
+  background:linear-gradient(135deg,#fff8f3,#ffe4ed);
+  border-radius:16px;padding:20px;
+  border:2px solid #ffd0e0;
+  text-align:center;
+}
+.option-card h3{font-size:1.1em;margin-bottom:6px;color:#5d4c6d;}
+.option-card .level{display:inline-block;padding:3px 10px;border-radius:12px;font-size:.75em;margin-bottom:12px;font-weight:700;}
+.level-easy{background:#a8e6cf;color:#1b5e20;}
+.level-mid{background:#ffd54f;color:#7c4f00;}
+.level-hard{background:#ff8fb5;color:#7d2949;}
+.demo-area{
+  height:200px;
+  background:rgba(255,255,255,0.7);
+  border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  margin:12px 0;
+  position:relative;overflow:hidden;
+}
+.notes{font-size:.85em;color:#888;margin-top:10px;text-align:left;line-height:1.6;font-family:'Gaegu',sans-serif;}
+.notes b{color:#5d4c6d;}
+
+/* ─── 펫 1: 이모지 + CSS ─── */
+.pet-emoji{
+  font-size:90px;
+  animation:bobblePet 1.8s ease-in-out infinite;
+  cursor:pointer;
+  display:inline-block;
+}
+@keyframes bobblePet{
+  0%,100%{transform:translateY(0) rotate(-5deg);}
+  50%{transform:translateY(-15px) rotate(5deg);}
+}
+.pet-emoji:hover{animation-duration:0.6s;}
+
+/* ─── 펫 2: SVG ─── */
+.svg-pet{width:160px;height:160px;cursor:pointer;}
+.svg-pet .body{animation:breathe 2.5s ease-in-out infinite;transform-origin:center bottom;}
+.svg-pet .ear-l{animation:wiggle-l 3s ease-in-out infinite;transform-origin:center bottom;}
+.svg-pet .ear-r{animation:wiggle-r 3s ease-in-out infinite;transform-origin:center bottom;}
+.svg-pet .eye{animation:blink 4s infinite;}
+.svg-pet .tail{animation:wag 1.2s ease-in-out infinite;transform-origin:left center;}
+@keyframes breathe{0%,100%{transform:scale(1);}50%{transform:scale(1.05);}}
+@keyframes wiggle-l{0%,100%{transform:rotate(0deg);}50%{transform:rotate(-10deg);}}
+@keyframes wiggle-r{0%,100%{transform:rotate(0deg);}50%{transform:rotate(10deg);}}
+@keyframes blink{0%,90%,100%{transform:scaleY(1);}93%,97%{transform:scaleY(0.1);}}
+@keyframes wag{0%,100%{transform:rotate(-15deg);}50%{transform:rotate(15deg);}}
+
+/* ─── 펫 3: 3D Three.js ─── */
+#threejs-canvas{width:100%;height:100%;display:block;}
+
+/* ─── 만화 1: 이모지 ─── */
+.comic-row{display:flex;justify-content:center;gap:14px;margin:10px 0;}
+.comic-panel{
+  background:white;
+  border:3px solid #5d4c6d;
+  border-radius:8px;
+  padding:14px 10px;
+  width:120px;height:140px;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:flex-end;
+  position:relative;
+}
+.comic-panel .speech{
+  background:#fff3bf;
+  border:2px solid #5d4c6d;
+  border-radius:14px;
+  padding:6px 10px;
+  font-size:.7em;
+  margin-bottom:8px;
+  position:relative;
+  font-family:'Fredoka',sans-serif;
+  color:#000;
+}
+.comic-panel .speech:after{
+  content:'';
+  position:absolute;
+  bottom:-7px;left:20px;
+  width:0;height:0;
+  border-left:6px solid transparent;
+  border-right:6px solid transparent;
+  border-top:7px solid #5d4c6d;
+}
+.comic-panel .char{font-size:50px;}
+
+/* ─── 만화 2: SVG 풀그림 ─── */
+.svg-comic{
+  width:100%;max-width:600px;
+  background:#fffbe6;
+  border:3px solid #5d4c6d;
+  border-radius:14px;
+  padding:14px;
+  margin:0 auto;
+}
+.svg-comic svg{width:100%;height:auto;}
+
+/* ─── 옵션 비교 표 ─── */
+.compare{
+  width:100%;border-collapse:collapse;margin-top:14px;
+  font-family:'Gaegu',sans-serif;
+}
+.compare th{background:#ff8fb5;color:white;padding:10px;border:1px solid #fff;font-family:'Jua',sans-serif;}
+.compare td{padding:10px;border:1px solid #f0d8e3;text-align:center;}
+.compare td:first-child{text-align:left;font-weight:bold;}
+.thumb-up{color:#52b788;font-size:1.2em;}
+.thumb-down{color:#e76f51;font-size:1.2em;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>🎨 펫 & 만화 구현 데모</h1>
+<p class="sub">3가지 옵션을 직접 비교해 보세요!</p>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 펫 키우기 데모 -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="section">
+  <h2>🐱 펫 키우기 — 3가지 옵션</h2>
+  <p class="desc">탭하면 반응해요! (각 펫을 클릭/터치해보세요)</p>
+
+  <div class="option-grid">
+
+    <!-- 옵션 A: 이모지 -->
+    <div class="option-card">
+      <h3>옵션 A — 이모지</h3>
+      <span class="level level-easy">⚡ 쉬움</span>
+      <div class="demo-area">
+        <span class="pet-emoji" onclick="this.style.transform='scale(1.2)';setTimeout(()=>this.style.transform='',300)">🐱</span>
+      </div>
+      <div class="notes">
+        <b>장점:</b> 즉시 만들 수 있음, 가벼움<br>
+        <b>단점:</b> 이모지라 어른 같은 느낌<br>
+        <b>퀄리티:</b> ⭐⭐
+      </div>
+    </div>
+
+    <!-- 옵션 B: SVG -->
+    <div class="option-card">
+      <h3>옵션 B — 직접 그린 SVG</h3>
+      <span class="level level-mid">🎨 중간</span>
+      <div class="demo-area">
+        <svg class="svg-pet" viewBox="0 0 200 200">
+          <!-- 꼬리 -->
+          <path class="tail" d="M 150 130 Q 175 110 180 90" stroke="#ff9eb5" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <!-- 몸통 -->
+          <ellipse class="body" cx="100" cy="130" rx="55" ry="45" fill="#ffc0d4"/>
+          <!-- 머리 -->
+          <circle cx="100" cy="80" r="40" fill="#ffd0e0"/>
+          <!-- 귀 왼쪽 -->
+          <polygon class="ear-l" points="65,55 75,30 90,55" fill="#ff9eb5"/>
+          <!-- 귀 오른쪽 -->
+          <polygon class="ear-r" points="110,55 125,30 135,55" fill="#ff9eb5"/>
+          <!-- 눈 -->
+          <ellipse class="eye" cx="85" cy="80" rx="4" ry="6" fill="#5d4c6d"/>
+          <ellipse class="eye" cx="115" cy="80" rx="4" ry="6" fill="#5d4c6d"/>
+          <!-- 볼 -->
+          <circle cx="78" cy="92" r="5" fill="#ff8fb5" opacity="0.6"/>
+          <circle cx="122" cy="92" r="5" fill="#ff8fb5" opacity="0.6"/>
+          <!-- 입 -->
+          <path d="M 92 95 Q 100 102 108 95" stroke="#5d4c6d" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="notes">
+        <b>장점:</b> 귀엽고 자유롭게 디자인 가능, 가벼움<br>
+        <b>단점:</b> 픽사처럼 정교한 건 어려움<br>
+        <b>퀄리티:</b> ⭐⭐⭐⭐
+      </div>
+    </div>
+
+    <!-- 옵션 C: 3D Three.js -->
+    <div class="option-card">
+      <h3>옵션 C — 3D (Three.js)</h3>
+      <span class="level level-hard">🎮 어려움</span>
+      <div class="demo-area">
+        <canvas id="threejs-canvas"></canvas>
+      </div>
+      <div class="notes">
+        <b>장점:</b> 진짜 3D! 회전, 조명 등<br>
+        <b>단점:</b> <span style="color:#e76f51;">고퀄리티 모델은 외부 에셋 필요</span> (저는 못 만듦)<br>
+        <b>퀄리티:</b> ⭐⭐⭐ (기본 도형) ~ ⭐⭐⭐⭐⭐ (외부 모델)
+      </div>
+    </div>
+
+  </div>
+
+  <table class="compare">
+    <tr><th>비교 항목</th><th>이모지</th><th>SVG</th><th>3D</th></tr>
+    <tr><td>제가 즉시 만들 수 있나?</td><td class="thumb-up">✅</td><td class="thumb-up">✅</td><td>⚠️ 부분 가능</td></tr>
+    <tr><td>고퀄리티 가능?</td><td class="thumb-down">❌</td><td class="thumb-up">✅ (귀여움)</td><td class="thumb-up">✅ (모델 있을 때)</td></tr>
+    <tr><td>모바일 가벼움</td><td class="thumb-up">✅✅</td><td class="thumb-up">✅</td><td>⚠️ 무거움</td></tr>
+    <tr><td>꾸미기/레벨업 표현</td><td>⚠️ 제한적</td><td class="thumb-up">✅✅ 좋음</td><td class="thumb-up">✅</td></tr>
+    <tr><td>추천도 (혜원이용)</td><td>⭐⭐</td><td>⭐⭐⭐⭐⭐</td><td>⭐⭐⭐</td></tr>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 만화 데모 -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="section">
+  <h2>📖 영어 한 컷 만화 — 2가지 옵션</h2>
+
+  <div class="option-grid" style="grid-template-columns:1fr;">
+
+    <!-- 만화 옵션 A -->
+    <div class="option-card">
+      <h3>옵션 A — 이모지로 한 컷 만화</h3>
+      <span class="level level-easy">⚡ 즉시 가능</span>
+      <div class="comic-row">
+        <div class="comic-panel">
+          <div class="speech">Mom, I'm hungry!</div>
+          <div class="char">👧</div>
+        </div>
+        <div class="comic-panel">
+          <div class="speech">Here's an apple 🍎</div>
+          <div class="char">👩</div>
+        </div>
+        <div class="comic-panel">
+          <div class="speech">Thank you!</div>
+          <div class="char">👧</div>
+        </div>
+      </div>
+      <div class="notes">
+        <b>장점:</b> 가볍고 매일 새로 만들기 쉬움<br>
+        <b>제가 매일 새 대사로 자동 생성 가능!</b><br>
+        <b>퀄리티:</b> ⭐⭐⭐ (귀엽고 부담없음)
+      </div>
+    </div>
+
+    <!-- 만화 옵션 B -->
+    <div class="option-card">
+      <h3>옵션 B — SVG로 그린 만화 (조금 더 그림 같음)</h3>
+      <span class="level level-mid">🎨 SVG 직접</span>
+      <div class="svg-comic">
+        <svg viewBox="0 0 600 200">
+          <!-- 패널 1 -->
+          <rect x="5" y="5" width="190" height="190" fill="#fffbe6" stroke="#5d4c6d" stroke-width="3"/>
+          <!-- 말풍선 -->
+          <ellipse cx="100" cy="40" rx="80" ry="18" fill="#fff" stroke="#5d4c6d" stroke-width="2"/>
+          <text x="100" y="46" text-anchor="middle" font-size="14" font-family="Fredoka,sans-serif" font-weight="600">What's your name?</text>
+          <!-- 캐릭터 -->
+          <circle cx="60" cy="130" r="28" fill="#ffd0e0" stroke="#5d4c6d" stroke-width="2"/>
+          <ellipse cx="52" cy="125" rx="3" ry="4" fill="#5d4c6d"/>
+          <ellipse cx="68" cy="125" rx="3" ry="4" fill="#5d4c6d"/>
+          <path d="M 50 138 Q 60 145 70 138" stroke="#5d4c6d" stroke-width="2" fill="none"/>
+          <circle cx="140" cy="135" r="28" fill="#cce7ff" stroke="#5d4c6d" stroke-width="2"/>
+          <ellipse cx="132" cy="130" rx="3" ry="4" fill="#5d4c6d"/>
+          <ellipse cx="148" cy="130" rx="3" ry="4" fill="#5d4c6d"/>
+          <path d="M 130 145 Q 140 142 150 145" stroke="#5d4c6d" stroke-width="2" fill="none"/>
+
+          <!-- 패널 2 -->
+          <rect x="205" y="5" width="190" height="190" fill="#e0f2fe" stroke="#5d4c6d" stroke-width="3"/>
+          <ellipse cx="300" cy="40" rx="90" ry="18" fill="#fff" stroke="#5d4c6d" stroke-width="2"/>
+          <text x="300" y="46" text-anchor="middle" font-size="14" font-family="Fredoka,sans-serif" font-weight="600">My name is Hyewon!</text>
+          <circle cx="300" cy="130" r="32" fill="#ffd0e0" stroke="#5d4c6d" stroke-width="2"/>
+          <ellipse cx="290" cy="125" rx="3" ry="5" fill="#5d4c6d"/>
+          <ellipse cx="310" cy="125" rx="3" ry="5" fill="#5d4c6d"/>
+          <path d="M 285 140 Q 300 150 315 140" stroke="#5d4c6d" stroke-width="2.5" fill="none"/>
+          <text x="270" y="180" font-size="20">😊</text>
+
+          <!-- 패널 3 -->
+          <rect x="405" y="5" width="190" height="190" fill="#fce7f3" stroke="#5d4c6d" stroke-width="3"/>
+          <ellipse cx="500" cy="40" rx="85" ry="18" fill="#fff" stroke="#5d4c6d" stroke-width="2"/>
+          <text x="500" y="46" text-anchor="middle" font-size="14" font-family="Fredoka,sans-serif" font-weight="600">Nice to meet you!</text>
+          <circle cx="460" cy="130" r="28" fill="#cce7ff" stroke="#5d4c6d" stroke-width="2"/>
+          <circle cx="540" cy="130" r="28" fill="#ffd0e0" stroke="#5d4c6d" stroke-width="2"/>
+          <ellipse cx="452" cy="125" rx="3" ry="4" fill="#5d4c6d"/>
+          <ellipse cx="468" cy="125" rx="3" ry="4" fill="#5d4c6d"/>
+          <ellipse cx="532" cy="125" rx="3" ry="4" fill="#5d4c6d"/>
+          <ellipse cx="548" cy="125" rx="3" ry="4" fill="#5d4c6d"/>
+          <path d="M 450 138 Q 460 144 470 138" stroke="#5d4c6d" stroke-width="2" fill="none"/>
+          <path d="M 530 138 Q 540 144 550 138" stroke="#5d4c6d" stroke-width="2" fill="none"/>
+          <text x="490" y="180" font-size="18">🤝</text>
+        </svg>
+      </div>
+      <div class="notes">
+        <b>장점:</b> 일러스트 느낌 + 가벼움<br>
+        <b>매일 시나리오 자동 생성 가능</b><br>
+        <b>퀄리티:</b> ⭐⭐⭐⭐
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 추천 -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="section" style="background:linear-gradient(135deg,#fff3bf,#ffe4ed);">
+  <h2>🎯 제 추천</h2>
+  <div style="font-family:'Gaegu',sans-serif;font-size:1.05em;line-height:1.9;">
+    <p><b>🐱 펫 키우기 → 옵션 B (SVG) 강추!</b></p>
+    <p>· 귀엽고, 가볍고, 모바일에서 잘 돌아가요</p>
+    <p>· 레벨업 시 색깔/모양 바꾸기 자유로움</p>
+    <p>· 꼬리 흔들기, 눈 깜빡, 행복할 때 점프 등 다양한 표현</p>
+    <p>· 꾸미기 (모자, 안경, 스카프 등) 추가 쉬움</p>
+    <br>
+    <p><b>📖 만화 → 옵션 B (SVG) 추천</b></p>
+    <p>· 매일 다른 시나리오 자동 생성 가능 (5학년 표현 활용)</p>
+    <p>· 발음 듣기 + 한국어 토글 + 클릭하면 캐릭터 반응</p>
+    <p>· 그림 같은 느낌으로 부담 없이 매일 보고 싶음</p>
+    <br>
+    <p><b>🎨 더 고퀄리티 원하시면?</b></p>
+    <p>· <b>외부에서 일러스트 만들어주시면</b> (예: ChatGPT/Midjourney/스티커앱) → 제가 고퀄 캐릭터를 시스템에 넣어드림</p>
+    <p>· 아니면 무료 일러스트 사이트 (Flaticon, Iconify 등) 이용</p>
+  </div>
+</div>
+
+</div>
+
+<!-- Three.js 3D 펫 데모 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// 간단한 3D 펫 (Three.js)
+const canvas = document.getElementById('threejs-canvas');
+if (canvas && typeof THREE !== 'undefined') {
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  renderer.setSize(canvas.parentElement.offsetWidth, canvas.parentElement.offsetHeight);
+  renderer.setClearColor(0xffffff, 0);
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(50, canvas.parentElement.offsetWidth / canvas.parentElement.offsetHeight, 0.1, 100);
+  camera.position.set(0, 0, 5);
+
+  // 조명
+  const ambient = new THREE.AmbientLight(0xffffff, 0.6);
+  const directional = new THREE.DirectionalLight(0xffffff, 0.8);
+  directional.position.set(2, 3, 4);
+  scene.add(ambient, directional);
+
+  // 그룹: 펫 본체
+  const pet = new THREE.Group();
+
+  // 몸통 (구)
+  const bodyGeo = new THREE.SphereGeometry(0.9, 32, 32);
+  const bodyMat = new THREE.MeshPhongMaterial({ color: 0xffc0d4 });
+  const body = new THREE.Mesh(bodyGeo, bodyMat);
+  body.position.y = -0.4;
+  body.scale.set(1.2, 1, 1);
+  pet.add(body);
+
+  // 머리 (구)
+  const headGeo = new THREE.SphereGeometry(0.7, 32, 32);
+  const head = new THREE.Mesh(headGeo, new THREE.MeshPhongMaterial({ color: 0xffd0e0 }));
+  head.position.y = 0.6;
+  pet.add(head);
+
+  // 귀 (원뿔 2개)
+  const earMat = new THREE.MeshPhongMaterial({ color: 0xff9eb5 });
+  const earL = new THREE.Mesh(new THREE.ConeGeometry(0.18, 0.45, 8), earMat);
+  earL.position.set(-0.3, 1.15, 0.2);
+  earL.rotation.z = -0.3;
+  const earR = earL.clone();
+  earR.position.x = 0.3;
+  earR.rotation.z = 0.3;
+  pet.add(earL, earR);
+
+  // 눈 (작은 검은 구)
+  const eyeMat = new THREE.MeshBasicMaterial({ color: 0x5d4c6d });
+  const eyeL = new THREE.Mesh(new THREE.SphereGeometry(0.07, 16, 16), eyeMat);
+  eyeL.position.set(-0.22, 0.65, 0.62);
+  const eyeR = eyeL.clone();
+  eyeR.position.x = 0.22;
+  pet.add(eyeL, eyeR);
+
+  // 볼
+  const cheekMat = new THREE.MeshBasicMaterial({ color: 0xff8fb5, transparent: true, opacity: 0.5 });
+  const cheekL = new THREE.Mesh(new THREE.SphereGeometry(0.1, 16, 16), cheekMat);
+  cheekL.position.set(-0.4, 0.5, 0.55);
+  const cheekR = cheekL.clone();
+  cheekR.position.x = 0.4;
+  pet.add(cheekL, cheekR);
+
+  scene.add(pet);
+
+  // 애니메이션
+  let t = 0;
+  function animate() {
+    t += 0.02;
+    pet.rotation.y = Math.sin(t * 0.5) * 0.3;  // 좌우 흔들기
+    pet.position.y = Math.sin(t * 2) * 0.05;    // 위아래 미세
+    renderer.render(scene, camera);
+    requestAnimationFrame(animate);
+  }
+  animate();
+
+  // 클릭 시 점프
+  canvas.addEventListener('click', () => {
+    const start = pet.position.y;
+    let progress = 0;
+    const jump = setInterval(() => {
+      progress += 0.1;
+      pet.position.y = start + Math.sin(progress * Math.PI) * 0.5;
+      if (progress >= 1) clearInterval(jump);
+    }, 16);
+  });
+}
+</script>
+
+</body>
+</html>

@@ -2127,15 +2127,16 @@ const SCHEDULE = [
   }
 ];
 
-// ========== 귀여운 고양이 SVG (작은 사이즈) ==========
+// ========== 🌟 새 미니 마스코트 (Fluent 3D PNG) - 보관함/카드용 ==========
 const miniCats = {
-  pink: `<svg viewBox="0 0 60 60"><ellipse cx="30" cy="42" rx="18" ry="14" fill="#ffc0d4"/><circle cx="30" cy="25" r="14" fill="#ffc0d4"/><path d="M 20 18 L 17 8 L 26 15 Z" fill="#ffc0d4"/><path d="M 40 18 L 43 8 L 34 15 Z" fill="#ffc0d4"/><circle cx="23" cy="29" r="2.5" fill="#4a3a5a"/><circle cx="37" cy="29" r="2.5" fill="#4a3a5a"/><circle cx="20" cy="33" r="2.5" fill="#ff8fa3" opacity="0.6"/><circle cx="40" cy="33" r="2.5" fill="#ff8fa3" opacity="0.6"/><path d="M 28 34 Q 30 36 32 34" stroke="#4a3a5a" stroke-width="1.2" fill="none"/></svg>`,
-  mint: `<svg viewBox="0 0 60 60"><ellipse cx="30" cy="42" rx="18" ry="14" fill="#b5ead7"/><circle cx="30" cy="25" r="14" fill="#b5ead7"/><path d="M 20 18 L 17 8 L 26 15 Z" fill="#b5ead7"/><path d="M 40 18 L 43 8 L 34 15 Z" fill="#b5ead7"/><circle cx="23" cy="29" r="2.5" fill="#4a3a5a"/><circle cx="37" cy="29" r="2.5" fill="#4a3a5a"/><circle cx="20" cy="33" r="2.5" fill="#ff8fa3" opacity="0.5"/><circle cx="40" cy="33" r="2.5" fill="#ff8fa3" opacity="0.5"/><path d="M 28 34 Q 30 36 32 34" stroke="#4a3a5a" stroke-width="1.2" fill="none"/></svg>`,
-  lavender: `<svg viewBox="0 0 60 60"><ellipse cx="30" cy="42" rx="18" ry="14" fill="#d4baff"/><circle cx="30" cy="25" r="14" fill="#d4baff"/><path d="M 20 18 L 17 8 L 26 15 Z" fill="#d4baff"/><path d="M 40 18 L 43 8 L 34 15 Z" fill="#d4baff"/><circle cx="23" cy="29" r="2.5" fill="#4a3a5a"/><circle cx="37" cy="29" r="2.5" fill="#4a3a5a"/><circle cx="20" cy="33" r="2.5" fill="#ff8fa3" opacity="0.5"/><circle cx="40" cy="33" r="2.5" fill="#ff8fa3" opacity="0.5"/><path d="M 28 34 Q 30 36 32 34" stroke="#4a3a5a" stroke-width="1.2" fill="none"/></svg>`,
-  peach: `<svg viewBox="0 0 60 60"><ellipse cx="30" cy="42" rx="18" ry="14" fill="#ffd4b5"/><circle cx="30" cy="25" r="14" fill="#ffd4b5"/><path d="M 20 18 L 17 8 L 26 15 Z" fill="#ffd4b5"/><path d="M 40 18 L 43 8 L 34 15 Z" fill="#ffd4b5"/><circle cx="23" cy="29" r="2.5" fill="#4a3a5a"/><circle cx="37" cy="29" r="2.5" fill="#4a3a5a"/><circle cx="20" cy="33" r="2.5" fill="#ff8fa3" opacity="0.5"/><circle cx="40" cy="33" r="2.5" fill="#ff8fa3" opacity="0.5"/><path d="M 28 34 Q 30 36 32 34" stroke="#4a3a5a" stroke-width="1.2" fill="none"/></svg>`,
-  // 작은 아이콘용 고양이 (아침/퀴즈)
-  sunny: `<svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="15" fill="#fff3bf"/><circle cx="15" cy="18" r="2" fill="#4a3a5a"/><circle cx="25" cy="18" r="2" fill="#4a3a5a"/><path d="M 17 23 Q 20 26 23 23" stroke="#4a3a5a" stroke-width="1.5" fill="none"/><path d="M 8 15 L 12 12 L 12 18 Z" fill="#fff3bf"/><path d="M 32 15 L 28 12 L 28 18 Z" fill="#fff3bf"/></svg>`,
-  star: `<svg viewBox="0 0 40 40"><ellipse cx="20" cy="26" rx="11" ry="9" fill="#d4baff"/><circle cx="20" cy="16" r="9" fill="#d4baff"/><path d="M 14 12 L 12 6 L 17 10 Z" fill="#d4baff"/><path d="M 26 12 L 28 6 L 23 10 Z" fill="#d4baff"/><circle cx="16" cy="18" r="1.8" fill="#4a3a5a"/><circle cx="24" cy="18" r="1.8" fill="#4a3a5a"/><path d="M 18 21 Q 20 23 22 21" stroke="#4a3a5a" stroke-width="1.3" fill="none"/></svg>`
+  // 4종 랜덤 표시용 (보관함에서 catVariants로 순환)
+  pink:     `<img src="assets/animals/cat_face_3d.png" alt="고양이" style="width:60px;height:60px;object-fit:contain;">`,
+  mint:     `<img src="assets/animals/rabbit_face_3d.png" alt="토끼" style="width:60px;height:60px;object-fit:contain;">`,
+  lavender: `<img src="assets/animals/panda_3d.png" alt="판다" style="width:60px;height:60px;object-fit:contain;">`,
+  peach:    `<img src="assets/animals/fox_3d.png" alt="여우" style="width:60px;height:60px;object-fit:contain;">`,
+  // 작은 아이콘용 (아침 단어장 = 병아리, 오후 퀴즈 = 호랑이)
+  sunny: `<img src="assets/animals/hatching_chick_3d.png" alt="병아리" style="width:40px;height:40px;object-fit:contain;">`,
+  star:  `<img src="assets/animals/tiger_face_3d.png" alt="호랑이" style="width:40px;height:40px;object-fit:contain;">`
 };
 
 // ========== 날짜 ==========
@@ -2378,21 +2379,53 @@ const ANIMAL_FRIENDS = {
 };
 
 // 요일별 동물 선정 (일=0, 월=1, ...)
-const DAY_ANIMALS = ['capybara', 'shiba', 'cat', 'parrot', 'rabbit', 'hamster', 'penguin'];
+const DAY_ANIMALS = ['panda', 'dog', 'cat', 'peacock', 'rabbit', 'hamster', 'whale'];
+
+// 🌟 NEW: Microsoft Fluent Emoji 3D PNG 매핑 (assets/animals/)
+const FLUENT_ANIMAL_FILES = {
+  'panda':    { file: 'panda_3d.png',         name: '판다',     greet: '안뇽! 혜원아 평화로운 일요일이야 🐼' },
+  'dog':      { file: 'dog_face_3d.png',      name: '강아지',   greet: '왈왈! 혜원아 신나는 월요일! 🐶' },
+  'cat':      { file: 'cat_face_3d.png',      name: '고양이',   greet: '냐옹~ 혜원아 안녕! 🐱' },
+  'peacock':  { file: 'peacock_3d.png',       name: '공작새',   greet: '꽃꽃! 혜원아 화려한 수요일이야 🦚' },
+  'rabbit':   { file: 'rabbit_face_3d.png',   name: '토끼',     greet: '깡총! 혜원아 폴짝폴짝 🐰' },
+  'hamster':  { file: 'hamster_3d.png',       name: '햄스터',   greet: '찍찍! 혜원아 통통 금요일! 🐹' },
+  'whale':    { file: 'whale_3d.png',         name: '고래',     greet: '쉬익~ 혜원아 시원한 주말! 🐳' },
+  // 추가 (마스코트로 쓸 수 있는)
+  'bear':     { file: 'bear_3d.png',          name: '곰',       greet: '으르렁~ 혜원아 따뜻한 포옹 🐻' },
+  'fox':      { file: 'fox_3d.png',           name: '여우',     greet: '컹컹! 혜원아 영리하게! 🦊' },
+  'tiger':    { file: 'tiger_face_3d.png',    name: '호랑이',   greet: '어흥! 혜원아 멋진 도전! 🐯' },
+  'sloth':    { file: 'sloth_3d.png',         name: '나무늘보', greet: '느긋~ 혜원아 천천히 가도 OK 🦥' },
+  'seal':     { file: 'seal_3d.png',          name: '물개',     greet: '아우~ 혜원아 시원해! 🦭' },
+  'raccoon':  { file: 'raccoon_3d.png',       name: '너구리',   greet: '오잉? 혜원아 호기심 많이! 🦝' },
+  'chicken':  { file: 'chicken_3d.png',       name: '닭',       greet: '꼬꼬댁! 혜원아 부지런하게! 🐔' },
+  'chick':    { file: 'hatching_chick_3d.png', name: '병아리',  greet: '삐악! 혜원아 새로 시작! 🐣' },
+  'dodo':     { file: 'dodo_3d.png',          name: '도도새',   greet: '특별한 친구야! 혜원아 안녕 🦤' }
+};
+
+// 모든 동물 키 (격려 메시지 등에 랜덤 사용)
+const ALL_ANIMALS = Object.keys(FLUENT_ANIMAL_FILES);
 
 function makeAnimalSVG(type) {
-  const a = ANIMAL_FRIENDS[type] || ANIMAL_FRIENDS.cat;
-  return `<svg viewBox="0 0 100 100">${a.parts(a.body, a.dark, a.white, a.cheek)}</svg>`;
+  const info = FLUENT_ANIMAL_FILES[type] || FLUENT_ANIMAL_FILES.cat;
+  return `<img src="assets/animals/${info.file}" alt="${info.name}" style="width:100%;height:100%;object-fit:contain;" onerror="this.replaceWith(Object.assign(document.createElement('div'),{innerHTML:'🐱',style:'font-size:80px;line-height:1;'}))">`;
+}
+
+// 랜덤 동물 (보상/격려 메시지용)
+function getRandomAnimalImg(size) {
+  size = size || 60;
+  const key = ALL_ANIMALS[Math.floor(Math.random() * ALL_ANIMALS.length)];
+  const info = FLUENT_ANIMAL_FILES[key];
+  return `<img src="assets/animals/${info.file}" alt="${info.name}" style="width:${size}px;height:${size}px;object-fit:contain;vertical-align:middle;">`;
 }
 
 function renderTodayMascot() {
   const dayIdx = new Date().getDay();
   const type = DAY_ANIMALS[dayIdx];
-  const a = ANIMAL_FRIENDS[type];
+  const info = FLUENT_ANIMAL_FILES[type];
   const mascotEl = document.getElementById('greetingMascot');
   if (mascotEl) mascotEl.innerHTML = makeAnimalSVG(type);
   const speechEl = document.getElementById('speechBubble');
-  if (speechEl && a.greeting) speechEl.textContent = a.greeting;
+  if (speechEl && info.greet) speechEl.textContent = info.greet;
 }
 renderTodayMascot();
 
@@ -3358,7 +3391,7 @@ function showCelebration(message) {
   div.style.cssText = `
     position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
     background: linear-gradient(135deg, #ffd700, #ff8fb5, #d4baff);
-    color: white; padding: 28px 40px; border-radius: 30px;
+    color: white; padding: 28px 32px 22px; border-radius: 30px;
     font-family: 'Jua', sans-serif; font-size: 1.3em;
     box-shadow: 0 20px 60px rgba(0,0,0,0.3);
     z-index: 10000; text-align: center;
@@ -3366,8 +3399,13 @@ function showCelebration(message) {
     white-space: pre-line;
     text-shadow: 1px 2px 0 rgba(0,0,0,0.2);
     animation: ptPop 0.5s ease-out;
+    max-width: 320px;
   `;
-  div.textContent = message;
+  // 🌟 랜덤 동물 이미지 (보상 메시지에 다양함 추가!)
+  const animalImg = (typeof getRandomAnimalImg === 'function')
+    ? getRandomAnimalImg(70)
+    : '';
+  div.innerHTML = (animalImg ? `<div style="margin-bottom:10px;">${animalImg}</div>` : '') + message.replace(/\n/g, '<br>');
   if (!document.getElementById('ptPopStyle')) {
     const s = document.createElement('style');
     s.id = 'ptPopStyle';
@@ -3375,7 +3413,7 @@ function showCelebration(message) {
     document.head.appendChild(s);
   }
   document.body.appendChild(div);
-  setTimeout(() => div.remove(), 2500);
+  setTimeout(() => div.remove(), 2800);
 }
 
 
