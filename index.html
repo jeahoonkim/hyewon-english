@@ -353,7 +353,7 @@
     margin-bottom: 24px;
   }
   .stats-row.single { grid-template-columns: 1fr; margin-bottom: 8px; }
-  .stats-row.with-event { grid-template-columns: 1.6fr 1fr; gap: 10px; margin-bottom: 8px; }
+  .stats-row.with-event { grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 8px; }
 
   /* ===== 🎯 이벤트 카드 ===== */
   .event-card {
@@ -505,32 +505,33 @@
   .stat-card.full-card {
     display: flex;
     align-items: center;
-    gap: 16px;
-    padding: 18px 22px;
+    gap: 10px;
+    padding: 12px 12px;
     text-align: left;
     background: linear-gradient(135deg, #ffe5cc 0%, #fff3bf 100%);
     border-color: #ff9a4d;
     box-shadow: 0 6px 18px rgba(255, 154, 77, 0.2);
   }
   .stat-card.full-card .stat-cat {
-    width: 64px;
-    height: 64px;
+    width: 50px;
+    height: 50px;
     margin: 0;
     flex-shrink: 0;
     filter: drop-shadow(0 3px 6px rgba(0,0,0,0.1));
+    object-fit: contain;
   }
-  .stat-card.full-card .stat-info-wrap { flex: 1; }
+  .stat-card.full-card .stat-info-wrap { flex: 1; min-width: 0; }
   .stat-card.full-card .stat-value {
-    font-size: 2.2em;
+    font-size: 1.7em;
     line-height: 1;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
   }
   .stat-card.full-card .stat-value .unit {
     font-size: 0.5em;
     margin-left: 4px;
   }
   .stat-card.full-card .stat-label {
-    font-size: 0.95em;
+    font-size: 0.85em;
     margin-top: 0;
   }
 
@@ -1758,17 +1759,7 @@
   <!-- 📚 메인 통계 + 🎯 이벤트 카드 (배운 단어 옆에 이벤트) -->
   <div class="stats-row with-event">
     <div class="stat-card pink full-card">
-      <svg class="stat-cat" viewBox="0 0 60 60">
-        <ellipse cx="30" cy="42" rx="18" ry="14" fill="#ffb380"/>
-        <circle cx="30" cy="25" r="14" fill="#ffb380"/>
-        <path d="M 20 18 L 17 8 L 26 15 Z" fill="#ffb380"/>
-        <path d="M 40 18 L 43 8 L 34 15 Z" fill="#ffb380"/>
-        <circle cx="23" cy="29" r="2.5" fill="#4a3a5a"/>
-        <circle cx="37" cy="29" r="2.5" fill="#4a3a5a"/>
-        <circle cx="20" cy="33" r="2.5" fill="#ff6b6b" opacity="0.5"/>
-        <circle cx="40" cy="33" r="2.5" fill="#ff6b6b" opacity="0.5"/>
-        <path d="M 28 33 Q 30 35 32 33" stroke="#4a3a5a" stroke-width="1.2" fill="none"/>
-      </svg>
+      <img class="stat-cat" src="assets/animals/bear_3d.png" alt="배운 단어">
       <div class="stat-info-wrap">
         <div class="stat-value" id="statWords">0<span class="unit">개</span></div>
         <div class="stat-label">배운 단어 📚</div>
@@ -2134,9 +2125,9 @@ const miniCats = {
   mint:     `<img src="assets/animals/rabbit_face_3d.png" alt="토끼" style="width:60px;height:60px;object-fit:contain;">`,
   lavender: `<img src="assets/animals/panda_3d.png" alt="판다" style="width:60px;height:60px;object-fit:contain;">`,
   peach:    `<img src="assets/animals/fox_3d.png" alt="여우" style="width:60px;height:60px;object-fit:contain;">`,
-  // 작은 아이콘용 (아침 단어장 = 병아리, 오후 퀴즈 = 호랑이)
+  // 작은 아이콘용 (아침 단어장 = 병아리 → 오후 퀴즈 = 닭)
   sunny: `<img src="assets/animals/hatching_chick_3d.png" alt="병아리" style="width:40px;height:40px;object-fit:contain;">`,
-  star:  `<img src="assets/animals/tiger_face_3d.png" alt="호랑이" style="width:40px;height:40px;object-fit:contain;">`
+  star:  `<img src="assets/animals/chicken_3d.png" alt="닭" style="width:40px;height:40px;object-fit:contain;">`
 };
 
 // ========== 날짜 ==========

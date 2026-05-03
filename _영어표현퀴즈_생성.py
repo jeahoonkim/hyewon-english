@@ -756,7 +756,7 @@ function speakCurrent() {{
 function showHint() {{
   const q = QUESTIONS[currentQ];
   const box = document.getElementById('hintBox');
-  if (q.hint && q.hint.length === 2) {{
+  if (q.hint && Array.isArray(q.hint) && q.hint.length >= 2 && q.hint[0] && q.hint[1]) {{
     box.innerHTML = '💡 <b>' + q.hint[0] + '</b> = ' + q.hint[1];
   }} else {{
     box.innerHTML = '💡 (힌트 없음)';
@@ -849,7 +849,9 @@ function showResult(isCorrect, q) {{
   title.className = 'pop-title ' + (isCorrect ? 'ok' : 'ng');
   document.getElementById('popPoints').style.display = isCorrect ? 'inline-block' : 'none';
   document.getElementById('popPoints').textContent = '+' + POINTS_PER_CORRECT + 'P';
-  document.getElementById('popExplain').innerHTML = '📖 ' + q.explain;
+  // 🛡️ 안전망: explain 없으면 정답 보기 표시
+  const explainText = q.explain || ('정답: ' + (q.choices ? q.choices[q.ans] : '확인하세요'));
+  document.getElementById('popExplain').innerHTML = '📖 ' + explainText;
   overlay.classList.add('show');
 }}
 
