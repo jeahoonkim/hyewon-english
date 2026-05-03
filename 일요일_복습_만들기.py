@@ -136,47 +136,80 @@ window.addEventListener('DOMContentLoaded', function() {
 REVIEW_FILTER_SCRIPT = """
 // ═══════════════════════════════════════════════
 // 🌻 복습 모드: 어제 토요일에 틀린 단어만 남김
+// 🌐 NEW: 시트에서 먼저 받아서 다른 기기 시험 결과도 사용
 // ═══════════════════════════════════════════════
 const REVIEW_MODE = true;
 const ORIGINAL_WORDS_COUNT = WORDS.length;
+window.__REVIEW_STATE__ = 'loading';
 
-(function initReview() {
+function _getLocalSaturdayWrong() {
   try {
     const history = JSON.parse(localStorage.getItem('hyewon_quiz_history') || '[]');
-    // 가장 최근 '종합시험' 또는 'Saturday' 퀴즈 찾기
     const saturdays = history.filter(q =>
       q.day === 'Saturday' || (q.day && q.day.indexOf('Sat') !== -1)
     );
-
-    if (saturdays.length === 0) {
-      // 토요일 퀴즈를 아직 안 풀었어요
-      WORDS.length = 0;
-      window.__REVIEW_STATE__ = 'no_saturday';
-      return;
-    }
-
+    if (saturdays.length === 0) return { found: false };
     const mostRecent = saturdays[saturdays.length - 1];
-    const wrongList = mostRecent.wrongWords || [];
+    return { found: true, wrongWords: mostRecent.wrongWords || [] };
+  } catch (e) { return { found: false }; }
+}
 
-    if (wrongList.length === 0) {
-      // 토요일에 100점! 복습할 필요 없음
-      WORDS.length = 0;
-      window.__REVIEW_STATE__ = 'perfect';
-      return;
-    }
+function _fetchSaturdayFromSheet(callback) {
+  if (typeof GAS_URL === 'undefined' || !GAS_URL) { callback(null); return; }
+  const cbName = 'satReview_' + Date.now();
+  let scriptEl = null;
+  const timer = setTimeout(function() {
+    if (window[cbName]) delete window[cbName];
+    if (scriptEl && scriptEl.parentNode) scriptEl.parentNode.removeChild(scriptEl);
+    callback(null);
+  }, 5000);
+  window[cbName] = function(data) {
+    clearTimeout(timer);
+    delete window[cbName];
+    if (scriptEl && scriptEl.parentNode) scriptEl.parentNode.removeChild(scriptEl);
+    callback(data);
+  };
+  scriptEl = document.createElement('script');
+  scriptEl.src = GAS_URL + '?action=get_state&callback=' + cbName;
+  scriptEl.onerror = function() {
+    clearTimeout(timer);
+    if (window[cbName]) delete window[cbName];
+    callback(null);
+  };
+  document.head.appendChild(scriptEl);
+}
 
-    // 틀린 단어만 남기기
-    const filtered = WORDS.filter(w => wrongList.includes(w.word));
-    WORDS.length = 0;
-    filtered.forEach(w => WORDS.push(w));
-    window.__REVIEW_STATE__ = 'ready';
-    window.__WRONG_COUNT__ = wrongList.length;
+function _decideWrongWords(sheetData) {
+  if (sheetData && sheetData.last_saturday_quiz) {
+    return { source: 'sheet', wrongWords: sheetData.last_saturday_quiz.wrongWords || [], foundQuiz: true };
+  }
+  const local = _getLocalSaturdayWrong();
+  if (local.found) return { source: 'local', wrongWords: local.wrongWords, foundQuiz: true };
+  return { source: 'none', wrongWords: [], foundQuiz: false };
+}
+
+function _applyReviewDecision(decision) {
+  if (!decision.foundQuiz) { WORDS.length = 0; window.__REVIEW_STATE__ = 'no_saturday'; return; }
+  if (decision.wrongWords.length === 0) { WORDS.length = 0; window.__REVIEW_STATE__ = 'perfect'; return; }
+  const wl = decision.wrongWords;
+  const filtered = WORDS.filter(w => wl.includes(w.word));
+  WORDS.length = 0;
+  filtered.forEach(w => WORDS.push(w));
+  window.__REVIEW_STATE__ = 'ready';
+  window.__WRONG_COUNT__ = wl.length;
+  window.__REVIEW_SOURCE__ = decision.source;
+  console.log('[일요일 복습] 데이터 출처:', decision.source, '· 단어 개수:', wl.length);
+}
+
+_fetchSaturdayFromSheet(function(sheetData) {
+  try {
+    _applyReviewDecision(_decideWrongWords(sheetData));
   } catch (e) {
     console.error('복습 초기화 실패:', e);
     WORDS.length = 0;
     window.__REVIEW_STATE__ = 'error';
   }
-})();
+});
 
 // 상태별 안내 메시지 표시
 window.addEventListener('DOMContentLoaded', function() {

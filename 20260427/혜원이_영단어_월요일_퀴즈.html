@@ -1077,6 +1077,29 @@ function finishQuiz() {
     localStorage.setItem('hyewon_quiz_history', JSON.stringify(h));
   } catch(e) {}
 
+  // 🌐 토요일 시험인 경우 시트 동기화 (다른 기기 일요일 복습용!)
+  try {
+    var isSatExam = (quizRecord.day === 'Saturday' || (quizRecord.theme || '').indexOf('종합시험') !== -1);
+    if (isSatExam && typeof GAS_URL !== 'undefined' && GAS_URL) {
+      const saturdayPayload = {
+        date: quizRecord.date,
+        score: quizRecord.score,
+        total: quizRecord.total,
+        wrongCount: quizRecord.wrongCount,
+        wrongWords: (quizRecord.wrongWords || []).map(function(w) {
+          var m = w.match(/^([^\s(]+)/);
+          return m ? m[1] : w;
+        }),
+        savedAt: new Date().toISOString()
+      };
+      fetch(GAS_URL, {
+        method: 'POST', mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain' },
+        body: JSON.stringify({ sync_state: { last_saturday_quiz: saturdayPayload } })
+      }).catch(function(){});
+    }
+  } catch(e) { console.warn('[토요일 시험 시트 동기화 실패]', e); }
+
   // Google Sheets + 카톡으로 전송
   sendToServer(vocabRec, quizRecord);
 }

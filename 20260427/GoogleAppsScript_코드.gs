@@ -229,8 +229,9 @@ function _getSyncSheet() {
     sheet.appendRow(['streak', 0, '']);
     sheet.appendRow(['lucky_received_date', '', '']);
     sheet.appendRow(['last_streak_reward', 0, '']);
+    sheet.appendRow(['last_saturday_quiz', '', '']);  // 🆕 토요일 결과 (JSON 문자열)
     sheet.setColumnWidth(1, 200);
-    sheet.setColumnWidth(2, 120);
+    sheet.setColumnWidth(2, 400);
     sheet.setColumnWidth(3, 180);
   }
   return sheet;
@@ -289,6 +290,13 @@ function getFullState() {
   const lucky = String(_getSyncValue('lucky_received_date') || '');
   const lastStreakReward = parseInt(_getSyncValue('last_streak_reward') || '0');
 
+  // 🆕 토요일 시험 결과 (JSON 문자열 → 객체)
+  let saturdayQuiz = null;
+  const sqRaw = _getSyncValue('last_saturday_quiz');
+  if (sqRaw) {
+    try { saturdayQuiz = JSON.parse(sqRaw); } catch(e) { saturdayQuiz = null; }
+  }
+
   // 쿠폰 목록 (사용 안 한 것 + 사용한 것 모두)
   const sheet = _getCouponsSheet();
   const lastRow = sheet.getLastRow();
@@ -317,6 +325,7 @@ function getFullState() {
     streak: streak,
     lucky_received_date: lucky,
     last_streak_reward: lastStreakReward,
+    last_saturday_quiz: saturdayQuiz,  // 🆕 { date, wrongWords[], score, total }
     coupons: coupons,
     server_time: Utilities.formatDate(new Date(), 'Asia/Seoul', 'yyyy-MM-dd HH:mm:ss')
   };
@@ -364,6 +373,13 @@ function syncSetState(state) {
   if (state.streak !== undefined) _setSyncValue('streak', state.streak);
   if (state.lucky_received_date !== undefined) _setSyncValue('lucky_received_date', state.lucky_received_date);
   if (state.last_streak_reward !== undefined) _setSyncValue('last_streak_reward', state.last_streak_reward);
+  // 🆕 토요일 시험 결과 저장 (JSON으로 stringify해서)
+  if (state.last_saturday_quiz !== undefined) {
+    const v = (typeof state.last_saturday_quiz === 'string')
+      ? state.last_saturday_quiz
+      : JSON.stringify(state.last_saturday_quiz);
+    _setSyncValue('last_saturday_quiz', v);
+  }
 }
 
 
