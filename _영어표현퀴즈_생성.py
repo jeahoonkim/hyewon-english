@@ -667,14 +667,18 @@ const CORRECT_PHOTOS = [
   '../hyewon/correct/photo_02.jpg',
   '../hyewon/correct/photo_03.jpg',
   '../hyewon/correct/photo_04.jpg',
-  '../hyewon/correct/photo_05.jpg'
+  '../hyewon/correct/photo_05.jpg',
+  '../hyewon/correct/photo_06.jpg',
+  '../hyewon/correct/photo_07.jpg',
+  '../hyewon/correct/photo_08.jpg'
 ];
 const WRONG_PHOTOS = [
   '../hyewon/wrong/photo_01.jpg',
   '../hyewon/wrong/photo_02.jpg',
   '../hyewon/wrong/photo_03.jpg',
   '../hyewon/wrong/photo_04.jpg',
-  '../hyewon/wrong/photo_05.jpg'
+  '../hyewon/wrong/photo_05.jpg',
+  '../hyewon/wrong/photo_06.jpg'
 ];
 function pickRandomPhoto(type) {{
   const arr = (type === 'correct') ? CORRECT_PHOTOS : WRONG_PHOTOS;
