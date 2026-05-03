@@ -762,51 +762,77 @@ function renderQuestion() {
   autoSpeakWord(q.word);
 }
 
-// 🔊 발음 시스템 - 모바일 호환 강화
-let _voicesReady = false;
+// 🔊 안정적인 발음 시스템 v2 (iOS/Android 호환 강화)
 let _voicesCache = [];
+let _userInteracted = false;
+let _speechFailures = 0;
+
 function _loadVoices() {
   if (!('speechSynthesis' in window)) return;
   _voicesCache = window.speechSynthesis.getVoices();
-  if (_voicesCache.length > 0) _voicesReady = true;
 }
 if ('speechSynthesis' in window) {
   _loadVoices();
-  window.speechSynthesis.onvoiceschanged = _loadVoices;
+  if (window.speechSynthesis.onvoiceschanged !== undefined) {
+    window.speechSynthesis.onvoiceschanged = _loadVoices;
+  }
 }
 
 function _pickEnglishVoice() {
   if (_voicesCache.length === 0) _loadVoices();
-  return _voicesCache.find(v => v.lang === 'en-US' && /Google|Samantha|Karen|Daniel/i.test(v.name))
+  return _voicesCache.find(v => v.lang === 'en-US' && /Google|Samantha|Karen|Daniel|Microsoft/i.test(v.name))
       || _voicesCache.find(v => v.lang === 'en-US')
       || _voicesCache.find(v => v.lang && v.lang.startsWith('en'));
 }
 
-function speakWordAgain(word) {
+function _primeSpeech() {
+  if (_userInteracted) return;
+  _userInteracted = true;
   if (!('speechSynthesis' in window)) return;
   try {
+    const warm = new SpeechSynthesisUtterance(' ');
+    warm.volume = 0.01; warm.rate = 1;
+    window.speechSynthesis.speak(warm);
+  } catch(e) {}
+}
+document.addEventListener('click', _primeSpeech, { capture: true });
+document.addEventListener('touchstart', _primeSpeech, { capture: true, passive: true });
+
+function speakWordAgain(word) {
+  if (!('speechSynthesis' in window)) {
+    alert('🔊 이 브라우저는 영어 발음을 지원하지 않아요 😢\n크롬이나 사파리에서 열어주세요!');
+    return;
+  }
+  try {
     window.speechSynthesis.cancel();
-    setTimeout(function() {
-      const u = new SpeechSynthesisUtterance(word);
-      u.lang = 'en-US';
-      u.rate = 0.85;
-      u.pitch = 1.1;
-      u.volume = 1.0;
-      const v = _pickEnglishVoice();
-      if (v) u.voice = v;
-      window.speechSynthesis.speak(u);
-    }, 60);
+    const u = new SpeechSynthesisUtterance(word);
+    u.lang = 'en-US'; u.rate = 0.85; u.pitch = 1.05; u.volume = 1.0;
+    if (_voicesCache.length === 0) _loadVoices();
+    const v = _pickEnglishVoice();
+    if (v) u.voice = v;
+
+    const btn = document.querySelector('.listen-btn');
+    if (btn) { btn.style.transform = 'scale(0.92)'; btn.style.background = 'linear-gradient(135deg, #ffd700, #ff8c42)'; }
+    u.onend = function() { if (btn) { btn.style.transform = ''; btn.style.background = ''; } };
+    u.onerror = function(e) {
+      _speechFailures++;
+      console.warn('🔊 발음 실패:', e);
+      if (btn) { btn.style.transform = ''; btn.style.background = ''; }
+      if (_speechFailures === 3) {
+        const msg = document.createElement('div');
+        msg.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;border:3px solid #ff8fb5;border-radius:20px;padding:20px;z-index:9999;font-family:Jua,sans-serif;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,0.2);max-width:300px;';
+        msg.innerHTML = '🔊 발음이 안 들리나요?<br><br>📱 폰 음량 확인 + 무음 모드 해제!<br><br><button onclick="this.parentNode.remove()" style="background:#ff8fb5;color:white;border:none;padding:10px 20px;border-radius:15px;font-family:Jua,sans-serif;font-size:1em;">확인</button>';
+        document.body.appendChild(msg);
+      }
+    };
+
+    window.speechSynthesis.speak(u);
   } catch(e) { console.warn('🔊 speak error:', e); }
 }
 
-// 자동 발음 (문제 보이자마자) - 모바일 첫 클릭 후부터 동작
-let _autoSpeakEnabled = false;
-window.addEventListener('click', function() { _autoSpeakEnabled = true; }, { once: false, capture: true });
-window.addEventListener('touchstart', function() { _autoSpeakEnabled = true; }, { once: false, capture: true });
-
 function autoSpeakWord(word) {
-  if (!_autoSpeakEnabled) return;
-  setTimeout(function() { speakWordAgain(word); }, 350);
+  if (!_userInteracted) return;
+  setTimeout(function() { speakWordAgain(word); }, 200);
 }
 
 // ============ 답 선택 ============
