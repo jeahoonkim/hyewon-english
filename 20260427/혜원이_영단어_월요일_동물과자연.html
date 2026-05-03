@@ -193,10 +193,33 @@
   .example .en {
     font-family: 'Fredoka', sans-serif; font-size: 19px;
     color: #1b4332; line-height: 1.4;
+    display: flex; align-items: center; gap: 8px;
+    flex-wrap: wrap;
+  }
+  .example .en-text {
+    flex: 1; min-width: 0;
   }
   .example .ko {
     font-family: 'Gaegu', sans-serif; font-size: 17px;
     color: #6b8e23; margin-top: 6px; line-height: 1.4;
+  }
+  .speak-sentence-btn {
+    background: linear-gradient(135deg, #52b788, #40916c);
+    color: white; border: none; border-radius: 50%;
+    width: 38px; height: 38px;
+    font-size: 18px; cursor: pointer;
+    box-shadow: 0 3px 0 #2d6a4f, 0 3px 8px rgba(82, 183, 136, 0.3);
+    transition: all 0.15s ease;
+    display: inline-flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .speak-sentence-btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 #2d6a4f;
+  }
+  .speak-sentence-btn.speaking {
+    background: linear-gradient(135deg, #ffd700, #ff8c42);
+    transform: scale(0.95);
   }
   .fun-fact {
     background: linear-gradient(135deg, #ffeef8, #fce4ec);
@@ -562,7 +585,10 @@ function renderCard() {
     </div>
 
     <div class="example">
-      <div class="en">💬 ${w.example}</div>
+      <div class="en">
+        <span class="en-text">💬 ${w.example}</span>
+        <button class="speak-sentence-btn" onclick="speakSentence(this, &quot;${w.example.replace(/"/g, '&quot;').replace(/'/g, "\\'")}&quot;)" title="예문 듣기">🔊</button>
+      </div>
       <div class="ko">${w.exampleKo}</div>
     </div>
 
@@ -624,6 +650,43 @@ function speakWord() {
       const pct = ((currentIdx + 1) / WORDS.length) * 100;
       document.getElementById('progressBar').style.width = pct + '%';
     }
+  }
+}
+
+// ============ 🌟 예문 발음 (자연스러운 영어 문장!) ============
+function speakSentence(btn, sentence) {
+  if (!('speechSynthesis' in window)) {
+    alert('🔊 이 브라우저는 영어 발음을 지원하지 않아요 😢');
+    return;
+  }
+  try {
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(sentence);
+    u.lang = 'en-US';
+    u.rate = 0.85;     // 자연스러운 속도
+    u.pitch = 1.0;     // 자연스러운 톤
+    u.volume = 1.0;
+
+    // 좋은 음성 선택 (Google/Samantha 등 자연스러운 거)
+    const voices = window.speechSynthesis.getVoices();
+    const goodVoice = voices.find(v => v.lang === 'en-US' && /Google|Samantha|Karen|Daniel|Microsoft/i.test(v.name))
+                   || voices.find(v => v.lang === 'en-US')
+                   || voices.find(v => v.lang && v.lang.startsWith('en'));
+    if (goodVoice) u.voice = goodVoice;
+
+    // 시각 피드백
+    if (btn) btn.classList.add('speaking');
+    u.onend = function() {
+      if (btn) btn.classList.remove('speaking');
+    };
+    u.onerror = function() {
+      if (btn) btn.classList.remove('speaking');
+    };
+
+    window.speechSynthesis.speak(u);
+  } catch(e) {
+    console.warn('🔊 예문 발음 실패:', e);
+    if (btn) btn.classList.remove('speaking');
   }
 }
 
