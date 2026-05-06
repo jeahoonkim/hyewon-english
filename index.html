@@ -2771,6 +2771,42 @@ refreshRewardCards();
   }, 2000);
 })();
 
+// 🌟 일회성 칭찬 보너스 +1000P (한 번만!)
+(function showAwardBonus() {
+  const KEY = 'hyewon_award_1000p_v1';
+  if (localStorage.getItem(KEY)) return;  // 이미 받은 사람은 안 뜸
+
+  // 포인트 지급 (한 번만)
+  try {
+    const cur = parseInt(localStorage.getItem('hyewon_points') || '0');
+    const newTotal = cur + 1000;
+    localStorage.setItem('hyewon_points', String(newTotal));
+    // 시트에도 동기화
+    if (typeof syncStateToSheet === 'function') {
+      syncStateToSheet({ points: newTotal });
+    }
+    // 활동 기록
+    if (typeof syncToSheet === 'function') {
+      syncToSheet('🌟 칭찬 보너스', '혜원이 너무 잘하고 있어요!', 1000);
+    }
+    localStorage.setItem(KEY, '1');
+  } catch(e) { console.warn('[1000P 지급 실패]', e); }
+
+  // UI 갱신
+  if (typeof refreshRewardCards === 'function') refreshRewardCards();
+
+  // 화려한 팝업 (3.5초 뒤 - 다른 팝업 안 겹치게)
+  setTimeout(function() {
+    showCelebration(
+      '🌟 혜원아 너무 잘하고 있어!\n' +
+      '꾸준히 학습하는 모습이\n' +
+      '진짜 자랑스러워!\n\n' +
+      '🎁 칭찬 보너스 +1000P!\n' +
+      '계속 화이팅! 💪✨'
+    );
+  }, 3500);
+})();
+
 // 📊 홈페이지 열릴 때 현재 상태를 시트에 자동 동기화 (3초 후, 매번 실행)
 setTimeout(function() {
   try {
@@ -3652,6 +3688,9 @@ if (todayItem) {
           <div class="link-desc">문제 풀기 도전!</div>
         </a>
       </div>
+      <div style="text-align:center;margin-top:8px;font-family:'Gaegu',sans-serif;font-size:.85em;color:#888;">
+        💡 퀴즈 다 풀고 ⬇️ <b style="color:#ff8fb5;">매일 영어 표현 퀴즈</b>도 잊지 마요!
+      </div>
     `;
   }
 } else {
@@ -3695,6 +3734,28 @@ if (todayItem) {
   };
   const todayInfo = dateThemes[todayStr] || { theme: '영어 표현', emoji: '🇺🇸' };
 
+  // 오늘 영어 퀴즈 풀었는지 체크
+  let alreadyDone = false;
+  try {
+    const qh = JSON.parse(localStorage.getItem('hyewon_quiz_history') || '[]');
+    alreadyDone = qh.some(r =>
+      r.type === '영어표현퀴즈' &&
+      r.date === todayInfo.dateForCheck &&
+      r.score === r.total  // 100점 만점
+    );
+    // 100점 아니어도 풀기만 했으면 부드러운 표시
+    if (!alreadyDone) {
+      alreadyDone = qh.some(r => r.type === '영어표현퀴즈' && r.date === todayStr);
+    }
+  } catch(e) {}
+
+  // 안내 문구 (완료 여부에 따라)
+  const subText = alreadyDone
+    ? '✨ 오늘 풀었어요! 한번 더? +10P × 20문제'
+    : '🎯 꼭 풀어요! 200P 가져갈 수 있어요!';
+  const titleEmoji = alreadyDone ? '✅' : '🌟';
+  const animation = alreadyDone ? '' : 'animation: englishCardPulse 2s ease-in-out infinite;';
+
   // 카드 생성
   const card = document.createElement('div');
   card.id = 'englishQuizCard';
@@ -3702,23 +3763,32 @@ if (todayItem) {
     background: linear-gradient(135deg, #74b9ff 0%, #a29bfe 50%, #fd79a8 100%);
     color: white; border-radius: 22px; padding: 18px 18px;
     margin: 14px auto; max-width: 560px;
-    box-shadow: 0 6px 0 rgba(150, 110, 140, 0.15), 0 6px 20px rgba(116, 185, 255, 0.3);
+    box-shadow: 0 6px 0 rgba(150, 110, 140, 0.15), 0 6px 24px rgba(116, 185, 255, 0.4);
     display: flex; align-items: center; gap: 14px;
     cursor: pointer; transition: transform 0.18s ease;
-    border: 2.5px solid white;
+    border: 3px solid white;
+    ${animation}
   `;
-  card.onmouseover = () => card.style.transform = 'translateY(-2px) scale(1.01)';
+  card.onmouseover = () => card.style.transform = 'translateY(-2px) scale(1.02)';
   card.onmouseout = () => card.style.transform = '';
   card.onclick = () => { window.location.href = quizFile; };
 
+  // 펄스 애니메이션 (안 풀었을 때 카드가 살짝 두근두근)
+  if (!document.getElementById('englishCardPulseStyle')) {
+    const s = document.createElement('style');
+    s.id = 'englishCardPulseStyle';
+    s.textContent = '@keyframes englishCardPulse { 0%,100% { box-shadow: 0 6px 0 rgba(150,110,140,0.15), 0 6px 24px rgba(116,185,255,0.4); } 50% { box-shadow: 0 6px 0 rgba(150,110,140,0.15), 0 6px 32px rgba(255,143,181,0.6); } }';
+    document.head.appendChild(s);
+  }
+
   card.innerHTML = `
-    <div style="font-size:2.5em;">${todayInfo.emoji}</div>
+    <div style="font-size:2.6em;">${todayInfo.emoji}</div>
     <div style="flex:1;">
-      <div style="font-size:0.78em;opacity:0.9;font-family:'Jua',sans-serif;">🇺🇸 매일 영어 표현 퀴즈</div>
-      <div style="font-size:1.15em;font-weight:bold;font-family:'Jua',sans-serif;">${todayInfo.theme}</div>
-      <div style="font-size:0.78em;opacity:0.85;margin-top:2px;">20문제 · 정답 +10P · 🔊 발음 · 💡 힌트</div>
+      <div style="font-size:0.8em;opacity:0.95;font-family:'Jua',sans-serif;">${titleEmoji} 매일 영어 표현 퀴즈</div>
+      <div style="font-size:1.18em;font-weight:bold;font-family:'Jua',sans-serif;">${todayInfo.theme}</div>
+      <div style="font-size:0.8em;opacity:0.92;margin-top:3px;font-weight:bold;">${subText}</div>
     </div>
-    <div style="font-size:1.5em;background:rgba(255,255,255,0.2);border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center;">▶</div>
+    <div style="font-size:1.5em;background:rgba(255,255,255,0.25);border-radius:50%;width:42px;height:42px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">▶</div>
   `;
 
   // todayCard 바로 다음에 삽입
