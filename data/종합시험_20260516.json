@@ -1,0 +1,14 @@
+{
+  "date": "2026-05-16",
+  "folderName": "20260516",
+  "dayKo": "토",
+  "dayKoFull": "토요일",
+  "dayEn": "Saturday",
+  "dayIdx": 6,
+  "weekLabel": "Week 4",
+  "themeSummary": "우주·직업·자연·동작·모양",
+  "quizFileName": "혜원이_영단어_토요일_종합시험.html",
+  "includeDates": ["20260511", "20260512", "20260513", "20260514", "20260515"],
+  "bgGradient": "linear-gradient(180deg, #1a1a3e 0%, #4a2c5e 25%, #87ceeb 50%, #ff8fb5 75%, #fff3cd 100%);",
+  "headerTitle": "🎯 주간 종합 시험 🏆"
+}

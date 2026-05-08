@@ -2115,6 +2115,55 @@ const SCHEDULE = [
     folder: "20260510",
     vocab: "혜원이_영단어_일요일_복습.html",
     quiz: "혜원이_영단어_일요일_복습.html"
+  },
+  {
+    date: "2026-05-16", dayKo: "토", dayEn: "Sat",
+    theme: "종합시험 (Week 4)", emoji: "🏆",
+    folder: "20260516",
+    vocab: "혜원이_영단어_토요일_종합시험.html",
+    quiz: "혜원이_영단어_토요일_종합시험.html"
+  },
+  {
+    date: "2026-05-17", dayKo: "일", dayEn: "Sun",
+    theme: "일요일 복습 (Week 4)", emoji: "🌻",
+    folder: "20260517",
+    vocab: "혜원이_영단어_일요일_복습.html",
+    quiz: "혜원이_영단어_일요일_복습.html"
+  },
+  {
+    date: "2026-05-11", dayKo: "월", dayEn: "Mon",
+    theme: "우주와 과학", emoji: "🚀",
+    folder: "20260511",
+    vocab: "혜원이_영단어_월요일_우주.html",
+    quiz: "혜원이_영단어_월요일_퀴즈.html"
+  },
+  {
+    date: "2026-05-12", dayKo: "화", dayEn: "Tue",
+    theme: "직업과 꿈", emoji: "👨‍🍳",
+    folder: "20260512",
+    vocab: "혜원이_영단어_화요일_직업.html",
+    quiz: "혜원이_영단어_화요일_퀴즈.html"
+  },
+  {
+    date: "2026-05-13", dayKo: "수", dayEn: "Wed",
+    theme: "지구의 풍경", emoji: "🏞️",
+    folder: "20260513",
+    vocab: "혜원이_영단어_수요일_지구풍경.html",
+    quiz: "혜원이_영단어_수요일_퀴즈.html"
+  },
+  {
+    date: "2026-05-14", dayKo: "목", dayEn: "Thu",
+    theme: "특별한 동작", emoji: "💪",
+    folder: "20260514",
+    vocab: "혜원이_영단어_목요일_특별한동작.html",
+    quiz: "혜원이_영단어_목요일_퀴즈.html"
+  },
+  {
+    date: "2026-05-15", dayKo: "금", dayEn: "Fri",
+    theme: "모양·크기·위치", emoji: "📐",
+    folder: "20260515",
+    vocab: "혜원이_영단어_금요일_모양크기.html",
+    quiz: "혜원이_영단어_금요일_퀴즈.html"
   }
 ];
 
@@ -2771,41 +2820,8 @@ refreshRewardCards();
   }, 2000);
 })();
 
-// 🌟 일회성 칭찬 보너스 +1000P (한 번만!)
-(function showAwardBonus() {
-  const KEY = 'hyewon_award_1000p_v1';
-  if (localStorage.getItem(KEY)) return;  // 이미 받은 사람은 안 뜸
-
-  // 포인트 지급 (한 번만)
-  try {
-    const cur = parseInt(localStorage.getItem('hyewon_points') || '0');
-    const newTotal = cur + 1000;
-    localStorage.setItem('hyewon_points', String(newTotal));
-    // 시트에도 동기화
-    if (typeof syncStateToSheet === 'function') {
-      syncStateToSheet({ points: newTotal });
-    }
-    // 활동 기록
-    if (typeof syncToSheet === 'function') {
-      syncToSheet('🌟 칭찬 보너스', '혜원이 너무 잘하고 있어요!', 1000);
-    }
-    localStorage.setItem(KEY, '1');
-  } catch(e) { console.warn('[1000P 지급 실패]', e); }
-
-  // UI 갱신
-  if (typeof refreshRewardCards === 'function') refreshRewardCards();
-
-  // 화려한 팝업 (3.5초 뒤 - 다른 팝업 안 겹치게)
-  setTimeout(function() {
-    showCelebration(
-      '🌟 혜원아 너무 잘하고 있어!\n' +
-      '꾸준히 학습하는 모습이\n' +
-      '진짜 자랑스러워!\n\n' +
-      '🎁 칭찬 보너스 +1000P!\n' +
-      '계속 화이팅! 💪✨'
-    );
-  }, 3500);
-})();
+// 🌟 자동 칭찬 보너스 → 제거됨 (이제 관리자_보너스 시트로 이벤트성 지급)
+// 보너스 주고 싶으면 Google Sheets "관리자_보너스" 시트에 한 줄 추가하면 자동 적용!
 
 // 📊 홈페이지 열릴 때 현재 상태를 시트에 자동 동기화 (3초 후, 매번 실행)
 setTimeout(function() {
