@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>💖 혜원이 샤워 버튼 테스트</title>
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Gaegu:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  background:linear-gradient(180deg,#ffe4ed 0%,#ede0ff 50%,#dff7ec 100%);
+  background-attachment:fixed;
+  font-family:'Jua','Gaegu',sans-serif;
+  min-height:100vh;
+  color:#5d4c6d;
+  user-select:none;
+  -webkit-user-select:none;
+  -webkit-tap-highlight-color:transparent;
+  overflow-x:hidden;
+}
+.wrap{max-width:600px;margin:0 auto;padding:60px 20px 30px;}
+
+/* 우측 상단 동기화 표시 (실제 메인 화면과 동일) */
+.sync-indicator{
+  position:fixed;top:8px;right:10px;
+  background:rgba(255,255,255,0.95);
+  padding:5px 10px;border-radius:14px;
+  font-family:Jua,sans-serif;font-size:11px;color:#52b788;
+  z-index:9999;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* 💖 샤워 버튼 (실제 메인 화면과 동일!) */
+@keyframes hyewonShower {
+  0%   { transform: translate(-50%, 0) scale(0) rotate(-20deg); opacity: 0; }
+  15%  { transform: translate(-50%, 0) scale(1.3) rotate(0deg);  opacity: 1; }
+  50%  { transform: translate(-50%, -60px) scale(1) rotate(10deg); opacity: 1; }
+  100% { transform: translate(-50%, -180px) scale(0.6) rotate(20deg); opacity: 0; }
+}
+/* 💖 하트 파티클 - 360도로 튀어나가서 사라짐 */
+@keyframes fireworkBurst {
+  0%   { transform: translate(-50%, -50%) scale(0) rotate(0deg); opacity: 0; }
+  20%  { transform: translate(-50%, -50%) scale(1.4) rotate(0deg); opacity: 1; }
+  100% { transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(0.5) rotate(180deg); opacity: 0; }
+}
+/* 🎆 큰 폭죽 - 중앙에서 펑! */
+@keyframes bigBang {
+  0%   { transform: translate(-50%, -50%) scale(0) rotate(-20deg); opacity: 0; }
+  15%  { transform: translate(-50%, -50%) scale(1.3) rotate(0deg); opacity: 1; }
+  35%  { transform: translate(-50%, -50%) scale(1.7) rotate(10deg); opacity: 1; }
+  70%  { transform: translate(-50%, -50%) scale(2) rotate(20deg); opacity: 0.7; }
+  100% { transform: translate(-50%, -50%) scale(2.6) rotate(30deg); opacity: 0; }
+}
+/* 화면 살짝 흔들림 효과 */
+@keyframes screenShake {
+  0%,100% { transform: translate(0, 0); }
+  20% { transform: translate(-3px, 2px); }
+  40% { transform: translate(3px, -2px); }
+  60% { transform: translate(-2px, 3px); }
+  80% { transform: translate(2px, -1px); }
+}
+.shake { animation: screenShake 0.4s ease-in-out; }
+#showerBtn {
+  position: fixed; top: 8px; right: 130px;
+  background: linear-gradient(135deg, #ff8fb5, #ffd700);
+  color: white; border: 2.5px solid white;
+  border-radius: 50%; width: 38px; height: 38px;
+  font-size: 18px; cursor: pointer;
+  box-shadow: 0 3px 10px rgba(255, 143, 181, 0.4);
+  z-index: 9998;
+  display: flex; align-items: center; justify-content: center;
+  line-height: 1;
+  transition: transform 0.15s ease;
+  animation: pulseBtn 2s ease-in-out infinite;
+}
+@keyframes pulseBtn {
+  0%,100% { box-shadow: 0 3px 10px rgba(255, 143, 181, 0.4); }
+  50% { box-shadow: 0 3px 22px rgba(255, 143, 181, 0.7); }
+}
+#showerBtn:hover { transform: scale(1.15) rotate(-10deg); }
+#showerBtn:active { transform: scale(0.92); }
+
+/* 화살표 안내 */
+.arrow-hint{
+  position:fixed;top:55px;right:115px;
+  font-family:'Gaegu',sans-serif;font-size:14px;
+  color:#ff8fb5;font-weight:700;
+  z-index:9997;
+  background:white;padding:6px 12px;border-radius:14px;
+  box-shadow:0 4px 14px rgba(255,143,181,0.3);
+  border:2px solid #ff8fb5;
+  animation:bounce 1.2s ease-in-out infinite;
+}
+.arrow-hint:before{
+  content:'☝️';margin-right:6px;
+}
+@keyframes bounce{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-6px);}
+}
+
+/* 메인 콘텐츠 */
+.title-card{
+  background:white;
+  border-radius:24px;
+  padding:30px 24px;
+  text-align:center;
+  box-shadow:0 8px 28px rgba(150,110,140,0.15);
+  margin-bottom:20px;
+}
+.title-card h1{font-size:1.8em;margin-bottom:10px;}
+.title-card .sub{font-family:'Gaegu',sans-serif;color:#888;font-size:1.05em;line-height:1.6;}
+
+.sample-card{
+  background:linear-gradient(135deg,#fff8f3,#ffe4ed);
+  border-radius:22px;
+  padding:30px 22px;
+  text-align:center;
+  box-shadow:0 6px 20px rgba(150,110,140,0.1);
+  margin-bottom:18px;
+  border:3px solid white;
+}
+.sample-card .big-emoji{font-size:4em;margin-bottom:14px;}
+.sample-card h2{color:#ff8fb5;margin-bottom:10px;}
+.sample-card p{font-family:'Gaegu',sans-serif;line-height:1.7;font-size:1.05em;}
+
+.tip-card{
+  background:#fff3bf;
+  border-radius:18px;
+  padding:18px 20px;
+  margin-bottom:18px;
+  border:2px dashed #fbc02d;
+  font-family:'Gaegu',sans-serif;
+  line-height:1.8;
+}
+.tip-card b{color:#7c4f00;}
+
+.spacer{height:120px;}
+</style>
+</head>
+<body>
+
+<!-- 실제 메인 화면처럼 동기화 표시 -->
+<div class="sync-indicator">✅ 동기화됨</div>
+
+<!-- 💖 샤워 버튼 -->
+<button id="showerBtn" title="혜원이 등장!">💖</button>
+
+<!-- 안내 화살표 (테스트용) -->
+<div class="arrow-hint">눌러봐!</div>
+
+<div class="wrap">
+
+  <div class="title-card">
+    <h1>🌸 혜원이의 영어 놀이터 🌸</h1>
+    <p class="sub">테스트 화면 — 실제 메인 사이트랑 같이 동작해요!</p>
+  </div>
+
+  <div class="sample-card">
+    <div class="big-emoji">👆</div>
+    <h2>우측 상단 💖 버튼 눌러봐요!</h2>
+    <p>화면 곳곳에 <b style="color:#ff8fb5;">혜원이 사진</b>이 통통 떠올라요 ✨<br>
+       8~12장 랜덤 위치로 등장!</p>
+  </div>
+
+  <div class="tip-card">
+    <b>💡 테스트 팁:</b><br>
+    • 한 번 누르면 화면 가득 ✨<br>
+    • 빠르게 여러 번 누르면 더 많이!<br>
+    • 모바일에서도 똑같이 작동해요<br>
+    • 사진 위치는 매번 다르게 랜덤
+  </div>
+
+  <div class="sample-card">
+    <div class="big-emoji">📌</div>
+    <h2>이 데모는?</h2>
+    <p>실제 메인 사이트(index.html)에 똑같이 추가했어요.<br>
+       <b style="color:#ff8fb5;">업로드 후 혜원이 폰에서</b><br>
+       동일하게 작동해요!</p>
+  </div>
+
+  <div class="spacer"></div>
+
+</div>
+
+<script>
+// 💖 하트 파티클 풀 (다양한 색)
+const HEART_PARTICLES = ['💖','💕','💝','❤️','🩷','💗','💓','🩵','💜','🧡','💛','💚'];
+
+function makeFloatingPhoto(x, y) {
+  // 1) 메인 사진
+  const img = document.createElement('img');
+  img.src = 'hyewon/wrong/photo_05.jpg';
+  img.style.cssText = `
+    position: fixed;
+    left: ${x}px; top: ${y}px;
+    width: 90px; height: 90px;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 4px 22px rgba(255,143,181,0.5);
+    pointer-events: none;
+    z-index: 9999;
+    object-fit: cover;
+    animation: hyewonShower 1.8s ease-out forwards;
+  `;
+  img.onerror = function() {
+    this.replaceWith(Object.assign(document.createElement('div'), {
+      textContent: '💖',
+      style: img.style.cssText + 'background:rgba(255,143,181,0.9);display:flex;align-items:center;justify-content:center;font-size:55px;'
+    }));
+  };
+  document.body.appendChild(img);
+  setTimeout(() => img.remove(), 1800);
+
+  // 2) 💖 하트 파티클 5개 사방으로!
+  const particleCount = 5;
+  for (let i = 0; i < particleCount; i++) {
+    const particle = document.createElement('div');
+    particle.textContent = HEART_PARTICLES[Math.floor(Math.random() * HEART_PARTICLES.length)];
+    const angle = (Math.PI * 2 * i / particleCount) + (Math.random() - 0.5) * 0.5;
+    const distance = 80 + Math.random() * 80;
+    const dx = Math.cos(angle) * distance;
+    const dy = Math.sin(angle) * distance;
+    const size = 18 + Math.random() * 18;
+    particle.style.cssText = `
+      position: fixed;
+      left: ${x}px; top: ${y}px;
+      font-size: ${size}px;
+      pointer-events: none;
+      z-index: 9998;
+      transform: translate(-50%, -50%);
+      --dx: ${dx}px;
+      --dy: ${dy}px;
+      animation: fireworkBurst ${1.0 + Math.random() * 0.5}s ease-out forwards;
+    `;
+    document.body.appendChild(particle);
+    setTimeout(() => particle.remove(), 1500);
+  }
+}
+
+// ✨ 깜짝 하트 폭죽 - 화면 중앙에서 50개 하트가 사방으로!
+function triggerBigFirework() {
+  const cx = window.innerWidth / 2;
+  const cy = window.innerHeight / 2;
+
+  // 50개 하트 사방으로 대폭발!
+  const count = 50;
+  for (let i = 0; i < count; i++) {
+    const particle = document.createElement('div');
+    particle.textContent = HEART_PARTICLES[Math.floor(Math.random() * HEART_PARTICLES.length)];
+    const angle = (Math.PI * 2 * i / count) + (Math.random() - 0.5) * 0.3;
+    const distance = 200 + Math.random() * 280;
+    const dx = Math.cos(angle) * distance;
+    const dy = Math.sin(angle) * distance;
+    const size = 22 + Math.random() * 22;
+    particle.style.cssText = `
+      position: fixed; left: ${cx}px; top: ${cy}px;
+      font-size: ${size}px;
+      pointer-events: none; z-index: 9999;
+      transform: translate(-50%, -50%);
+      --dx: ${dx}px;
+      --dy: ${dy}px;
+      animation: fireworkBurst ${1.2 + Math.random() * 0.8}s ease-out forwards;
+    `;
+    document.body.appendChild(particle);
+    setTimeout(() => particle.remove(), 2000);
+  }
+}
+
+function triggerHyewonShower() {
+  // 한 번에 한 장 + 하트 5개
+  const margin = 80;
+  const x = margin + Math.random() * (window.innerWidth - margin * 2);
+  const y = margin + 100 + Math.random() * (window.innerHeight - margin * 2 - 200);
+  makeFloatingPhoto(x, y);
+
+  // 🎲 10번에 1번 (10%) 확률로 깜짝 하트 폭죽!
+  if (Math.random() < 0.10) {
+    setTimeout(() => triggerBigFirework(), 200);
+  }
+}
+
+document.getElementById('showerBtn').addEventListener('click', triggerHyewonShower);
+
+// 안내 화살표는 첫 클릭 후 사라짐
+document.getElementById('showerBtn').addEventListener('click', function() {
+  const hint = document.querySelector('.arrow-hint');
+  if (hint) {
+    hint.style.transition = 'opacity 0.3s';
+    hint.style.opacity = 0;
+    setTimeout(() => hint.remove(), 300);
+  }
+}, { once: true });
+</script>
+</body>
+</html>

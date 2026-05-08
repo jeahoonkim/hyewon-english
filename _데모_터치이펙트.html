@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>💖 화면 터치 이펙트 데모</title>
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Gaegu:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  background:linear-gradient(135deg,#ffe4ed 0%,#ede0ff 50%,#dff7ec 100%);
+  font-family:'Jua','Gaegu',sans-serif;
+  min-height:100vh;
+  color:#5d4c6d;
+  overflow-x:hidden;
+  user-select:none;
+  -webkit-user-select:none;
+  -webkit-tap-highlight-color:transparent;
+}
+.wrap{max-width:600px;margin:0 auto;padding:30px 20px;}
+h1{text-align:center;font-size:2em;margin-bottom:8px;}
+.sub{text-align:center;color:#888;margin-bottom:30px;font-family:'Gaegu',sans-serif;}
+
+.intro-card{
+  background:white;
+  border-radius:22px;
+  padding:24px;
+  box-shadow:0 6px 22px rgba(150,110,140,0.15);
+  margin-bottom:20px;
+  text-align:center;
+}
+.intro-card h2{color:#ff8fb5;font-size:1.4em;margin-bottom:10px;}
+.intro-card p{font-family:'Gaegu',sans-serif;font-size:1.1em;line-height:1.7;color:#5d4c6d;}
+
+.touch-area{
+  background:linear-gradient(135deg,#fff8f3,#ffe4ed);
+  border:3px dashed #ff8fb5;
+  border-radius:22px;
+  padding:60px 20px;
+  margin:20px 0;
+  text-align:center;
+  cursor:pointer;
+  min-height:300px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+}
+.touch-area .big-emoji{font-size:5em;margin-bottom:14px;animation:bobble 2s ease-in-out infinite;}
+@keyframes bobble{0%,100%{transform:rotate(-8deg);}50%{transform:rotate(8deg);}}
+.touch-area h3{font-size:1.3em;color:#ff8fb5;margin-bottom:8px;}
+.touch-area p{font-family:'Gaegu',sans-serif;color:#888;font-size:1em;}
+
+.options{
+  background:white;
+  border-radius:18px;
+  padding:18px;
+  box-shadow:0 4px 14px rgba(150,110,140,0.1);
+  margin-top:20px;
+}
+.options h3{color:#5d4c6d;font-size:1.1em;margin-bottom:10px;}
+.option-row{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px;
+  border-bottom:1px solid #f0e0ed;
+  font-family:'Gaegu',sans-serif;font-size:.95em;
+}
+.option-row:last-child{border-bottom:none;}
+.option-row label{cursor:pointer;}
+.option-row input[type="radio"]{margin-right:8px;}
+
+.counter{
+  display:inline-block;
+  background:#fff3bf;
+  padding:6px 14px;
+  border-radius:14px;
+  font-family:'Jua',sans-serif;
+  margin-top:10px;
+  color:#7c4f00;
+}
+
+/* 🎀 핵심: 터치 이펙트 사진 애니메이션 */
+.touch-effect{
+  position:fixed;
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  pointer-events:none;
+  z-index:9999;
+  border:3px solid #fff;
+  box-shadow:0 4px 18px rgba(0,0,0,0.25);
+  animation:floatUpFade 1.5s ease-out forwards;
+  object-fit:cover;
+}
+@keyframes floatUpFade{
+  0%{
+    transform:translate(-50%,-50%) scale(0) rotate(-15deg);
+    opacity:1;
+  }
+  20%{
+    transform:translate(-50%,-50%) scale(1.2) rotate(0deg);
+    opacity:1;
+  }
+  60%{
+    transform:translate(-50%,-90px) scale(1) rotate(8deg);
+    opacity:1;
+  }
+  100%{
+    transform:translate(-50%,-150px) scale(0.7) rotate(15deg);
+    opacity:0;
+  }
+}
+
+/* 작은 하트도 같이 */
+.touch-heart{
+  position:fixed;
+  pointer-events:none;
+  z-index:9998;
+  font-size:30px;
+  animation:heartFloat 1.2s ease-out forwards;
+}
+@keyframes heartFloat{
+  0%{transform:translate(-50%,-50%) scale(0);opacity:1;}
+  30%{transform:translate(-50%,-50%) scale(1.3);opacity:1;}
+  100%{transform:translate(-30%,-150px) scale(0.5);opacity:0;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>💖 화면 터치 이펙트 데모</h1>
+<p class="sub">화면 아무 데나 터치/클릭하면 혜원이 사진이 떠올라요!</p>
+
+<div class="intro-card">
+  <h2>👇 아래 영역 또는 빈 화면을 터치해보세요!</h2>
+  <p>여러 번 빠르게 눌러도 여러 사진이 동시에 떠올라요 ✨<br>
+     마치 카카오톡 길게 누르면 하트 나오는 것처럼!</p>
+</div>
+
+<div class="touch-area" id="touchZone">
+  <div class="big-emoji">👆</div>
+  <h3>여기 또는 화면 어디든!</h3>
+  <p>탭/클릭하면 혜원이 등장</p>
+  <div class="counter">터치 횟수: <b id="counter">0</b>회</div>
+</div>
+
+<div class="options">
+  <h3>🎨 사진 선택 (실제로는 1장만 정해요)</h3>
+  <div class="option-row">
+    <label><input type="radio" name="photo" value="../hyewon/wrong/photo_03.jpg" checked> 오답 #3 (귀여운 표정)</label>
+  </div>
+  <div class="option-row">
+    <label><input type="radio" name="photo" value="../hyewon/wrong/photo_01.jpg"> 오답 #1</label>
+  </div>
+  <div class="option-row">
+    <label><input type="radio" name="photo" value="../hyewon/wrong/photo_02.jpg"> 오답 #2</label>
+  </div>
+  <div class="option-row">
+    <label><input type="radio" name="photo" value="../hyewon/wrong/photo_04.jpg"> 오답 #4</label>
+  </div>
+  <div class="option-row">
+    <label><input type="radio" name="photo" value="../hyewon/wrong/photo_05.jpg"> 오답 #5</label>
+  </div>
+  <div class="option-row">
+    <label><input type="radio" name="photo" value="../hyewon/wrong/photo_06.jpg"> 오답 #6</label>
+  </div>
+  <div class="option-row">
+    <label><input type="radio" name="photo" value="random"> 🎲 랜덤 (매번 다른 사진!)</label>
+  </div>
+</div>
+
+<div class="options">
+  <h3>⚙️ 효과 옵션</h3>
+  <div class="option-row">
+    <label><input type="checkbox" id="optHearts" checked> 💕 작은 하트도 같이 떠오름</label>
+  </div>
+  <div class="option-row">
+    <label><input type="checkbox" id="optThrottle"> ⏱️ 너무 자주 안 뜨게 (0.3초 쓰로틀)</label>
+  </div>
+</div>
+
+</div>
+
+<script>
+const WRONG_PHOTOS = [
+  '../hyewon/wrong/photo_01.jpg',
+  '../hyewon/wrong/photo_02.jpg',
+  '../hyewon/wrong/photo_03.jpg',
+  '../hyewon/wrong/photo_04.jpg',
+  '../hyewon/wrong/photo_05.jpg',
+  '../hyewon/wrong/photo_06.jpg'
+];
+const HEARTS = ['💕','💖','💝','✨','🌟','💗','🌸'];
+
+let counter = 0;
+let lastTouchTime = 0;
+
+function makeTouchEffect(x, y) {
+  // 쓰로틀 체크
+  if (document.getElementById('optThrottle').checked) {
+    const now = Date.now();
+    if (now - lastTouchTime < 300) return;
+    lastTouchTime = now;
+  }
+
+  counter++;
+  document.getElementById('counter').textContent = counter;
+
+  // 사진 선택
+  let photoUrl = document.querySelector('input[name="photo"]:checked').value;
+  if (photoUrl === 'random') {
+    photoUrl = WRONG_PHOTOS[Math.floor(Math.random() * WRONG_PHOTOS.length)];
+  }
+
+  // 사진 이펙트
+  const img = document.createElement('img');
+  img.className = 'touch-effect';
+  img.src = photoUrl;
+  img.style.left = x + 'px';
+  img.style.top = y + 'px';
+  // 약간 랜덤 회전 추가
+  const rotation = (Math.random() - 0.5) * 30;
+  img.style.setProperty('--start-rotation', rotation + 'deg');
+  document.body.appendChild(img);
+  setTimeout(() => img.remove(), 1500);
+
+  // 작은 하트 추가 (옵션)
+  if (document.getElementById('optHearts').checked) {
+    for (let i = 0; i < 3; i++) {
+      setTimeout(() => {
+        const heart = document.createElement('div');
+        heart.className = 'touch-heart';
+        heart.textContent = HEARTS[Math.floor(Math.random() * HEARTS.length)];
+        // 사진 주변에 흩뿌리기
+        const offsetX = (Math.random() - 0.5) * 80;
+        const offsetY = (Math.random() - 0.5) * 30;
+        heart.style.left = (x + offsetX) + 'px';
+        heart.style.top = (y + offsetY) + 'px';
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 1200);
+      }, i * 80);
+    }
+  }
+}
+
+// 화면 어디든 클릭/터치 시 발동
+function handleTouch(e) {
+  // 라디오 버튼이나 체크박스는 무시
+  if (e.target.matches('input, label')) return;
+
+  let x, y;
+  if (e.touches && e.touches[0]) {
+    x = e.touches[0].clientX;
+    y = e.touches[0].clientY;
+  } else {
+    x = e.clientX;
+    y = e.clientY;
+  }
+  makeTouchEffect(x, y);
+}
+
+document.addEventListener('click', handleTouch);
+// 모바일에서 더 빠른 반응 위해 touchstart도 (단, click과 중복 방지)
+let touchHandled = false;
+document.addEventListener('touchstart', function(e) {
+  touchHandled = true;
+  handleTouch(e);
+  setTimeout(() => { touchHandled = false; }, 100);
+}, { passive: true });
+</script>
+</body>
+</html>
