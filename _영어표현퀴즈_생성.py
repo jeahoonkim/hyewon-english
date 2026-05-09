@@ -463,6 +463,237 @@ QUIZZES = {
         ]
     },
 
+    # ═════════════════════════════════════════════
+    # 5/18 (월) - 옷과 패션
+    # ═════════════════════════════════════════════
+    '20260518': {
+        'date': '2026-05-18',
+        'day_ko': '월',
+        'theme': '옷과 패션',
+        'theme_emoji': '👕',
+        'description': '오늘 어떤 옷 입었어? 멋쟁이 영어!',
+        'questions': [
+            {'en':'What are you wearing?','choices':['뭐 먹어?','뭐 입었어?','어디 가?','뭐 해?'],'ans':1,'hint':('wear','입다'),'explain':'wear = 입다'},
+            {'en':"I'm wearing a T-shirt.",'choices':['티셔츠 입었어','바지 입었어','신발 신었어','모자 썼어'],'ans':0,'hint':('T-shirt','티셔츠'),'explain':'T-shirt = 티셔츠'},
+            {'en':'These pants are too long.','choices':['이 바지 너무 짧아','이 바지 너무 길어','이 바지 너무 작아','이 바지 너무 비싸'],'ans':1,'hint':('pants','바지'),'explain':'pants = 바지'},
+            {'en':'Mom bought me a dress.','choices':['엄마가 가방 사줬어','엄마가 신발 사줬어','엄마가 원피스 사줬어','엄마가 모자 사줬어'],'ans':2,'hint':('dress','원피스, 드레스'),'explain':'dress = 원피스'},
+            {'en':'My shoes are new.','choices':['내 신발이 낡았어','내 신발이 새 거야','내 신발이 작아','내 신발 잃어버렸어'],'ans':1,'hint':('shoes','신발'),'explain':'shoes = 신발 (한 켤레)'},
+            {'en':"Don't forget your hat!",'choices':['모자 잊지 마!','우산 잊지 마!','가방 잊지 마!','책 잊지 마!'],'ans':0,'hint':('hat','모자'),'explain':'hat = 모자'},
+            {'en':'I love this jacket.','choices':['이 바지 좋아','이 재킷 정말 좋아','이 셔츠 좋아','이 스커트 좋아'],'ans':1,'hint':('jacket','재킷, 자켓'),'explain':'jacket = 재킷'},
+            {'en':"It's cold. Wear a coat.",'choices':['더우니 반팔','추우니 코트 입어','비오니 우비','맑으니 모자'],'ans':1,'hint':('coat','코트'),'explain':'coat = 두꺼운 외투'},
+            {'en':'Put on your socks.','choices':['양말 신어','양말 빨아','양말 사','양말 벗어'],'ans':0,'hint':('put on','입다, 신다'),'explain':'put on = 입다/신다'},
+            {'en':'Take off your shoes.','choices':['신발 신어','신발 벗어','신발 사','신발 닦아'],'ans':1,'hint':('take off','벗다'),'explain':'take off = 벗다'},
+            {'en':'My uniform is blue.','choices':['교복이 빨간색','교복이 파란색','교복이 검은색','교복이 초록색'],'ans':1,'hint':('uniform','교복, 유니폼'),'explain':'uniform = 교복'},
+            {'en':'I need new gloves.','choices':['새 장갑이 필요해','새 양말이 필요해','새 모자가 필요해','새 책이 필요해'],'ans':0,'hint':('gloves','장갑'),'explain':'gloves = 장갑'},
+            {'en':'Where is my scarf?','choices':['내 가방 어디 있어?','내 목도리 어디 있어?','내 신발 어디 있어?','내 책 어디 있어?'],'ans':1,'hint':('scarf','목도리'),'explain':'scarf = 목도리'},
+            {'en':'You look pretty today.','choices':['너 오늘 예뻐 보여','너 오늘 슬퍼 보여','너 오늘 피곤해 보여','너 오늘 화나 보여'],'ans':0,'hint':('pretty','예쁜'),'explain':'pretty = 예쁜'},
+            {'en':'That sweater is warm.','choices':['그 스웨터 차가워','그 스웨터 따뜻해','그 스웨터 비싸','그 스웨터 작아'],'ans':1,'hint':('sweater','스웨터'),'explain':'sweater = 스웨터'},
+            {'en':'I want a pink ribbon.','choices':['분홍 리본 원해','파란 모자 원해','노란 가방 원해','초록 옷 원해'],'ans':0,'hint':('ribbon','리본'),'explain':'ribbon = 리본'},
+            {'en':'My new bag is cute.','choices':['내 새 가방 귀여워','내 새 신발 귀여워','내 새 옷 귀여워','내 새 모자 귀여워'],'ans':0,'hint':('bag','가방'),'explain':'bag = 가방'},
+            {'en':'Try this on, please.','choices':['이거 한번 입어봐','이거 한번 들어봐','이거 한번 먹어봐','이거 한번 사봐'],'ans':0,'hint':('try on','입어보다'),'explain':'try on = 옷을 입어보다'},
+            {'en':'It looks great on you!','choices':['너한테 잘 어울려!','너한테 안 어울려!','너 가져가!','너 신어봐!'],'ans':0,'hint':('look great','잘 어울리다'),'explain':'look great on you = 잘 어울려'},
+            {'en':"Let's go shopping for clothes.",'choices':['옷 사러 가자','음식 사러 가자','책 사러 가자','약 사러 가자'],'ans':0,'hint':('clothes','옷'),'explain':'clothes = 옷'},
+        ]
+    },
+
+    # ═════════════════════════════════════════════
+    # 5/19 (화) - 학교 과목
+    # ═════════════════════════════════════════════
+    '20260519': {
+        'date': '2026-05-19',
+        'day_ko': '화',
+        'theme': '학교 과목',
+        'theme_emoji': '📚',
+        'description': '어떤 과목 좋아해? 영어로 말해봐!',
+        'questions': [
+            {'en':"What's your favorite subject?",'choices':['좋아하는 음식?','좋아하는 과목?','좋아하는 색?','좋아하는 친구?'],'ans':1,'hint':('subject','과목'),'explain':'subject = 과목'},
+            {'en':'I love math.','choices':['수학 좋아해','과학 좋아해','국어 좋아해','체육 좋아해'],'ans':0,'hint':('math','수학'),'explain':'math = 수학'},
+            {'en':'Science is fun!','choices':['과학 재미없어!','과학 재미있어!','과학 어려워!','과학 끝났어!'],'ans':1,'hint':('science','과학'),'explain':'science = 과학'},
+            {'en':'Korean class is hard.','choices':['수학 시간 어려워','국어 시간 어려워','영어 시간 어려워','과학 시간 어려워'],'ans':1,'hint':('Korean','국어'),'explain':'Korean = 국어'},
+            {'en':"I'm good at art.",'choices':['미술 잘해','음악 잘해','체육 잘해','수학 잘해'],'ans':0,'hint':('art','미술'),'explain':'art = 미술'},
+            {'en':'Music makes me happy.','choices':['음악이 행복하게 해줘','노래 슬퍼','악기 어려워','조용히 해'],'ans':0,'hint':('music','음악'),'explain':'music = 음악'},
+            {'en':'P.E. is my favorite!','choices':['체육이 가장 좋아!','수학이 가장 좋아!','미술이 가장 좋아!','과학이 가장 좋아!'],'ans':0,'hint':('P.E.','체육 (Physical Education)'),'explain':'P.E. = 체육'},
+            {'en':"I don't like history.",'choices':['역사 좋아해','역사 안 좋아해','역사 잘해','역사 어려워'],'ans':1,'hint':('history','역사'),'explain':'history = 역사'},
+            {'en':'English is interesting.','choices':['영어 지루해','영어 흥미로워','영어 어려워','영어 쉬워'],'ans':1,'hint':('interesting','흥미로운'),'explain':'interesting = 흥미로운'},
+            {'en':'Social studies is useful.','choices':['사회는 유용해','사회는 어려워','사회는 지루해','사회는 짧아'],'ans':0,'hint':('social studies','사회'),'explain':'social studies = 사회'},
+            {'en':'I have homework today.','choices':['오늘 시험 있어','오늘 숙제 있어','오늘 휴일이야','오늘 쉬어'],'ans':1,'hint':('homework','숙제'),'explain':'homework = 숙제'},
+            {'en':'The test is tomorrow.','choices':['시험은 어제였어','시험은 오늘이야','시험은 내일이야','시험은 다음 주야'],'ans':2,'hint':('test','시험'),'explain':'test = 시험'},
+            {'en':'I got a good grade!','choices':['시험 잘 봤어!','선물 받았어!','놀러 가!','집에 가!'],'ans':0,'hint':('grade','성적, 학년'),'explain':'good grade = 좋은 성적'},
+            {'en':'Study hard, please.','choices':['열심히 놀아','열심히 공부해','열심히 자','열심히 먹어'],'ans':1,'hint':('study','공부하다'),'explain':'study = 공부하다'},
+            {'en':'I forgot my book.','choices':['책 잊고 왔어','책 사줘','책 줄게','책 봐'],'ans':0,'hint':('forgot','잊다(과거)'),'explain':'forgot = 잊었다'},
+            {'en':'Open the textbook.','choices':['교과서 펴','교과서 닫아','교과서 사','교과서 줘'],'ans':0,'hint':('textbook','교과서'),'explain':'textbook = 교과서'},
+            {'en':'Listen carefully.','choices':['빨리 와','조심히 들어','크게 말해','조용히 해'],'ans':1,'hint':('carefully','신중히'),'explain':'listen carefully = 잘 들어'},
+            {'en':'I have a question.','choices':['답 있어','질문 있어','시간 있어','책 있어'],'ans':1,'hint':('question','질문'),'explain':'question = 질문'},
+            {'en':'Thank you, teacher.','choices':['죄송해요, 선생님','감사해요, 선생님','안녕, 선생님','잘 가, 선생님'],'ans':1,'hint':('teacher','선생님'),'explain':'thank you = 감사합니다'},
+            {'en':'School is over.','choices':['학교 시작이야','학교 끝났어','학교 어려워','학교 재미있어'],'ans':1,'hint':('over','끝난'),'explain':'be over = 끝나다'},
+        ]
+    },
+
+    # ═════════════════════════════════════════════
+    # 5/20 (수) - 취미·활동
+    # ═════════════════════════════════════════════
+    '20260520': {
+        'date': '2026-05-20',
+        'day_ko': '수',
+        'theme': '취미와 활동',
+        'theme_emoji': '🎨',
+        'description': '쉬는 시간에 뭐 해? 취미가 뭐야?',
+        'questions': [
+            {'en':"What's your hobby?",'choices':['이름이 뭐야?','취미가 뭐야?','나이가 뭐야?','색깔이 뭐야?'],'ans':1,'hint':('hobby','취미'),'explain':'hobby = 취미'},
+            {'en':'I like painting.','choices':['그림 그리기 좋아해','노래 좋아해','책 좋아해','게임 좋아해'],'ans':0,'hint':('painting','그림 그리기'),'explain':'painting = 그림 그리기'},
+            {'en':'I enjoy singing.','choices':['노래하기 즐겨','춤추기 즐겨','읽기 즐겨','쓰기 즐겨'],'ans':0,'hint':('enjoy','즐기다'),'explain':'enjoy ~ing = ~을 즐기다'},
+            {'en':'Reading is my hobby.','choices':['책 읽기가 취미','음악이 취미','요리가 취미','운동이 취미'],'ans':0,'hint':('reading','독서'),'explain':'reading = 독서'},
+            {'en':'I collect stickers.','choices':['스티커 모아','우표 모아','동전 모아','조개 모아'],'ans':0,'hint':('collect','모으다'),'explain':'collect = 모으다, 수집하다'},
+            {'en':'I play the piano.','choices':['피아노 쳐','기타 쳐','드럼 쳐','바이올린 켜'],'ans':0,'hint':('piano','피아노'),'explain':'play the piano = 피아노 치다'},
+            {'en':'My favorite movie is funny.','choices':['좋아하는 영화는 슬퍼','좋아하는 영화는 웃겨','좋아하는 영화는 무서워','좋아하는 영화는 길어'],'ans':1,'hint':('movie','영화'),'explain':'movie = 영화'},
+            {'en':'I love K-pop.','choices':['트로트 좋아해','케이팝 좋아해','클래식 좋아해','재즈 좋아해'],'ans':1,'hint':('K-pop','케이팝'),'explain':'K-pop = 한국 팝 음악'},
+            {'en':'I take pictures with my phone.','choices':['전화 걸어','사진 찍어','문자 해','음악 들어'],'ans':1,'hint':('take pictures','사진 찍다'),'explain':'take pictures = 사진 찍다'},
+            {'en':'Drawing is fun.','choices':['그림 그리기 재미있어','노래하기 재미있어','요리하기 재미있어','운동하기 재미있어'],'ans':0,'hint':('drawing','그림 그리기'),'explain':'drawing = 그림 그리기'},
+            {'en':"Let's watch a movie!",'choices':['책 보자!','영화 보자!','산책 가자!','자자!'],'ans':1,'hint':('watch','보다'),'explain':"watch a movie = 영화를 보다"},
+            {'en':'I read comic books.','choices':['만화책 읽어','동화책 읽어','잡지 읽어','신문 읽어'],'ans':0,'hint':('comic','만화'),'explain':'comic = 만화'},
+            {'en':'I love computer games.','choices':['컴퓨터 게임 정말 좋아','보드 게임 정말 좋아','카드 게임 정말 좋아','퍼즐 정말 좋아'],'ans':0,'hint':('computer','컴퓨터'),'explain':'computer game = 컴퓨터 게임'},
+            {'en':'My puzzle is hard.','choices':['내 퍼즐 쉬워','내 퍼즐 어려워','내 퍼즐 작아','내 퍼즐 새 거야'],'ans':1,'hint':('puzzle','퍼즐'),'explain':'puzzle = 퍼즐'},
+            {'en':'I write a diary every day.','choices':['매일 일기 써','매일 운동해','매일 노래해','매일 그려'],'ans':0,'hint':('diary','일기'),'explain':'diary = 일기'},
+            {'en':'I like making things.','choices':['만들기 좋아해','부수기 좋아해','사기 좋아해','보기 좋아해'],'ans':0,'hint':('make','만들다'),'explain':'making things = 무언가 만들기'},
+            {'en':'I want to learn guitar.','choices':['기타 배우고 싶어','피아노 배우고 싶어','바이올린 배우고 싶어','드럼 배우고 싶어'],'ans':0,'hint':('learn','배우다'),'explain':'learn = 배우다'},
+            {'en':"Let's go to the park.",'choices':['공원 가자','학교 가자','집에 가자','가게 가자'],'ans':0,'hint':('park','공원'),'explain':'park = 공원'},
+            {'en':'I love watching cartoons.','choices':['만화영화 보는 거 좋아','뉴스 보는 거 좋아','드라마 보는 거 좋아','영화 보는 거 좋아'],'ans':0,'hint':('cartoons','만화영화'),'explain':'cartoons = 만화영화'},
+            {'en':'My free time is precious.','choices':['내 자유시간은 소중해','내 시간 없어','내 시간 길어','내 시간 모자라'],'ans':0,'hint':('precious','소중한'),'explain':'free time = 자유시간, precious = 소중한'},
+        ]
+    },
+
+    # ═════════════════════════════════════════════
+    # 5/21 (목) - 몸·건강
+    # ═════════════════════════════════════════════
+    '20260521': {
+        'date': '2026-05-21',
+        'day_ko': '목',
+        'theme': '몸과 건강',
+        'theme_emoji': '🏥',
+        'description': '내 몸과 건강을 영어로!',
+        'questions': [
+            {'en':'My head hurts.','choices':['머리 아파','배 아파','다리 아파','이 아파'],'ans':0,'hint':('head','머리'),'explain':'head = 머리'},
+            {'en':'I have a stomachache.','choices':['머리 아파','배 아파','목 아파','다리 아파'],'ans':1,'hint':('stomachache','복통'),'explain':'stomach = 배'},
+            {'en':'My eyes are tired.','choices':['눈이 피곤해','입이 피곤해','코가 피곤해','귀가 피곤해'],'ans':0,'hint':('eyes','눈'),'explain':'eyes = 눈 (양쪽)'},
+            {'en':'Open your mouth wide.','choices':['눈 떠','입 크게 벌려','귀 막아','손 들어'],'ans':1,'hint':('mouth','입'),'explain':'mouth = 입'},
+            {'en':'My teeth are clean.','choices':['내 이 깨끗해','내 손 깨끗해','내 발 깨끗해','내 옷 깨끗해'],'ans':0,'hint':('teeth','이(복수)'),'explain':'teeth = 이(여러 개)'},
+            {'en':'My arm is strong.','choices':['내 팔 약해','내 팔 강해','내 다리 강해','내 머리 강해'],'ans':1,'hint':('arm','팔'),'explain':'arm = 팔'},
+            {'en':'My legs are tired.','choices':['내 다리 아파','내 다리 피곤해','내 다리 길어','내 다리 빨라'],'ans':1,'hint':('legs','다리(복수)'),'explain':'legs = 다리'},
+            {'en':'Wash your hands!','choices':['손 씻어!','발 씻어!','얼굴 씻어!','머리 감아!'],'ans':0,'hint':('hands','손(복수)'),'explain':'hands = 손'},
+            {'en':'Be careful with your fingers.','choices':['손가락 조심해','발가락 조심해','머리 조심해','팔 조심해'],'ans':0,'hint':('fingers','손가락'),'explain':'fingers = 손가락들'},
+            {'en':'I have a runny nose.','choices':['코 막혀','콧물 나','코 아파','코 안 보여'],'ans':1,'hint':('nose','코'),'explain':'runny nose = 콧물'},
+            {'en':"I'm sick today.",'choices':['오늘 신나','오늘 아파','오늘 졸려','오늘 배고파'],'ans':1,'hint':('sick','아픈'),'explain':'sick = 아픈'},
+            {'en':'Take medicine, please.','choices':['약 먹어','물 마셔','자','일어나'],'ans':0,'hint':('medicine','약'),'explain':'take medicine = 약을 먹다'},
+            {'en':"I'm healthy.",'choices':['건강해','아파','피곤해','배고파'],'ans':0,'hint':('healthy','건강한'),'explain':'healthy = 건강한'},
+            {'en':'Drink water often.','choices':['물 자주 마셔','음식 자주 먹어','잠 자주 자','책 자주 읽어'],'ans':0,'hint':('often','자주'),'explain':'drink water = 물을 마시다'},
+            {'en':'Sleep well tonight.','choices':['오늘 밤 잘 자','오늘 밤 늦게 자','오늘 밤 일찍 가','오늘 밤 노래해'],'ans':0,'hint':('sleep','자다'),'explain':'sleep well = 잘 자다'},
+            {'en':'Exercise is good for you.','choices':['운동은 너에게 좋아','운동은 너에게 나빠','책은 너에게 좋아','음식은 너에게 좋아'],'ans':0,'hint':('exercise','운동'),'explain':'exercise = 운동'},
+            {'en':'I see a doctor today.','choices':['오늘 의사 만나','오늘 친구 만나','오늘 학교 가','오늘 집에 있어'],'ans':0,'hint':('doctor','의사'),'explain':'see a doctor = 의사를 만나러 가다'},
+            {'en':'My heart is beating fast.','choices':['심장이 천천히 뛰어','심장이 빨리 뛰어','심장이 멈췄어','심장이 안 뛰어'],'ans':1,'hint':('heart','심장'),'explain':'heart = 심장'},
+            {'en':'I feel better now.','choices':['지금 더 기분 좋아','지금 더 아파','지금 슬퍼','지금 화나'],'ans':0,'hint':('feel','느끼다'),'explain':'feel better = 더 좋아지다'},
+            {'en':'Get well soon!','choices':['빨리 나아!','빨리 가!','잘 가!','빨리 먹어!'],'ans':0,'hint':('get well','낫다'),'explain':'get well soon = 빨리 나아!'},
+        ]
+    },
+
+    # ═════════════════════════════════════════════
+    # 5/22 (금) - 여행·교통
+    # ═════════════════════════════════════════════
+    '20260522': {
+        'date': '2026-05-22',
+        'day_ko': '금',
+        'theme': '여행과 교통',
+        'theme_emoji': '✈️',
+        'description': '신나는 여행! 어디로 갈까?',
+        'questions': [
+            {'en':'I want to travel.','choices':['일하고 싶어','여행하고 싶어','자고 싶어','쉬고 싶어'],'ans':1,'hint':('travel','여행하다'),'explain':'travel = 여행하다'},
+            {'en':"Let's take an airplane.",'choices':['자전거 타자','비행기 타자','차 타자','배 타자'],'ans':1,'hint':('airplane','비행기'),'explain':'airplane = 비행기'},
+            {'en':'I packed my suitcase.','choices':['가방 정리했어','가방 잃었어','가방 샀어','가방 찾아'],'ans':0,'hint':('suitcase','여행가방'),'explain':'suitcase = 여행가방'},
+            {'en':'Where is my ticket?','choices':['내 표 어디 있어?','내 가방 어디 있어?','내 시계 어디 있어?','내 책 어디 있어?'],'ans':0,'hint':('ticket','표, 티켓'),'explain':'ticket = 표'},
+            {'en':"We'll stay at a hotel.",'choices':['호텔에서 묵을 거야','집에 갈 거야','학교 갈 거야','병원 갈 거야'],'ans':0,'hint':('hotel','호텔'),'explain':'stay = 묵다'},
+            {'en':'I want to visit Paris.','choices':['파리에 가고 싶어','뉴욕에 가고 싶어','도쿄에 가고 싶어','서울에 가고 싶어'],'ans':0,'hint':('Paris','파리'),'explain':'visit = 방문하다'},
+            {'en':"Let's take a train.",'choices':['기차 타자','버스 타자','자전거 타자','걸어가자'],'ans':0,'hint':('train','기차'),'explain':'take a train = 기차를 타다'},
+            {'en':'The bus is late.','choices':['버스 늦었어','버스 일찍 왔어','버스 떠났어','버스 안 왔어'],'ans':0,'hint':('late','늦은'),'explain':'late = 늦은'},
+            {'en':'How much is the ticket?','choices':['표 얼마야?','표 어디야?','표 누구 거야?','표 뭐야?'],'ans':0,'hint':('how much','얼마'),'explain':'how much = 얼마'},
+            {'en':'I love the beach.','choices':['해변 정말 좋아','산 정말 좋아','강 정말 좋아','시내 정말 좋아'],'ans':0,'hint':('beach','해변'),'explain':'beach = 해변'},
+            {'en':"I'm taking a boat.",'choices':['배 타고 있어','차 타고 있어','걸어가고 있어','달리고 있어'],'ans':0,'hint':('boat','배'),'explain':'boat = 배'},
+            {'en':"Don't forget your passport.",'choices':['여권 잊지 마','지갑 잊지 마','전화 잊지 마','우산 잊지 마'],'ans':0,'hint':('passport','여권'),'explain':'passport = 여권'},
+            {'en':'The flight is at 9 AM.','choices':['비행기는 오전 9시','비행기는 오후 9시','기차는 오전 9시','버스는 오전 9시'],'ans':0,'hint':('flight','항공편'),'explain':'flight = 비행기 편'},
+            {'en':"Let's go to the airport.",'choices':['공항 가자','지하철역 가자','터미널 가자','정거장 가자'],'ans':0,'hint':('airport','공항'),'explain':'airport = 공항'},
+            {'en':"I'm tired from walking.",'choices':['걸어서 피곤해','뛰어서 피곤해','자서 피곤해','놀아서 피곤해'],'ans':0,'hint':('walking','걷기'),'explain':'walking = 걷는 것'},
+            {'en':'Look at the map.','choices':['지도 봐','책 봐','시계 봐','TV 봐'],'ans':0,'hint':('map','지도'),'explain':'map = 지도'},
+            {'en':"I'm lost.",'choices':['길 잃었어','길 찾았어','집에 왔어','가게 갔어'],'ans':0,'hint':('lost','잃은'),'explain':"I'm lost = 길 잃었어"},
+            {'en':"It's a long trip.",'choices':['짧은 여행이야','긴 여행이야','쉬운 여행이야','지루한 여행이야'],'ans':1,'hint':('trip','여행'),'explain':'trip = 여행'},
+            {'en':'Have a safe trip!','choices':['안전한 여행!','즐거운 일!','맛있는 식사!','신나는 시간!'],'ans':0,'hint':('safe','안전한'),'explain':'safe trip = 안전한 여행'},
+            {'en':"Let's take a taxi.",'choices':['택시 타자','버스 타자','걷자','자전거 타자'],'ans':0,'hint':('taxi','택시'),'explain':'take a taxi = 택시 타다'},
+        ]
+    },
+
+    # ═════════════════════════════════════════════
+    # 5/23 (토) - 쇼핑·돈
+    # ═════════════════════════════════════════════
+    '20260523': {
+        'date': '2026-05-23',
+        'day_ko': '토',
+        'theme': '쇼핑과 돈',
+        'theme_emoji': '🛍️',
+        'description': '얼마예요? 살래요!',
+        'questions': [
+            {'en':'How much is it?','choices':['뭐예요?','얼마예요?','어디예요?','왜요?'],'ans':1,'hint':('how much','얼마'),'explain':'how much = 얼마'},
+            {'en':"It's 5,000 won.",'choices':['5천원이에요','5만원이에요','5달러예요','5엔이에요'],'ans':0,'hint':('won','원 (한국 돈)'),'explain':'won = 한국 돈 단위'},
+            {'en':"That's expensive.",'choices':['그거 싸요','그거 비싸요','그거 작아요','그거 커요'],'ans':1,'hint':('expensive','비싼'),'explain':'expensive = 비싼'},
+            {'en':"It's cheap.",'choices':['비싸요','싸요','없어요','커요'],'ans':1,'hint':('cheap','싼'),'explain':'cheap = 싼'},
+            {'en':"I'll buy this.",'choices':['이거 살게요','이거 안 살래요','이거 줄게요','이거 봐요'],'ans':0,'hint':('buy','사다'),'explain':'buy = 사다'},
+            {'en':'Where is the store?','choices':['가게 어디?','학교 어디?','집 어디?','병원 어디?'],'ans':0,'hint':('store','가게'),'explain':'store = 가게'},
+            {'en':"Let's go shopping.",'choices':['쇼핑하러 가자','자러 가자','놀러 가자','일하러 가자'],'ans':0,'hint':('shopping','쇼핑'),'explain':'go shopping = 쇼핑하러 가다'},
+            {'en':'I need money.','choices':['돈 필요해','시간 필요해','음식 필요해','책 필요해'],'ans':0,'hint':('money','돈'),'explain':'money = 돈'},
+            {'en':'I have 1,000 won.','choices':['천원 있어','만원 있어','오천원 있어','없어'],'ans':0,'hint':('have','가지고 있다'),'explain':'I have ~ = ~를 가지고 있다'},
+            {'en':"Can I have a discount?",'choices':['할인 돼요?','선물 돼요?','반품 돼요?','교환 돼요?'],'ans':0,'hint':('discount','할인'),'explain':'discount = 할인'},
+            {'en':'Cash or card?','choices':['현금? 카드?','크게? 작게?','빨리? 천천히?','뜨겁게? 차갑게?'],'ans':0,'hint':('cash','현금'),'explain':'cash = 현금'},
+            {'en':"I'll pay by card.",'choices':['카드로 낼게요','현금으로 낼게요','수표로 낼게요','나중에 낼게요'],'ans':0,'hint':('pay','지불하다'),'explain':'pay by card = 카드로 결제'},
+            {'en':"It doesn't work.",'choices':['이거 작동해','이거 작동 안 해','이거 새 거야','이거 헌 거야'],'ans':1,'hint':('work','작동하다'),'explain':"doesn't work = 작동 안 해"},
+            {'en':"I want to return this.",'choices':['이거 반품하고 싶어','이거 사고 싶어','이거 줄게','이거 가질게'],'ans':0,'hint':('return','반품하다'),'explain':'return = 반품하다'},
+            {'en':"It's on sale!",'choices':['할인 중!','매진!','새로 나옴!','품절!'],'ans':0,'hint':('sale','세일, 할인'),'explain':'on sale = 할인 중'},
+            {'en':"Where's the receipt?",'choices':['영수증 어디?','가방 어디?','지갑 어디?','거스름돈 어디?'],'ans':0,'hint':('receipt','영수증'),'explain':'receipt = 영수증'},
+            {'en':"I'm just looking.",'choices':['그냥 보고 있어요','살게요','갈게요','드릴게요'],'ans':0,'hint':('looking','보고 있는'),'explain':'just looking = 그냥 둘러보는 중'},
+            {'en':"Do you have a smaller size?",'choices':['더 작은 사이즈 있어요?','더 큰 사이즈 있어요?','없어요?','맘에 들어요?'],'ans':0,'hint':('smaller','더 작은'),'explain':'smaller = 더 작은'},
+            {'en':"I'll think about it.",'choices':['생각해 볼게요','지금 살게요','안 살래요','선물할게요'],'ans':0,'hint':('think about','~에 대해 생각하다'),'explain':'think about it = 생각해 보다'},
+            {'en':'Thank you, come again!','choices':['감사합니다, 또 오세요!','죄송합니다','고마워요','잘 가요'],'ans':0,'hint':('come again','다시 오다'),'explain':'come again = 또 오세요'},
+        ]
+    },
+
+    # ═════════════════════════════════════════════
+    # 5/24 (일) - 의견·생각 표현
+    # ═════════════════════════════════════════════
+    '20260524': {
+        'date': '2026-05-24',
+        'day_ko': '일',
+        'theme': '의견과 생각',
+        'theme_emoji': '🤔',
+        'description': '내 생각 영어로 말해보기!',
+        'questions': [
+            {'en':'I think so.','choices':['그렇게 생각해','안 그래','몰라','이상해'],'ans':0,'hint':('think','생각하다'),'explain':"I think so = 그렇게 생각해"},
+            {'en':"I don't think so.",'choices':['그렇게 생각해','그렇게 생각 안 해','맞아','몰라'],'ans':1,'hint':("don't",'아니다'),'explain':"don't think = 생각 안 한다"},
+            {'en':'I agree with you.','choices':['너랑 동의해','너랑 안 같아','몰라','싫어'],'ans':0,'hint':('agree','동의하다'),'explain':'agree = 동의하다'},
+            {'en':"I disagree.",'choices':['동의해','동의 안 해','몰라','잠깐'],'ans':1,'hint':('disagree','반대하다'),'explain':'disagree = 동의하지 않다'},
+            {'en':"That's a good idea!",'choices':['좋은 생각!','나쁜 생각!','지루해!','이상해!'],'ans':0,'hint':('idea','생각, 아이디어'),'explain':'good idea = 좋은 생각'},
+            {'en':'In my opinion, ...','choices':['내 생각엔...','네 생각엔...','우리 생각엔...','다른 사람 생각'],'ans':0,'hint':('opinion','의견'),'explain':'in my opinion = 내 의견으로는'},
+            {'en':'I prefer apples.','choices':['사과 더 좋아해','사과 싫어해','사과 안 먹어','사과 사줘'],'ans':0,'hint':('prefer','더 좋아하다'),'explain':'prefer = 더 좋아하다'},
+            {'en':"That's interesting.",'choices':['지루해','흥미로워','이상해','쉬워'],'ans':1,'hint':('interesting','흥미로운'),'explain':'interesting = 흥미로운'},
+            {'en':'I love it!','choices':['정말 좋아!','싫어!','몰라!','지루해!'],'ans':0,'hint':('love','매우 좋아하다'),'explain':'love = 매우 좋아하다'},
+            {'en':"I hate it.",'choices':['좋아해','싫어','보통이야','새로워'],'ans':1,'hint':('hate','싫어하다'),'explain':'hate = 싫어하다'},
+            {'en':"That's true.",'choices':['그건 사실이야','그건 거짓이야','그건 농담이야','몰라'],'ans':0,'hint':('true','사실의'),'explain':'true = 사실'},
+            {'en':"That's not true!",'choices':['그건 사실이야!','그건 사실이 아니야!','몰라!','지루해!'],'ans':1,'hint':('not true','사실이 아닌'),'explain':"not true = 사실이 아니다"},
+            {'en':'Are you sure?','choices':['확실해?','지루해?','피곤해?','배고파?'],'ans':0,'hint':('sure','확실한'),'explain':'sure = 확실한'},
+            {'en':'Yes, I am sure.','choices':['응, 확실해','아니, 몰라','아마도','글쎄'],'ans':0,'hint':('yes','네, 응'),'explain':'I am sure = 확실해'},
+            {'en':'Maybe.','choices':['아마도','확실해','아니','몰라'],'ans':0,'hint':('maybe','아마도'),'explain':'maybe = 아마도, 어쩌면'},
+            {'en':"I don't know.",'choices':['알아','몰라','잘해','못해'],'ans':1,'hint':("don't know",'모르다'),'explain':"don't know = 모르다"},
+            {'en':"Let me think.",'choices':['생각해 볼게','말해줄게','갈게','쉴게'],'ans':0,'hint':('think','생각하다'),'explain':"let me ~ = ~할게"},
+            {'en':'I have an idea!','choices':['아이디어 있어!','문제 있어!','시간 없어!','책 있어!'],'ans':0,'hint':('idea','아이디어'),'explain':'have an idea = 아이디어가 있다'},
+            {'en':"Why not?",'choices':['왜 안 돼?','어디?','언제?','누구?'],'ans':0,'hint':('why','왜'),'explain':'why not? = 왜 안 돼? / 그래!'},
+            {'en':"That makes sense.",'choices':['말이 돼','말이 안 돼','이상해','어려워'],'ans':0,'hint':('sense','뜻, 의미'),'explain':'makes sense = 말이 되다'},
+        ]
+    },
+
     # ─────────────────────────────────────────────
     # 5/17 (일) - 가족/친구
     # ─────────────────────────────────────────────
