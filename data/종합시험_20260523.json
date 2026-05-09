@@ -1,0 +1,14 @@
+{
+  "date": "2026-05-23",
+  "folderName": "20260523",
+  "dayKo": "토",
+  "dayKoFull": "토요일",
+  "dayEn": "Saturday",
+  "dayIdx": 6,
+  "weekLabel": "Week 5",
+  "themeSummary": "옷·학교·취미·몸·여행",
+  "quizFileName": "혜원이_영단어_토요일_종합시험.html",
+  "includeDates": ["20260518", "20260519", "20260520", "20260521", "20260522"],
+  "bgGradient": "linear-gradient(180deg, #ff8fb5 0%, #ffd966 25%, #d4baff 50%, #87ceeb 75%, #b3e5fc 100%);",
+  "headerTitle": "🎯 주간 종합 시험 🏆"
+}
