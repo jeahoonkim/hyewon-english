@@ -1,0 +1,196 @@
+{
+  "date": "2026-06-08",
+  "folderName": "20260608",
+  "dayKo": "월",
+  "dayKoFull": "월요일",
+  "dayEn": "Monday",
+  "dayIdx": 1,
+  "theme": "날씨와 하늘",
+  "themeEmoji": "☀️",
+  "vocabFileName": "혜원이_영단어_월요일_날씨.html",
+  "quizFileName": "혜원이_영단어_월요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #fff9c4 0%, #ffd54f 45%, #ff9800 100%);",
+  "headerTitle": "☀️ 날씨와 하늘 🌈",
+  "words": [
+    {
+      "word": "sunlit",
+      "ipa": "/ˈsʌnlɪt/",
+      "meaning": "햇볕 드는",
+      "emoji": "☀️",
+      "example": "A sunlit room.",
+      "exampleKo": "햇볕 드는 방.",
+      "fact": "햇빛이 잘 드는!"
+    },
+    {
+      "word": "overcast",
+      "ipa": "/ˌoʊvərˈkæst/",
+      "meaning": "잔뜩 흐린",
+      "emoji": "☁️",
+      "example": "An overcast sky.",
+      "exampleKo": "잔뜩 흐린 하늘.",
+      "fact": "구름이 하늘을 덮은!"
+    },
+    {
+      "word": "drizzle",
+      "ipa": "/ˈdrɪzəl/",
+      "meaning": "이슬비, 가랑비",
+      "emoji": "🌧️",
+      "example": "A light drizzle.",
+      "exampleKo": "가벼운 가랑비.",
+      "fact": "우산 없어도 OK!"
+    },
+    {
+      "word": "breezy",
+      "ipa": "/ˈbriːzi/",
+      "meaning": "산들바람 부는",
+      "emoji": "🌬️",
+      "example": "A breezy afternoon.",
+      "exampleKo": "산들바람 부는 오후.",
+      "fact": "기분 좋은 바람!"
+    },
+    {
+      "word": "snowflake",
+      "ipa": "/ˈsnoʊfleɪk/",
+      "meaning": "눈송이",
+      "emoji": "❄️",
+      "example": "A pretty snowflake.",
+      "exampleKo": "예쁜 눈송이.",
+      "fact": "모양이 다 달라요!"
+    },
+    {
+      "word": "foggy",
+      "ipa": "/ˈfɒɡi/",
+      "meaning": "안개 낀",
+      "emoji": "🌫️",
+      "example": "The road is foggy.",
+      "exampleKo": "길이 안개 껴요.",
+      "fact": "안개 낀 날 운전 조심!"
+    },
+    {
+      "word": "stormy",
+      "ipa": "/ˈstɔːrmi/",
+      "meaning": "폭풍이 치는",
+      "emoji": "⛈️",
+      "example": "A stormy night.",
+      "exampleKo": "폭풍 치는 밤.",
+      "fact": "천둥·번개도 함께!"
+    },
+    {
+      "word": "thunder",
+      "ipa": "/ˈθʌndər/",
+      "meaning": "천둥",
+      "emoji": "🌩️",
+      "example": "I hear thunder.",
+      "exampleKo": "천둥소리가 들려요.",
+      "fact": "번개 다음에 들리는 소리!"
+    },
+    {
+      "word": "lightning",
+      "ipa": "/ˈlaɪtnɪŋ/",
+      "meaning": "번개",
+      "emoji": "⚡",
+      "example": "Lightning strikes!",
+      "exampleKo": "번개가 쳐요!",
+      "fact": "번개 빛이 먼저 보여요!"
+    },
+    {
+      "word": "raindrop",
+      "ipa": "/ˈreɪndrɒp/",
+      "meaning": "빗방울",
+      "emoji": "💧",
+      "example": "A small raindrop.",
+      "exampleKo": "작은 빗방울.",
+      "fact": "하나씩 떨어져요!"
+    },
+    {
+      "word": "mild",
+      "ipa": "/maɪld/",
+      "meaning": "포근한, 온화한",
+      "emoji": "🌤️",
+      "example": "Mild weather today.",
+      "exampleKo": "오늘 포근해요.",
+      "fact": "춥지도 덥지도 않아요!"
+    },
+    {
+      "word": "chilly",
+      "ipa": "/ˈtʃɪli/",
+      "meaning": "쌀쌀한",
+      "emoji": "🥶",
+      "example": "A chilly evening.",
+      "exampleKo": "쌀쌀한 저녁.",
+      "fact": "약간 추울 때 써요!"
+    },
+    {
+      "word": "freezing",
+      "ipa": "/ˈfriːzɪŋ/",
+      "meaning": "꽁꽁 추운",
+      "emoji": "🧊",
+      "example": "It's freezing!",
+      "exampleKo": "꽁꽁 얼어붙어요!",
+      "fact": "물이 얼 정도 추워!"
+    },
+    {
+      "word": "humid",
+      "ipa": "/ˈhjuːmɪd/",
+      "meaning": "습한",
+      "emoji": "💧",
+      "example": "Korea is humid in summer.",
+      "exampleKo": "한국 여름은 습해요.",
+      "fact": "끈적끈적한 느낌!"
+    },
+    {
+      "word": "misty",
+      "ipa": "/ˈmɪsti/",
+      "meaning": "안개 자욱한",
+      "emoji": "🌁",
+      "example": "A misty morning.",
+      "exampleKo": "안개 자욱한 아침.",
+      "fact": "앞이 잘 안 보여요!"
+    },
+    {
+      "word": "sunrise",
+      "ipa": "/ˈsʌnraɪz/",
+      "meaning": "일출, 해돋이",
+      "emoji": "🌅",
+      "example": "A beautiful sunrise.",
+      "exampleKo": "아름다운 일출.",
+      "fact": "새 하루의 시작!"
+    },
+    {
+      "word": "forecast",
+      "ipa": "/ˈfɔːrkæst/",
+      "meaning": "일기예보",
+      "emoji": "📺",
+      "example": "Check the forecast.",
+      "exampleKo": "일기예보 확인해요.",
+      "fact": "내일 날씨 미리!"
+    },
+    {
+      "word": "sunshine",
+      "ipa": "/ˈsʌnʃaɪn/",
+      "meaning": "햇살, 햇빛",
+      "emoji": "🌞",
+      "example": "Enjoy the sunshine!",
+      "exampleKo": "햇살을 즐겨요!",
+      "fact": "기분 좋아지는 햇살!"
+    },
+    {
+      "word": "shadow",
+      "ipa": "/ˈʃædoʊ/",
+      "meaning": "그림자",
+      "emoji": "🌑",
+      "example": "I see my shadow.",
+      "exampleKo": "내 그림자가 보여요.",
+      "fact": "햇빛이 만든 모양!"
+    },
+    {
+      "word": "hailstone",
+      "ipa": "/ˈheɪlstoʊn/",
+      "meaning": "우박",
+      "emoji": "🧊",
+      "example": "Hailstones fell down.",
+      "exampleKo": "우박이 떨어졌어요.",
+      "fact": "하늘에서 얼음이!"
+    }
+  ]
+}

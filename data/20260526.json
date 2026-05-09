@@ -1,0 +1,196 @@
+{
+  "date": "2026-05-26",
+  "folderName": "20260526",
+  "dayKo": "화",
+  "dayKoFull": "화요일",
+  "dayEn": "Tuesday",
+  "dayIdx": 2,
+  "theme": "빈도·시간 (부사)",
+  "themeEmoji": "⏰",
+  "vocabFileName": "혜원이_영단어_화요일_빈도시간.html",
+  "quizFileName": "혜원이_영단어_화요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #fff3cd 0%, #ffd966 45%, #ff9966 100%);",
+  "headerTitle": "⏰ 빈도와 시간 ⏱️",
+  "words": [
+    {
+      "word": "always",
+      "ipa": "/ˈɔːlweɪz/",
+      "meaning": "항상",
+      "emoji": "♾️",
+      "example": "I always brush my teeth.",
+      "exampleKo": "저는 항상 이 닦아요.",
+      "fact": "always = 100% 매번!"
+    },
+    {
+      "word": "usually",
+      "ipa": "/ˈjuːʒuəli/",
+      "meaning": "보통, 대개",
+      "emoji": "📅",
+      "example": "I usually wake up at 7.",
+      "exampleKo": "보통 7시에 일어나요.",
+      "fact": "usually = 약 80%!"
+    },
+    {
+      "word": "often",
+      "ipa": "/ˈɒfən/",
+      "meaning": "자주",
+      "emoji": "🔁",
+      "example": "We often play together.",
+      "exampleKo": "우리 자주 같이 놀아요.",
+      "fact": "often = 자주!"
+    },
+    {
+      "word": "sometimes",
+      "ipa": "/ˈsʌmtaɪmz/",
+      "meaning": "가끔, 때때로",
+      "emoji": "🎲",
+      "example": "I sometimes eat pizza.",
+      "exampleKo": "가끔 피자 먹어요.",
+      "fact": "sometimes = 가끔!"
+    },
+    {
+      "word": "rarely",
+      "ipa": "/ˈrɛərli/",
+      "meaning": "거의 ~ 안",
+      "emoji": "💎",
+      "example": "She rarely watches TV.",
+      "exampleKo": "그녀는 TV를 거의 안 봐요.",
+      "fact": "rarely = 매우 드물게!"
+    },
+    {
+      "word": "never",
+      "ipa": "/ˈnevər/",
+      "meaning": "절대 ~ 안",
+      "emoji": "🚫",
+      "example": "I never lie.",
+      "exampleKo": "저는 거짓말 절대 안 해요.",
+      "fact": "never = 0% 절대!"
+    },
+    {
+      "word": "early",
+      "ipa": "/ˈɜːrli/",
+      "meaning": "일찍, 이른",
+      "emoji": "🌅",
+      "example": "I wake up early.",
+      "exampleKo": "저는 일찍 일어나요.",
+      "fact": "일찍 일어나면 하루가 길어요!"
+    },
+    {
+      "word": "late",
+      "ipa": "/leɪt/",
+      "meaning": "늦게, 늦은",
+      "emoji": "🌙",
+      "example": "Don't be late.",
+      "exampleKo": "늦지 마세요.",
+      "fact": "약속에 늦으면 미안해요!"
+    },
+    {
+      "word": "now",
+      "ipa": "/naʊ/",
+      "meaning": "지금",
+      "emoji": "👇",
+      "example": "Come here now!",
+      "exampleKo": "지금 여기로 와!",
+      "fact": "now = 바로 지금!"
+    },
+    {
+      "word": "soon",
+      "ipa": "/suːn/",
+      "meaning": "곧",
+      "emoji": "⏩",
+      "example": "I'll be there soon.",
+      "exampleKo": "곧 갈게요.",
+      "fact": "soon = 곧, 머지 않아!"
+    },
+    {
+      "word": "yesterday",
+      "ipa": "/ˈjestərdeɪ/",
+      "meaning": "어제",
+      "emoji": "📆",
+      "example": "I saw him yesterday.",
+      "exampleKo": "어제 그를 봤어요.",
+      "fact": "어제는 이미 지난 시간!"
+    },
+    {
+      "word": "daily",
+      "ipa": "/ˈdeɪli/",
+      "meaning": "매일의",
+      "emoji": "📅",
+      "example": "Daily exercise is good.",
+      "exampleKo": "매일 운동이 좋아요.",
+      "fact": "daily는 매일!"
+    },
+    {
+      "word": "weekend",
+      "ipa": "/ˈwiːkend/",
+      "meaning": "주말",
+      "emoji": "🎉",
+      "example": "I love weekends!",
+      "exampleKo": "주말 좋아해!",
+      "fact": "주말은 쉬는 날!"
+    },
+    {
+      "word": "moment",
+      "ipa": "/ˈmoʊmənt/",
+      "meaning": "순간",
+      "emoji": "⌛",
+      "example": "Just a moment, please.",
+      "exampleKo": "잠시만 기다려주세요.",
+      "fact": "순간은 짧지만 소중!"
+    },
+    {
+      "word": "second",
+      "ipa": "/ˈsekənd/",
+      "meaning": "초",
+      "emoji": "⏱️",
+      "example": "Wait a second!",
+      "exampleKo": "1초만 기다려!",
+      "fact": "1분 = 60초!"
+    },
+    {
+      "word": "week",
+      "ipa": "/wiːk/",
+      "meaning": "주",
+      "emoji": "📅",
+      "example": "Next week is fun.",
+      "exampleKo": "다음 주는 재미있어요.",
+      "fact": "1주일 = 7일!"
+    },
+    {
+      "word": "month",
+      "ipa": "/mʌnθ/",
+      "meaning": "달, 월",
+      "emoji": "🗓️",
+      "example": "May is my favorite month.",
+      "exampleKo": "5월은 좋아하는 달!",
+      "fact": "1년 = 12개월!"
+    },
+    {
+      "word": "year",
+      "ipa": "/jɪər/",
+      "meaning": "년, 해",
+      "emoji": "📆",
+      "example": "Next year I'll be older.",
+      "exampleKo": "내년에는 한 살 더!",
+      "fact": "1년 = 365일!"
+    },
+    {
+      "word": "quickly",
+      "ipa": "/ˈkwɪkli/",
+      "meaning": "빠르게",
+      "emoji": "🏃",
+      "example": "Run quickly!",
+      "exampleKo": "빨리 뛰어!",
+      "fact": "quickly는 부사예요!"
+    },
+    {
+      "word": "slowly",
+      "ipa": "/ˈsloʊli/",
+      "meaning": "천천히",
+      "emoji": "🐌",
+      "example": "Walk slowly, please.",
+      "exampleKo": "천천히 걸어요.",
+      "fact": "급할수록 천천히!"
+    }
+  ]
+}

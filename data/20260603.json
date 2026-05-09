@@ -1,0 +1,196 @@
+{
+  "date": "2026-06-03",
+  "folderName": "20260603",
+  "dayKo": "수",
+  "dayKoFull": "수요일",
+  "dayEn": "Wednesday",
+  "dayIdx": 3,
+  "theme": "과일과 채소",
+  "themeEmoji": "🍓",
+  "vocabFileName": "혜원이_영단어_수요일_과일채소.html",
+  "quizFileName": "혜원이_영단어_수요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #ffe4ed 0%, #ff8fb5 45%, #c0392b 100%);",
+  "headerTitle": "🍓 과일과 채소 🥕",
+  "words": [
+    {
+      "word": "grape",
+      "ipa": "/ɡreɪp/",
+      "meaning": "포도",
+      "emoji": "🍇",
+      "example": "Grapes are sweet.",
+      "exampleKo": "포도는 달아요.",
+      "fact": "포도로 와인 만들어요!"
+    },
+    {
+      "word": "watermelon",
+      "ipa": "/ˈwɔːtərˌmelən/",
+      "meaning": "수박",
+      "emoji": "🍉",
+      "example": "Watermelon is cool in summer.",
+      "exampleKo": "여름엔 수박이 시원!",
+      "fact": "수박은 90% 물이에요!"
+    },
+    {
+      "word": "strawberry",
+      "ipa": "/ˈstrɔːberi/",
+      "meaning": "딸기",
+      "emoji": "🍓",
+      "example": "I love strawberry cake.",
+      "exampleKo": "딸기 케이크 좋아!",
+      "fact": "딸기는 빨간 보석!"
+    },
+    {
+      "word": "peach",
+      "ipa": "/piːtʃ/",
+      "meaning": "복숭아",
+      "emoji": "🍑",
+      "example": "Peaches are juicy.",
+      "exampleKo": "복숭아는 즙이 많아요.",
+      "fact": "복숭아는 여름 과일!"
+    },
+    {
+      "word": "pear",
+      "ipa": "/pɛər/",
+      "meaning": "배",
+      "emoji": "🍐",
+      "example": "Korean pears are huge!",
+      "exampleKo": "한국 배는 정말 커요!",
+      "fact": "한국 배는 세계 최고!"
+    },
+    {
+      "word": "kiwi",
+      "ipa": "/ˈkiːwi/",
+      "meaning": "키위",
+      "emoji": "🥝",
+      "example": "Kiwi is green inside.",
+      "exampleKo": "키위 속은 초록색.",
+      "fact": "키위는 비타민 C 많아요!"
+    },
+    {
+      "word": "mango",
+      "ipa": "/ˈmæŋɡoʊ/",
+      "meaning": "망고",
+      "emoji": "🥭",
+      "example": "Mango is sweet and yellow.",
+      "exampleKo": "망고는 달고 노랗다.",
+      "fact": "망고는 열대 과일!"
+    },
+    {
+      "word": "pineapple",
+      "ipa": "/ˈpaɪnˌæpəl/",
+      "meaning": "파인애플",
+      "emoji": "🍍",
+      "example": "Pineapple is bumpy.",
+      "exampleKo": "파인애플은 울퉁불퉁!",
+      "fact": "파인애플은 머리에 잎이!"
+    },
+    {
+      "word": "carrot",
+      "ipa": "/ˈkærət/",
+      "meaning": "당근",
+      "emoji": "🥕",
+      "example": "Rabbits love carrots.",
+      "exampleKo": "토끼는 당근 좋아!",
+      "fact": "당근은 눈에 좋아요!"
+    },
+    {
+      "word": "tomato",
+      "ipa": "/təˈmeɪtoʊ/",
+      "meaning": "토마토",
+      "emoji": "🍅",
+      "example": "Tomato is red.",
+      "exampleKo": "토마토는 빨개요.",
+      "fact": "토마토는 과일이자 채소!"
+    },
+    {
+      "word": "potato",
+      "ipa": "/pəˈteɪtoʊ/",
+      "meaning": "감자",
+      "emoji": "🥔",
+      "example": "I like potato chips.",
+      "exampleKo": "감자칩 좋아!",
+      "fact": "감자는 땅속에서 자라요!"
+    },
+    {
+      "word": "onion",
+      "ipa": "/ˈʌnjən/",
+      "meaning": "양파",
+      "emoji": "🧅",
+      "example": "Onions make me cry.",
+      "exampleKo": "양파 썰면 눈물!",
+      "fact": "양파는 매운 채소!"
+    },
+    {
+      "word": "cucumber",
+      "ipa": "/ˈkjuːkʌmbər/",
+      "meaning": "오이",
+      "emoji": "🥒",
+      "example": "Cucumber is crunchy.",
+      "exampleKo": "오이는 아삭아삭!",
+      "fact": "오이는 95% 물!"
+    },
+    {
+      "word": "broccoli",
+      "ipa": "/ˈbrɒkəli/",
+      "meaning": "브로콜리",
+      "emoji": "🥦",
+      "example": "Eat your broccoli!",
+      "exampleKo": "브로콜리 먹어!",
+      "fact": "브로콜리는 비타민 가득!"
+    },
+    {
+      "word": "lettuce",
+      "ipa": "/ˈletɪs/",
+      "meaning": "상추",
+      "emoji": "🥬",
+      "example": "Wash the lettuce.",
+      "exampleKo": "상추 씻어요.",
+      "fact": "상추 쌈 맛있어요!"
+    },
+    {
+      "word": "corn",
+      "ipa": "/kɔːrn/",
+      "meaning": "옥수수",
+      "emoji": "🌽",
+      "example": "Corn is yellow.",
+      "exampleKo": "옥수수는 노란색.",
+      "fact": "옥수수는 여름 간식!"
+    },
+    {
+      "word": "garlic",
+      "ipa": "/ˈɡɑːrlɪk/",
+      "meaning": "마늘",
+      "emoji": "🧄",
+      "example": "Korean food has garlic.",
+      "exampleKo": "한국 음식엔 마늘이!",
+      "fact": "마늘은 건강에 최고!"
+    },
+    {
+      "word": "lemon",
+      "ipa": "/ˈlemən/",
+      "meaning": "레몬",
+      "emoji": "🍋",
+      "example": "Lemons are very sour.",
+      "exampleKo": "레몬은 정말 셔!",
+      "fact": "레몬차는 감기에 좋아요!"
+    },
+    {
+      "word": "cherry",
+      "ipa": "/ˈtʃeri/",
+      "meaning": "체리",
+      "emoji": "🍒",
+      "example": "Cherries are small and red.",
+      "exampleKo": "체리는 작고 빨개요.",
+      "fact": "체리에는 씨가 있어요!"
+    },
+    {
+      "word": "smoothie",
+      "ipa": "/ˈsmuːði/",
+      "meaning": "스무디",
+      "emoji": "🥤",
+      "example": "Strawberry smoothie!",
+      "exampleKo": "딸기 스무디!",
+      "fact": "과일 갈아 만든 음료!"
+    }
+  ]
+}

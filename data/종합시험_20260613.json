@@ -1,0 +1,14 @@
+{
+  "date": "2026-06-13",
+  "folderName": "20260613",
+  "dayKo": "토",
+  "dayKoFull": "토요일",
+  "dayEn": "Saturday",
+  "dayIdx": 6,
+  "weekLabel": "Week 8",
+  "themeSummary": "날씨·여름바다·옷·스포츠·자연",
+  "quizFileName": "혜원이_영단어_토요일_종합시험.html",
+  "includeDates": ["20260608", "20260609", "20260610", "20260611", "20260612"],
+  "bgGradient": "linear-gradient(180deg, #fff9c4 0%, #b3e5fc 25%, #fce4ec 50%, #c8e6c9 75%, #dcedc8 100%);",
+  "headerTitle": "🎯 주간 종합 시험 🏆"
+}

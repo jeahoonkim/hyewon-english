@@ -1,0 +1,196 @@
+{
+  "date": "2026-06-10",
+  "folderName": "20260610",
+  "dayKo": "수",
+  "dayKoFull": "수요일",
+  "dayEn": "Wednesday",
+  "dayIdx": 3,
+  "theme": "옷과 패션",
+  "themeEmoji": "👕",
+  "vocabFileName": "혜원이_영단어_수요일_옷.html",
+  "quizFileName": "혜원이_영단어_수요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #fce4ec 0%, #f48fb1 45%, #ec407a 100%);",
+  "headerTitle": "👕 옷과 패션 👗",
+  "words": [
+    {
+      "word": "sweater",
+      "ipa": "/ˈswetər/",
+      "meaning": "스웨터",
+      "emoji": "🧶",
+      "example": "A cozy sweater.",
+      "exampleKo": "포근한 스웨터.",
+      "fact": "털실로 만든 옷!"
+    },
+    {
+      "word": "tshirt",
+      "ipa": "/ˈtiː ʃɜːrt/",
+      "meaning": "티셔츠",
+      "emoji": "👕",
+      "example": "Wear a cool tshirt.",
+      "exampleKo": "시원한 티셔츠 입어요.",
+      "fact": "T 모양으로 생겼어요!"
+    },
+    {
+      "word": "shorts",
+      "ipa": "/ʃɔːrts/",
+      "meaning": "반바지",
+      "emoji": "🩳",
+      "example": "Shorts for summer.",
+      "exampleKo": "여름엔 반바지.",
+      "fact": "더운 날 시원해요!"
+    },
+    {
+      "word": "hoodie",
+      "ipa": "/ˈhʊdi/",
+      "meaning": "후드티",
+      "emoji": "🧥",
+      "example": "My favorite hoodie.",
+      "exampleKo": "좋아하는 후드티.",
+      "fact": "모자 달린 옷!"
+    },
+    {
+      "word": "apron",
+      "ipa": "/ˈeɪprən/",
+      "meaning": "앞치마",
+      "emoji": "👩‍🍳",
+      "example": "Mom wears an apron.",
+      "exampleKo": "엄마가 앞치마를 둘러요.",
+      "fact": "요리할 때 입어요!"
+    },
+    {
+      "word": "slippers",
+      "ipa": "/ˈslɪpərz/",
+      "meaning": "슬리퍼, 실내화",
+      "emoji": "🩴",
+      "example": "Cozy slippers at home.",
+      "exampleKo": "집에서 편한 슬리퍼.",
+      "fact": "집에서 편하게!"
+    },
+    {
+      "word": "flipflops",
+      "ipa": "/ˈflɪp flɒps/",
+      "meaning": "쪼리",
+      "emoji": "🩴",
+      "example": "Beach flipflops.",
+      "exampleKo": "해변 쪼리.",
+      "fact": "여름에 가장 편한 신발!"
+    },
+    {
+      "word": "raincoat",
+      "ipa": "/ˈreɪnkoʊt/",
+      "meaning": "비옷",
+      "emoji": "🧥",
+      "example": "Wear your raincoat.",
+      "exampleKo": "비옷 입어요.",
+      "fact": "비올 때 필수!"
+    },
+    {
+      "word": "tights",
+      "ipa": "/taɪts/",
+      "meaning": "타이츠, 스타킹",
+      "emoji": "🩱",
+      "example": "Black tights for school.",
+      "exampleKo": "학교 갈 때 검정 타이츠.",
+      "fact": "다리에 딱 붙어요!"
+    },
+    {
+      "word": "scarf",
+      "ipa": "/skɑːrf/",
+      "meaning": "목도리, 스카프",
+      "emoji": "🧣",
+      "example": "Wear a warm scarf.",
+      "exampleKo": "따뜻한 목도리.",
+      "fact": "겨울 필수!"
+    },
+    {
+      "word": "gloves",
+      "ipa": "/ɡlʌvz/",
+      "meaning": "장갑",
+      "emoji": "🧤",
+      "example": "Wear gloves in winter.",
+      "exampleKo": "겨울에 장갑 껴요.",
+      "fact": "손 따뜻하게!"
+    },
+    {
+      "word": "cap",
+      "ipa": "/kæp/",
+      "meaning": "야구 모자",
+      "emoji": "🧢",
+      "example": "A blue baseball cap.",
+      "exampleKo": "파란 야구 모자.",
+      "fact": "챙이 있는 모자!"
+    },
+    {
+      "word": "cardigan",
+      "ipa": "/ˈkɑːrdɪɡən/",
+      "meaning": "카디건",
+      "emoji": "🧶",
+      "example": "A soft cardigan.",
+      "exampleKo": "부드러운 카디건.",
+      "fact": "단추로 여는 스웨터!"
+    },
+    {
+      "word": "coat",
+      "ipa": "/koʊt/",
+      "meaning": "코트",
+      "emoji": "🧥",
+      "example": "A long winter coat.",
+      "exampleKo": "긴 겨울 코트.",
+      "fact": "두꺼운 겨울 옷!"
+    },
+    {
+      "word": "pajamas",
+      "ipa": "/pəˈdʒɑːməz/",
+      "meaning": "잠옷",
+      "emoji": "🛌",
+      "example": "Cute pajamas!",
+      "exampleKo": "귀여운 잠옷!",
+      "fact": "잘 때 입는 옷!"
+    },
+    {
+      "word": "uniform",
+      "ipa": "/ˈjuːnɪfɔːrm/",
+      "meaning": "교복, 유니폼",
+      "emoji": "🎽",
+      "example": "School uniform.",
+      "exampleKo": "학교 교복.",
+      "fact": "학교에서 입어요!"
+    },
+    {
+      "word": "outfit",
+      "ipa": "/ˈaʊtfɪt/",
+      "meaning": "옷차림, 의상",
+      "emoji": "👗",
+      "example": "Cute outfit today!",
+      "exampleKo": "오늘 옷차림 귀여워!",
+      "fact": "위·아래 합쳐 outfit!"
+    },
+    {
+      "word": "swimwear",
+      "ipa": "/ˈswɪmwer/",
+      "meaning": "수영복류",
+      "emoji": "🩱",
+      "example": "Pack your swimwear.",
+      "exampleKo": "수영복 챙겨요.",
+      "fact": "물놀이 옷!"
+    },
+    {
+      "word": "tank top",
+      "ipa": "/ˈtæŋk tɒp/",
+      "meaning": "민소매 티",
+      "emoji": "🎽",
+      "example": "A cool tank top.",
+      "exampleKo": "시원한 민소매.",
+      "fact": "여름에 시원!"
+    },
+    {
+      "word": "glove",
+      "ipa": "/ɡlʌv/",
+      "meaning": "장갑 (한 짝)",
+      "emoji": "🧤",
+      "example": "Lost one glove.",
+      "exampleKo": "장갑 한 짝 잃어버렸어.",
+      "fact": "두 짝이면 gloves!"
+    }
+  ]
+}

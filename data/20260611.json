@@ -1,0 +1,196 @@
+{
+  "date": "2026-06-11",
+  "folderName": "20260611",
+  "dayKo": "목",
+  "dayKoFull": "목요일",
+  "dayEn": "Thursday",
+  "dayIdx": 4,
+  "theme": "운동과 스포츠",
+  "themeEmoji": "⚽",
+  "vocabFileName": "혜원이_영단어_목요일_스포츠.html",
+  "quizFileName": "혜원이_영단어_목요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #c8e6c9 0%, #66bb6a 45%, #2e7d32 100%);",
+  "headerTitle": "⚽ 운동과 스포츠 🏀",
+  "words": [
+    {
+      "word": "hockey",
+      "ipa": "/ˈhɒki/",
+      "meaning": "하키",
+      "emoji": "🏒",
+      "example": "Ice hockey is fast.",
+      "exampleKo": "아이스하키 빨라요.",
+      "fact": "막대기로 공 쳐요!"
+    },
+    {
+      "word": "golf",
+      "ipa": "/ɡɒlf/",
+      "meaning": "골프",
+      "emoji": "⛳",
+      "example": "Dad plays golf.",
+      "exampleKo": "아빠는 골프해요.",
+      "fact": "작은 공을 멀리!"
+    },
+    {
+      "word": "bowling",
+      "ipa": "/ˈboʊlɪŋ/",
+      "meaning": "볼링",
+      "emoji": "🎳",
+      "example": "Lets go bowling!",
+      "exampleKo": "볼링 치러 가요!",
+      "fact": "무거운 공 굴리기!"
+    },
+    {
+      "word": "archery",
+      "ipa": "/ˈɑːrtʃəri/",
+      "meaning": "양궁",
+      "emoji": "🏹",
+      "example": "Korean archery is famous.",
+      "exampleKo": "한국 양궁 유명해요.",
+      "fact": "활로 과녁 맞추기!"
+    },
+    {
+      "word": "badminton",
+      "ipa": "/ˈbædmɪntən/",
+      "meaning": "배드민턴",
+      "emoji": "🏸",
+      "example": "Play badminton in the park.",
+      "exampleKo": "공원에서 배드민턴.",
+      "fact": "셔틀콕을 쳐요!"
+    },
+    {
+      "word": "volleyball",
+      "ipa": "/ˈvɒliːbɔːl/",
+      "meaning": "배구",
+      "emoji": "🏐",
+      "example": "Volleyball at the beach.",
+      "exampleKo": "해변에서 배구.",
+      "fact": "네트 위로 공을!"
+    },
+    {
+      "word": "ping pong",
+      "ipa": "/ˈpɪŋ pɒŋ/",
+      "meaning": "탁구",
+      "emoji": "🏓",
+      "example": "Ping pong is exciting.",
+      "exampleKo": "탁구는 신나요.",
+      "fact": "table tennis라고도 해요!"
+    },
+    {
+      "word": "skating",
+      "ipa": "/ˈskeɪtɪŋ/",
+      "meaning": "스케이팅",
+      "emoji": "⛸️",
+      "example": "Ice skating is cool.",
+      "exampleKo": "아이스 스케이팅 멋져요.",
+      "fact": "얼음 위 미끄럼!"
+    },
+    {
+      "word": "skiing",
+      "ipa": "/ˈskiːɪŋ/",
+      "meaning": "스키",
+      "emoji": "⛷️",
+      "example": "Go skiing in winter.",
+      "exampleKo": "겨울에 스키 타요.",
+      "fact": "눈 위에서 슝!"
+    },
+    {
+      "word": "yoga",
+      "ipa": "/ˈjoʊɡə/",
+      "meaning": "요가",
+      "emoji": "🧘",
+      "example": "Mom does yoga.",
+      "exampleKo": "엄마는 요가해요.",
+      "fact": "몸과 마음 건강!"
+    },
+    {
+      "word": "jog",
+      "ipa": "/dʒɒɡ/",
+      "meaning": "조깅하다",
+      "emoji": "🏃",
+      "example": "I jog every morning.",
+      "exampleKo": "매일 아침 조깅해요.",
+      "fact": "천천히 달리기!"
+    },
+    {
+      "word": "warmup",
+      "ipa": "/ˈwɔːrm ʌp/",
+      "meaning": "준비운동",
+      "emoji": "🤾",
+      "example": "Do a warmup first.",
+      "exampleKo": "준비운동 먼저!",
+      "fact": "운동 전 몸 풀기!"
+    },
+    {
+      "word": "squat",
+      "ipa": "/skwɒt/",
+      "meaning": "스쿼트",
+      "emoji": "🏋️",
+      "example": "Do ten squats.",
+      "exampleKo": "스쿼트 열 번.",
+      "fact": "다리 운동!"
+    },
+    {
+      "word": "workout",
+      "ipa": "/ˈwɜːrkaʊt/",
+      "meaning": "운동, 헬스",
+      "emoji": "🏋️",
+      "example": "A morning workout.",
+      "exampleKo": "아침 운동.",
+      "fact": "체력 만들기!"
+    },
+    {
+      "word": "referee",
+      "ipa": "/ˌrefəˈriː/",
+      "meaning": "심판",
+      "emoji": "🦓",
+      "example": "The referee blows the whistle.",
+      "exampleKo": "심판이 호루라기 불어요.",
+      "fact": "공정한 사람!"
+    },
+    {
+      "word": "player",
+      "ipa": "/ˈpleɪər/",
+      "meaning": "선수",
+      "emoji": "🏃",
+      "example": "A great player!",
+      "exampleKo": "훌륭한 선수!",
+      "fact": "운동을 잘하는 사람!"
+    },
+    {
+      "word": "trophy",
+      "ipa": "/ˈtroʊfi/",
+      "meaning": "트로피",
+      "emoji": "🏆",
+      "example": "Won a gold trophy.",
+      "exampleKo": "금 트로피를 받았어요.",
+      "fact": "우승하면 받아요!"
+    },
+    {
+      "word": "medal",
+      "ipa": "/ˈmedəl/",
+      "meaning": "메달",
+      "emoji": "🥇",
+      "example": "A gold medal.",
+      "exampleKo": "금메달.",
+      "fact": "1·2·3등 받아요!"
+    },
+    {
+      "word": "goal",
+      "ipa": "/ɡoʊl/",
+      "meaning": "골, 목표",
+      "emoji": "🥅",
+      "example": "Score a goal!",
+      "exampleKo": "골을 넣어요!",
+      "fact": "축구·농구의 골!"
+    },
+    {
+      "word": "whistle",
+      "ipa": "/ˈwɪsəl/",
+      "meaning": "호루라기",
+      "emoji": "🎵",
+      "example": "Blow the whistle.",
+      "exampleKo": "호루라기 불어요.",
+      "fact": "삐~ 소리!"
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "date": "2026-06-12",
+  "folderName": "20260612",
+  "dayKo": "금",
+  "dayKoFull": "금요일",
+  "dayEn": "Friday",
+  "dayIdx": 5,
+  "theme": "자연과 식물",
+  "themeEmoji": "🌳",
+  "vocabFileName": "혜원이_영단어_금요일_자연식물.html",
+  "quizFileName": "혜원이_영단어_금요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #dcedc8 0%, #8bc34a 45%, #558b2f 100%);",
+  "headerTitle": "🌳 자연과 식물 🌷",
+  "words": [
+    {
+      "word": "bush",
+      "ipa": "/bʊʃ/",
+      "meaning": "덤불, 작은 나무",
+      "emoji": "🌿",
+      "example": "A green bush.",
+      "exampleKo": "푸른 덤불.",
+      "fact": "작고 둥근 식물!"
+    },
+    {
+      "word": "petal",
+      "ipa": "/ˈpetəl/",
+      "meaning": "꽃잎",
+      "emoji": "🌸",
+      "example": "Pink petals fall.",
+      "exampleKo": "분홍 꽃잎이 떨어져요.",
+      "fact": "꽃의 한 조각!"
+    },
+    {
+      "word": "branch",
+      "ipa": "/bræntʃ/",
+      "meaning": "나뭇가지",
+      "emoji": "🌿",
+      "example": "Birds sit on a branch.",
+      "exampleKo": "새가 가지에 앉아요.",
+      "fact": "나무에서 뻗어나와요!"
+    },
+    {
+      "word": "root",
+      "ipa": "/ruːt/",
+      "meaning": "뿌리",
+      "emoji": "🌱",
+      "example": "Roots grow down.",
+      "exampleKo": "뿌리는 아래로 자라요.",
+      "fact": "땅에서 물을 마셔요!"
+    },
+    {
+      "word": "acorn",
+      "ipa": "/ˈeɪkɔːrn/",
+      "meaning": "도토리",
+      "emoji": "🌰",
+      "example": "Squirrels love acorns.",
+      "exampleKo": "다람쥐는 도토리를 좋아해요.",
+      "fact": "참나무 열매!"
+    },
+    {
+      "word": "rose",
+      "ipa": "/roʊz/",
+      "meaning": "장미",
+      "emoji": "🌹",
+      "example": "A red rose.",
+      "exampleKo": "빨간 장미.",
+      "fact": "꽃의 여왕!"
+    },
+    {
+      "word": "tulip",
+      "ipa": "/ˈtuːlɪp/",
+      "meaning": "튤립",
+      "emoji": "🌷",
+      "example": "Tulips bloom in spring.",
+      "exampleKo": "튤립은 봄에 피어요.",
+      "fact": "네덜란드 꽃!"
+    },
+    {
+      "word": "sunflower",
+      "ipa": "/ˈsʌnflaʊər/",
+      "meaning": "해바라기",
+      "emoji": "🌻",
+      "example": "Tall sunflower.",
+      "exampleKo": "큰 해바라기.",
+      "fact": "해를 바라봐요!"
+    },
+    {
+      "word": "moss",
+      "ipa": "/mɒs/",
+      "meaning": "이끼",
+      "emoji": "🟢",
+      "example": "Moss on the rock.",
+      "exampleKo": "바위에 이끼.",
+      "fact": "습한 곳에 자라요!"
+    },
+    {
+      "word": "grove",
+      "ipa": "/ɡroʊv/",
+      "meaning": "작은 숲, 과수원",
+      "emoji": "🌳",
+      "example": "An olive grove.",
+      "exampleKo": "올리브 과수원.",
+      "fact": "같은 나무 모인 곳!"
+    },
+    {
+      "word": "plateau",
+      "ipa": "/plæˈtoʊ/",
+      "meaning": "고원, 평원",
+      "emoji": "🏔️",
+      "example": "A wide plateau.",
+      "exampleKo": "넓은 고원.",
+      "fact": "높고 평평한 땅!"
+    },
+    {
+      "word": "reef",
+      "ipa": "/riːf/",
+      "meaning": "산호초",
+      "emoji": "🪸",
+      "example": "Coral reef in the sea.",
+      "exampleKo": "바다의 산호초.",
+      "fact": "물고기들의 집!"
+    },
+    {
+      "word": "lake",
+      "ipa": "/leɪk/",
+      "meaning": "호수",
+      "emoji": "🏞️",
+      "example": "A quiet lake.",
+      "exampleKo": "조용한 호수.",
+      "fact": "물이 모인 곳!"
+    },
+    {
+      "word": "valley",
+      "ipa": "/ˈvæli/",
+      "meaning": "계곡",
+      "emoji": "🏞️",
+      "example": "A green valley.",
+      "exampleKo": "푸른 계곡.",
+      "fact": "산 사이의 낮은 곳!"
+    },
+    {
+      "word": "marsh",
+      "ipa": "/mɑːrʃ/",
+      "meaning": "습지",
+      "emoji": "🦆",
+      "example": "Birds live in the marsh.",
+      "exampleKo": "새들이 습지에 살아요.",
+      "fact": "질퍽한 땅!"
+    },
+    {
+      "word": "rock",
+      "ipa": "/rɒk/",
+      "meaning": "바위, 돌",
+      "emoji": "🪨",
+      "example": "A big rock.",
+      "exampleKo": "큰 바위.",
+      "fact": "단단해요!"
+    },
+    {
+      "word": "pebble",
+      "ipa": "/ˈpebəl/",
+      "meaning": "조약돌",
+      "emoji": "🪨",
+      "example": "Smooth pebbles.",
+      "exampleKo": "매끈한 조약돌.",
+      "fact": "작고 동글한 돌!"
+    },
+    {
+      "word": "bug",
+      "ipa": "/bʌɡ/",
+      "meaning": "벌레",
+      "emoji": "🐛",
+      "example": "A tiny bug.",
+      "exampleKo": "작은 벌레.",
+      "fact": "벌레는 너무 많아요!"
+    },
+    {
+      "word": "butterfly",
+      "ipa": "/ˈbʌtərflaɪ/",
+      "meaning": "나비",
+      "emoji": "🦋",
+      "example": "A pretty butterfly.",
+      "exampleKo": "예쁜 나비.",
+      "fact": "꽃 사이를 날아요!"
+    },
+    {
+      "word": "bee",
+      "ipa": "/biː/",
+      "meaning": "벌",
+      "emoji": "🐝",
+      "example": "Bees make honey.",
+      "exampleKo": "벌은 꿀을 만들어요.",
+      "fact": "조심해, 쏘여요!"
+    }
+  ]
+}

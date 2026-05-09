@@ -1,0 +1,196 @@
+{
+  "date": "2026-05-25",
+  "folderName": "20260525",
+  "dayKo": "월",
+  "dayKoFull": "월요일",
+  "dayEn": "Monday",
+  "dayIdx": 1,
+  "theme": "감정·성격 (형용사)",
+  "themeEmoji": "😊",
+  "vocabFileName": "혜원이_영단어_월요일_감정성격.html",
+  "quizFileName": "혜원이_영단어_월요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #ffd6e0 0%, #ffb3ba 45%, #ff8fb5 100%);",
+  "headerTitle": "😊 감정·성격 ✨",
+  "words": [
+    {
+      "word": "cheerful",
+      "ipa": "/ˈtʃɪərfʊl/",
+      "meaning": "쾌활한, 명랑한",
+      "emoji": "😄",
+      "example": "She is always cheerful.",
+      "exampleKo": "그녀는 항상 명랑해요.",
+      "fact": "쾌활한 사람은 분위기를 밝게 해요!"
+    },
+    {
+      "word": "confident",
+      "ipa": "/ˈkɒnfɪdənt/",
+      "meaning": "자신 있는",
+      "emoji": "💪",
+      "example": "Be confident!",
+      "exampleKo": "자신감을 가져!",
+      "fact": "자신감은 성공의 비결!"
+    },
+    {
+      "word": "honest",
+      "ipa": "/ˈɒnɪst/",
+      "meaning": "정직한",
+      "emoji": "🙋",
+      "example": "I'm always honest.",
+      "exampleKo": "저는 항상 정직해요.",
+      "fact": "정직이 최선의 방책!"
+    },
+    {
+      "word": "polite",
+      "ipa": "/pəˈlaɪt/",
+      "meaning": "예의 바른",
+      "emoji": "🙇",
+      "example": "Always be polite.",
+      "exampleKo": "항상 예의 바르게.",
+      "fact": "예의는 좋은 첫인상!"
+    },
+    {
+      "word": "smart",
+      "ipa": "/smɑːrt/",
+      "meaning": "똑똑한",
+      "emoji": "🧠",
+      "example": "Smart students study hard.",
+      "exampleKo": "똑똑한 학생은 열심히 공부해요.",
+      "fact": "노력하면 더 smart해져요!"
+    },
+    {
+      "word": "creative",
+      "ipa": "/kriˈeɪtɪv/",
+      "meaning": "창의적인",
+      "emoji": "💡",
+      "example": "She has creative ideas.",
+      "exampleKo": "그녀는 창의적인 아이디어가 많아요.",
+      "fact": "창의력은 무한해요!"
+    },
+    {
+      "word": "lazy",
+      "ipa": "/ˈleɪzi/",
+      "meaning": "게으른",
+      "emoji": "🦥",
+      "example": "Don't be lazy!",
+      "exampleKo": "게으르지 마!",
+      "fact": "게으름은 가끔 OK, 늘 X!"
+    },
+    {
+      "word": "active",
+      "ipa": "/ˈæktɪv/",
+      "meaning": "활발한, 활동적인",
+      "emoji": "🏃",
+      "example": "He is an active boy.",
+      "exampleKo": "그는 활발한 소년이에요.",
+      "fact": "활발한 사람은 에너지가 넘쳐요!"
+    },
+    {
+      "word": "serious",
+      "ipa": "/ˈsɪəriəs/",
+      "meaning": "진지한",
+      "emoji": "😐",
+      "example": "He looks serious.",
+      "exampleKo": "그는 진지해 보여요.",
+      "fact": "진지함도 매력!"
+    },
+    {
+      "word": "nervous",
+      "ipa": "/ˈnɜːrvəs/",
+      "meaning": "긴장한",
+      "emoji": "😰",
+      "example": "I'm nervous about the test.",
+      "exampleKo": "시험 때문에 긴장돼요.",
+      "fact": "긴장도 자연스러운 거예요!"
+    },
+    {
+      "word": "calm",
+      "ipa": "/kɑːm/",
+      "meaning": "차분한",
+      "emoji": "😌",
+      "example": "Stay calm.",
+      "exampleKo": "침착하게 있어.",
+      "fact": "차분하면 실수가 줄어요!"
+    },
+    {
+      "word": "upset",
+      "ipa": "/ʌpˈset/",
+      "meaning": "속상한",
+      "emoji": "😞",
+      "example": "I'm upset right now.",
+      "exampleKo": "지금 속상해요.",
+      "fact": "upset = 화나거나 슬픈 마음!"
+    },
+    {
+      "word": "lonely",
+      "ipa": "/ˈloʊnli/",
+      "meaning": "외로운",
+      "emoji": "😔",
+      "example": "I feel lonely sometimes.",
+      "exampleKo": "가끔 외로워요.",
+      "fact": "외로울 땐 친구에게 전화!"
+    },
+    {
+      "word": "curious",
+      "ipa": "/ˈkjʊəriəs/",
+      "meaning": "호기심 많은",
+      "emoji": "🤔",
+      "example": "Cats are curious.",
+      "exampleKo": "고양이는 호기심이 많아요.",
+      "fact": "호기심은 배움의 시작!"
+    },
+    {
+      "word": "patient",
+      "ipa": "/ˈpeɪʃənt/",
+      "meaning": "참을성 있는",
+      "emoji": "⏳",
+      "example": "Be patient with little kids.",
+      "exampleKo": "어린 아이에겐 인내심을!",
+      "fact": "참을성은 큰 힘이에요!"
+    },
+    {
+      "word": "strict",
+      "ipa": "/strɪkt/",
+      "meaning": "엄격한",
+      "emoji": "😤",
+      "example": "Our teacher is strict.",
+      "exampleKo": "우리 선생님은 엄격해요.",
+      "fact": "엄격한 건 사랑의 표현!"
+    },
+    {
+      "word": "generous",
+      "ipa": "/ˈdʒenərəs/",
+      "meaning": "관대한, 너그러운",
+      "emoji": "💝",
+      "example": "She is generous with her toys.",
+      "exampleKo": "그녀는 장난감 잘 빌려줘요.",
+      "fact": "관대함은 친구를 만들어요!"
+    },
+    {
+      "word": "loud",
+      "ipa": "/laʊd/",
+      "meaning": "시끄러운",
+      "emoji": "📢",
+      "example": "The music is too loud.",
+      "exampleKo": "음악이 너무 시끄러워요.",
+      "fact": "도서관에선 조용히!"
+    },
+    {
+      "word": "quiet",
+      "ipa": "/ˈkwaɪət/",
+      "meaning": "조용한",
+      "emoji": "🤫",
+      "example": "Please be quiet.",
+      "exampleKo": "조용히 해주세요.",
+      "fact": "조용한 시간도 필요해요!"
+    },
+    {
+      "word": "friendly",
+      "ipa": "/ˈfrendli/",
+      "meaning": "친근한",
+      "emoji": "🤝",
+      "example": "He is very friendly.",
+      "exampleKo": "그는 정말 친근해요.",
+      "fact": "친근하면 친구가 많아져요!"
+    }
+  ]
+}

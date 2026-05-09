@@ -1,0 +1,196 @@
+{
+  "date": "2026-06-01",
+  "folderName": "20260601",
+  "dayKo": "월",
+  "dayKoFull": "월요일",
+  "dayEn": "Monday",
+  "dayIdx": 1,
+  "theme": "우리 집 물건",
+  "themeEmoji": "🏠",
+  "vocabFileName": "혜원이_영단어_월요일_집물건.html",
+  "quizFileName": "혜원이_영단어_월요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #ffe8d6 0%, #f4a261 45%, #e76f51 100%);",
+  "headerTitle": "🏠 우리 집 물건 ✨",
+  "words": [
+    {
+      "word": "candle",
+      "ipa": "/ˈkændəl/",
+      "meaning": "양초",
+      "emoji": "🕯️",
+      "example": "Light the candle.",
+      "exampleKo": "양초에 불 붙여요.",
+      "fact": "양초는 따뜻한 빛!"
+    },
+    {
+      "word": "vase",
+      "ipa": "/veɪs/",
+      "meaning": "꽃병",
+      "emoji": "🏺",
+      "example": "Flowers in the vase.",
+      "exampleKo": "꽃병에 꽃이.",
+      "fact": "꽃병은 꽃의 집!"
+    },
+    {
+      "word": "rug",
+      "ipa": "/rʌɡ/",
+      "meaning": "양탄자",
+      "emoji": "🟫",
+      "example": "A soft rug.",
+      "exampleKo": "부드러운 양탄자.",
+      "fact": "양탄자는 작은 카펫!"
+    },
+    {
+      "word": "bookshelf",
+      "ipa": "/ˈbʊkʃelf/",
+      "meaning": "책장",
+      "emoji": "📚",
+      "example": "Books on the bookshelf.",
+      "exampleKo": "책장에 책들이.",
+      "fact": "책장은 책의 집!"
+    },
+    {
+      "word": "TV",
+      "ipa": "/ˌtiːˈviː/",
+      "meaning": "텔레비전",
+      "emoji": "📺",
+      "example": "I watch TV at night.",
+      "exampleKo": "밤에 TV 봐요.",
+      "fact": "TV는 television의 줄임말!"
+    },
+    {
+      "word": "phone",
+      "ipa": "/foʊn/",
+      "meaning": "전화기",
+      "emoji": "📞",
+      "example": "The phone is ringing.",
+      "exampleKo": "전화 울려요.",
+      "fact": "phone은 telephone의 줄임!"
+    },
+    {
+      "word": "fan",
+      "ipa": "/fæn/",
+      "meaning": "선풍기, 부채",
+      "emoji": "🌀",
+      "example": "Turn on the fan.",
+      "exampleKo": "선풍기 켜요.",
+      "fact": "여름엔 선풍기가 시원해요!"
+    },
+    {
+      "word": "fridge",
+      "ipa": "/frɪdʒ/",
+      "meaning": "냉장고",
+      "emoji": "🧊",
+      "example": "Milk is in the fridge.",
+      "exampleKo": "우유는 냉장고에.",
+      "fact": "fridge는 refrigerator의 줄임!"
+    },
+    {
+      "word": "stove",
+      "ipa": "/stoʊv/",
+      "meaning": "가스레인지",
+      "emoji": "🔥",
+      "example": "Mom cooks on the stove.",
+      "exampleKo": "엄마는 가스레인지에서 요리해요.",
+      "fact": "조심해, 뜨거워요!"
+    },
+    {
+      "word": "sink",
+      "ipa": "/sɪŋk/",
+      "meaning": "싱크대, 세면대",
+      "emoji": "🚰",
+      "example": "Wash dishes in the sink.",
+      "exampleKo": "싱크대에서 설거지해요.",
+      "fact": "싱크대에서 물을 써요!"
+    },
+    {
+      "word": "toilet",
+      "ipa": "/ˈtɔɪlət/",
+      "meaning": "변기, 화장실",
+      "emoji": "🚽",
+      "example": "Flush the toilet.",
+      "exampleKo": "변기 물 내려요.",
+      "fact": "물 내리는 법 배워요!"
+    },
+    {
+      "word": "shower",
+      "ipa": "/ˈʃaʊər/",
+      "meaning": "샤워",
+      "emoji": "🚿",
+      "example": "Take a shower.",
+      "exampleKo": "샤워해요.",
+      "fact": "매일 샤워하면 깨끗!"
+    },
+    {
+      "word": "soap",
+      "ipa": "/soʊp/",
+      "meaning": "비누",
+      "emoji": "🧼",
+      "example": "Use soap to wash hands.",
+      "exampleKo": "비누로 손 씻어요.",
+      "fact": "비누로 세균 제거!"
+    },
+    {
+      "word": "towel",
+      "ipa": "/ˈtaʊəl/",
+      "meaning": "수건",
+      "emoji": "🧻",
+      "example": "Dry with a towel.",
+      "exampleKo": "수건으로 닦아요.",
+      "fact": "수건은 깨끗해야 해요!"
+    },
+    {
+      "word": "toothbrush",
+      "ipa": "/ˈtuːθbrʌʃ/",
+      "meaning": "칫솔",
+      "emoji": "🪥",
+      "example": "My toothbrush is pink.",
+      "exampleKo": "내 칫솔은 분홍.",
+      "fact": "칫솔은 3개월에 한 번 바꿔요!"
+    },
+    {
+      "word": "drawer",
+      "ipa": "/drɔːr/",
+      "meaning": "서랍",
+      "emoji": "🗃️",
+      "example": "Open the drawer.",
+      "exampleKo": "서랍 열어요.",
+      "fact": "서랍에 숨겨진 보물!"
+    },
+    {
+      "word": "entrance",
+      "ipa": "/ˈentrəns/",
+      "meaning": "입구",
+      "emoji": "🚪",
+      "example": "Use the front entrance.",
+      "exampleKo": "정문 입구로 들어와.",
+      "fact": "entrance는 들어가는 곳!"
+    },
+    {
+      "word": "curtain",
+      "ipa": "/ˈkɜːrtən/",
+      "meaning": "커튼",
+      "emoji": "🪟",
+      "example": "Open the curtain.",
+      "exampleKo": "커튼 열어요.",
+      "fact": "커튼으로 햇빛 가려요!"
+    },
+    {
+      "word": "ceiling",
+      "ipa": "/ˈsiːlɪŋ/",
+      "meaning": "천장",
+      "emoji": "⬆️",
+      "example": "The ceiling is high.",
+      "exampleKo": "천장이 높아요.",
+      "fact": "천장은 머리 위!"
+    },
+    {
+      "word": "carpet",
+      "ipa": "/ˈkɑːrpət/",
+      "meaning": "카펫",
+      "emoji": "🟦",
+      "example": "Walk on the carpet.",
+      "exampleKo": "카펫 위를 걸어요.",
+      "fact": "카펫은 발이 따뜻!"
+    }
+  ]
+}

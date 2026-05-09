@@ -1,0 +1,196 @@
+{
+  "date": "2026-06-02",
+  "folderName": "20260602",
+  "dayKo": "화",
+  "dayKoFull": "화요일",
+  "dayEn": "Tuesday",
+  "dayIdx": 2,
+  "theme": "반려동물·동물 친구",
+  "themeEmoji": "🐶",
+  "vocabFileName": "혜원이_영단어_화요일_반려동물.html",
+  "quizFileName": "혜원이_영단어_화요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #d4f1f4 0%, #75c9c8 45%, #4ecdc4 100%);",
+  "headerTitle": "🐶 동물 친구들 🐱",
+  "words": [
+    {
+      "word": "puppy",
+      "ipa": "/ˈpʌpi/",
+      "meaning": "강아지 (새끼)",
+      "emoji": "🐶",
+      "example": "Puppy is so cute!",
+      "exampleKo": "강아지 너무 귀여워!",
+      "fact": "강아지는 작은 dog!"
+    },
+    {
+      "word": "kitten",
+      "ipa": "/ˈkɪtən/",
+      "meaning": "고양이 (새끼)",
+      "emoji": "🐱",
+      "example": "The kitten is sleeping.",
+      "exampleKo": "새끼 고양이가 자요.",
+      "fact": "kitten은 작은 cat!"
+    },
+    {
+      "word": "goldfish",
+      "ipa": "/ˈɡoʊldfɪʃ/",
+      "meaning": "금붕어",
+      "emoji": "🐠",
+      "example": "I feed my goldfish.",
+      "exampleKo": "금붕어에게 밥 줘요.",
+      "fact": "금붕어는 기억력 좋아요!"
+    },
+    {
+      "word": "turtle",
+      "ipa": "/ˈtɜːrtəl/",
+      "meaning": "거북이",
+      "emoji": "🐢",
+      "example": "Turtles move slowly.",
+      "exampleKo": "거북이는 느리게 움직여요.",
+      "fact": "거북이는 100년 살아요!"
+    },
+    {
+      "word": "bunny",
+      "ipa": "/ˈbʌni/",
+      "meaning": "토끼 (귀여운 표현)",
+      "emoji": "🐰",
+      "example": "My bunny is white.",
+      "exampleKo": "내 토끼는 하얀색.",
+      "fact": "bunny는 어린이용 단어!"
+    },
+    {
+      "word": "puppy food",
+      "ipa": "/ˈpʌpi fuːd/",
+      "meaning": "강아지 사료",
+      "emoji": "🥫",
+      "example": "Buy some puppy food.",
+      "exampleKo": "강아지 사료 사요.",
+      "fact": "강아지 사료는 영양 가득!"
+    },
+    {
+      "word": "leash",
+      "ipa": "/liːʃ/",
+      "meaning": "목줄",
+      "emoji": "🦮",
+      "example": "Hold the dog's leash.",
+      "exampleKo": "강아지 목줄 잡아요.",
+      "fact": "산책할 땐 꼭 목줄!"
+    },
+    {
+      "word": "kennel",
+      "ipa": "/ˈkenəl/",
+      "meaning": "개집",
+      "emoji": "🏠",
+      "example": "The dogs kennel.",
+      "exampleKo": "강아지 집.",
+      "fact": "강아지가 사는 작은 집!"
+    },
+    {
+      "word": "tail",
+      "ipa": "/teɪl/",
+      "meaning": "꼬리",
+      "emoji": "🐕",
+      "example": "Dogs wag their tails.",
+      "exampleKo": "강아지는 꼬리 흔들어요.",
+      "fact": "꼬리 흔들면 기쁘다는 신호!"
+    },
+    {
+      "word": "paw",
+      "ipa": "/pɔː/",
+      "meaning": "동물 발",
+      "emoji": "🐾",
+      "example": "The cat lifts its paw.",
+      "exampleKo": "고양이가 발 들어요.",
+      "fact": "강아지·고양이 발이 paw!"
+    },
+    {
+      "word": "feed",
+      "ipa": "/fiːd/",
+      "meaning": "먹이를 주다",
+      "emoji": "🥣",
+      "example": "I feed my dog.",
+      "exampleKo": "내 강아지 먹이 줘요.",
+      "fact": "정해진 시간에 feed!"
+    },
+    {
+      "word": "pet",
+      "ipa": "/pet/",
+      "meaning": "반려동물, 쓰다듬다",
+      "emoji": "🐾",
+      "example": "Pet the cat gently.",
+      "exampleKo": "고양이를 살살 쓰다듬어요.",
+      "fact": "pet은 명사·동사 둘 다!"
+    },
+    {
+      "word": "fetch",
+      "ipa": "/fetʃ/",
+      "meaning": "(개에게) 가져오기",
+      "emoji": "🎾",
+      "example": "My dog plays fetch.",
+      "exampleKo": "우리 강아지 공 물어와요.",
+      "fact": "강아지 좋아하는 놀이!"
+    },
+    {
+      "word": "cage",
+      "ipa": "/keɪdʒ/",
+      "meaning": "우리, 새장",
+      "emoji": "🦜",
+      "example": "The bird in a cage.",
+      "exampleKo": "새가 새장에.",
+      "fact": "동물 보호 공간!"
+    },
+    {
+      "word": "cute",
+      "ipa": "/kjuːt/",
+      "meaning": "귀여운",
+      "emoji": "🥰",
+      "example": "What a cute puppy!",
+      "exampleKo": "정말 귀여운 강아지!",
+      "fact": "cute는 어린이가 자주 써요!"
+    },
+    {
+      "word": "fluffy",
+      "ipa": "/ˈflʌfi/",
+      "meaning": "푹신한, 복슬복슬",
+      "emoji": "☁️",
+      "example": "The bunny is fluffy.",
+      "exampleKo": "토끼가 복슬복슬해요.",
+      "fact": "구름처럼 fluffy해요!"
+    },
+    {
+      "word": "lovely",
+      "ipa": "/ˈlʌvli/",
+      "meaning": "사랑스러운",
+      "emoji": "💖",
+      "example": "A lovely puppy!",
+      "exampleKo": "사랑스러운 강아지!",
+      "fact": "lovely = 매우 귀여운!"
+    },
+    {
+      "word": "play with",
+      "ipa": "/pleɪ wɪð/",
+      "meaning": "~와 놀다",
+      "emoji": "🎾",
+      "example": "I play with my pet.",
+      "exampleKo": "내 펫과 놀아요.",
+      "fact": "play with ~ = ~와 함께 놀기!"
+    },
+    {
+      "word": "bark",
+      "ipa": "/bɑːrk/",
+      "meaning": "(개가) 짖다",
+      "emoji": "🗣️",
+      "example": "The dog barks loudly.",
+      "exampleKo": "강아지가 크게 짖어요.",
+      "fact": "강아지가 짖는 소리!"
+    },
+    {
+      "word": "purr",
+      "ipa": "/pɜːr/",
+      "meaning": "(고양이가) 가르랑거리다",
+      "emoji": "🐱",
+      "example": "The cat purrs softly.",
+      "exampleKo": "고양이가 그르렁대요.",
+      "fact": "고양이가 좋을 때 가르랑!"
+    }
+  ]
+}

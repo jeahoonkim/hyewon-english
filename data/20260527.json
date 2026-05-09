@@ -1,0 +1,196 @@
+{
+  "date": "2026-05-27",
+  "folderName": "20260527",
+  "dayKo": "수",
+  "dayKoFull": "수요일",
+  "dayEn": "Wednesday",
+  "dayIdx": 3,
+  "theme": "음식과 맛 (형용사)",
+  "themeEmoji": "🍱",
+  "vocabFileName": "혜원이_영단어_수요일_음식맛.html",
+  "quizFileName": "혜원이_영단어_수요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #ffeaa7 0%, #ff9966 45%, #e84393 100%);",
+  "headerTitle": "🍱 맛있는 음식 😋",
+  "words": [
+    {
+      "word": "delicious",
+      "ipa": "/dɪˈlɪʃəs/",
+      "meaning": "맛있는",
+      "emoji": "😋",
+      "example": "This soup is delicious!",
+      "exampleKo": "이 수프 맛있어요!",
+      "fact": "delicious는 매우 맛있을 때!"
+    },
+    {
+      "word": "sweet",
+      "ipa": "/swiːt/",
+      "meaning": "달콤한",
+      "emoji": "🍯",
+      "example": "Honey is sweet.",
+      "exampleKo": "꿀은 달콤해요.",
+      "fact": "달면 기분이 좋아져요!"
+    },
+    {
+      "word": "sour",
+      "ipa": "/saʊər/",
+      "meaning": "신, 시큼한",
+      "emoji": "🍋",
+      "example": "Lemons are sour.",
+      "exampleKo": "레몬은 셔요.",
+      "fact": "신맛은 침이 나오게 해요!"
+    },
+    {
+      "word": "salty",
+      "ipa": "/ˈsɔːlti/",
+      "meaning": "짠",
+      "emoji": "🧂",
+      "example": "Don't add too much salt!",
+      "exampleKo": "소금 너무 많이 넣지마!",
+      "fact": "짜게 먹으면 건강에 안 좋아요!"
+    },
+    {
+      "word": "bitter",
+      "ipa": "/ˈbɪtər/",
+      "meaning": "쓴",
+      "emoji": "☕",
+      "example": "Coffee is bitter.",
+      "exampleKo": "커피는 써요.",
+      "fact": "쓴맛은 어른의 맛!"
+    },
+    {
+      "word": "fresh",
+      "ipa": "/freʃ/",
+      "meaning": "신선한",
+      "emoji": "🥬",
+      "example": "Fresh vegetables are good.",
+      "exampleKo": "신선한 채소가 좋아요.",
+      "fact": "신선할수록 영양이 풍부!"
+    },
+    {
+      "word": "tasty",
+      "ipa": "/ˈteɪsti/",
+      "meaning": "맛있는",
+      "emoji": "🤤",
+      "example": "What a tasty meal!",
+      "exampleKo": "정말 맛있는 식사!",
+      "fact": "tasty도 맛있다는 뜻!"
+    },
+    {
+      "word": "salad",
+      "ipa": "/ˈsæləd/",
+      "meaning": "샐러드",
+      "emoji": "🥗",
+      "example": "Salad is healthy.",
+      "exampleKo": "샐러드는 건강해요.",
+      "fact": "신선한 채소 샐러드!"
+    },
+    {
+      "word": "cereal",
+      "ipa": "/ˈsɪəriəl/",
+      "meaning": "시리얼",
+      "emoji": "🥣",
+      "example": "I eat cereal in the morning.",
+      "exampleKo": "아침에 시리얼 먹어요.",
+      "fact": "시리얼은 빠른 아침!"
+    },
+    {
+      "word": "pasta",
+      "ipa": "/ˈpɑːstə/",
+      "meaning": "파스타",
+      "emoji": "🍝",
+      "example": "Italian pasta is delicious.",
+      "exampleKo": "이탈리아 파스타 맛있어요.",
+      "fact": "파스타는 200개 종류!"
+    },
+    {
+      "word": "vegetable",
+      "ipa": "/ˈvedʒtəbəl/",
+      "meaning": "채소",
+      "emoji": "🥕",
+      "example": "Eat your vegetables.",
+      "exampleKo": "채소를 먹어요.",
+      "fact": "채소는 건강의 친구!"
+    },
+    {
+      "word": "fruit",
+      "ipa": "/fruːt/",
+      "meaning": "과일",
+      "emoji": "🍎",
+      "example": "Fruit is sweet and fresh.",
+      "exampleKo": "과일은 달고 신선해요.",
+      "fact": "하루에 과일 2개 먹어요!"
+    },
+    {
+      "word": "snack",
+      "ipa": "/snæk/",
+      "meaning": "간식",
+      "emoji": "🍿",
+      "example": "I want a snack.",
+      "exampleKo": "간식 먹고 싶어요.",
+      "fact": "간식은 적당히!"
+    },
+    {
+      "word": "dessert",
+      "ipa": "/dɪˈzɜːrt/",
+      "meaning": "후식, 디저트",
+      "emoji": "🍰",
+      "example": "Cake is my favorite dessert.",
+      "exampleKo": "케이크가 좋아하는 디저트!",
+      "fact": "후식은 행복한 마무리!"
+    },
+    {
+      "word": "spicy",
+      "ipa": "/ˈspaɪsi/",
+      "meaning": "매운",
+      "emoji": "🌶️",
+      "example": "Korean food is often spicy.",
+      "exampleKo": "한국 음식은 자주 매워요.",
+      "fact": "매운맛은 땀이 나요!"
+    },
+    {
+      "word": "yummy",
+      "ipa": "/ˈjʌmi/",
+      "meaning": "맛있는 (귀여운 표현)",
+      "emoji": "😍",
+      "example": "Yummy ice cream!",
+      "exampleKo": "맛있는 아이스크림!",
+      "fact": "yummy는 어린이가 자주 써요!"
+    },
+    {
+      "word": "menu",
+      "ipa": "/ˈmenjuː/",
+      "meaning": "메뉴",
+      "emoji": "📜",
+      "example": "Look at the menu.",
+      "exampleKo": "메뉴 봐요.",
+      "fact": "메뉴는 음식 목록!"
+    },
+    {
+      "word": "recipe",
+      "ipa": "/ˈresəpi/",
+      "meaning": "조리법",
+      "emoji": "📝",
+      "example": "Mom has a great recipe.",
+      "exampleKo": "엄마는 좋은 레시피가 있어요.",
+      "fact": "레시피 따라하면 맛있어요!"
+    },
+    {
+      "word": "bowl",
+      "ipa": "/boʊl/",
+      "meaning": "그릇",
+      "emoji": "🥣",
+      "example": "Use a big bowl.",
+      "exampleKo": "큰 그릇 써요.",
+      "fact": "국그릇·밥그릇 다 bowl!"
+    },
+    {
+      "word": "hungry",
+      "ipa": "/ˈhʌŋɡri/",
+      "meaning": "배고픈",
+      "emoji": "🤤",
+      "example": "I'm so hungry!",
+      "exampleKo": "너무 배고파요!",
+      "fact": "배고프면 화나요 ㅋㅋ"
+    }
+  ]
+}

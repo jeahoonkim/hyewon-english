@@ -1,0 +1,196 @@
+{
+  "date": "2026-06-04",
+  "folderName": "20260604",
+  "dayKo": "목",
+  "dayKoFull": "목요일",
+  "dayEn": "Thursday",
+  "dayIdx": 4,
+  "theme": "동네 장소",
+  "themeEmoji": "🏪",
+  "vocabFileName": "혜원이_영단어_목요일_동네장소.html",
+  "quizFileName": "혜원이_영단어_목요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #b3e5fc 0%, #74b9ff 45%, #6c5ce7 100%);",
+  "headerTitle": "🏪 동네 장소 🚏",
+  "words": [
+    {
+      "word": "mart",
+      "ipa": "/mɑːrt/",
+      "meaning": "마트",
+      "emoji": "🛒",
+      "example": "Go to the mart.",
+      "exampleKo": "마트에 가요.",
+      "fact": "한국 마트는 정말 커요!"
+    },
+    {
+      "word": "hospital",
+      "ipa": "/ˈhɒspɪtəl/",
+      "meaning": "병원",
+      "emoji": "🏥",
+      "example": "Take her to the hospital.",
+      "exampleKo": "그녀를 병원에 데려가요.",
+      "fact": "아프면 병원 가요!"
+    },
+    {
+      "word": "pharmacy",
+      "ipa": "/ˈfɑːrməsi/",
+      "meaning": "약국",
+      "emoji": "💊",
+      "example": "Buy medicine at the pharmacy.",
+      "exampleKo": "약국에서 약 사요.",
+      "fact": "약국에서 약사를 만나요!"
+    },
+    {
+      "word": "bakery",
+      "ipa": "/ˈbeɪkəri/",
+      "meaning": "빵집",
+      "emoji": "🥖",
+      "example": "Fresh bread at the bakery.",
+      "exampleKo": "빵집에 갓 구운 빵!",
+      "fact": "빵집은 좋은 냄새가!"
+    },
+    {
+      "word": "post office",
+      "ipa": "/ˈpoʊst ˌɒfɪs/",
+      "meaning": "우체국",
+      "emoji": "📮",
+      "example": "Send a letter at the post office.",
+      "exampleKo": "우체국에서 편지 보내요.",
+      "fact": "우체국 우체부 직업!"
+    },
+    {
+      "word": "bank",
+      "ipa": "/bæŋk/",
+      "meaning": "은행",
+      "emoji": "🏦",
+      "example": "Mom goes to the bank.",
+      "exampleKo": "엄마가 은행에 가요.",
+      "fact": "은행에 돈을 맡겨요!"
+    },
+    {
+      "word": "museum",
+      "ipa": "/mjuːˈziːəm/",
+      "meaning": "박물관",
+      "emoji": "🏛️",
+      "example": "We visit the museum.",
+      "exampleKo": "박물관에 방문해요.",
+      "fact": "박물관에서 역사를 배워요!"
+    },
+    {
+      "word": "zoo",
+      "ipa": "/zuː/",
+      "meaning": "동물원",
+      "emoji": "🦁",
+      "example": "I love the zoo!",
+      "exampleKo": "동물원 정말 좋아!",
+      "fact": "동물원에서 사자, 호랑이!"
+    },
+    {
+      "word": "movie theater",
+      "ipa": "/ˈmuːvi ˌθiːətər/",
+      "meaning": "영화관",
+      "emoji": "🎬",
+      "example": "Watch a movie at the theater.",
+      "exampleKo": "영화관에서 영화 봐요.",
+      "fact": "큰 화면으로 영화 보기!"
+    },
+    {
+      "word": "café",
+      "ipa": "/kæˈfeɪ/",
+      "meaning": "카페",
+      "emoji": "☕",
+      "example": "Mom enjoys the café.",
+      "exampleKo": "엄마는 카페 좋아해요.",
+      "fact": "카페에서 음료와 디저트!"
+    },
+    {
+      "word": "mall",
+      "ipa": "/mɔːl/",
+      "meaning": "쇼핑몰",
+      "emoji": "🛍️",
+      "example": "Go shopping at the mall.",
+      "exampleKo": "쇼핑몰 가요.",
+      "fact": "쇼핑몰엔 가게가 많아!"
+    },
+    {
+      "word": "church",
+      "ipa": "/tʃɜːrtʃ/",
+      "meaning": "교회",
+      "emoji": "⛪",
+      "example": "We go to church on Sunday.",
+      "exampleKo": "일요일에 교회 가요.",
+      "fact": "교회는 종교 모임 장소!"
+    },
+    {
+      "word": "temple",
+      "ipa": "/ˈtempəl/",
+      "meaning": "절, 사원",
+      "emoji": "🛕",
+      "example": "The temple is old.",
+      "exampleKo": "절이 오래됐어요.",
+      "fact": "한국엔 아름다운 절이 많아요!"
+    },
+    {
+      "word": "stadium",
+      "ipa": "/ˈsteɪdiəm/",
+      "meaning": "경기장",
+      "emoji": "🏟️",
+      "example": "Watch soccer at the stadium.",
+      "exampleKo": "경기장에서 축구 봐요.",
+      "fact": "스포츠 경기 보는 곳!"
+    },
+    {
+      "word": "market",
+      "ipa": "/ˈmɑːrkɪt/",
+      "meaning": "시장",
+      "emoji": "🍎",
+      "example": "Buy fresh food at the market.",
+      "exampleKo": "시장에서 신선한 음식!",
+      "fact": "시장은 활기차요!"
+    },
+    {
+      "word": "avenue",
+      "ipa": "/ˈævənuː/",
+      "meaning": "대로, 큰 길",
+      "emoji": "🛣️",
+      "example": "A wide avenue.",
+      "exampleKo": "넓은 대로.",
+      "fact": "avenue는 큰 거리!"
+    },
+    {
+      "word": "town",
+      "ipa": "/taʊn/",
+      "meaning": "마을",
+      "emoji": "🏘️",
+      "example": "Our town is small.",
+      "exampleKo": "우리 마을은 작아요.",
+      "fact": "마을은 city보다 작아요!"
+    },
+    {
+      "word": "city",
+      "ipa": "/ˈsɪti/",
+      "meaning": "도시",
+      "emoji": "🏙️",
+      "example": "Seoul is a big city.",
+      "exampleKo": "서울은 큰 도시예요.",
+      "fact": "도시는 사람이 많아요!"
+    },
+    {
+      "word": "country",
+      "ipa": "/ˈkʌntri/",
+      "meaning": "시골, 나라",
+      "emoji": "🌳",
+      "example": "Grandma lives in the country.",
+      "exampleKo": "할머니는 시골에 살아요.",
+      "fact": "country는 \"나라\"도 뜻해요!"
+    },
+    {
+      "word": "address",
+      "ipa": "/əˈdres/",
+      "meaning": "주소",
+      "emoji": "📍",
+      "example": "What's your address?",
+      "exampleKo": "주소가 뭐예요?",
+      "fact": "주소로 집을 찾아요!"
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "date": "2026-05-28",
+  "folderName": "20260528",
+  "dayKo": "목",
+  "dayKoFull": "목요일",
+  "dayEn": "Thursday",
+  "dayIdx": 4,
+  "theme": "사물 묘사 (형용사)",
+  "themeEmoji": "🌟",
+  "vocabFileName": "혜원이_영단어_목요일_사물묘사.html",
+  "quizFileName": "혜원이_영단어_목요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #d4baff 0%, #b3a4ff 45%, #8b7dd8 100%);",
+  "headerTitle": "🌟 묘사하는 말 ✨",
+  "words": [
+    {
+      "word": "soft",
+      "ipa": "/sɒft/",
+      "meaning": "부드러운",
+      "emoji": "☁️",
+      "example": "The pillow is soft.",
+      "exampleKo": "베개가 부드러워요.",
+      "fact": "솜이불은 정말 부드러워요!"
+    },
+    {
+      "word": "hard",
+      "ipa": "/hɑːrd/",
+      "meaning": "단단한, 어려운",
+      "emoji": "🪨",
+      "example": "The rock is hard.",
+      "exampleKo": "바위는 단단해요.",
+      "fact": "어렵다는 뜻도 있어요!"
+    },
+    {
+      "word": "smooth",
+      "ipa": "/smuːð/",
+      "meaning": "매끄러운",
+      "emoji": "🥚",
+      "example": "Her skin is smooth.",
+      "exampleKo": "그녀의 피부는 매끄러워요.",
+      "fact": "달걀 표면이 매끄럽죠!"
+    },
+    {
+      "word": "rough",
+      "ipa": "/rʌf/",
+      "meaning": "거친",
+      "emoji": "🌵",
+      "example": "Sandpaper is rough.",
+      "exampleKo": "사포는 거칠어요.",
+      "fact": "거친 표면은 까칠까칠!"
+    },
+    {
+      "word": "sharp",
+      "ipa": "/ʃɑːrp/",
+      "meaning": "날카로운",
+      "emoji": "🔪",
+      "example": "Be careful, the knife is sharp!",
+      "exampleKo": "조심해, 칼이 날카로워!",
+      "fact": "날카로운 건 다칠 수 있어요!"
+    },
+    {
+      "word": "dull",
+      "ipa": "/dʌl/",
+      "meaning": "무딘, 지루한",
+      "emoji": "😑",
+      "example": "This pencil is dull.",
+      "exampleKo": "이 연필 무뎌요.",
+      "fact": "지루하다는 뜻도 있어요!"
+    },
+    {
+      "word": "shiny",
+      "ipa": "/ˈʃaɪni/",
+      "meaning": "반짝이는",
+      "emoji": "✨",
+      "example": "Her shoes are shiny.",
+      "exampleKo": "그녀의 신발이 반짝여요.",
+      "fact": "보석이 가장 반짝여요!"
+    },
+    {
+      "word": "fancy",
+      "ipa": "/ˈfænsi/",
+      "meaning": "화려한, 멋진",
+      "emoji": "✨",
+      "example": "A fancy dress.",
+      "exampleKo": "화려한 드레스.",
+      "fact": "fancy = 특별한 느낌!"
+    },
+    {
+      "word": "vivid",
+      "ipa": "/ˈvɪvɪd/",
+      "meaning": "선명한, 생생한",
+      "emoji": "🌈",
+      "example": "Vivid colors!",
+      "exampleKo": "선명한 색깔!",
+      "fact": "기억이 vivid하면 잘 생각나요!"
+    },
+    {
+      "word": "clean",
+      "ipa": "/kliːn/",
+      "meaning": "깨끗한",
+      "emoji": "🧼",
+      "example": "Keep your room clean.",
+      "exampleKo": "방을 깨끗이 해.",
+      "fact": "깨끗한 환경이 건강에 좋아요!"
+    },
+    {
+      "word": "dirty",
+      "ipa": "/ˈdɜːrti/",
+      "meaning": "더러운",
+      "emoji": "🧦",
+      "example": "My socks are dirty.",
+      "exampleKo": "내 양말이 더러워요.",
+      "fact": "더러운 손은 감기 친구!"
+    },
+    {
+      "word": "wet",
+      "ipa": "/wet/",
+      "meaning": "젖은",
+      "emoji": "💧",
+      "example": "My hair is wet.",
+      "exampleKo": "머리가 젖었어요.",
+      "fact": "젖은 채로 자면 감기!"
+    },
+    {
+      "word": "dry",
+      "ipa": "/draɪ/",
+      "meaning": "마른, 건조한",
+      "emoji": "🏜️",
+      "example": "Use a dry towel.",
+      "exampleKo": "마른 수건 써요.",
+      "fact": "사막은 정말 건조해요!"
+    },
+    {
+      "word": "empty",
+      "ipa": "/ˈempti/",
+      "meaning": "빈",
+      "emoji": "🥛",
+      "example": "The cup is empty.",
+      "exampleKo": "컵이 비었어요.",
+      "fact": "빈 상자는 가벼워요!"
+    },
+    {
+      "word": "full",
+      "ipa": "/fʊl/",
+      "meaning": "가득 찬",
+      "emoji": "🍱",
+      "example": "My bag is full.",
+      "exampleKo": "내 가방이 꽉 찼어요.",
+      "fact": "배부르다는 뜻도 있어요!"
+    },
+    {
+      "word": "noisy",
+      "ipa": "/ˈnɔɪzi/",
+      "meaning": "시끄러운",
+      "emoji": "📢",
+      "example": "The street is noisy.",
+      "exampleKo": "거리가 시끄러워요.",
+      "fact": "시끄러운 곳은 머리가 아파요!"
+    },
+    {
+      "word": "perfect",
+      "ipa": "/ˈpɜːrfɪkt/",
+      "meaning": "완벽한",
+      "emoji": "💯",
+      "example": "Your work is perfect!",
+      "exampleKo": "네 작품 완벽해!",
+      "fact": "완벽보다 진심이 더 중요!"
+    },
+    {
+      "word": "amazing",
+      "ipa": "/əˈmeɪzɪŋ/",
+      "meaning": "놀라운",
+      "emoji": "🤩",
+      "example": "What an amazing view!",
+      "exampleKo": "정말 놀라운 풍경!",
+      "fact": "amazing은 wow!한 느낌!"
+    },
+    {
+      "word": "boring",
+      "ipa": "/ˈbɔːrɪŋ/",
+      "meaning": "지루한",
+      "emoji": "🥱",
+      "example": "This movie is boring.",
+      "exampleKo": "이 영화 지루해요.",
+      "fact": "지루할 땐 책 읽기!"
+    },
+    {
+      "word": "simple",
+      "ipa": "/ˈsɪmpəl/",
+      "meaning": "단순한, 간단한",
+      "emoji": "👌",
+      "example": "It's a simple game.",
+      "exampleKo": "간단한 게임이에요.",
+      "fact": "단순한 게 가장 좋아요!"
+    }
+  ]
+}

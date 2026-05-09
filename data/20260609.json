@@ -1,0 +1,196 @@
+{
+  "date": "2026-06-09",
+  "folderName": "20260609",
+  "dayKo": "화",
+  "dayKoFull": "화요일",
+  "dayEn": "Tuesday",
+  "dayIdx": 2,
+  "theme": "여름과 바다",
+  "themeEmoji": "🏖️",
+  "vocabFileName": "혜원이_영단어_화요일_여름바다.html",
+  "quizFileName": "혜원이_영단어_화요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #b3e5fc 0%, #4fc3f7 45%, #0288d1 100%);",
+  "headerTitle": "🏖️ 여름과 바다 🌊",
+  "words": [
+    {
+      "word": "beach",
+      "ipa": "/biːtʃ/",
+      "meaning": "해변",
+      "emoji": "🏖️",
+      "example": "Let's go to the beach.",
+      "exampleKo": "해변에 가요.",
+      "fact": "여름에 인기 장소!"
+    },
+    {
+      "word": "seaside",
+      "ipa": "/ˈsiːsaɪd/",
+      "meaning": "바닷가",
+      "emoji": "🏖️",
+      "example": "At the seaside.",
+      "exampleKo": "바닷가에서.",
+      "fact": "바다 옆 마을!"
+    },
+    {
+      "word": "surf",
+      "ipa": "/sɜːrf/",
+      "meaning": "파도타기, 서핑하다",
+      "emoji": "🏄",
+      "example": "Lets surf together.",
+      "exampleKo": "같이 서핑해요.",
+      "fact": "파도 타고 신나요!"
+    },
+    {
+      "word": "sand",
+      "ipa": "/sænd/",
+      "meaning": "모래",
+      "emoji": "🏝️",
+      "example": "Soft sand on the beach.",
+      "exampleKo": "해변의 부드러운 모래.",
+      "fact": "맨발로 걸으면 따뜻!"
+    },
+    {
+      "word": "seashell",
+      "ipa": "/ˈsiːʃel/",
+      "meaning": "조개껍질",
+      "emoji": "🐚",
+      "example": "I found a seashell.",
+      "exampleKo": "조개껍질을 찾았어요.",
+      "fact": "조개의 단단한 집!"
+    },
+    {
+      "word": "swimsuit",
+      "ipa": "/ˈswɪmsuːt/",
+      "meaning": "수영복",
+      "emoji": "🩱",
+      "example": "Wear your swimsuit.",
+      "exampleKo": "수영복 입어요.",
+      "fact": "물놀이 필수 아이템!"
+    },
+    {
+      "word": "sunscreen",
+      "ipa": "/ˈsʌnskriːn/",
+      "meaning": "선크림",
+      "emoji": "🧴",
+      "example": "Put on sunscreen.",
+      "exampleKo": "선크림 발라요.",
+      "fact": "햇볕 화상 막아줘요!"
+    },
+    {
+      "word": "sunglasses",
+      "ipa": "/ˈsʌnɡlæsɪz/",
+      "meaning": "선글라스",
+      "emoji": "🕶️",
+      "example": "Cool sunglasses!",
+      "exampleKo": "멋진 선글라스!",
+      "fact": "눈을 햇빛에서 보호!"
+    },
+    {
+      "word": "umbrella",
+      "ipa": "/ʌmˈbrelə/",
+      "meaning": "우산, 파라솔",
+      "emoji": "☂️",
+      "example": "Open your umbrella.",
+      "exampleKo": "우산을 펴요.",
+      "fact": "비도 햇빛도 막아줘요!"
+    },
+    {
+      "word": "snorkel",
+      "ipa": "/ˈsnɔːrkəl/",
+      "meaning": "스노클링하다",
+      "emoji": "🤿",
+      "example": "Snorkel and see fish.",
+      "exampleKo": "스노클링하며 물고기!",
+      "fact": "숨 쉬면서 물속 구경!"
+    },
+    {
+      "word": "dive",
+      "ipa": "/daɪv/",
+      "meaning": "다이빙하다",
+      "emoji": "🤿",
+      "example": "Dive into the pool.",
+      "exampleKo": "수영장에 다이빙!",
+      "fact": "물속으로 풍덩!"
+    },
+    {
+      "word": "splash",
+      "ipa": "/splæʃ/",
+      "meaning": "첨벙거리다",
+      "emoji": "💦",
+      "example": "Kids splash in water.",
+      "exampleKo": "아이들이 첨벙첨벙.",
+      "fact": "물 튀기는 소리!"
+    },
+    {
+      "word": "float",
+      "ipa": "/floʊt/",
+      "meaning": "(물에) 뜨다",
+      "emoji": "🛟",
+      "example": "I can float now!",
+      "exampleKo": "이제 뜰 수 있어요!",
+      "fact": "튜브가 도와줘요!"
+    },
+    {
+      "word": "tube",
+      "ipa": "/tjuːb/",
+      "meaning": "튜브",
+      "emoji": "🛟",
+      "example": "Use a tube to swim.",
+      "exampleKo": "튜브로 수영해요.",
+      "fact": "도넛 모양 튜브!"
+    },
+    {
+      "word": "yacht",
+      "ipa": "/jɒt/",
+      "meaning": "요트",
+      "emoji": "⛵",
+      "example": "A white yacht.",
+      "exampleKo": "하얀 요트.",
+      "fact": "멋진 큰 배!"
+    },
+    {
+      "word": "sail",
+      "ipa": "/seɪl/",
+      "meaning": "항해하다",
+      "emoji": "⛵",
+      "example": "Let's sail away.",
+      "exampleKo": "항해를 떠나요.",
+      "fact": "돛으로 바람 타기!"
+    },
+    {
+      "word": "lighthouse",
+      "ipa": "/ˈlaɪthaʊs/",
+      "meaning": "등대",
+      "emoji": "🗼",
+      "example": "A bright lighthouse.",
+      "exampleKo": "환한 등대.",
+      "fact": "배에게 길 알려줘요!"
+    },
+    {
+      "word": "sunbathe",
+      "ipa": "/ˈsʌnbeɪð/",
+      "meaning": "일광욕하다",
+      "emoji": "😎",
+      "example": "Sunbathe on the sand.",
+      "exampleKo": "모래 위에서 일광욕.",
+      "fact": "햇빛 쬐기!"
+    },
+    {
+      "word": "holiday",
+      "ipa": "/ˈhɒlədeɪ/",
+      "meaning": "휴일, 명절",
+      "emoji": "🎉",
+      "example": "Happy holiday!",
+      "exampleKo": "행복한 휴일!",
+      "fact": "쉬는 날!"
+    },
+    {
+      "word": "ice cream",
+      "ipa": "/ˈaɪs kriːm/",
+      "meaning": "아이스크림",
+      "emoji": "🍦",
+      "example": "Eat ice cream in summer.",
+      "exampleKo": "여름엔 아이스크림!",
+      "fact": "더운 날 최고 디저트!"
+    }
+  ]
+}

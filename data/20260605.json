@@ -1,0 +1,196 @@
+{
+  "date": "2026-06-05",
+  "folderName": "20260605",
+  "dayKo": "금",
+  "dayKoFull": "금요일",
+  "dayEn": "Friday",
+  "dayIdx": 5,
+  "theme": "기본 인사·예의",
+  "themeEmoji": "🤝",
+  "vocabFileName": "혜원이_영단어_금요일_인사예의.html",
+  "quizFileName": "혜원이_영단어_금요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #fff8d8 0%, #ffd966 45%, #ffb74d 100%);",
+  "headerTitle": "🤝 인사와 예의 ✨",
+  "words": [
+    {
+      "word": "hi",
+      "ipa": "/haɪ/",
+      "meaning": "안녕! (친구 사이)",
+      "emoji": "👋",
+      "example": "Hi, friend!",
+      "exampleKo": "안녕, 친구!",
+      "fact": "hi는 친근한 인사!"
+    },
+    {
+      "word": "greetings",
+      "ipa": "/ˈɡriːtɪŋz/",
+      "meaning": "인사, 안부",
+      "emoji": "🤝",
+      "example": "Greetings to all!",
+      "exampleKo": "모두에게 인사!",
+      "fact": "정중한 인사 표현!"
+    },
+    {
+      "word": "farewell",
+      "ipa": "/ˈfeərwel/",
+      "meaning": "작별 인사",
+      "emoji": "👋",
+      "example": "Say farewell.",
+      "exampleKo": "작별 인사해요.",
+      "fact": "farewell = 정식 작별!"
+    },
+    {
+      "word": "bye",
+      "ipa": "/baɪ/",
+      "meaning": "잘 가! (친구)",
+      "emoji": "👋",
+      "example": "Bye, see you!",
+      "exampleKo": "잘 가, 또 봐!",
+      "fact": "bye는 짧은 작별 인사!"
+    },
+    {
+      "word": "kindly",
+      "ipa": "/ˈkaɪndli/",
+      "meaning": "친절히, 부디",
+      "emoji": "🤗",
+      "example": "Kindly wait here.",
+      "exampleKo": "여기서 기다려주세요.",
+      "fact": "kindly = 친절한 부탁!"
+    },
+    {
+      "word": "grateful",
+      "ipa": "/ˈɡreɪtfʊl/",
+      "meaning": "감사하는",
+      "emoji": "🙏",
+      "example": "I am grateful.",
+      "exampleKo": "감사해요.",
+      "fact": "grateful = 깊은 감사!"
+    },
+    {
+      "word": "apologize",
+      "ipa": "/əˈpɒlədʒaɪz/",
+      "meaning": "사과하다",
+      "emoji": "🙇",
+      "example": "I apologize.",
+      "exampleKo": "사과합니다.",
+      "fact": "apologize = 정중한 사과!"
+    },
+    {
+      "word": "welcome",
+      "ipa": "/ˈwelkəm/",
+      "meaning": "환영합니다 / 천만에요",
+      "emoji": "💕",
+      "example": "Welcome to my house!",
+      "exampleKo": "우리 집에 잘 왔어!",
+      "fact": "고마워 듣고 You're welcome!"
+    },
+    {
+      "word": "excuse me",
+      "ipa": "/ɪkˈskjuːz miː/",
+      "meaning": "실례합니다",
+      "emoji": "🤚",
+      "example": "Excuse me, where is the bus?",
+      "exampleKo": "실례, 버스 어디예요?",
+      "fact": "지나가거나 말 걸 때 사용!"
+    },
+    {
+      "word": "pleasant",
+      "ipa": "/ˈplezənt/",
+      "meaning": "기분 좋은",
+      "emoji": "😊",
+      "example": "A pleasant day.",
+      "exampleKo": "기분 좋은 날이에요.",
+      "fact": "pleasant = 즐거운 느낌!"
+    },
+    {
+      "word": "ok",
+      "ipa": "/oʊˈkeɪ/",
+      "meaning": "알았어, 좋아",
+      "emoji": "👌",
+      "example": "OK, let's go!",
+      "exampleKo": "좋아, 가자!",
+      "fact": "ok는 전 세계가 알아요!"
+    },
+    {
+      "word": "sure",
+      "ipa": "/ʃʊər/",
+      "meaning": "물론, 그럼",
+      "emoji": "👍",
+      "example": "Sure, I can help!",
+      "exampleKo": "물론, 도와줄게!",
+      "fact": "sure = 확실히 yes!"
+    },
+    {
+      "word": "maybe",
+      "ipa": "/ˈmeɪbi/",
+      "meaning": "아마, 어쩌면",
+      "emoji": "🤔",
+      "example": "Maybe later.",
+      "exampleKo": "어쩌면 나중에.",
+      "fact": "maybe = 모르겠는 답!"
+    },
+    {
+      "word": "wait",
+      "ipa": "/weɪt/",
+      "meaning": "기다리다",
+      "emoji": "⏳",
+      "example": "Wait for me!",
+      "exampleKo": "나 기다려줘!",
+      "fact": "wait! 잠깐!"
+    },
+    {
+      "word": "stop",
+      "ipa": "/stɒp/",
+      "meaning": "멈춰",
+      "emoji": "✋",
+      "example": "Stop right there!",
+      "exampleKo": "거기 멈춰!",
+      "fact": "stop은 빨간 표지판!"
+    },
+    {
+      "word": "go",
+      "ipa": "/ɡoʊ/",
+      "meaning": "가다",
+      "emoji": "🟢",
+      "example": "Let's go!",
+      "exampleKo": "가자!",
+      "fact": "go는 초록 신호!"
+    },
+    {
+      "word": "come",
+      "ipa": "/kʌm/",
+      "meaning": "오다",
+      "emoji": "👇",
+      "example": "Come here!",
+      "exampleKo": "여기 와!",
+      "fact": "come은 오는 동작!"
+    },
+    {
+      "word": "let's",
+      "ipa": "/lets/",
+      "meaning": "~하자",
+      "emoji": "🤝",
+      "example": "Let's play!",
+      "exampleKo": "놀자!",
+      "fact": "let's는 함께 하자는 뜻!"
+    },
+    {
+      "word": "support",
+      "ipa": "/səˈpɔːrt/",
+      "meaning": "지지하다, 돕다",
+      "emoji": "🤝",
+      "example": "I support you.",
+      "exampleKo": "널 응원해.",
+      "fact": "support = 응원·도움!"
+    },
+    {
+      "word": "cheers",
+      "ipa": "/tʃɪərz/",
+      "meaning": "건배, 응원",
+      "emoji": "🥂",
+      "example": "Cheers, my friends!",
+      "exampleKo": "건배, 친구들!",
+      "fact": "건배·고마워 둘 다 표현!"
+    }
+  ]
+}

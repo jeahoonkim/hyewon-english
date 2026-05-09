@@ -1,0 +1,196 @@
+{
+  "date": "2026-05-29",
+  "folderName": "20260529",
+  "dayKo": "금",
+  "dayKoFull": "금요일",
+  "dayEn": "Friday",
+  "dayIdx": 5,
+  "theme": "위치·방법 (부사)",
+  "themeEmoji": "📍",
+  "vocabFileName": "혜원이_영단어_금요일_위치방법.html",
+  "quizFileName": "혜원이_영단어_금요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #b3e5fc 0%, #4fc3f7 45%, #2196f3 100%);",
+  "headerTitle": "📍 위치·방법 🧭",
+  "words": [
+    {
+      "word": "here",
+      "ipa": "/hɪər/",
+      "meaning": "여기에",
+      "emoji": "📌",
+      "example": "Come here, please.",
+      "exampleKo": "여기로 와 주세요.",
+      "fact": "here = 가까운 곳!"
+    },
+    {
+      "word": "there",
+      "ipa": "/ðeər/",
+      "meaning": "거기에",
+      "emoji": "👉",
+      "example": "Look over there!",
+      "exampleKo": "저기 봐요!",
+      "fact": "there = 멀리!"
+    },
+    {
+      "word": "everywhere",
+      "ipa": "/ˈevriwer/",
+      "meaning": "어디에나",
+      "emoji": "🌍",
+      "example": "Books are everywhere.",
+      "exampleKo": "책이 어디에나 있어요.",
+      "fact": "everywhere = 모든 곳!"
+    },
+    {
+      "word": "nowhere",
+      "ipa": "/ˈnoʊwer/",
+      "meaning": "아무 데도",
+      "emoji": "❓",
+      "example": "I went nowhere yesterday.",
+      "exampleKo": "어제 아무 데도 안 갔어요.",
+      "fact": "nowhere = 아무 곳도 아닌!"
+    },
+    {
+      "word": "anywhere",
+      "ipa": "/ˈeniwer/",
+      "meaning": "어디든지",
+      "emoji": "🗺️",
+      "example": "I'll go anywhere with you.",
+      "exampleKo": "너랑 어디든 갈게.",
+      "fact": "anywhere = 어디든!"
+    },
+    {
+      "word": "somewhere",
+      "ipa": "/ˈsʌmwer/",
+      "meaning": "어딘가에",
+      "emoji": "📍",
+      "example": "I left it somewhere.",
+      "exampleKo": "어딘가에 두었어요.",
+      "fact": "somewhere = 어떤 곳에!"
+    },
+    {
+      "word": "carefully",
+      "ipa": "/ˈkerfəli/",
+      "meaning": "신중하게",
+      "emoji": "🤔",
+      "example": "Listen carefully.",
+      "exampleKo": "주의 깊게 들어요.",
+      "fact": "신중함은 실수를 줄여요!"
+    },
+    {
+      "word": "safely",
+      "ipa": "/ˈseɪfli/",
+      "meaning": "안전하게",
+      "emoji": "🛡️",
+      "example": "Cross the street safely.",
+      "exampleKo": "안전하게 길을 건너요.",
+      "fact": "안전이 가장 중요!"
+    },
+    {
+      "word": "easily",
+      "ipa": "/ˈiːzəli/",
+      "meaning": "쉽게",
+      "emoji": "👌",
+      "example": "I can do it easily.",
+      "exampleKo": "쉽게 할 수 있어요.",
+      "fact": "연습하면 쉬워져요!"
+    },
+    {
+      "word": "loudly",
+      "ipa": "/ˈlaʊdli/",
+      "meaning": "큰 소리로",
+      "emoji": "🔊",
+      "example": "Don't speak loudly.",
+      "exampleKo": "크게 말하지 마세요.",
+      "fact": "도서관에선 조용히!"
+    },
+    {
+      "word": "quietly",
+      "ipa": "/ˈkwaɪətli/",
+      "meaning": "조용히",
+      "emoji": "🤫",
+      "example": "Walk quietly, please.",
+      "exampleKo": "조용히 걸어요.",
+      "fact": "조용함도 예의!"
+    },
+    {
+      "word": "happily",
+      "ipa": "/ˈhæpɪli/",
+      "meaning": "행복하게",
+      "emoji": "😊",
+      "example": "She smiled happily.",
+      "exampleKo": "그녀는 행복하게 웃었어요.",
+      "fact": "행복하게 살아요!"
+    },
+    {
+      "word": "really",
+      "ipa": "/ˈriːəli/",
+      "meaning": "정말로",
+      "emoji": "❗",
+      "example": "I really like it!",
+      "exampleKo": "정말 좋아해요!",
+      "fact": "really = 정말, 진짜!"
+    },
+    {
+      "word": "very",
+      "ipa": "/ˈveri/",
+      "meaning": "매우",
+      "emoji": "💢",
+      "example": "It's very cold.",
+      "exampleKo": "매우 추워요.",
+      "fact": "very = 매우 강조!"
+    },
+    {
+      "word": "almost",
+      "ipa": "/ˈɔːlmoʊst/",
+      "meaning": "거의",
+      "emoji": "🎯",
+      "example": "We're almost there.",
+      "exampleKo": "거의 다 왔어요.",
+      "fact": "almost = 거의 다!"
+    },
+    {
+      "word": "apart",
+      "ipa": "/əˈpɑːrt/",
+      "meaning": "떨어져서",
+      "emoji": "⬅️➡️",
+      "example": "We sat apart.",
+      "exampleKo": "우리는 떨어져 앉았어요.",
+      "fact": "apart는 together의 반대!"
+    },
+    {
+      "word": "alone",
+      "ipa": "/əˈloʊn/",
+      "meaning": "혼자",
+      "emoji": "🚶",
+      "example": "I went alone.",
+      "exampleKo": "혼자 갔어요.",
+      "fact": "혼자 시간도 필요!"
+    },
+    {
+      "word": "outside",
+      "ipa": "/ˌaʊtˈsaɪd/",
+      "meaning": "밖에",
+      "emoji": "🌳",
+      "example": "Let's play outside.",
+      "exampleKo": "밖에서 놀자.",
+      "fact": "밖에서 노는 게 건강!"
+    },
+    {
+      "word": "inside",
+      "ipa": "/ɪnˈsaɪd/",
+      "meaning": "안에",
+      "emoji": "🏠",
+      "example": "Stay inside when it rains.",
+      "exampleKo": "비 올 때 안에 있어요.",
+      "fact": "안에 있으면 안전해요!"
+    },
+    {
+      "word": "perfectly",
+      "ipa": "/ˈpɜːrfɪktli/",
+      "meaning": "완벽하게",
+      "emoji": "💯",
+      "example": "She sang perfectly.",
+      "exampleKo": "그녀는 완벽하게 노래했어요.",
+      "fact": "perfectly는 perfect의 부사!"
+    }
+  ]
+}
