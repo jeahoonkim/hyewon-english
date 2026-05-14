@@ -1391,6 +1391,16 @@ function addPoints(amount) {
     const cur = parseInt(localStorage.getItem('hyewon_points') || '0');
     const newTotal = cur + amount;
     localStorage.setItem('hyewon_points', String(newTotal));
+    // 🌐 시트에도 즉시 동기화 (다중 기기 점수 일치)
+    if (typeof GAS_URL !== 'undefined' && GAS_URL) {
+      try {
+        fetch(GAS_URL, {
+          method: 'POST', mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain' },
+          body: JSON.stringify({ sync_state: { points: newTotal } })
+        }).catch(function(){});
+      } catch(e) {}
+    }
     return newTotal;
   } catch(e) {
     return 0;

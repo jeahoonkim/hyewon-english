@@ -1,0 +1,14 @@
+{
+  "date": "2026-06-28",
+  "folderName": "20260628",
+  "dayKo": "일",
+  "dayKoFull": "일요일",
+  "dayEn": "Sunday",
+  "dayIdx": 7,
+  "weekLabel": "Week 10",
+  "themeSummary": "어제 틀린 단어 복습",
+  "quizFileName": "혜원이_영단어_일요일_복습.html",
+  "includeDates": ["20260622", "20260623", "20260624", "20260625", "20260626"],
+  "bgGradient": "linear-gradient(180deg, #fff3e0 0%, #ffab91 45%, #d84315 100%);",
+  "headerTitle": "🌻 일요일 복습 📚"
+}

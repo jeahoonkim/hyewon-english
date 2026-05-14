@@ -1,0 +1,196 @@
+{
+  "date": "2026-06-18",
+  "folderName": "20260618",
+  "dayKo": "목",
+  "dayKoFull": "목요일",
+  "dayEn": "Thursday",
+  "dayIdx": 4,
+  "theme": "책과 이야기",
+  "themeEmoji": "📖",
+  "vocabFileName": "혜원이_영단어_목요일_책이야기.html",
+  "quizFileName": "혜원이_영단어_목요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #efebe9 0%, #a1887f 45%, #5d4037 100%);",
+  "headerTitle": "📖 책과 이야기 ✨",
+  "words": [
+    {
+      "word": "story",
+      "ipa": "/ˈstɔːri/",
+      "meaning": "이야기",
+      "emoji": "📖",
+      "example": "Tell me a story.",
+      "exampleKo": "이야기 들려줘.",
+      "fact": "재밌는 이야기!"
+    },
+    {
+      "word": "poem",
+      "ipa": "/ˈpoʊəm/",
+      "meaning": "시",
+      "emoji": "📜",
+      "example": "Write a poem.",
+      "exampleKo": "시를 써요.",
+      "fact": "짧고 멋진 글!"
+    },
+    {
+      "word": "novel",
+      "ipa": "/ˈnɒvəl/",
+      "meaning": "소설",
+      "emoji": "📚",
+      "example": "Read a novel.",
+      "exampleKo": "소설 읽어요.",
+      "fact": "긴 이야기 책!"
+    },
+    {
+      "word": "chapter",
+      "ipa": "/ˈtʃæptər/",
+      "meaning": "장, 챕터",
+      "emoji": "📕",
+      "example": "Read chapter one.",
+      "exampleKo": "1장 읽어요.",
+      "fact": "책의 한 부분!"
+    },
+    {
+      "word": "title",
+      "ipa": "/ˈtaɪtəl/",
+      "meaning": "제목",
+      "emoji": "🏷️",
+      "example": "The book title.",
+      "exampleKo": "책 제목.",
+      "fact": "책 맨 앞에 있는 글!"
+    },
+    {
+      "word": "author",
+      "ipa": "/ˈɔːθər/",
+      "meaning": "작가",
+      "emoji": "✍️",
+      "example": "A famous author.",
+      "exampleKo": "유명한 작가.",
+      "fact": "책을 쓴 사람!"
+    },
+    {
+      "word": "villain",
+      "ipa": "/ˈvɪlən/",
+      "meaning": "악당",
+      "emoji": "👿",
+      "example": "The villain laughs.",
+      "exampleKo": "악당이 웃어요.",
+      "fact": "이야기의 나쁜 사람!"
+    },
+    {
+      "word": "prince",
+      "ipa": "/prɪns/",
+      "meaning": "왕자",
+      "emoji": "🤴",
+      "example": "A brave prince.",
+      "exampleKo": "용감한 왕자.",
+      "fact": "왕의 아들!"
+    },
+    {
+      "word": "princess",
+      "ipa": "/ˈprɪnsəs/",
+      "meaning": "공주",
+      "emoji": "👸",
+      "example": "A kind princess.",
+      "exampleKo": "친절한 공주.",
+      "fact": "왕의 딸!"
+    },
+    {
+      "word": "dragon",
+      "ipa": "/ˈdræɡən/",
+      "meaning": "용",
+      "emoji": "🐉",
+      "example": "The dragon flies.",
+      "exampleKo": "용이 날아요.",
+      "fact": "불 뿜는 동물!"
+    },
+    {
+      "word": "witch",
+      "ipa": "/wɪtʃ/",
+      "meaning": "마녀",
+      "emoji": "🧙",
+      "example": "An old witch.",
+      "exampleKo": "늙은 마녀.",
+      "fact": "마법 부리는 여자!"
+    },
+    {
+      "word": "fairy",
+      "ipa": "/ˈferi/",
+      "meaning": "요정",
+      "emoji": "🧚",
+      "example": "A pretty fairy.",
+      "exampleKo": "예쁜 요정.",
+      "fact": "날개 달린 작은 사람!"
+    },
+    {
+      "word": "castle",
+      "ipa": "/ˈkæsəl/",
+      "meaning": "성",
+      "emoji": "🏰",
+      "example": "A big castle.",
+      "exampleKo": "큰 성.",
+      "fact": "왕과 공주가 살아요!"
+    },
+    {
+      "word": "tale",
+      "ipa": "/teɪl/",
+      "meaning": "이야기, 동화",
+      "emoji": "📖",
+      "example": "A fairy tale.",
+      "exampleKo": "동화 이야기.",
+      "fact": "옛날 이야기!"
+    },
+    {
+      "word": "fable",
+      "ipa": "/ˈfeɪbəl/",
+      "meaning": "우화",
+      "emoji": "🦊",
+      "example": "Aesops fables.",
+      "exampleKo": "이솝 우화.",
+      "fact": "교훈 있는 동물 이야기!"
+    },
+    {
+      "word": "myth",
+      "ipa": "/mɪθ/",
+      "meaning": "신화",
+      "emoji": "⚡",
+      "example": "Greek myth.",
+      "exampleKo": "그리스 신화.",
+      "fact": "옛날 신들 이야기!"
+    },
+    {
+      "word": "wizard",
+      "ipa": "/ˈwɪzərd/",
+      "meaning": "마법사",
+      "emoji": "🧙",
+      "example": "A powerful wizard.",
+      "exampleKo": "강력한 마법사.",
+      "fact": "남자 마법사!"
+    },
+    {
+      "word": "knight",
+      "ipa": "/naɪt/",
+      "meaning": "기사",
+      "emoji": "🗡️",
+      "example": "A brave knight.",
+      "exampleKo": "용감한 기사.",
+      "fact": "칼과 갑옷의 사람!"
+    },
+    {
+      "word": "treasure",
+      "ipa": "/ˈtreʒər/",
+      "meaning": "보물",
+      "emoji": "💎",
+      "example": "Hidden treasure!",
+      "exampleKo": "숨겨진 보물!",
+      "fact": "금·보석이 가득!"
+    },
+    {
+      "word": "ending",
+      "ipa": "/ˈendɪŋ/",
+      "meaning": "결말",
+      "emoji": "🎬",
+      "example": "A happy ending.",
+      "exampleKo": "행복한 결말.",
+      "fact": "이야기의 끝!"
+    }
+  ]
+}

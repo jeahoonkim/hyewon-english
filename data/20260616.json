@@ -1,0 +1,196 @@
+{
+  "date": "2026-06-16",
+  "folderName": "20260616",
+  "dayKo": "화",
+  "dayKoFull": "화요일",
+  "dayEn": "Tuesday",
+  "dayIdx": 2,
+  "theme": "음악과 악기",
+  "themeEmoji": "🎵",
+  "vocabFileName": "혜원이_영단어_화요일_음악.html",
+  "quizFileName": "혜원이_영단어_화요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #f3e5f5 0%, #ba68c8 45%, #7b1fa2 100%);",
+  "headerTitle": "🎵 음악과 악기 🎹",
+  "words": [
+    {
+      "word": "piano",
+      "ipa": "/piˈænoʊ/",
+      "meaning": "피아노",
+      "emoji": "🎹",
+      "example": "She plays the piano.",
+      "exampleKo": "그녀는 피아노 쳐요.",
+      "fact": "88개 건반!"
+    },
+    {
+      "word": "trumpet",
+      "ipa": "/ˈtrʌmpɪt/",
+      "meaning": "트럼펫",
+      "emoji": "🎺",
+      "example": "Blow the trumpet.",
+      "exampleKo": "트럼펫 불어요.",
+      "fact": "관악기, 입으로 불어요!"
+    },
+    {
+      "word": "xylophone",
+      "ipa": "/ˈzaɪləfoʊn/",
+      "meaning": "실로폰",
+      "emoji": "🎶",
+      "example": "Play the xylophone.",
+      "exampleKo": "실로폰 연주해요.",
+      "fact": "막대로 두드려요!"
+    },
+    {
+      "word": "recorder",
+      "ipa": "/rɪˈkɔːrdər/",
+      "meaning": "리코더",
+      "emoji": "🎼",
+      "example": "Bring your recorder.",
+      "exampleKo": "리코더 가져와요.",
+      "fact": "학교에서 자주 배워요!"
+    },
+    {
+      "word": "harmonica",
+      "ipa": "/hɑːrˈmɒnɪkə/",
+      "meaning": "하모니카",
+      "emoji": "🎼",
+      "example": "Play the harmonica.",
+      "exampleKo": "하모니카 불어요.",
+      "fact": "작고 들고 다니기 좋아요!"
+    },
+    {
+      "word": "tambourine",
+      "ipa": "/ˌtæmbəˈriːn/",
+      "meaning": "탬버린",
+      "emoji": "🎵",
+      "example": "Shake the tambourine.",
+      "exampleKo": "탬버린 흔들어요.",
+      "fact": "쨍쨍 소리!"
+    },
+    {
+      "word": "tune",
+      "ipa": "/tuːn/",
+      "meaning": "곡, 멜로디",
+      "emoji": "🎶",
+      "example": "A nice tune.",
+      "exampleKo": "좋은 곡.",
+      "fact": "노래의 멜로디!"
+    },
+    {
+      "word": "beat",
+      "ipa": "/biːt/",
+      "meaning": "박자, 비트",
+      "emoji": "🥁",
+      "example": "Feel the beat.",
+      "exampleKo": "박자를 느껴봐요.",
+      "fact": "쿵 쿵 박자!"
+    },
+    {
+      "word": "rhythm",
+      "ipa": "/ˈrɪðəm/",
+      "meaning": "리듬",
+      "emoji": "🎶",
+      "example": "Move to the rhythm.",
+      "exampleKo": "리듬에 맞춰 움직여요.",
+      "fact": "음악의 흐름!"
+    },
+    {
+      "word": "melody",
+      "ipa": "/ˈmelədi/",
+      "meaning": "멜로디, 선율",
+      "emoji": "🎶",
+      "example": "A sweet melody.",
+      "exampleKo": "달콤한 멜로디.",
+      "fact": "기억에 남는 멜로디!"
+    },
+    {
+      "word": "choir",
+      "ipa": "/ˈkwaɪər/",
+      "meaning": "합창단",
+      "emoji": "🎤",
+      "example": "Join the choir.",
+      "exampleKo": "합창단에 들어가요.",
+      "fact": "여러 명이 함께 노래!"
+    },
+    {
+      "word": "band",
+      "ipa": "/bænd/",
+      "meaning": "밴드",
+      "emoji": "🎸",
+      "example": "A school band.",
+      "exampleKo": "학교 밴드.",
+      "fact": "여러 악기 모임!"
+    },
+    {
+      "word": "orchestra",
+      "ipa": "/ˈɔːrkɪstrə/",
+      "meaning": "오케스트라",
+      "emoji": "🎻",
+      "example": "A famous orchestra.",
+      "exampleKo": "유명한 오케스트라.",
+      "fact": "큰 음악 모임!"
+    },
+    {
+      "word": "lyrics",
+      "ipa": "/ˈlɪrɪks/",
+      "meaning": "가사",
+      "emoji": "📝",
+      "example": "Sing the lyrics.",
+      "exampleKo": "가사 따라 불러요.",
+      "fact": "노래의 글!"
+    },
+    {
+      "word": "musician",
+      "ipa": "/mjuːˈzɪʃən/",
+      "meaning": "음악가",
+      "emoji": "🎼",
+      "example": "She is a musician.",
+      "exampleKo": "그녀는 음악가예요.",
+      "fact": "음악 만드는 사람!"
+    },
+    {
+      "word": "note",
+      "ipa": "/noʊt/",
+      "meaning": "음표",
+      "emoji": "🎵",
+      "example": "Read the notes.",
+      "exampleKo": "음표를 읽어요.",
+      "fact": "도레미파솔라시도!"
+    },
+    {
+      "word": "opera",
+      "ipa": "/ˈɒprə/",
+      "meaning": "오페라",
+      "emoji": "🎭",
+      "example": "Watch an opera.",
+      "exampleKo": "오페라를 봐요.",
+      "fact": "노래로 하는 연극!"
+    },
+    {
+      "word": "musical",
+      "ipa": "/ˈmjuːzɪkəl/",
+      "meaning": "뮤지컬",
+      "emoji": "🎭",
+      "example": "A famous musical.",
+      "exampleKo": "유명한 뮤지컬.",
+      "fact": "노래·춤·연기 다 함께!"
+    },
+    {
+      "word": "performance",
+      "ipa": "/pərˈfɔːrməns/",
+      "meaning": "공연",
+      "emoji": "🎤",
+      "example": "A great performance!",
+      "exampleKo": "멋진 공연!",
+      "fact": "무대에서 보여주기!"
+    },
+    {
+      "word": "applause",
+      "ipa": "/əˈplɔːz/",
+      "meaning": "박수, 갈채",
+      "emoji": "👏",
+      "example": "Big applause!",
+      "exampleKo": "큰 박수!",
+      "fact": "잘했을 때 짝짝짝!"
+    }
+  ]
+}

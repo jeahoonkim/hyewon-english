@@ -1,0 +1,196 @@
+{
+  "date": "2026-06-30",
+  "folderName": "20260630",
+  "dayKo": "화",
+  "dayKoFull": "화요일",
+  "dayEn": "Tuesday",
+  "dayIdx": 2,
+  "theme": "발명과 기술",
+  "themeEmoji": "🔧",
+  "vocabFileName": "혜원이_영단어_화요일_발명.html",
+  "quizFileName": "혜원이_영단어_화요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #fff3e0 0%, #ff7043 45%, #bf360c 100%);",
+  "headerTitle": "🔧 발명과 기술 ⚙️",
+  "words": [
+    {
+      "word": "invent",
+      "ipa": "/ɪnˈvent/",
+      "meaning": "발명하다",
+      "emoji": "💡",
+      "example": "Invent a new thing.",
+      "exampleKo": "새로운 것 발명해요.",
+      "fact": "세상에 없던 것!"
+    },
+    {
+      "word": "invention",
+      "ipa": "/ɪnˈvenʃən/",
+      "meaning": "발명품",
+      "emoji": "🔬",
+      "example": "A great invention.",
+      "exampleKo": "멋진 발명품.",
+      "fact": "새로 만든 것!"
+    },
+    {
+      "word": "inventor",
+      "ipa": "/ɪnˈventər/",
+      "meaning": "발명가",
+      "emoji": "👨‍🔬",
+      "example": "A famous inventor.",
+      "exampleKo": "유명한 발명가.",
+      "fact": "발명하는 사람!"
+    },
+    {
+      "word": "wheel",
+      "ipa": "/wiːl/",
+      "meaning": "바퀴",
+      "emoji": "⚙️",
+      "example": "Roll the wheel.",
+      "exampleKo": "바퀴 굴려요.",
+      "fact": "옛날 큰 발명!"
+    },
+    {
+      "word": "engine",
+      "ipa": "/ˈendʒən/",
+      "meaning": "엔진",
+      "emoji": "🔧",
+      "example": "Start the engine.",
+      "exampleKo": "엔진 시동 걸어요.",
+      "fact": "차 움직이는 부분!"
+    },
+    {
+      "word": "machine",
+      "ipa": "/məˈʃiːn/",
+      "meaning": "기계",
+      "emoji": "🤖",
+      "example": "Use the machine.",
+      "exampleKo": "기계를 써요.",
+      "fact": "일하는 도구!"
+    },
+    {
+      "word": "tool",
+      "ipa": "/tuːl/",
+      "meaning": "도구",
+      "emoji": "🔨",
+      "example": "Use a tool.",
+      "exampleKo": "도구를 사용해요.",
+      "fact": "일에 도움!"
+    },
+    {
+      "word": "hammer",
+      "ipa": "/ˈhæmər/",
+      "meaning": "망치",
+      "emoji": "🔨",
+      "example": "Use a hammer.",
+      "exampleKo": "망치 써요.",
+      "fact": "못 박을 때!"
+    },
+    {
+      "word": "screwdriver",
+      "ipa": "/ˈskruːdraɪvər/",
+      "meaning": "드라이버",
+      "emoji": "🪛",
+      "example": "Need a screwdriver.",
+      "exampleKo": "드라이버 필요해요.",
+      "fact": "나사 돌리기!"
+    },
+    {
+      "word": "nail",
+      "ipa": "/neɪl/",
+      "meaning": "못",
+      "emoji": "🔩",
+      "example": "Hammer the nail.",
+      "exampleKo": "못을 박아요.",
+      "fact": "붙이는 작은 막대!"
+    },
+    {
+      "word": "screw",
+      "ipa": "/skruː/",
+      "meaning": "나사",
+      "emoji": "🔩",
+      "example": "Tighten the screw.",
+      "exampleKo": "나사 조여요.",
+      "fact": "돌려서 박는!"
+    },
+    {
+      "word": "ladder",
+      "ipa": "/ˈlædər/",
+      "meaning": "사다리",
+      "emoji": "🪜",
+      "example": "Climb the ladder.",
+      "exampleKo": "사다리 올라요.",
+      "fact": "높이 올라갈 때!"
+    },
+    {
+      "word": "rope",
+      "ipa": "/roʊp/",
+      "meaning": "밧줄",
+      "emoji": "🪢",
+      "example": "Tie with rope.",
+      "exampleKo": "밧줄로 묶어요.",
+      "fact": "두꺼운 줄!"
+    },
+    {
+      "word": "lever",
+      "ipa": "/ˈlevər/",
+      "meaning": "레버, 손잡이",
+      "emoji": "🎛️",
+      "example": "Pull the lever.",
+      "exampleKo": "레버 당겨요.",
+      "fact": "위·아래 움직여요!"
+    },
+    {
+      "word": "switch",
+      "ipa": "/swɪtʃ/",
+      "meaning": "스위치",
+      "emoji": "🔌",
+      "example": "Flip the switch.",
+      "exampleKo": "스위치 켜요.",
+      "fact": "불 켜고 끄기!"
+    },
+    {
+      "word": "circuit",
+      "ipa": "/ˈsɜːrkət/",
+      "meaning": "회로",
+      "emoji": "⚡",
+      "example": "Electric circuit.",
+      "exampleKo": "전기 회로.",
+      "fact": "전기가 흐르는 길!"
+    },
+    {
+      "word": "wire",
+      "ipa": "/waɪər/",
+      "meaning": "전선",
+      "emoji": "🔌",
+      "example": "Connect the wire.",
+      "exampleKo": "전선 연결해요.",
+      "fact": "전기 통하는 줄!"
+    },
+    {
+      "word": "motor",
+      "ipa": "/ˈmoʊtər/",
+      "meaning": "모터",
+      "emoji": "⚙️",
+      "example": "A small motor.",
+      "exampleKo": "작은 모터.",
+      "fact": "움직이게 하는 힘!"
+    },
+    {
+      "word": "gear",
+      "ipa": "/ɡɪər/",
+      "meaning": "톱니바퀴",
+      "emoji": "⚙️",
+      "example": "Turn the gear.",
+      "exampleKo": "기어를 돌려요.",
+      "fact": "이가 맞물려 회전!"
+    },
+    {
+      "word": "genius",
+      "ipa": "/ˈdʒiːniəs/",
+      "meaning": "천재",
+      "emoji": "🧠",
+      "example": "A real genius!",
+      "exampleKo": "진짜 천재!",
+      "fact": "엄청 똑똑!"
+    }
+  ]
+}

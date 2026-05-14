@@ -1,0 +1,196 @@
+{
+  "date": "2026-06-29",
+  "folderName": "20260629",
+  "dayKo": "월",
+  "dayKoFull": "월요일",
+  "dayEn": "Monday",
+  "dayIdx": 1,
+  "theme": "건강과 의료",
+  "themeEmoji": "💊",
+  "vocabFileName": "혜원이_영단어_월요일_건강.html",
+  "quizFileName": "혜원이_영단어_월요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #e1f5fe 0%, #4fc3f7 45%, #0277bd 100%);",
+  "headerTitle": "💊 건강과 의료 🏥",
+  "words": [
+    {
+      "word": "medicine",
+      "ipa": "/ˈmedəsən/",
+      "meaning": "약",
+      "emoji": "💊",
+      "example": "Take your medicine.",
+      "exampleKo": "약 먹어요.",
+      "fact": "아플 때 도움!"
+    },
+    {
+      "word": "pill",
+      "ipa": "/pɪl/",
+      "meaning": "알약",
+      "emoji": "💊",
+      "example": "Swallow the pill.",
+      "exampleKo": "알약을 삼켜요.",
+      "fact": "작고 동그란 약!"
+    },
+    {
+      "word": "bandage",
+      "ipa": "/ˈbændɪdʒ/",
+      "meaning": "붕대",
+      "emoji": "🩹",
+      "example": "Put on a bandage.",
+      "exampleKo": "붕대를 감아요.",
+      "fact": "상처 가리기!"
+    },
+    {
+      "word": "sick",
+      "ipa": "/sɪk/",
+      "meaning": "아픈",
+      "emoji": "🤒",
+      "example": "I am sick today.",
+      "exampleKo": "오늘 아파요.",
+      "fact": "몸이 안 좋아요!"
+    },
+    {
+      "word": "flu",
+      "ipa": "/fluː/",
+      "meaning": "독감",
+      "emoji": "🤧",
+      "example": "I have the flu.",
+      "exampleKo": "독감 걸렸어요.",
+      "fact": "심한 감기!"
+    },
+    {
+      "word": "sneezing",
+      "ipa": "/ˈsniːzɪŋ/",
+      "meaning": "재채기하기",
+      "emoji": "🤧",
+      "example": "I keep sneezing.",
+      "exampleKo": "계속 재채기해요.",
+      "fact": "감기 증상!"
+    },
+    {
+      "word": "sneeze",
+      "ipa": "/sniːz/",
+      "meaning": "재채기",
+      "emoji": "🤧",
+      "example": "I sneeze a lot.",
+      "exampleKo": "재채기 많이 해요.",
+      "fact": "에취!"
+    },
+    {
+      "word": "headache",
+      "ipa": "/ˈhedeɪk/",
+      "meaning": "두통",
+      "emoji": "🤕",
+      "example": "I have a headache.",
+      "exampleKo": "머리 아파요.",
+      "fact": "머리가 아파요!"
+    },
+    {
+      "word": "stomachache",
+      "ipa": "/ˈstʌməkeɪk/",
+      "meaning": "복통",
+      "emoji": "😖",
+      "example": "My stomach aches.",
+      "exampleKo": "배 아파요.",
+      "fact": "배가 아플 때!"
+    },
+    {
+      "word": "toothache",
+      "ipa": "/ˈtuːθeɪk/",
+      "meaning": "치통",
+      "emoji": "🦷",
+      "example": "A bad toothache.",
+      "exampleKo": "심한 치통.",
+      "fact": "치과 가야 해요!"
+    },
+    {
+      "word": "injury",
+      "ipa": "/ˈɪndʒəri/",
+      "meaning": "상처, 부상",
+      "emoji": "🤕",
+      "example": "A small injury.",
+      "exampleKo": "작은 상처.",
+      "fact": "다쳐서 생긴 것!"
+    },
+    {
+      "word": "checkup",
+      "ipa": "/ˈtʃekʌp/",
+      "meaning": "검진",
+      "emoji": "🩺",
+      "example": "A health checkup.",
+      "exampleKo": "건강 검진.",
+      "fact": "건강 확인!"
+    },
+    {
+      "word": "healthy",
+      "ipa": "/ˈhelθi/",
+      "meaning": "건강한",
+      "emoji": "💪",
+      "example": "Eat healthy food.",
+      "exampleKo": "건강한 음식 먹어요.",
+      "fact": "몸에 좋은!"
+    },
+    {
+      "word": "diet",
+      "ipa": "/ˈdaɪət/",
+      "meaning": "식단",
+      "emoji": "🥗",
+      "example": "A healthy diet.",
+      "exampleKo": "건강한 식단.",
+      "fact": "건강한 식습관!"
+    },
+    {
+      "word": "recovery",
+      "ipa": "/rɪˈkʌvəri/",
+      "meaning": "회복",
+      "emoji": "💪",
+      "example": "Fast recovery!",
+      "exampleKo": "빠른 회복!",
+      "fact": "건강해지기!"
+    },
+    {
+      "word": "hygiene",
+      "ipa": "/ˈhaɪdʒiːn/",
+      "meaning": "위생",
+      "emoji": "🧼",
+      "example": "Good hygiene.",
+      "exampleKo": "좋은 위생.",
+      "fact": "깨끗하게!"
+    },
+    {
+      "word": "germ",
+      "ipa": "/dʒɜːrm/",
+      "meaning": "세균",
+      "emoji": "🦠",
+      "example": "Wash germs away.",
+      "exampleKo": "세균 씻어내요.",
+      "fact": "손 씻기 중요!"
+    },
+    {
+      "word": "vaccine",
+      "ipa": "/vækˈsiːn/",
+      "meaning": "백신",
+      "emoji": "💉",
+      "example": "Get a vaccine.",
+      "exampleKo": "백신 맞아요.",
+      "fact": "병 예방!"
+    },
+    {
+      "word": "emergency",
+      "ipa": "/ɪˈmɜːrdʒənsi/",
+      "meaning": "응급",
+      "emoji": "🚨",
+      "example": "An emergency!",
+      "exampleKo": "응급 상황!",
+      "fact": "빠른 도움 필요!"
+    },
+    {
+      "word": "ambulance",
+      "ipa": "/ˈæmbjələns/",
+      "meaning": "구급차",
+      "emoji": "🚑",
+      "example": "Call an ambulance!",
+      "exampleKo": "구급차 불러요!",
+      "fact": "응급 자동차!"
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "date": "2026-06-22",
+  "folderName": "20260622",
+  "dayKo": "월",
+  "dayKoFull": "월요일",
+  "dayEn": "Monday",
+  "dayIdx": 1,
+  "theme": "부엌과 요리 도구",
+  "themeEmoji": "🍳",
+  "vocabFileName": "혜원이_영단어_월요일_요리도구.html",
+  "quizFileName": "혜원이_영단어_월요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #ffebee 0%, #ef5350 45%, #c62828 100%);",
+  "headerTitle": "🍳 부엌과 요리 도구 🍴",
+  "words": [
+    {
+      "word": "pan",
+      "ipa": "/pæn/",
+      "meaning": "프라이팬",
+      "emoji": "🍳",
+      "example": "A hot pan.",
+      "exampleKo": "뜨거운 팬.",
+      "fact": "평평한 요리 도구!"
+    },
+    {
+      "word": "pot",
+      "ipa": "/pɒt/",
+      "meaning": "냄비",
+      "emoji": "🍲",
+      "example": "Boil water in a pot.",
+      "exampleKo": "냄비에 물 끓여요.",
+      "fact": "국 끓이는 도구!"
+    },
+    {
+      "word": "knife",
+      "ipa": "/naɪf/",
+      "meaning": "칼",
+      "emoji": "🔪",
+      "example": "Use a knife carefully.",
+      "exampleKo": "칼 조심해서 써요.",
+      "fact": "날카로워 조심!"
+    },
+    {
+      "word": "spoon",
+      "ipa": "/spuːn/",
+      "meaning": "숟가락",
+      "emoji": "🥄",
+      "example": "Eat with a spoon.",
+      "exampleKo": "숟가락으로 먹어요.",
+      "fact": "국·밥 먹을 때!"
+    },
+    {
+      "word": "fork",
+      "ipa": "/fɔːrk/",
+      "meaning": "포크",
+      "emoji": "🍴",
+      "example": "Pick it up with a fork.",
+      "exampleKo": "포크로 집어요.",
+      "fact": "4개의 갈래!"
+    },
+    {
+      "word": "chopsticks",
+      "ipa": "/ˈtʃɒpstɪks/",
+      "meaning": "젓가락",
+      "emoji": "🥢",
+      "example": "Use chopsticks.",
+      "exampleKo": "젓가락 써요.",
+      "fact": "한국 식사 필수!"
+    },
+    {
+      "word": "plate",
+      "ipa": "/pleɪt/",
+      "meaning": "접시",
+      "emoji": "🍽️",
+      "example": "A clean plate.",
+      "exampleKo": "깨끗한 접시.",
+      "fact": "음식 담는 그릇!"
+    },
+    {
+      "word": "cup",
+      "ipa": "/kʌp/",
+      "meaning": "컵",
+      "emoji": "☕",
+      "example": "A cup of tea.",
+      "exampleKo": "차 한 잔.",
+      "fact": "음료 담는 잔!"
+    },
+    {
+      "word": "glass",
+      "ipa": "/ɡlæs/",
+      "meaning": "유리잔",
+      "emoji": "🥛",
+      "example": "A glass of milk.",
+      "exampleKo": "우유 한 잔.",
+      "fact": "유리로 만든 잔!"
+    },
+    {
+      "word": "napkin",
+      "ipa": "/ˈnæpkɪn/",
+      "meaning": "냅킨",
+      "emoji": "🧻",
+      "example": "Wipe with a napkin.",
+      "exampleKo": "냅킨으로 닦아요.",
+      "fact": "입 닦는 종이!"
+    },
+    {
+      "word": "boil",
+      "ipa": "/bɔɪl/",
+      "meaning": "끓이다",
+      "emoji": "♨️",
+      "example": "Boil water.",
+      "exampleKo": "물을 끓여요.",
+      "fact": "100도가 되면 끓어요!"
+    },
+    {
+      "word": "fry",
+      "ipa": "/fraɪ/",
+      "meaning": "튀기다",
+      "emoji": "🍳",
+      "example": "Fry an egg.",
+      "exampleKo": "계란을 튀겨요.",
+      "fact": "기름에 지글지글!"
+    },
+    {
+      "word": "chop",
+      "ipa": "/tʃɒp/",
+      "meaning": "썰다",
+      "emoji": "🔪",
+      "example": "Chop onions.",
+      "exampleKo": "양파를 썰어요.",
+      "fact": "칼로 톡톡톡!"
+    },
+    {
+      "word": "mix",
+      "ipa": "/mɪks/",
+      "meaning": "섞다",
+      "emoji": "🥣",
+      "example": "Mix the dough.",
+      "exampleKo": "반죽을 섞어요.",
+      "fact": "여러 가지 합쳐요!"
+    },
+    {
+      "word": "stir",
+      "ipa": "/stɜːr/",
+      "meaning": "휘젓다",
+      "emoji": "🥄",
+      "example": "Stir the soup.",
+      "exampleKo": "국을 휘저어요.",
+      "fact": "동그랗게 저어요!"
+    },
+    {
+      "word": "pour",
+      "ipa": "/pɔːr/",
+      "meaning": "붓다, 따르다",
+      "emoji": "🫗",
+      "example": "Pour the milk.",
+      "exampleKo": "우유를 부어요.",
+      "fact": "천천히 졸졸!"
+    },
+    {
+      "word": "peel",
+      "ipa": "/piːl/",
+      "meaning": "껍질 벗기다",
+      "emoji": "🍌",
+      "example": "Peel a banana.",
+      "exampleKo": "바나나 껍질 벗겨요.",
+      "fact": "껍질 벗기기!"
+    },
+    {
+      "word": "slice",
+      "ipa": "/slaɪs/",
+      "meaning": "얇게 썰다",
+      "emoji": "🍞",
+      "example": "Slice the bread.",
+      "exampleKo": "빵을 얇게 썰어요.",
+      "fact": "얇고 평평하게!"
+    },
+    {
+      "word": "flour",
+      "ipa": "/ˈflaʊər/",
+      "meaning": "밀가루",
+      "emoji": "🌾",
+      "example": "Add flour.",
+      "exampleKo": "밀가루를 넣어요.",
+      "fact": "빵·국수 재료!"
+    },
+    {
+      "word": "sugar",
+      "ipa": "/ˈʃʊɡər/",
+      "meaning": "설탕",
+      "emoji": "🍬",
+      "example": "Add sugar.",
+      "exampleKo": "설탕 넣어요.",
+      "fact": "달콤한 가루!"
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "date": "2026-07-03",
+  "folderName": "20260703",
+  "dayKo": "금",
+  "dayKoFull": "금요일",
+  "dayEn": "Friday",
+  "dayIdx": 5,
+  "theme": "미래와 꿈",
+  "themeEmoji": "🌟",
+  "vocabFileName": "혜원이_영단어_금요일_꿈.html",
+  "quizFileName": "혜원이_영단어_금요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #e8eaf6 0%, #7986cb 45%, #303f9f 100%);",
+  "headerTitle": "🌟 미래와 꿈 ✨",
+  "words": [
+    {
+      "word": "vision",
+      "ipa": "/ˈvɪʒən/",
+      "meaning": "비전, 꿈",
+      "emoji": "👁️",
+      "example": "Have a vision.",
+      "exampleKo": "비전을 가져요.",
+      "fact": "앞으로의 모습!"
+    },
+    {
+      "word": "prospect",
+      "ipa": "/ˈprɒspekt/",
+      "meaning": "전망",
+      "emoji": "🔭",
+      "example": "A bright prospect.",
+      "exampleKo": "밝은 전망.",
+      "fact": "앞으로의 가능성!"
+    },
+    {
+      "word": "hope",
+      "ipa": "/hoʊp/",
+      "meaning": "희망",
+      "emoji": "🌈",
+      "example": "I have hope.",
+      "exampleKo": "희망이 있어요.",
+      "fact": "좋은 기대!"
+    },
+    {
+      "word": "desire",
+      "ipa": "/dɪˈzaɪər/",
+      "meaning": "바람, 욕망",
+      "emoji": "💖",
+      "example": "A deep desire.",
+      "exampleKo": "깊은 바람.",
+      "fact": "강한 wish!"
+    },
+    {
+      "word": "plan",
+      "ipa": "/plæn/",
+      "meaning": "계획",
+      "emoji": "📝",
+      "example": "Make a plan.",
+      "exampleKo": "계획을 세워요.",
+      "fact": "미리 정하기!"
+    },
+    {
+      "word": "target",
+      "ipa": "/ˈtɑːrɡət/",
+      "meaning": "목표",
+      "emoji": "🎯",
+      "example": "Hit the target.",
+      "exampleKo": "목표를 맞춰요.",
+      "fact": "화살 과녁!"
+    },
+    {
+      "word": "succeed",
+      "ipa": "/səkˈsiːd/",
+      "meaning": "성공하다",
+      "emoji": "🏆",
+      "example": "Succeed in life.",
+      "exampleKo": "인생 성공.",
+      "fact": "이루어요!"
+    },
+    {
+      "word": "success",
+      "ipa": "/səkˈses/",
+      "meaning": "성공",
+      "emoji": "🥇",
+      "example": "Big success!",
+      "exampleKo": "큰 성공!",
+      "fact": "잘 됨!"
+    },
+    {
+      "word": "attempt",
+      "ipa": "/əˈtempt/",
+      "meaning": "시도하다",
+      "emoji": "💫",
+      "example": "Make an attempt.",
+      "exampleKo": "시도해 봐요.",
+      "fact": "한번 해보기!"
+    },
+    {
+      "word": "believe",
+      "ipa": "/bɪˈliːv/",
+      "meaning": "믿다",
+      "emoji": "🙏",
+      "example": "Believe in yourself.",
+      "exampleKo": "자신을 믿어요.",
+      "fact": "믿음!"
+    },
+    {
+      "word": "daydream",
+      "ipa": "/ˈdeɪdriːm/",
+      "meaning": "백일몽",
+      "emoji": "💭",
+      "example": "Don't daydream!",
+      "exampleKo": "멍 때리지마!",
+      "fact": "낮에 꾸는 꿈!"
+    },
+    {
+      "word": "inspire",
+      "ipa": "/ɪnˈspaɪər/",
+      "meaning": "영감을 주다",
+      "emoji": "💡",
+      "example": "You inspire me.",
+      "exampleKo": "너 덕분에 힘나.",
+      "fact": "마음에 불을!"
+    },
+    {
+      "word": "ambition",
+      "ipa": "/æmˈbɪʃən/",
+      "meaning": "포부, 야망",
+      "emoji": "🚀",
+      "example": "A big ambition.",
+      "exampleKo": "큰 포부.",
+      "fact": "이루고 싶은 꿈!"
+    },
+    {
+      "word": "clever",
+      "ipa": "/ˈklevər/",
+      "meaning": "영리한",
+      "emoji": "🧠",
+      "example": "A clever idea.",
+      "exampleKo": "영리한 아이디어.",
+      "fact": "머리 좋은!"
+    },
+    {
+      "word": "originate",
+      "ipa": "/əˈrɪdʒəneɪt/",
+      "meaning": "시작하다, 비롯되다",
+      "emoji": "🌱",
+      "example": "Ideas originate here.",
+      "exampleKo": "아이디어가 여기서 시작.",
+      "fact": "새로 시작!"
+    },
+    {
+      "word": "accomplish",
+      "ipa": "/əˈkɒmplɪʃ/",
+      "meaning": "완수하다",
+      "emoji": "🎖️",
+      "example": "Accomplish goals.",
+      "exampleKo": "목표를 완수해요.",
+      "fact": "끝까지 해내요!"
+    },
+    {
+      "word": "grow",
+      "ipa": "/ɡroʊ/",
+      "meaning": "자라다",
+      "emoji": "🌱",
+      "example": "Plants grow tall.",
+      "exampleKo": "식물이 자라요.",
+      "fact": "커지는 것!"
+    },
+    {
+      "word": "courage",
+      "ipa": "/ˈkʌrɪdʒ/",
+      "meaning": "용기",
+      "emoji": "💪",
+      "example": "Have courage.",
+      "exampleKo": "용기를 가져요.",
+      "fact": "두려움 이기는 힘!"
+    },
+    {
+      "word": "achieve",
+      "ipa": "/əˈtʃiːv/",
+      "meaning": "성취하다",
+      "emoji": "🎯",
+      "example": "Achieve your dream.",
+      "exampleKo": "꿈을 이뤄요.",
+      "fact": "해내요!"
+    },
+    {
+      "word": "forever",
+      "ipa": "/fərˈevər/",
+      "meaning": "영원히",
+      "emoji": "♾️",
+      "example": "Friends forever!",
+      "exampleKo": "영원한 친구!",
+      "fact": "끝없이!"
+    }
+  ]
+}

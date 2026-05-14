@@ -1,0 +1,196 @@
+{
+  "date": "2026-06-15",
+  "folderName": "20260615",
+  "dayKo": "월",
+  "dayKoFull": "월요일",
+  "dayEn": "Monday",
+  "dayIdx": 1,
+  "theme": "컴퓨터와 디지털",
+  "themeEmoji": "💻",
+  "vocabFileName": "혜원이_영단어_월요일_디지털.html",
+  "quizFileName": "혜원이_영단어_월요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #e3f2fd 0%, #64b5f6 45%, #1976d2 100%);",
+  "headerTitle": "💻 디지털 세상 📱",
+  "words": [
+    {
+      "word": "computer",
+      "ipa": "/kəmˈpjuːtər/",
+      "meaning": "컴퓨터",
+      "emoji": "💻",
+      "example": "Turn on the computer.",
+      "exampleKo": "컴퓨터 켜요.",
+      "fact": "공부·게임 다 가능!"
+    },
+    {
+      "word": "laptop",
+      "ipa": "/ˈlæptɒp/",
+      "meaning": "노트북",
+      "emoji": "💻",
+      "example": "I use my laptop.",
+      "exampleKo": "노트북을 써요.",
+      "fact": "가지고 다니는 컴퓨터!"
+    },
+    {
+      "word": "tablet",
+      "ipa": "/ˈtæblət/",
+      "meaning": "태블릿",
+      "emoji": "📱",
+      "example": "Read on the tablet.",
+      "exampleKo": "태블릿으로 읽어요.",
+      "fact": "휴대폰보다 큰 화면!"
+    },
+    {
+      "word": "smartphone",
+      "ipa": "/ˈsmɑːrtfoʊn/",
+      "meaning": "스마트폰",
+      "emoji": "📱",
+      "example": "Mom has a smartphone.",
+      "exampleKo": "엄마는 스마트폰 있어요.",
+      "fact": "전화+컴퓨터 합친 것!"
+    },
+    {
+      "word": "keyboard",
+      "ipa": "/ˈkiːbɔːrd/",
+      "meaning": "키보드",
+      "emoji": "⌨️",
+      "example": "Type on the keyboard.",
+      "exampleKo": "키보드로 입력해요.",
+      "fact": "글자판!"
+    },
+    {
+      "word": "mouse",
+      "ipa": "/maʊs/",
+      "meaning": "마우스",
+      "emoji": "🖱️",
+      "example": "Click with the mouse.",
+      "exampleKo": "마우스로 클릭해요.",
+      "fact": "쥐 모양 같다고 mouse!"
+    },
+    {
+      "word": "screen",
+      "ipa": "/skriːn/",
+      "meaning": "화면",
+      "emoji": "📺",
+      "example": "Look at the screen.",
+      "exampleKo": "화면을 봐요.",
+      "fact": "보이는 부분이 screen!"
+    },
+    {
+      "word": "monitor",
+      "ipa": "/ˈmɒnɪtər/",
+      "meaning": "모니터",
+      "emoji": "🖥️",
+      "example": "A big monitor.",
+      "exampleKo": "큰 모니터.",
+      "fact": "컴퓨터 화면!"
+    },
+    {
+      "word": "app",
+      "ipa": "/æp/",
+      "meaning": "앱, 응용프로그램",
+      "emoji": "📲",
+      "example": "Download an app.",
+      "exampleKo": "앱을 받아요.",
+      "fact": "application의 줄임말!"
+    },
+    {
+      "word": "website",
+      "ipa": "/ˈwebsaɪt/",
+      "meaning": "웹사이트",
+      "emoji": "🌐",
+      "example": "Visit a website.",
+      "exampleKo": "웹사이트 방문해요.",
+      "fact": "인터넷 주소!"
+    },
+    {
+      "word": "wifi",
+      "ipa": "/ˈwaɪfaɪ/",
+      "meaning": "와이파이",
+      "emoji": "📶",
+      "example": "Connect to wifi.",
+      "exampleKo": "와이파이 연결해요.",
+      "fact": "무선 인터넷!"
+    },
+    {
+      "word": "internet",
+      "ipa": "/ˈɪntərnet/",
+      "meaning": "인터넷",
+      "emoji": "🌐",
+      "example": "Use the internet.",
+      "exampleKo": "인터넷 사용해요.",
+      "fact": "세계와 연결!"
+    },
+    {
+      "word": "password",
+      "ipa": "/ˈpæswɜːrd/",
+      "meaning": "비밀번호",
+      "emoji": "🔒",
+      "example": "Type the password.",
+      "exampleKo": "비밀번호 입력해요.",
+      "fact": "비밀스러운 글자!"
+    },
+    {
+      "word": "email",
+      "ipa": "/ˈiːmeɪl/",
+      "meaning": "이메일",
+      "emoji": "📧",
+      "example": "Send an email.",
+      "exampleKo": "이메일 보내요.",
+      "fact": "전자 편지!"
+    },
+    {
+      "word": "charger",
+      "ipa": "/ˈtʃɑːrdʒər/",
+      "meaning": "충전기",
+      "emoji": "🔌",
+      "example": "Where is the charger?",
+      "exampleKo": "충전기 어디 있어요?",
+      "fact": "배터리 채워줘요!"
+    },
+    {
+      "word": "download",
+      "ipa": "/ˈdaʊnloʊd/",
+      "meaning": "다운로드",
+      "emoji": "⬇️",
+      "example": "Download a song.",
+      "exampleKo": "노래 다운받아요.",
+      "fact": "내 기기에 받기!"
+    },
+    {
+      "word": "upload",
+      "ipa": "/ˈʌploʊd/",
+      "meaning": "업로드",
+      "emoji": "⬆️",
+      "example": "Upload a photo.",
+      "exampleKo": "사진 올려요.",
+      "fact": "인터넷에 올리기!"
+    },
+    {
+      "word": "click",
+      "ipa": "/klɪk/",
+      "meaning": "클릭하다",
+      "emoji": "👆",
+      "example": "Click here.",
+      "exampleKo": "여기 클릭해요.",
+      "fact": "마우스 누르기!"
+    },
+    {
+      "word": "type",
+      "ipa": "/taɪp/",
+      "meaning": "타자치다, 입력하다",
+      "emoji": "⌨️",
+      "example": "Type your name.",
+      "exampleKo": "이름 입력해요.",
+      "fact": "키보드로 글자치기!"
+    },
+    {
+      "word": "search",
+      "ipa": "/sɜːrtʃ/",
+      "meaning": "검색하다",
+      "emoji": "🔍",
+      "example": "Search on Google.",
+      "exampleKo": "구글로 검색해요.",
+      "fact": "찾고 싶은 거 입력!"
+    }
+  ]
+}

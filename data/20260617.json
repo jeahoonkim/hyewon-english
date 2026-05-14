@@ -1,0 +1,196 @@
+{
+  "date": "2026-06-17",
+  "folderName": "20260617",
+  "dayKo": "수",
+  "dayKoFull": "수요일",
+  "dayEn": "Wednesday",
+  "dayIdx": 3,
+  "theme": "미술과 그림",
+  "themeEmoji": "🎨",
+  "vocabFileName": "혜원이_영단어_수요일_미술.html",
+  "quizFileName": "혜원이_영단어_수요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #fff3e0 0%, #ffb74d 45%, #f57c00 100%);",
+  "headerTitle": "🎨 미술과 그림 🖌️",
+  "words": [
+    {
+      "word": "palette",
+      "ipa": "/ˈpælət/",
+      "meaning": "팔레트",
+      "emoji": "🎨",
+      "example": "Mix colors on the palette.",
+      "exampleKo": "팔레트에서 색 섞어요.",
+      "fact": "물감 섞는 판!"
+    },
+    {
+      "word": "painting",
+      "ipa": "/ˈpeɪntɪŋ/",
+      "meaning": "그림 (회화)",
+      "emoji": "🖼️",
+      "example": "A beautiful painting.",
+      "exampleKo": "아름다운 그림.",
+      "fact": "물감으로 그린 그림!"
+    },
+    {
+      "word": "drawing",
+      "ipa": "/ˈdrɔːɪŋ/",
+      "meaning": "그림 (소묘)",
+      "emoji": "✏️",
+      "example": "Show me your drawing.",
+      "exampleKo": "네 그림 보여줘.",
+      "fact": "연필로 그린 그림!"
+    },
+    {
+      "word": "art",
+      "ipa": "/ɑːrt/",
+      "meaning": "미술, 예술",
+      "emoji": "🖼️",
+      "example": "I love art class.",
+      "exampleKo": "미술 시간 좋아요.",
+      "fact": "art = 예술!"
+    },
+    {
+      "word": "gallery",
+      "ipa": "/ˈɡæləri/",
+      "meaning": "미술관, 갤러리",
+      "emoji": "🏛️",
+      "example": "Visit the gallery.",
+      "exampleKo": "미술관에 가요.",
+      "fact": "그림 전시하는 곳!"
+    },
+    {
+      "word": "design",
+      "ipa": "/dɪˈzaɪn/",
+      "meaning": "디자인",
+      "emoji": "✏️",
+      "example": "Design a poster.",
+      "exampleKo": "포스터를 디자인해요.",
+      "fact": "예쁘게 꾸미기!"
+    },
+    {
+      "word": "craft",
+      "ipa": "/kræft/",
+      "meaning": "수공예",
+      "emoji": "✂️",
+      "example": "Make a paper craft.",
+      "exampleKo": "종이 공예해요.",
+      "fact": "손으로 만드는 공예!"
+    },
+    {
+      "word": "clay",
+      "ipa": "/kleɪ/",
+      "meaning": "찰흙",
+      "emoji": "🟤",
+      "example": "Shape the clay.",
+      "exampleKo": "찰흙 모양 만들어요.",
+      "fact": "주물럭주물럭!"
+    },
+    {
+      "word": "pottery",
+      "ipa": "/ˈpɒtəri/",
+      "meaning": "도자기",
+      "emoji": "🏺",
+      "example": "Pottery class is fun.",
+      "exampleKo": "도자기 수업 재밌어요.",
+      "fact": "흙으로 만든 그릇!"
+    },
+    {
+      "word": "frame",
+      "ipa": "/freɪm/",
+      "meaning": "액자, 틀",
+      "emoji": "🖼️",
+      "example": "Put it in a frame.",
+      "exampleKo": "액자에 넣어요.",
+      "fact": "그림 둘러싼 틀!"
+    },
+    {
+      "word": "poster",
+      "ipa": "/ˈpoʊstər/",
+      "meaning": "포스터",
+      "emoji": "📃",
+      "example": "Hang the poster.",
+      "exampleKo": "포스터 걸어요.",
+      "fact": "큰 종이 그림!"
+    },
+    {
+      "word": "portrait",
+      "ipa": "/ˈpɔːrtrət/",
+      "meaning": "초상화, 인물화",
+      "emoji": "👤",
+      "example": "Draw a portrait.",
+      "exampleKo": "초상화 그려요.",
+      "fact": "사람 얼굴 그림!"
+    },
+    {
+      "word": "landscape",
+      "ipa": "/ˈlændskeɪp/",
+      "meaning": "풍경화",
+      "emoji": "🏞️",
+      "example": "A pretty landscape.",
+      "exampleKo": "예쁜 풍경화.",
+      "fact": "산·강·들판 그림!"
+    },
+    {
+      "word": "statue",
+      "ipa": "/ˈstætʃuː/",
+      "meaning": "조각상",
+      "emoji": "🗿",
+      "example": "A big statue.",
+      "exampleKo": "큰 조각상.",
+      "fact": "돌·금속 사람 모양!"
+    },
+    {
+      "word": "colorful",
+      "ipa": "/ˈkʌlərfəl/",
+      "meaning": "다채로운",
+      "emoji": "🌈",
+      "example": "A colorful picture.",
+      "exampleKo": "다채로운 그림.",
+      "fact": "여러 색이 가득!"
+    },
+    {
+      "word": "shade",
+      "ipa": "/ʃeɪd/",
+      "meaning": "그늘, 색조",
+      "emoji": "🌑",
+      "example": "Light and shade.",
+      "exampleKo": "빛과 그늘.",
+      "fact": "어두운 부분!"
+    },
+    {
+      "word": "draft",
+      "ipa": "/dræft/",
+      "meaning": "초안, 밑그림",
+      "emoji": "📝",
+      "example": "First draft only.",
+      "exampleKo": "첫 초안일 뿐이에요.",
+      "fact": "완성 전 그림!"
+    },
+    {
+      "word": "scissor",
+      "ipa": "/ˈsɪzər/",
+      "meaning": "가위",
+      "emoji": "✂️",
+      "example": "Use scissors carefully.",
+      "exampleKo": "가위 조심해서 써요.",
+      "fact": "오리는 도구!"
+    },
+    {
+      "word": "glue",
+      "ipa": "/ɡluː/",
+      "meaning": "풀, 접착제",
+      "emoji": "🧴",
+      "example": "Stick with glue.",
+      "exampleKo": "풀로 붙여요.",
+      "fact": "끈끈해서 붙여요!"
+    },
+    {
+      "word": "stamp",
+      "ipa": "/stæmp/",
+      "meaning": "도장",
+      "emoji": "💮",
+      "example": "Press the stamp.",
+      "exampleKo": "도장을 찍어요.",
+      "fact": "꽉 누르면 모양!"
+    }
+  ]
+}

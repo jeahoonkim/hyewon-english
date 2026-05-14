@@ -1,0 +1,196 @@
+{
+  "date": "2026-06-19",
+  "folderName": "20260619",
+  "dayKo": "금",
+  "dayKoFull": "금요일",
+  "dayEn": "Friday",
+  "dayIdx": 5,
+  "theme": "우주와 모험",
+  "themeEmoji": "🚀",
+  "vocabFileName": "혜원이_영단어_금요일_우주.html",
+  "quizFileName": "혜원이_영단어_금요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #1a237e 0%, #283593 45%, #5e35b1 100%);",
+  "headerTitle": "🚀 우주와 모험 🌌",
+  "words": [
+    {
+      "word": "launch",
+      "ipa": "/lɔːntʃ/",
+      "meaning": "발사하다",
+      "emoji": "🚀",
+      "example": "Rocket launch!",
+      "exampleKo": "로켓 발사!",
+      "fact": "우주로 슝!"
+    },
+    {
+      "word": "spacesuit",
+      "ipa": "/ˈspeɪssuːt/",
+      "meaning": "우주복",
+      "emoji": "👨‍🚀",
+      "example": "Wear a spacesuit.",
+      "exampleKo": "우주복 입어요.",
+      "fact": "우주에서 입는 옷!"
+    },
+    {
+      "word": "helmet",
+      "ipa": "/ˈhelmət/",
+      "meaning": "헬멧",
+      "emoji": "⛑️",
+      "example": "Astronauts wear helmets.",
+      "exampleKo": "우주인은 헬멧 써요.",
+      "fact": "머리 보호!"
+    },
+    {
+      "word": "mission",
+      "ipa": "/ˈmɪʃən/",
+      "meaning": "임무",
+      "emoji": "🎯",
+      "example": "A space mission.",
+      "exampleKo": "우주 임무.",
+      "fact": "꼭 해야 할 일!"
+    },
+    {
+      "word": "crater",
+      "ipa": "/ˈkreɪtər/",
+      "meaning": "분화구",
+      "emoji": "🌑",
+      "example": "Moon craters.",
+      "exampleKo": "달의 분화구들.",
+      "fact": "달 표면의 동그란 구덩이!"
+    },
+    {
+      "word": "dust",
+      "ipa": "/dʌst/",
+      "meaning": "먼지",
+      "emoji": "💨",
+      "example": "Moon dust.",
+      "exampleKo": "달 먼지.",
+      "fact": "작은 알갱이들!"
+    },
+    {
+      "word": "blackhole",
+      "ipa": "/ˈblæk hoʊl/",
+      "meaning": "블랙홀",
+      "emoji": "🕳️",
+      "example": "A blackhole is scary.",
+      "exampleKo": "블랙홀은 무서워요.",
+      "fact": "빛도 못 빠져나오는 곳!"
+    },
+    {
+      "word": "ufo",
+      "ipa": "/ˌjuːefˈoʊ/",
+      "meaning": "유에프오, 미확인비행물체",
+      "emoji": "🛸",
+      "example": "Did you see the ufo?",
+      "exampleKo": "유에프오 봤어요?",
+      "fact": "외계인 비행기?!"
+    },
+    {
+      "word": "observe",
+      "ipa": "/əbˈzɜːrv/",
+      "meaning": "관찰하다",
+      "emoji": "👀",
+      "example": "Observe the stars.",
+      "exampleKo": "별을 관찰해요.",
+      "fact": "자세히 살펴봐요!"
+    },
+    {
+      "word": "discovery",
+      "ipa": "/dɪˈskʌvəri/",
+      "meaning": "발견",
+      "emoji": "💡",
+      "example": "A big discovery!",
+      "exampleKo": "큰 발견!",
+      "fact": "새로 찾아낸 것!"
+    },
+    {
+      "word": "experiment",
+      "ipa": "/ɪkˈsperəmənt/",
+      "meaning": "실험",
+      "emoji": "🧪",
+      "example": "A science experiment.",
+      "exampleKo": "과학 실험.",
+      "fact": "직접 해보고 확인!"
+    },
+    {
+      "word": "lab",
+      "ipa": "/læb/",
+      "meaning": "실험실",
+      "emoji": "🔬",
+      "example": "Work in the lab.",
+      "exampleKo": "실험실에서 일해요.",
+      "fact": "laboratory 줄임말!"
+    },
+    {
+      "word": "microscope",
+      "ipa": "/ˈmaɪkrəskoʊp/",
+      "meaning": "현미경",
+      "emoji": "🔬",
+      "example": "Use a microscope.",
+      "exampleKo": "현미경 사용해요.",
+      "fact": "작은 것 크게 봐요!"
+    },
+    {
+      "word": "magnet",
+      "ipa": "/ˈmæɡnət/",
+      "meaning": "자석",
+      "emoji": "🧲",
+      "example": "A strong magnet.",
+      "exampleKo": "강한 자석.",
+      "fact": "쇠를 끌어당겨요!"
+    },
+    {
+      "word": "robot",
+      "ipa": "/ˈroʊbɒt/",
+      "meaning": "로봇",
+      "emoji": "🤖",
+      "example": "A helpful robot.",
+      "exampleKo": "도와주는 로봇.",
+      "fact": "사람 대신 일해요!"
+    },
+    {
+      "word": "electricity",
+      "ipa": "/ɪˌlekˈtrɪsəti/",
+      "meaning": "전기",
+      "emoji": "⚡",
+      "example": "Save electricity.",
+      "exampleKo": "전기를 아껴요.",
+      "fact": "전선으로 흐르는 힘!"
+    },
+    {
+      "word": "force",
+      "ipa": "/fɔːrs/",
+      "meaning": "힘, 작용",
+      "emoji": "💪",
+      "example": "Push with force.",
+      "exampleKo": "힘으로 밀어요.",
+      "fact": "물체를 움직이는 힘!"
+    },
+    {
+      "word": "speed",
+      "ipa": "/spiːd/",
+      "meaning": "속도",
+      "emoji": "💨",
+      "example": "Top speed!",
+      "exampleKo": "최고 속도!",
+      "fact": "얼마나 빠른지!"
+    },
+    {
+      "word": "laser",
+      "ipa": "/ˈleɪzər/",
+      "meaning": "레이저",
+      "emoji": "🔦",
+      "example": "A laser beam.",
+      "exampleKo": "레이저 광선.",
+      "fact": "강한 빛줄기!"
+    },
+    {
+      "word": "binoculars",
+      "ipa": "/bɪˈnɒkjələrz/",
+      "meaning": "쌍안경",
+      "emoji": "🔭",
+      "example": "Use binoculars.",
+      "exampleKo": "쌍안경 사용해요.",
+      "fact": "두 눈으로 멀리 봐요!"
+    }
+  ]
+}

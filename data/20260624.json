@@ -1,0 +1,196 @@
+{
+  "date": "2026-06-24",
+  "folderName": "20260624",
+  "dayKo": "수",
+  "dayKoFull": "수요일",
+  "dayEn": "Wednesday",
+  "dayIdx": 3,
+  "theme": "게임과 놀이",
+  "themeEmoji": "🎮",
+  "vocabFileName": "혜원이_영단어_수요일_게임.html",
+  "quizFileName": "혜원이_영단어_수요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #e8f5e9 0%, #66bb6a 45%, #1b5e20 100%);",
+  "headerTitle": "🎮 게임과 놀이 🎲",
+  "words": [
+    {
+      "word": "playtime",
+      "ipa": "/ˈpleɪtaɪm/",
+      "meaning": "노는 시간",
+      "emoji": "🎉",
+      "example": "It's playtime!",
+      "exampleKo": "노는 시간!",
+      "fact": "노는 시간이에요!"
+    },
+    {
+      "word": "checkers",
+      "ipa": "/ˈtʃekərz/",
+      "meaning": "체커",
+      "emoji": "⚫",
+      "example": "Play checkers.",
+      "exampleKo": "체커 둬요.",
+      "fact": "체스 비슷한 게임!"
+    },
+    {
+      "word": "dice",
+      "ipa": "/daɪs/",
+      "meaning": "주사위",
+      "emoji": "🎲",
+      "example": "Roll the dice.",
+      "exampleKo": "주사위 굴려요.",
+      "fact": "6면 주사위!"
+    },
+    {
+      "word": "puzzle",
+      "ipa": "/ˈpʌzəl/",
+      "meaning": "퍼즐",
+      "emoji": "🧩",
+      "example": "Solve the puzzle.",
+      "exampleKo": "퍼즐 풀어요.",
+      "fact": "조각 맞추기!"
+    },
+    {
+      "word": "card",
+      "ipa": "/kɑːrd/",
+      "meaning": "카드",
+      "emoji": "🃏",
+      "example": "Play cards.",
+      "exampleKo": "카드 놀이.",
+      "fact": "트럼프 게임!"
+    },
+    {
+      "word": "toy",
+      "ipa": "/tɔɪ/",
+      "meaning": "장난감",
+      "emoji": "🧸",
+      "example": "A cute toy.",
+      "exampleKo": "귀여운 장난감.",
+      "fact": "아이들이 좋아!"
+    },
+    {
+      "word": "doll",
+      "ipa": "/dɒl/",
+      "meaning": "인형",
+      "emoji": "👧",
+      "example": "A pretty doll.",
+      "exampleKo": "예쁜 인형.",
+      "fact": "사람 모양 장난감!"
+    },
+    {
+      "word": "yoyo",
+      "ipa": "/ˈjoʊjoʊ/",
+      "meaning": "요요",
+      "emoji": "🪀",
+      "example": "Spin the yoyo.",
+      "exampleKo": "요요 돌려요.",
+      "fact": "위·아래로 움직여요!"
+    },
+    {
+      "word": "kite",
+      "ipa": "/kaɪt/",
+      "meaning": "연",
+      "emoji": "🪁",
+      "example": "Fly a kite.",
+      "exampleKo": "연을 날려요.",
+      "fact": "바람 타고 하늘로!"
+    },
+    {
+      "word": "marble",
+      "ipa": "/ˈmɑːrbəl/",
+      "meaning": "구슬",
+      "emoji": "🔴",
+      "example": "Roll the marble.",
+      "exampleKo": "구슬 굴려요.",
+      "fact": "작고 동글동글!"
+    },
+    {
+      "word": "compete",
+      "ipa": "/kəmˈpiːt/",
+      "meaning": "경쟁하다",
+      "emoji": "⚔️",
+      "example": "Compete fairly.",
+      "exampleKo": "공정하게 경쟁해요.",
+      "fact": "누가 더 잘하나!"
+    },
+    {
+      "word": "pretend",
+      "ipa": "/prɪˈtend/",
+      "meaning": "~인 척하다",
+      "emoji": "🎭",
+      "example": "Let's pretend!",
+      "exampleKo": "~인 척하자!",
+      "fact": "역할놀이!"
+    },
+    {
+      "word": "level",
+      "ipa": "/ˈlevəl/",
+      "meaning": "레벨, 단계",
+      "emoji": "📊",
+      "example": "Pass the level.",
+      "exampleKo": "레벨 통과.",
+      "fact": "게임 단계!"
+    },
+    {
+      "word": "opponent",
+      "ipa": "/əˈpoʊnənt/",
+      "meaning": "상대편",
+      "emoji": "👥",
+      "example": "A tough opponent.",
+      "exampleKo": "강한 상대.",
+      "fact": "맞붙는 상대!"
+    },
+    {
+      "word": "turn",
+      "ipa": "/tɜːrn/",
+      "meaning": "차례",
+      "emoji": "🔄",
+      "example": "My turn!",
+      "exampleKo": "내 차례!",
+      "fact": "순서대로!"
+    },
+    {
+      "word": "rule",
+      "ipa": "/ruːl/",
+      "meaning": "규칙",
+      "emoji": "📜",
+      "example": "Follow the rules.",
+      "exampleKo": "규칙 따라요.",
+      "fact": "게임 약속!"
+    },
+    {
+      "word": "jigsaw",
+      "ipa": "/ˈdʒɪɡsɔː/",
+      "meaning": "직소퍼즐",
+      "emoji": "🧩",
+      "example": "A big jigsaw.",
+      "exampleKo": "큰 직소퍼즐.",
+      "fact": "조각 1000개도!"
+    },
+    {
+      "word": "hideandseek",
+      "ipa": "/ˈhaɪd ən siːk/",
+      "meaning": "숨바꼭질",
+      "emoji": "🙈",
+      "example": "Play hideandseek.",
+      "exampleKo": "숨바꼭질해요.",
+      "fact": "숨고 찾아요!"
+    },
+    {
+      "word": "tag",
+      "ipa": "/tæɡ/",
+      "meaning": "술래잡기",
+      "emoji": "🏃",
+      "example": "Play tag.",
+      "exampleKo": "술래잡기해요.",
+      "fact": "잡으러 다녀요!"
+    },
+    {
+      "word": "victory",
+      "ipa": "/ˈvɪktəri/",
+      "meaning": "승리",
+      "emoji": "🏆",
+      "example": "A great victory!",
+      "exampleKo": "멋진 승리!",
+      "fact": "이긴 결과!"
+    }
+  ]
+}

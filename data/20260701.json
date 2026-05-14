@@ -1,0 +1,196 @@
+{
+  "date": "2026-07-01",
+  "folderName": "20260701",
+  "dayKo": "수",
+  "dayKoFull": "수요일",
+  "dayEn": "Wednesday",
+  "dayIdx": 3,
+  "theme": "역사와 옛날",
+  "themeEmoji": "🏛️",
+  "vocabFileName": "혜원이_영단어_수요일_역사.html",
+  "quizFileName": "혜원이_영단어_수요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #fff8e1 0%, #d4a574 45%, #8b5a2b 100%);",
+  "headerTitle": "🏛️ 역사와 옛날 📜",
+  "words": [
+    {
+      "word": "history",
+      "ipa": "/ˈhɪstəri/",
+      "meaning": "역사",
+      "emoji": "📜",
+      "example": "Learn history.",
+      "exampleKo": "역사를 배워요.",
+      "fact": "옛날 이야기!"
+    },
+    {
+      "word": "ancient",
+      "ipa": "/ˈeɪnʃənt/",
+      "meaning": "고대의",
+      "emoji": "🏛️",
+      "example": "Ancient Egypt.",
+      "exampleKo": "고대 이집트.",
+      "fact": "아주 옛날!"
+    },
+    {
+      "word": "modern",
+      "ipa": "/ˈmɒdərn/",
+      "meaning": "현대의",
+      "emoji": "🏙️",
+      "example": "Modern city.",
+      "exampleKo": "현대 도시.",
+      "fact": "지금 시대!"
+    },
+    {
+      "word": "king",
+      "ipa": "/kɪŋ/",
+      "meaning": "왕",
+      "emoji": "👑",
+      "example": "A great king.",
+      "exampleKo": "위대한 왕.",
+      "fact": "왕국의 우두머리!"
+    },
+    {
+      "word": "queen",
+      "ipa": "/kwiːn/",
+      "meaning": "여왕",
+      "emoji": "👸",
+      "example": "The queen smiles.",
+      "exampleKo": "여왕이 웃어요.",
+      "fact": "여자 왕!"
+    },
+    {
+      "word": "emperor",
+      "ipa": "/ˈempərər/",
+      "meaning": "황제",
+      "emoji": "👑",
+      "example": "Roman emperor.",
+      "exampleKo": "로마 황제.",
+      "fact": "왕 중의 왕!"
+    },
+    {
+      "word": "war",
+      "ipa": "/wɔːr/",
+      "meaning": "전쟁",
+      "emoji": "⚔️",
+      "example": "A long war.",
+      "exampleKo": "긴 전쟁.",
+      "fact": "슬픈 일!"
+    },
+    {
+      "word": "peace",
+      "ipa": "/piːs/",
+      "meaning": "평화",
+      "emoji": "🕊️",
+      "example": "World peace.",
+      "exampleKo": "세계 평화.",
+      "fact": "전쟁 없음!"
+    },
+    {
+      "word": "soldier",
+      "ipa": "/ˈsoʊldʒər/",
+      "meaning": "군인",
+      "emoji": "🪖",
+      "example": "Brave soldiers.",
+      "exampleKo": "용감한 군인.",
+      "fact": "나라를 지켜요!"
+    },
+    {
+      "word": "sword",
+      "ipa": "/sɔːrd/",
+      "meaning": "칼, 검",
+      "emoji": "⚔️",
+      "example": "A sharp sword.",
+      "exampleKo": "날카로운 검.",
+      "fact": "옛날 무기!"
+    },
+    {
+      "word": "shield",
+      "ipa": "/ʃiːld/",
+      "meaning": "방패",
+      "emoji": "🛡️",
+      "example": "Hold a shield.",
+      "exampleKo": "방패 들어요.",
+      "fact": "공격을 막아요!"
+    },
+    {
+      "word": "armor",
+      "ipa": "/ˈɑːrmər/",
+      "meaning": "갑옷",
+      "emoji": "🛡️",
+      "example": "Wear armor.",
+      "exampleKo": "갑옷 입어요.",
+      "fact": "몸을 보호!"
+    },
+    {
+      "word": "flag",
+      "ipa": "/flæɡ/",
+      "meaning": "깃발",
+      "emoji": "🚩",
+      "example": "Raise the flag.",
+      "exampleKo": "깃발 올려요.",
+      "fact": "나라의 상징!"
+    },
+    {
+      "word": "crown",
+      "ipa": "/kraʊn/",
+      "meaning": "왕관",
+      "emoji": "👑",
+      "example": "A golden crown.",
+      "exampleKo": "금 왕관.",
+      "fact": "왕이 쓰는 것!"
+    },
+    {
+      "word": "throne",
+      "ipa": "/θroʊn/",
+      "meaning": "왕좌",
+      "emoji": "🪑",
+      "example": "Sit on the throne.",
+      "exampleKo": "왕좌에 앉아요.",
+      "fact": "왕의 의자!"
+    },
+    {
+      "word": "empire",
+      "ipa": "/ˈempaɪər/",
+      "meaning": "제국",
+      "emoji": "🏛️",
+      "example": "Ancient empire.",
+      "exampleKo": "고대 제국.",
+      "fact": "거대한 나라!"
+    },
+    {
+      "word": "tomb",
+      "ipa": "/tuːm/",
+      "meaning": "무덤",
+      "emoji": "⚱️",
+      "example": "An old tomb.",
+      "exampleKo": "오래된 무덤.",
+      "fact": "죽은 사람의 자리!"
+    },
+    {
+      "word": "pyramid",
+      "ipa": "/ˈpɪrəmɪd/",
+      "meaning": "피라미드",
+      "emoji": "🔺",
+      "example": "Visit the pyramid.",
+      "exampleKo": "피라미드 방문.",
+      "fact": "이집트 유명한 것!"
+    },
+    {
+      "word": "warrior",
+      "ipa": "/ˈwɔːriər/",
+      "meaning": "전사",
+      "emoji": "⚔️",
+      "example": "A strong warrior.",
+      "exampleKo": "강한 전사.",
+      "fact": "용감한 싸움꾼!"
+    },
+    {
+      "word": "legend",
+      "ipa": "/ˈledʒənd/",
+      "meaning": "전설",
+      "emoji": "📖",
+      "example": "An old legend.",
+      "exampleKo": "오래된 전설.",
+      "fact": "옛 이야기!"
+    }
+  ]
+}

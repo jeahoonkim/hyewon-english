@@ -1,0 +1,14 @@
+{
+  "date": "2026-07-04",
+  "folderName": "20260704",
+  "dayKo": "토",
+  "dayKoFull": "토요일",
+  "dayEn": "Saturday",
+  "dayIdx": 6,
+  "weekLabel": "Week 11",
+  "themeSummary": "건강·발명·역사·감각·꿈",
+  "quizFileName": "혜원이_영단어_토요일_종합시험.html",
+  "includeDates": ["20260629", "20260630", "20260701", "20260702", "20260703"],
+  "bgGradient": "linear-gradient(180deg, #e1f5fe 0%, #fff3e0 25%, #fff8e1 50%, #f8bbd0 75%, #e8eaf6 100%);",
+  "headerTitle": "🎯 주간 종합 시험 🏆"
+}

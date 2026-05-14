@@ -1,0 +1,196 @@
+{
+  "date": "2026-06-26",
+  "folderName": "20260626",
+  "dayKo": "금",
+  "dayKoFull": "금요일",
+  "dayEn": "Friday",
+  "dayIdx": 5,
+  "theme": "명절과 기념일",
+  "themeEmoji": "🎊",
+  "vocabFileName": "혜원이_영단어_금요일_명절.html",
+  "quizFileName": "혜원이_영단어_금요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #fce4ec 0%, #f06292 45%, #c2185b 100%);",
+  "headerTitle": "🎊 명절과 기념일 🎉",
+  "words": [
+    {
+      "word": "festival",
+      "ipa": "/ˈfestəvəl/",
+      "meaning": "축제",
+      "emoji": "🎪",
+      "example": "A fun festival.",
+      "exampleKo": "재밌는 축제.",
+      "fact": "기쁜 행사!"
+    },
+    {
+      "word": "celebration",
+      "ipa": "/ˌseləˈbreɪʃən/",
+      "meaning": "축하 행사",
+      "emoji": "🥳",
+      "example": "A big celebration.",
+      "exampleKo": "큰 축하 행사.",
+      "fact": "함께 축하!"
+    },
+    {
+      "word": "present",
+      "ipa": "/ˈprezənt/",
+      "meaning": "선물",
+      "emoji": "🎁",
+      "example": "A nice present.",
+      "exampleKo": "좋은 선물.",
+      "fact": "gift와 같아요!"
+    },
+    {
+      "word": "invitation",
+      "ipa": "/ˌɪnvəˈteɪʃən/",
+      "meaning": "초대장",
+      "emoji": "💌",
+      "example": "Send an invitation.",
+      "exampleKo": "초대장 보내요.",
+      "fact": "초대 편지!"
+    },
+    {
+      "word": "wreath",
+      "ipa": "/riːθ/",
+      "meaning": "화환",
+      "emoji": "🎄",
+      "example": "Christmas wreath.",
+      "exampleKo": "크리스마스 화환.",
+      "fact": "동그란 장식!"
+    },
+    {
+      "word": "confetti",
+      "ipa": "/kənˈfeti/",
+      "meaning": "색종이 조각",
+      "emoji": "🎊",
+      "example": "Throw confetti.",
+      "exampleKo": "색종이 뿌려요.",
+      "fact": "파티 장식!"
+    },
+    {
+      "word": "ribbon",
+      "ipa": "/ˈrɪbən/",
+      "meaning": "리본",
+      "emoji": "🎀",
+      "example": "Tie a ribbon.",
+      "exampleKo": "리본 묶어요.",
+      "fact": "예쁜 끈!"
+    },
+    {
+      "word": "cupcake",
+      "ipa": "/ˈkʌpkeɪk/",
+      "meaning": "컵케이크",
+      "emoji": "🧁",
+      "example": "A tiny cupcake.",
+      "exampleKo": "작은 컵케이크.",
+      "fact": "개인용 케이크!"
+    },
+    {
+      "word": "chocolate",
+      "ipa": "/ˈtʃɒklət/",
+      "meaning": "초콜릿",
+      "emoji": "🍫",
+      "example": "Eat chocolate.",
+      "exampleKo": "초콜릿 먹어요.",
+      "fact": "달콤한 간식!"
+    },
+    {
+      "word": "firework",
+      "ipa": "/ˈfaɪərwɜːrk/",
+      "meaning": "불꽃놀이",
+      "emoji": "🎆",
+      "example": "Watch the fireworks.",
+      "exampleKo": "불꽃놀이 봐요.",
+      "fact": "하늘 가득 불꽃!"
+    },
+    {
+      "word": "parade",
+      "ipa": "/pəˈreɪd/",
+      "meaning": "퍼레이드",
+      "emoji": "🎭",
+      "example": "Watch the parade.",
+      "exampleKo": "퍼레이드 봐요.",
+      "fact": "길에서 행진!"
+    },
+    {
+      "word": "costume",
+      "ipa": "/ˈkɒstuːm/",
+      "meaning": "의상, 분장",
+      "emoji": "🎭",
+      "example": "A scary costume.",
+      "exampleKo": "무서운 의상.",
+      "fact": "할로윈 분장!"
+    },
+    {
+      "word": "mask",
+      "ipa": "/mæsk/",
+      "meaning": "가면",
+      "emoji": "🎭",
+      "example": "Wear a mask.",
+      "exampleKo": "가면 써요.",
+      "fact": "얼굴 가리기!"
+    },
+    {
+      "word": "Halloween",
+      "ipa": "/ˌhæləˈwiːn/",
+      "meaning": "할로윈",
+      "emoji": "🎃",
+      "example": "Happy Halloween!",
+      "exampleKo": "즐거운 할로윈!",
+      "fact": "10월 31일!"
+    },
+    {
+      "word": "Christmas",
+      "ipa": "/ˈkrɪsməs/",
+      "meaning": "크리스마스",
+      "emoji": "🎄",
+      "example": "Merry Christmas!",
+      "exampleKo": "메리 크리스마스!",
+      "fact": "12월 25일!"
+    },
+    {
+      "word": "Easter",
+      "ipa": "/ˈiːstər/",
+      "meaning": "부활절",
+      "emoji": "🐰",
+      "example": "Happy Easter!",
+      "exampleKo": "부활절 축하!",
+      "fact": "달걀 찾기!"
+    },
+    {
+      "word": "Thanksgiving",
+      "ipa": "/ˌθæŋksˈɡɪvɪŋ/",
+      "meaning": "추수감사절",
+      "emoji": "🦃",
+      "example": "Happy Thanksgiving!",
+      "exampleKo": "추수감사절!",
+      "fact": "감사의 날!"
+    },
+    {
+      "word": "birthday",
+      "ipa": "/ˈbɜːrθdeɪ/",
+      "meaning": "생일",
+      "emoji": "🎂",
+      "example": "Happy birthday!",
+      "exampleKo": "생일 축하!",
+      "fact": "1년에 한 번!"
+    },
+    {
+      "word": "anniversary",
+      "ipa": "/ˌænɪˈvɜːrsəri/",
+      "meaning": "기념일",
+      "emoji": "💕",
+      "example": "Wedding anniversary.",
+      "exampleKo": "결혼 기념일.",
+      "fact": "중요한 날!"
+    },
+    {
+      "word": "feast",
+      "ipa": "/fiːst/",
+      "meaning": "잔치, 진수성찬",
+      "emoji": "🍗",
+      "example": "A big feast.",
+      "exampleKo": "큰 잔치.",
+      "fact": "많은 음식!"
+    }
+  ]
+}

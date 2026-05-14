@@ -1,0 +1,196 @@
+{
+  "date": "2026-06-25",
+  "folderName": "20260625",
+  "dayKo": "목",
+  "dayKoFull": "목요일",
+  "dayEn": "Thursday",
+  "dayIdx": 4,
+  "theme": "환경과 재활용",
+  "themeEmoji": "♻️",
+  "vocabFileName": "혜원이_영단어_목요일_환경.html",
+  "quizFileName": "혜원이_영단어_목요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #e0f2f1 0%, #4db6ac 45%, #00695c 100%);",
+  "headerTitle": "♻️ 환경과 재활용 🌍",
+  "words": [
+    {
+      "word": "recycle",
+      "ipa": "/ˌriːˈsaɪkəl/",
+      "meaning": "재활용하다",
+      "emoji": "♻️",
+      "example": "Recycle paper.",
+      "exampleKo": "종이 재활용해요.",
+      "fact": "다시 쓰기!"
+    },
+    {
+      "word": "reuse",
+      "ipa": "/ˌriːˈjuːz/",
+      "meaning": "다시 쓰다",
+      "emoji": "🔄",
+      "example": "Reuse the bag.",
+      "exampleKo": "가방 다시 써요.",
+      "fact": "환경 보호!"
+    },
+    {
+      "word": "reduce",
+      "ipa": "/rɪˈduːs/",
+      "meaning": "줄이다",
+      "emoji": "📉",
+      "example": "Reduce waste.",
+      "exampleKo": "쓰레기 줄여요.",
+      "fact": "덜 만들기!"
+    },
+    {
+      "word": "plastic",
+      "ipa": "/ˈplæstɪk/",
+      "meaning": "플라스틱",
+      "emoji": "♻️",
+      "example": "Plastic bottles.",
+      "exampleKo": "플라스틱 병.",
+      "fact": "잘 안 썩어요!"
+    },
+    {
+      "word": "paper",
+      "ipa": "/ˈpeɪpər/",
+      "meaning": "종이",
+      "emoji": "📄",
+      "example": "Recycle paper.",
+      "exampleKo": "종이 재활용.",
+      "fact": "나무로 만든 것!"
+    },
+    {
+      "word": "trash",
+      "ipa": "/træʃ/",
+      "meaning": "쓰레기",
+      "emoji": "🗑️",
+      "example": "Take out the trash.",
+      "exampleKo": "쓰레기 버려요.",
+      "fact": "버릴 것!"
+    },
+    {
+      "word": "waste",
+      "ipa": "/weɪst/",
+      "meaning": "낭비, 쓰레기",
+      "emoji": "🚮",
+      "example": "Don't waste water.",
+      "exampleKo": "물 낭비하지마.",
+      "fact": "아껴 써야!"
+    },
+    {
+      "word": "pollution",
+      "ipa": "/pəˈluːʃən/",
+      "meaning": "오염",
+      "emoji": "💨",
+      "example": "Air pollution.",
+      "exampleKo": "공기 오염.",
+      "fact": "환경이 더러워짐!"
+    },
+    {
+      "word": "sustain",
+      "ipa": "/səˈsteɪn/",
+      "meaning": "지속하다",
+      "emoji": "♻️",
+      "example": "Sustain nature.",
+      "exampleKo": "자연을 지속해요.",
+      "fact": "오래 유지!"
+    },
+    {
+      "word": "protect",
+      "ipa": "/prəˈtekt/",
+      "meaning": "보호하다",
+      "emoji": "🛡️",
+      "example": "Protect nature.",
+      "exampleKo": "자연을 보호해요.",
+      "fact": "지켜주기!"
+    },
+    {
+      "word": "save",
+      "ipa": "/seɪv/",
+      "meaning": "아끼다, 구하다",
+      "emoji": "💰",
+      "example": "Save energy.",
+      "exampleKo": "에너지 아껴요.",
+      "fact": "아끼면 좋아요!"
+    },
+    {
+      "word": "climate",
+      "ipa": "/ˈklaɪmət/",
+      "meaning": "기후",
+      "emoji": "🌡️",
+      "example": "Climate change.",
+      "exampleKo": "기후 변화.",
+      "fact": "지구의 날씨 패턴!"
+    },
+    {
+      "word": "nature",
+      "ipa": "/ˈneɪtʃər/",
+      "meaning": "자연",
+      "emoji": "🌳",
+      "example": "Enjoy nature.",
+      "exampleKo": "자연을 즐겨요.",
+      "fact": "산·강·바다!"
+    },
+    {
+      "word": "bottle",
+      "ipa": "/ˈbɒtəl/",
+      "meaning": "병",
+      "emoji": "🍾",
+      "example": "A water bottle.",
+      "exampleKo": "물병.",
+      "fact": "재활용 가능!"
+    },
+    {
+      "word": "can",
+      "ipa": "/kæn/",
+      "meaning": "캔, 깡통",
+      "emoji": "🥫",
+      "example": "A soda can.",
+      "exampleKo": "음료수 캔.",
+      "fact": "금속 재활용!"
+    },
+    {
+      "word": "litter",
+      "ipa": "/ˈlɪtər/",
+      "meaning": "쓰레기 (작은)",
+      "emoji": "🚮",
+      "example": "Pick up litter.",
+      "exampleKo": "쓰레기 주워요.",
+      "fact": "길가에 버린 쓰레기!"
+    },
+    {
+      "word": "battery",
+      "ipa": "/ˈbætəri/",
+      "meaning": "배터리",
+      "emoji": "🔋",
+      "example": "Old batteries.",
+      "exampleKo": "오래된 배터리.",
+      "fact": "꼭 분리수거!"
+    },
+    {
+      "word": "compost",
+      "ipa": "/ˈkɒmpɒst/",
+      "meaning": "퇴비",
+      "emoji": "🌱",
+      "example": "Make compost.",
+      "exampleKo": "퇴비 만들어요.",
+      "fact": "음식물 → 거름!"
+    },
+    {
+      "word": "organic",
+      "ipa": "/ɔːrˈɡænɪk/",
+      "meaning": "유기농의",
+      "emoji": "🥬",
+      "example": "Organic food.",
+      "exampleKo": "유기농 음식.",
+      "fact": "건강한 음식!"
+    },
+    {
+      "word": "eco",
+      "ipa": "/ˈekoʊ/",
+      "meaning": "친환경의",
+      "emoji": "🌿",
+      "example": "Eco friendly.",
+      "exampleKo": "친환경.",
+      "fact": "환경 친화적!"
+    }
+  ]
+}

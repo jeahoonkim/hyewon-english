@@ -1,0 +1,196 @@
+{
+  "date": "2026-07-02",
+  "folderName": "20260702",
+  "dayKo": "목",
+  "dayKoFull": "목요일",
+  "dayEn": "Thursday",
+  "dayIdx": 4,
+  "theme": "감각과 느낌",
+  "themeEmoji": "👃",
+  "vocabFileName": "혜원이_영단어_목요일_감각.html",
+  "quizFileName": "혜원이_영단어_목요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #f8bbd0 0%, #f06292 45%, #ad1457 100%);",
+  "headerTitle": "👃 감각과 느낌 ✨",
+  "words": [
+    {
+      "word": "touch",
+      "ipa": "/tʌtʃ/",
+      "meaning": "만지다",
+      "emoji": "✋",
+      "example": "Don't touch!",
+      "exampleKo": "만지지마!",
+      "fact": "손으로 느껴요!"
+    },
+    {
+      "word": "taste",
+      "ipa": "/teɪst/",
+      "meaning": "맛",
+      "emoji": "👅",
+      "example": "A good taste.",
+      "exampleKo": "좋은 맛.",
+      "fact": "혀로 느껴요!"
+    },
+    {
+      "word": "smell",
+      "ipa": "/smel/",
+      "meaning": "냄새",
+      "emoji": "👃",
+      "example": "A nice smell.",
+      "exampleKo": "좋은 냄새.",
+      "fact": "코로 느껴요!"
+    },
+    {
+      "word": "hear",
+      "ipa": "/hɪər/",
+      "meaning": "듣다",
+      "emoji": "👂",
+      "example": "I hear music.",
+      "exampleKo": "음악 들려요.",
+      "fact": "귀로 들어요!"
+    },
+    {
+      "word": "see",
+      "ipa": "/siː/",
+      "meaning": "보다",
+      "emoji": "👁️",
+      "example": "I see a bird.",
+      "exampleKo": "새가 보여요.",
+      "fact": "눈으로 봐요!"
+    },
+    {
+      "word": "silky",
+      "ipa": "/ˈsɪlki/",
+      "meaning": "비단같은",
+      "emoji": "✨",
+      "example": "Silky hair.",
+      "exampleKo": "비단같은 머리.",
+      "fact": "부드럽고 매끈!"
+    },
+    {
+      "word": "firm",
+      "ipa": "/fɜːrm/",
+      "meaning": "단단한",
+      "emoji": "💪",
+      "example": "A firm grip.",
+      "exampleKo": "단단한 잡기.",
+      "fact": "꽉 단단!"
+    },
+    {
+      "word": "glossy",
+      "ipa": "/ˈɡlɒsi/",
+      "meaning": "반짝이는",
+      "emoji": "✨",
+      "example": "Glossy paper.",
+      "exampleKo": "반짝이는 종이.",
+      "fact": "광이 나요!"
+    },
+    {
+      "word": "prickly",
+      "ipa": "/ˈprɪkli/",
+      "meaning": "따끔따끔한",
+      "emoji": "🌵",
+      "example": "Prickly cactus.",
+      "exampleKo": "따끔한 선인장.",
+      "fact": "가시같이 따끔!"
+    },
+    {
+      "word": "sticky",
+      "ipa": "/ˈstɪki/",
+      "meaning": "끈적한",
+      "emoji": "🍯",
+      "example": "Sticky honey.",
+      "exampleKo": "끈적한 꿀.",
+      "fact": "손에 붙어요!"
+    },
+    {
+      "word": "creamy",
+      "ipa": "/ˈkriːmi/",
+      "meaning": "크리미한",
+      "emoji": "🍦",
+      "example": "Creamy yogurt.",
+      "exampleKo": "크리미한 요거트.",
+      "fact": "부드럽고 진한!"
+    },
+    {
+      "word": "tangy",
+      "ipa": "/ˈtæŋi/",
+      "meaning": "톡 쏘는 맛",
+      "emoji": "🍋",
+      "example": "Tangy lemon.",
+      "exampleKo": "톡 쏘는 레몬.",
+      "fact": "신맛+상큼!"
+    },
+    {
+      "word": "plain",
+      "ipa": "/pleɪn/",
+      "meaning": "담백한, 무미",
+      "emoji": "🍚",
+      "example": "Plain rice.",
+      "exampleKo": "담백한 밥.",
+      "fact": "맛이 강하지 않음!"
+    },
+    {
+      "word": "savory",
+      "ipa": "/ˈseɪvəri/",
+      "meaning": "고소한, 짭짤한",
+      "emoji": "🍿",
+      "example": "Savory snacks.",
+      "exampleKo": "짭짤한 간식.",
+      "fact": "고소·짭짤!"
+    },
+    {
+      "word": "juicy",
+      "ipa": "/ˈdʒuːsi/",
+      "meaning": "즙이 많은",
+      "emoji": "🍑",
+      "example": "Juicy peach.",
+      "exampleKo": "즙 많은 복숭아.",
+      "fact": "수분 가득!"
+    },
+    {
+      "word": "fragrance",
+      "ipa": "/ˈfreɪɡrəns/",
+      "meaning": "향기",
+      "emoji": "🌸",
+      "example": "Flower fragrance.",
+      "exampleKo": "꽃 향기.",
+      "fact": "좋은 냄새!"
+    },
+    {
+      "word": "stinky",
+      "ipa": "/ˈstɪŋki/",
+      "meaning": "고약한 냄새",
+      "emoji": "🤢",
+      "example": "Stinky socks!",
+      "exampleKo": "고약한 양말!",
+      "fact": "안 좋은 냄새!"
+    },
+    {
+      "word": "silent",
+      "ipa": "/ˈsaɪlənt/",
+      "meaning": "조용한",
+      "emoji": "🤫",
+      "example": "A silent room.",
+      "exampleKo": "조용한 방.",
+      "fact": "아무 소리 없음!"
+    },
+    {
+      "word": "echo",
+      "ipa": "/ˈekoʊ/",
+      "meaning": "메아리",
+      "emoji": "🔊",
+      "example": "Hear the echo.",
+      "exampleKo": "메아리 들려요.",
+      "fact": "산에서 야호~!"
+    },
+    {
+      "word": "sense",
+      "ipa": "/sens/",
+      "meaning": "감각",
+      "emoji": "✨",
+      "example": "Five senses.",
+      "exampleKo": "오감.",
+      "fact": "보·듣·맛·향·촉!"
+    }
+  ]
+}

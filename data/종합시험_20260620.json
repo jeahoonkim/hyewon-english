@@ -1,0 +1,14 @@
+{
+  "date": "2026-06-20",
+  "folderName": "20260620",
+  "dayKo": "토",
+  "dayKoFull": "토요일",
+  "dayEn": "Saturday",
+  "dayIdx": 6,
+  "weekLabel": "Week 9",
+  "themeSummary": "디지털·음악·미술·이야기·우주",
+  "quizFileName": "혜원이_영단어_토요일_종합시험.html",
+  "includeDates": ["20260615", "20260616", "20260617", "20260618", "20260619"],
+  "bgGradient": "linear-gradient(180deg, #e3f2fd 0%, #f3e5f5 25%, #fff3e0 50%, #efebe9 75%, #1a237e 100%);",
+  "headerTitle": "🎯 주간 종합 시험 🏆"
+}

@@ -1,0 +1,196 @@
+{
+  "date": "2026-06-23",
+  "folderName": "20260623",
+  "dayKo": "화",
+  "dayKoFull": "화요일",
+  "dayEn": "Tuesday",
+  "dayIdx": 2,
+  "theme": "영화와 미디어",
+  "themeEmoji": "🎬",
+  "vocabFileName": "혜원이_영단어_화요일_영화.html",
+  "quizFileName": "혜원이_영단어_화요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #fff8e1 0%, #ffd54f 45%, #ff8f00 100%);",
+  "headerTitle": "🎬 영화와 미디어 📺",
+  "words": [
+    {
+      "word": "film",
+      "ipa": "/fɪlm/",
+      "meaning": "영화",
+      "emoji": "🎬",
+      "example": "A funny film.",
+      "exampleKo": "재밌는 영화.",
+      "fact": "movie와 같은 뜻!"
+    },
+    {
+      "word": "director",
+      "ipa": "/dɪˈrektər/",
+      "meaning": "감독",
+      "emoji": "🎥",
+      "example": "A famous director.",
+      "exampleKo": "유명한 감독.",
+      "fact": "영화를 만드는 사람!"
+    },
+    {
+      "word": "scene",
+      "ipa": "/siːn/",
+      "meaning": "장면",
+      "emoji": "🎞️",
+      "example": "A funny scene.",
+      "exampleKo": "웃긴 장면.",
+      "fact": "영화의 한 부분!"
+    },
+    {
+      "word": "camcorder",
+      "ipa": "/ˈkæmkɔːrdər/",
+      "meaning": "캠코더",
+      "emoji": "📹",
+      "example": "Use a camcorder.",
+      "exampleKo": "캠코더 사용해요.",
+      "fact": "영상 전문 카메라!"
+    },
+    {
+      "word": "microphone",
+      "ipa": "/ˈmaɪkrəfoʊn/",
+      "meaning": "마이크",
+      "emoji": "🎤",
+      "example": "Speak into the microphone.",
+      "exampleKo": "마이크에 말해요.",
+      "fact": "소리 크게!"
+    },
+    {
+      "word": "clip",
+      "ipa": "/klɪp/",
+      "meaning": "짧은 영상",
+      "emoji": "🎬",
+      "example": "A short clip.",
+      "exampleKo": "짧은 영상.",
+      "fact": "잘려진 영상 한 부분!"
+    },
+    {
+      "word": "channel",
+      "ipa": "/ˈtʃænəl/",
+      "meaning": "채널",
+      "emoji": "📺",
+      "example": "Change the channel.",
+      "exampleKo": "채널 바꿔요.",
+      "fact": "TV 프로그램 종류!"
+    },
+    {
+      "word": "news",
+      "ipa": "/njuːz/",
+      "meaning": "뉴스",
+      "emoji": "📰",
+      "example": "Watch the news.",
+      "exampleKo": "뉴스 봐요.",
+      "fact": "새로운 소식!"
+    },
+    {
+      "word": "cartoon",
+      "ipa": "/kɑːrˈtuːn/",
+      "meaning": "만화",
+      "emoji": "📺",
+      "example": "A funny cartoon.",
+      "exampleKo": "재밌는 만화.",
+      "fact": "애니메이션도 cartoon!"
+    },
+    {
+      "word": "drama",
+      "ipa": "/ˈdrɑːmə/",
+      "meaning": "드라마",
+      "emoji": "🎭",
+      "example": "Watch a drama.",
+      "exampleKo": "드라마 봐요.",
+      "fact": "이야기가 있는 영상!"
+    },
+    {
+      "word": "comedy",
+      "ipa": "/ˈkɒmədi/",
+      "meaning": "코미디",
+      "emoji": "😂",
+      "example": "A funny comedy.",
+      "exampleKo": "재밌는 코미디.",
+      "fact": "웃기는 영화!"
+    },
+    {
+      "word": "horror",
+      "ipa": "/ˈhɒrər/",
+      "meaning": "공포물",
+      "emoji": "😱",
+      "example": "A scary horror.",
+      "exampleKo": "무서운 공포물.",
+      "fact": "무서운 영화!"
+    },
+    {
+      "word": "fantasy",
+      "ipa": "/ˈfæntəsi/",
+      "meaning": "판타지",
+      "emoji": "🧚",
+      "example": "A fantasy movie.",
+      "exampleKo": "판타지 영화.",
+      "fact": "마법이 나오는!"
+    },
+    {
+      "word": "action",
+      "ipa": "/ˈækʃən/",
+      "meaning": "액션",
+      "emoji": "💥",
+      "example": "An action movie.",
+      "exampleKo": "액션 영화.",
+      "fact": "신나는 격투!"
+    },
+    {
+      "word": "romance",
+      "ipa": "/ˈroʊmæns/",
+      "meaning": "로맨스",
+      "emoji": "💕",
+      "example": "A romance story.",
+      "exampleKo": "로맨스 이야기.",
+      "fact": "사랑 이야기!"
+    },
+    {
+      "word": "trailer",
+      "ipa": "/ˈtreɪlər/",
+      "meaning": "예고편",
+      "emoji": "🎞️",
+      "example": "Watch the trailer.",
+      "exampleKo": "예고편 봐요.",
+      "fact": "영화 소개 짧은 영상!"
+    },
+    {
+      "word": "popcorn",
+      "ipa": "/ˈpɒpkɔːrn/",
+      "meaning": "팝콘",
+      "emoji": "🍿",
+      "example": "Eat popcorn.",
+      "exampleKo": "팝콘 먹어요.",
+      "fact": "영화 보면서!"
+    },
+    {
+      "word": "audience",
+      "ipa": "/ˈɔːdiəns/",
+      "meaning": "관객",
+      "emoji": "👥",
+      "example": "A big audience.",
+      "exampleKo": "많은 관객.",
+      "fact": "영화 보는 사람들!"
+    },
+    {
+      "word": "subtitle",
+      "ipa": "/ˈsʌbtaɪtəl/",
+      "meaning": "자막",
+      "emoji": "📝",
+      "example": "Read the subtitles.",
+      "exampleKo": "자막 읽어요.",
+      "fact": "화면 아래 글자!"
+    },
+    {
+      "word": "remote",
+      "ipa": "/rɪˈmoʊt/",
+      "meaning": "리모컨",
+      "emoji": "📱",
+      "example": "Where is the remote?",
+      "exampleKo": "리모컨 어디?",
+      "fact": "TV 조작!"
+    }
+  ]
+}
