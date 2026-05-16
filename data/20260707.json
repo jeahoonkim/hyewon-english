@@ -1,0 +1,196 @@
+{
+  "date": "2026-07-07",
+  "folderName": "20260707",
+  "dayKo": "화",
+  "dayKoFull": "화요일",
+  "dayEn": "Tuesday",
+  "dayIdx": 2,
+  "theme": "학교 활동과 과목",
+  "themeEmoji": "📚",
+  "vocabFileName": "혜원이_영단어_화요일_학교활동.html",
+  "quizFileName": "혜원이_영단어_화요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #e3f2fd 0%, #42a5f5 45%, #1565c0 100%);",
+  "headerTitle": "📚 학교 활동과 과목 ✏️",
+  "words": [
+    {
+      "word": "subject",
+      "ipa": "/ˈsʌbdʒɪkt/",
+      "meaning": "과목",
+      "emoji": "📚",
+      "example": "My favorite subject.",
+      "exampleKo": "좋아하는 과목.",
+      "fact": "수학·영어·과학 등!"
+    },
+    {
+      "word": "math",
+      "ipa": "/mæθ/",
+      "meaning": "수학",
+      "emoji": "🔢",
+      "example": "Math class.",
+      "exampleKo": "수학 시간.",
+      "fact": "숫자 공부!"
+    },
+    {
+      "word": "science",
+      "ipa": "/ˈsaɪəns/",
+      "meaning": "과학",
+      "emoji": "🔬",
+      "example": "I love science.",
+      "exampleKo": "과학 좋아.",
+      "fact": "실험과 발견!"
+    },
+    {
+      "word": "chemistry",
+      "ipa": "/ˈkemɪstri/",
+      "meaning": "화학",
+      "emoji": "⚗️",
+      "example": "Chemistry class.",
+      "exampleKo": "화학 시간.",
+      "fact": "물질 공부!"
+    },
+    {
+      "word": "geography",
+      "ipa": "/dʒiˈɒɡrəfi/",
+      "meaning": "지리",
+      "emoji": "🗺️",
+      "example": "Geography class.",
+      "exampleKo": "지리 시간.",
+      "fact": "세계 지도!"
+    },
+    {
+      "word": "PE",
+      "ipa": "/ˌpiː ˈiː/",
+      "meaning": "체육",
+      "emoji": "⚽",
+      "example": "PE is fun!",
+      "exampleKo": "체육 재밌어!",
+      "fact": "Physical Education 줄임!"
+    },
+    {
+      "word": "recess",
+      "ipa": "/ˈriːses/",
+      "meaning": "쉬는 시간",
+      "emoji": "☕",
+      "example": "During recess.",
+      "exampleKo": "쉬는 시간 동안.",
+      "fact": "잠깐 쉬는 시간!"
+    },
+    {
+      "word": "workbook",
+      "ipa": "/ˈwɜːrkbʊk/",
+      "meaning": "문제집",
+      "emoji": "📒",
+      "example": "A math workbook.",
+      "exampleKo": "수학 문제집.",
+      "fact": "풀이 책!"
+    },
+    {
+      "word": "assignment",
+      "ipa": "/əˈsaɪnmənt/",
+      "meaning": "과제",
+      "emoji": "📝",
+      "example": "Finish the assignment.",
+      "exampleKo": "과제 끝내요.",
+      "fact": "숙제와 비슷!"
+    },
+    {
+      "word": "discussion",
+      "ipa": "/dɪˈskʌʃən/",
+      "meaning": "토론",
+      "emoji": "💬",
+      "example": "A class discussion.",
+      "exampleKo": "수업 토론.",
+      "fact": "의견 나누기!"
+    },
+    {
+      "word": "report",
+      "ipa": "/rɪˈpɔːrt/",
+      "meaning": "보고서",
+      "emoji": "📰",
+      "example": "A book report.",
+      "exampleKo": "독후감 보고서.",
+      "fact": "발표용 글!"
+    },
+    {
+      "word": "diary",
+      "ipa": "/ˈdaɪəri/",
+      "meaning": "일기",
+      "emoji": "📔",
+      "example": "Write in a diary.",
+      "exampleKo": "일기를 써요.",
+      "fact": "매일 쓰는 글!"
+    },
+    {
+      "word": "essay",
+      "ipa": "/ˈeseɪ/",
+      "meaning": "글, 작문",
+      "emoji": "📝",
+      "example": "Write an essay.",
+      "exampleKo": "글을 써요.",
+      "fact": "긴 글쓰기!"
+    },
+    {
+      "word": "grade",
+      "ipa": "/ɡreɪd/",
+      "meaning": "학년, 성적",
+      "emoji": "🏆",
+      "example": "Fifth grade.",
+      "exampleKo": "5학년.",
+      "fact": "학년과 점수 둘 다!"
+    },
+    {
+      "word": "counselor",
+      "ipa": "/ˈkaʊnsələr/",
+      "meaning": "상담사",
+      "emoji": "💼",
+      "example": "Talk to the counselor.",
+      "exampleKo": "상담사와 이야기.",
+      "fact": "고민 들어줘요!"
+    },
+    {
+      "word": "librarian",
+      "ipa": "/laɪˈbreriən/",
+      "meaning": "사서",
+      "emoji": "📚",
+      "example": "Ask the librarian.",
+      "exampleKo": "사서에게 물어봐요.",
+      "fact": "도서관 선생님!"
+    },
+    {
+      "word": "tardy",
+      "ipa": "/ˈtɑːrdi/",
+      "meaning": "지각한",
+      "emoji": "⏰",
+      "example": "Don't be tardy.",
+      "exampleKo": "지각하지 마.",
+      "fact": "늦은 것!"
+    },
+    {
+      "word": "attendance",
+      "ipa": "/əˈtendəns/",
+      "meaning": "출석",
+      "emoji": "✅",
+      "example": "Take attendance.",
+      "exampleKo": "출석을 확인해요.",
+      "fact": "매일 체크!"
+    },
+    {
+      "word": "fieldtrip",
+      "ipa": "/ˈfiːld trɪp/",
+      "meaning": "체험학습",
+      "emoji": "🚌",
+      "example": "Fun fieldtrip!",
+      "exampleKo": "재밌는 체험학습!",
+      "fact": "학교 밖 활동!"
+    },
+    {
+      "word": "auditorium",
+      "ipa": "/ˌɔːdɪˈtɔːriəm/",
+      "meaning": "강당",
+      "emoji": "🎭",
+      "example": "In the auditorium.",
+      "exampleKo": "강당에서.",
+      "fact": "큰 행사장!"
+    }
+  ]
+}

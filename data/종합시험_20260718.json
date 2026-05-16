@@ -1,0 +1,14 @@
+{
+  "date": "2026-07-18",
+  "folderName": "20260718",
+  "dayKo": "토",
+  "dayKoFull": "토요일",
+  "dayEn": "Saturday",
+  "dayIdx": 6,
+  "weekLabel": "Week 13",
+  "themeSummary": "농장·바다생물·공룡·모험·동작",
+  "quizFileName": "혜원이_영단어_토요일_종합시험.html",
+  "includeDates": ["20260713", "20260714", "20260715", "20260716", "20260717"],
+  "bgGradient": "linear-gradient(180deg, #fff9c4 0%, #b3e5fc 25%, #d7ccc8 50%, #fff3e0 75%, #ffecb3 100%);",
+  "headerTitle": "🎯 주간 종합 시험 🏆"
+}

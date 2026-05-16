@@ -1,0 +1,196 @@
+{
+  "date": "2026-07-08",
+  "folderName": "20260708",
+  "dayKo": "수",
+  "dayKoFull": "수요일",
+  "dayEn": "Wednesday",
+  "dayIdx": 3,
+  "theme": "편지와 소통",
+  "themeEmoji": "✉️",
+  "vocabFileName": "혜원이_영단어_수요일_소통.html",
+  "quizFileName": "혜원이_영단어_수요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #fff8e1 0%, #ffd54f 45%, #f57f17 100%);",
+  "headerTitle": "✉️ 편지와 소통 📮",
+  "words": [
+    {
+      "word": "letter",
+      "ipa": "/ˈletər/",
+      "meaning": "편지",
+      "emoji": "📨",
+      "example": "Write a letter.",
+      "exampleKo": "편지를 써요.",
+      "fact": "종이 메시지!"
+    },
+    {
+      "word": "envelope",
+      "ipa": "/ˈenvəloʊp/",
+      "meaning": "봉투",
+      "emoji": "✉️",
+      "example": "Seal the envelope.",
+      "exampleKo": "봉투 봉해요.",
+      "fact": "편지 담는 곳!"
+    },
+    {
+      "word": "postcard",
+      "ipa": "/ˈpoʊstkɑːrd/",
+      "meaning": "엽서",
+      "emoji": "💌",
+      "example": "Send a postcard.",
+      "exampleKo": "엽서를 보내요.",
+      "fact": "여행지에서 보내요!"
+    },
+    {
+      "word": "signature",
+      "ipa": "/ˈsɪɡnətʃər/",
+      "meaning": "서명",
+      "emoji": "✒️",
+      "example": "Your signature here.",
+      "exampleKo": "여기 서명해요.",
+      "fact": "이름 사인!"
+    },
+    {
+      "word": "message",
+      "ipa": "/ˈmesɪdʒ/",
+      "meaning": "메시지",
+      "emoji": "💬",
+      "example": "Send a message.",
+      "exampleKo": "메시지 보내요.",
+      "fact": "전하는 글!"
+    },
+    {
+      "word": "text",
+      "ipa": "/tekst/",
+      "meaning": "문자, 글자",
+      "emoji": "📱",
+      "example": "Text me later.",
+      "exampleKo": "나중에 문자해.",
+      "fact": "휴대폰 문자!"
+    },
+    {
+      "word": "call",
+      "ipa": "/kɔːl/",
+      "meaning": "전화하다",
+      "emoji": "📞",
+      "example": "Call your mom.",
+      "exampleKo": "엄마에게 전화해.",
+      "fact": "통화하기!"
+    },
+    {
+      "word": "reply",
+      "ipa": "/rɪˈplaɪ/",
+      "meaning": "답장",
+      "emoji": "↩️",
+      "example": "Send a reply.",
+      "exampleKo": "답장을 보내요.",
+      "fact": "답하기!"
+    },
+    {
+      "word": "chat",
+      "ipa": "/tʃæt/",
+      "meaning": "채팅, 수다",
+      "emoji": "💭",
+      "example": "Let's chat.",
+      "exampleKo": "수다 떨자.",
+      "fact": "가벼운 대화!"
+    },
+    {
+      "word": "talk",
+      "ipa": "/tɔːk/",
+      "meaning": "말하다",
+      "emoji": "🗣️",
+      "example": "Talk to me.",
+      "exampleKo": "나에게 말해.",
+      "fact": "이야기하기!"
+    },
+    {
+      "word": "whisper",
+      "ipa": "/ˈwɪspər/",
+      "meaning": "속삭이다",
+      "emoji": "🤫",
+      "example": "Whisper softly.",
+      "exampleKo": "조용히 속삭여.",
+      "fact": "작은 소리로!"
+    },
+    {
+      "word": "shout",
+      "ipa": "/ʃaʊt/",
+      "meaning": "소리치다",
+      "emoji": "📢",
+      "example": "Don't shout!",
+      "exampleKo": "소리치지 마!",
+      "fact": "큰 소리로!"
+    },
+    {
+      "word": "voice",
+      "ipa": "/vɔɪs/",
+      "meaning": "목소리",
+      "emoji": "🎤",
+      "example": "A pretty voice.",
+      "exampleKo": "예쁜 목소리.",
+      "fact": "내 말소리!"
+    },
+    {
+      "word": "language",
+      "ipa": "/ˈlæŋɡwɪdʒ/",
+      "meaning": "언어",
+      "emoji": "🌐",
+      "example": "Many languages.",
+      "exampleKo": "많은 언어들.",
+      "fact": "한국어·영어 등!"
+    },
+    {
+      "word": "sign",
+      "ipa": "/saɪn/",
+      "meaning": "신호, 표지",
+      "emoji": "🪧",
+      "example": "Stop sign.",
+      "exampleKo": "정지 표지.",
+      "fact": "길에서 봐요!"
+    },
+    {
+      "word": "gesture",
+      "ipa": "/ˈdʒestʃər/",
+      "meaning": "몸짓",
+      "emoji": "👋",
+      "example": "A friendly gesture.",
+      "exampleKo": "친근한 몸짓.",
+      "fact": "손짓·몸짓!"
+    },
+    {
+      "word": "express",
+      "ipa": "/ɪkˈspres/",
+      "meaning": "표현하다",
+      "emoji": "💭",
+      "example": "Express your feelings.",
+      "exampleKo": "감정을 표현해요.",
+      "fact": "마음을 보여줘요!"
+    },
+    {
+      "word": "mumble",
+      "ipa": "/ˈmʌmbəl/",
+      "meaning": "중얼거리다",
+      "emoji": "😶",
+      "example": "Don't mumble.",
+      "exampleKo": "중얼거리지 마.",
+      "fact": "알아듣기 힘듦!"
+    },
+    {
+      "word": "listener",
+      "ipa": "/ˈlɪsənər/",
+      "meaning": "듣는 사람",
+      "emoji": "👂",
+      "example": "A good listener.",
+      "exampleKo": "좋은 청자.",
+      "fact": "잘 들어줘요!"
+    },
+    {
+      "word": "speak",
+      "ipa": "/spiːk/",
+      "meaning": "말하다",
+      "emoji": "💬",
+      "example": "Speak slowly.",
+      "exampleKo": "천천히 말해요.",
+      "fact": "입으로 말!"
+    }
+  ]
+}

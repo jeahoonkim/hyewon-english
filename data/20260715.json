@@ -1,0 +1,196 @@
+{
+  "date": "2026-07-15",
+  "folderName": "20260715",
+  "dayKo": "수",
+  "dayKoFull": "수요일",
+  "dayEn": "Wednesday",
+  "dayIdx": 3,
+  "theme": "공룡과 옛 생물",
+  "themeEmoji": "🦕",
+  "vocabFileName": "혜원이_영단어_수요일_공룡.html",
+  "quizFileName": "혜원이_영단어_수요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #d7ccc8 0%, #8d6e63 45%, #4e342e 100%);",
+  "headerTitle": "🦕 공룡과 옛 생물 🦖",
+  "words": [
+    {
+      "word": "dinosaur",
+      "ipa": "/ˈdaɪnəsɔːr/",
+      "meaning": "공룡",
+      "emoji": "🦖",
+      "example": "Huge dinosaur!",
+      "exampleKo": "거대한 공룡!",
+      "fact": "옛날에 살았어요!"
+    },
+    {
+      "word": "trex",
+      "ipa": "/ˈtiː reks/",
+      "meaning": "티라노",
+      "emoji": "🦖",
+      "example": "Scary T-rex!",
+      "exampleKo": "무서운 티라노!",
+      "fact": "공룡의 왕!"
+    },
+    {
+      "word": "triceratops",
+      "ipa": "/traɪˈserətɒps/",
+      "meaning": "트리케라톱스",
+      "emoji": "🦕",
+      "example": "Three horns!",
+      "exampleKo": "뿔 3개!",
+      "fact": "머리에 뿔!"
+    },
+    {
+      "word": "brontosaurus",
+      "ipa": "/ˌbrɒntəˈsɔːrəs/",
+      "meaning": "브론토사우루스",
+      "emoji": "🦕",
+      "example": "Long neck!",
+      "exampleKo": "긴 목!",
+      "fact": "풀 먹는 큰 공룡!"
+    },
+    {
+      "word": "stegosaurus",
+      "ipa": "/ˌsteɡəˈsɔːrəs/",
+      "meaning": "스테고사우루스",
+      "emoji": "🦕",
+      "example": "Spiked back.",
+      "exampleKo": "등에 가시.",
+      "fact": "등에 뼈 판!"
+    },
+    {
+      "word": "raptor",
+      "ipa": "/ˈræptər/",
+      "meaning": "랩터 (벨로키랩터)",
+      "emoji": "🦖",
+      "example": "Smart raptor.",
+      "exampleKo": "똑똑한 랩터.",
+      "fact": "빠르고 영리!"
+    },
+    {
+      "word": "fossil",
+      "ipa": "/ˈfɒsəl/",
+      "meaning": "화석",
+      "emoji": "🦴",
+      "example": "Find a fossil.",
+      "exampleKo": "화석을 찾아요.",
+      "fact": "옛 생물의 흔적!"
+    },
+    {
+      "word": "skeleton",
+      "ipa": "/ˈskelətən/",
+      "meaning": "뼈대, 골격",
+      "emoji": "💀",
+      "example": "A dinosaur skeleton.",
+      "exampleKo": "공룡 골격.",
+      "fact": "전체 뼈 구조!"
+    },
+    {
+      "word": "skull",
+      "ipa": "/skʌl/",
+      "meaning": "두개골",
+      "emoji": "💀",
+      "example": "A dinosaur skull.",
+      "exampleKo": "공룡 두개골.",
+      "fact": "머리뼈!"
+    },
+    {
+      "word": "claw",
+      "ipa": "/klɔː/",
+      "meaning": "발톱",
+      "emoji": "🐾",
+      "example": "Sharp claws.",
+      "exampleKo": "날카로운 발톱.",
+      "fact": "공격용 발톱!"
+    },
+    {
+      "word": "horn",
+      "ipa": "/hɔːrn/",
+      "meaning": "뿔",
+      "emoji": "🦏",
+      "example": "Big horns.",
+      "exampleKo": "큰 뿔.",
+      "fact": "머리에서 자라요!"
+    },
+    {
+      "word": "prehistoric",
+      "ipa": "/ˌpriːhɪˈstɒrɪk/",
+      "meaning": "선사시대의",
+      "emoji": "🦴",
+      "example": "Prehistoric times.",
+      "exampleKo": "선사시대.",
+      "fact": "역사 이전!"
+    },
+    {
+      "word": "extinct",
+      "ipa": "/ɪkˈstɪŋkt/",
+      "meaning": "멸종된",
+      "emoji": "🦖",
+      "example": "Dinosaurs are extinct.",
+      "exampleKo": "공룡은 멸종.",
+      "fact": "이제 없어요!"
+    },
+    {
+      "word": "epoch",
+      "ipa": "/ˈepək/",
+      "meaning": "시대",
+      "emoji": "⏰",
+      "example": "A new epoch.",
+      "exampleKo": "새로운 시대.",
+      "fact": "아주 긴 시기!"
+    },
+    {
+      "word": "giant",
+      "ipa": "/ˈdʒaɪənt/",
+      "meaning": "거대한",
+      "emoji": "🦣",
+      "example": "A giant beast.",
+      "exampleKo": "거대한 짐승.",
+      "fact": "엄청 큰!"
+    },
+    {
+      "word": "mammoth",
+      "ipa": "/ˈmæməθ/",
+      "meaning": "매머드",
+      "emoji": "🦣",
+      "example": "Hairy mammoth.",
+      "exampleKo": "털북숭이 매머드.",
+      "fact": "털 많은 코끼리!"
+    },
+    {
+      "word": "cavemen",
+      "ipa": "/ˈkeɪvmen/",
+      "meaning": "동굴인",
+      "emoji": "🪨",
+      "example": "Cavemen lived here.",
+      "exampleKo": "동굴인이 살았어요.",
+      "fact": "옛날 사람!"
+    },
+    {
+      "word": "shell",
+      "ipa": "/ʃel/",
+      "meaning": "(공룡알) 껍데기, 외피",
+      "emoji": "🥚",
+      "example": "Dinosaur egg shell.",
+      "exampleKo": "공룡알 껍데기.",
+      "fact": "안에 새끼!"
+    },
+    {
+      "word": "paleontologist",
+      "ipa": "/ˌpeɪliɒnˈtɒlədʒəst/",
+      "meaning": "고생물학자",
+      "emoji": "🔬",
+      "example": "A paleontologist works here.",
+      "exampleKo": "고생물학자가 일해요.",
+      "fact": "화석 연구!"
+    },
+    {
+      "word": "scale",
+      "ipa": "/skeɪl/",
+      "meaning": "비늘",
+      "emoji": "🦎",
+      "example": "Dinosaur scales.",
+      "exampleKo": "공룡 비늘.",
+      "fact": "피부의 단단함!"
+    }
+  ]
+}

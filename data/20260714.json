@@ -1,0 +1,196 @@
+{
+  "date": "2026-07-14",
+  "folderName": "20260714",
+  "dayKo": "화",
+  "dayKoFull": "화요일",
+  "dayEn": "Tuesday",
+  "dayIdx": 2,
+  "theme": "바다 생물",
+  "themeEmoji": "🐙",
+  "vocabFileName": "혜원이_영단어_화요일_바다생물.html",
+  "quizFileName": "혜원이_영단어_화요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #b3e5fc 0%, #0288d1 45%, #01579b 100%);",
+  "headerTitle": "🐙 바다 생물 🦑",
+  "words": [
+    {
+      "word": "shark",
+      "ipa": "/ʃɑːrk/",
+      "meaning": "상어",
+      "emoji": "🦈",
+      "example": "A big shark.",
+      "exampleKo": "큰 상어.",
+      "fact": "이빨이 날카로워!"
+    },
+    {
+      "word": "whale",
+      "ipa": "/weɪl/",
+      "meaning": "고래",
+      "emoji": "🐋",
+      "example": "A blue whale.",
+      "exampleKo": "파란 고래.",
+      "fact": "세상 가장 큰 동물!"
+    },
+    {
+      "word": "swordfish",
+      "ipa": "/ˈsɔːrdfɪʃ/",
+      "meaning": "황새치",
+      "emoji": "🐟",
+      "example": "A fast swordfish.",
+      "exampleKo": "빠른 황새치.",
+      "fact": "칼 같은 코!"
+    },
+    {
+      "word": "octopus",
+      "ipa": "/ˈɒktəpəs/",
+      "meaning": "문어",
+      "emoji": "🐙",
+      "example": "Eight legs!",
+      "exampleKo": "다리 8개!",
+      "fact": "빨판 있어요!"
+    },
+    {
+      "word": "squid",
+      "ipa": "/skwɪd/",
+      "meaning": "오징어",
+      "emoji": "🦑",
+      "example": "A fresh squid.",
+      "exampleKo": "신선한 오징어.",
+      "fact": "먹물 뿜어요!"
+    },
+    {
+      "word": "jellyfish",
+      "ipa": "/ˈdʒelifɪʃ/",
+      "meaning": "해파리",
+      "emoji": "🪼",
+      "example": "Don't touch jellyfish.",
+      "exampleKo": "해파리 만지지마.",
+      "fact": "투명하고 위험!"
+    },
+    {
+      "word": "starfish",
+      "ipa": "/ˈstɑːrfɪʃ/",
+      "meaning": "불가사리",
+      "emoji": "⭐",
+      "example": "A pink starfish.",
+      "exampleKo": "분홍 불가사리.",
+      "fact": "별 모양!"
+    },
+    {
+      "word": "crab",
+      "ipa": "/kræb/",
+      "meaning": "게",
+      "emoji": "🦀",
+      "example": "A red crab.",
+      "exampleKo": "빨간 게.",
+      "fact": "옆으로 걸어요!"
+    },
+    {
+      "word": "lobster",
+      "ipa": "/ˈlɒbstər/",
+      "meaning": "바닷가재",
+      "emoji": "🦞",
+      "example": "A big lobster.",
+      "exampleKo": "큰 바닷가재.",
+      "fact": "집게가 강해요!"
+    },
+    {
+      "word": "shrimp",
+      "ipa": "/ʃrɪmp/",
+      "meaning": "새우",
+      "emoji": "🦐",
+      "example": "Eat shrimp.",
+      "exampleKo": "새우 먹어요.",
+      "fact": "맛있어요!"
+    },
+    {
+      "word": "tuna",
+      "ipa": "/ˈtuːnə/",
+      "meaning": "참치",
+      "emoji": "🐟",
+      "example": "Tuna sushi.",
+      "exampleKo": "참치 초밥.",
+      "fact": "맛있는 생선!"
+    },
+    {
+      "word": "seal",
+      "ipa": "/siːl/",
+      "meaning": "물범",
+      "emoji": "🦭",
+      "example": "A cute seal.",
+      "exampleKo": "귀여운 물범.",
+      "fact": "수영 잘해요!"
+    },
+    {
+      "word": "walrus",
+      "ipa": "/ˈwɔːlrəs/",
+      "meaning": "바다코끼리",
+      "emoji": "🦣",
+      "example": "A big walrus.",
+      "exampleKo": "큰 바다코끼리.",
+      "fact": "긴 이빨!"
+    },
+    {
+      "word": "sealion",
+      "ipa": "/ˈsiː laɪən/",
+      "meaning": "바다사자",
+      "emoji": "🦭",
+      "example": "A sealion claps.",
+      "exampleKo": "바다사자가 박수.",
+      "fact": "공연 잘해요!"
+    },
+    {
+      "word": "clam",
+      "ipa": "/klæm/",
+      "meaning": "조개",
+      "emoji": "🐚",
+      "example": "Open the clam.",
+      "exampleKo": "조개 열어요.",
+      "fact": "안에 진주!"
+    },
+    {
+      "word": "oyster",
+      "ipa": "/ˈɔɪstər/",
+      "meaning": "굴",
+      "emoji": "🦪",
+      "example": "Fresh oyster.",
+      "exampleKo": "신선한 굴.",
+      "fact": "맛있는 바다 음식!"
+    },
+    {
+      "word": "coral",
+      "ipa": "/ˈkɒrəl/",
+      "meaning": "산호",
+      "emoji": "🪸",
+      "example": "Pretty coral.",
+      "exampleKo": "예쁜 산호.",
+      "fact": "바다의 정원!"
+    },
+    {
+      "word": "seaweed",
+      "ipa": "/ˈsiːwiːd/",
+      "meaning": "해초",
+      "emoji": "🌿",
+      "example": "Green seaweed.",
+      "exampleKo": "초록 해초.",
+      "fact": "미역·김!"
+    },
+    {
+      "word": "fin",
+      "ipa": "/fɪn/",
+      "meaning": "지느러미",
+      "emoji": "🐟",
+      "example": "A fish fin.",
+      "exampleKo": "물고기 지느러미.",
+      "fact": "헤엄칠 때 사용!"
+    },
+    {
+      "word": "gill",
+      "ipa": "/ɡɪl/",
+      "meaning": "아가미",
+      "emoji": "🐟",
+      "example": "Fish have gills.",
+      "exampleKo": "물고기는 아가미.",
+      "fact": "물속에서 숨!"
+    }
+  ]
+}

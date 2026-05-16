@@ -1,0 +1,196 @@
+{
+  "date": "2026-07-16",
+  "folderName": "20260716",
+  "dayKo": "목",
+  "dayKoFull": "목요일",
+  "dayEn": "Thursday",
+  "dayIdx": 4,
+  "theme": "모험과 탐험",
+  "themeEmoji": "🗺️",
+  "vocabFileName": "혜원이_영단어_목요일_모험.html",
+  "quizFileName": "혜원이_영단어_목요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #fff3e0 0%, #ff9800 45%, #e65100 100%);",
+  "headerTitle": "🗺️ 모험과 탐험 🧭",
+  "words": [
+    {
+      "word": "map",
+      "ipa": "/mæp/",
+      "meaning": "지도",
+      "emoji": "🗺️",
+      "example": "Read the map.",
+      "exampleKo": "지도를 봐요.",
+      "fact": "길을 찾아요!"
+    },
+    {
+      "word": "compass",
+      "ipa": "/ˈkʌmpəs/",
+      "meaning": "나침반",
+      "emoji": "🧭",
+      "example": "Use a compass.",
+      "exampleKo": "나침반 사용.",
+      "fact": "북쪽 알려줘요!"
+    },
+    {
+      "word": "canteen",
+      "ipa": "/kænˈtiːn/",
+      "meaning": "수통",
+      "emoji": "🥤",
+      "example": "Fill the canteen.",
+      "exampleKo": "수통 채워요.",
+      "fact": "물병!"
+    },
+    {
+      "word": "flashlight",
+      "ipa": "/ˈflæʃlaɪt/",
+      "meaning": "손전등",
+      "emoji": "🔦",
+      "example": "Turn on the flashlight.",
+      "exampleKo": "손전등 켜요.",
+      "fact": "어두울 때!"
+    },
+    {
+      "word": "tent",
+      "ipa": "/tent/",
+      "meaning": "텐트",
+      "emoji": "⛺",
+      "example": "Put up the tent.",
+      "exampleKo": "텐트 쳐요.",
+      "fact": "캠핑 잠자리!"
+    },
+    {
+      "word": "sleeping bag",
+      "ipa": "/ˈsliːpɪŋ bæɡ/",
+      "meaning": "침낭",
+      "emoji": "🛌",
+      "example": "Warm sleeping bag.",
+      "exampleKo": "따뜻한 침낭.",
+      "fact": "텐트에서 잠!"
+    },
+    {
+      "word": "path",
+      "ipa": "/pæθ/",
+      "meaning": "오솔길",
+      "emoji": "🛤️",
+      "example": "Follow the path.",
+      "exampleKo": "길을 따라가요.",
+      "fact": "좁은 길!"
+    },
+    {
+      "word": "trail",
+      "ipa": "/treɪl/",
+      "meaning": "산길, 자취",
+      "emoji": "🥾",
+      "example": "Hike the trail.",
+      "exampleKo": "산길을 걸어요.",
+      "fact": "산속 길!"
+    },
+    {
+      "word": "grotto",
+      "ipa": "/ˈɡrɒtoʊ/",
+      "meaning": "작은 동굴",
+      "emoji": "🕳️",
+      "example": "A hidden grotto.",
+      "exampleKo": "숨겨진 작은 동굴.",
+      "fact": "비밀 공간!"
+    },
+    {
+      "word": "summit",
+      "ipa": "/ˈsʌmət/",
+      "meaning": "정상, 꼭대기",
+      "emoji": "⛰️",
+      "example": "Reach the summit.",
+      "exampleKo": "정상 도달.",
+      "fact": "산 꼭대기!"
+    },
+    {
+      "word": "wilderness",
+      "ipa": "/ˈwɪldərnəs/",
+      "meaning": "야생, 황야",
+      "emoji": "🌳",
+      "example": "In the wilderness.",
+      "exampleKo": "야생에서.",
+      "fact": "사람 없는 곳!"
+    },
+    {
+      "word": "oasis",
+      "ipa": "/oʊˈeɪsɪs/",
+      "meaning": "오아시스",
+      "emoji": "🌴",
+      "example": "Find an oasis.",
+      "exampleKo": "오아시스 발견.",
+      "fact": "사막의 샘!"
+    },
+    {
+      "word": "peninsula",
+      "ipa": "/pəˈnɪnsələ/",
+      "meaning": "반도",
+      "emoji": "🗺️",
+      "example": "Korean peninsula.",
+      "exampleKo": "한반도.",
+      "fact": "3면이 바다!"
+    },
+    {
+      "word": "explorer",
+      "ipa": "/ɪkˈsplɔːrər/",
+      "meaning": "탐험가",
+      "emoji": "🧭",
+      "example": "A brave explorer.",
+      "exampleKo": "용감한 탐험가.",
+      "fact": "새 곳 찾아 다녀요!"
+    },
+    {
+      "word": "scout",
+      "ipa": "/skaʊt/",
+      "meaning": "정찰병, 스카우트",
+      "emoji": "🔍",
+      "example": "A boy scout.",
+      "exampleKo": "보이 스카우트.",
+      "fact": "앞서 살펴봐요!"
+    },
+    {
+      "word": "survive",
+      "ipa": "/sərˈvaɪv/",
+      "meaning": "살아남다",
+      "emoji": "🛡️",
+      "example": "Survive in the wild.",
+      "exampleKo": "야생에서 살아남아.",
+      "fact": "버텨내기!"
+    },
+    {
+      "word": "campfire",
+      "ipa": "/ˈkæmpfaɪər/",
+      "meaning": "모닥불",
+      "emoji": "🔥",
+      "example": "Around the campfire.",
+      "exampleKo": "모닥불 주위.",
+      "fact": "캠핑 분위기!"
+    },
+    {
+      "word": "binocular",
+      "ipa": "/bɪˈnɒkjələr/",
+      "meaning": "쌍안경 (단수)",
+      "emoji": "🔭",
+      "example": "A binocular set.",
+      "exampleKo": "쌍안경 한 세트.",
+      "fact": "멀리 보기!"
+    },
+    {
+      "word": "hook",
+      "ipa": "/hʊk/",
+      "meaning": "갈고리",
+      "emoji": "🪝",
+      "example": "Use a hook.",
+      "exampleKo": "갈고리 사용.",
+      "fact": "걸어 고정!"
+    },
+    {
+      "word": "journey",
+      "ipa": "/ˈdʒɜːrni/",
+      "meaning": "여정",
+      "emoji": "🛤️",
+      "example": "A long journey.",
+      "exampleKo": "긴 여정.",
+      "fact": "긴 여행!"
+    }
+  ]
+}

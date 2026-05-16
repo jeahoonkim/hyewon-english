@@ -1,0 +1,196 @@
+{
+  "date": "2026-07-10",
+  "folderName": "20260710",
+  "dayKo": "금",
+  "dayKoFull": "금요일",
+  "dayEn": "Friday",
+  "dayIdx": 5,
+  "theme": "취미와 수집",
+  "themeEmoji": "🎯",
+  "vocabFileName": "혜원이_영단어_금요일_취미.html",
+  "quizFileName": "혜원이_영단어_금요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #e1bee7 0%, #ab47bc 45%, #6a1b9a 100%);",
+  "headerTitle": "🎯 취미와 수집 🎨",
+  "words": [
+    {
+      "word": "hobby",
+      "ipa": "/ˈhɒbi/",
+      "meaning": "취미",
+      "emoji": "🎨",
+      "example": "My favorite hobby.",
+      "exampleKo": "내 좋아하는 취미.",
+      "fact": "여가 활동!"
+    },
+    {
+      "word": "collect",
+      "ipa": "/kəˈlekt/",
+      "meaning": "수집하다",
+      "emoji": "📦",
+      "example": "I collect stamps.",
+      "exampleKo": "우표를 모아요.",
+      "fact": "모으는 것!"
+    },
+    {
+      "word": "collection",
+      "ipa": "/kəˈlekʃən/",
+      "meaning": "수집품",
+      "emoji": "🗃️",
+      "example": "A coin collection.",
+      "exampleKo": "동전 수집품.",
+      "fact": "모은 것들!"
+    },
+    {
+      "word": "sticker",
+      "ipa": "/ˈstɪkər/",
+      "meaning": "스티커",
+      "emoji": "🌟",
+      "example": "Cute stickers.",
+      "exampleKo": "귀여운 스티커.",
+      "fact": "붙이는 그림!"
+    },
+    {
+      "word": "album",
+      "ipa": "/ˈælbəm/",
+      "meaning": "앨범",
+      "emoji": "📔",
+      "example": "A photo album.",
+      "exampleKo": "사진 앨범.",
+      "fact": "사진·곡 모음!"
+    },
+    {
+      "word": "coin",
+      "ipa": "/kɔɪn/",
+      "meaning": "동전",
+      "emoji": "🪙",
+      "example": "Old coins.",
+      "exampleKo": "오래된 동전.",
+      "fact": "금속 돈!"
+    },
+    {
+      "word": "toy car",
+      "ipa": "/tɔɪ kɑːr/",
+      "meaning": "장난감 자동차",
+      "emoji": "🚗",
+      "example": "A red toy car.",
+      "exampleKo": "빨간 장난감 차.",
+      "fact": "미니카!"
+    },
+    {
+      "word": "figure",
+      "ipa": "/ˈfɪɡər/",
+      "meaning": "피규어",
+      "emoji": "🤖",
+      "example": "Hero figures.",
+      "exampleKo": "영웅 피규어.",
+      "fact": "인물 모형!"
+    },
+    {
+      "word": "lego",
+      "ipa": "/ˈleɡoʊ/",
+      "meaning": "레고",
+      "emoji": "🧱",
+      "example": "Build with lego.",
+      "exampleKo": "레고 조립해요.",
+      "fact": "블록 장난감!"
+    },
+    {
+      "word": "papercraft",
+      "ipa": "/ˈpeɪpərkræft/",
+      "meaning": "종이공예",
+      "emoji": "📃",
+      "example": "Fun papercraft.",
+      "exampleKo": "재밌는 종이공예.",
+      "fact": "종이로 만들기!"
+    },
+    {
+      "word": "knitting",
+      "ipa": "/ˈnɪtɪŋ/",
+      "meaning": "뜨개질",
+      "emoji": "🧶",
+      "example": "Grandma knits.",
+      "exampleKo": "할머니가 뜨개질.",
+      "fact": "털실로 만들기!"
+    },
+    {
+      "word": "cooking",
+      "ipa": "/ˈkʊkɪŋ/",
+      "meaning": "요리",
+      "emoji": "👩‍🍳",
+      "example": "Cooking is fun.",
+      "exampleKo": "요리는 재밌어.",
+      "fact": "음식 만들기!"
+    },
+    {
+      "word": "baking",
+      "ipa": "/ˈbeɪkɪŋ/",
+      "meaning": "제빵",
+      "emoji": "🥖",
+      "example": "Baking bread.",
+      "exampleKo": "빵을 구워요.",
+      "fact": "오븐 요리!"
+    },
+    {
+      "word": "gardening",
+      "ipa": "/ˈɡɑːrdənɪŋ/",
+      "meaning": "정원 가꾸기",
+      "emoji": "🌷",
+      "example": "Gardening on weekends.",
+      "exampleKo": "주말에 정원 가꾸기.",
+      "fact": "꽃 키우기!"
+    },
+    {
+      "word": "doodle",
+      "ipa": "/ˈduːdəl/",
+      "meaning": "낙서",
+      "emoji": "✏️",
+      "example": "Cute doodle.",
+      "exampleKo": "귀여운 낙서.",
+      "fact": "끄적끄적!"
+    },
+    {
+      "word": "journal",
+      "ipa": "/ˈdʒɜːrnəl/",
+      "meaning": "일지",
+      "emoji": "📓",
+      "example": "Write in a journal.",
+      "exampleKo": "일지에 써요.",
+      "fact": "기록장!"
+    },
+    {
+      "word": "rubik",
+      "ipa": "/ˈruːbɪk/",
+      "meaning": "루빅큐브",
+      "emoji": "🟥",
+      "example": "Solve the rubik.",
+      "exampleKo": "루빅 풀어요.",
+      "fact": "색 맞추기!"
+    },
+    {
+      "word": "reading",
+      "ipa": "/ˈriːdɪŋ/",
+      "meaning": "독서",
+      "emoji": "📖",
+      "example": "I love reading.",
+      "exampleKo": "독서 좋아.",
+      "fact": "책 읽기!"
+    },
+    {
+      "word": "dancing",
+      "ipa": "/ˈdænsɪŋ/",
+      "meaning": "춤추기",
+      "emoji": "💃",
+      "example": "Dancing is joy.",
+      "exampleKo": "춤추기는 즐거움.",
+      "fact": "흥겨운 활동!"
+    },
+    {
+      "word": "camping",
+      "ipa": "/ˈkæmpɪŋ/",
+      "meaning": "캠핑",
+      "emoji": "⛺",
+      "example": "Family camping.",
+      "exampleKo": "가족 캠핑.",
+      "fact": "텐트에서 자기!"
+    }
+  ]
+}

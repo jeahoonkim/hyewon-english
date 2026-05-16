@@ -1,0 +1,196 @@
+{
+  "date": "2026-07-13",
+  "folderName": "20260713",
+  "dayKo": "월",
+  "dayKoFull": "월요일",
+  "dayEn": "Monday",
+  "dayIdx": 1,
+  "theme": "농장과 시골",
+  "themeEmoji": "🚜",
+  "vocabFileName": "혜원이_영단어_월요일_농장.html",
+  "quizFileName": "혜원이_영단어_월요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #fff9c4 0%, #cddc39 45%, #689f38 100%);",
+  "headerTitle": "🚜 농장과 시골 🌾",
+  "words": [
+    {
+      "word": "farm",
+      "ipa": "/fɑːrm/",
+      "meaning": "농장",
+      "emoji": "🏡",
+      "example": "A big farm.",
+      "exampleKo": "큰 농장.",
+      "fact": "농작물과 동물!"
+    },
+    {
+      "word": "rancher",
+      "ipa": "/ˈræntʃər/",
+      "meaning": "목장 주인",
+      "emoji": "🤠",
+      "example": "A cowboy rancher.",
+      "exampleKo": "카우보이 목장주.",
+      "fact": "목장 사장!"
+    },
+    {
+      "word": "barn",
+      "ipa": "/bɑːrn/",
+      "meaning": "헛간",
+      "emoji": "🏚️",
+      "example": "Cows in the barn.",
+      "exampleKo": "헛간의 소들.",
+      "fact": "동물이 사는 큰 집!"
+    },
+    {
+      "word": "haystack",
+      "ipa": "/ˈheɪstæk/",
+      "meaning": "건초 더미",
+      "emoji": "🌾",
+      "example": "On the haystack.",
+      "exampleKo": "건초 더미 위.",
+      "fact": "마른 풀 산!"
+    },
+    {
+      "word": "tractor",
+      "ipa": "/ˈtræktər/",
+      "meaning": "트랙터",
+      "emoji": "🚜",
+      "example": "Drive a tractor.",
+      "exampleKo": "트랙터 운전.",
+      "fact": "농장 자동차!"
+    },
+    {
+      "word": "plow",
+      "ipa": "/plaʊ/",
+      "meaning": "쟁기",
+      "emoji": "🚜",
+      "example": "Plow the field.",
+      "exampleKo": "밭을 갈아요.",
+      "fact": "땅 가는 도구!"
+    },
+    {
+      "word": "crop",
+      "ipa": "/krɒp/",
+      "meaning": "농작물",
+      "emoji": "🌽",
+      "example": "Grow crops.",
+      "exampleKo": "농작물 길러요.",
+      "fact": "먹는 식물!"
+    },
+    {
+      "word": "harvest",
+      "ipa": "/ˈhɑːrvəst/",
+      "meaning": "수확",
+      "emoji": "🌾",
+      "example": "Fall harvest.",
+      "exampleKo": "가을 수확.",
+      "fact": "농작물 거두기!"
+    },
+    {
+      "word": "calf",
+      "ipa": "/kæf/",
+      "meaning": "송아지",
+      "emoji": "🐮",
+      "example": "A baby calf.",
+      "exampleKo": "아기 송아지.",
+      "fact": "소의 새끼!"
+    },
+    {
+      "word": "piglet",
+      "ipa": "/ˈpɪɡlət/",
+      "meaning": "아기 돼지",
+      "emoji": "🐷",
+      "example": "Cute piglet.",
+      "exampleKo": "귀여운 아기돼지.",
+      "fact": "돼지 새끼!"
+    },
+    {
+      "word": "lamb",
+      "ipa": "/læm/",
+      "meaning": "아기 양",
+      "emoji": "🐑",
+      "example": "A little lamb.",
+      "exampleKo": "작은 아기 양.",
+      "fact": "양 새끼!"
+    },
+    {
+      "word": "goat",
+      "ipa": "/ɡoʊt/",
+      "meaning": "염소",
+      "emoji": "🐐",
+      "example": "A jumping goat.",
+      "exampleKo": "뛰는 염소.",
+      "fact": "뿔이 있어요!"
+    },
+    {
+      "word": "foal",
+      "ipa": "/foʊl/",
+      "meaning": "망아지",
+      "emoji": "🐴",
+      "example": "A young foal.",
+      "exampleKo": "어린 망아지.",
+      "fact": "말 새끼!"
+    },
+    {
+      "word": "chick",
+      "ipa": "/tʃɪk/",
+      "meaning": "병아리",
+      "emoji": "🐤",
+      "example": "Yellow chick.",
+      "exampleKo": "노란 병아리.",
+      "fact": "닭 새끼!"
+    },
+    {
+      "word": "rooster",
+      "ipa": "/ˈruːstər/",
+      "meaning": "수탉",
+      "emoji": "🐓",
+      "example": "Rooster crows.",
+      "exampleKo": "수탉이 울어요.",
+      "fact": "꼬끼오~!"
+    },
+    {
+      "word": "turkey",
+      "ipa": "/ˈtɜːrki/",
+      "meaning": "칠면조",
+      "emoji": "🦃",
+      "example": "A big turkey.",
+      "exampleKo": "큰 칠면조.",
+      "fact": "추수감사절!"
+    },
+    {
+      "word": "goose",
+      "ipa": "/ɡuːs/",
+      "meaning": "거위",
+      "emoji": "🪿",
+      "example": "A big goose.",
+      "exampleKo": "큰 거위.",
+      "fact": "오리 사촌!"
+    },
+    {
+      "word": "wheat",
+      "ipa": "/wiːt/",
+      "meaning": "밀",
+      "emoji": "🌾",
+      "example": "Wheat field.",
+      "exampleKo": "밀밭.",
+      "fact": "빵의 재료!"
+    },
+    {
+      "word": "barley",
+      "ipa": "/ˈbɑːrli/",
+      "meaning": "보리",
+      "emoji": "🌾",
+      "example": "Barley field.",
+      "exampleKo": "보리밭.",
+      "fact": "곡식 종류!"
+    },
+    {
+      "word": "hay",
+      "ipa": "/heɪ/",
+      "meaning": "건초",
+      "emoji": "🌾",
+      "example": "Hay for the horse.",
+      "exampleKo": "말에게 건초.",
+      "fact": "마른 풀!"
+    }
+  ]
+}

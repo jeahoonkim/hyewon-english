@@ -1,0 +1,196 @@
+{
+  "date": "2026-07-17",
+  "folderName": "20260717",
+  "dayKo": "금",
+  "dayKoFull": "금요일",
+  "dayEn": "Friday",
+  "dayIdx": 5,
+  "theme": "빠른 동작",
+  "themeEmoji": "🏃",
+  "vocabFileName": "혜원이_영단어_금요일_동작.html",
+  "quizFileName": "혜원이_영단어_금요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #ffecb3 0%, #ffa726 45%, #e65100 100%);",
+  "headerTitle": "🏃 빠른 동작과 움직임 ⚡",
+  "words": [
+    {
+      "word": "sprint",
+      "ipa": "/sprɪnt/",
+      "meaning": "전력 질주",
+      "emoji": "💨",
+      "example": "Sprint to the goal.",
+      "exampleKo": "목표까지 질주.",
+      "fact": "빠른 달리기!"
+    },
+    {
+      "word": "dash",
+      "ipa": "/dæʃ/",
+      "meaning": "돌진하다",
+      "emoji": "⚡",
+      "example": "Dash forward.",
+      "exampleKo": "앞으로 돌진.",
+      "fact": "빠르게!"
+    },
+    {
+      "word": "leap",
+      "ipa": "/liːp/",
+      "meaning": "훌쩍 뛰다",
+      "emoji": "🤸",
+      "example": "Leap over.",
+      "exampleKo": "훌쩍 뛰어넘어.",
+      "fact": "크게 뛰기!"
+    },
+    {
+      "word": "bounce",
+      "ipa": "/baʊns/",
+      "meaning": "튕기다",
+      "emoji": "🏀",
+      "example": "Bounce the ball.",
+      "exampleKo": "공 튕겨요.",
+      "fact": "통통!"
+    },
+    {
+      "word": "hover",
+      "ipa": "/ˈhʌvər/",
+      "meaning": "공중에 떠 있다",
+      "emoji": "🚁",
+      "example": "Hover in air.",
+      "exampleKo": "공중에 떠 있어.",
+      "fact": "가만히 떠 있기!"
+    },
+    {
+      "word": "ascend",
+      "ipa": "/əˈsend/",
+      "meaning": "올라가다",
+      "emoji": "⬆️",
+      "example": "Ascend the stairs.",
+      "exampleKo": "계단을 올라가요.",
+      "fact": "위로!"
+    },
+    {
+      "word": "crawl",
+      "ipa": "/krɔːl/",
+      "meaning": "기어가다",
+      "emoji": "👶",
+      "example": "Babies crawl.",
+      "exampleKo": "아기는 기어가요.",
+      "fact": "바닥으로!"
+    },
+    {
+      "word": "tumble",
+      "ipa": "/ˈtʌmbəl/",
+      "meaning": "굴러떨어지다",
+      "emoji": "🤸",
+      "example": "Tumble down.",
+      "exampleKo": "굴러떨어져요.",
+      "fact": "굴러서!"
+    },
+    {
+      "word": "slide",
+      "ipa": "/slaɪd/",
+      "meaning": "미끄러지다",
+      "emoji": "⛷️",
+      "example": "Slide down.",
+      "exampleKo": "미끄러져 내려가.",
+      "fact": "슈웅~!"
+    },
+    {
+      "word": "spin",
+      "ipa": "/spɪn/",
+      "meaning": "빙글빙글 돌다",
+      "emoji": "💫",
+      "example": "Spin around.",
+      "exampleKo": "한 바퀴 돌아요.",
+      "fact": "제자리 회전!"
+    },
+    {
+      "word": "twist",
+      "ipa": "/twɪst/",
+      "meaning": "비틀다",
+      "emoji": "🌀",
+      "example": "Twist your body.",
+      "exampleKo": "몸을 비틀어요.",
+      "fact": "꼬기!"
+    },
+    {
+      "word": "crouch",
+      "ipa": "/kraʊtʃ/",
+      "meaning": "웅크리다",
+      "emoji": "🙇",
+      "example": "Crouch down.",
+      "exampleKo": "웅크려 앉아요.",
+      "fact": "낮게!"
+    },
+    {
+      "word": "flex",
+      "ipa": "/fleks/",
+      "meaning": "구부리다, 힘 보이다",
+      "emoji": "💪",
+      "example": "Flex your muscles.",
+      "exampleKo": "근육을 힘 줘요.",
+      "fact": "근육 자랑!"
+    },
+    {
+      "word": "reach",
+      "ipa": "/riːtʃ/",
+      "meaning": "손을 뻗다",
+      "emoji": "✋",
+      "example": "Reach the top.",
+      "exampleKo": "꼭대기에 손 닿아요.",
+      "fact": "닿게 뻗기!"
+    },
+    {
+      "word": "grab",
+      "ipa": "/ɡræb/",
+      "meaning": "움켜잡다",
+      "emoji": "✊",
+      "example": "Grab the ball.",
+      "exampleKo": "공을 잡아요.",
+      "fact": "꽉 잡기!"
+    },
+    {
+      "word": "shove",
+      "ipa": "/ʃʌv/",
+      "meaning": "세게 밀다",
+      "emoji": "👐",
+      "example": "Don't shove me!",
+      "exampleKo": "세게 밀지 마!",
+      "fact": "강하게 밀기!"
+    },
+    {
+      "word": "yank",
+      "ipa": "/jæŋk/",
+      "meaning": "홱 잡아당기다",
+      "emoji": "💪",
+      "example": "Yank it open.",
+      "exampleKo": "홱 잡아당겨 열어.",
+      "fact": "확 당기기!"
+    },
+    {
+      "word": "toss",
+      "ipa": "/tɒs/",
+      "meaning": "가볍게 던지다",
+      "emoji": "🪙",
+      "example": "Toss the coin.",
+      "exampleKo": "동전 던져요.",
+      "fact": "위로 톡!"
+    },
+    {
+      "word": "snatch",
+      "ipa": "/snætʃ/",
+      "meaning": "잽싸게 잡다",
+      "emoji": "⚡",
+      "example": "Snatch the ball!",
+      "exampleKo": "공을 잽싸게!",
+      "fact": "순간 포착!"
+    },
+    {
+      "word": "stumble",
+      "ipa": "/ˈstʌmbəl/",
+      "meaning": "발이 걸려 비틀거리다",
+      "emoji": "😵",
+      "example": "Stumble on a rock.",
+      "exampleKo": "돌에 비틀.",
+      "fact": "살짝 넘어질 뻔!"
+    }
+  ]
+}

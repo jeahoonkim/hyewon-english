@@ -1,0 +1,196 @@
+{
+  "date": "2026-07-09",
+  "folderName": "20260709",
+  "dayKo": "목",
+  "dayKoFull": "목요일",
+  "dayEn": "Thursday",
+  "dayIdx": 4,
+  "theme": "곤충과 작은 생물",
+  "themeEmoji": "🐝",
+  "vocabFileName": "혜원이_영단어_목요일_곤충.html",
+  "quizFileName": "혜원이_영단어_목요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #dcedc8 0%, #9ccc65 45%, #558b2f 100%);",
+  "headerTitle": "🐝 곤충과 작은 생물 🐛",
+  "words": [
+    {
+      "word": "ant",
+      "ipa": "/ænt/",
+      "meaning": "개미",
+      "emoji": "🐜",
+      "example": "A tiny ant.",
+      "exampleKo": "작은 개미.",
+      "fact": "부지런해요!"
+    },
+    {
+      "word": "ladybug",
+      "ipa": "/ˈleɪdibʌɡ/",
+      "meaning": "무당벌레",
+      "emoji": "🐞",
+      "example": "A red ladybug.",
+      "exampleKo": "빨간 무당벌레.",
+      "fact": "점이 있어요!"
+    },
+    {
+      "word": "spider",
+      "ipa": "/ˈspaɪdər/",
+      "meaning": "거미",
+      "emoji": "🕷️",
+      "example": "A spider web.",
+      "exampleKo": "거미줄.",
+      "fact": "다리 8개!"
+    },
+    {
+      "word": "web",
+      "ipa": "/web/",
+      "meaning": "거미줄",
+      "emoji": "🕸️",
+      "example": "Spider's web.",
+      "exampleKo": "거미의 거미줄.",
+      "fact": "끈끈해요!"
+    },
+    {
+      "word": "caterpillar",
+      "ipa": "/ˈkætərpɪlər/",
+      "meaning": "애벌레",
+      "emoji": "🐛",
+      "example": "A green caterpillar.",
+      "exampleKo": "초록 애벌레.",
+      "fact": "나중에 나비 돼요!"
+    },
+    {
+      "word": "cocoon",
+      "ipa": "/kəˈkuːn/",
+      "meaning": "고치",
+      "emoji": "🐛",
+      "example": "In the cocoon.",
+      "exampleKo": "고치 안에서.",
+      "fact": "나비가 되는 집!"
+    },
+    {
+      "word": "ant hill",
+      "ipa": "/ænt hɪl/",
+      "meaning": "개미집",
+      "emoji": "🐜",
+      "example": "A big ant hill.",
+      "exampleKo": "큰 개미집.",
+      "fact": "개미 동네!"
+    },
+    {
+      "word": "beehive",
+      "ipa": "/ˈbiːhaɪv/",
+      "meaning": "벌집",
+      "emoji": "🍯",
+      "example": "Honey from beehive.",
+      "exampleKo": "벌집의 꿀.",
+      "fact": "육각형 모양!"
+    },
+    {
+      "word": "honey",
+      "ipa": "/ˈhʌni/",
+      "meaning": "꿀",
+      "emoji": "🍯",
+      "example": "Sweet honey.",
+      "exampleKo": "달콤한 꿀.",
+      "fact": "벌이 만들어요!"
+    },
+    {
+      "word": "firefly",
+      "ipa": "/ˈfaɪərflaɪ/",
+      "meaning": "반딧불이",
+      "emoji": "✨",
+      "example": "Pretty fireflies.",
+      "exampleKo": "예쁜 반딧불.",
+      "fact": "밤에 반짝!"
+    },
+    {
+      "word": "snail",
+      "ipa": "/sneɪl/",
+      "meaning": "달팽이",
+      "emoji": "🐌",
+      "example": "A slow snail.",
+      "exampleKo": "느린 달팽이.",
+      "fact": "껍데기 등에 짊어져요!"
+    },
+    {
+      "word": "slug",
+      "ipa": "/slʌɡ/",
+      "meaning": "민달팽이",
+      "emoji": "🐌",
+      "example": "A wet slug.",
+      "exampleKo": "축축한 민달팽이.",
+      "fact": "껍데기 없는 달팽이!"
+    },
+    {
+      "word": "worm",
+      "ipa": "/wɜːrm/",
+      "meaning": "지렁이",
+      "emoji": "🪱",
+      "example": "A long worm.",
+      "exampleKo": "긴 지렁이.",
+      "fact": "흙 속에서 살아요!"
+    },
+    {
+      "word": "beetle",
+      "ipa": "/ˈbiːtəl/",
+      "meaning": "딱정벌레",
+      "emoji": "🪲",
+      "example": "A black beetle.",
+      "exampleKo": "검은 딱정벌레.",
+      "fact": "껍질이 단단!"
+    },
+    {
+      "word": "grasshopper",
+      "ipa": "/ˈɡræshɒpər/",
+      "meaning": "메뚜기",
+      "emoji": "🦗",
+      "example": "A jumping grasshopper.",
+      "exampleKo": "뛰는 메뚜기.",
+      "fact": "잘 뛰어올라요!"
+    },
+    {
+      "word": "cricket",
+      "ipa": "/ˈkrɪkət/",
+      "meaning": "귀뚜라미",
+      "emoji": "🦗",
+      "example": "Cricket sounds.",
+      "exampleKo": "귀뚜라미 소리.",
+      "fact": "밤에 울어요!"
+    },
+    {
+      "word": "mosquito",
+      "ipa": "/məˈskiːtoʊ/",
+      "meaning": "모기",
+      "emoji": "🦟",
+      "example": "A buzzing mosquito.",
+      "exampleKo": "윙윙 모기.",
+      "fact": "여름에 많아요!"
+    },
+    {
+      "word": "dragonfly",
+      "ipa": "/ˈdræɡənflaɪ/",
+      "meaning": "잠자리",
+      "emoji": "✈️",
+      "example": "A red dragonfly.",
+      "exampleKo": "빨간 잠자리.",
+      "fact": "가을 곤충!"
+    },
+    {
+      "word": "moth",
+      "ipa": "/mɒθ/",
+      "meaning": "나방",
+      "emoji": "🦋",
+      "example": "A night moth.",
+      "exampleKo": "밤 나방.",
+      "fact": "나비 사촌!"
+    },
+    {
+      "word": "wing",
+      "ipa": "/wɪŋ/",
+      "meaning": "날개",
+      "emoji": "🦋",
+      "example": "Pretty wings.",
+      "exampleKo": "예쁜 날개.",
+      "fact": "새와 곤충 모두!"
+    }
+  ]
+}

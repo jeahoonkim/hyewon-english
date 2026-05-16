@@ -1,0 +1,196 @@
+{
+  "date": "2026-07-06",
+  "folderName": "20260706",
+  "dayKo": "월",
+  "dayKoFull": "월요일",
+  "dayEn": "Monday",
+  "dayIdx": 1,
+  "theme": "성격과 캐릭터",
+  "themeEmoji": "🎭",
+  "vocabFileName": "혜원이_영단어_월요일_성격.html",
+  "quizFileName": "혜원이_영단어_월요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #fce4ec 0%, #f48fb1 45%, #c2185b 100%);",
+  "headerTitle": "🎭 성격과 캐릭터 ✨",
+  "words": [
+    {
+      "word": "sincere",
+      "ipa": "/sɪnˈsɪər/",
+      "meaning": "진실한",
+      "emoji": "💗",
+      "example": "A sincere smile.",
+      "exampleKo": "진실한 미소.",
+      "fact": "마음에서 우러나옴!"
+    },
+    {
+      "word": "courteous",
+      "ipa": "/ˈkɜːrtiəs/",
+      "meaning": "공손한",
+      "emoji": "🎩",
+      "example": "A courteous reply.",
+      "exampleKo": "공손한 답변.",
+      "fact": "매우 예의 바름!"
+    },
+    {
+      "word": "rude",
+      "ipa": "/ruːd/",
+      "meaning": "무례한",
+      "emoji": "😤",
+      "example": "Don't be rude.",
+      "exampleKo": "무례하지 마.",
+      "fact": "예의 없는 것!"
+    },
+    {
+      "word": "wise",
+      "ipa": "/waɪz/",
+      "meaning": "현명한",
+      "emoji": "🦉",
+      "example": "A wise choice.",
+      "exampleKo": "현명한 선택.",
+      "fact": "지혜로워요!"
+    },
+    {
+      "word": "sleepy",
+      "ipa": "/ˈsliːpi/",
+      "meaning": "졸린",
+      "emoji": "😴",
+      "example": "A sleepy face.",
+      "exampleKo": "졸린 얼굴.",
+      "fact": "잠 부족할 때!"
+    },
+    {
+      "word": "diligent",
+      "ipa": "/ˈdɪlɪdʒənt/",
+      "meaning": "부지런한",
+      "emoji": "🐝",
+      "example": "A diligent student.",
+      "exampleKo": "부지런한 학생.",
+      "fact": "열심히 일해요!"
+    },
+    {
+      "word": "warmhearted",
+      "ipa": "/ˌwɔːrmˈhɑːrtəd/",
+      "meaning": "따뜻한 마음의",
+      "emoji": "💖",
+      "example": "A warmhearted teacher.",
+      "exampleKo": "따뜻한 마음의 선생님.",
+      "fact": "마음이 따뜻!"
+    },
+    {
+      "word": "selfish",
+      "ipa": "/ˈselfɪʃ/",
+      "meaning": "이기적인",
+      "emoji": "😒",
+      "example": "Don't be selfish.",
+      "exampleKo": "이기적이지 마.",
+      "fact": "자기만 생각!"
+    },
+    {
+      "word": "inquisitive",
+      "ipa": "/ɪnˈkwɪzətɪv/",
+      "meaning": "궁금해 하는",
+      "emoji": "🧐",
+      "example": "An inquisitive child.",
+      "exampleKo": "궁금해 하는 아이.",
+      "fact": "호기심 많음!"
+    },
+    {
+      "word": "gentle",
+      "ipa": "/ˈdʒentəl/",
+      "meaning": "부드러운, 순한",
+      "emoji": "🌸",
+      "example": "A gentle touch.",
+      "exampleKo": "부드러운 손길.",
+      "fact": "살살!"
+    },
+    {
+      "word": "humble",
+      "ipa": "/ˈhʌmbəl/",
+      "meaning": "겸손한",
+      "emoji": "🙏",
+      "example": "A humble hero.",
+      "exampleKo": "겸손한 영웅.",
+      "fact": "잘난 척 안 함!"
+    },
+    {
+      "word": "proud",
+      "ipa": "/praʊd/",
+      "meaning": "자랑스러운",
+      "emoji": "💪",
+      "example": "I'm proud of you.",
+      "exampleKo": "네가 자랑스러워.",
+      "fact": "좋은 자부심!"
+    },
+    {
+      "word": "mischievous",
+      "ipa": "/ˈmɪstʃɪvəs/",
+      "meaning": "장난꾸러기의",
+      "emoji": "😈",
+      "example": "A mischievous kid.",
+      "exampleKo": "장난꾸러기 아이.",
+      "fact": "개구쟁이!"
+    },
+    {
+      "word": "witty",
+      "ipa": "/ˈwɪti/",
+      "meaning": "재치 있는",
+      "emoji": "😏",
+      "example": "A witty joke.",
+      "exampleKo": "재치 있는 농담.",
+      "fact": "센스 좋아!"
+    },
+    {
+      "word": "talented",
+      "ipa": "/ˈtæləntəd/",
+      "meaning": "재능 있는",
+      "emoji": "⭐",
+      "example": "A talented kid.",
+      "exampleKo": "재능 있는 아이.",
+      "fact": "잘하는 게 있어요!"
+    },
+    {
+      "word": "bossy",
+      "ipa": "/ˈbɒsi/",
+      "meaning": "대장 행세하는",
+      "emoji": "👑",
+      "example": "A bossy sister.",
+      "exampleKo": "대장 행세하는 언니.",
+      "fact": "명령 많이 해요!"
+    },
+    {
+      "word": "optimistic",
+      "ipa": "/ˌɒptɪˈmɪstɪk/",
+      "meaning": "낙천적인",
+      "emoji": "☀️",
+      "example": "An optimistic view.",
+      "exampleKo": "낙천적인 시각.",
+      "fact": "긍정적 마음!"
+    },
+    {
+      "word": "reliable",
+      "ipa": "/rɪˈlaɪəbəl/",
+      "meaning": "믿음직한",
+      "emoji": "🛡️",
+      "example": "A reliable friend.",
+      "exampleKo": "믿음직한 친구.",
+      "fact": "의지 가능!"
+    },
+    {
+      "word": "loyal",
+      "ipa": "/ˈlɔɪəl/",
+      "meaning": "충실한",
+      "emoji": "🐶",
+      "example": "A loyal friend.",
+      "exampleKo": "충실한 친구.",
+      "fact": "의리 있어요!"
+    },
+    {
+      "word": "caring",
+      "ipa": "/ˈkerɪŋ/",
+      "meaning": "배려하는",
+      "emoji": "💗",
+      "example": "A caring friend.",
+      "exampleKo": "배려심 깊은 친구.",
+      "fact": "마음 써줘요!"
+    }
+  ]
+}
