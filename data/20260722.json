@@ -1,0 +1,196 @@
+{
+  "date": "2026-07-22",
+  "folderName": "20260722",
+  "dayKo": "수",
+  "dayKoFull": "수요일",
+  "dayEn": "Wednesday",
+  "dayIdx": 3,
+  "theme": "신체 디테일",
+  "themeEmoji": "🦵",
+  "vocabFileName": "혜원이_영단어_수요일_신체.html",
+  "quizFileName": "혜원이_영단어_수요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #fce4ec 0%, #f48fb1 45%, #c2185b 100%);",
+  "headerTitle": "🦵 우리 몸 디테일 💪",
+  "words": [
+    {
+      "word": "collarbone",
+      "ipa": "/ˈkɒlərboʊn/",
+      "meaning": "쇄골",
+      "emoji": "🦴",
+      "example": "Touch collarbone.",
+      "exampleKo": "쇄골 만져요.",
+      "fact": "목 아래 뼈!"
+    },
+    {
+      "word": "thigh",
+      "ipa": "/θaɪ/",
+      "meaning": "허벅지",
+      "emoji": "🦵",
+      "example": "Strong thigh.",
+      "exampleKo": "강한 허벅지.",
+      "fact": "무릎 위 다리!"
+    },
+    {
+      "word": "ankle",
+      "ipa": "/ˈæŋkəl/",
+      "meaning": "발목",
+      "emoji": "🦶",
+      "example": "Twist my ankle.",
+      "exampleKo": "발목 삐었어.",
+      "fact": "발과 다리 연결!"
+    },
+    {
+      "word": "wrist",
+      "ipa": "/rɪst/",
+      "meaning": "손목",
+      "emoji": "⌚",
+      "example": "Wear on the wrist.",
+      "exampleKo": "손목에 차요.",
+      "fact": "손과 팔 연결!"
+    },
+    {
+      "word": "knuckle",
+      "ipa": "/ˈnʌkəl/",
+      "meaning": "손가락 관절",
+      "emoji": "✊",
+      "example": "Crack the knuckles.",
+      "exampleKo": "손가락 꺾어요.",
+      "fact": "주먹의 마디!"
+    },
+    {
+      "word": "thumb",
+      "ipa": "/θʌm/",
+      "meaning": "엄지손가락",
+      "emoji": "👍",
+      "example": "Thumbs up!",
+      "exampleKo": "엄지 척!",
+      "fact": "가장 굵은 손가락!"
+    },
+    {
+      "word": "palm",
+      "ipa": "/pɑːm/",
+      "meaning": "손바닥",
+      "emoji": "🖐️",
+      "example": "Open your palm.",
+      "exampleKo": "손바닥 펴.",
+      "fact": "손의 안쪽!"
+    },
+    {
+      "word": "chin",
+      "ipa": "/tʃɪn/",
+      "meaning": "턱",
+      "emoji": "😀",
+      "example": "Touch your chin.",
+      "exampleKo": "턱을 만져.",
+      "fact": "얼굴 아래!"
+    },
+    {
+      "word": "cheek",
+      "ipa": "/tʃiːk/",
+      "meaning": "볼",
+      "emoji": "😊",
+      "example": "Pink cheeks.",
+      "exampleKo": "분홍 볼.",
+      "fact": "얼굴 양옆!"
+    },
+    {
+      "word": "forehead",
+      "ipa": "/ˈfɔːrhed/",
+      "meaning": "이마",
+      "emoji": "🤔",
+      "example": "High forehead.",
+      "exampleKo": "넓은 이마.",
+      "fact": "눈썹 위!"
+    },
+    {
+      "word": "chest",
+      "ipa": "/tʃest/",
+      "meaning": "가슴",
+      "emoji": "❤️",
+      "example": "Heart in chest.",
+      "exampleKo": "가슴의 심장.",
+      "fact": "몸 앞 위쪽!"
+    },
+    {
+      "word": "waist",
+      "ipa": "/weɪst/",
+      "meaning": "허리",
+      "emoji": "🤸",
+      "example": "Slim waist.",
+      "exampleKo": "가는 허리.",
+      "fact": "몸 가운데!"
+    },
+    {
+      "word": "hip",
+      "ipa": "/hɪp/",
+      "meaning": "엉덩이",
+      "emoji": "🩱",
+      "example": "Hands on hips.",
+      "exampleKo": "허리에 손 짚어.",
+      "fact": "몸 옆 아래!"
+    },
+    {
+      "word": "heel",
+      "ipa": "/hiːl/",
+      "meaning": "발뒤꿈치",
+      "emoji": "🦶",
+      "example": "My heel hurts.",
+      "exampleKo": "뒤꿈치 아파.",
+      "fact": "발 뒤쪽!"
+    },
+    {
+      "word": "toe",
+      "ipa": "/toʊ/",
+      "meaning": "발가락",
+      "emoji": "🦶",
+      "example": "Wiggle your toes.",
+      "exampleKo": "발가락 꼼지락.",
+      "fact": "발 끝의 손가락!"
+    },
+    {
+      "word": "nerve",
+      "ipa": "/nɜːrv/",
+      "meaning": "신경",
+      "emoji": "⚡",
+      "example": "Sensitive nerve.",
+      "exampleKo": "예민한 신경.",
+      "fact": "느낌 전달!"
+    },
+    {
+      "word": "pore",
+      "ipa": "/pɔːr/",
+      "meaning": "모공",
+      "emoji": "🔍",
+      "example": "Small pore.",
+      "exampleKo": "작은 모공.",
+      "fact": "피부의 구멍!"
+    },
+    {
+      "word": "liver",
+      "ipa": "/ˈlɪvər/",
+      "meaning": "간",
+      "emoji": "🫀",
+      "example": "Healthy liver.",
+      "exampleKo": "건강한 간.",
+      "fact": "몸의 정화기!"
+    },
+    {
+      "word": "heart",
+      "ipa": "/hɑːrt/",
+      "meaning": "심장",
+      "emoji": "❤️",
+      "example": "Heart beats.",
+      "exampleKo": "심장이 뛰어요.",
+      "fact": "피 펌프!"
+    },
+    {
+      "word": "spine",
+      "ipa": "/spaɪn/",
+      "meaning": "척추",
+      "emoji": "🦴",
+      "example": "Straight spine.",
+      "exampleKo": "곧은 척추.",
+      "fact": "등뼈!"
+    }
+  ]
+}

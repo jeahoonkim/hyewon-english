@@ -1,0 +1,196 @@
+{
+  "date": "2026-07-27",
+  "folderName": "20260727",
+  "dayKo": "월",
+  "dayKoFull": "월요일",
+  "dayEn": "Monday",
+  "dayIdx": 1,
+  "theme": "모양과 패턴",
+  "themeEmoji": "🔷",
+  "vocabFileName": "혜원이_영단어_월요일_모양.html",
+  "quizFileName": "혜원이_영단어_월요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #fff3e0 0%, #ffb74d 45%, #ef6c00 100%);",
+  "headerTitle": "🔷 모양과 패턴 🔶",
+  "words": [
+    {
+      "word": "oval",
+      "ipa": "/ˈoʊvəl/",
+      "meaning": "타원형",
+      "emoji": "⭕",
+      "example": "An oval face.",
+      "exampleKo": "타원형 얼굴.",
+      "fact": "동그란데 길쭉!"
+    },
+    {
+      "word": "diamond",
+      "ipa": "/ˈdaɪəmənd/",
+      "meaning": "마름모, 다이아몬드",
+      "emoji": "💎",
+      "example": "Diamond shape.",
+      "exampleKo": "마름모 모양.",
+      "fact": "마름모 = 보석!"
+    },
+    {
+      "word": "hexagon",
+      "ipa": "/ˈheksəɡɒn/",
+      "meaning": "육각형",
+      "emoji": "🔯",
+      "example": "A hexagon honeycomb.",
+      "exampleKo": "육각형 벌집.",
+      "fact": "6개의 변!"
+    },
+    {
+      "word": "octagon",
+      "ipa": "/ˈɒktəɡɒn/",
+      "meaning": "팔각형",
+      "emoji": "🛑",
+      "example": "Stop sign is octagon.",
+      "exampleKo": "정지 표지는 팔각형.",
+      "fact": "8개의 변!"
+    },
+    {
+      "word": "pentagon",
+      "ipa": "/ˈpentəɡɒn/",
+      "meaning": "오각형",
+      "emoji": "⭐",
+      "example": "A pentagon star.",
+      "exampleKo": "오각형 별.",
+      "fact": "5개의 변!"
+    },
+    {
+      "word": "cube",
+      "ipa": "/kjuːb/",
+      "meaning": "정육면체",
+      "emoji": "🟦",
+      "example": "An ice cube.",
+      "exampleKo": "얼음 큐브.",
+      "fact": "6면이 모두 사각!"
+    },
+    {
+      "word": "sphere",
+      "ipa": "/sfɪər/",
+      "meaning": "구",
+      "emoji": "🌐",
+      "example": "A glass sphere.",
+      "exampleKo": "유리 구.",
+      "fact": "완벽한 공!"
+    },
+    {
+      "word": "cylinder",
+      "ipa": "/ˈsɪlɪndər/",
+      "meaning": "원기둥",
+      "emoji": "🥫",
+      "example": "A can is a cylinder.",
+      "exampleKo": "캔은 원기둥.",
+      "fact": "둥근 기둥!"
+    },
+    {
+      "word": "cone",
+      "ipa": "/koʊn/",
+      "meaning": "원뿔",
+      "emoji": "🍦",
+      "example": "Ice cream cone.",
+      "exampleKo": "아이스크림 콘.",
+      "fact": "위가 뾰족!"
+    },
+    {
+      "word": "crescent",
+      "ipa": "/ˈkresənt/",
+      "meaning": "초승달 모양",
+      "emoji": "🌙",
+      "example": "A crescent moon.",
+      "exampleKo": "초승달.",
+      "fact": "C 자 모양!"
+    },
+    {
+      "word": "stripe",
+      "ipa": "/straɪp/",
+      "meaning": "줄무늬",
+      "emoji": "🦓",
+      "example": "Zebra stripes.",
+      "exampleKo": "얼룩말 줄무늬.",
+      "fact": "길게 그어진 선!"
+    },
+    {
+      "word": "dot",
+      "ipa": "/dɒt/",
+      "meaning": "점",
+      "emoji": "⚫",
+      "example": "Polka dots.",
+      "exampleKo": "물방울 무늬.",
+      "fact": "작고 동그란 점!"
+    },
+    {
+      "word": "checkered",
+      "ipa": "/ˈtʃekərd/",
+      "meaning": "체크무늬의",
+      "emoji": "🏁",
+      "example": "Checkered flag.",
+      "exampleKo": "체크 깃발.",
+      "fact": "네모 패턴!"
+    },
+    {
+      "word": "plaid",
+      "ipa": "/plæd/",
+      "meaning": "격자무늬",
+      "emoji": "📐",
+      "example": "Plaid shirt.",
+      "exampleKo": "격자무늬 셔츠.",
+      "fact": "교차하는 선!"
+    },
+    {
+      "word": "zigzag",
+      "ipa": "/ˈzɪɡzæɡ/",
+      "meaning": "지그재그",
+      "emoji": "⚡",
+      "example": "A zigzag line.",
+      "exampleKo": "지그재그 선.",
+      "fact": "왔다 갔다!"
+    },
+    {
+      "word": "curve",
+      "ipa": "/kɜːrv/",
+      "meaning": "곡선",
+      "emoji": "🌙",
+      "example": "A smooth curve.",
+      "exampleKo": "매끄러운 곡선.",
+      "fact": "휘어진 선!"
+    },
+    {
+      "word": "angle",
+      "ipa": "/ˈæŋɡəl/",
+      "meaning": "각도",
+      "emoji": "📐",
+      "example": "Right angle.",
+      "exampleKo": "직각.",
+      "fact": "두 선의 만남!"
+    },
+    {
+      "word": "symmetry",
+      "ipa": "/ˈsɪmətri/",
+      "meaning": "대칭",
+      "emoji": "🦋",
+      "example": "Perfect symmetry.",
+      "exampleKo": "완벽한 대칭.",
+      "fact": "양쪽이 같음!"
+    },
+    {
+      "word": "spiral",
+      "ipa": "/ˈspaɪrəl/",
+      "meaning": "나선형",
+      "emoji": "🌀",
+      "example": "A spiral shell.",
+      "exampleKo": "나선형 조개.",
+      "fact": "빙빙 도는 모양!"
+    },
+    {
+      "word": "swirl",
+      "ipa": "/swɜːrl/",
+      "meaning": "소용돌이 무늬",
+      "emoji": "🌀",
+      "example": "A swirl pattern.",
+      "exampleKo": "소용돌이 무늬.",
+      "fact": "빙글빙글!"
+    }
+  ]
+}

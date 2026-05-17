@@ -1,0 +1,196 @@
+{
+  "date": "2026-07-30",
+  "folderName": "20260730",
+  "dayKo": "목",
+  "dayKoFull": "목요일",
+  "dayEn": "Thursday",
+  "dayIdx": 4,
+  "theme": "숫자와 계산",
+  "themeEmoji": "🔢",
+  "vocabFileName": "혜원이_영단어_목요일_숫자.html",
+  "quizFileName": "혜원이_영단어_목요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #f3e5f5 0%, #9c27b0 45%, #4a148c 100%);",
+  "headerTitle": "🔢 숫자와 계산 ➕",
+  "words": [
+    {
+      "word": "numeral",
+      "ipa": "/ˈnuːmərəl/",
+      "meaning": "숫자, 수",
+      "emoji": "🔢",
+      "example": "Roman numeral.",
+      "exampleKo": "로마 숫자.",
+      "fact": "I, II, III, IV!"
+    },
+    {
+      "word": "thousand",
+      "ipa": "/ˈθaʊzənd/",
+      "meaning": "천 (1,000)",
+      "emoji": "🔢",
+      "example": "One thousand.",
+      "exampleKo": "천.",
+      "fact": "1,000!"
+    },
+    {
+      "word": "million",
+      "ipa": "/ˈmɪljən/",
+      "meaning": "백만",
+      "emoji": "💰",
+      "example": "A million stars.",
+      "exampleKo": "백만 개 별.",
+      "fact": "1,000,000!"
+    },
+    {
+      "word": "billion",
+      "ipa": "/ˈbɪljən/",
+      "meaning": "십억",
+      "emoji": "🌟",
+      "example": "A billion years.",
+      "exampleKo": "십억 년.",
+      "fact": "1,000,000,000!"
+    },
+    {
+      "word": "dozen",
+      "ipa": "/ˈdʌzən/",
+      "meaning": "12개",
+      "emoji": "🥚",
+      "example": "A dozen eggs.",
+      "exampleKo": "계란 12개.",
+      "fact": "12개를 의미!"
+    },
+    {
+      "word": "pair",
+      "ipa": "/per/",
+      "meaning": "한 쌍",
+      "emoji": "👟",
+      "example": "A pair of shoes.",
+      "exampleKo": "신발 한 켤레.",
+      "fact": "2개가 한 묶음!"
+    },
+    {
+      "word": "plus",
+      "ipa": "/plʌs/",
+      "meaning": "더하기 (+)",
+      "emoji": "➕",
+      "example": "Two plus two.",
+      "exampleKo": "2 더하기 2.",
+      "fact": "+ 기호!"
+    },
+    {
+      "word": "minus",
+      "ipa": "/ˈmaɪnəs/",
+      "meaning": "빼기 (-)",
+      "emoji": "➖",
+      "example": "Five minus one.",
+      "exampleKo": "5 빼기 1.",
+      "fact": "- 기호!"
+    },
+    {
+      "word": "times",
+      "ipa": "/taɪmz/",
+      "meaning": "곱하기",
+      "emoji": "✖️",
+      "example": "Three times four.",
+      "exampleKo": "3 곱하기 4.",
+      "fact": "× 기호!"
+    },
+    {
+      "word": "divided",
+      "ipa": "/dɪˈvaɪdəd/",
+      "meaning": "나누기",
+      "emoji": "➗",
+      "example": "Ten divided by two.",
+      "exampleKo": "10 나누기 2.",
+      "fact": "÷ 기호!"
+    },
+    {
+      "word": "equal",
+      "ipa": "/ˈiːkwəl/",
+      "meaning": "같은 (=)",
+      "emoji": "🟰",
+      "example": "Equal numbers.",
+      "exampleKo": "같은 숫자.",
+      "fact": "= 기호!"
+    },
+    {
+      "word": "odd",
+      "ipa": "/ɒd/",
+      "meaning": "홀수의",
+      "emoji": "1️⃣",
+      "example": "Odd number.",
+      "exampleKo": "홀수.",
+      "fact": "1, 3, 5...!"
+    },
+    {
+      "word": "even",
+      "ipa": "/ˈiːvən/",
+      "meaning": "짝수의",
+      "emoji": "2️⃣",
+      "example": "Even number.",
+      "exampleKo": "짝수.",
+      "fact": "2, 4, 6...!"
+    },
+    {
+      "word": "fraction",
+      "ipa": "/ˈfrækʃən/",
+      "meaning": "분수",
+      "emoji": "🧮",
+      "example": "Learn fractions.",
+      "exampleKo": "분수 배워요.",
+      "fact": "1/2 같은!"
+    },
+    {
+      "word": "decimal",
+      "ipa": "/ˈdesəməl/",
+      "meaning": "소수",
+      "emoji": "🔢",
+      "example": "Decimal point.",
+      "exampleKo": "소수점.",
+      "fact": "0.5 같은!"
+    },
+    {
+      "word": "percent",
+      "ipa": "/pərˈsent/",
+      "meaning": "퍼센트",
+      "emoji": "💯",
+      "example": "Fifty percent.",
+      "exampleKo": "50 퍼센트.",
+      "fact": "% 기호!"
+    },
+    {
+      "word": "calculate",
+      "ipa": "/ˈkælkjəleɪt/",
+      "meaning": "계산하다",
+      "emoji": "🧮",
+      "example": "Calculate the sum.",
+      "exampleKo": "합을 계산해요.",
+      "fact": "답 구하기!"
+    },
+    {
+      "word": "sum",
+      "ipa": "/sʌm/",
+      "meaning": "합계",
+      "emoji": "➕",
+      "example": "The total sum.",
+      "exampleKo": "총합.",
+      "fact": "다 더한 값!"
+    },
+    {
+      "word": "total",
+      "ipa": "/ˈtoʊtəl/",
+      "meaning": "총, 합계",
+      "emoji": "💯",
+      "example": "Total price.",
+      "exampleKo": "총 가격.",
+      "fact": "전체 양!"
+    },
+    {
+      "word": "average",
+      "ipa": "/ˈævərɪdʒ/",
+      "meaning": "평균",
+      "emoji": "📊",
+      "example": "Find the average.",
+      "exampleKo": "평균을 구해요.",
+      "fact": "가운데 값!"
+    }
+  ]
+}

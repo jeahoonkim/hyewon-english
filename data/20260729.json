@@ -1,0 +1,196 @@
+{
+  "date": "2026-07-29",
+  "folderName": "20260729",
+  "dayKo": "수",
+  "dayKoFull": "수요일",
+  "dayEn": "Wednesday",
+  "dayIdx": 3,
+  "theme": "자동차와 교통수단",
+  "themeEmoji": "🏎️",
+  "vocabFileName": "혜원이_영단어_수요일_교통.html",
+  "quizFileName": "혜원이_영단어_수요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #fff8e1 0%, #ffc107 45%, #f57f17 100%);",
+  "headerTitle": "🏎️ 자동차와 교통수단 🚀",
+  "words": [
+    {
+      "word": "sedan",
+      "ipa": "/sɪˈdæn/",
+      "meaning": "세단 (승용차)",
+      "emoji": "🚗",
+      "example": "A new sedan.",
+      "exampleKo": "새 세단.",
+      "fact": "4문 자동차!"
+    },
+    {
+      "word": "suv",
+      "ipa": "/ˌes juː ˈviː/",
+      "meaning": "SUV",
+      "emoji": "🚙",
+      "example": "A big SUV.",
+      "exampleKo": "큰 SUV.",
+      "fact": "높은 자동차!"
+    },
+    {
+      "word": "convertible",
+      "ipa": "/kənˈvɜːrtəbəl/",
+      "meaning": "오픈카",
+      "emoji": "🚗",
+      "example": "A red convertible.",
+      "exampleKo": "빨간 오픈카.",
+      "fact": "지붕 열려요!"
+    },
+    {
+      "word": "motorcycle",
+      "ipa": "/ˈmoʊtərsaɪkəl/",
+      "meaning": "오토바이",
+      "emoji": "🏍️",
+      "example": "Ride a motorcycle.",
+      "exampleKo": "오토바이 타기.",
+      "fact": "두 바퀴!"
+    },
+    {
+      "word": "scooter",
+      "ipa": "/ˈskuːtər/",
+      "meaning": "스쿠터",
+      "emoji": "🛵",
+      "example": "A kick scooter.",
+      "exampleKo": "킥보드 스쿠터.",
+      "fact": "작은 오토바이!"
+    },
+    {
+      "word": "helicopter",
+      "ipa": "/ˈhelɪkɒptər/",
+      "meaning": "헬리콥터",
+      "emoji": "🚁",
+      "example": "A flying helicopter.",
+      "exampleKo": "나는 헬리콥터.",
+      "fact": "날개가 위에!"
+    },
+    {
+      "word": "submarine",
+      "ipa": "/ˌsʌbməˈriːn/",
+      "meaning": "잠수함",
+      "emoji": "🚢",
+      "example": "A yellow submarine.",
+      "exampleKo": "노란 잠수함.",
+      "fact": "물속 다녀요!"
+    },
+    {
+      "word": "jet",
+      "ipa": "/dʒet/",
+      "meaning": "제트기",
+      "emoji": "✈️",
+      "example": "A fast jet.",
+      "exampleKo": "빠른 제트기.",
+      "fact": "엄청 빨라요!"
+    },
+    {
+      "word": "van",
+      "ipa": "/væn/",
+      "meaning": "승합차",
+      "emoji": "🚐",
+      "example": "A delivery van.",
+      "exampleKo": "배달 승합차.",
+      "fact": "많은 사람 탑승!"
+    },
+    {
+      "word": "wagon",
+      "ipa": "/ˈwæɡən/",
+      "meaning": "마차, 수레",
+      "emoji": "🛒",
+      "example": "A red wagon.",
+      "exampleKo": "빨간 수레.",
+      "fact": "바퀴 달린 짐!"
+    },
+    {
+      "word": "firetruck",
+      "ipa": "/ˈfaɪər trʌk/",
+      "meaning": "소방차",
+      "emoji": "🚒",
+      "example": "A red firetruck.",
+      "exampleKo": "빨간 소방차.",
+      "fact": "불 끄러!"
+    },
+    {
+      "word": "taxicab",
+      "ipa": "/ˈtæksikæb/",
+      "meaning": "택시",
+      "emoji": "🚕",
+      "example": "Call a taxicab.",
+      "exampleKo": "택시 불러요.",
+      "fact": "yellow cab!"
+    },
+    {
+      "word": "rocket ship",
+      "ipa": "/ˈrɒkət ʃɪp/",
+      "meaning": "우주선",
+      "emoji": "🚀",
+      "example": "A rocket ship.",
+      "exampleKo": "우주선.",
+      "fact": "우주로!"
+    },
+    {
+      "word": "sailboat",
+      "ipa": "/ˈseɪlboʊt/",
+      "meaning": "돛단배",
+      "emoji": "⛵",
+      "example": "A white sailboat.",
+      "exampleKo": "하얀 돛단배.",
+      "fact": "돛으로 달림!"
+    },
+    {
+      "word": "canoe",
+      "ipa": "/kəˈnuː/",
+      "meaning": "카누",
+      "emoji": "🛶",
+      "example": "Paddle a canoe.",
+      "exampleKo": "카누를 저어요.",
+      "fact": "좁은 배!"
+    },
+    {
+      "word": "brake",
+      "ipa": "/breɪk/",
+      "meaning": "브레이크",
+      "emoji": "🛑",
+      "example": "Step on the brake.",
+      "exampleKo": "브레이크 밟아요.",
+      "fact": "멈추기!"
+    },
+    {
+      "word": "tire",
+      "ipa": "/ˈtaɪər/",
+      "meaning": "타이어",
+      "emoji": "🛞",
+      "example": "Flat tire.",
+      "exampleKo": "펑크난 타이어.",
+      "fact": "바퀴의 고무!"
+    },
+    {
+      "word": "pedal",
+      "ipa": "/ˈpedəl/",
+      "meaning": "페달",
+      "emoji": "🚲",
+      "example": "Press the pedal.",
+      "exampleKo": "페달 밟아요.",
+      "fact": "발로 누르기!"
+    },
+    {
+      "word": "tunnel",
+      "ipa": "/ˈtʌnəl/",
+      "meaning": "터널",
+      "emoji": "🚇",
+      "example": "Through the tunnel.",
+      "exampleKo": "터널 통과.",
+      "fact": "산 아래 길!"
+    },
+    {
+      "word": "intersection",
+      "ipa": "/ˌɪntərˈsekʃən/",
+      "meaning": "교차로",
+      "emoji": "🚦",
+      "example": "At the intersection.",
+      "exampleKo": "교차로에서.",
+      "fact": "길이 만나는 곳!"
+    }
+  ]
+}

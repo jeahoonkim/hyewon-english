@@ -1,0 +1,196 @@
+{
+  "date": "2026-07-24",
+  "folderName": "20260724",
+  "dayKo": "금",
+  "dayKoFull": "금요일",
+  "dayEn": "Friday",
+  "dayIdx": 5,
+  "theme": "방향과 위치",
+  "themeEmoji": "🧭",
+  "vocabFileName": "혜원이_영단어_금요일_방향.html",
+  "quizFileName": "혜원이_영단어_금요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #b2dfdb 0%, #4db6ac 45%, #00695c 100%);",
+  "headerTitle": "🧭 방향과 위치 📍",
+  "words": [
+    {
+      "word": "north",
+      "ipa": "/nɔːrθ/",
+      "meaning": "북쪽",
+      "emoji": "⬆️",
+      "example": "Go north.",
+      "exampleKo": "북쪽으로 가요.",
+      "fact": "북극 방향!"
+    },
+    {
+      "word": "south",
+      "ipa": "/saʊθ/",
+      "meaning": "남쪽",
+      "emoji": "⬇️",
+      "example": "Head south.",
+      "exampleKo": "남쪽으로 향해.",
+      "fact": "남극 방향!"
+    },
+    {
+      "word": "east",
+      "ipa": "/iːst/",
+      "meaning": "동쪽",
+      "emoji": "➡️",
+      "example": "The east.",
+      "exampleKo": "동쪽.",
+      "fact": "해뜨는 방향!"
+    },
+    {
+      "word": "west",
+      "ipa": "/west/",
+      "meaning": "서쪽",
+      "emoji": "⬅️",
+      "example": "The west.",
+      "exampleKo": "서쪽.",
+      "fact": "해지는 방향!"
+    },
+    {
+      "word": "northeast",
+      "ipa": "/ˌnɔːrθˈiːst/",
+      "meaning": "북동쪽",
+      "emoji": "↗️",
+      "example": "Go northeast.",
+      "exampleKo": "북동쪽으로.",
+      "fact": "북+동!"
+    },
+    {
+      "word": "southwest",
+      "ipa": "/ˌsaʊθˈwest/",
+      "meaning": "남서쪽",
+      "emoji": "↙️",
+      "example": "From southwest.",
+      "exampleKo": "남서쪽에서.",
+      "fact": "남+서!"
+    },
+    {
+      "word": "forward",
+      "ipa": "/ˈfɔːrwərd/",
+      "meaning": "앞으로",
+      "emoji": "⏩",
+      "example": "Move forward.",
+      "exampleKo": "앞으로 가요.",
+      "fact": "전진!"
+    },
+    {
+      "word": "backward",
+      "ipa": "/ˈbækwərd/",
+      "meaning": "뒤로",
+      "emoji": "⏪",
+      "example": "Step backward.",
+      "exampleKo": "뒤로 한 걸음.",
+      "fact": "후진!"
+    },
+    {
+      "word": "upward",
+      "ipa": "/ˈʌpwərd/",
+      "meaning": "위쪽으로",
+      "emoji": "⬆️",
+      "example": "Look upward.",
+      "exampleKo": "위를 봐요.",
+      "fact": "올라가기!"
+    },
+    {
+      "word": "downward",
+      "ipa": "/ˈdaʊnwərd/",
+      "meaning": "아래쪽으로",
+      "emoji": "⬇️",
+      "example": "Slope downward.",
+      "exampleKo": "아래로 경사.",
+      "fact": "내려가기!"
+    },
+    {
+      "word": "inward",
+      "ipa": "/ˈɪnwərd/",
+      "meaning": "안쪽으로",
+      "emoji": "⬅️",
+      "example": "Turn inward.",
+      "exampleKo": "안쪽으로 돌아요.",
+      "fact": "속으로!"
+    },
+    {
+      "word": "outward",
+      "ipa": "/ˈaʊtwərd/",
+      "meaning": "바깥쪽으로",
+      "emoji": "➡️",
+      "example": "Push outward.",
+      "exampleKo": "바깥으로 밀어.",
+      "fact": "밖으로!"
+    },
+    {
+      "word": "distance",
+      "ipa": "/ˈdɪstəns/",
+      "meaning": "거리",
+      "emoji": "📏",
+      "example": "A short distance.",
+      "exampleKo": "가까운 거리.",
+      "fact": "떨어진 정도!"
+    },
+    {
+      "word": "location",
+      "ipa": "/loʊˈkeɪʃən/",
+      "meaning": "위치",
+      "emoji": "📍",
+      "example": "Find the location.",
+      "exampleKo": "위치를 찾아요.",
+      "fact": "있는 곳!"
+    },
+    {
+      "word": "area",
+      "ipa": "/ˈeriə/",
+      "meaning": "지역",
+      "emoji": "🗺️",
+      "example": "This area.",
+      "exampleKo": "이 지역.",
+      "fact": "넓은 곳!"
+    },
+    {
+      "word": "region",
+      "ipa": "/ˈriːdʒən/",
+      "meaning": "지방",
+      "emoji": "🌎",
+      "example": "Cold region.",
+      "exampleKo": "추운 지방.",
+      "fact": "큰 지역!"
+    },
+    {
+      "word": "midpoint",
+      "ipa": "/ˈmɪdpɔɪnt/",
+      "meaning": "중간 지점",
+      "emoji": "🎯",
+      "example": "The midpoint.",
+      "exampleKo": "중간 지점.",
+      "fact": "정확히 가운데!"
+    },
+    {
+      "word": "corner",
+      "ipa": "/ˈkɔːrnər/",
+      "meaning": "모퉁이",
+      "emoji": "📐",
+      "example": "At the corner.",
+      "exampleKo": "모퉁이에서.",
+      "fact": "꺾이는 곳!"
+    },
+    {
+      "word": "boundary",
+      "ipa": "/ˈbaʊndri/",
+      "meaning": "경계선",
+      "emoji": "🚧",
+      "example": "A clear boundary.",
+      "exampleKo": "분명한 경계.",
+      "fact": "영역의 끝!"
+    },
+    {
+      "word": "surface",
+      "ipa": "/ˈsɜːrfɪs/",
+      "meaning": "표면",
+      "emoji": "🪞",
+      "example": "Smooth surface.",
+      "exampleKo": "매끄러운 표면.",
+      "fact": "겉면!"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "date": "2026-08-01",
+  "folderName": "20260801",
+  "dayKo": "토",
+  "dayKoFull": "토요일",
+  "dayEn": "Saturday",
+  "dayIdx": 6,
+  "weekLabel": "Week 15",
+  "themeSummary": "모양·직업·교통·숫자·축제",
+  "quizFileName": "혜원이_영단어_토요일_종합시험.html",
+  "includeDates": ["20260727", "20260728", "20260729", "20260730", "20260731"],
+  "bgGradient": "linear-gradient(180deg, #fff3e0 0%, #e3f2fd 25%, #fff8e1 50%, #f3e5f5 75%, #ffecb3 100%);",
+  "headerTitle": "🎯 주간 종합 시험 🏆"
+}

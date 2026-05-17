@@ -1,0 +1,196 @@
+{
+  "date": "2026-07-31",
+  "folderName": "20260731",
+  "dayKo": "금",
+  "dayKoFull": "금요일",
+  "dayEn": "Friday",
+  "dayIdx": 5,
+  "theme": "축제와 이벤트",
+  "themeEmoji": "🎉",
+  "vocabFileName": "혜원이_영단어_금요일_축제.html",
+  "quizFileName": "혜원이_영단어_금요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #ffecb3 0%, #ff7043 45%, #bf360c 100%);",
+  "headerTitle": "🎉 축제와 이벤트 🎪",
+  "words": [
+    {
+      "word": "carnival",
+      "ipa": "/ˈkɑːrnəvəl/",
+      "meaning": "카니발",
+      "emoji": "🎪",
+      "example": "A fun carnival.",
+      "exampleKo": "재밌는 카니발.",
+      "fact": "큰 야외 축제!"
+    },
+    {
+      "word": "circus",
+      "ipa": "/ˈsɜːrkəs/",
+      "meaning": "서커스",
+      "emoji": "🤹",
+      "example": "Watch the circus.",
+      "exampleKo": "서커스 봐요.",
+      "fact": "광대·곡예!"
+    },
+    {
+      "word": "clown",
+      "ipa": "/klaʊn/",
+      "meaning": "광대",
+      "emoji": "🤡",
+      "example": "A funny clown.",
+      "exampleKo": "웃긴 광대.",
+      "fact": "분장하고 웃겨요!"
+    },
+    {
+      "word": "acrobat",
+      "ipa": "/ˈækrəbæt/",
+      "meaning": "곡예사",
+      "emoji": "🤸",
+      "example": "A skilled acrobat.",
+      "exampleKo": "능숙한 곡예사.",
+      "fact": "공중 묘기!"
+    },
+    {
+      "word": "juggler",
+      "ipa": "/ˈdʒʌɡlər/",
+      "meaning": "저글링하는 사람",
+      "emoji": "🤹",
+      "example": "A juggler at the park.",
+      "exampleKo": "공원의 저글러.",
+      "fact": "공 여러 개 던지기!"
+    },
+    {
+      "word": "ferris wheel",
+      "ipa": "/ˈferɪs wiːl/",
+      "meaning": "대관람차",
+      "emoji": "🎡",
+      "example": "Ride the ferris wheel.",
+      "exampleKo": "대관람차 타요.",
+      "fact": "동그란 큰 바퀴!"
+    },
+    {
+      "word": "roller coaster",
+      "ipa": "/ˈroʊlər koʊstər/",
+      "meaning": "롤러코스터",
+      "emoji": "🎢",
+      "example": "Fast roller coaster!",
+      "exampleKo": "빠른 롤러코스터!",
+      "fact": "슝슝~ 비명!"
+    },
+    {
+      "word": "gala",
+      "ipa": "/ˈɡɑːlə/",
+      "meaning": "갈라쇼, 큰 행사",
+      "emoji": "🎭",
+      "example": "A charity gala.",
+      "exampleKo": "자선 갈라.",
+      "fact": "큰 자선 행사!"
+    },
+    {
+      "word": "rally",
+      "ipa": "/ˈræli/",
+      "meaning": "집회, 모임",
+      "emoji": "📣",
+      "example": "A pep rally.",
+      "exampleKo": "응원 집회.",
+      "fact": "사람들 모임!"
+    },
+    {
+      "word": "ceremony",
+      "ipa": "/ˈserəmoʊni/",
+      "meaning": "의식, 행사",
+      "emoji": "🎓",
+      "example": "Opening ceremony.",
+      "exampleKo": "개막식.",
+      "fact": "공식 행사!"
+    },
+    {
+      "word": "award",
+      "ipa": "/əˈwɔːrd/",
+      "meaning": "상",
+      "emoji": "🏆",
+      "example": "Win an award.",
+      "exampleKo": "상을 받아요.",
+      "fact": "잘했을 때!"
+    },
+    {
+      "word": "prize",
+      "ipa": "/praɪz/",
+      "meaning": "상품, 상",
+      "emoji": "🎁",
+      "example": "First prize.",
+      "exampleKo": "1등상.",
+      "fact": "이긴 사람의 선물!"
+    },
+    {
+      "word": "spotlight",
+      "ipa": "/ˈspɒtlaɪt/",
+      "meaning": "스포트라이트",
+      "emoji": "💡",
+      "example": "Under the spotlight.",
+      "exampleKo": "스포트라이트 아래.",
+      "fact": "무대 조명!"
+    },
+    {
+      "word": "announcer",
+      "ipa": "/əˈnaʊnsər/",
+      "meaning": "진행자, 아나운서",
+      "emoji": "🎙️",
+      "example": "The announcer speaks.",
+      "exampleKo": "아나운서가 말해요.",
+      "fact": "무대 안내!"
+    },
+    {
+      "word": "contest",
+      "ipa": "/ˈkɒntest/",
+      "meaning": "대회, 경연",
+      "emoji": "🏅",
+      "example": "Singing contest.",
+      "exampleKo": "노래 대회.",
+      "fact": "누가 잘하나!"
+    },
+    {
+      "word": "competition",
+      "ipa": "/ˌkɒmpəˈtɪʃən/",
+      "meaning": "경쟁, 시합",
+      "emoji": "⚔️",
+      "example": "A tough competition.",
+      "exampleKo": "치열한 시합.",
+      "fact": "여럿이 겨룸!"
+    },
+    {
+      "word": "plaque",
+      "ipa": "/plæk/",
+      "meaning": "명패, 상패",
+      "emoji": "🏵️",
+      "example": "A wooden plaque.",
+      "exampleKo": "나무 상패.",
+      "fact": "벽에 거는 상!"
+    },
+    {
+      "word": "banner",
+      "ipa": "/ˈbænər/",
+      "meaning": "현수막, 배너",
+      "emoji": "🎌",
+      "example": "Hang the banner.",
+      "exampleKo": "현수막 걸어요.",
+      "fact": "큰 천 광고!"
+    },
+    {
+      "word": "fireworks",
+      "ipa": "/ˈfaɪərwɜːrks/",
+      "meaning": "불꽃놀이",
+      "emoji": "🎆",
+      "example": "Watch fireworks.",
+      "exampleKo": "불꽃놀이 봐요.",
+      "fact": "하늘에 불꽃!"
+    },
+    {
+      "word": "crowd",
+      "ipa": "/kraʊd/",
+      "meaning": "군중",
+      "emoji": "👥",
+      "example": "A huge crowd.",
+      "exampleKo": "엄청난 군중.",
+      "fact": "많은 사람!"
+    }
+  ]
+}

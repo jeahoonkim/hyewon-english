@@ -1,0 +1,196 @@
+{
+  "date": "2026-07-28",
+  "folderName": "20260728",
+  "dayKo": "화",
+  "dayKoFull": "화요일",
+  "dayEn": "Tuesday",
+  "dayIdx": 2,
+  "theme": "다양한 직업",
+  "themeEmoji": "💼",
+  "vocabFileName": "혜원이_영단어_화요일_직업.html",
+  "quizFileName": "혜원이_영단어_화요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #e3f2fd 0%, #42a5f5 45%, #0d47a1 100%);",
+  "headerTitle": "💼 다양한 직업들 👷",
+  "words": [
+    {
+      "word": "waiter",
+      "ipa": "/ˈweɪtər/",
+      "meaning": "웨이터",
+      "emoji": "🤵",
+      "example": "The waiter brings food.",
+      "exampleKo": "웨이터가 음식 가져와요.",
+      "fact": "식당 서빙 직원!"
+    },
+    {
+      "word": "plumber",
+      "ipa": "/ˈplʌmər/",
+      "meaning": "배관공",
+      "emoji": "🔧",
+      "example": "Call a plumber.",
+      "exampleKo": "배관공 불러요.",
+      "fact": "수도관 고치는 사람!"
+    },
+    {
+      "word": "mechanic",
+      "ipa": "/məˈkænɪk/",
+      "meaning": "정비공",
+      "emoji": "🔧",
+      "example": "A car mechanic.",
+      "exampleKo": "자동차 정비공.",
+      "fact": "기계 고쳐요!"
+    },
+    {
+      "word": "carpenter",
+      "ipa": "/ˈkɑːrpəntər/",
+      "meaning": "목수",
+      "emoji": "🪚",
+      "example": "A skilled carpenter.",
+      "exampleKo": "솜씨 좋은 목수.",
+      "fact": "나무로 만들어요!"
+    },
+    {
+      "word": "electrician",
+      "ipa": "/ɪˌlekˈtrɪʃən/",
+      "meaning": "전기 기사",
+      "emoji": "💡",
+      "example": "Call an electrician.",
+      "exampleKo": "전기 기사 불러요.",
+      "fact": "전선·전기 고침!"
+    },
+    {
+      "word": "gardener",
+      "ipa": "/ˈɡɑːrdənər/",
+      "meaning": "정원사",
+      "emoji": "🌷",
+      "example": "A kind gardener.",
+      "exampleKo": "친절한 정원사.",
+      "fact": "꽃·식물 가꿔요!"
+    },
+    {
+      "word": "hairdresser",
+      "ipa": "/ˈherdresər/",
+      "meaning": "미용사",
+      "emoji": "💇",
+      "example": "Visit the hairdresser.",
+      "exampleKo": "미용사를 방문해요.",
+      "fact": "머리 잘라줘요!"
+    },
+    {
+      "word": "photographer",
+      "ipa": "/fəˈtɒɡrəfər/",
+      "meaning": "사진작가",
+      "emoji": "📷",
+      "example": "A pro photographer.",
+      "exampleKo": "프로 사진작가.",
+      "fact": "사진 찍어요!"
+    },
+    {
+      "word": "reporter",
+      "ipa": "/rɪˈpɔːrtər/",
+      "meaning": "기자",
+      "emoji": "📰",
+      "example": "A news reporter.",
+      "exampleKo": "뉴스 기자.",
+      "fact": "소식 전해요!"
+    },
+    {
+      "word": "florist",
+      "ipa": "/ˈflɔːrɪst/",
+      "meaning": "꽃집 주인",
+      "emoji": "💐",
+      "example": "A skilled florist.",
+      "exampleKo": "솜씨 좋은 꽃집 주인.",
+      "fact": "꽃 다발 만들기!"
+    },
+    {
+      "word": "judge",
+      "ipa": "/dʒʌdʒ/",
+      "meaning": "판사",
+      "emoji": "⚖️",
+      "example": "The judge decides.",
+      "exampleKo": "판사가 결정해요.",
+      "fact": "법정의 결정자!"
+    },
+    {
+      "word": "detective",
+      "ipa": "/dɪˈtektɪv/",
+      "meaning": "탐정",
+      "emoji": "🔍",
+      "example": "A clever detective.",
+      "exampleKo": "영리한 탐정.",
+      "fact": "수수께끼 풀기!"
+    },
+    {
+      "word": "architect",
+      "ipa": "/ˈɑːrkɪtekt/",
+      "meaning": "건축가",
+      "emoji": "📐",
+      "example": "A famous architect.",
+      "exampleKo": "유명한 건축가.",
+      "fact": "건물 설계!"
+    },
+    {
+      "word": "professor",
+      "ipa": "/prəˈfesər/",
+      "meaning": "교수",
+      "emoji": "🎓",
+      "example": "My math professor.",
+      "exampleKo": "수학 교수님.",
+      "fact": "대학교 선생님!"
+    },
+    {
+      "word": "sailor",
+      "ipa": "/ˈseɪlər/",
+      "meaning": "선원",
+      "emoji": "⚓",
+      "example": "A brave sailor.",
+      "exampleKo": "용감한 선원.",
+      "fact": "배에서 일해요!"
+    },
+    {
+      "word": "magician",
+      "ipa": "/məˈdʒɪʃən/",
+      "meaning": "마술사",
+      "emoji": "🎩",
+      "example": "A great magician.",
+      "exampleKo": "멋진 마술사.",
+      "fact": "마술 부려요!"
+    },
+    {
+      "word": "comedian",
+      "ipa": "/kəˈmiːdiən/",
+      "meaning": "코미디언",
+      "emoji": "🤣",
+      "example": "A funny comedian.",
+      "exampleKo": "웃긴 코미디언.",
+      "fact": "사람들 웃겨요!"
+    },
+    {
+      "word": "model",
+      "ipa": "/ˈmɒdəl/",
+      "meaning": "모델",
+      "emoji": "💃",
+      "example": "A fashion model.",
+      "exampleKo": "패션 모델.",
+      "fact": "옷을 입어 보여줘요!"
+    },
+    {
+      "word": "fisherman",
+      "ipa": "/ˈfɪʃərmən/",
+      "meaning": "어부",
+      "emoji": "🎣",
+      "example": "A skilled fisherman.",
+      "exampleKo": "노련한 어부.",
+      "fact": "물고기 잡아요!"
+    },
+    {
+      "word": "barber",
+      "ipa": "/ˈbɑːrbər/",
+      "meaning": "이발사",
+      "emoji": "💈",
+      "example": "Visit the barber.",
+      "exampleKo": "이발사 방문.",
+      "fact": "남자 머리 자름!"
+    }
+  ]
+}

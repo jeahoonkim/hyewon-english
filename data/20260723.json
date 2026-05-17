@@ -1,0 +1,196 @@
+{
+  "date": "2026-07-23",
+  "folderName": "20260723",
+  "dayKo": "목",
+  "dayKoFull": "목요일",
+  "dayEn": "Thursday",
+  "dayIdx": 4,
+  "theme": "건축물과 랜드마크",
+  "themeEmoji": "🏛️",
+  "vocabFileName": "혜원이_영단어_목요일_건축.html",
+  "quizFileName": "혜원이_영단어_목요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #e1bee7 0%, #9575cd 45%, #4527a0 100%);",
+  "headerTitle": "🏛️ 건축물과 랜드마크 🗽",
+  "words": [
+    {
+      "word": "skyscraper",
+      "ipa": "/ˈskaɪskreɪpər/",
+      "meaning": "고층 빌딩",
+      "emoji": "🏙️",
+      "example": "Tall skyscraper.",
+      "exampleKo": "높은 빌딩.",
+      "fact": "하늘에 닿을듯!"
+    },
+    {
+      "word": "monument",
+      "ipa": "/ˈmɒnjəmənt/",
+      "meaning": "기념비",
+      "emoji": "🗿",
+      "example": "A famous monument.",
+      "exampleKo": "유명한 기념비.",
+      "fact": "기억하기 위해!"
+    },
+    {
+      "word": "fountain",
+      "ipa": "/ˈfaʊntən/",
+      "meaning": "분수",
+      "emoji": "⛲",
+      "example": "A pretty fountain.",
+      "exampleKo": "예쁜 분수.",
+      "fact": "물 뿜는 곳!"
+    },
+    {
+      "word": "tower",
+      "ipa": "/ˈtaʊər/",
+      "meaning": "탑",
+      "emoji": "🗼",
+      "example": "Eiffel tower.",
+      "exampleKo": "에펠탑.",
+      "fact": "높이 솟은!"
+    },
+    {
+      "word": "palace",
+      "ipa": "/ˈpæləs/",
+      "meaning": "궁전",
+      "emoji": "🏰",
+      "example": "A grand palace.",
+      "exampleKo": "웅장한 궁전.",
+      "fact": "왕이 사는 곳!"
+    },
+    {
+      "word": "mansion",
+      "ipa": "/ˈmænʃən/",
+      "meaning": "대저택",
+      "emoji": "🏛️",
+      "example": "A big mansion.",
+      "exampleKo": "큰 대저택.",
+      "fact": "부자 집!"
+    },
+    {
+      "word": "cottage",
+      "ipa": "/ˈkɒtɪdʒ/",
+      "meaning": "오두막, 시골집",
+      "emoji": "🏡",
+      "example": "A small cottage.",
+      "exampleKo": "작은 시골집.",
+      "fact": "아담한 집!"
+    },
+    {
+      "word": "apartment",
+      "ipa": "/əˈpɑːrtmənt/",
+      "meaning": "아파트",
+      "emoji": "🏢",
+      "example": "My apartment.",
+      "exampleKo": "우리 아파트.",
+      "fact": "여러 층 집!"
+    },
+    {
+      "word": "villa",
+      "ipa": "/ˈvɪlə/",
+      "meaning": "빌라, 별장",
+      "emoji": "🏘️",
+      "example": "A pretty villa.",
+      "exampleKo": "예쁜 별장.",
+      "fact": "휴양용 집!"
+    },
+    {
+      "word": "factory",
+      "ipa": "/ˈfæktəri/",
+      "meaning": "공장",
+      "emoji": "🏭",
+      "example": "A car factory.",
+      "exampleKo": "자동차 공장.",
+      "fact": "물건 만드는 곳!"
+    },
+    {
+      "word": "warehouse",
+      "ipa": "/ˈwerhaʊs/",
+      "meaning": "창고",
+      "emoji": "📦",
+      "example": "A big warehouse.",
+      "exampleKo": "큰 창고.",
+      "fact": "물건 보관!"
+    },
+    {
+      "word": "cathedral",
+      "ipa": "/kəˈθiːdrəl/",
+      "meaning": "대성당",
+      "emoji": "⛪",
+      "example": "A grand cathedral.",
+      "exampleKo": "웅장한 대성당.",
+      "fact": "큰 교회!"
+    },
+    {
+      "word": "observatory",
+      "ipa": "/əbˈzɜːrvətɔːri/",
+      "meaning": "천문대",
+      "emoji": "🔭",
+      "example": "Visit the observatory.",
+      "exampleKo": "천문대 방문.",
+      "fact": "별 보는 곳!"
+    },
+    {
+      "word": "aquarium",
+      "ipa": "/əˈkwerɪəm/",
+      "meaning": "수족관",
+      "emoji": "🐠",
+      "example": "A big aquarium.",
+      "exampleKo": "큰 수족관.",
+      "fact": "물고기 보는 곳!"
+    },
+    {
+      "word": "amusement park",
+      "ipa": "/əˈmjuːzmənt pɑːrk/",
+      "meaning": "놀이공원",
+      "emoji": "🎢",
+      "example": "Go to amusement park.",
+      "exampleKo": "놀이공원 가요.",
+      "fact": "롤러코스터!"
+    },
+    {
+      "word": "dome",
+      "ipa": "/doʊm/",
+      "meaning": "돔",
+      "emoji": "🏟️",
+      "example": "A glass dome.",
+      "exampleKo": "유리 돔.",
+      "fact": "둥근 천장!"
+    },
+    {
+      "word": "arch",
+      "ipa": "/ɑːrtʃ/",
+      "meaning": "아치",
+      "emoji": "🌉",
+      "example": "A stone arch.",
+      "exampleKo": "돌 아치.",
+      "fact": "활 모양!"
+    },
+    {
+      "word": "pillar",
+      "ipa": "/ˈpɪlər/",
+      "meaning": "기둥",
+      "emoji": "🏛️",
+      "example": "Tall pillars.",
+      "exampleKo": "높은 기둥.",
+      "fact": "건물 받쳐요!"
+    },
+    {
+      "word": "balcony",
+      "ipa": "/ˈbælkəni/",
+      "meaning": "발코니",
+      "emoji": "🌅",
+      "example": "Sit on the balcony.",
+      "exampleKo": "발코니에 앉아요.",
+      "fact": "바깥 보는 곳!"
+    },
+    {
+      "word": "chimney",
+      "ipa": "/ˈtʃɪmni/",
+      "meaning": "굴뚝",
+      "emoji": "🏠",
+      "example": "Smoke from chimney.",
+      "exampleKo": "굴뚝의 연기.",
+      "fact": "연기 빠지는 곳!"
+    }
+  ]
+}

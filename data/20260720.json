@@ -1,0 +1,196 @@
+{
+  "date": "2026-07-20",
+  "folderName": "20260720",
+  "dayKo": "월",
+  "dayKoFull": "월요일",
+  "dayEn": "Monday",
+  "dayIdx": 1,
+  "theme": "여행과 휴가",
+  "themeEmoji": "✈️",
+  "vocabFileName": "혜원이_영단어_월요일_여행.html",
+  "quizFileName": "혜원이_영단어_월요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #b3e5fc 0%, #4fc3f7 45%, #0277bd 100%);",
+  "headerTitle": "✈️ 여행과 휴가 🧳",
+  "words": [
+    {
+      "word": "suitcase",
+      "ipa": "/ˈsuːtkeɪs/",
+      "meaning": "여행 가방",
+      "emoji": "🧳",
+      "example": "Pack the suitcase.",
+      "exampleKo": "여행 가방 싸요.",
+      "fact": "바퀴 달린 가방!"
+    },
+    {
+      "word": "hotel",
+      "ipa": "/hoʊˈtel/",
+      "meaning": "호텔",
+      "emoji": "🏨",
+      "example": "Stay at a hotel.",
+      "exampleKo": "호텔에 묵어요.",
+      "fact": "여행 숙소!"
+    },
+    {
+      "word": "reservation",
+      "ipa": "/ˌrezərˈveɪʃən/",
+      "meaning": "예약",
+      "emoji": "📋",
+      "example": "Make a reservation.",
+      "exampleKo": "예약해요.",
+      "fact": "미리 자리 잡기!"
+    },
+    {
+      "word": "memento",
+      "ipa": "/məˈmentoʊ/",
+      "meaning": "추억의 물건",
+      "emoji": "💝",
+      "example": "A travel memento.",
+      "exampleKo": "여행 추억의 물건.",
+      "fact": "간직하는 것!"
+    },
+    {
+      "word": "getaway",
+      "ipa": "/ˈɡetəweɪ/",
+      "meaning": "짧은 휴가",
+      "emoji": "🏝️",
+      "example": "Weekend getaway.",
+      "exampleKo": "주말 짧은 여행.",
+      "fact": "짧게 떠나기!"
+    },
+    {
+      "word": "check in",
+      "ipa": "/tʃek ɪn/",
+      "meaning": "체크인",
+      "emoji": "🛎️",
+      "example": "Check in at the hotel.",
+      "exampleKo": "호텔 체크인.",
+      "fact": "도착 등록!"
+    },
+    {
+      "word": "check out",
+      "ipa": "/tʃek aʊt/",
+      "meaning": "체크아웃",
+      "emoji": "🚪",
+      "example": "Check out by 11.",
+      "exampleKo": "11시까지 체크아웃.",
+      "fact": "떠날 때!"
+    },
+    {
+      "word": "itinerary",
+      "ipa": "/aɪˈtɪnəreri/",
+      "meaning": "여행 일정표",
+      "emoji": "📅",
+      "example": "Plan the itinerary.",
+      "exampleKo": "여행 일정 계획.",
+      "fact": "하루 계획!"
+    },
+    {
+      "word": "route",
+      "ipa": "/ruːt/",
+      "meaning": "경로, 길",
+      "emoji": "🛣️",
+      "example": "Best route.",
+      "exampleKo": "최고의 경로.",
+      "fact": "가는 길!"
+    },
+    {
+      "word": "sightseeing",
+      "ipa": "/ˈsaɪtsiːɪŋ/",
+      "meaning": "관광",
+      "emoji": "📸",
+      "example": "Go sightseeing.",
+      "exampleKo": "관광 가요.",
+      "fact": "구경 다니기!"
+    },
+    {
+      "word": "landmark",
+      "ipa": "/ˈlændmɑːrk/",
+      "meaning": "랜드마크",
+      "emoji": "🗽",
+      "example": "Famous landmark.",
+      "exampleKo": "유명한 랜드마크.",
+      "fact": "눈에 띄는 곳!"
+    },
+    {
+      "word": "resort",
+      "ipa": "/rɪˈzɔːrt/",
+      "meaning": "리조트",
+      "emoji": "🌴",
+      "example": "A beach resort.",
+      "exampleKo": "바닷가 리조트.",
+      "fact": "휴양지 호텔!"
+    },
+    {
+      "word": "cruise",
+      "ipa": "/kruːz/",
+      "meaning": "크루즈, 유람선",
+      "emoji": "🚢",
+      "example": "Take a cruise.",
+      "exampleKo": "크루즈를 타요.",
+      "fact": "큰 배 여행!"
+    },
+    {
+      "word": "sunbed",
+      "ipa": "/ˈsʌnbed/",
+      "meaning": "선베드",
+      "emoji": "🛏️",
+      "example": "Lie on a sunbed.",
+      "exampleKo": "선베드에 누워요.",
+      "fact": "햇볕 의자!"
+    },
+    {
+      "word": "flight",
+      "ipa": "/flaɪt/",
+      "meaning": "항공편",
+      "emoji": "🛫",
+      "example": "A long flight.",
+      "exampleKo": "긴 항공편.",
+      "fact": "비행기 일정!"
+    },
+    {
+      "word": "gate",
+      "ipa": "/ɡeɪt/",
+      "meaning": "탑승구",
+      "emoji": "🚪",
+      "example": "Gate 5 please.",
+      "exampleKo": "5번 게이트요.",
+      "fact": "공항 출입구!"
+    },
+    {
+      "word": "customs",
+      "ipa": "/ˈkʌstəmz/",
+      "meaning": "세관",
+      "emoji": "🛃",
+      "example": "Go through customs.",
+      "exampleKo": "세관 통과.",
+      "fact": "공항 검사!"
+    },
+    {
+      "word": "visa",
+      "ipa": "/ˈviːzə/",
+      "meaning": "비자",
+      "emoji": "📄",
+      "example": "Apply for a visa.",
+      "exampleKo": "비자를 신청해요.",
+      "fact": "외국 갈 때!"
+    },
+    {
+      "word": "currency",
+      "ipa": "/ˈkɜːrənsi/",
+      "meaning": "통화, 화폐",
+      "emoji": "💵",
+      "example": "Exchange currency.",
+      "exampleKo": "환전해요.",
+      "fact": "나라마다 다른 돈!"
+    },
+    {
+      "word": "overseas",
+      "ipa": "/ˌoʊvərˈsiːz/",
+      "meaning": "해외 (바다 건너)",
+      "emoji": "🌊",
+      "example": "Overseas trip.",
+      "exampleKo": "해외 여행.",
+      "fact": "바다 너머!"
+    }
+  ]
+}

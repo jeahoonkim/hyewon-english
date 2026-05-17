@@ -1,0 +1,196 @@
+{
+  "date": "2026-07-21",
+  "folderName": "20260721",
+  "dayKo": "화",
+  "dayKoFull": "화요일",
+  "dayEn": "Tuesday",
+  "dayIdx": 2,
+  "theme": "재료와 물질",
+  "themeEmoji": "🪵",
+  "vocabFileName": "혜원이_영단어_화요일_재료.html",
+  "quizFileName": "혜원이_영단어_화요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #d7ccc8 0%, #8d6e63 45%, #4e342e 100%);",
+  "headerTitle": "🪵 재료와 물질 🧱",
+  "words": [
+    {
+      "word": "wood",
+      "ipa": "/wʊd/",
+      "meaning": "나무, 목재",
+      "emoji": "🪵",
+      "example": "A wood table.",
+      "exampleKo": "나무 책상.",
+      "fact": "가구 재료!"
+    },
+    {
+      "word": "metal",
+      "ipa": "/ˈmetəl/",
+      "meaning": "금속",
+      "emoji": "🪙",
+      "example": "Metal door.",
+      "exampleKo": "금속 문.",
+      "fact": "단단하고 무거워!"
+    },
+    {
+      "word": "iron",
+      "ipa": "/ˈaɪərn/",
+      "meaning": "철",
+      "emoji": "⚙️",
+      "example": "Iron gate.",
+      "exampleKo": "철문.",
+      "fact": "강한 금속!"
+    },
+    {
+      "word": "steel",
+      "ipa": "/stiːl/",
+      "meaning": "강철",
+      "emoji": "🔩",
+      "example": "Steel building.",
+      "exampleKo": "강철 건물.",
+      "fact": "매우 단단!"
+    },
+    {
+      "word": "aluminum",
+      "ipa": "/əˈluːmɪnəm/",
+      "meaning": "알루미늄",
+      "emoji": "🥫",
+      "example": "Aluminum foil.",
+      "exampleKo": "알루미늄 호일.",
+      "fact": "가벼운 금속!"
+    },
+    {
+      "word": "silver",
+      "ipa": "/ˈsɪlvər/",
+      "meaning": "은",
+      "emoji": "🥈",
+      "example": "Silver coin.",
+      "exampleKo": "은 동전.",
+      "fact": "하얀 금속!"
+    },
+    {
+      "word": "copper",
+      "ipa": "/ˈkɒpər/",
+      "meaning": "구리",
+      "emoji": "🟠",
+      "example": "Copper wire.",
+      "exampleKo": "구리 전선.",
+      "fact": "전기 잘 통해요!"
+    },
+    {
+      "word": "denim",
+      "ipa": "/ˈdenɪm/",
+      "meaning": "데님 (청바지 천)",
+      "emoji": "👖",
+      "example": "Denim jeans.",
+      "exampleKo": "데님 청바지.",
+      "fact": "두꺼운 면!"
+    },
+    {
+      "word": "leather",
+      "ipa": "/ˈleðər/",
+      "meaning": "가죽",
+      "emoji": "👜",
+      "example": "Leather bag.",
+      "exampleKo": "가죽 가방.",
+      "fact": "동물 껍질!"
+    },
+    {
+      "word": "cotton",
+      "ipa": "/ˈkɒtən/",
+      "meaning": "면, 솜",
+      "emoji": "🌿",
+      "example": "Cotton shirt.",
+      "exampleKo": "면 셔츠.",
+      "fact": "식물 솜!"
+    },
+    {
+      "word": "wool",
+      "ipa": "/wʊl/",
+      "meaning": "양털, 모직",
+      "emoji": "🐑",
+      "example": "Wool scarf.",
+      "exampleKo": "털 스카프.",
+      "fact": "양에서 얻어요!"
+    },
+    {
+      "word": "silk",
+      "ipa": "/sɪlk/",
+      "meaning": "비단",
+      "emoji": "✨",
+      "example": "Silk dress.",
+      "exampleKo": "비단 드레스.",
+      "fact": "누에에서 나와요!"
+    },
+    {
+      "word": "stone",
+      "ipa": "/stoʊn/",
+      "meaning": "돌",
+      "emoji": "🪨",
+      "example": "A heavy stone.",
+      "exampleKo": "무거운 돌.",
+      "fact": "단단해요!"
+    },
+    {
+      "word": "brick",
+      "ipa": "/brɪk/",
+      "meaning": "벽돌",
+      "emoji": "🧱",
+      "example": "A brick house.",
+      "exampleKo": "벽돌 집.",
+      "fact": "빨간 사각 돌!"
+    },
+    {
+      "word": "cement",
+      "ipa": "/sɪˈment/",
+      "meaning": "시멘트",
+      "emoji": "🏗️",
+      "example": "Mix cement.",
+      "exampleKo": "시멘트 섞어요.",
+      "fact": "건물 짓기!"
+    },
+    {
+      "word": "concrete",
+      "ipa": "/ˈkɒŋkriːt/",
+      "meaning": "콘크리트",
+      "emoji": "🛣️",
+      "example": "Concrete road.",
+      "exampleKo": "콘크리트 도로.",
+      "fact": "매우 단단!"
+    },
+    {
+      "word": "rubber",
+      "ipa": "/ˈrʌbər/",
+      "meaning": "고무",
+      "emoji": "🎈",
+      "example": "Rubber ball.",
+      "exampleKo": "고무공.",
+      "fact": "잘 늘어나요!"
+    },
+    {
+      "word": "liquid",
+      "ipa": "/ˈlɪkwɪd/",
+      "meaning": "액체",
+      "emoji": "💧",
+      "example": "A clear liquid.",
+      "exampleKo": "투명한 액체.",
+      "fact": "흐르는 물질!"
+    },
+    {
+      "word": "solid",
+      "ipa": "/ˈsɒlɪd/",
+      "meaning": "고체",
+      "emoji": "🧊",
+      "example": "Ice is solid.",
+      "exampleKo": "얼음은 고체.",
+      "fact": "단단한 상태!"
+    },
+    {
+      "word": "gas",
+      "ipa": "/ɡæs/",
+      "meaning": "기체",
+      "emoji": "💨",
+      "example": "Air is gas.",
+      "exampleKo": "공기는 기체.",
+      "fact": "눈에 안 보여요!"
+    }
+  ]
+}
