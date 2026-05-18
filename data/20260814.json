@@ -1,0 +1,196 @@
+{
+  "date": "2026-08-14",
+  "folderName": "20260814",
+  "dayKo": "금",
+  "dayKoFull": "금요일",
+  "dayEn": "Friday",
+  "dayIdx": 5,
+  "theme": "한국 역사와 광복절",
+  "themeEmoji": "🇰🇷",
+  "vocabFileName": "혜원이_영단어_금요일_한국역사.html",
+  "quizFileName": "혜원이_영단어_금요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #ffebee 0%, #1976d2 45%, #b71c1c 100%);",
+  "headerTitle": "🇰🇷 한국 역사와 광복절 🎌",
+  "words": [
+    {
+      "word": "liberation",
+      "ipa": "/ˌlɪbəˈreɪʃən/",
+      "meaning": "해방, 광복",
+      "emoji": "🎌",
+      "example": "Korean liberation.",
+      "exampleKo": "한국 광복.",
+      "fact": "1945년 8월 15일!"
+    },
+    {
+      "word": "independence",
+      "ipa": "/ˌɪndɪˈpendəns/",
+      "meaning": "독립",
+      "emoji": "🇰🇷",
+      "example": "Independence Day.",
+      "exampleKo": "독립의 날.",
+      "fact": "광복절!"
+    },
+    {
+      "word": "freedom",
+      "ipa": "/ˈfriːdəm/",
+      "meaning": "자유",
+      "emoji": "🕊️",
+      "example": "Love freedom.",
+      "exampleKo": "자유 사랑.",
+      "fact": "속박 없음!"
+    },
+    {
+      "word": "martyr",
+      "ipa": "/ˈmɑːrtər/",
+      "meaning": "순교자, 의사",
+      "emoji": "⚔️",
+      "example": "A national martyr.",
+      "exampleKo": "나라 순국 의사.",
+      "fact": "안중근·유관순!"
+    },
+    {
+      "word": "patriot",
+      "ipa": "/ˈpeɪtriət/",
+      "meaning": "애국자",
+      "emoji": "❤️",
+      "example": "A brave patriot.",
+      "exampleKo": "용감한 애국자.",
+      "fact": "나라 사랑!"
+    },
+    {
+      "word": "nation",
+      "ipa": "/ˈneɪʃən/",
+      "meaning": "국가",
+      "emoji": "🌐",
+      "example": "Korean nation.",
+      "exampleKo": "한국 국가.",
+      "fact": "한 나라!"
+    },
+    {
+      "word": "governor",
+      "ipa": "/ˈɡʌvərnər/",
+      "meaning": "총독, 도지사",
+      "emoji": "🏛️",
+      "example": "Provincial governor.",
+      "exampleKo": "도지사.",
+      "fact": "지방 대표!"
+    },
+    {
+      "word": "monarch",
+      "ipa": "/ˈmɒnərk/",
+      "meaning": "군주",
+      "emoji": "👑",
+      "example": "A wise monarch.",
+      "exampleKo": "현명한 군주.",
+      "fact": "왕·여왕 통칭!"
+    },
+    {
+      "word": "dynasty",
+      "ipa": "/ˈdaɪnəsti/",
+      "meaning": "왕조",
+      "emoji": "🏯",
+      "example": "Joseon dynasty.",
+      "exampleKo": "조선 왕조.",
+      "fact": "한 가문의 왕!"
+    },
+    {
+      "word": "battle",
+      "ipa": "/ˈbætəl/",
+      "meaning": "전투",
+      "emoji": "⚔️",
+      "example": "A great battle.",
+      "exampleKo": "큰 전투.",
+      "fact": "싸움!"
+    },
+    {
+      "word": "liberationday",
+      "ipa": "/ˌlɪbəˈreɪʃən deɪ/",
+      "meaning": "광복절",
+      "emoji": "🎌",
+      "example": "Liberation Day is August 15.",
+      "exampleKo": "광복절 8/15.",
+      "fact": "한국 독립!"
+    },
+    {
+      "word": "taegukgi",
+      "ipa": "/ˌteɪɡʊkˈɡiː/",
+      "meaning": "태극기",
+      "emoji": "🇰🇷",
+      "example": "Wave the taegukgi.",
+      "exampleKo": "태극기 흔들어요.",
+      "fact": "한국 국기!"
+    },
+    {
+      "word": "anthem",
+      "ipa": "/ˈænθəm/",
+      "meaning": "국가 (노래)",
+      "emoji": "🎵",
+      "example": "National anthem.",
+      "exampleKo": "국가.",
+      "fact": "애국가!"
+    },
+    {
+      "word": "hangeul",
+      "ipa": "/ˈhɑːnɡʌl/",
+      "meaning": "한글",
+      "emoji": "🇰🇷",
+      "example": "Hangeul is beautiful.",
+      "exampleKo": "한글은 아름다워.",
+      "fact": "세종대왕 창제!"
+    },
+    {
+      "word": "sejong",
+      "ipa": "/ˈseɪdʒɒŋ/",
+      "meaning": "세종대왕",
+      "emoji": "👑",
+      "example": "King Sejong.",
+      "exampleKo": "세종대왕.",
+      "fact": "한글 창제!"
+    },
+    {
+      "word": "colony",
+      "ipa": "/ˈkɒləni/",
+      "meaning": "식민지",
+      "emoji": "🌐",
+      "example": "Former colony.",
+      "exampleKo": "옛 식민지.",
+      "fact": "다른 나라 지배!"
+    },
+    {
+      "word": "march",
+      "ipa": "/mɑːrtʃ/",
+      "meaning": "행진, 3월",
+      "emoji": "🚶",
+      "example": "March on.",
+      "exampleKo": "전진!",
+      "fact": "3월·행진!"
+    },
+    {
+      "word": "heritage",
+      "ipa": "/ˈherɪtɪdʒ/",
+      "meaning": "문화유산",
+      "emoji": "🏛️",
+      "example": "Korean heritage.",
+      "exampleKo": "한국 문화유산.",
+      "fact": "옛 보물!"
+    },
+    {
+      "word": "ancestor",
+      "ipa": "/ˈænsestər/",
+      "meaning": "조상",
+      "emoji": "👴",
+      "example": "Our ancestors.",
+      "exampleKo": "우리 조상.",
+      "fact": "옛 어른들!"
+    },
+    {
+      "word": "tradition",
+      "ipa": "/trəˈdɪʃən/",
+      "meaning": "전통",
+      "emoji": "🎎",
+      "example": "Korean tradition.",
+      "exampleKo": "한국 전통.",
+      "fact": "오랜 풍습!"
+    }
+  ]
+}

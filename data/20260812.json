@@ -1,0 +1,196 @@
+{
+  "date": "2026-08-12",
+  "folderName": "20260812",
+  "dayKo": "수",
+  "dayKoFull": "수요일",
+  "dayEn": "Wednesday",
+  "dayIdx": 3,
+  "theme": "정원과 식물 가꾸기",
+  "themeEmoji": "🌱",
+  "vocabFileName": "혜원이_영단어_수요일_정원.html",
+  "quizFileName": "혜원이_영단어_수요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #dcedc8 0%, #8bc34a 45%, #33691e 100%);",
+  "headerTitle": "🌱 정원과 식물 가꾸기 🌷",
+  "words": [
+    {
+      "word": "greenhouse",
+      "ipa": "/ˈɡriːnhaʊs/",
+      "meaning": "온실",
+      "emoji": "🌿",
+      "example": "A glass greenhouse.",
+      "exampleKo": "유리 온실.",
+      "fact": "겨울에도 따뜻!"
+    },
+    {
+      "word": "flowerbed",
+      "ipa": "/ˈflaʊərbed/",
+      "meaning": "꽃밭",
+      "emoji": "🌻",
+      "example": "A colorful flowerbed.",
+      "exampleKo": "화려한 꽃밭.",
+      "fact": "꽃이 모인 곳!"
+    },
+    {
+      "word": "watering can",
+      "ipa": "/ˈwɔːtərɪŋ kæn/",
+      "meaning": "물뿌리개",
+      "emoji": "🚿",
+      "example": "Use the watering can.",
+      "exampleKo": "물뿌리개 사용.",
+      "fact": "식물에 물!"
+    },
+    {
+      "word": "shovel",
+      "ipa": "/ˈʃʌvəl/",
+      "meaning": "삽",
+      "emoji": "🛠️",
+      "example": "Dig with a shovel.",
+      "exampleKo": "삽으로 파요.",
+      "fact": "흙 파는 도구!"
+    },
+    {
+      "word": "rake",
+      "ipa": "/reɪk/",
+      "meaning": "갈퀴",
+      "emoji": "🍂",
+      "example": "Rake the leaves.",
+      "exampleKo": "낙엽 긁어요.",
+      "fact": "잎 모으기!"
+    },
+    {
+      "word": "hose",
+      "ipa": "/hoʊz/",
+      "meaning": "호스",
+      "emoji": "🚿",
+      "example": "Garden hose.",
+      "exampleKo": "정원 호스.",
+      "fact": "긴 물줄기!"
+    },
+    {
+      "word": "planter",
+      "ipa": "/ˈplæntər/",
+      "meaning": "화분 상자, 식재용기",
+      "emoji": "🪴",
+      "example": "A wooden planter.",
+      "exampleKo": "나무 화분 상자.",
+      "fact": "식물 키우는 통!"
+    },
+    {
+      "word": "sapling",
+      "ipa": "/ˈsæplɪŋ/",
+      "meaning": "묘목",
+      "emoji": "🌱",
+      "example": "Plant a sapling.",
+      "exampleKo": "묘목 심어요.",
+      "fact": "어린 나무!"
+    },
+    {
+      "word": "weed",
+      "ipa": "/wiːd/",
+      "meaning": "잡초",
+      "emoji": "🌿",
+      "example": "Pull weeds.",
+      "exampleKo": "잡초 뽑아요.",
+      "fact": "필요 없는 풀!"
+    },
+    {
+      "word": "fertilizer",
+      "ipa": "/ˈfɜːrtəlaɪzər/",
+      "meaning": "비료",
+      "emoji": "🌱",
+      "example": "Add fertilizer.",
+      "exampleKo": "비료 줘요.",
+      "fact": "식물 영양!"
+    },
+    {
+      "word": "bloom",
+      "ipa": "/bluːm/",
+      "meaning": "꽃이 피다",
+      "emoji": "🌸",
+      "example": "Flowers bloom.",
+      "exampleKo": "꽃이 펴요.",
+      "fact": "꽃 피는 것!"
+    },
+    {
+      "word": "sprout",
+      "ipa": "/spraʊt/",
+      "meaning": "새싹, 싹트다",
+      "emoji": "🌱",
+      "example": "New sprouts.",
+      "exampleKo": "새싹들.",
+      "fact": "씨앗에서 자람!"
+    },
+    {
+      "word": "seedling",
+      "ipa": "/ˈsiːdlɪŋ/",
+      "meaning": "어린 모종",
+      "emoji": "🌱",
+      "example": "A tomato seedling.",
+      "exampleKo": "토마토 모종.",
+      "fact": "씨앗 후 어린 식물!"
+    },
+    {
+      "word": "orchid",
+      "ipa": "/ˈɔːrkɪd/",
+      "meaning": "난초",
+      "emoji": "🌺",
+      "example": "A pretty orchid.",
+      "exampleKo": "예쁜 난초.",
+      "fact": "우아한 꽃!"
+    },
+    {
+      "word": "daisy",
+      "ipa": "/ˈdeɪzi/",
+      "meaning": "데이지",
+      "emoji": "🌼",
+      "example": "White daisy.",
+      "exampleKo": "하얀 데이지.",
+      "fact": "하얀 들꽃!"
+    },
+    {
+      "word": "lily",
+      "ipa": "/ˈlɪli/",
+      "meaning": "백합",
+      "emoji": "🌷",
+      "example": "A white lily.",
+      "exampleKo": "하얀 백합.",
+      "fact": "우아한 꽃!"
+    },
+    {
+      "word": "poppy",
+      "ipa": "/ˈpɒpi/",
+      "meaning": "양귀비",
+      "emoji": "🌺",
+      "example": "Red poppy.",
+      "exampleKo": "빨간 양귀비.",
+      "fact": "화려한 꽃!"
+    },
+    {
+      "word": "cactus",
+      "ipa": "/ˈkæktəs/",
+      "meaning": "선인장",
+      "emoji": "🌵",
+      "example": "Spiky cactus.",
+      "exampleKo": "가시 선인장.",
+      "fact": "사막 식물!"
+    },
+    {
+      "word": "vine",
+      "ipa": "/vaɪn/",
+      "meaning": "덩굴",
+      "emoji": "🌿",
+      "example": "Grape vine.",
+      "exampleKo": "포도 덩굴.",
+      "fact": "감기는 식물!"
+    },
+    {
+      "word": "thorn",
+      "ipa": "/θɔːrn/",
+      "meaning": "가시",
+      "emoji": "🌹",
+      "example": "Rose thorns.",
+      "exampleKo": "장미 가시.",
+      "fact": "날카로움!"
+    }
+  ]
+}

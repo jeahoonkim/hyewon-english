@@ -1,0 +1,196 @@
+{
+  "date": "2026-08-03",
+  "folderName": "20260803",
+  "dayKo": "월",
+  "dayKoFull": "월요일",
+  "dayEn": "Monday",
+  "dayIdx": 1,
+  "theme": "새와 조류",
+  "themeEmoji": "🦅",
+  "vocabFileName": "혜원이_영단어_월요일_새.html",
+  "quizFileName": "혜원이_영단어_월요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #b3e5fc 0%, #4fc3f7 45%, #0277bd 100%);",
+  "headerTitle": "🦅 새와 조류 🦜",
+  "words": [
+    {
+      "word": "eagle",
+      "ipa": "/ˈiːɡəl/",
+      "meaning": "독수리",
+      "emoji": "🦅",
+      "example": "A flying eagle.",
+      "exampleKo": "나는 독수리.",
+      "fact": "새의 왕!"
+    },
+    {
+      "word": "owl",
+      "ipa": "/aʊl/",
+      "meaning": "부엉이",
+      "emoji": "🦉",
+      "example": "A wise owl.",
+      "exampleKo": "현명한 부엉이.",
+      "fact": "밤에 활동!"
+    },
+    {
+      "word": "parrot",
+      "ipa": "/ˈpærət/",
+      "meaning": "앵무새",
+      "emoji": "🦜",
+      "example": "A colorful parrot.",
+      "exampleKo": "화려한 앵무새.",
+      "fact": "사람 흉내!"
+    },
+    {
+      "word": "peacock",
+      "ipa": "/ˈpiːkɒk/",
+      "meaning": "공작",
+      "emoji": "🦚",
+      "example": "A beautiful peacock.",
+      "exampleKo": "아름다운 공작.",
+      "fact": "꼬리 화려!"
+    },
+    {
+      "word": "flamingo",
+      "ipa": "/fləˈmɪŋɡoʊ/",
+      "meaning": "홍학",
+      "emoji": "🦩",
+      "example": "A pink flamingo.",
+      "exampleKo": "분홍 홍학.",
+      "fact": "한 다리로 서요!"
+    },
+    {
+      "word": "swan",
+      "ipa": "/swɒn/",
+      "meaning": "백조",
+      "emoji": "🦢",
+      "example": "A white swan.",
+      "exampleKo": "하얀 백조.",
+      "fact": "우아한 새!"
+    },
+    {
+      "word": "crow",
+      "ipa": "/kroʊ/",
+      "meaning": "까마귀",
+      "emoji": "🐦‍⬛",
+      "example": "A black crow.",
+      "exampleKo": "검은 까마귀.",
+      "fact": "매우 똑똑해요!"
+    },
+    {
+      "word": "sparrow",
+      "ipa": "/ˈspæroʊ/",
+      "meaning": "참새",
+      "emoji": "🐦",
+      "example": "A small sparrow.",
+      "exampleKo": "작은 참새.",
+      "fact": "우리 동네 새!"
+    },
+    {
+      "word": "pigeon",
+      "ipa": "/ˈpɪdʒən/",
+      "meaning": "비둘기",
+      "emoji": "🕊️",
+      "example": "City pigeons.",
+      "exampleKo": "도시의 비둘기.",
+      "fact": "평화의 상징!"
+    },
+    {
+      "word": "hawk",
+      "ipa": "/hɔːk/",
+      "meaning": "매",
+      "emoji": "🦅",
+      "example": "A sharp-eyed hawk.",
+      "exampleKo": "눈 좋은 매.",
+      "fact": "사냥꾼 새!"
+    },
+    {
+      "word": "woodpecker",
+      "ipa": "/ˈwʊdpekər/",
+      "meaning": "딱따구리",
+      "emoji": "🪵",
+      "example": "A loud woodpecker.",
+      "exampleKo": "시끄러운 딱따구리.",
+      "fact": "나무 쪼아요!"
+    },
+    {
+      "word": "crane",
+      "ipa": "/kreɪn/",
+      "meaning": "두루미, 학",
+      "emoji": "🕊️",
+      "example": "A graceful crane.",
+      "exampleKo": "우아한 두루미.",
+      "fact": "긴 목·다리!"
+    },
+    {
+      "word": "hummingbird",
+      "ipa": "/ˈhʌmɪŋbɜːrd/",
+      "meaning": "벌새",
+      "emoji": "🐦",
+      "example": "A tiny hummingbird.",
+      "exampleKo": "작은 벌새.",
+      "fact": "날개 빨라요!"
+    },
+    {
+      "word": "falcon",
+      "ipa": "/ˈfælkən/",
+      "meaning": "매, 송골매",
+      "emoji": "🦅",
+      "example": "A fast falcon.",
+      "exampleKo": "빠른 송골매.",
+      "fact": "제일 빠른 새!"
+    },
+    {
+      "word": "toucan",
+      "ipa": "/ˈtuːkæn/",
+      "meaning": "투칸",
+      "emoji": "🦜",
+      "example": "A toucan beak.",
+      "exampleKo": "투칸 부리.",
+      "fact": "부리 커요!"
+    },
+    {
+      "word": "beak",
+      "ipa": "/biːk/",
+      "meaning": "부리",
+      "emoji": "🦜",
+      "example": "A sharp beak.",
+      "exampleKo": "날카로운 부리.",
+      "fact": "새의 입!"
+    },
+    {
+      "word": "feather",
+      "ipa": "/ˈfeðər/",
+      "meaning": "깃털",
+      "emoji": "🪶",
+      "example": "A soft feather.",
+      "exampleKo": "부드러운 깃털.",
+      "fact": "가볍고 따뜻!"
+    },
+    {
+      "word": "nest",
+      "ipa": "/nest/",
+      "meaning": "둥지",
+      "emoji": "🪺",
+      "example": "Birds in a nest.",
+      "exampleKo": "둥지 속 새들.",
+      "fact": "새의 집!"
+    },
+    {
+      "word": "chirp",
+      "ipa": "/tʃɜːrp/",
+      "meaning": "짹짹거리다",
+      "emoji": "🐤",
+      "example": "Birds chirp.",
+      "exampleKo": "새들이 짹짹.",
+      "fact": "새 노래!"
+    },
+    {
+      "word": "flock",
+      "ipa": "/flɒk/",
+      "meaning": "새 떼",
+      "emoji": "🐦",
+      "example": "A flock of birds.",
+      "exampleKo": "새 한 무리.",
+      "fact": "여러 마리!"
+    }
+  ]
+}

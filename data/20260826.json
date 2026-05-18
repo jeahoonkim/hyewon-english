@@ -1,0 +1,196 @@
+{
+  "date": "2026-08-26",
+  "folderName": "20260826",
+  "dayKo": "수",
+  "dayKoFull": "수요일",
+  "dayEn": "Wednesday",
+  "dayIdx": 3,
+  "theme": "약속과 시간",
+  "themeEmoji": "⏰",
+  "vocabFileName": "혜원이_영단어_수요일_시간약속.html",
+  "quizFileName": "혜원이_영단어_수요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #e3f2fd 0%, #42a5f5 45%, #0d47a1 100%);",
+  "headerTitle": "⏰ 약속과 시간 📅",
+  "words": [
+    {
+      "word": "appointment",
+      "ipa": "/əˈpɔɪntmənt/",
+      "meaning": "약속",
+      "emoji": "📅",
+      "example": "Doctor appointment.",
+      "exampleKo": "의사 약속.",
+      "fact": "정해진 만남!"
+    },
+    {
+      "word": "meeting",
+      "ipa": "/ˈmiːtɪŋ/",
+      "meaning": "회의, 모임",
+      "emoji": "👥",
+      "example": "Team meeting.",
+      "exampleKo": "팀 회의.",
+      "fact": "여러 명 모임!"
+    },
+    {
+      "word": "interview",
+      "ipa": "/ˈɪntərvjuː/",
+      "meaning": "인터뷰",
+      "emoji": "🎤",
+      "example": "Job interview.",
+      "exampleKo": "취업 면접.",
+      "fact": "질문 답변!"
+    },
+    {
+      "word": "booking",
+      "ipa": "/ˈbʊkɪŋ/",
+      "meaning": "예약 (영국식)",
+      "emoji": "📒",
+      "example": "Hotel booking.",
+      "exampleKo": "호텔 예약.",
+      "fact": "예약!"
+    },
+    {
+      "word": "reminder",
+      "ipa": "/rɪˈmaɪndər/",
+      "meaning": "알림, 상기시킴",
+      "emoji": "🔔",
+      "example": "Set a reminder.",
+      "exampleKo": "알림 설정.",
+      "fact": "잊지 않게!"
+    },
+    {
+      "word": "routine",
+      "ipa": "/ruːˈtiːn/",
+      "meaning": "일상, 일과",
+      "emoji": "🔄",
+      "example": "Morning routine.",
+      "exampleKo": "아침 일과.",
+      "fact": "매일 같이!"
+    },
+    {
+      "word": "weekly",
+      "ipa": "/ˈwiːkli/",
+      "meaning": "매주의",
+      "emoji": "📅",
+      "example": "Weekly report.",
+      "exampleKo": "주간 보고서.",
+      "fact": "한 주마다!"
+    },
+    {
+      "word": "monthly",
+      "ipa": "/ˈmʌnθli/",
+      "meaning": "매월의",
+      "emoji": "📅",
+      "example": "Monthly meeting.",
+      "exampleKo": "월간 회의.",
+      "fact": "한 달마다!"
+    },
+    {
+      "word": "yearly",
+      "ipa": "/ˈjɪərli/",
+      "meaning": "매년의",
+      "emoji": "📅",
+      "example": "Yearly checkup.",
+      "exampleKo": "매년 검진.",
+      "fact": "1년에 한 번!"
+    },
+    {
+      "word": "on time",
+      "ipa": "/ɒn taɪm/",
+      "meaning": "제 시간에",
+      "emoji": "⏰",
+      "example": "Arrive on time.",
+      "exampleKo": "제 시간 도착.",
+      "fact": "늦지 않게!"
+    },
+    {
+      "word": "in advance",
+      "ipa": "/ɪn ədˈvæns/",
+      "meaning": "미리, 사전에",
+      "emoji": "📅",
+      "example": "Book in advance.",
+      "exampleKo": "미리 예약.",
+      "fact": "앞서서!"
+    },
+    {
+      "word": "postpone",
+      "ipa": "/poʊstˈpoʊn/",
+      "meaning": "연기하다",
+      "emoji": "⏭️",
+      "example": "Postpone the meeting.",
+      "exampleKo": "회의 연기.",
+      "fact": "미루기!"
+    },
+    {
+      "word": "cancel",
+      "ipa": "/ˈkænsəl/",
+      "meaning": "취소하다",
+      "emoji": "❌",
+      "example": "Cancel the trip.",
+      "exampleKo": "여행 취소.",
+      "fact": "안 하기!"
+    },
+    {
+      "word": "reschedule",
+      "ipa": "/riːˈskedjuːl/",
+      "meaning": "일정 변경",
+      "emoji": "🔄",
+      "example": "Reschedule for tomorrow.",
+      "exampleKo": "내일로 변경.",
+      "fact": "날짜 바꾸기!"
+    },
+    {
+      "word": "confirm",
+      "ipa": "/kənˈfɜːrm/",
+      "meaning": "확인하다",
+      "emoji": "✅",
+      "example": "Confirm the date.",
+      "exampleKo": "날짜 확인.",
+      "fact": "맞다고 확인!"
+    },
+    {
+      "word": "hourly",
+      "ipa": "/ˈaʊərli/",
+      "meaning": "매시간의",
+      "emoji": "⏰",
+      "example": "Hourly bus.",
+      "exampleKo": "매시간 버스.",
+      "fact": "시간마다!"
+    },
+    {
+      "word": "midweek",
+      "ipa": "/ˌmɪdˈwiːk/",
+      "meaning": "주중",
+      "emoji": "📅",
+      "example": "Midweek meeting.",
+      "exampleKo": "주중 회의.",
+      "fact": "수요일쯤!"
+    },
+    {
+      "word": "midnight",
+      "ipa": "/ˈmɪdnaɪt/",
+      "meaning": "자정",
+      "emoji": "🕛",
+      "example": "Stay up till midnight.",
+      "exampleKo": "자정까지 깨어있어.",
+      "fact": "밤 12시!"
+    },
+    {
+      "word": "midday",
+      "ipa": "/ˈmɪddeɪ/",
+      "meaning": "한낮, 정오",
+      "emoji": "🌞",
+      "example": "Hot midday sun.",
+      "exampleKo": "뜨거운 한낮 해.",
+      "fact": "낮 12시!"
+    },
+    {
+      "word": "dawn",
+      "ipa": "/dɔːn/",
+      "meaning": "새벽",
+      "emoji": "🌄",
+      "example": "Wake up at dawn.",
+      "exampleKo": "새벽에 일어나요.",
+      "fact": "해 뜨기 직전!"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "date": "2026-08-29",
+  "folderName": "20260829",
+  "dayKo": "토",
+  "dayKoFull": "토요일",
+  "dayEn": "Saturday",
+  "dayIdx": 6,
+  "weekLabel": "Week 19",
+  "themeSummary": "새학기·미디어·약속·한국명소·액세서리",
+  "quizFileName": "혜원이_영단어_토요일_종합시험.html",
+  "includeDates": ["20260824", "20260825", "20260826", "20260827", "20260828"],
+  "bgGradient": "linear-gradient(180deg, #fff9c4 0%, #fce4ec 25%, #e3f2fd 50%, #ffebee 75%, #f3e5f5 100%);",
+  "headerTitle": "🎯 주간 종합 시험 🏆"
+}

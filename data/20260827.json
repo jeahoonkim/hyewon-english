@@ -1,0 +1,196 @@
+{
+  "date": "2026-08-27",
+  "folderName": "20260827",
+  "dayKo": "목",
+  "dayKoFull": "목요일",
+  "dayEn": "Thursday",
+  "dayIdx": 4,
+  "theme": "한국 명소",
+  "themeEmoji": "🏯",
+  "vocabFileName": "혜원이_영단어_목요일_한국명소.html",
+  "quizFileName": "혜원이_영단어_목요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #ffebee 0%, #e57373 45%, #b71c1c 100%);",
+  "headerTitle": "🏯 한국 명소 🌸",
+  "words": [
+    {
+      "word": "Gyeongbokgung",
+      "ipa": "/ˌkjʌŋbɒkˈɡʊŋ/",
+      "meaning": "경복궁",
+      "emoji": "🏯",
+      "example": "Visit Gyeongbokgung.",
+      "exampleKo": "경복궁 방문.",
+      "fact": "조선 왕궁!"
+    },
+    {
+      "word": "Namsan Tower",
+      "ipa": "/ˈnɑːmsɑːn ˈtaʊər/",
+      "meaning": "남산타워",
+      "emoji": "🗼",
+      "example": "Climb up Namsan Tower.",
+      "exampleKo": "남산타워 올라가요.",
+      "fact": "서울 상징!"
+    },
+    {
+      "word": "Bukchon",
+      "ipa": "/ˈbʊktʃɒn/",
+      "meaning": "북촌 한옥마을",
+      "emoji": "🏘️",
+      "example": "Walk in Bukchon.",
+      "exampleKo": "북촌 걸어요.",
+      "fact": "전통 마을!"
+    },
+    {
+      "word": "Insadong",
+      "ipa": "/ˌɪnsɑːˈdʌŋ/",
+      "meaning": "인사동",
+      "emoji": "🎨",
+      "example": "Buy souvenirs in Insadong.",
+      "exampleKo": "인사동에서 기념품.",
+      "fact": "전통 거리!"
+    },
+    {
+      "word": "Myeongdong",
+      "ipa": "/ˈmjʌŋdʌŋ/",
+      "meaning": "명동",
+      "emoji": "🛍️",
+      "example": "Shop in Myeongdong.",
+      "exampleKo": "명동에서 쇼핑.",
+      "fact": "쇼핑 천국!"
+    },
+    {
+      "word": "Hongdae",
+      "ipa": "/ˈhɒŋde/",
+      "meaning": "홍대",
+      "emoji": "🎸",
+      "example": "Night life in Hongdae.",
+      "exampleKo": "홍대 야경.",
+      "fact": "젊은이 거리!"
+    },
+    {
+      "word": "Itaewon",
+      "ipa": "/ˌiːteˈwɒn/",
+      "meaning": "이태원",
+      "emoji": "🌎",
+      "example": "International Itaewon.",
+      "exampleKo": "국제적인 이태원.",
+      "fact": "외국인 많은 곳!"
+    },
+    {
+      "word": "Lotte World",
+      "ipa": "/ˈlɒte wɜːrld/",
+      "meaning": "롯데월드",
+      "emoji": "🎢",
+      "example": "Fun at Lotte World.",
+      "exampleKo": "롯데월드에서 재미.",
+      "fact": "놀이공원!"
+    },
+    {
+      "word": "Everland",
+      "ipa": "/ˈevərlænd/",
+      "meaning": "에버랜드",
+      "emoji": "🎡",
+      "example": "Roller coaster at Everland.",
+      "exampleKo": "에버랜드 롤러코스터.",
+      "fact": "큰 놀이공원!"
+    },
+    {
+      "word": "Hallasan",
+      "ipa": "/ˌhɑːlɑːˈsɑːn/",
+      "meaning": "한라산",
+      "emoji": "⛰️",
+      "example": "Climb Hallasan.",
+      "exampleKo": "한라산 등산.",
+      "fact": "제주도 최고봉!"
+    },
+    {
+      "word": "Seoraksan",
+      "ipa": "/ˌsɔːrɑːkˈsɑːn/",
+      "meaning": "설악산",
+      "emoji": "⛰️",
+      "example": "Visit Seoraksan.",
+      "exampleKo": "설악산 방문.",
+      "fact": "아름다운 산!"
+    },
+    {
+      "word": "Han River",
+      "ipa": "/hɑːn ˈrɪvər/",
+      "meaning": "한강",
+      "emoji": "🌊",
+      "example": "Bike along the Han River.",
+      "exampleKo": "한강 따라 자전거.",
+      "fact": "서울 강!"
+    },
+    {
+      "word": "Jagalchi Market",
+      "ipa": "/dʒɑːˈɡɑːltʃi ˈmɑːrkɪt/",
+      "meaning": "자갈치 시장",
+      "emoji": "🐟",
+      "example": "Fresh fish at Jagalchi Market.",
+      "exampleKo": "자갈치 신선 생선.",
+      "fact": "부산 수산 시장!"
+    },
+    {
+      "word": "DMZ",
+      "ipa": "/ˌdiː em ˈziː/",
+      "meaning": "비무장지대",
+      "emoji": "🇰🇷",
+      "example": "Visit the DMZ.",
+      "exampleKo": "DMZ 방문.",
+      "fact": "남북 경계!"
+    },
+    {
+      "word": "Jeju",
+      "ipa": "/ˈdʒeːdʒuː/",
+      "meaning": "제주",
+      "emoji": "🌴",
+      "example": "Beautiful Jeju.",
+      "exampleKo": "아름다운 제주.",
+      "fact": "한국 최고 관광지!"
+    },
+    {
+      "word": "Bulguksa",
+      "ipa": "/bʊlˈɡʊksɑː/",
+      "meaning": "불국사",
+      "emoji": "⛩️",
+      "example": "Ancient Bulguksa.",
+      "exampleKo": "고대 불국사.",
+      "fact": "경주 절!"
+    },
+    {
+      "word": "Seokguram",
+      "ipa": "/sʌkˈɡʊrɑːm/",
+      "meaning": "석굴암",
+      "emoji": "🗿",
+      "example": "Visit Seokguram.",
+      "exampleKo": "석굴암 방문.",
+      "fact": "경주 석굴!"
+    },
+    {
+      "word": "Cheonggyecheon",
+      "ipa": "/tʃɒŋˈɡjedʒɒn/",
+      "meaning": "청계천",
+      "emoji": "🌊",
+      "example": "Walk by Cheonggyecheon.",
+      "exampleKo": "청계천 산책.",
+      "fact": "서울 도심 하천!"
+    },
+    {
+      "word": "Bukhansan",
+      "ipa": "/ˌbʊkhɑːnˈsɑːn/",
+      "meaning": "북한산",
+      "emoji": "⛰️",
+      "example": "Hike Bukhansan.",
+      "exampleKo": "북한산 등산.",
+      "fact": "서울 근교 산!"
+    },
+    {
+      "word": "Gangnam",
+      "ipa": "/ˈɡæŋnæm/",
+      "meaning": "강남",
+      "emoji": "🏙️",
+      "example": "Modern Gangnam.",
+      "exampleKo": "현대적인 강남.",
+      "fact": "트렌디한 지역!"
+    }
+  ]
+}

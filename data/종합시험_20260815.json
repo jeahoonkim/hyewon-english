@@ -1,0 +1,14 @@
+{
+  "date": "2026-08-15",
+  "folderName": "20260815",
+  "dayKo": "토",
+  "dayKoFull": "토요일",
+  "dayEn": "Saturday",
+  "dayIdx": 6,
+  "weekLabel": "Week 17",
+  "themeSummary": "한식·가전·정원·문구·한국사 (광복절!)",
+  "quizFileName": "혜원이_영단어_토요일_종합시험.html",
+  "includeDates": ["20260810", "20260811", "20260812", "20260813", "20260814"],
+  "bgGradient": "linear-gradient(180deg, #ffebee 0%, #e3f2fd 25%, #dcedc8 50%, #fff8e1 75%, #ffebee 100%);",
+  "headerTitle": "🇰🇷 광복절 종합 시험 🎌"
+}

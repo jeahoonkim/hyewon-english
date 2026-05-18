@@ -1,0 +1,196 @@
+{
+  "date": "2026-08-06",
+  "folderName": "20260806",
+  "dayKo": "목",
+  "dayKoFull": "목요일",
+  "dayEn": "Thursday",
+  "dayIdx": 4,
+  "theme": "별자리와 우주",
+  "themeEmoji": "✨",
+  "vocabFileName": "혜원이_영단어_목요일_별자리.html",
+  "quizFileName": "혜원이_영단어_목요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #1a237e 0%, #4527a0 45%, #6a1b9a 100%);",
+  "headerTitle": "✨ 별자리와 우주 🌌",
+  "words": [
+    {
+      "word": "constellation",
+      "ipa": "/ˌkɒnstəˈleɪʃən/",
+      "meaning": "별자리",
+      "emoji": "⭐",
+      "example": "A constellation.",
+      "exampleKo": "별자리.",
+      "fact": "별들의 모양!"
+    },
+    {
+      "word": "zodiac",
+      "ipa": "/ˈzoʊdiæk/",
+      "meaning": "황도 12궁",
+      "emoji": "♈",
+      "example": "Zodiac signs.",
+      "exampleKo": "황도 12궁.",
+      "fact": "12개 별자리!"
+    },
+    {
+      "word": "spacecraft",
+      "ipa": "/ˈspeɪskræft/",
+      "meaning": "우주선",
+      "emoji": "🛸",
+      "example": "A new spacecraft.",
+      "exampleKo": "새 우주선.",
+      "fact": "우주여행 기계!"
+    },
+    {
+      "word": "nebula",
+      "ipa": "/ˈnebjələ/",
+      "meaning": "성운",
+      "emoji": "🌌",
+      "example": "A beautiful nebula.",
+      "exampleKo": "아름다운 성운.",
+      "fact": "우주 구름!"
+    },
+    {
+      "word": "cosmos",
+      "ipa": "/ˈkɒzmɒs/",
+      "meaning": "우주, 천체",
+      "emoji": "🌌",
+      "example": "The vast cosmos.",
+      "exampleKo": "광대한 우주.",
+      "fact": "전 우주!"
+    },
+    {
+      "word": "axis",
+      "ipa": "/ˈæksɪs/",
+      "meaning": "축",
+      "emoji": "🌍",
+      "example": "Earth's axis.",
+      "exampleKo": "지구의 축.",
+      "fact": "자전 중심!"
+    },
+    {
+      "word": "eclipse",
+      "ipa": "/ɪˈklɪps/",
+      "meaning": "일식, 월식",
+      "emoji": "🌑",
+      "example": "Solar eclipse.",
+      "exampleKo": "일식.",
+      "fact": "해·달 가림!"
+    },
+    {
+      "word": "twinkle",
+      "ipa": "/ˈtwɪŋkəl/",
+      "meaning": "반짝이다",
+      "emoji": "✨",
+      "example": "Stars twinkle.",
+      "exampleKo": "별이 반짝.",
+      "fact": "반짝반짝!"
+    },
+    {
+      "word": "shooting star",
+      "ipa": "/ˈʃuːtɪŋ stɑːr/",
+      "meaning": "별똥별",
+      "emoji": "🌠",
+      "example": "Make a wish!",
+      "exampleKo": "소원 빌어요!",
+      "fact": "빌 수 있어요!"
+    },
+    {
+      "word": "milky way",
+      "ipa": "/ˌmɪlki ˈweɪ/",
+      "meaning": "은하수",
+      "emoji": "🌌",
+      "example": "Milky Way galaxy.",
+      "exampleKo": "은하수.",
+      "fact": "우리 은하!"
+    },
+    {
+      "word": "pluto",
+      "ipa": "/ˈpluːtoʊ/",
+      "meaning": "명왕성",
+      "emoji": "🪐",
+      "example": "Tiny Pluto.",
+      "exampleKo": "작은 명왕성.",
+      "fact": "준행성!"
+    },
+    {
+      "word": "jupiter",
+      "ipa": "/ˈdʒuːpɪtər/",
+      "meaning": "목성",
+      "emoji": "🪐",
+      "example": "Jupiter is biggest.",
+      "exampleKo": "목성이 가장 큼.",
+      "fact": "태양계 최대!"
+    },
+    {
+      "word": "sunbeam",
+      "ipa": "/ˈsʌnbiːm/",
+      "meaning": "햇살, 햇빛 줄기",
+      "emoji": "☀️",
+      "example": "A warm sunbeam.",
+      "exampleKo": "따뜻한 햇살.",
+      "fact": "해의 광선!"
+    },
+    {
+      "word": "venus",
+      "ipa": "/ˈviːnəs/",
+      "meaning": "금성",
+      "emoji": "🌟",
+      "example": "Bright Venus.",
+      "exampleKo": "밝은 금성.",
+      "fact": "새벽별!"
+    },
+    {
+      "word": "mercury",
+      "ipa": "/ˈmɜːrkjəri/",
+      "meaning": "수성",
+      "emoji": "☿",
+      "example": "Tiny Mercury.",
+      "exampleKo": "작은 수성.",
+      "fact": "태양에 가장 가까워!"
+    },
+    {
+      "word": "uranus",
+      "ipa": "/ˈjʊərənəs/",
+      "meaning": "천왕성",
+      "emoji": "🪐",
+      "example": "Blue Uranus.",
+      "exampleKo": "파란 천왕성.",
+      "fact": "옆으로 도는 행성!"
+    },
+    {
+      "word": "neptune",
+      "ipa": "/ˈneptuːn/",
+      "meaning": "해왕성",
+      "emoji": "🔵",
+      "example": "Far Neptune.",
+      "exampleKo": "먼 해왕성.",
+      "fact": "가장 먼 행성!"
+    },
+    {
+      "word": "starlight",
+      "ipa": "/ˈstɑːrlaɪt/",
+      "meaning": "별빛",
+      "emoji": "⭐",
+      "example": "Bright starlight.",
+      "exampleKo": "밝은 별빛.",
+      "fact": "별의 빛!"
+    },
+    {
+      "word": "moonlight",
+      "ipa": "/ˈmuːnlaɪt/",
+      "meaning": "달빛",
+      "emoji": "🌙",
+      "example": "Soft moonlight.",
+      "exampleKo": "부드러운 달빛.",
+      "fact": "태양 빛 반사!"
+    },
+    {
+      "word": "starlit",
+      "ipa": "/ˈstɑːrlɪt/",
+      "meaning": "별빛 비치는",
+      "emoji": "⭐",
+      "example": "A starlit night.",
+      "exampleKo": "별빛 가득한 밤.",
+      "fact": "별 가득!"
+    }
+  ]
+}

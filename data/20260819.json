@@ -1,0 +1,196 @@
+{
+  "date": "2026-08-19",
+  "folderName": "20260819",
+  "dayKo": "수",
+  "dayKoFull": "수요일",
+  "dayEn": "Wednesday",
+  "dayIdx": 3,
+  "theme": "미용과 헤어",
+  "themeEmoji": "💇",
+  "vocabFileName": "혜원이_영단어_수요일_미용.html",
+  "quizFileName": "혜원이_영단어_수요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #fce4ec 0%, #ec407a 45%, #ad1457 100%);",
+  "headerTitle": "💇 미용과 헤어 ✂️",
+  "words": [
+    {
+      "word": "salon",
+      "ipa": "/səˈlɒn/",
+      "meaning": "미용실",
+      "emoji": "💇",
+      "example": "At the salon.",
+      "exampleKo": "미용실에서.",
+      "fact": "머리·미용!"
+    },
+    {
+      "word": "haircut",
+      "ipa": "/ˈherkʌt/",
+      "meaning": "머리 자르기",
+      "emoji": "✂️",
+      "example": "Get a haircut.",
+      "exampleKo": "머리 잘라요.",
+      "fact": "미용실에서!"
+    },
+    {
+      "word": "hairstyle",
+      "ipa": "/ˈherstaɪl/",
+      "meaning": "헤어스타일",
+      "emoji": "💁",
+      "example": "Cool hairstyle.",
+      "exampleKo": "멋진 헤어스타일.",
+      "fact": "머리 모양!"
+    },
+    {
+      "word": "ponytail",
+      "ipa": "/ˈpoʊniteɪl/",
+      "meaning": "포니테일, 묶은 머리",
+      "emoji": "👧",
+      "example": "A high ponytail.",
+      "exampleKo": "높은 묶은 머리.",
+      "fact": "말꼬리 같음!"
+    },
+    {
+      "word": "braid",
+      "ipa": "/breɪd/",
+      "meaning": "땋은 머리",
+      "emoji": "👧",
+      "example": "A long braid.",
+      "exampleKo": "긴 땋은 머리.",
+      "fact": "3가닥 땋기!"
+    },
+    {
+      "word": "bangs",
+      "ipa": "/bæŋz/",
+      "meaning": "앞머리",
+      "emoji": "💇",
+      "example": "Cut my bangs.",
+      "exampleKo": "앞머리 잘라요.",
+      "fact": "이마 위!"
+    },
+    {
+      "word": "shampoo",
+      "ipa": "/ʃæmˈpuː/",
+      "meaning": "샴푸",
+      "emoji": "🧴",
+      "example": "Use shampoo.",
+      "exampleKo": "샴푸 써요.",
+      "fact": "머리 감기!"
+    },
+    {
+      "word": "conditioner",
+      "ipa": "/kənˈdɪʃənər/",
+      "meaning": "린스, 컨디셔너",
+      "emoji": "🧴",
+      "example": "Apply conditioner.",
+      "exampleKo": "린스 발라요.",
+      "fact": "부드럽게!"
+    },
+    {
+      "word": "hairbrush",
+      "ipa": "/ˈherbrʌʃ/",
+      "meaning": "머리빗",
+      "emoji": "🪥",
+      "example": "Use a hairbrush.",
+      "exampleKo": "머리빗 사용.",
+      "fact": "머리 빗기!"
+    },
+    {
+      "word": "comb",
+      "ipa": "/koʊm/",
+      "meaning": "빗",
+      "emoji": "💁",
+      "example": "Comb your hair.",
+      "exampleKo": "머리 빗어요.",
+      "fact": "가는 빗!"
+    },
+    {
+      "word": "hair tie",
+      "ipa": "/her taɪ/",
+      "meaning": "머리끈",
+      "emoji": "💇",
+      "example": "Pink hair tie.",
+      "exampleKo": "분홍 머리끈.",
+      "fact": "묶는 끈!"
+    },
+    {
+      "word": "hair clip",
+      "ipa": "/her klɪp/",
+      "meaning": "머리핀",
+      "emoji": "👧",
+      "example": "Cute hair clip.",
+      "exampleKo": "귀여운 머리핀.",
+      "fact": "꽂는 핀!"
+    },
+    {
+      "word": "headband",
+      "ipa": "/ˈhedbænd/",
+      "meaning": "머리띠",
+      "emoji": "👑",
+      "example": "A flower headband.",
+      "exampleKo": "꽃 머리띠.",
+      "fact": "머리에 두름!"
+    },
+    {
+      "word": "hairpin",
+      "ipa": "/ˈherpɪn/",
+      "meaning": "머리핀",
+      "emoji": "📍",
+      "example": "Use a hairpin.",
+      "exampleKo": "머리핀 써요.",
+      "fact": "가느다란 핀!"
+    },
+    {
+      "word": "curl",
+      "ipa": "/kɜːrl/",
+      "meaning": "곱슬, 컬",
+      "emoji": "💁",
+      "example": "Pretty curls.",
+      "exampleKo": "예쁜 컬.",
+      "fact": "꼬불꼬불!"
+    },
+    {
+      "word": "perm",
+      "ipa": "/pɜːrm/",
+      "meaning": "파마",
+      "emoji": "💁",
+      "example": "Get a perm.",
+      "exampleKo": "파마해요.",
+      "fact": "오래 가는 컬!"
+    },
+    {
+      "word": "dye",
+      "ipa": "/daɪ/",
+      "meaning": "염색하다",
+      "emoji": "🎨",
+      "example": "Dye my hair.",
+      "exampleKo": "염색해요.",
+      "fact": "색 바꾸기!"
+    },
+    {
+      "word": "trim",
+      "ipa": "/trɪm/",
+      "meaning": "다듬다",
+      "emoji": "✂️",
+      "example": "Trim the ends.",
+      "exampleKo": "끝 다듬어요.",
+      "fact": "조금 자르기!"
+    },
+    {
+      "word": "makeup",
+      "ipa": "/ˈmeɪkʌp/",
+      "meaning": "화장",
+      "emoji": "💄",
+      "example": "Mom does makeup.",
+      "exampleKo": "엄마는 화장해요.",
+      "fact": "얼굴 꾸미기!"
+    },
+    {
+      "word": "lipstick",
+      "ipa": "/ˈlɪpstɪk/",
+      "meaning": "립스틱",
+      "emoji": "💄",
+      "example": "Red lipstick.",
+      "exampleKo": "빨간 립스틱.",
+      "fact": "입술 색!"
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "date": "2026-08-10",
+  "folderName": "20260810",
+  "dayKo": "월",
+  "dayKoFull": "월요일",
+  "dayEn": "Monday",
+  "dayIdx": 1,
+  "theme": "한국 음식",
+  "themeEmoji": "🍚",
+  "vocabFileName": "혜원이_영단어_월요일_한식.html",
+  "quizFileName": "혜원이_영단어_월요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #ffebee 0%, #e57373 45%, #c62828 100%);",
+  "headerTitle": "🍚 한국 음식 🥢",
+  "words": [
+    {
+      "word": "bibimbap",
+      "ipa": "/ˈbiːbɪmbæp/",
+      "meaning": "비빔밥",
+      "emoji": "🍲",
+      "example": "I love bibimbap.",
+      "exampleKo": "비빔밥 좋아.",
+      "fact": "섞어서 먹어요!"
+    },
+    {
+      "word": "kimbap",
+      "ipa": "/ˈkɪmbæp/",
+      "meaning": "김밥",
+      "emoji": "🍙",
+      "example": "Pack kimbap.",
+      "exampleKo": "김밥 싸요.",
+      "fact": "소풍 단골!"
+    },
+    {
+      "word": "tteokbokki",
+      "ipa": "/ˈtʌkbɒki/",
+      "meaning": "떡볶이",
+      "emoji": "🌶️",
+      "example": "Spicy tteokbokki.",
+      "exampleKo": "매운 떡볶이.",
+      "fact": "매콤 달콤!"
+    },
+    {
+      "word": "jjigae",
+      "ipa": "/ˈdʒiːɡeɪ/",
+      "meaning": "찌개",
+      "emoji": "🍲",
+      "example": "Kimchi jjigae.",
+      "exampleKo": "김치찌개.",
+      "fact": "국보다 진해요!"
+    },
+    {
+      "word": "japchae",
+      "ipa": "/ˈdʒʌptʃeɪ/",
+      "meaning": "잡채",
+      "emoji": "🍜",
+      "example": "Yummy japchae.",
+      "exampleKo": "맛있는 잡채.",
+      "fact": "당면 + 야채!"
+    },
+    {
+      "word": "bulgogi",
+      "ipa": "/bʊlˈɡoʊɡi/",
+      "meaning": "불고기",
+      "emoji": "🥩",
+      "example": "Sweet bulgogi.",
+      "exampleKo": "달콤한 불고기.",
+      "fact": "인기 한식!"
+    },
+    {
+      "word": "galbi",
+      "ipa": "/ˈɡælbi/",
+      "meaning": "갈비",
+      "emoji": "🍖",
+      "example": "BBQ galbi.",
+      "exampleKo": "바비큐 갈비.",
+      "fact": "소·돼지 갈비!"
+    },
+    {
+      "word": "kimchi",
+      "ipa": "/ˈkɪmtʃi/",
+      "meaning": "김치",
+      "emoji": "🥬",
+      "example": "Fresh kimchi.",
+      "exampleKo": "신선한 김치.",
+      "fact": "한국 대표 음식!"
+    },
+    {
+      "word": "banchan",
+      "ipa": "/ˈbæntʃæn/",
+      "meaning": "반찬",
+      "emoji": "🥗",
+      "example": "Many banchan.",
+      "exampleKo": "많은 반찬.",
+      "fact": "작은 곁들임!"
+    },
+    {
+      "word": "samgyeopsal",
+      "ipa": "/sʌmˈɡjʌpsʌl/",
+      "meaning": "삼겹살",
+      "emoji": "🥓",
+      "example": "Grill samgyeopsal.",
+      "exampleKo": "삼겹살 구워요.",
+      "fact": "돼지 배 부위!"
+    },
+    {
+      "word": "jeon",
+      "ipa": "/dʒʌn/",
+      "meaning": "전, 부침개",
+      "emoji": "🥞",
+      "example": "Crispy jeon.",
+      "exampleKo": "바삭한 전.",
+      "fact": "기름에 부쳐요!"
+    },
+    {
+      "word": "mandu",
+      "ipa": "/ˈmændu/",
+      "meaning": "만두",
+      "emoji": "🥟",
+      "example": "Steamed mandu.",
+      "exampleKo": "찐 만두.",
+      "fact": "한국식 dumpling!"
+    },
+    {
+      "word": "ramyeon",
+      "ipa": "/ˈrɑːmjʌn/",
+      "meaning": "라면",
+      "emoji": "🍜",
+      "example": "Spicy ramyeon.",
+      "exampleKo": "매운 라면.",
+      "fact": "한국 라면!"
+    },
+    {
+      "word": "naengmyeon",
+      "ipa": "/ˈneɪŋmjʌn/",
+      "meaning": "냉면",
+      "emoji": "🍜",
+      "example": "Cold naengmyeon.",
+      "exampleKo": "차가운 냉면.",
+      "fact": "여름 별미!"
+    },
+    {
+      "word": "hotteok",
+      "ipa": "/ˈhɒtʌk/",
+      "meaning": "호떡",
+      "emoji": "🥞",
+      "example": "Sweet hotteok.",
+      "exampleKo": "달콤한 호떡.",
+      "fact": "겨울 간식!"
+    },
+    {
+      "word": "bingsu",
+      "ipa": "/ˈbɪŋsuː/",
+      "meaning": "빙수",
+      "emoji": "🍧",
+      "example": "Mango bingsu.",
+      "exampleKo": "망고 빙수.",
+      "fact": "여름 디저트!"
+    },
+    {
+      "word": "gimbap",
+      "ipa": "/ˈɡɪmbæp/",
+      "meaning": "김밥 (정식)",
+      "emoji": "🍱",
+      "example": "Tuna gimbap.",
+      "exampleKo": "참치 김밥.",
+      "fact": "한국식 롤!"
+    },
+    {
+      "word": "hangwa",
+      "ipa": "/ˈhɑːŋɡwɑː/",
+      "meaning": "한과",
+      "emoji": "🍬",
+      "example": "Traditional hangwa.",
+      "exampleKo": "전통 한과.",
+      "fact": "전통 과자!"
+    },
+    {
+      "word": "makgeolli",
+      "ipa": "/mɑːkˈɡɒli/",
+      "meaning": "막걸리",
+      "emoji": "🍶",
+      "example": "Rice makgeolli.",
+      "exampleKo": "쌀 막걸리.",
+      "fact": "전통 술 (어른용)!"
+    },
+    {
+      "word": "sikhye",
+      "ipa": "/ˈʃɪkhjeɪ/",
+      "meaning": "식혜",
+      "emoji": "🥤",
+      "example": "Sweet sikhye.",
+      "exampleKo": "달콤한 식혜.",
+      "fact": "전통 음료!"
+    }
+  ]
+}

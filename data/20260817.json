@@ -1,0 +1,196 @@
+{
+  "date": "2026-08-17",
+  "folderName": "20260817",
+  "dayKo": "월",
+  "dayKoFull": "월요일",
+  "dayEn": "Monday",
+  "dayIdx": 1,
+  "theme": "가구와 인테리어",
+  "themeEmoji": "🛋️",
+  "vocabFileName": "혜원이_영단어_월요일_가구.html",
+  "quizFileName": "혜원이_영단어_월요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #efebe9 0%, #a1887f 45%, #4e342e 100%);",
+  "headerTitle": "🛋️ 가구와 인테리어 🪑",
+  "words": [
+    {
+      "word": "recliner",
+      "ipa": "/rɪˈklaɪnər/",
+      "meaning": "리클라이너",
+      "emoji": "🪑",
+      "example": "A leather recliner.",
+      "exampleKo": "가죽 리클라이너.",
+      "fact": "뒤로 눕혀짐!"
+    },
+    {
+      "word": "couch",
+      "ipa": "/kaʊtʃ/",
+      "meaning": "긴 소파",
+      "emoji": "🛋️",
+      "example": "Lie on the couch.",
+      "exampleKo": "긴 소파에 누워요.",
+      "fact": "sofa와 비슷!"
+    },
+    {
+      "word": "armchair",
+      "ipa": "/ˈɑːrmtʃer/",
+      "meaning": "안락의자",
+      "emoji": "🪑",
+      "example": "A comfy armchair.",
+      "exampleKo": "편안한 안락의자.",
+      "fact": "팔걸이 있음!"
+    },
+    {
+      "word": "dresser",
+      "ipa": "/ˈdresər/",
+      "meaning": "서랍장",
+      "emoji": "🗄️",
+      "example": "Open the dresser.",
+      "exampleKo": "서랍장 열어요.",
+      "fact": "옷 보관!"
+    },
+    {
+      "word": "wardrobe",
+      "ipa": "/ˈwɔːrdroʊb/",
+      "meaning": "옷장",
+      "emoji": "🚪",
+      "example": "In the wardrobe.",
+      "exampleKo": "옷장 안에.",
+      "fact": "옷 거는 곳!"
+    },
+    {
+      "word": "nightstand",
+      "ipa": "/ˈnaɪtstænd/",
+      "meaning": "침대 옆 협탁",
+      "emoji": "🛏️",
+      "example": "On the nightstand.",
+      "exampleKo": "협탁 위에.",
+      "fact": "침대 옆 작은 탁자!"
+    },
+    {
+      "word": "cushion",
+      "ipa": "/ˈkʊʃən/",
+      "meaning": "쿠션",
+      "emoji": "🟦",
+      "example": "Soft cushion.",
+      "exampleKo": "부드러운 쿠션.",
+      "fact": "소파에 놓아요!"
+    },
+    {
+      "word": "pillow",
+      "ipa": "/ˈpɪloʊ/",
+      "meaning": "베개",
+      "emoji": "🛌",
+      "example": "Fluffy pillow.",
+      "exampleKo": "폭신한 베개.",
+      "fact": "잘 때 머리 받침!"
+    },
+    {
+      "word": "blanket",
+      "ipa": "/ˈblæŋkət/",
+      "meaning": "담요",
+      "emoji": "🛌",
+      "example": "Warm blanket.",
+      "exampleKo": "따뜻한 담요.",
+      "fact": "덮는 천!"
+    },
+    {
+      "word": "mattress",
+      "ipa": "/ˈmætrəs/",
+      "meaning": "매트리스",
+      "emoji": "🛏️",
+      "example": "A soft mattress.",
+      "exampleKo": "부드러운 매트리스.",
+      "fact": "침대 깔개!"
+    },
+    {
+      "word": "tapestry",
+      "ipa": "/ˈtæpəstri/",
+      "meaning": "태피스트리",
+      "emoji": "🎨",
+      "example": "A wall tapestry.",
+      "exampleKo": "벽 태피스트리.",
+      "fact": "장식용 천!"
+    },
+    {
+      "word": "chandelier",
+      "ipa": "/ˌʃændəˈlɪər/",
+      "meaning": "샹들리에",
+      "emoji": "💎",
+      "example": "A crystal chandelier.",
+      "exampleKo": "크리스탈 샹들리에.",
+      "fact": "화려한 등!"
+    },
+    {
+      "word": "sconce",
+      "ipa": "/skɒns/",
+      "meaning": "벽 조명",
+      "emoji": "💡",
+      "example": "A wall sconce.",
+      "exampleKo": "벽 조명.",
+      "fact": "벽에 다는 등!"
+    },
+    {
+      "word": "ottoman",
+      "ipa": "/ˈɒtəmən/",
+      "meaning": "오토만 (발 받침)",
+      "emoji": "🪑",
+      "example": "A leather ottoman.",
+      "exampleKo": "가죽 오토만.",
+      "fact": "발 올리는 의자!"
+    },
+    {
+      "word": "shelfunit",
+      "ipa": "/ʃelf ˈjuːnɪt/",
+      "meaning": "선반장",
+      "emoji": "📦",
+      "example": "A tall shelf unit.",
+      "exampleKo": "키 큰 선반장.",
+      "fact": "책·소품 보관!"
+    },
+    {
+      "word": "rocking chair",
+      "ipa": "/ˈrɒkɪŋ tʃer/",
+      "meaning": "흔들의자",
+      "emoji": "🪑",
+      "example": "Grandma's rocking chair.",
+      "exampleKo": "할머니 흔들의자.",
+      "fact": "앞뒤로 흔들!"
+    },
+    {
+      "word": "bunk bed",
+      "ipa": "/ˈbʌŋk bed/",
+      "meaning": "이층 침대",
+      "emoji": "🛏️",
+      "example": "Sleep in the bunk bed.",
+      "exampleKo": "이층 침대에서 자요.",
+      "fact": "형제가 사용!"
+    },
+    {
+      "word": "wallpaper",
+      "ipa": "/ˈwɔːlpeɪpər/",
+      "meaning": "벽지",
+      "emoji": "🎨",
+      "example": "Pretty wallpaper.",
+      "exampleKo": "예쁜 벽지.",
+      "fact": "벽에 붙임!"
+    },
+    {
+      "word": "tile",
+      "ipa": "/taɪl/",
+      "meaning": "타일",
+      "emoji": "🟦",
+      "example": "Bathroom tile.",
+      "exampleKo": "욕실 타일.",
+      "fact": "바닥·벽!"
+    },
+    {
+      "word": "interior",
+      "ipa": "/ɪnˈtɪriər/",
+      "meaning": "인테리어, 실내",
+      "emoji": "🏠",
+      "example": "Modern interior.",
+      "exampleKo": "현대 인테리어.",
+      "fact": "집 안 꾸미기!"
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "date": "2026-08-11",
+  "folderName": "20260811",
+  "dayKo": "화",
+  "dayKoFull": "화요일",
+  "dayEn": "Tuesday",
+  "dayIdx": 2,
+  "theme": "가전제품",
+  "themeEmoji": "🔌",
+  "vocabFileName": "혜원이_영단어_화요일_가전.html",
+  "quizFileName": "혜원이_영단어_화요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #e3f2fd 0%, #64b5f6 45%, #1565c0 100%);",
+  "headerTitle": "🔌 가전제품 🧺",
+  "words": [
+    {
+      "word": "refrigerator",
+      "ipa": "/rɪˈfrɪdʒəreɪtər/",
+      "meaning": "냉장고",
+      "emoji": "🧊",
+      "example": "Open the refrigerator.",
+      "exampleKo": "냉장고 열어요.",
+      "fact": "fridge의 정식 이름!"
+    },
+    {
+      "word": "freezer",
+      "ipa": "/ˈfriːzər/",
+      "meaning": "냉동고",
+      "emoji": "❄️",
+      "example": "Ice in the freezer.",
+      "exampleKo": "냉동고의 얼음.",
+      "fact": "꽁꽁 얼리는 곳!"
+    },
+    {
+      "word": "washer",
+      "ipa": "/ˈwɒʃər/",
+      "meaning": "세탁기",
+      "emoji": "🧺",
+      "example": "Use the washer.",
+      "exampleKo": "세탁기 써요.",
+      "fact": "빨래 기계!"
+    },
+    {
+      "word": "dryer",
+      "ipa": "/ˈdraɪər/",
+      "meaning": "건조기",
+      "emoji": "💨",
+      "example": "In the dryer.",
+      "exampleKo": "건조기 안에.",
+      "fact": "빨래 말리기!"
+    },
+    {
+      "word": "vacuum",
+      "ipa": "/ˈvækjuəm/",
+      "meaning": "청소기",
+      "emoji": "🧹",
+      "example": "Vacuum the floor.",
+      "exampleKo": "바닥 청소.",
+      "fact": "빨아들여요!"
+    },
+    {
+      "word": "microwave",
+      "ipa": "/ˈmaɪkroʊweɪv/",
+      "meaning": "전자레인지",
+      "emoji": "📦",
+      "example": "Heat in microwave.",
+      "exampleKo": "전자레인지에 데워요.",
+      "fact": "빠르게 데움!"
+    },
+    {
+      "word": "oven",
+      "ipa": "/ˈʌvən/",
+      "meaning": "오븐",
+      "emoji": "🍞",
+      "example": "Bake in the oven.",
+      "exampleKo": "오븐에 구워요.",
+      "fact": "빵 굽기!"
+    },
+    {
+      "word": "toaster",
+      "ipa": "/ˈtoʊstər/",
+      "meaning": "토스터",
+      "emoji": "🍞",
+      "example": "Toast bread.",
+      "exampleKo": "빵 굽기.",
+      "fact": "식빵 굽는 기계!"
+    },
+    {
+      "word": "kettle",
+      "ipa": "/ˈketəl/",
+      "meaning": "주전자",
+      "emoji": "🫖",
+      "example": "Boil the kettle.",
+      "exampleKo": "주전자 끓여요.",
+      "fact": "물 끓이기!"
+    },
+    {
+      "word": "blender",
+      "ipa": "/ˈblendər/",
+      "meaning": "믹서기",
+      "emoji": "🥤",
+      "example": "Use a blender.",
+      "exampleKo": "믹서 써요.",
+      "fact": "갈아서 만들어요!"
+    },
+    {
+      "word": "humidifier",
+      "ipa": "/hjuːˈmɪdɪfaɪər/",
+      "meaning": "가습기",
+      "emoji": "💧",
+      "example": "Use a humidifier.",
+      "exampleKo": "가습기 사용.",
+      "fact": "습도 올려줘요!"
+    },
+    {
+      "word": "hairdryer",
+      "ipa": "/ˈherdraɪər/",
+      "meaning": "헤어드라이어",
+      "emoji": "💨",
+      "example": "Dry your hair.",
+      "exampleKo": "머리 말려요.",
+      "fact": "머리 말리기!"
+    },
+    {
+      "word": "remote control",
+      "ipa": "/rɪˈmoʊt kənˈtroʊl/",
+      "meaning": "리모컨",
+      "emoji": "📺",
+      "example": "Find the remote control.",
+      "exampleKo": "리모컨 찾아요.",
+      "fact": "멀리서 조작!"
+    },
+    {
+      "word": "printer",
+      "ipa": "/ˈprɪntər/",
+      "meaning": "프린터",
+      "emoji": "🖨️",
+      "example": "Print a paper.",
+      "exampleKo": "종이 출력.",
+      "fact": "인쇄 기계!"
+    },
+    {
+      "word": "speaker",
+      "ipa": "/ˈspiːkər/",
+      "meaning": "스피커",
+      "emoji": "🔊",
+      "example": "Loud speaker.",
+      "exampleKo": "시끄러운 스피커.",
+      "fact": "소리 내요!"
+    },
+    {
+      "word": "appliance",
+      "ipa": "/əˈplaɪəns/",
+      "meaning": "가전제품",
+      "emoji": "🔌",
+      "example": "Kitchen appliances.",
+      "exampleKo": "부엌 가전.",
+      "fact": "가전 통칭!"
+    },
+    {
+      "word": "plug",
+      "ipa": "/plʌɡ/",
+      "meaning": "플러그, 콘센트 꽂이",
+      "emoji": "🔌",
+      "example": "Plug it in.",
+      "exampleKo": "꽂아요.",
+      "fact": "전원 연결!"
+    },
+    {
+      "word": "outlet",
+      "ipa": "/ˈaʊtlet/",
+      "meaning": "콘센트",
+      "emoji": "🔌",
+      "example": "Wall outlet.",
+      "exampleKo": "벽 콘센트.",
+      "fact": "플러그 꽂는 곳!"
+    },
+    {
+      "word": "cord",
+      "ipa": "/kɔːrd/",
+      "meaning": "전선, 줄",
+      "emoji": "〰️",
+      "example": "Long cord.",
+      "exampleKo": "긴 전선.",
+      "fact": "전기 줄!"
+    },
+    {
+      "word": "battery pack",
+      "ipa": "/ˈbætəri pæk/",
+      "meaning": "배터리팩, 보조배터리",
+      "emoji": "🔋",
+      "example": "Carry a battery pack.",
+      "exampleKo": "보조배터리 휴대.",
+      "fact": "외출 시 충전!"
+    }
+  ]
+}

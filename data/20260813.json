@@ -1,0 +1,196 @@
+{
+  "date": "2026-08-13",
+  "folderName": "20260813",
+  "dayKo": "목",
+  "dayKoFull": "목요일",
+  "dayEn": "Thursday",
+  "dayIdx": 4,
+  "theme": "도서관과 문구",
+  "themeEmoji": "📚",
+  "vocabFileName": "혜원이_영단어_목요일_문구.html",
+  "quizFileName": "혜원이_영단어_목요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #fff8e1 0%, #ffd54f 45%, #f57f17 100%);",
+  "headerTitle": "📚 도서관과 문구 ✏️",
+  "words": [
+    {
+      "word": "bookshop",
+      "ipa": "/ˈbʊkʃɒp/",
+      "meaning": "서점",
+      "emoji": "📚",
+      "example": "Visit the bookshop.",
+      "exampleKo": "서점 방문.",
+      "fact": "책 파는 곳!"
+    },
+    {
+      "word": "bookmark",
+      "ipa": "/ˈbʊkmɑːrk/",
+      "meaning": "책갈피",
+      "emoji": "🔖",
+      "example": "Use a bookmark.",
+      "exampleKo": "책갈피 써요.",
+      "fact": "읽은 곳 표시!"
+    },
+    {
+      "word": "shelf",
+      "ipa": "/ʃelf/",
+      "meaning": "선반",
+      "emoji": "📦",
+      "example": "Books on the shelf.",
+      "exampleKo": "선반의 책들.",
+      "fact": "물건 놓는 곳!"
+    },
+    {
+      "word": "archive",
+      "ipa": "/ˈɑːrkaɪv/",
+      "meaning": "기록 보관소",
+      "emoji": "📚",
+      "example": "A digital archive.",
+      "exampleKo": "디지털 기록소.",
+      "fact": "옛 자료 보관!"
+    },
+    {
+      "word": "borrow",
+      "ipa": "/ˈbɒroʊ/",
+      "meaning": "빌리다",
+      "emoji": "📖",
+      "example": "Borrow a book.",
+      "exampleKo": "책 빌려요.",
+      "fact": "잠시 받아요!"
+    },
+    {
+      "word": "return",
+      "ipa": "/rɪˈtɜːrn/",
+      "meaning": "반납하다, 돌려주다",
+      "emoji": "↩️",
+      "example": "Return the book.",
+      "exampleKo": "책 반납해요.",
+      "fact": "돌려주기!"
+    },
+    {
+      "word": "deadline",
+      "ipa": "/ˈdedlaɪn/",
+      "meaning": "기한, 마감일",
+      "emoji": "📅",
+      "example": "Meet the deadline.",
+      "exampleKo": "기한 맞춰요.",
+      "fact": "꼭 끝낼 날!"
+    },
+    {
+      "word": "pencil case",
+      "ipa": "/ˈpensəl keɪs/",
+      "meaning": "필통",
+      "emoji": "✏️",
+      "example": "In my pencil case.",
+      "exampleKo": "내 필통 속.",
+      "fact": "문구 가방!"
+    },
+    {
+      "word": "eraser cap",
+      "ipa": "/ɪˈreɪsər kæp/",
+      "meaning": "지우개 캡",
+      "emoji": "✏️",
+      "example": "Pencil eraser cap.",
+      "exampleKo": "연필 지우개 캡.",
+      "fact": "연필 끝 지우개!"
+    },
+    {
+      "word": "correction tape",
+      "ipa": "/kəˈrekʃən teɪp/",
+      "meaning": "수정테이프",
+      "emoji": "🩹",
+      "example": "Use correction tape.",
+      "exampleKo": "수정테이프 써요.",
+      "fact": "잘못 쓴 거 가려요!"
+    },
+    {
+      "word": "pen",
+      "ipa": "/pen/",
+      "meaning": "펜",
+      "emoji": "🖊️",
+      "example": "A blue pen.",
+      "exampleKo": "파란 펜.",
+      "fact": "잉크 펜!"
+    },
+    {
+      "word": "staple",
+      "ipa": "/ˈsteɪpəl/",
+      "meaning": "스테이플러 침",
+      "emoji": "📎",
+      "example": "Staple the papers.",
+      "exampleKo": "서류 스테이플.",
+      "fact": "종이 묶기!"
+    },
+    {
+      "word": "thumbtack",
+      "ipa": "/ˈθʌmtæk/",
+      "meaning": "압정",
+      "emoji": "📌",
+      "example": "Use a thumbtack.",
+      "exampleKo": "압정 써요.",
+      "fact": "벽에 꽂아요!"
+    },
+    {
+      "word": "folder",
+      "ipa": "/ˈfoʊldər/",
+      "meaning": "폴더, 서류철",
+      "emoji": "📁",
+      "example": "Put in a folder.",
+      "exampleKo": "폴더에 넣어요.",
+      "fact": "서류 보관!"
+    },
+    {
+      "word": "binder",
+      "ipa": "/ˈbaɪndər/",
+      "meaning": "바인더",
+      "emoji": "📒",
+      "example": "A big binder.",
+      "exampleKo": "큰 바인더.",
+      "fact": "종이 묶음!"
+    },
+    {
+      "word": "calendar",
+      "ipa": "/ˈkæləndər/",
+      "meaning": "달력",
+      "emoji": "📅",
+      "example": "Mark the calendar.",
+      "exampleKo": "달력에 표시.",
+      "fact": "날짜 보기!"
+    },
+    {
+      "word": "sticky note",
+      "ipa": "/ˈstɪki noʊt/",
+      "meaning": "포스트잇",
+      "emoji": "📝",
+      "example": "Yellow sticky note.",
+      "exampleKo": "노란 포스트잇.",
+      "fact": "붙이는 메모!"
+    },
+    {
+      "word": "chalkboard",
+      "ipa": "/ˈtʃɔːkbɔːrd/",
+      "meaning": "칠판",
+      "emoji": "📋",
+      "example": "Write on the chalkboard.",
+      "exampleKo": "칠판에 써요.",
+      "fact": "분필 사용!"
+    },
+    {
+      "word": "whiteboard",
+      "ipa": "/ˈwaɪtbɔːrd/",
+      "meaning": "화이트보드",
+      "emoji": "📋",
+      "example": "Wipe the whiteboard.",
+      "exampleKo": "화이트보드 닦아요.",
+      "fact": "마커 사용!"
+    },
+    {
+      "word": "due date",
+      "ipa": "/djuː deɪt/",
+      "meaning": "반납·마감 날짜",
+      "emoji": "📅",
+      "example": "Check the due date.",
+      "exampleKo": "반납일 확인.",
+      "fact": "꼭 지켜야!"
+    }
+  ]
+}

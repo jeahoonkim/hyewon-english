@@ -1,0 +1,196 @@
+{
+  "date": "2026-08-24",
+  "folderName": "20260824",
+  "dayKo": "월",
+  "dayKoFull": "월요일",
+  "dayEn": "Monday",
+  "dayIdx": 1,
+  "theme": "새 학기 준비",
+  "themeEmoji": "📚",
+  "vocabFileName": "혜원이_영단어_월요일_새학기.html",
+  "quizFileName": "혜원이_영단어_월요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #fff9c4 0%, #ffd54f 45%, #f57f17 100%);",
+  "headerTitle": "📚 새 학기 준비 ✏️",
+  "words": [
+    {
+      "word": "curriculum",
+      "ipa": "/kəˈrɪkjələm/",
+      "meaning": "교과 과정",
+      "emoji": "📚",
+      "example": "New curriculum.",
+      "exampleKo": "새 교과 과정.",
+      "fact": "배울 내용!"
+    },
+    {
+      "word": "syllabus",
+      "ipa": "/ˈsɪləbəs/",
+      "meaning": "강의 계획서",
+      "emoji": "📋",
+      "example": "Read the syllabus.",
+      "exampleKo": "강의계획서 읽어요.",
+      "fact": "학기별 학습 안내!"
+    },
+    {
+      "word": "roster",
+      "ipa": "/ˈrɒstər/",
+      "meaning": "명단",
+      "emoji": "📋",
+      "example": "Class roster.",
+      "exampleKo": "반 명단.",
+      "fact": "학생 목록!"
+    },
+    {
+      "word": "timetable",
+      "ipa": "/ˈtaɪmteɪbəl/",
+      "meaning": "시간표",
+      "emoji": "📋",
+      "example": "Check the timetable.",
+      "exampleKo": "시간표 확인.",
+      "fact": "수업 시간표!"
+    },
+    {
+      "word": "cubby",
+      "ipa": "/ˈkʌbi/",
+      "meaning": "개인 사물 칸",
+      "emoji": "📦",
+      "example": "My cubby.",
+      "exampleKo": "내 칸.",
+      "fact": "작은 보관함!"
+    },
+    {
+      "word": "peer",
+      "ipa": "/pɪər/",
+      "meaning": "또래",
+      "emoji": "👫",
+      "example": "My peers.",
+      "exampleKo": "내 또래.",
+      "fact": "같은 나이!"
+    },
+    {
+      "word": "orientation",
+      "ipa": "/ˌɔːriənˈteɪʃən/",
+      "meaning": "오리엔테이션",
+      "emoji": "🎓",
+      "example": "School orientation.",
+      "exampleKo": "학교 오리엔테이션.",
+      "fact": "첫 소개!"
+    },
+    {
+      "word": "enroll",
+      "ipa": "/ɪnˈroʊl/",
+      "meaning": "등록하다",
+      "emoji": "✍️",
+      "example": "Enroll in class.",
+      "exampleKo": "수업 등록.",
+      "fact": "수강 신청!"
+    },
+    {
+      "word": "register",
+      "ipa": "/ˈredʒɪstər/",
+      "meaning": "등록하다",
+      "emoji": "📝",
+      "example": "Register for school.",
+      "exampleKo": "학교 등록.",
+      "fact": "이름 올리기!"
+    },
+    {
+      "word": "tuition",
+      "ipa": "/tuˈɪʃən/",
+      "meaning": "수업료, 학비",
+      "emoji": "💰",
+      "example": "Pay tuition.",
+      "exampleKo": "학비 내요.",
+      "fact": "학교 비용!"
+    },
+    {
+      "word": "transcript",
+      "ipa": "/ˈtrænskrɪpt/",
+      "meaning": "성적증명서",
+      "emoji": "📄",
+      "example": "School transcript.",
+      "exampleKo": "성적증명서.",
+      "fact": "공식 성적!"
+    },
+    {
+      "word": "textbook",
+      "ipa": "/ˈtekstbʊk/",
+      "meaning": "교과서",
+      "emoji": "📖",
+      "example": "School textbook.",
+      "exampleKo": "학교 교과서.",
+      "fact": "배우는 책!"
+    },
+    {
+      "word": "workspace",
+      "ipa": "/ˈwɜːrkspeɪs/",
+      "meaning": "공부 공간",
+      "emoji": "💻",
+      "example": "Clean workspace.",
+      "exampleKo": "깨끗한 공부 공간.",
+      "fact": "내 책상!"
+    },
+    {
+      "word": "planner",
+      "ipa": "/ˈplænər/",
+      "meaning": "플래너, 일정 수첩",
+      "emoji": "📔",
+      "example": "Use a planner.",
+      "exampleKo": "플래너 써요.",
+      "fact": "계획 수첩!"
+    },
+    {
+      "word": "checklist",
+      "ipa": "/ˈtʃeklɪst/",
+      "meaning": "체크리스트",
+      "emoji": "✅",
+      "example": "Make a checklist.",
+      "exampleKo": "체크리스트 만들어요.",
+      "fact": "할 일 목록!"
+    },
+    {
+      "word": "backpack zipper",
+      "ipa": "/ˈbækpæk ˈzɪpər/",
+      "meaning": "가방 지퍼",
+      "emoji": "🎒",
+      "example": "Close the backpack zipper.",
+      "exampleKo": "가방 지퍼 닫아요.",
+      "fact": "가방 잠금!"
+    },
+    {
+      "word": "agenda",
+      "ipa": "/əˈdʒendə/",
+      "meaning": "안건, 일정",
+      "emoji": "📋",
+      "example": "Today's agenda.",
+      "exampleKo": "오늘 안건.",
+      "fact": "오늘 할 일!"
+    },
+    {
+      "word": "deadline approach",
+      "ipa": "/ˈdedlaɪn əˈproʊtʃ/",
+      "meaning": "마감 임박",
+      "emoji": "⏰",
+      "example": "The deadline approaches.",
+      "exampleKo": "마감이 다가와요.",
+      "fact": "제출 시간!"
+    },
+    {
+      "word": "backtoschool",
+      "ipa": "/bæk tuː skuːl/",
+      "meaning": "개학",
+      "emoji": "🎒",
+      "example": "Back to school sale.",
+      "exampleKo": "개학 세일.",
+      "fact": "새 학기 시작!"
+    },
+    {
+      "word": "freshman",
+      "ipa": "/ˈfreʃmən/",
+      "meaning": "신입생",
+      "emoji": "🎓",
+      "example": "A freshman class.",
+      "exampleKo": "신입생 반.",
+      "fact": "새내기!"
+    }
+  ]
+}

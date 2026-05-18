@@ -1,0 +1,196 @@
+{
+  "date": "2026-08-21",
+  "folderName": "20260821",
+  "dayKo": "금",
+  "dayKoFull": "금요일",
+  "dayEn": "Friday",
+  "dayIdx": 5,
+  "theme": "빛과 그림자",
+  "themeEmoji": "🔦",
+  "vocabFileName": "혜원이_영단어_금요일_빛.html",
+  "quizFileName": "혜원이_영단어_금요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #fff9c4 0%, #fbc02d 45%, #f57f17 100%);",
+  "headerTitle": "🔦 빛과 그림자 🌗",
+  "words": [
+    {
+      "word": "glow",
+      "ipa": "/ɡloʊ/",
+      "meaning": "은은한 빛",
+      "emoji": "✨",
+      "example": "A warm glow.",
+      "exampleKo": "따뜻한 빛.",
+      "fact": "부드러운 빛!"
+    },
+    {
+      "word": "sparkle",
+      "ipa": "/ˈspɑːrkəl/",
+      "meaning": "반짝임",
+      "emoji": "✨",
+      "example": "Stars sparkle.",
+      "exampleKo": "별이 반짝.",
+      "fact": "작은 빛 반짝!"
+    },
+    {
+      "word": "shine",
+      "ipa": "/ʃaɪn/",
+      "meaning": "빛나다",
+      "emoji": "☀️",
+      "example": "The sun shines.",
+      "exampleKo": "해가 빛나요.",
+      "fact": "강한 빛!"
+    },
+    {
+      "word": "shimmer",
+      "ipa": "/ˈʃɪmər/",
+      "meaning": "가물거리며 빛나다",
+      "emoji": "💫",
+      "example": "Water shimmers.",
+      "exampleKo": "물이 가물거려요.",
+      "fact": "잔잔한 반짝!"
+    },
+    {
+      "word": "flicker",
+      "ipa": "/ˈflɪkər/",
+      "meaning": "깜박이다",
+      "emoji": "🕯️",
+      "example": "Candles flicker.",
+      "exampleKo": "촛불이 깜박.",
+      "fact": "꺼졌다 켜졌다!"
+    },
+    {
+      "word": "blink",
+      "ipa": "/blɪŋk/",
+      "meaning": "깜빡임",
+      "emoji": "👁️",
+      "example": "Lights blink.",
+      "exampleKo": "불이 깜빡여요.",
+      "fact": "눈도 깜빡!"
+    },
+    {
+      "word": "glitter",
+      "ipa": "/ˈɡlɪtər/",
+      "meaning": "반짝이",
+      "emoji": "✨",
+      "example": "Gold glitter.",
+      "exampleKo": "금 반짝이.",
+      "fact": "반짝이 가루!"
+    },
+    {
+      "word": "glare",
+      "ipa": "/ɡler/",
+      "meaning": "눈부신 빛",
+      "emoji": "☀️",
+      "example": "Sun glare.",
+      "exampleKo": "햇빛 눈부심.",
+      "fact": "너무 밝아요!"
+    },
+    {
+      "word": "beam",
+      "ipa": "/biːm/",
+      "meaning": "광선",
+      "emoji": "🔦",
+      "example": "A laser beam.",
+      "exampleKo": "레이저 광선.",
+      "fact": "빛줄기!"
+    },
+    {
+      "word": "ray",
+      "ipa": "/reɪ/",
+      "meaning": "광선, 빛살",
+      "emoji": "☀️",
+      "example": "Sun rays.",
+      "exampleKo": "햇살.",
+      "fact": "빛이 뻗어나옴!"
+    },
+    {
+      "word": "reflection",
+      "ipa": "/rɪˈflekʃən/",
+      "meaning": "반사, 비친 모습",
+      "emoji": "🪞",
+      "example": "Your reflection.",
+      "exampleKo": "네 비친 모습.",
+      "fact": "거울 속!"
+    },
+    {
+      "word": "shadowy",
+      "ipa": "/ˈʃædoʊi/",
+      "meaning": "그늘진",
+      "emoji": "🌑",
+      "example": "A shadowy room.",
+      "exampleKo": "그늘진 방.",
+      "fact": "어두운!"
+    },
+    {
+      "word": "silhouette",
+      "ipa": "/ˌsɪluˈet/",
+      "meaning": "실루엣",
+      "emoji": "👤",
+      "example": "A dark silhouette.",
+      "exampleKo": "어두운 실루엣.",
+      "fact": "윤곽만!"
+    },
+    {
+      "word": "radiant",
+      "ipa": "/ˈreɪdiənt/",
+      "meaning": "환하게 빛나는",
+      "emoji": "☀️",
+      "example": "A radiant smile.",
+      "exampleKo": "환한 미소.",
+      "fact": "밝게!"
+    },
+    {
+      "word": "dim",
+      "ipa": "/dɪm/",
+      "meaning": "어둑한",
+      "emoji": "🕯️",
+      "example": "Dim light.",
+      "exampleKo": "어둑한 빛.",
+      "fact": "약한 빛!"
+    },
+    {
+      "word": "gloomy",
+      "ipa": "/ˈɡluːmi/",
+      "meaning": "어두운, 우울한",
+      "emoji": "🌑",
+      "example": "A gloomy day.",
+      "exampleKo": "어두운 날.",
+      "fact": "침울!"
+    },
+    {
+      "word": "glow stick",
+      "ipa": "/ɡloʊ stɪk/",
+      "meaning": "야광봉",
+      "emoji": "💚",
+      "example": "Wave a glow stick.",
+      "exampleKo": "야광봉 흔들기.",
+      "fact": "콘서트 필수!"
+    },
+    {
+      "word": "firefly light",
+      "ipa": "/ˈfaɪərflaɪ laɪt/",
+      "meaning": "반딧불 빛",
+      "emoji": "💫",
+      "example": "Soft firefly light.",
+      "exampleKo": "부드러운 반딧불 빛.",
+      "fact": "여름 밤!"
+    },
+    {
+      "word": "moonbeam",
+      "ipa": "/ˈmuːnbiːm/",
+      "meaning": "달빛 줄기",
+      "emoji": "🌙",
+      "example": "A silver moonbeam.",
+      "exampleKo": "은빛 달빛.",
+      "fact": "밤하늘!"
+    },
+    {
+      "word": "sunray",
+      "ipa": "/ˈsʌnreɪ/",
+      "meaning": "햇살",
+      "emoji": "☀️",
+      "example": "Warm sunrays.",
+      "exampleKo": "따뜻한 햇살.",
+      "fact": "해의 빛줄기!"
+    }
+  ]
+}

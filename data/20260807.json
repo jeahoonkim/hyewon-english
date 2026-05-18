@@ -1,0 +1,196 @@
+{
+  "date": "2026-08-07",
+  "folderName": "20260807",
+  "dayKo": "금",
+  "dayKoFull": "금요일",
+  "dayEn": "Friday",
+  "dayIdx": 5,
+  "theme": "응급과 안전",
+  "themeEmoji": "🚨",
+  "vocabFileName": "혜원이_영단어_금요일_안전.html",
+  "quizFileName": "혜원이_영단어_금요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #ffebee 0%, #ef5350 45%, #b71c1c 100%);",
+  "headerTitle": "🚨 응급과 안전 🛡️",
+  "words": [
+    {
+      "word": "danger",
+      "ipa": "/ˈdeɪndʒər/",
+      "meaning": "위험",
+      "emoji": "⚠️",
+      "example": "Danger ahead!",
+      "exampleKo": "위험!",
+      "fact": "조심해야 해요!"
+    },
+    {
+      "word": "safe",
+      "ipa": "/seɪf/",
+      "meaning": "안전한",
+      "emoji": "🛡️",
+      "example": "Stay safe.",
+      "exampleKo": "안전하게 지내요.",
+      "fact": "위험 없음!"
+    },
+    {
+      "word": "warning",
+      "ipa": "/ˈwɔːrnɪŋ/",
+      "meaning": "경고",
+      "emoji": "⚠️",
+      "example": "A warning sign.",
+      "exampleKo": "경고 표시.",
+      "fact": "미리 알려줘요!"
+    },
+    {
+      "word": "alarm",
+      "ipa": "/əˈlɑːrm/",
+      "meaning": "경보, 알람",
+      "emoji": "🚨",
+      "example": "Fire alarm.",
+      "exampleKo": "화재 경보.",
+      "fact": "위험 알림!"
+    },
+    {
+      "word": "paramedic",
+      "ipa": "/ˌpærəˈmedɪk/",
+      "meaning": "응급구조사",
+      "emoji": "🚑",
+      "example": "A paramedic helps.",
+      "exampleKo": "응급구조사가 도와요.",
+      "fact": "구급차 의료진!"
+    },
+    {
+      "word": "officer",
+      "ipa": "/ˈɒfɪsər/",
+      "meaning": "경찰관, 공무원",
+      "emoji": "👮",
+      "example": "A police officer.",
+      "exampleKo": "경찰관.",
+      "fact": "경찰·관리자!"
+    },
+    {
+      "word": "goggle",
+      "ipa": "/ˈɡɒɡəl/",
+      "meaning": "고글, 보호 안경",
+      "emoji": "🥽",
+      "example": "Wear goggles.",
+      "exampleKo": "고글 써요.",
+      "fact": "눈 보호!"
+    },
+    {
+      "word": "seatbelt",
+      "ipa": "/ˈsiːtbelt/",
+      "meaning": "안전벨트",
+      "emoji": "🚗",
+      "example": "Wear your seatbelt.",
+      "exampleKo": "안전벨트 매요.",
+      "fact": "차에서 필수!"
+    },
+    {
+      "word": "lifejacket",
+      "ipa": "/ˈlaɪf dʒækɪt/",
+      "meaning": "구명조끼",
+      "emoji": "🦺",
+      "example": "Wear a lifejacket.",
+      "exampleKo": "구명조끼 입어요.",
+      "fact": "물에서 떠요!"
+    },
+    {
+      "word": "firstaid",
+      "ipa": "/ˌfɜːrst ˈeɪd/",
+      "meaning": "응급처치",
+      "emoji": "🩹",
+      "example": "First aid kit.",
+      "exampleKo": "응급처치 키트.",
+      "fact": "다쳤을 때!"
+    },
+    {
+      "word": "escape",
+      "ipa": "/ɪˈskeɪp/",
+      "meaning": "탈출하다",
+      "emoji": "🚪",
+      "example": "Escape route.",
+      "exampleKo": "탈출 경로.",
+      "fact": "빠져나가요!"
+    },
+    {
+      "word": "rescue",
+      "ipa": "/ˈreskjuː/",
+      "meaning": "구조",
+      "emoji": "🛟",
+      "example": "Rescue team.",
+      "exampleKo": "구조대.",
+      "fact": "위험에서 구해줌!"
+    },
+    {
+      "word": "shelter",
+      "ipa": "/ˈʃeltər/",
+      "meaning": "대피소",
+      "emoji": "🏠",
+      "example": "Find shelter.",
+      "exampleKo": "대피소 찾아요.",
+      "fact": "안전한 곳!"
+    },
+    {
+      "word": "wound",
+      "ipa": "/wuːnd/",
+      "meaning": "상처",
+      "emoji": "🩹",
+      "example": "A deep wound.",
+      "exampleKo": "깊은 상처.",
+      "fact": "다친 자국!"
+    },
+    {
+      "word": "hazard",
+      "ipa": "/ˈhæzərd/",
+      "meaning": "위험요소",
+      "emoji": "⚠️",
+      "example": "Fire hazard.",
+      "exampleKo": "화재 위험.",
+      "fact": "위험한 것!"
+    },
+    {
+      "word": "caution",
+      "ipa": "/ˈkɔːʃən/",
+      "meaning": "주의",
+      "emoji": "⚠️",
+      "example": "Use caution.",
+      "exampleKo": "주의하세요.",
+      "fact": "조심해요!"
+    },
+    {
+      "word": "beacon",
+      "ipa": "/ˈbiːkən/",
+      "meaning": "신호등, 등대 신호",
+      "emoji": "🚨",
+      "example": "A bright beacon.",
+      "exampleKo": "밝은 신호등.",
+      "fact": "멀리 보임!"
+    },
+    {
+      "word": "siren",
+      "ipa": "/ˈsaɪrən/",
+      "meaning": "사이렌",
+      "emoji": "🚨",
+      "example": "Loud siren.",
+      "exampleKo": "시끄러운 사이렌.",
+      "fact": "비상 소리!"
+    },
+    {
+      "word": "defend",
+      "ipa": "/dɪˈfend/",
+      "meaning": "방어하다",
+      "emoji": "🛡️",
+      "example": "Defend yourself.",
+      "exampleKo": "자신을 방어해요.",
+      "fact": "공격 막기!"
+    },
+    {
+      "word": "evacuate",
+      "ipa": "/ɪˈvækjueɪt/",
+      "meaning": "대피하다",
+      "emoji": "🏃",
+      "example": "Evacuate now!",
+      "exampleKo": "지금 대피!",
+      "fact": "위험할 때!"
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "date": "2026-08-18",
+  "folderName": "20260818",
+  "dayKo": "화",
+  "dayKoFull": "화요일",
+  "dayEn": "Tuesday",
+  "dayIdx": 2,
+  "theme": "음료 종류",
+  "themeEmoji": "🥤",
+  "vocabFileName": "혜원이_영단어_화요일_음료.html",
+  "quizFileName": "혜원이_영단어_화요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #e1bee7 0%, #ab47bc 45%, #4a148c 100%);",
+  "headerTitle": "🥤 음료 종류 🧃",
+  "words": [
+    {
+      "word": "mocktail",
+      "ipa": "/ˈmɒkteɪl/",
+      "meaning": "무알코올 칵테일",
+      "emoji": "🍹",
+      "example": "A fruity mocktail.",
+      "exampleKo": "과일 칵테일.",
+      "fact": "아이용 칵테일!"
+    },
+    {
+      "word": "soda",
+      "ipa": "/ˈsoʊdə/",
+      "meaning": "탄산음료",
+      "emoji": "🥤",
+      "example": "A cold soda.",
+      "exampleKo": "차가운 탄산.",
+      "fact": "톡 쏘는 음료!"
+    },
+    {
+      "word": "cola",
+      "ipa": "/ˈkoʊlə/",
+      "meaning": "콜라",
+      "emoji": "🥤",
+      "example": "A can of cola.",
+      "exampleKo": "콜라 한 캔.",
+      "fact": "검은 탄산!"
+    },
+    {
+      "word": "lemonade",
+      "ipa": "/ˌleməˈneɪd/",
+      "meaning": "레모네이드",
+      "emoji": "🍋",
+      "example": "Fresh lemonade.",
+      "exampleKo": "신선한 레모네이드.",
+      "fact": "레몬 음료!"
+    },
+    {
+      "word": "milkshake",
+      "ipa": "/ˈmɪlkʃeɪk/",
+      "meaning": "밀크쉐이크",
+      "emoji": "🥤",
+      "example": "Chocolate milkshake.",
+      "exampleKo": "초콜릿 쉐이크.",
+      "fact": "우유 + 아이스크림!"
+    },
+    {
+      "word": "latte",
+      "ipa": "/ˈlæteɪ/",
+      "meaning": "라떼",
+      "emoji": "☕",
+      "example": "A creamy latte.",
+      "exampleKo": "크리미한 라떼.",
+      "fact": "우유 커피!"
+    },
+    {
+      "word": "espresso",
+      "ipa": "/eˈspresoʊ/",
+      "meaning": "에스프레소",
+      "emoji": "☕",
+      "example": "Strong espresso.",
+      "exampleKo": "진한 에스프레소.",
+      "fact": "진한 커피!"
+    },
+    {
+      "word": "hot chocolate",
+      "ipa": "/hɒt ˈtʃɒklət/",
+      "meaning": "핫초콜릿",
+      "emoji": "☕",
+      "example": "Sweet hot chocolate.",
+      "exampleKo": "달콤한 핫초콜릿.",
+      "fact": "겨울 음료!"
+    },
+    {
+      "word": "yogurt drink",
+      "ipa": "/ˈjoʊɡərt drɪŋk/",
+      "meaning": "요구르트 음료",
+      "emoji": "🥛",
+      "example": "Strawberry yogurt drink.",
+      "exampleKo": "딸기 요구르트.",
+      "fact": "건강 음료!"
+    },
+    {
+      "word": "slush",
+      "ipa": "/slʌʃ/",
+      "meaning": "슬러시",
+      "emoji": "🥤",
+      "example": "Cherry slush.",
+      "exampleKo": "체리 슬러시.",
+      "fact": "얼음 음료!"
+    },
+    {
+      "word": "tea",
+      "ipa": "/tiː/",
+      "meaning": "차",
+      "emoji": "🍵",
+      "example": "Green tea.",
+      "exampleKo": "녹차.",
+      "fact": "잎으로 우림!"
+    },
+    {
+      "word": "herbal tea",
+      "ipa": "/ˈɜːrbəl tiː/",
+      "meaning": "허브차",
+      "emoji": "🌿",
+      "example": "Calm herbal tea.",
+      "exampleKo": "진정 허브차.",
+      "fact": "허브로 만든 차!"
+    },
+    {
+      "word": "iced tea",
+      "ipa": "/aɪst tiː/",
+      "meaning": "아이스티",
+      "emoji": "🧊",
+      "example": "Lemon iced tea.",
+      "exampleKo": "레몬 아이스티.",
+      "fact": "여름 음료!"
+    },
+    {
+      "word": "bubble tea",
+      "ipa": "/ˈbʌbəl tiː/",
+      "meaning": "버블티",
+      "emoji": "🧋",
+      "example": "Taro bubble tea.",
+      "exampleKo": "타로 버블티.",
+      "fact": "타피오카 펄!"
+    },
+    {
+      "word": "coconut water",
+      "ipa": "/ˈkoʊkənʌt ˈwɔːtər/",
+      "meaning": "코코넛 워터",
+      "emoji": "🥥",
+      "example": "Fresh coconut water.",
+      "exampleKo": "신선한 코코넛 워터.",
+      "fact": "천연 음료!"
+    },
+    {
+      "word": "sparkling water",
+      "ipa": "/ˈspɑːrklɪŋ ˈwɒtər/",
+      "meaning": "탄산수",
+      "emoji": "💧",
+      "example": "Refreshing sparkling water.",
+      "exampleKo": "상쾌한 탄산수.",
+      "fact": "버블 물!"
+    },
+    {
+      "word": "protein shake",
+      "ipa": "/ˈproʊtiːn ʃeɪk/",
+      "meaning": "단백질 쉐이크",
+      "emoji": "💪",
+      "example": "After workout protein shake.",
+      "exampleKo": "운동 후 쉐이크.",
+      "fact": "운동인 사랑!"
+    },
+    {
+      "word": "hot cocoa",
+      "ipa": "/hɒt ˈkoʊkoʊ/",
+      "meaning": "핫코코아",
+      "emoji": "☕",
+      "example": "Warm hot cocoa.",
+      "exampleKo": "따뜻한 코코아.",
+      "fact": "마시멜로 포함!"
+    },
+    {
+      "word": "barley tea",
+      "ipa": "/ˈbɑːrli tiː/",
+      "meaning": "보리차",
+      "emoji": "🍵",
+      "example": "Korean barley tea.",
+      "exampleKo": "한국 보리차.",
+      "fact": "한국 가정 음료!"
+    },
+    {
+      "word": "refreshment",
+      "ipa": "/rɪˈfreʃmənt/",
+      "meaning": "음료, 다과",
+      "emoji": "🥤",
+      "example": "Free refreshment.",
+      "exampleKo": "무료 음료.",
+      "fact": "마시는 것 통칭!"
+    }
+  ]
+}

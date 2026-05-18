@@ -1,0 +1,196 @@
+{
+  "date": "2026-08-04",
+  "folderName": "20260804",
+  "dayKo": "화",
+  "dayKoFull": "화요일",
+  "dayEn": "Tuesday",
+  "dayIdx": 2,
+  "theme": "양념과 향신료",
+  "themeEmoji": "🧂",
+  "vocabFileName": "혜원이_영단어_화요일_양념.html",
+  "quizFileName": "혜원이_영단어_화요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #fff8e1 0%, #ffd54f 45%, #f57f17 100%);",
+  "headerTitle": "🧂 양념과 향신료 🌶️",
+  "words": [
+    {
+      "word": "salt",
+      "ipa": "/sɔːlt/",
+      "meaning": "소금",
+      "emoji": "🧂",
+      "example": "Add salt.",
+      "exampleKo": "소금 넣어요.",
+      "fact": "짠 맛!"
+    },
+    {
+      "word": "pepper",
+      "ipa": "/ˈpepər/",
+      "meaning": "후추",
+      "emoji": "🌶️",
+      "example": "Black pepper.",
+      "exampleKo": "검은 후추.",
+      "fact": "매콤한 향!"
+    },
+    {
+      "word": "ginger",
+      "ipa": "/ˈdʒɪndʒər/",
+      "meaning": "생강",
+      "emoji": "🫚",
+      "example": "Ginger tea.",
+      "exampleKo": "생강차.",
+      "fact": "감기 좋아요!"
+    },
+    {
+      "word": "paprika",
+      "ipa": "/pəˈpriːkə/",
+      "meaning": "파프리카 가루",
+      "emoji": "🌶️",
+      "example": "Sweet paprika.",
+      "exampleKo": "단 파프리카.",
+      "fact": "붉은 가루!"
+    },
+    {
+      "word": "thyme",
+      "ipa": "/taɪm/",
+      "meaning": "타임 (허브)",
+      "emoji": "🌿",
+      "example": "Fresh thyme.",
+      "exampleKo": "신선한 타임.",
+      "fact": "요리 향초!"
+    },
+    {
+      "word": "sauce",
+      "ipa": "/sɔːs/",
+      "meaning": "소스",
+      "emoji": "🥫",
+      "example": "Tomato sauce.",
+      "exampleKo": "토마토 소스.",
+      "fact": "음식에 곁들임!"
+    },
+    {
+      "word": "syrup",
+      "ipa": "/ˈsɪrəp/",
+      "meaning": "시럽",
+      "emoji": "🍯",
+      "example": "Maple syrup.",
+      "exampleKo": "메이플 시럽.",
+      "fact": "달콤한 액체!"
+    },
+    {
+      "word": "vinegar",
+      "ipa": "/ˈvɪnɪɡər/",
+      "meaning": "식초",
+      "emoji": "🍶",
+      "example": "Apple vinegar.",
+      "exampleKo": "사과 식초.",
+      "fact": "신 맛!"
+    },
+    {
+      "word": "oil",
+      "ipa": "/ɔɪl/",
+      "meaning": "기름",
+      "emoji": "🫒",
+      "example": "Olive oil.",
+      "exampleKo": "올리브 기름.",
+      "fact": "요리에 사용!"
+    },
+    {
+      "word": "butter",
+      "ipa": "/ˈbʌtər/",
+      "meaning": "버터",
+      "emoji": "🧈",
+      "example": "Spread butter.",
+      "exampleKo": "버터 발라요.",
+      "fact": "빵에 발라요!"
+    },
+    {
+      "word": "mustard",
+      "ipa": "/ˈmʌstərd/",
+      "meaning": "겨자",
+      "emoji": "🌭",
+      "example": "Add mustard.",
+      "exampleKo": "겨자 넣어요.",
+      "fact": "톡 쏘는 노란 양념!"
+    },
+    {
+      "word": "mayonnaise",
+      "ipa": "/ˌmeɪəˈneɪz/",
+      "meaning": "마요네즈",
+      "emoji": "🥪",
+      "example": "Mayonnaise sauce.",
+      "exampleKo": "마요네즈 소스.",
+      "fact": "부드러운 흰 소스!"
+    },
+    {
+      "word": "ketchup",
+      "ipa": "/ˈketʃəp/",
+      "meaning": "케첩",
+      "emoji": "🍅",
+      "example": "Tomato ketchup.",
+      "exampleKo": "토마토 케첩.",
+      "fact": "빨간 소스!"
+    },
+    {
+      "word": "cinnamon",
+      "ipa": "/ˈsɪnəmən/",
+      "meaning": "계피",
+      "emoji": "🌰",
+      "example": "Cinnamon roll.",
+      "exampleKo": "계피롤.",
+      "fact": "달콤한 향!"
+    },
+    {
+      "word": "herb",
+      "ipa": "/ɜːrb/",
+      "meaning": "허브, 향초",
+      "emoji": "🌿",
+      "example": "Fresh herbs.",
+      "exampleKo": "신선한 허브.",
+      "fact": "향이 좋은 풀!"
+    },
+    {
+      "word": "chili",
+      "ipa": "/ˈtʃɪli/",
+      "meaning": "고추",
+      "emoji": "🌶️",
+      "example": "Hot chili.",
+      "exampleKo": "매운 고추.",
+      "fact": "매워요!"
+    },
+    {
+      "word": "basil",
+      "ipa": "/ˈbæzəl/",
+      "meaning": "바질",
+      "emoji": "🌿",
+      "example": "Fresh basil.",
+      "exampleKo": "신선한 바질.",
+      "fact": "이탈리아 향초!"
+    },
+    {
+      "word": "soy sauce",
+      "ipa": "/sɔɪ sɔːs/",
+      "meaning": "간장",
+      "emoji": "🥢",
+      "example": "Dip in soy sauce.",
+      "exampleKo": "간장에 찍어요.",
+      "fact": "한국 요리 필수!"
+    },
+    {
+      "word": "sesame",
+      "ipa": "/ˈsesəmi/",
+      "meaning": "참깨",
+      "emoji": "🌾",
+      "example": "Sesame oil.",
+      "exampleKo": "참기름.",
+      "fact": "고소한 향!"
+    },
+    {
+      "word": "spice",
+      "ipa": "/spaɪs/",
+      "meaning": "향신료",
+      "emoji": "🧂",
+      "example": "Add spices.",
+      "exampleKo": "향신료 넣어요.",
+      "fact": "맛 더해요!"
+    }
+  ]
+}

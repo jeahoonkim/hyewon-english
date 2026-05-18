@@ -1,0 +1,196 @@
+{
+  "date": "2026-08-25",
+  "folderName": "20260825",
+  "dayKo": "화",
+  "dayKoFull": "화요일",
+  "dayEn": "Tuesday",
+  "dayIdx": 2,
+  "theme": "미디어와 스트리밍",
+  "themeEmoji": "📺",
+  "vocabFileName": "혜원이_영단어_화요일_미디어.html",
+  "quizFileName": "혜원이_영단어_화요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #fce4ec 0%, #ec407a 45%, #ad1457 100%);",
+  "headerTitle": "📺 미디어와 스트리밍 🎬",
+  "words": [
+    {
+      "word": "broadcastlive",
+      "ipa": "/ˈbrɔːdkæst laɪv/",
+      "meaning": "생중계하다",
+      "emoji": "🔴",
+      "example": "Broadcast live.",
+      "exampleKo": "생중계해요.",
+      "fact": "실시간!"
+    },
+    {
+      "word": "broadcast",
+      "ipa": "/ˈbrɔːdkæst/",
+      "meaning": "방송",
+      "emoji": "📡",
+      "example": "Live broadcast.",
+      "exampleKo": "생방송.",
+      "fact": "방송하기!"
+    },
+    {
+      "word": "subscribe",
+      "ipa": "/səbˈskraɪb/",
+      "meaning": "구독하다",
+      "emoji": "🔔",
+      "example": "Subscribe to the channel.",
+      "exampleKo": "채널 구독.",
+      "fact": "유튜브 구독!"
+    },
+    {
+      "word": "unsubscribe",
+      "ipa": "/ˌʌnsəbˈskraɪb/",
+      "meaning": "구독 취소",
+      "emoji": "❌",
+      "example": "Unsubscribe button.",
+      "exampleKo": "구독 취소 버튼.",
+      "fact": "끊기!"
+    },
+    {
+      "word": "playlist",
+      "ipa": "/ˈpleɪlɪst/",
+      "meaning": "재생 목록",
+      "emoji": "🎵",
+      "example": "My playlist.",
+      "exampleKo": "내 재생목록.",
+      "fact": "좋아하는 곡들!"
+    },
+    {
+      "word": "livestream",
+      "ipa": "/ˈlaɪvstriːm/",
+      "meaning": "생방송",
+      "emoji": "🔴",
+      "example": "A livestream show.",
+      "exampleKo": "생방송.",
+      "fact": "실시간!"
+    },
+    {
+      "word": "podcast",
+      "ipa": "/ˈpɒdkæst/",
+      "meaning": "팟캐스트",
+      "emoji": "🎙️",
+      "example": "Listen to a podcast.",
+      "exampleKo": "팟캐스트 들어요.",
+      "fact": "오디오 방송!"
+    },
+    {
+      "word": "vlog",
+      "ipa": "/vlɒɡ/",
+      "meaning": "브이로그",
+      "emoji": "🎥",
+      "example": "Make a vlog.",
+      "exampleKo": "브이로그 찍어요.",
+      "fact": "비디오 + 블로그!"
+    },
+    {
+      "word": "preview",
+      "ipa": "/ˈpriːvjuː/",
+      "meaning": "미리보기",
+      "emoji": "👁️",
+      "example": "Movie preview.",
+      "exampleKo": "영화 미리보기.",
+      "fact": "살짝 보기!"
+    },
+    {
+      "word": "thumbnail",
+      "ipa": "/ˈθʌmneɪl/",
+      "meaning": "썸네일",
+      "emoji": "🖼️",
+      "example": "Pretty thumbnail.",
+      "exampleKo": "예쁜 썸네일.",
+      "fact": "미리보기 이미지!"
+    },
+    {
+      "word": "viewer",
+      "ipa": "/ˈvjuːər/",
+      "meaning": "시청자",
+      "emoji": "👁️",
+      "example": "Many viewers.",
+      "exampleKo": "많은 시청자.",
+      "fact": "보는 사람!"
+    },
+    {
+      "word": "follower",
+      "ipa": "/ˈfɒloʊər/",
+      "meaning": "팔로워",
+      "emoji": "👥",
+      "example": "Million followers.",
+      "exampleKo": "100만 팔로워.",
+      "fact": "SNS 팬!"
+    },
+    {
+      "word": "streaming service",
+      "ipa": "/ˈstriːmɪŋ ˈsɜːrvɪs/",
+      "meaning": "스트리밍 서비스",
+      "emoji": "📺",
+      "example": "Use a streaming service.",
+      "exampleKo": "스트리밍 서비스 사용.",
+      "fact": "Netflix 같은!"
+    },
+    {
+      "word": "episode",
+      "ipa": "/ˈepɪsoʊd/",
+      "meaning": "에피소드",
+      "emoji": "🎞️",
+      "example": "Episode 1.",
+      "exampleKo": "1화.",
+      "fact": "드라마 한 회!"
+    },
+    {
+      "word": "season",
+      "ipa": "/ˈsiːzən/",
+      "meaning": "시즌",
+      "emoji": "📅",
+      "example": "Season 2.",
+      "exampleKo": "시즌 2.",
+      "fact": "한 시즌 = 여러 회!"
+    },
+    {
+      "word": "binge watch",
+      "ipa": "/bɪndʒ wɒtʃ/",
+      "meaning": "몰아 보기",
+      "emoji": "🍿",
+      "example": "Binge watch a show.",
+      "exampleKo": "드라마 몰아봐요.",
+      "fact": "한꺼번에 보기!"
+    },
+    {
+      "word": "upload video",
+      "ipa": "/ˈʌploʊd ˈvɪdioʊ/",
+      "meaning": "영상 업로드",
+      "emoji": "⬆️",
+      "example": "Upload a video.",
+      "exampleKo": "영상 올려요.",
+      "fact": "인터넷에 올리기!"
+    },
+    {
+      "word": "download video",
+      "ipa": "/ˈdaʊnloʊd ˈvɪdioʊ/",
+      "meaning": "영상 다운로드",
+      "emoji": "⬇️",
+      "example": "Download a video.",
+      "exampleKo": "영상 받아요.",
+      "fact": "내 기기에!"
+    },
+    {
+      "word": "viral",
+      "ipa": "/ˈvaɪrəl/",
+      "meaning": "인터넷에서 화제인",
+      "emoji": "🔥",
+      "example": "Viral video.",
+      "exampleKo": "화제의 영상.",
+      "fact": "빠르게 퍼지는!"
+    },
+    {
+      "word": "trend",
+      "ipa": "/trend/",
+      "meaning": "유행",
+      "emoji": "📈",
+      "example": "A new trend.",
+      "exampleKo": "새로운 유행.",
+      "fact": "인기 흐름!"
+    }
+  ]
+}

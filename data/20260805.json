@@ -1,0 +1,196 @@
+{
+  "date": "2026-08-05",
+  "folderName": "20260805",
+  "dayKo": "수",
+  "dayKoFull": "수요일",
+  "dayEn": "Wednesday",
+  "dayIdx": 3,
+  "theme": "디저트와 간식",
+  "themeEmoji": "🍩",
+  "vocabFileName": "혜원이_영단어_수요일_디저트.html",
+  "quizFileName": "혜원이_영단어_수요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #fce4ec 0%, #f48fb1 45%, #c2185b 100%);",
+  "headerTitle": "🍩 디저트와 간식 🍪",
+  "words": [
+    {
+      "word": "donut",
+      "ipa": "/ˈdoʊnʌt/",
+      "meaning": "도넛",
+      "emoji": "🍩",
+      "example": "A sweet donut.",
+      "exampleKo": "달콤한 도넛.",
+      "fact": "동그란 빵!"
+    },
+    {
+      "word": "tart",
+      "ipa": "/tɑːrt/",
+      "meaning": "타르트",
+      "emoji": "🥧",
+      "example": "A fruit tart.",
+      "exampleKo": "과일 타르트.",
+      "fact": "미니 파이!"
+    },
+    {
+      "word": "pie",
+      "ipa": "/paɪ/",
+      "meaning": "파이",
+      "emoji": "🥧",
+      "example": "Apple pie.",
+      "exampleKo": "사과 파이.",
+      "fact": "속이 가득!"
+    },
+    {
+      "word": "pudding",
+      "ipa": "/ˈpʊdɪŋ/",
+      "meaning": "푸딩",
+      "emoji": "🍮",
+      "example": "Vanilla pudding.",
+      "exampleKo": "바닐라 푸딩.",
+      "fact": "말랑말랑!"
+    },
+    {
+      "word": "brownie",
+      "ipa": "/ˈbraʊni/",
+      "meaning": "브라우니",
+      "emoji": "🍫",
+      "example": "Chocolate brownie.",
+      "exampleKo": "초콜릿 브라우니.",
+      "fact": "진한 케이크!"
+    },
+    {
+      "word": "muffin",
+      "ipa": "/ˈmʌfɪn/",
+      "meaning": "머핀",
+      "emoji": "🧁",
+      "example": "Blueberry muffin.",
+      "exampleKo": "블루베리 머핀.",
+      "fact": "작은 컵 케이크!"
+    },
+    {
+      "word": "waffle",
+      "ipa": "/ˈwɒfəl/",
+      "meaning": "와플",
+      "emoji": "🧇",
+      "example": "Crispy waffle.",
+      "exampleKo": "바삭한 와플.",
+      "fact": "격자 무늬!"
+    },
+    {
+      "word": "pancake",
+      "ipa": "/ˈpænkeɪk/",
+      "meaning": "팬케이크",
+      "emoji": "🥞",
+      "example": "Fluffy pancakes.",
+      "exampleKo": "폭신한 팬케이크.",
+      "fact": "아침 식사!"
+    },
+    {
+      "word": "cheesecake",
+      "ipa": "/ˈtʃiːzkeɪk/",
+      "meaning": "치즈케이크",
+      "emoji": "🍰",
+      "example": "Creamy cheesecake.",
+      "exampleKo": "부드러운 치즈케이크.",
+      "fact": "진한 맛!"
+    },
+    {
+      "word": "macaron",
+      "ipa": "/ˌmækəˈrɒn/",
+      "meaning": "마카롱",
+      "emoji": "🍬",
+      "example": "Pink macaron.",
+      "exampleKo": "분홍 마카롱.",
+      "fact": "프랑스 디저트!"
+    },
+    {
+      "word": "sundae",
+      "ipa": "/ˈsʌndeɪ/",
+      "meaning": "선데 (아이스크림)",
+      "emoji": "🍨",
+      "example": "Chocolate sundae.",
+      "exampleKo": "초콜릿 선데.",
+      "fact": "토핑 가득!"
+    },
+    {
+      "word": "jelly",
+      "ipa": "/ˈdʒeli/",
+      "meaning": "젤리",
+      "emoji": "🍬",
+      "example": "Fruit jelly.",
+      "exampleKo": "과일 젤리.",
+      "fact": "말랑한 간식!"
+    },
+    {
+      "word": "caramel",
+      "ipa": "/ˈkærəməl/",
+      "meaning": "카라멜",
+      "emoji": "🍯",
+      "example": "Caramel candy.",
+      "exampleKo": "카라멜 사탕.",
+      "fact": "달콤·진한!"
+    },
+    {
+      "word": "marshmallow",
+      "ipa": "/ˈmɑːrʃmæloʊ/",
+      "meaning": "마시멜로",
+      "emoji": "☁️",
+      "example": "Soft marshmallow.",
+      "exampleKo": "부드러운 마시멜로.",
+      "fact": "구름같이 폭신!"
+    },
+    {
+      "word": "lollipop",
+      "ipa": "/ˈlɒlipɒp/",
+      "meaning": "막대사탕",
+      "emoji": "🍭",
+      "example": "A big lollipop.",
+      "exampleKo": "큰 막대사탕.",
+      "fact": "막대기에 꽂힌!"
+    },
+    {
+      "word": "bubblegum",
+      "ipa": "/ˈbʌbəlɡʌm/",
+      "meaning": "풍선껌",
+      "emoji": "🫧",
+      "example": "Chew bubblegum.",
+      "exampleKo": "풍선껌 씹어요.",
+      "fact": "풍선 만들어요!"
+    },
+    {
+      "word": "sorbet",
+      "ipa": "/sɔːrˈbeɪ/",
+      "meaning": "셔벗",
+      "emoji": "🍧",
+      "example": "Lemon sorbet.",
+      "exampleKo": "레몬 셔벗.",
+      "fact": "얼린 디저트!"
+    },
+    {
+      "word": "frosting",
+      "ipa": "/ˈfrɒstɪŋ/",
+      "meaning": "케이크 장식 크림",
+      "emoji": "🍰",
+      "example": "Vanilla frosting.",
+      "exampleKo": "바닐라 크림.",
+      "fact": "케이크 위!"
+    },
+    {
+      "word": "sprinkles",
+      "ipa": "/ˈsprɪŋkəlz/",
+      "meaning": "토핑 (작은 알갱이)",
+      "emoji": "🌈",
+      "example": "Add sprinkles.",
+      "exampleKo": "토핑 뿌려요.",
+      "fact": "색색 알갱이!"
+    },
+    {
+      "word": "yum",
+      "ipa": "/jʌm/",
+      "meaning": "맛있다 (감탄사)",
+      "emoji": "😋",
+      "example": "Yum, yum!",
+      "exampleKo": "냠냠!",
+      "fact": "맛있을 때!"
+    }
+  ]
+}
