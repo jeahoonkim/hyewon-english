@@ -453,7 +453,7 @@
       <div class="sub">Week 15 · 모양·직업·교통·숫자·축제 총정리</div>
     </div>
     <div class="hero">
-      <div class="mascot">🦜</div>
+      <div class="mascot"><svg viewBox="0 0 120 132" width="108" height="119" xmlns="http://www.w3.org/2000/svg" aria-label="앵무새 폴리"> <defs> <radialGradient id="plyBody" cx="38%" cy="30%" r="82%"> <stop offset="0%" stop-color="#ff90c4"/> <stop offset="100%" stop-color="#e8348e"/> </radialGradient> <radialGradient id="plyBeak" cx="35%" cy="30%" r="85%"> <stop offset="0%" stop-color="#ffc24d"/> <stop offset="100%" stop-color="#f0820f"/> </radialGradient> </defs> <path d="M45 94 Q38 122 48 128 Q52 109 57 97 Z" fill="#3f8ff0"/> <path d="M54 97 Q52 124 61 127 Q61 110 62 98 Z" fill="#ffd23f"/> <path d="M61 96 Q66 121 73 123 Q67 107 66 97 Z" fill="#ff5d8f"/> <rect x="19" y="111" width="82" height="10" rx="5" fill="#b97f4f"/> <rect x="19" y="116" width="82" height="5" rx="2.5" fill="#9c6638"/> <path d="M49 104 L49 113 M44 113 L54 113" stroke="#f0820f" stroke-width="5" stroke-linecap="round" fill="none"/> <path d="M69 104 L69 113 M64 113 L74 113" stroke="#f0820f" stroke-width="5" stroke-linecap="round" fill="none"/> <ellipse cx="57" cy="77" rx="33" ry="34" fill="url(#plyBody)"/> <ellipse cx="52" cy="85" rx="19" ry="21" fill="#ffe1ee"/> <path d="M29 55 Q15 80 29 103 Q42 96 44 65 Z" fill="#13a892"/> <path d="M33 54 Q22 78 34 99 Q45 91 46 62 Z" fill="#3fc7e8"/> <path d="M37 54 Q30 75 40 94 Q48 85 48 60 Z" fill="#ffd23f"/> <circle cx="65" cy="42" r="28" fill="url(#plyBody)"/> <path d="M54 19 Q47 4 43 11 Q49 15 51 24 Z" fill="#ffd23f"/> <path d="M63 14 Q61 -1 55 4 Q60 10 60 21 Z" fill="#ff5d8f"/> <path d="M71 17 Q75 2 80 9 Q73 12 76 24 Z" fill="#3f8ff0"/> <ellipse cx="73" cy="46" rx="18" ry="17" fill="#fff4f9"/> <circle cx="60" cy="53" r="5.5" fill="#ff9ec6" opacity="0.75"/> <circle cx="75" cy="42" r="9" fill="#ffffff"/> <circle cx="76.5" cy="43" r="6" fill="#2b2742"/> <circle cx="79" cy="40.5" r="2.3" fill="#ffffff"/> <path d="M86 43 Q107 40 103 55 Q99 65 87 60 Q82 51 86 43 Z" fill="url(#plyBeak)"/> <path d="M88 58 Q95 64 91 68 Q85 65 86 57 Z" fill="#df6d0c"/> </svg></div>
       <div class="attempt-info" id="attemptBadge">🎲 첫 번째 도전!</div>
       <div class="speech">
         혜원아, 아침에 외운 20개 단어 <b>얼마나 기억하고 있을까?</b><br>
@@ -1130,14 +1130,21 @@ function renderQuestion() {
   autoSpeakWord(q.word);
 }
 
-// ═══════ 🔊 통일 발음 엔진 v3 — 모든 브라우저 동일 음성 ═══════
-// 구글 음성 파일을 받아 재생 → 어느 기기/브라우저든 같은 목소리·같은 음량
-// 음성 파일이 안 되면 브라우저 내장 음성으로 자동 백업
-var TTS_VOLUME = 0.7;                 // 0.0 ~ 1.0  모든 기기 공통 음량
-var TTS_SILENT = 'data:audio/wav;base64,UklGRrQBAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YZABAACAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA';
+// ═══════ 🔊 발음 엔진 v4 — 브라우저별 음량 자동 보정 ═══════
+// 인터넷 음성 파일에 의존하지 않고, 브라우저마다 음량을 보정해서
+// Edge는 크게·Chrome은 작게 들리던 문제를 균일하게 맞춤
+function _ttsBrowserVolume() {
+  var ua = (navigator && navigator.userAgent) ? navigator.userAgent : '';
+  if (/Edg/i.test(ua))          return 0.5;   // Edge: 음성이 커서 낮춤
+  if (/Firefox/i.test(ua))      return 0.9;
+  if (/CriOS|Chrome/i.test(ua)) return 1.0;   // Chrome: 최대로
+  if (/Safari/i.test(ua))       return 0.95;  // Safari/아이폰
+  return 0.85;
+}
+var TTS_VOLUME = _ttsBrowserVolume();
+var TTS_RATE = 0.85;
 var _ttsVoices = [];
 var _ttsReady = false;
-var _ttsAudio = (typeof Audio !== 'undefined') ? new Audio() : null;
 
 function _ttsLoadVoices() {
   if (!('speechSynthesis' in window)) return;
@@ -1150,77 +1157,77 @@ if ('speechSynthesis' in window) {
   }
 }
 
-// 첫 터치/클릭 때 오디오 잠금 해제 (모바일 자동재생 정책 대응)
+// 첫 터치/클릭 때 음성 준비 (모바일 정책 대응)
 function _ttsPrime() {
   if (_ttsReady) return;
   _ttsReady = true;
-  if (_ttsAudio) {
-    try {
-      _ttsAudio.src = TTS_SILENT;
-      _ttsAudio.volume = 0;
-      var pr = _ttsAudio.play();
-      if (pr && pr.catch) pr.catch(function(){});
-    } catch(e) {}
-  }
   try {
     if ('speechSynthesis' in window) {
-      var w = new SpeechSynthesisUtterance(' ');
-      w.volume = 0.01;
-      window.speechSynthesis.speak(w);
+      _ttsLoadVoices();
+      var warm = new SpeechSynthesisUtterance(' ');
+      warm.volume = 0.01;
+      window.speechSynthesis.speak(warm);
     }
   } catch(e) {}
 }
 document.addEventListener('click', _ttsPrime, { capture: true });
 document.addEventListener('touchstart', _ttsPrime, { capture: true, passive: true });
 
-// 브라우저 내장 음성 (백업)
-function _ttsFallback(text, onDone) {
-  if (!('speechSynthesis' in window)) { if (onDone) onDone(); return; }
-  try {
-    window.speechSynthesis.cancel();
-    var u = new SpeechSynthesisUtterance(text);
-    u.lang = 'en-US'; u.rate = 0.85; u.pitch = 1.05; u.volume = TTS_VOLUME;
-    if (_ttsVoices.length === 0) _ttsLoadVoices();
-    var v = null, i;
-    for (i = 0; i < _ttsVoices.length; i++) {
-      if (_ttsVoices[i].lang === 'en-US') { v = _ttsVoices[i]; break; }
-    }
-    if (!v) {
-      for (i = 0; i < _ttsVoices.length; i++) {
-        if (_ttsVoices[i].lang && _ttsVoices[i].lang.indexOf('en') === 0) { v = _ttsVoices[i]; break; }
-      }
-    }
-    if (v) u.voice = v;
-    u.onend = function(){ if (onDone) onDone(); };
-    u.onerror = function(){ if (onDone) onDone(); };
-    window.speechSynthesis.speak(u);
-    setTimeout(function(){ try { window.speechSynthesis.resume(); } catch(e){} }, 120);
-  } catch(e) { if (onDone) onDone(); }
+function _ttsPickVoice() {
+  if (_ttsVoices.length === 0) _ttsLoadVoices();
+  var i;
+  for (i = 0; i < _ttsVoices.length; i++) {
+    if (_ttsVoices[i].lang === 'en-US') return _ttsVoices[i];
+  }
+  for (i = 0; i < _ttsVoices.length; i++) {
+    if (_ttsVoices[i].lang && _ttsVoices[i].lang.indexOf('en') === 0) return _ttsVoices[i];
+  }
+  return null;
 }
 
-// 핵심: 통일 음성 파일 재생 → 실패 시 백업
+// 핵심: 브라우저 음성으로 안정 재생 (음량 보정 + 자동 재시도)
 function playTTS(text, onStart, onDone) {
-  if (!text) { if (onDone) onDone(); return; }
+  if (!text || !('speechSynthesis' in window)) {
+    if (onStart) onStart();
+    if (onDone) onDone();
+    return;
+  }
   text = String(text).trim();
-  try { if (_ttsAudio) _ttsAudio.pause(); } catch(e) {}
-  try { if ('speechSynthesis' in window) window.speechSynthesis.cancel(); } catch(e) {}
-
-  var settled = false;
-  function done() { if (settled) return; settled = true; if (onDone) onDone(); }
-  function fallback() { if (settled) return; settled = true; _ttsFallback(text, function(){ if (onDone) onDone(); }); }
-
+  try { window.speechSynthesis.cancel(); } catch(e) {}
   if (onStart) onStart();
 
-  if (!_ttsAudio) { fallback(); return; }
-  var audio = _ttsAudio;
-  audio.onended = function(){ done(); };
-  audio.onerror = function(){ fallback(); };
-  try {
-    audio.volume = TTS_VOLUME;
-    audio.src = 'https://translate.google.com/translate_tts?ie=UTF-8&tl=en&client=tw-ob&q=' + encodeURIComponent(text);
-    var p = audio.play();
-    if (p && p.catch) { p.catch(function(){ fallback(); }); }
-  } catch(e) { fallback(); }
+  var started = false, finished = false;
+  function finish() { if (finished) return; finished = true; if (onDone) onDone(); }
+
+  function doSpeak(attempt) {
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-US';
+    u.rate = TTS_RATE;
+    u.pitch = 1.05;
+    u.volume = TTS_VOLUME;
+    if (_ttsVoices.length === 0) _ttsLoadVoices();
+    var v = _ttsPickVoice();
+    if (v) u.voice = v;
+    u.onstart = function() { started = true; };
+    u.onend = function() { finish(); };
+    u.onerror = function() { finish(); };
+    try { window.speechSynthesis.speak(u); } catch(e) { finish(); return; }
+    // Chrome 멈춤 버그 방지
+    setTimeout(function() { try { window.speechSynthesis.resume(); } catch(e) {} }, 90);
+    // 700ms 안에 시작 안 하면 1번 재시도
+    setTimeout(function() {
+      if (!started && !finished) {
+        if (attempt < 2) {
+          try { window.speechSynthesis.cancel(); } catch(e) {}
+          setTimeout(function() { doSpeak(attempt + 1); }, 70);
+        } else {
+          finish();
+        }
+      }
+    }, 700);
+  }
+  // cancel 직후 바로 speak하면 Chrome이 무시 → 살짝 지연
+  setTimeout(function() { doSpeak(1); }, 60);
 }
 
 function speakWordAgain(word) {

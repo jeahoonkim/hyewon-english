@@ -368,7 +368,12 @@ function syncCouponUse(couponId) {
 }
 
 function syncSetState(state) {
-  if (state.points !== undefined) _setSyncValue('points', state.points);
+  if (state.points !== undefined) {
+    // 포인트는 최고값 유지 (max-wins) — 어느 기기에서 와도 점수가 줄지 않음
+    var _curPts = parseInt(_getSyncValue('points') || '0');
+    var _newPts = parseInt(state.points) || 0;
+    _setSyncValue('points', Math.max(_curPts, _newPts));
+  }
   if (state.wallet !== undefined) _setSyncValue('wallet', state.wallet);
   if (state.streak !== undefined) _setSyncValue('streak', state.streak);
   if (state.lucky_received_date !== undefined) _setSyncValue('lucky_received_date', state.lucky_received_date);

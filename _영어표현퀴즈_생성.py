@@ -3709,14 +3709,21 @@ let pointsEarned = 0;
 let answered = false;
 
 // ═══════ 🔊 발음 시스템 v3 (통일 음성) ═══════
-// ═══════ 🔊 통일 발음 엔진 v3 — 모든 브라우저 동일 음성 ═══════
-// 구글 음성 파일을 받아 재생 → 어느 기기/브라우저든 같은 목소리·같은 음량
-// 음성 파일이 안 되면 브라우저 내장 음성으로 자동 백업
-var TTS_VOLUME = 0.7;                 // 0.0 ~ 1.0  모든 기기 공통 음량
-var TTS_SILENT = 'data:audio/wav;base64,UklGRrQBAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YZABAACAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA';
+// ═══════ 🔊 발음 엔진 v4 — 브라우저별 음량 자동 보정 ═══════
+// 인터넷 음성 파일에 의존하지 않고, 브라우저마다 음량을 보정해서
+// Edge는 크게·Chrome은 작게 들리던 문제를 균일하게 맞춤
+function _ttsBrowserVolume() {{
+  var ua = (navigator && navigator.userAgent) ? navigator.userAgent : '';
+  if (/Edg/i.test(ua))          return 0.5;   // Edge: 음성이 커서 낮춤
+  if (/Firefox/i.test(ua))      return 0.9;
+  if (/CriOS|Chrome/i.test(ua)) return 1.0;   // Chrome: 최대로
+  if (/Safari/i.test(ua))       return 0.95;  // Safari/아이폰
+  return 0.85;
+}}
+var TTS_VOLUME = _ttsBrowserVolume();
+var TTS_RATE = 0.85;
 var _ttsVoices = [];
 var _ttsReady = false;
-var _ttsAudio = (typeof Audio !== 'undefined') ? new Audio() : null;
 
 function _ttsLoadVoices() {{
   if (!('speechSynthesis' in window)) return;
@@ -3729,77 +3736,77 @@ if ('speechSynthesis' in window) {{
   }}
 }}
 
-// 첫 터치/클릭 때 오디오 잠금 해제 (모바일 자동재생 정책 대응)
+// 첫 터치/클릭 때 음성 준비 (모바일 정책 대응)
 function _ttsPrime() {{
   if (_ttsReady) return;
   _ttsReady = true;
-  if (_ttsAudio) {{
-    try {{
-      _ttsAudio.src = TTS_SILENT;
-      _ttsAudio.volume = 0;
-      var pr = _ttsAudio.play();
-      if (pr && pr.catch) pr.catch(function(){{}});
-    }} catch(e) {{}}
-  }}
   try {{
     if ('speechSynthesis' in window) {{
-      var w = new SpeechSynthesisUtterance(' ');
-      w.volume = 0.01;
-      window.speechSynthesis.speak(w);
+      _ttsLoadVoices();
+      var warm = new SpeechSynthesisUtterance(' ');
+      warm.volume = 0.01;
+      window.speechSynthesis.speak(warm);
     }}
   }} catch(e) {{}}
 }}
 document.addEventListener('click', _ttsPrime, {{ capture: true }});
 document.addEventListener('touchstart', _ttsPrime, {{ capture: true, passive: true }});
 
-// 브라우저 내장 음성 (백업)
-function _ttsFallback(text, onDone) {{
-  if (!('speechSynthesis' in window)) {{ if (onDone) onDone(); return; }}
-  try {{
-    window.speechSynthesis.cancel();
-    var u = new SpeechSynthesisUtterance(text);
-    u.lang = 'en-US'; u.rate = 0.85; u.pitch = 1.05; u.volume = TTS_VOLUME;
-    if (_ttsVoices.length === 0) _ttsLoadVoices();
-    var v = null, i;
-    for (i = 0; i < _ttsVoices.length; i++) {{
-      if (_ttsVoices[i].lang === 'en-US') {{ v = _ttsVoices[i]; break; }}
-    }}
-    if (!v) {{
-      for (i = 0; i < _ttsVoices.length; i++) {{
-        if (_ttsVoices[i].lang && _ttsVoices[i].lang.indexOf('en') === 0) {{ v = _ttsVoices[i]; break; }}
-      }}
-    }}
-    if (v) u.voice = v;
-    u.onend = function(){{ if (onDone) onDone(); }};
-    u.onerror = function(){{ if (onDone) onDone(); }};
-    window.speechSynthesis.speak(u);
-    setTimeout(function(){{ try {{ window.speechSynthesis.resume(); }} catch(e){{}} }}, 120);
-  }} catch(e) {{ if (onDone) onDone(); }}
+function _ttsPickVoice() {{
+  if (_ttsVoices.length === 0) _ttsLoadVoices();
+  var i;
+  for (i = 0; i < _ttsVoices.length; i++) {{
+    if (_ttsVoices[i].lang === 'en-US') return _ttsVoices[i];
+  }}
+  for (i = 0; i < _ttsVoices.length; i++) {{
+    if (_ttsVoices[i].lang && _ttsVoices[i].lang.indexOf('en') === 0) return _ttsVoices[i];
+  }}
+  return null;
 }}
 
-// 핵심: 통일 음성 파일 재생 → 실패 시 백업
+// 핵심: 브라우저 음성으로 안정 재생 (음량 보정 + 자동 재시도)
 function playTTS(text, onStart, onDone) {{
-  if (!text) {{ if (onDone) onDone(); return; }}
+  if (!text || !('speechSynthesis' in window)) {{
+    if (onStart) onStart();
+    if (onDone) onDone();
+    return;
+  }}
   text = String(text).trim();
-  try {{ if (_ttsAudio) _ttsAudio.pause(); }} catch(e) {{}}
-  try {{ if ('speechSynthesis' in window) window.speechSynthesis.cancel(); }} catch(e) {{}}
-
-  var settled = false;
-  function done() {{ if (settled) return; settled = true; if (onDone) onDone(); }}
-  function fallback() {{ if (settled) return; settled = true; _ttsFallback(text, function(){{ if (onDone) onDone(); }}); }}
-
+  try {{ window.speechSynthesis.cancel(); }} catch(e) {{}}
   if (onStart) onStart();
 
-  if (!_ttsAudio) {{ fallback(); return; }}
-  var audio = _ttsAudio;
-  audio.onended = function(){{ done(); }};
-  audio.onerror = function(){{ fallback(); }};
-  try {{
-    audio.volume = TTS_VOLUME;
-    audio.src = 'https://translate.google.com/translate_tts?ie=UTF-8&tl=en&client=tw-ob&q=' + encodeURIComponent(text);
-    var p = audio.play();
-    if (p && p.catch) {{ p.catch(function(){{ fallback(); }}); }}
-  }} catch(e) {{ fallback(); }}
+  var started = false, finished = false;
+  function finish() {{ if (finished) return; finished = true; if (onDone) onDone(); }}
+
+  function doSpeak(attempt) {{
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-US';
+    u.rate = TTS_RATE;
+    u.pitch = 1.05;
+    u.volume = TTS_VOLUME;
+    if (_ttsVoices.length === 0) _ttsLoadVoices();
+    var v = _ttsPickVoice();
+    if (v) u.voice = v;
+    u.onstart = function() {{ started = true; }};
+    u.onend = function() {{ finish(); }};
+    u.onerror = function() {{ finish(); }};
+    try {{ window.speechSynthesis.speak(u); }} catch(e) {{ finish(); return; }}
+    // Chrome 멈춤 버그 방지
+    setTimeout(function() {{ try {{ window.speechSynthesis.resume(); }} catch(e) {{}} }}, 90);
+    // 700ms 안에 시작 안 하면 1번 재시도
+    setTimeout(function() {{
+      if (!started && !finished) {{
+        if (attempt < 2) {{
+          try {{ window.speechSynthesis.cancel(); }} catch(e) {{}}
+          setTimeout(function() {{ doSpeak(attempt + 1); }}, 70);
+        }} else {{
+          finish();
+        }}
+      }}
+    }}, 700);
+  }}
+  // cancel 직후 바로 speak하면 Chrome이 무시 → 살짝 지연
+  setTimeout(function() {{ doSpeak(1); }}, 60);
 }}
 
 function speakSentence(sentence, btn) {{

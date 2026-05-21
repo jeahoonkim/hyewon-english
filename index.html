@@ -3414,17 +3414,18 @@ function applySheetState(data) {
   if (!data) return;
   console.log('[🌐 동기화] 시트에서 받음:', data);
 
-  // ─── 포인트: 시트가 마스터 (시트가 0인 경우만 로컬 보호) ───
+  // ─── 포인트: 최고 점수 기준 (max-wins) — 어느 기기든 점수가 줄지 않음 ───
   if (typeof data.points === 'number' && data.points >= 0) {
     const localPoints = parseInt(localStorage.getItem('hyewon_points') || '0');
     const sheetPoints = data.points;
-    if (sheetPoints === 0 && localPoints > 0) {
-      // 시트가 0 → 초기화 안 된 상태로 보고 로컬 보존 + 시트 복구
-      console.log('[🌐 동기화] 시트가 0 - 로컬 ' + localPoints + 'P 보존');
+    const bestPoints = Math.max(localPoints, sheetPoints);
+    localStorage.setItem('hyewon_points', String(bestPoints));
+    if (localPoints > sheetPoints) {
+      // 로컬이 더 높음 → 시트도 끌어올려서 모든 기기 통일
+      console.log('[🌐 동기화] 로컬 ' + localPoints + 'P > 시트 ' + sheetPoints + 'P → 시트 갱신');
       syncStateToSheet({ points: localPoints });
     } else {
-      // 시트가 마스터
-      localStorage.setItem('hyewon_points', String(sheetPoints));
+      console.log('[🌐 동기화] 포인트 ' + bestPoints + 'P 로 통일');
     }
   }
 
