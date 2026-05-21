@@ -1,0 +1,196 @@
+{
+  "date": "2026-09-01",
+  "folderName": "20260901",
+  "dayKo": "화",
+  "dayKoFull": "화요일",
+  "dayEn": "Tuesday",
+  "dayIdx": 2,
+  "theme": "초가을 풍경",
+  "themeEmoji": "🍂",
+  "vocabFileName": "혜원이_영단어_화요일_초가을.html",
+  "quizFileName": "혜원이_영단어_화요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #fff3e0 0%, #ff9800 45%, #bf360c 100%);",
+  "headerTitle": "🍂 초가을 풍경 🌾",
+  "words": [
+    {
+      "word": "earlyfall",
+      "ipa": "/ˈɜːrli fɔːl/",
+      "meaning": "초가을",
+      "emoji": "🍂",
+      "example": "Cool early fall.",
+      "exampleKo": "시원한 초가을.",
+      "fact": "가을 시작!"
+    },
+    {
+      "word": "foliage",
+      "ipa": "/ˈfoʊliɪdʒ/",
+      "meaning": "단풍잎, 잎",
+      "emoji": "🍁",
+      "example": "Pretty foliage.",
+      "exampleKo": "예쁜 단풍.",
+      "fact": "나뭇잎 색!"
+    },
+    {
+      "word": "maple leaf",
+      "ipa": "/ˈmeɪpəl liːf/",
+      "meaning": "단풍잎",
+      "emoji": "🍁",
+      "example": "Red maple leaf.",
+      "exampleKo": "빨간 단풍잎.",
+      "fact": "캐나다 상징!"
+    },
+    {
+      "word": "chestnut",
+      "ipa": "/ˈtʃesnʌt/",
+      "meaning": "밤",
+      "emoji": "🌰",
+      "example": "Roasted chestnut.",
+      "exampleKo": "군밤.",
+      "fact": "가을 간식!"
+    },
+    {
+      "word": "crisp air",
+      "ipa": "/krɪsp er/",
+      "meaning": "상쾌한 공기",
+      "emoji": "🌬️",
+      "example": "Crisp morning air.",
+      "exampleKo": "상쾌한 아침공기.",
+      "fact": "신선해요!"
+    },
+    {
+      "word": "windswept",
+      "ipa": "/ˈwɪndswept/",
+      "meaning": "바람이 휘몰아치는",
+      "emoji": "💨",
+      "example": "Windswept hill.",
+      "exampleKo": "바람 부는 언덕.",
+      "fact": "바람 많이!"
+    },
+    {
+      "word": "nippy",
+      "ipa": "/ˈnɪpi/",
+      "meaning": "쌀쌀한",
+      "emoji": "🥶",
+      "example": "Nippy weather.",
+      "exampleKo": "쌀쌀한 날씨.",
+      "fact": "좀 추워요!"
+    },
+    {
+      "word": "harvest moon",
+      "ipa": "/ˈhɑːrvɪst muːn/",
+      "meaning": "한가위 보름달",
+      "emoji": "🌕",
+      "example": "Bright harvest moon.",
+      "exampleKo": "밝은 한가위 달.",
+      "fact": "추석 보름달!"
+    },
+    {
+      "word": "scarecrow",
+      "ipa": "/ˈskerkroʊ/",
+      "meaning": "허수아비",
+      "emoji": "🎃",
+      "example": "Field scarecrow.",
+      "exampleKo": "논의 허수아비.",
+      "fact": "새 쫓기!"
+    },
+    {
+      "word": "strawbale",
+      "ipa": "/strɔː beɪl/",
+      "meaning": "짚단",
+      "emoji": "🌾",
+      "example": "Round strawbale.",
+      "exampleKo": "동그란 짚단.",
+      "fact": "가을 들판!"
+    },
+    {
+      "word": "persimmon",
+      "ipa": "/pərˈsɪmən/",
+      "meaning": "감",
+      "emoji": "🍑",
+      "example": "Sweet persimmon.",
+      "exampleKo": "달콤한 감.",
+      "fact": "가을 과일!"
+    },
+    {
+      "word": "jujube",
+      "ipa": "/ˈdʒuːdʒuːb/",
+      "meaning": "대추",
+      "emoji": "🫒",
+      "example": "Dried jujube.",
+      "exampleKo": "말린 대추.",
+      "fact": "한국 가을 열매!"
+    },
+    {
+      "word": "sweet potato",
+      "ipa": "/swiːt pəˈteɪtoʊ/",
+      "meaning": "고구마",
+      "emoji": "🍠",
+      "example": "Baked sweet potato.",
+      "exampleKo": "군고구마.",
+      "fact": "가을 별미!"
+    },
+    {
+      "word": "pumpkin",
+      "ipa": "/ˈpʌmpkɪn/",
+      "meaning": "호박",
+      "emoji": "🎃",
+      "example": "Orange pumpkin.",
+      "exampleKo": "주황 호박.",
+      "fact": "가을 채소!"
+    },
+    {
+      "word": "sunflower seed",
+      "ipa": "/ˈsʌnflaʊər siːd/",
+      "meaning": "해바라기 씨",
+      "emoji": "🌻",
+      "example": "Roasted sunflower seed.",
+      "exampleKo": "볶은 해바라기 씨.",
+      "fact": "고소한 간식!"
+    },
+    {
+      "word": "corn field",
+      "ipa": "/kɔːrn fiːld/",
+      "meaning": "옥수수밭",
+      "emoji": "🌽",
+      "example": "Golden corn field.",
+      "exampleKo": "황금 옥수수밭.",
+      "fact": "가을 수확!"
+    },
+    {
+      "word": "rice paddy",
+      "ipa": "/raɪs ˈpædi/",
+      "meaning": "논",
+      "emoji": "🌾",
+      "example": "Golden rice paddy.",
+      "exampleKo": "황금 논.",
+      "fact": "벼 재배!"
+    },
+    {
+      "word": "mantis",
+      "ipa": "/ˈmæntɪs/",
+      "meaning": "사마귀",
+      "emoji": "🦗",
+      "example": "Green mantis.",
+      "exampleKo": "초록 사마귀.",
+      "fact": "가을 곤충!"
+    },
+    {
+      "word": "acorncap",
+      "ipa": "/ˈeɪkɔːrn kæp/",
+      "meaning": "도토리 모자",
+      "emoji": "🌰",
+      "example": "Tiny acorn cap.",
+      "exampleKo": "작은 도토리 모자.",
+      "fact": "도토리 꼭지!"
+    },
+    {
+      "word": "autumn breeze",
+      "ipa": "/ˈɔːtəm briːz/",
+      "meaning": "가을 바람",
+      "emoji": "🍃",
+      "example": "Soft autumn breeze.",
+      "exampleKo": "부드러운 가을바람.",
+      "fact": "선선한 바람!"
+    }
+  ]
+}

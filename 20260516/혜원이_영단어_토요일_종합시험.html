@@ -1130,76 +1130,108 @@ function renderQuestion() {
   autoSpeakWord(q.word);
 }
 
-// 🔊 안정적인 발음 시스템 v2 (iOS/Android 호환 강화)
-let _voicesCache = [];
-let _userInteracted = false;
-let _speechFailures = 0;
+// ═══════ 🔊 통일 발음 엔진 v3 — 모든 브라우저 동일 음성 ═══════
+// 구글 음성 파일을 받아 재생 → 어느 기기/브라우저든 같은 목소리·같은 음량
+// 음성 파일이 안 되면 브라우저 내장 음성으로 자동 백업
+var TTS_VOLUME = 0.7;                 // 0.0 ~ 1.0  모든 기기 공통 음량
+var TTS_SILENT = 'data:audio/wav;base64,UklGRrQBAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YZABAACAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA';
+var _ttsVoices = [];
+var _ttsReady = false;
+var _ttsAudio = (typeof Audio !== 'undefined') ? new Audio() : null;
 
-function _loadVoices() {
+function _ttsLoadVoices() {
   if (!('speechSynthesis' in window)) return;
-  _voicesCache = window.speechSynthesis.getVoices();
+  try { _ttsVoices = window.speechSynthesis.getVoices() || []; } catch(e) {}
 }
 if ('speechSynthesis' in window) {
-  _loadVoices();
+  _ttsLoadVoices();
   if (window.speechSynthesis.onvoiceschanged !== undefined) {
-    window.speechSynthesis.onvoiceschanged = _loadVoices;
+    window.speechSynthesis.onvoiceschanged = _ttsLoadVoices;
   }
 }
 
-function _pickEnglishVoice() {
-  if (_voicesCache.length === 0) _loadVoices();
-  return _voicesCache.find(v => v.lang === 'en-US' && /Google|Samantha|Karen|Daniel|Microsoft/i.test(v.name))
-      || _voicesCache.find(v => v.lang === 'en-US')
-      || _voicesCache.find(v => v.lang && v.lang.startsWith('en'));
-}
-
-function _primeSpeech() {
-  if (_userInteracted) return;
-  _userInteracted = true;
-  if (!('speechSynthesis' in window)) return;
+// 첫 터치/클릭 때 오디오 잠금 해제 (모바일 자동재생 정책 대응)
+function _ttsPrime() {
+  if (_ttsReady) return;
+  _ttsReady = true;
+  if (_ttsAudio) {
+    try {
+      _ttsAudio.src = TTS_SILENT;
+      _ttsAudio.volume = 0;
+      var pr = _ttsAudio.play();
+      if (pr && pr.catch) pr.catch(function(){});
+    } catch(e) {}
+  }
   try {
-    const warm = new SpeechSynthesisUtterance(' ');
-    warm.volume = 0.01; warm.rate = 1;
-    window.speechSynthesis.speak(warm);
+    if ('speechSynthesis' in window) {
+      var w = new SpeechSynthesisUtterance(' ');
+      w.volume = 0.01;
+      window.speechSynthesis.speak(w);
+    }
   } catch(e) {}
 }
-document.addEventListener('click', _primeSpeech, { capture: true });
-document.addEventListener('touchstart', _primeSpeech, { capture: true, passive: true });
+document.addEventListener('click', _ttsPrime, { capture: true });
+document.addEventListener('touchstart', _ttsPrime, { capture: true, passive: true });
 
-function speakWordAgain(word) {
-  if (!('speechSynthesis' in window)) {
-    alert('🔊 이 브라우저는 영어 발음을 지원하지 않아요 😢\n크롬이나 사파리에서 열어주세요!');
-    return;
-  }
+// 브라우저 내장 음성 (백업)
+function _ttsFallback(text, onDone) {
+  if (!('speechSynthesis' in window)) { if (onDone) onDone(); return; }
   try {
     window.speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(word);
-    u.lang = 'en-US'; u.rate = 0.85; u.pitch = 1.05; u.volume = 1.0;
-    if (_voicesCache.length === 0) _loadVoices();
-    const v = _pickEnglishVoice();
-    if (v) u.voice = v;
-
-    const btn = document.querySelector('.listen-btn');
-    if (btn) { btn.style.transform = 'scale(0.92)'; btn.style.background = 'linear-gradient(135deg, #ffd700, #ff8c42)'; }
-    u.onend = function() { if (btn) { btn.style.transform = ''; btn.style.background = ''; } };
-    u.onerror = function(e) {
-      _speechFailures++;
-      console.warn('🔊 발음 실패:', e);
-      if (btn) { btn.style.transform = ''; btn.style.background = ''; }
-      if (_speechFailures === 3) {
-        const msg = document.createElement('div');
-        msg.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;border:3px solid #ff8fb5;border-radius:20px;padding:20px;z-index:9999;font-family:Jua,sans-serif;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,0.2);max-width:300px;';
-        msg.innerHTML = '🔊 발음이 안 들리나요?<br><br>📱 폰 음량 확인 + 무음 모드 해제!<br><br><button onclick="this.parentNode.remove()" style="background:#ff8fb5;color:white;border:none;padding:10px 20px;border-radius:15px;font-family:Jua,sans-serif;font-size:1em;">확인</button>';
-        document.body.appendChild(msg);
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-US'; u.rate = 0.85; u.pitch = 1.05; u.volume = TTS_VOLUME;
+    if (_ttsVoices.length === 0) _ttsLoadVoices();
+    var v = null, i;
+    for (i = 0; i < _ttsVoices.length; i++) {
+      if (_ttsVoices[i].lang === 'en-US') { v = _ttsVoices[i]; break; }
+    }
+    if (!v) {
+      for (i = 0; i < _ttsVoices.length; i++) {
+        if (_ttsVoices[i].lang && _ttsVoices[i].lang.indexOf('en') === 0) { v = _ttsVoices[i]; break; }
       }
-    };
-
+    }
+    if (v) u.voice = v;
+    u.onend = function(){ if (onDone) onDone(); };
+    u.onerror = function(){ if (onDone) onDone(); };
     window.speechSynthesis.speak(u);
-  } catch(e) { console.warn('🔊 speak error:', e); }
+    setTimeout(function(){ try { window.speechSynthesis.resume(); } catch(e){} }, 120);
+  } catch(e) { if (onDone) onDone(); }
+}
+
+// 핵심: 통일 음성 파일 재생 → 실패 시 백업
+function playTTS(text, onStart, onDone) {
+  if (!text) { if (onDone) onDone(); return; }
+  text = String(text).trim();
+  try { if (_ttsAudio) _ttsAudio.pause(); } catch(e) {}
+  try { if ('speechSynthesis' in window) window.speechSynthesis.cancel(); } catch(e) {}
+
+  var settled = false;
+  function done() { if (settled) return; settled = true; if (onDone) onDone(); }
+  function fallback() { if (settled) return; settled = true; _ttsFallback(text, function(){ if (onDone) onDone(); }); }
+
+  if (onStart) onStart();
+
+  if (!_ttsAudio) { fallback(); return; }
+  var audio = _ttsAudio;
+  audio.onended = function(){ done(); };
+  audio.onerror = function(){ fallback(); };
+  try {
+    audio.volume = TTS_VOLUME;
+    audio.src = 'https://translate.google.com/translate_tts?ie=UTF-8&tl=en&client=tw-ob&q=' + encodeURIComponent(text);
+    var p = audio.play();
+    if (p && p.catch) { p.catch(function(){ fallback(); }); }
+  } catch(e) { fallback(); }
+}
+
+function speakWordAgain(word) {
+  var btn = document.querySelector('.listen-btn');
+  playTTS(word,
+    function(){ if (btn) { btn.style.transform = 'scale(0.92)'; btn.style.background = 'linear-gradient(135deg, #ffd700, #ff8c42)'; } },
+    function(){ if (btn) { btn.style.transform = ''; btn.style.background = ''; } });
 }
 
 function autoSpeakWord(word) {
-  if (!_userInteracted) return;
+  if (!_ttsReady) return;
   setTimeout(function() { speakWordAgain(word); }, 200);
 }
 

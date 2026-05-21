@@ -1,0 +1,196 @@
+{
+  "date": "2026-09-03",
+  "folderName": "20260903",
+  "dayKo": "목",
+  "dayKoFull": "목요일",
+  "dayEn": "Thursday",
+  "dayIdx": 4,
+  "theme": "운동회",
+  "themeEmoji": "🏃",
+  "vocabFileName": "혜원이_영단어_목요일_운동회.html",
+  "quizFileName": "혜원이_영단어_목요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #e8f5e9 0%, #66bb6a 45%, #1b5e20 100%);",
+  "headerTitle": "🏃 운동회 🏅",
+  "words": [
+    {
+      "word": "sportsday",
+      "ipa": "/ˈspɔːrtsdeɪ/",
+      "meaning": "운동회 날",
+      "emoji": "🏃",
+      "example": "School sportsday.",
+      "exampleKo": "학교 운동회.",
+      "fact": "1년 한번!"
+    },
+    {
+      "word": "relay race",
+      "ipa": "/ˈriːleɪ reɪs/",
+      "meaning": "이어달리기",
+      "emoji": "🏃",
+      "example": "Win the relay race.",
+      "exampleKo": "이어달리기 우승.",
+      "fact": "바톤 넘기기!"
+    },
+    {
+      "word": "baton",
+      "ipa": "/bəˈtɒn/",
+      "meaning": "바톤",
+      "emoji": "🪄",
+      "example": "Pass the baton.",
+      "exampleKo": "바톤 넘겨요.",
+      "fact": "이어달리기 봉!"
+    },
+    {
+      "word": "hurdle",
+      "ipa": "/ˈhɜːrdəl/",
+      "meaning": "허들",
+      "emoji": "🚧",
+      "example": "Jump the hurdle.",
+      "exampleKo": "허들 뛰어요.",
+      "fact": "넘는 장애물!"
+    },
+    {
+      "word": "tug of war",
+      "ipa": "/tʌɡ əv wɔːr/",
+      "meaning": "줄다리기",
+      "emoji": "🪢",
+      "example": "Win tug of war.",
+      "exampleKo": "줄다리기 이김.",
+      "fact": "줄 잡아당기기!"
+    },
+    {
+      "word": "sack race",
+      "ipa": "/sæk reɪs/",
+      "meaning": "포대자루 경주",
+      "emoji": "🛍️",
+      "example": "Funny sack race.",
+      "exampleKo": "재밌는 포대 경주.",
+      "fact": "자루 신고 뛰기!"
+    },
+    {
+      "word": "piggyback",
+      "ipa": "/ˈpɪɡibæk/",
+      "meaning": "목말",
+      "emoji": "🐷",
+      "example": "Piggyback ride.",
+      "exampleKo": "목말 타기.",
+      "fact": "등에 업기!"
+    },
+    {
+      "word": "jumprope",
+      "ipa": "/dʒʌmp roʊp/",
+      "meaning": "줄넘기",
+      "emoji": "🪢",
+      "example": "Long jumprope.",
+      "exampleKo": "긴 줄넘기.",
+      "fact": "넘기 운동!"
+    },
+    {
+      "word": "finish line",
+      "ipa": "/ˈfɪnɪʃ laɪn/",
+      "meaning": "결승선",
+      "emoji": "🏁",
+      "example": "Cross the finish line.",
+      "exampleKo": "결승선 통과.",
+      "fact": "끝 도착!"
+    },
+    {
+      "word": "starting line",
+      "ipa": "/ˈstɑːrtɪŋ laɪn/",
+      "meaning": "출발선",
+      "emoji": "🟢",
+      "example": "At the starting line.",
+      "exampleKo": "출발선에서.",
+      "fact": "시작 위치!"
+    },
+    {
+      "word": "starting gun",
+      "ipa": "/ˈstɑːrtɪŋ ɡʌn/",
+      "meaning": "출발 신호총",
+      "emoji": "🔫",
+      "example": "Bang of the starting gun.",
+      "exampleKo": "출발 신호.",
+      "fact": "시작 알림!"
+    },
+    {
+      "word": "podium",
+      "ipa": "/ˈpoʊdiəm/",
+      "meaning": "시상대",
+      "emoji": "🥇",
+      "example": "Stand on the podium.",
+      "exampleKo": "시상대에 서요.",
+      "fact": "메달 받는 곳!"
+    },
+    {
+      "word": "gold medal",
+      "ipa": "/ɡoʊld ˈmedəl/",
+      "meaning": "금메달",
+      "emoji": "🥇",
+      "example": "Win a gold medal.",
+      "exampleKo": "금메달 따요.",
+      "fact": "1등 상!"
+    },
+    {
+      "word": "silver medal",
+      "ipa": "/ˈsɪlvər ˈmedəl/",
+      "meaning": "은메달",
+      "emoji": "🥈",
+      "example": "Silver medal winner.",
+      "exampleKo": "은메달 수상자.",
+      "fact": "2등 상!"
+    },
+    {
+      "word": "bronze medal",
+      "ipa": "/brɒnz ˈmedəl/",
+      "meaning": "동메달",
+      "emoji": "🥉",
+      "example": "Earn a bronze medal.",
+      "exampleKo": "동메달 획득.",
+      "fact": "3등 상!"
+    },
+    {
+      "word": "laurel crown",
+      "ipa": "/ˈlɔːrəl kraʊn/",
+      "meaning": "월계관",
+      "emoji": "🏆",
+      "example": "Wear the laurel crown.",
+      "exampleKo": "월계관 써요.",
+      "fact": "승리의 관!"
+    },
+    {
+      "word": "ovation",
+      "ipa": "/oʊˈveɪʃən/",
+      "meaning": "기립 박수",
+      "emoji": "👏",
+      "example": "Standing ovation.",
+      "exampleKo": "기립 박수.",
+      "fact": "엄청난 박수!"
+    },
+    {
+      "word": "cheerleader",
+      "ipa": "/ˈtʃɪrliːdər/",
+      "meaning": "치어리더",
+      "emoji": "📣",
+      "example": "School cheerleader.",
+      "exampleKo": "학교 치어리더.",
+      "fact": "응원!"
+    },
+    {
+      "word": "opposing team",
+      "ipa": "/əˈpoʊzɪŋ tiːm/",
+      "meaning": "상대 팀",
+      "emoji": "⚔️",
+      "example": "Beat the opposing team.",
+      "exampleKo": "상대팀 이김.",
+      "fact": "맞붙는 팀!"
+    },
+    {
+      "word": "victory pose",
+      "ipa": "/ˈvɪktəri poʊz/",
+      "meaning": "승리 포즈",
+      "emoji": "💪",
+      "example": "Cool victory pose.",
+      "exampleKo": "멋진 승리 포즈.",
+      "fact": "이긴 자세!"
+    }
+  ]
+}

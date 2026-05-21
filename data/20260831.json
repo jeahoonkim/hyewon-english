@@ -1,0 +1,196 @@
+{
+  "date": "2026-08-31",
+  "folderName": "20260831",
+  "dayKo": "월",
+  "dayKoFull": "월요일",
+  "dayEn": "Monday",
+  "dayIdx": 1,
+  "theme": "새 친구 사귀기",
+  "themeEmoji": "🤝",
+  "vocabFileName": "혜원이_영단어_월요일_새친구.html",
+  "quizFileName": "혜원이_영단어_월요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #ffebee 0%, #ff8a80 45%, #d50000 100%);",
+  "headerTitle": "🤝 새 친구 사귀기 🌟",
+  "words": [
+    {
+      "word": "mingle",
+      "ipa": "/ˈmɪŋɡəl/",
+      "meaning": "어울리다",
+      "emoji": "👫",
+      "example": "Mingle with classmates.",
+      "exampleKo": "반 친구들과 어울려요.",
+      "fact": "섞이기!"
+    },
+    {
+      "word": "acquaintance",
+      "ipa": "/əˈkweɪntəns/",
+      "meaning": "아는 사람, 지인",
+      "emoji": "👥",
+      "example": "A new acquaintance.",
+      "exampleKo": "새 지인.",
+      "fact": "친구 전 단계!"
+    },
+    {
+      "word": "icebreaker",
+      "ipa": "/ˈaɪsbreɪkər/",
+      "meaning": "어색함 깨기",
+      "emoji": "❄️",
+      "example": "A fun icebreaker.",
+      "exampleKo": "재밌는 아이스브레이커.",
+      "fact": "분위기 푸는 게임!"
+    },
+    {
+      "word": "handshake",
+      "ipa": "/ˈhændʃeɪk/",
+      "meaning": "악수",
+      "emoji": "🤝",
+      "example": "Firm handshake.",
+      "exampleKo": "굳건한 악수.",
+      "fact": "인사 동작!"
+    },
+    {
+      "word": "fistbump",
+      "ipa": "/ˈfɪstbʌmp/",
+      "meaning": "주먹 인사",
+      "emoji": "👊",
+      "example": "Cool fistbump.",
+      "exampleKo": "멋진 주먹인사.",
+      "fact": "손등 부딪치기!"
+    },
+    {
+      "word": "compliment",
+      "ipa": "/ˈkɒmpləmənt/",
+      "meaning": "칭찬",
+      "emoji": "😊",
+      "example": "A kind compliment.",
+      "exampleKo": "따뜻한 칭찬.",
+      "fact": "좋게 말하기!"
+    },
+    {
+      "word": "chitchat",
+      "ipa": "/ˈtʃɪttʃæt/",
+      "meaning": "잡담",
+      "emoji": "💬",
+      "example": "Chitchat at lunch.",
+      "exampleKo": "점심 때 잡담.",
+      "fact": "가벼운 수다!"
+    },
+    {
+      "word": "trustworthy",
+      "ipa": "/ˈtrʌstwɜːrði/",
+      "meaning": "믿음직한",
+      "emoji": "🛡️",
+      "example": "A trustworthy friend.",
+      "exampleKo": "믿음직한 친구.",
+      "fact": "믿어도 좋은!"
+    },
+    {
+      "word": "outgoing",
+      "ipa": "/ˈaʊtɡoʊɪŋ/",
+      "meaning": "외향적인",
+      "emoji": "🎉",
+      "example": "An outgoing person.",
+      "exampleKo": "외향적인 사람.",
+      "fact": "활발한 성격!"
+    },
+    {
+      "word": "introvert",
+      "ipa": "/ˈɪntrəvɜːrt/",
+      "meaning": "내향적인 사람",
+      "emoji": "📖",
+      "example": "A quiet introvert.",
+      "exampleKo": "조용한 내향인.",
+      "fact": "혼자 좋아함!"
+    },
+    {
+      "word": "extrovert",
+      "ipa": "/ˈekstrəvɜːrt/",
+      "meaning": "외향적인 사람",
+      "emoji": "🎤",
+      "example": "A loud extrovert.",
+      "exampleKo": "활발한 외향인.",
+      "fact": "사람 좋아함!"
+    },
+    {
+      "word": "talkative",
+      "ipa": "/ˈtɔːkətɪv/",
+      "meaning": "수다스러운",
+      "emoji": "🗣️",
+      "example": "A talkative kid.",
+      "exampleKo": "수다스러운 아이.",
+      "fact": "말 많은!"
+    },
+    {
+      "word": "timid",
+      "ipa": "/ˈtɪmɪd/",
+      "meaning": "소심한",
+      "emoji": "😳",
+      "example": "A timid smile.",
+      "exampleKo": "수줍은 미소.",
+      "fact": "부끄러워요!"
+    },
+    {
+      "word": "firstimpression",
+      "ipa": "/fɜːrst ɪmˈpreʃən/",
+      "meaning": "첫인상",
+      "emoji": "✨",
+      "example": "Good first impression.",
+      "exampleKo": "좋은 첫인상.",
+      "fact": "처음 만난 느낌!"
+    },
+    {
+      "word": "namebadge",
+      "ipa": "/neɪm bædʒ/",
+      "meaning": "이름표 배지",
+      "emoji": "🏷️",
+      "example": "Wear a name badge.",
+      "exampleKo": "이름표 차요.",
+      "fact": "이름 보이게!"
+    },
+    {
+      "word": "buddy",
+      "ipa": "/ˈbʌdi/",
+      "meaning": "단짝, 친한 친구",
+      "emoji": "👬",
+      "example": "Best buddy.",
+      "exampleKo": "최고의 단짝.",
+      "fact": "친한 친구!"
+    },
+    {
+      "word": "sidekick",
+      "ipa": "/ˈsaɪdkɪk/",
+      "meaning": "단짝 조수",
+      "emoji": "🦸",
+      "example": "Loyal sidekick.",
+      "exampleKo": "의리있는 사이드킥.",
+      "fact": "히어로 옆 친구!"
+    },
+    {
+      "word": "penpal",
+      "ipa": "/ˈpenpæl/",
+      "meaning": "펜팔 친구",
+      "emoji": "✉️",
+      "example": "A foreign penpal.",
+      "exampleKo": "외국 펜팔.",
+      "fact": "편지 친구!"
+    },
+    {
+      "word": "groupchat",
+      "ipa": "/ɡruːp tʃæt/",
+      "meaning": "단체 채팅",
+      "emoji": "💬",
+      "example": "Class group chat.",
+      "exampleKo": "반 단톡.",
+      "fact": "여러 명 대화!"
+    },
+    {
+      "word": "highfive",
+      "ipa": "/haɪ faɪv/",
+      "meaning": "하이파이브",
+      "emoji": "🙌",
+      "example": "Give a high five.",
+      "exampleKo": "하이파이브 해요.",
+      "fact": "손바닥 짝!"
+    }
+  ]
+}

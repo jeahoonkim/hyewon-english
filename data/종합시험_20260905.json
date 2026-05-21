@@ -1,0 +1,20 @@
+{
+  "date": "2026-09-05",
+  "folderName": "20260905",
+  "dayKo": "토",
+  "dayKoFull": "토요일",
+  "dayEn": "Saturday",
+  "dayIdx": 6,
+  "weekLabel": "Week 20",
+  "themeSummary": "새친구·초가을·동아리·운동회·추석",
+  "quizFileName": "혜원이_영단어_토요일_종합시험.html",
+  "includeDates": [
+    "20260831",
+    "20260901",
+    "20260902",
+    "20260903",
+    "20260904"
+  ],
+  "bgGradient": "linear-gradient(180deg, #ffebee 0%, #fff3e0 25%, #f3e5f5 50%, #e8f5e9 75%, #fff8e1 100%);",
+  "headerTitle": "🎯 주간 종합 시험 🏆"
+}

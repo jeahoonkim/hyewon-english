@@ -3330,6 +3330,188 @@ QUIZZES = {
             {'en':'Have a great first day!','choices':['멋진 첫날!','피곤한 첫날!','짧은 첫날!','없는 첫날!'],'ans':0,'hint':('first day','첫날'),'explain':'first day = 개학!'},
         ]
     },
+
+    '20260831': {
+        'date':'2026-08-31','day_ko':'월','theme':'새 친구 사귀기','theme_emoji':'🤝','description':'친구 사귀기 영어!',
+        'questions':[
+            {'en':'Nice to meet you.','choices':['만나서 반가워','잘 가','안녕히','자'],'ans':0,'hint':('meet','만나다'),'explain':'meet = 만나기!'},
+            {'en':"What's your name?",'choices':['이름이 뭐야?','어디 살아?','몇 살이야?','뭐 해?'],'ans':0,'hint':('name','이름'),'explain':'name = 이름'},
+            {'en':"I'm Hyewon.",'choices':['난 혜원이야','난 학생이야','난 가','난 자'],'ans':0,'hint':("I'm",'나는'),'explain':"I'm = 나는!"},
+            {'en':'How old are you?','choices':['몇 살이야?','이름이 뭐야?','어디야?','뭐 해?'],'ans':0,'hint':('old','나이'),'explain':'old = 나이!'},
+            {'en':"Let's be friends.",'choices':['친구 하자','싸우자','자자','놀자'],'ans':0,'hint':('friends','친구'),'explain':"let's = 하자!"},
+            {'en':'Where do you live?','choices':['어디 살아?','뭐 먹어?','뭐 해?','어디 가?'],'ans':0,'hint':('live','살다'),'explain':'live = 살다'},
+            {'en':'I live in Seoul.','choices':['서울에 살아','부산 살아','자','놀아'],'ans':0,'hint':('live in','~에 살다'),'explain':'live in = 살다'},
+            {'en':"What's your hobby?",'choices':['취미가 뭐야?','이름이 뭐야?','집 어디?','뭐 먹어?'],'ans':0,'hint':('hobby','취미'),'explain':'hobby = 취미!'},
+            {'en':'I like drawing.','choices':['그림 좋아','요리 좋아','자','놀아'],'ans':0,'hint':('drawing','그림'),'explain':'drawing = 그림'},
+            {'en':"Let's play together.",'choices':['같이 놀자','혼자 자','TV 봐','자'],'ans':0,'hint':('together','같이'),'explain':'together = 함께!'},
+            {'en':'Can I sit here?','choices':['여기 앉아도 돼?','여기 자도 돼?','여기 가도 돼?','여기 먹어도 돼?'],'ans':0,'hint':('sit','앉다'),'explain':'sit = 앉기'},
+            {'en':'Sure, sit down.','choices':['그래, 앉아','싫어','자','가'],'ans':0,'hint':('sure','그럼'),'explain':'sure = 좋아!'},
+            {'en':'You are so kind.','choices':['넌 정말 친절해','넌 정말 나빠','자','놀아'],'ans':0,'hint':('kind','친절'),'explain':'kind = 친절!'},
+            {'en':"You're funny.",'choices':['넌 웃겨','넌 슬퍼','자','놀아'],'ans':0,'hint':('funny','웃긴'),'explain':'funny = 재밌!'},
+            {'en':'Thank you!','choices':['고마워!','싫어!','자!','가!'],'ans':0,'hint':('thank','고마움'),'explain':'thank = 감사!'},
+            {'en':"You're welcome.",'choices':['천만에','싫어','자','가'],'ans':0,'hint':('welcome','환영'),'explain':"you're welcome = 천만!"},
+            {'en':"What's up?",'choices':['뭐 해?','어디야?','뭐야?','자'],'ans':0,'hint':('up','어떻게'),'explain':"what's up = 안녕!"},
+            {'en':'See you tomorrow.','choices':['내일 봐','어제 봐','자','놀아'],'ans':0,'hint':('tomorrow','내일'),'explain':'see you = 또 봐!'},
+            {'en':'Give me a high five!','choices':['하이파이브!','악수해','자','놀아'],'ans':0,'hint':('high five','파이브'),'explain':'high five = 짝!'},
+            {'en':"You're my best friend.",'choices':['넌 단짝이야','넌 형이야','자','놀아'],'ans':0,'hint':('best friend','단짝'),'explain':'best friend = 절친!'},
+        ]
+    },
+
+    '20260901': {
+        'date':'2026-09-01','day_ko':'화','theme':'초가을 풍경','theme_emoji':'🍂','description':'가을 영어!',
+        'questions':[
+            {'en':'Fall is here.','choices':['가을이 왔어','여름이 왔어','겨울이 왔어','봄이 왔어'],'ans':0,'hint':('fall','가을'),'explain':'fall = 가을!'},
+            {'en':'The leaves turn red.','choices':['잎이 빨개져','잎이 자라','잎이 떨어져','잎이 푸르러'],'ans':0,'hint':('turn','변하다'),'explain':'turn red = 빨개지다'},
+            {'en':'Cool breeze blows.','choices':['시원한 바람 불어','뜨거운 바람','자','놀아'],'ans':0,'hint':('breeze','산들바람'),'explain':'breeze = 산들바람'},
+            {'en':'I love autumn.','choices':['가을 좋아해','여름 좋아','자','놀아'],'ans':0,'hint':('autumn','가을'),'explain':'autumn = 가을'},
+            {'en':'Look at the sky.','choices':['하늘 봐','땅 봐','자','놀아'],'ans':0,'hint':('sky','하늘'),'explain':'sky = 하늘'},
+            {'en':'The sky is so blue.','choices':['하늘이 너무 파래','하늘이 빨개','자','놀아'],'ans':0,'hint':('blue','파란'),'explain':'blue sky = 파란 하늘'},
+            {'en':'Eat a chestnut.','choices':['밤 먹어','감 먹어','대추 먹어','배 먹어'],'ans':0,'hint':('chestnut','밤'),'explain':'chestnut = 밤!'},
+            {'en':'Pick a persimmon.','choices':['감을 따','배를 따','자','놀아'],'ans':0,'hint':('pick','따다'),'explain':'pick = 따기'},
+            {'en':"It's a little chilly.",'choices':['좀 쌀쌀해','좀 더워','자','놀아'],'ans':0,'hint':('chilly','쌀쌀'),'explain':'chilly = 쌀쌀!'},
+            {'en':'Wear a jacket.','choices':['재킷 입어','반팔 입어','자','놀아'],'ans':0,'hint':('wear','입다'),'explain':'wear = 입기'},
+            {'en':'Leaves are falling.','choices':['잎이 떨어져','잎이 올라','자','놀아'],'ans':0,'hint':('fall','떨어지다'),'explain':'falling = 떨어지는!'},
+            {'en':'Walk in the park.','choices':['공원에서 산책','집에서 자','자','놀아'],'ans':0,'hint':('walk','걷다'),'explain':'walk in park = 공원 산책'},
+            {'en':'The moon is bright.','choices':['달이 밝아','해가 밝아','자','놀아'],'ans':0,'hint':('moon','달'),'explain':'moon = 달'},
+            {'en':'Harvest time!','choices':['수확 시기!','심을 때','자','놀아'],'ans':0,'hint':('harvest','수확'),'explain':'harvest = 거두기!'},
+            {'en':'Red apples on the tree.','choices':['나무에 빨간 사과','땅에 사과','자','놀아'],'ans':0,'hint':('apple','사과'),'explain':'on tree = 나무 위'},
+            {'en':'Days get shorter.','choices':['낮이 짧아져','낮이 길어져','자','놀아'],'ans':0,'hint':('short','짧은'),'explain':'shorter = 더 짧은'},
+            {'en':'Roast some sweet potatoes.','choices':['고구마 구워','떡 구워','자','놀아'],'ans':0,'hint':('roast','굽다'),'explain':'roast = 굽기'},
+            {'en':'A dragonfly flies by.','choices':['잠자리가 날아가','벌이 날아','자','놀아'],'ans':0,'hint':('fly','날다'),'explain':'fly = 날다!'},
+            {'en':'Wear long sleeves.','choices':['긴팔 입어','반팔 입어','자','놀아'],'ans':0,'hint':('sleeves','소매'),'explain':'long sleeves = 긴팔'},
+            {'en':'Autumn is so pretty!','choices':['가을 정말 예뻐!','여름 예뻐','자','놀아'],'ans':0,'hint':('pretty','예쁜'),'explain':'pretty = 예쁜!'},
+        ]
+    },
+
+    '20260902': {
+        'date':'2026-09-02','day_ko':'수','theme':'동아리 활동','theme_emoji':'🎭','description':'동아리 영어!',
+        'questions':[
+            {'en':'Join the club.','choices':['동아리 가입','동아리 빠져','자','놀아'],'ans':0,'hint':('join','가입'),'explain':'join = 들어가다!'},
+            {'en':'I joined art club.','choices':['미술부 들어갔어','미술부 빠졌어','자','놀아'],'ans':0,'hint':('art','미술'),'explain':'art club = 미술부'},
+            {'en':"Let's sing together.",'choices':['같이 노래하자','혼자 자','자','가'],'ans':0,'hint':('sing','노래'),'explain':'sing = 노래!'},
+            {'en':'Practice every day.','choices':['매일 연습','매일 자','매일 놀','매일 먹'],'ans':0,'hint':('practice','연습'),'explain':'practice = 연습!'},
+            {'en':'Show me your dance.','choices':['춤 보여줘','노래 보여','자','놀아'],'ans':0,'hint':('show','보여주다'),'explain':'show = 보여주기'},
+            {'en':'Read a book club.','choices':['독서 동아리','수학 동아리','자','놀아'],'ans':0,'hint':('book','책'),'explain':'book club = 독서!'},
+            {'en':'I love acting.','choices':['연기 좋아해','요리 좋아해','자','놀아'],'ans':0,'hint':('acting','연기'),'explain':'acting = 연기!'},
+            {'en':'Big stage tonight.','choices':['오늘 밤 큰 무대','내일 작은 무대','자','놀아'],'ans':0,'hint':('stage','무대'),'explain':'stage = 무대!'},
+            {'en':'Get ready for rehearsal.','choices':['리허설 준비','휴식 준비','자','놀아'],'ans':0,'hint':('rehearsal','연습'),'explain':'rehearsal = 리허설!'},
+            {'en':'The show starts soon.','choices':['공연 곧 시작','공연 끝났어','자','놀아'],'ans':0,'hint':('start','시작'),'explain':'show start = 시작!'},
+            {'en':'Sing on the stage.','choices':['무대에서 노래','집에서 노래','자','놀아'],'ans':0,'hint':('on stage','무대 위'),'explain':'on stage = 무대 위!'},
+            {'en':'I play the piano.','choices':['피아노 쳐','기타 쳐','자','놀아'],'ans':0,'hint':('play','연주'),'explain':'play piano = 피아노!'},
+            {'en':'Practice makes perfect.','choices':['연습이 완벽','자면 완벽','자','놀아'],'ans':0,'hint':('perfect','완벽'),'explain':'practice → 완벽!'},
+            {'en':'My turn to speak.','choices':['내 차례 말하기','네 차례 자','자','놀아'],'ans':0,'hint':('turn','차례'),'explain':'turn = 차례!'},
+            {'en':'Wear costumes.','choices':['의상 입어','반팔 입어','자','놀아'],'ans':0,'hint':('costume','의상'),'explain':'costumes = 무대 옷!'},
+            {'en':'Big audience tonight.','choices':['오늘 관객 많아','관객 없어','자','놀아'],'ans':0,'hint':('audience','관객'),'explain':'audience = 관객!'},
+            {'en':"Don't be nervous.",'choices':['긴장하지 마','긴장해','자','놀아'],'ans':0,'hint':('nervous','긴장'),'explain':"don't = 하지 마!"},
+            {'en':'Take a deep breath.','choices':['숨 크게 쉬어','숨 작게','자','놀아'],'ans':0,'hint':('deep','깊은'),'explain':'deep breath = 심호흡!'},
+            {'en':'Good luck!','choices':['행운을 빌어!','싫어!','자!','놀아!'],'ans':0,'hint':('luck','운'),'explain':'good luck = 행운!'},
+            {'en':'Amazing performance!','choices':['멋진 공연!','지루한 공연!','자!','놀아!'],'ans':0,'hint':('amazing','멋진'),'explain':'amazing = 굉장!'},
+        ]
+    },
+
+    '20260903': {
+        'date':'2026-09-03','day_ko':'목','theme':'운동회','theme_emoji':'🏃','description':'운동회 영어!',
+        'questions':[
+            {'en':'Sports day today!','choices':['오늘 운동회!','오늘 시험!','자','놀아'],'ans':0,'hint':('sports day','운동회'),'explain':'sports day = 운동회!'},
+            {'en':'Run as fast as you can.','choices':['최대한 빨리 뛰어','천천히 걸어','자','놀아'],'ans':0,'hint':('fast','빠르게'),'explain':'as fast as = 최대한 빨리'},
+            {'en':"Don't give up!",'choices':['포기하지 마!','포기해!','자!','놀아!'],'ans':0,'hint':('give up','포기'),'explain':"don't give up = 포기 X!"},
+            {'en':"You can do it!",'choices':['넌 할 수 있어!','넌 못해!','자!','놀아!'],'ans':0,'hint':('can','할 수 있다'),'explain':'can do = 할 수 있어!'},
+            {'en':'Pass the baton.','choices':['바톤 넘겨','바톤 던져','자','놀아'],'ans':0,'hint':('pass','넘기다'),'explain':'pass = 넘기다!'},
+            {'en':'Cross the finish line.','choices':['결승선 통과','출발선','자','놀아'],'ans':0,'hint':('cross','지나다'),'explain':'cross = 가로지르다!'},
+            {'en':'Cheer for our team!','choices':['우리 팀 응원!','상대 팀 응원','자','놀아'],'ans':0,'hint':('cheer','응원'),'explain':'cheer = 응원!'},
+            {'en':'Win the race!','choices':['경주 이겨!','경주 져!','자','놀아'],'ans':0,'hint':('win','이기다'),'explain':'win = 이기다!'},
+            {'en':"It's a tie!",'choices':['무승부!','승리!','패배!','자!'],'ans':0,'hint':('tie','동점'),'explain':'tie = 동점!'},
+            {'en':'Pull the rope.','choices':['줄을 당겨','줄을 놔','자','놀아'],'ans':0,'hint':('pull','당기다'),'explain':'pull = 당기다!'},
+            {'en':'Jump high!','choices':['높이 뛰어!','낮게 뛰어','자','놀아'],'ans':0,'hint':('jump','뛰다'),'explain':'jump high = 높이 뛰기!'},
+            {'en':"That's a great score.",'choices':['멋진 점수','나쁜 점수','자','놀아'],'ans':0,'hint':('score','점수'),'explain':'score = 점수!'},
+            {'en':'Take a break.','choices':['쉬어','달려','자','놀아'],'ans':0,'hint':('break','휴식'),'explain':'take a break = 쉬기!'},
+            {'en':'Drink some water.','choices':['물 마셔','콜라 마셔','자','놀아'],'ans':0,'hint':('water','물'),'explain':'drink water = 물!'},
+            {'en':'Wear your team color.','choices':['팀 색 입어','검정 입어','자','놀아'],'ans':0,'hint':('color','색'),'explain':'team color = 팀 색!'},
+            {'en':'Race against time.','choices':['시간과의 싸움','친구와의 싸움','자','놀아'],'ans':0,'hint':('against','대결'),'explain':'against = 맞서!'},
+            {'en':'Be a good sport.','choices':['스포츠맨답게','지지 말고','자','놀아'],'ans':0,'hint':('good sport','매너'),'explain':'good sport = 매너 좋게!'},
+            {'en':'Congratulations!','choices':['축하해!','싫어!','자!','놀아!'],'ans':0,'hint':('congrats','축하'),'explain':'congrats = 축하!'},
+            {'en':'We are number one!','choices':['우리가 1등!','우리가 꼴찌','자!','놀아!'],'ans':0,'hint':('number one','1등'),'explain':'number one = 1등!'},
+            {'en':'Great teamwork!','choices':['멋진 팀워크!','나쁜 팀워크','자!','놀아!'],'ans':0,'hint':('teamwork','협동'),'explain':'teamwork = 협동!'},
+        ]
+    },
+
+    '20260904': {
+        'date':'2026-09-04','day_ko':'금','theme':'추석 준비','theme_emoji':'🌕','description':'추석 영어!',
+        'questions':[
+            {'en':'Chuseok is coming.','choices':['추석이 다가와','설날 다가와','자','놀아'],'ans':0,'hint':('Chuseok','추석'),'explain':'Chuseok = 추석!'},
+            {'en':'Make songpyeon together.','choices':['같이 송편 빚어','혼자 자','자','놀아'],'ans':0,'hint':('songpyeon','송편'),'explain':'songpyeon = 송편!'},
+            {'en':'Look at the full moon.','choices':['보름달 봐','반달 봐','자','놀아'],'ans':0,'hint':('full moon','보름달'),'explain':'full moon = 보름달!'},
+            {'en':'Visit my grandma.','choices':['할머니 댁 가','학교 가','자','놀아'],'ans':0,'hint':('visit','방문'),'explain':'visit = 방문!'},
+            {'en':'Wear hanbok.','choices':['한복 입어','한복 빨아','자','놀아'],'ans':0,'hint':('hanbok','한복'),'explain':'hanbok = 한복!'},
+            {'en':'Family gathering.','choices':['가족 모임','학교 모임','자','놀아'],'ans':0,'hint':('family','가족'),'explain':'family = 가족!'},
+            {'en':'Long holiday.','choices':['긴 연휴','짧은 연휴','자','놀아'],'ans':0,'hint':('long','긴'),'explain':'long holiday = 긴 연휴!'},
+            {'en':'Play yutnori.','choices':['윷놀이 해','체스 해','자','놀아'],'ans':0,'hint':('yutnori','윷놀이'),'explain':'yutnori = 윷놀이!'},
+            {'en':'Tasty rice cakes.','choices':['맛있는 떡','맛없는 빵','자','놀아'],'ans':0,'hint':('rice cake','떡'),'explain':'rice cake = 떡!'},
+            {'en':"Make wishes to the moon.",'choices':['달에게 소원 빌어','해에게 빌어','자','놀아'],'ans':0,'hint':('wish','소원'),'explain':'wish = 소원!'},
+            {'en':'Set the table.','choices':['상 차려','상 치워','자','놀아'],'ans':0,'hint':('table','상'),'explain':'set table = 상 차리기!'},
+            {'en':'Bow to grandparents.','choices':['조부모께 절','친구에 절','자','놀아'],'ans':0,'hint':('bow','절'),'explain':'bow = 절!'},
+            {'en':'Drive to hometown.','choices':['고향 가','학교 가','자','놀아'],'ans':0,'hint':('hometown','고향'),'explain':'hometown = 고향!'},
+            {'en':'Traffic is heavy.','choices':['차 막혀','차 시원해','자','놀아'],'ans':0,'hint':('heavy','심한'),'explain':'heavy traffic = 막힘!'},
+            {'en':'Eat too much food.','choices':['많이 먹어','조금 먹어','자','놀아'],'ans':0,'hint':('too much','너무 많이'),'explain':'too much = 너무 많이!'},
+            {'en':'Help cook the food.','choices':['요리 도와','요리 망쳐','자','놀아'],'ans':0,'hint':('help','돕다'),'explain':'help cook = 요리 돕기!'},
+            {'en':'Share with cousins.','choices':['사촌과 나눠','혼자 다 먹어','자','놀아'],'ans':0,'hint':('share','나누다'),'explain':'share = 나누기!'},
+            {'en':'Sing folk songs.','choices':['민요 불러','팝 불러','자','놀아'],'ans':0,'hint':('folk','전통'),'explain':'folk song = 민요!'},
+            {'en':"Take family photos.",'choices':['가족 사진 찍어','자','놀아','먹어'],'ans':0,'hint':('photo','사진'),'explain':'take photo = 찍기!'},
+            {'en':'Happy Chuseok!','choices':['즐거운 추석!','슬픈 추석!','자!','놀아!'],'ans':0,'hint':('happy','즐거운'),'explain':'happy = 즐거운!'},
+        ]
+    },
+
+    '20260905': {
+        'date':'2026-09-05','day_ko':'토','theme':'주말 외출','theme_emoji':'🚶','description':'주말 활동 영어!',
+        'questions':[
+            {'en':'Go out this weekend.','choices':['이번 주말 외출','평일 외출','자','놀아'],'ans':0,'hint':('go out','나가다'),'explain':'go out = 외출!'},
+            {'en':'Walk in the park.','choices':['공원 산책','집에서 자','자','놀아'],'ans':0,'hint':('walk','산책'),'explain':'walk = 걷기/산책!'},
+            {'en':'Ride a bike.','choices':['자전거 타','버스 타','자','놀아'],'ans':0,'hint':('bike','자전거'),'explain':'bike = 자전거!'},
+            {'en':"Let's go shopping.",'choices':['쇼핑 가자','자자','자','놀아'],'ans':0,'hint':('shopping','쇼핑'),'explain':"let's go = 가자!"},
+            {'en':'Visit the museum.','choices':['박물관 방문','학교 방문','자','놀아'],'ans':0,'hint':('museum','박물관'),'explain':'museum = 박물관!'},
+            {'en':'Watch a movie.','choices':['영화 봐','TV 봐','자','놀아'],'ans':0,'hint':('movie','영화'),'explain':'watch movie = 영화!'},
+            {'en':'Eat at a restaurant.','choices':['식당에서 먹어','집에서 먹어','자','놀아'],'ans':0,'hint':('restaurant','식당'),'explain':'restaurant = 식당!'},
+            {'en':"That's delicious.",'choices':['맛있어','맛없어','자','놀아'],'ans':0,'hint':('delicious','맛있는'),'explain':'delicious = 맛있는!'},
+            {'en':'Take a selfie.','choices':['셀카 찍어','TV 봐','자','놀아'],'ans':0,'hint':('selfie','셀카'),'explain':'selfie = 셀카!'},
+            {'en':"Beautiful weather today.",'choices':['오늘 날씨 좋아','오늘 날씨 나빠','자','놀아'],'ans':0,'hint':('weather','날씨'),'explain':'weather = 날씨!'},
+            {'en':'Buy a souvenir.','choices':['기념품 사','책 사','자','놀아'],'ans':0,'hint':('souvenir','기념품'),'explain':'souvenir = 기념품!'},
+            {'en':"Let's get ice cream.",'choices':['아이스크림 먹자','국밥 먹자','자','놀아'],'ans':0,'hint':('ice cream','아이스크림'),'explain':'ice cream = 아이스!'},
+            {'en':'The line is long.','choices':['줄이 길어','줄이 짧아','자','놀아'],'ans':0,'hint':('line','줄'),'explain':'line = 줄!'},
+            {'en':'Wait your turn.','choices':['차례 기다려','새치기 해','자','놀아'],'ans':0,'hint':('wait','기다리다'),'explain':'wait turn = 차례!'},
+            {'en':"It's getting late.",'choices':['늦어지고 있어','이르네','자','놀아'],'ans':0,'hint':('late','늦은'),'explain':'late = 늦은!'},
+            {'en':'Time to go home.','choices':['집 갈 시간','놀 시간','자','놀아'],'ans':0,'hint':('go home','집 가다'),'explain':'go home = 집 가!'},
+            {'en':"Today was fun.",'choices':['오늘 재밌었어','오늘 지루','자','놀아'],'ans':0,'hint':('fun','재미'),'explain':'fun = 재미!'},
+            {'en':'I am tired.','choices':['나 피곤해','나 신나','자','놀아'],'ans':0,'hint':('tired','피곤'),'explain':'tired = 피곤!'},
+            {'en':'Sleep tight!','choices':['잘 자!','자지 마!','놀아!','먹어!'],'ans':0,'hint':('tight','꿀잠'),'explain':'sleep tight = 잘 자!'},
+            {'en':'See you again soon.','choices':['곧 다시 봐','다시 안 봐','자','놀아'],'ans':0,'hint':('again','다시'),'explain':'again = 다시!'},
+        ]
+    },
+
+    '20260906': {
+        'date':'2026-09-06','day_ko':'일','theme':'개학 전 마무리','theme_emoji':'🎒','description':'개학 마무리 영어!',
+        'questions':[
+            {'en':'New week starts tomorrow.','choices':['내일 새 주 시작','어제 새 주','자','놀아'],'ans':0,'hint':('week','주'),'explain':'new week = 새 주!'},
+            {'en':'Check the calendar.','choices':['달력 확인','달 봐','자','놀아'],'ans':0,'hint':('calendar','달력'),'explain':'calendar = 달력!'},
+            {'en':'Pack the school bag.','choices':['학교 가방 싸','책 던져','자','놀아'],'ans':0,'hint':('pack','싸다'),'explain':'pack = 싸다!'},
+            {'en':"Don't forget your books.",'choices':['책 잊지 마','책 잊어','자','놀아'],'ans':0,'hint':('forget','잊다'),'explain':"don't forget = 잊지 마!"},
+            {'en':'Finish the homework.','choices':['숙제 끝내','숙제 미뤄','자','놀아'],'ans':0,'hint':('finish','끝내다'),'explain':'finish = 끝!'},
+            {'en':'Set my alarm.','choices':['알람 맞춰','알람 꺼','자','놀아'],'ans':0,'hint':('alarm','알람'),'explain':'set alarm = 알람 설정!'},
+            {'en':"Go to bed early.",'choices':['일찍 자','늦게 자','자','놀아'],'ans':0,'hint':('early','일찍'),'explain':'early = 일찍!'},
+            {'en':'Brush your teeth.','choices':['이 닦아','얼굴 닦아','자','놀아'],'ans':0,'hint':('brush','닦다'),'explain':'brush teeth = 이 닦기!'},
+            {'en':'Wash your face.','choices':['세수해','자','놀아','먹어'],'ans':0,'hint':('wash face','세수'),'explain':'wash face = 세수!'},
+            {'en':'Comb my hair.','choices':['머리 빗어','이 닦아','자','놀아'],'ans':0,'hint':('comb','빗다'),'explain':'comb = 빗다!'},
+            {'en':'Wear clean clothes.','choices':['깨끗한 옷 입어','더러운 옷','자','놀아'],'ans':0,'hint':('clean','깨끗한'),'explain':'clean = 깨끗한!'},
+            {'en':"It's a new start.",'choices':['새로운 시작','마지막','자','놀아'],'ans':0,'hint':('start','시작'),'explain':'new start = 새 시작!'},
+            {'en':'Greet your friends.','choices':['친구에게 인사','친구 미워','자','놀아'],'ans':0,'hint':('greet','인사'),'explain':'greet = 인사!'},
+            {'en':'Listen in class.','choices':['수업 잘 들어','자','놀','먹'],'ans':0,'hint':('listen','듣다'),'explain':'listen = 듣기!'},
+            {'en':'Take good notes.','choices':['필기 잘해','필기 안해','자','놀아'],'ans':0,'hint':('notes','필기'),'explain':'notes = 필기!'},
+            {'en':'Ask if you wonder.','choices':['궁금하면 물어','조용히','자','놀아'],'ans':0,'hint':('ask','묻다'),'explain':'ask = 묻기!'},
+            {'en':'Try your best.','choices':['최선을 다해','대충해','자','놀아'],'ans':0,'hint':('best','최선'),'explain':'best = 최선!'},
+            {'en':'Be kind to everyone.','choices':['모두에 친절','한 명에','자','놀아'],'ans':0,'hint':('kind','친절'),'explain':'kind = 친절!'},
+            {'en':'Have a great week!','choices':['멋진 한 주!','피곤한 한 주!','자!','놀아!'],'ans':0,'hint':('great','멋진'),'explain':'great week = 멋진 주!'},
+            {'en':'You can do anything.','choices':['뭐든 할 수 있어','아무것도 못해','자','놀아'],'ans':0,'hint':('anything','뭐든'),'explain':'anything = 뭐든지!'},
+        ]
+    },
 }
 
 
@@ -3526,60 +3708,104 @@ let score = 0;
 let pointsEarned = 0;
 let answered = false;
 
-// ═══════ 발음 시스템 (단어장과 동일 - 안정성↑) ═══════
-let _voicesCache = [];
-let _userInteracted = false;
-function _loadVoices() {{
+// ═══════ 🔊 발음 시스템 v3 (통일 음성) ═══════
+// ═══════ 🔊 통일 발음 엔진 v3 — 모든 브라우저 동일 음성 ═══════
+// 구글 음성 파일을 받아 재생 → 어느 기기/브라우저든 같은 목소리·같은 음량
+// 음성 파일이 안 되면 브라우저 내장 음성으로 자동 백업
+var TTS_VOLUME = 0.7;                 // 0.0 ~ 1.0  모든 기기 공통 음량
+var TTS_SILENT = 'data:audio/wav;base64,UklGRrQBAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YZABAACAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA';
+var _ttsVoices = [];
+var _ttsReady = false;
+var _ttsAudio = (typeof Audio !== 'undefined') ? new Audio() : null;
+
+function _ttsLoadVoices() {{
   if (!('speechSynthesis' in window)) return;
-  _voicesCache = window.speechSynthesis.getVoices();
+  try {{ _ttsVoices = window.speechSynthesis.getVoices() || []; }} catch(e) {{}}
 }}
 if ('speechSynthesis' in window) {{
-  _loadVoices();
+  _ttsLoadVoices();
   if (window.speechSynthesis.onvoiceschanged !== undefined) {{
-    window.speechSynthesis.onvoiceschanged = _loadVoices;
+    window.speechSynthesis.onvoiceschanged = _ttsLoadVoices;
   }}
 }}
-function _pickVoice() {{
-  if (_voicesCache.length === 0) _loadVoices();
-  return _voicesCache.find(v => v.lang === 'en-US' && /Google|Samantha|Karen|Daniel|Microsoft/i.test(v.name))
-      || _voicesCache.find(v => v.lang === 'en-US')
-      || _voicesCache.find(v => v.lang && v.lang.startsWith('en'));
-}}
-function _primeSpeech() {{
-  if (_userInteracted) return;
-  _userInteracted = true;
-  if (!('speechSynthesis' in window)) return;
+
+// 첫 터치/클릭 때 오디오 잠금 해제 (모바일 자동재생 정책 대응)
+function _ttsPrime() {{
+  if (_ttsReady) return;
+  _ttsReady = true;
+  if (_ttsAudio) {{
+    try {{
+      _ttsAudio.src = TTS_SILENT;
+      _ttsAudio.volume = 0;
+      var pr = _ttsAudio.play();
+      if (pr && pr.catch) pr.catch(function(){{}});
+    }} catch(e) {{}}
+  }}
   try {{
-    const warm = new SpeechSynthesisUtterance(' ');
-    warm.volume = 0.01;
-    window.speechSynthesis.speak(warm);
+    if ('speechSynthesis' in window) {{
+      var w = new SpeechSynthesisUtterance(' ');
+      w.volume = 0.01;
+      window.speechSynthesis.speak(w);
+    }}
   }} catch(e) {{}}
 }}
-document.addEventListener('click', _primeSpeech, {{capture: true}});
-document.addEventListener('touchstart', _primeSpeech, {{capture: true, passive: true}});
+document.addEventListener('click', _ttsPrime, {{ capture: true }});
+document.addEventListener('touchstart', _ttsPrime, {{ capture: true, passive: true }});
 
-function speakSentence(sentence, btn) {{
-  if (!('speechSynthesis' in window)) {{
-    alert('🔊 이 브라우저는 영어 발음을 지원하지 않아요!\\n크롬이나 사파리에서 열어주세요.');
-    return;
-  }}
+// 브라우저 내장 음성 (백업)
+function _ttsFallback(text, onDone) {{
+  if (!('speechSynthesis' in window)) {{ if (onDone) onDone(); return; }}
   try {{
     window.speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(sentence);
-    u.lang = 'en-US';
-    u.rate = 0.85;
-    u.pitch = 1.0;
-    u.volume = 1.0;
-    if (_voicesCache.length === 0) _loadVoices();
-    const v = _pickVoice();
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = 'en-US'; u.rate = 0.85; u.pitch = 1.05; u.volume = TTS_VOLUME;
+    if (_ttsVoices.length === 0) _ttsLoadVoices();
+    var v = null, i;
+    for (i = 0; i < _ttsVoices.length; i++) {{
+      if (_ttsVoices[i].lang === 'en-US') {{ v = _ttsVoices[i]; break; }}
+    }}
+    if (!v) {{
+      for (i = 0; i < _ttsVoices.length; i++) {{
+        if (_ttsVoices[i].lang && _ttsVoices[i].lang.indexOf('en') === 0) {{ v = _ttsVoices[i]; break; }}
+      }}
+    }}
     if (v) u.voice = v;
-    if (btn) btn.classList.add('speaking');
-    u.onend = function() {{ if (btn) btn.classList.remove('speaking'); }};
-    u.onerror = function() {{ if (btn) btn.classList.remove('speaking'); }};
+    u.onend = function(){{ if (onDone) onDone(); }};
+    u.onerror = function(){{ if (onDone) onDone(); }};
     window.speechSynthesis.speak(u);
-  }} catch(e) {{
-    if (btn) btn.classList.remove('speaking');
-  }}
+    setTimeout(function(){{ try {{ window.speechSynthesis.resume(); }} catch(e){{}} }}, 120);
+  }} catch(e) {{ if (onDone) onDone(); }}
+}}
+
+// 핵심: 통일 음성 파일 재생 → 실패 시 백업
+function playTTS(text, onStart, onDone) {{
+  if (!text) {{ if (onDone) onDone(); return; }}
+  text = String(text).trim();
+  try {{ if (_ttsAudio) _ttsAudio.pause(); }} catch(e) {{}}
+  try {{ if ('speechSynthesis' in window) window.speechSynthesis.cancel(); }} catch(e) {{}}
+
+  var settled = false;
+  function done() {{ if (settled) return; settled = true; if (onDone) onDone(); }}
+  function fallback() {{ if (settled) return; settled = true; _ttsFallback(text, function(){{ if (onDone) onDone(); }}); }}
+
+  if (onStart) onStart();
+
+  if (!_ttsAudio) {{ fallback(); return; }}
+  var audio = _ttsAudio;
+  audio.onended = function(){{ done(); }};
+  audio.onerror = function(){{ fallback(); }};
+  try {{
+    audio.volume = TTS_VOLUME;
+    audio.src = 'https://translate.google.com/translate_tts?ie=UTF-8&tl=en&client=tw-ob&q=' + encodeURIComponent(text);
+    var p = audio.play();
+    if (p && p.catch) {{ p.catch(function(){{ fallback(); }}); }}
+  }} catch(e) {{ fallback(); }}
+}}
+
+function speakSentence(sentence, btn) {{
+  playTTS(sentence,
+    function(){{ if (btn) btn.classList.add('speaking'); }},
+    function(){{ if (btn) btn.classList.remove('speaking'); }});
 }}
 
 function speakCurrent() {{
@@ -3634,7 +3860,7 @@ function renderQuestion() {{
     choicesDiv.appendChild(btn);
   }});
   // 자동 발음 (사용자 터치 후부터)
-  if (_userInteracted) {{
+  if (_ttsReady) {{
     setTimeout(function() {{ speakCurrent(); }}, 250);
   }}
 }}

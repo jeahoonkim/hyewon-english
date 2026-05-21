@@ -1,0 +1,196 @@
+{
+  "date": "2026-09-04",
+  "folderName": "20260904",
+  "dayKo": "금",
+  "dayKoFull": "금요일",
+  "dayEn": "Friday",
+  "dayIdx": 5,
+  "theme": "추석 준비",
+  "themeEmoji": "🌕",
+  "vocabFileName": "혜원이_영단어_금요일_추석.html",
+  "quizFileName": "혜원이_영단어_금요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #fff8e1 0%, #ffd54f 45%, #f57f17 100%);",
+  "headerTitle": "🌕 추석 준비 🥮",
+  "words": [
+    {
+      "word": "Chuseok",
+      "ipa": "/ˈtʃuːsʌk/",
+      "meaning": "추석",
+      "emoji": "🌕",
+      "example": "Happy Chuseok.",
+      "exampleKo": "즐거운 추석.",
+      "fact": "한국 추수감사절!"
+    },
+    {
+      "word": "songpyeon",
+      "ipa": "/ˈsɒŋpjʌn/",
+      "meaning": "송편",
+      "emoji": "🥮",
+      "example": "Make songpyeon.",
+      "exampleKo": "송편 빚어요.",
+      "fact": "반달 떡!"
+    },
+    {
+      "word": "fullmoon",
+      "ipa": "/ˈfʊlmuːn/",
+      "meaning": "보름달",
+      "emoji": "🌕",
+      "example": "Bright fullmoon.",
+      "exampleKo": "밝은 보름달.",
+      "fact": "동그란 달!"
+    },
+    {
+      "word": "forefather",
+      "ipa": "/ˈfɔːrfɑːðər/",
+      "meaning": "조상",
+      "emoji": "👴",
+      "example": "Honor our forefathers.",
+      "exampleKo": "조상 기려요.",
+      "fact": "옛 어른!"
+    },
+    {
+      "word": "ancestral rite",
+      "ipa": "/ænˈsestrəl raɪt/",
+      "meaning": "차례",
+      "emoji": "🙏",
+      "example": "Family ancestral rite.",
+      "exampleKo": "가족 차례.",
+      "fact": "제사 의식!"
+    },
+    {
+      "word": "hanbok",
+      "ipa": "/ˈhɑːnbɒk/",
+      "meaning": "한복",
+      "emoji": "👘",
+      "example": "Wear hanbok.",
+      "exampleKo": "한복 입어요.",
+      "fact": "전통 한국 옷!"
+    },
+    {
+      "word": "folk game",
+      "ipa": "/foʊk ɡeɪm/",
+      "meaning": "전통 놀이",
+      "emoji": "🎯",
+      "example": "Play folk games.",
+      "exampleKo": "전통놀이 해요.",
+      "fact": "옛 놀이!"
+    },
+    {
+      "word": "yutnori",
+      "ipa": "/ˈjʌtnɔːri/",
+      "meaning": "윷놀이",
+      "emoji": "🎲",
+      "example": "Play yutnori.",
+      "exampleKo": "윷놀이 해요.",
+      "fact": "한국 보드게임!"
+    },
+    {
+      "word": "ganggangsullae",
+      "ipa": "/ˈɡæŋɡæŋˈsʊlleɪ/",
+      "meaning": "강강술래",
+      "emoji": "💃",
+      "example": "Dance ganggangsullae.",
+      "exampleKo": "강강술래 춰요.",
+      "fact": "보름달 원무!"
+    },
+    {
+      "word": "rice cake",
+      "ipa": "/raɪs keɪk/",
+      "meaning": "떡",
+      "emoji": "🍡",
+      "example": "Sweet rice cake.",
+      "exampleKo": "달콤한 떡.",
+      "fact": "명절 음식!"
+    },
+    {
+      "word": "hometown visit",
+      "ipa": "/ˈhoʊmtaʊn ˈvɪzɪt/",
+      "meaning": "고향 방문",
+      "emoji": "🏡",
+      "example": "Annual hometown visit.",
+      "exampleKo": "매년 고향 방문.",
+      "fact": "명절 귀성!"
+    },
+    {
+      "word": "family gathering",
+      "ipa": "/ˈfæməli ˈɡæðərɪŋ/",
+      "meaning": "가족 모임",
+      "emoji": "👨‍👩‍👧‍👦",
+      "example": "Big family gathering.",
+      "exampleKo": "큰 가족 모임.",
+      "fact": "다 같이 모임!"
+    },
+    {
+      "word": "new clothes",
+      "ipa": "/nuː kloʊðz/",
+      "meaning": "새 옷",
+      "emoji": "👗",
+      "example": "Buy new clothes.",
+      "exampleKo": "새 옷 사요.",
+      "fact": "명절 차림!"
+    },
+    {
+      "word": "sebae",
+      "ipa": "/ˈsebe/",
+      "meaning": "세배",
+      "emoji": "🙇",
+      "example": "Bow for sebae.",
+      "exampleKo": "세배 드려요.",
+      "fact": "어른께 절!"
+    },
+    {
+      "word": "holiday food",
+      "ipa": "/ˈhɒlədeɪ fuːd/",
+      "meaning": "명절 음식",
+      "emoji": "🍱",
+      "example": "Tasty holiday food.",
+      "exampleKo": "맛있는 명절음식.",
+      "fact": "잔치 상!"
+    },
+    {
+      "word": "jeon pancake",
+      "ipa": "/dʒʌn ˈpænkeɪk/",
+      "meaning": "전 (부침개)",
+      "emoji": "🥞",
+      "example": "Crispy jeon pancake.",
+      "exampleKo": "바삭한 전.",
+      "fact": "기름에 부쳐요!"
+    },
+    {
+      "word": "galbijjim",
+      "ipa": "/ˈɡɑːlbidʒɪm/",
+      "meaning": "갈비찜",
+      "emoji": "🍲",
+      "example": "Hot galbijjim.",
+      "exampleKo": "뜨거운 갈비찜.",
+      "fact": "찜요리!"
+    },
+    {
+      "word": "kalbi",
+      "ipa": "/ˈkɑːlbi/",
+      "meaning": "갈비",
+      "emoji": "🥩",
+      "example": "Grilled kalbi.",
+      "exampleKo": "구운 갈비.",
+      "fact": "명절 별미!"
+    },
+    {
+      "word": "holiday traffic",
+      "ipa": "/ˈhɒlədeɪ ˈtræfɪk/",
+      "meaning": "명절 교통체증",
+      "emoji": "🚗",
+      "example": "Heavy holiday traffic.",
+      "exampleKo": "명절 차 막힘.",
+      "fact": "고속도로 정체!"
+    },
+    {
+      "word": "harvest fest",
+      "ipa": "/ˈhɑːrvɪst fest/",
+      "meaning": "수확 축제",
+      "emoji": "🎑",
+      "example": "Fun harvest fest.",
+      "exampleKo": "즐거운 수확 축제.",
+      "fact": "가을 잔치!"
+    }
+  ]
+}

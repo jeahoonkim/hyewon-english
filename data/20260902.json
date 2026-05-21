@@ -1,0 +1,196 @@
+{
+  "date": "2026-09-02",
+  "folderName": "20260902",
+  "dayKo": "수",
+  "dayKoFull": "수요일",
+  "dayEn": "Wednesday",
+  "dayIdx": 3,
+  "theme": "동아리·방과후",
+  "themeEmoji": "🎭",
+  "vocabFileName": "혜원이_영단어_수요일_동아리.html",
+  "quizFileName": "혜원이_영단어_수요일_퀴즈.html",
+  "bgGradient": "linear-gradient(180deg, #f3e5f5 0%, #ab47bc 45%, #4a148c 100%);",
+  "headerTitle": "🎭 동아리 활동 🎨",
+  "words": [
+    {
+      "word": "afterschool",
+      "ipa": "/ˈæftərskuːl/",
+      "meaning": "방과 후",
+      "emoji": "🏫",
+      "example": "Afterschool class.",
+      "exampleKo": "방과후 수업.",
+      "fact": "수업 끝난 뒤!"
+    },
+    {
+      "word": "club activity",
+      "ipa": "/klʌb ækˈtɪvəti/",
+      "meaning": "동아리 활동",
+      "emoji": "🎯",
+      "example": "Fun club activity.",
+      "exampleKo": "재밌는 동아리.",
+      "fact": "좋아하는 모임!"
+    },
+    {
+      "word": "society",
+      "ipa": "/səˈsaɪəti/",
+      "meaning": "학회, 모임",
+      "emoji": "🎓",
+      "example": "Math society.",
+      "exampleKo": "수학 학회.",
+      "fact": "공부 모임!"
+    },
+    {
+      "word": "drama club",
+      "ipa": "/ˈdrɑːmə klʌb/",
+      "meaning": "연극 동아리",
+      "emoji": "🎭",
+      "example": "Join the drama club.",
+      "exampleKo": "연극부 가입.",
+      "fact": "연기하기!"
+    },
+    {
+      "word": "glee club",
+      "ipa": "/ɡliː klʌb/",
+      "meaning": "합창부, 글리 클럽",
+      "emoji": "🎵",
+      "example": "School glee club.",
+      "exampleKo": "학교 합창부.",
+      "fact": "노래 부르기!"
+    },
+    {
+      "word": "ensemble",
+      "ipa": "/ɒnˈsɒmbəl/",
+      "meaning": "앙상블, 합주",
+      "emoji": "🎻",
+      "example": "Wind ensemble.",
+      "exampleKo": "관악 앙상블.",
+      "fact": "악기 어울림!"
+    },
+    {
+      "word": "debate club",
+      "ipa": "/dɪˈbeɪt klʌb/",
+      "meaning": "토론 동아리",
+      "emoji": "🗣️",
+      "example": "Debate club meeting.",
+      "exampleKo": "토론부 모임.",
+      "fact": "의견 교환!"
+    },
+    {
+      "word": "art club",
+      "ipa": "/ɑːrt klʌb/",
+      "meaning": "미술부",
+      "emoji": "🎨",
+      "example": "Art club showcase.",
+      "exampleKo": "미술부 전시.",
+      "fact": "그리기 모임!"
+    },
+    {
+      "word": "science club",
+      "ipa": "/ˈsaɪəns klʌb/",
+      "meaning": "과학부",
+      "emoji": "🔬",
+      "example": "Science club experiment.",
+      "exampleKo": "과학부 실험.",
+      "fact": "실험 모임!"
+    },
+    {
+      "word": "chess club",
+      "ipa": "/tʃes klʌb/",
+      "meaning": "체스부",
+      "emoji": "♟️",
+      "example": "Chess club tournament.",
+      "exampleKo": "체스부 대회.",
+      "fact": "체스 모임!"
+    },
+    {
+      "word": "booklover",
+      "ipa": "/ˈbʊklʌvər/",
+      "meaning": "독서 애호가",
+      "emoji": "📚",
+      "example": "A young booklover.",
+      "exampleKo": "어린 독서가.",
+      "fact": "책 좋아함!"
+    },
+    {
+      "word": "handicraft",
+      "ipa": "/ˈhændikræft/",
+      "meaning": "수공예",
+      "emoji": "✂️",
+      "example": "Pretty handicraft.",
+      "exampleKo": "예쁜 수공예.",
+      "fact": "손으로 만들어요!"
+    },
+    {
+      "word": "ceramics",
+      "ipa": "/səˈræmɪks/",
+      "meaning": "도예, 도자기",
+      "emoji": "🏺",
+      "example": "Ceramics class.",
+      "exampleKo": "도예 수업.",
+      "fact": "흙으로 빚어요!"
+    },
+    {
+      "word": "workshop",
+      "ipa": "/ˈwɜːrkʃɒp/",
+      "meaning": "워크숍, 작업장",
+      "emoji": "🛠️",
+      "example": "Pottery workshop.",
+      "exampleKo": "도예 워크숍.",
+      "fact": "체험 수업!"
+    },
+    {
+      "word": "showcase",
+      "ipa": "/ˈʃoʊkeɪs/",
+      "meaning": "쇼케이스, 발표",
+      "emoji": "🎤",
+      "example": "Talent showcase.",
+      "exampleKo": "재능 쇼케이스.",
+      "fact": "보여주기!"
+    },
+    {
+      "word": "rehearsal",
+      "ipa": "/rɪˈhɜːrsəl/",
+      "meaning": "리허설",
+      "emoji": "🎬",
+      "example": "Long rehearsal.",
+      "exampleKo": "긴 리허설.",
+      "fact": "연습!"
+    },
+    {
+      "word": "audition",
+      "ipa": "/ɔːˈdɪʃən/",
+      "meaning": "오디션",
+      "emoji": "🎤",
+      "example": "Pass the audition.",
+      "exampleKo": "오디션 합격.",
+      "fact": "뽑히는 시험!"
+    },
+    {
+      "word": "talent show",
+      "ipa": "/ˈtælənt ʃoʊ/",
+      "meaning": "장기 자랑",
+      "emoji": "⭐",
+      "example": "School talent show.",
+      "exampleKo": "학교 장기자랑.",
+      "fact": "재주 보여주기!"
+    },
+    {
+      "word": "tabletennis",
+      "ipa": "/ˈteɪbəl ˈtenɪs/",
+      "meaning": "탁구",
+      "emoji": "🏓",
+      "example": "Play tabletennis.",
+      "exampleKo": "탁구 쳐요.",
+      "fact": "테이블 위 경기!"
+    },
+    {
+      "word": "taekwondo",
+      "ipa": "/ˌtaɪˈkwɒndoʊ/",
+      "meaning": "태권도",
+      "emoji": "🥋",
+      "example": "Taekwondo class.",
+      "exampleKo": "태권도 수업.",
+      "fact": "한국 무술!"
+    }
+  ]
+}
