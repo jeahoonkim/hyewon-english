@@ -221,6 +221,24 @@ def git_upload():
     # 변경 사항 확인
     status = run_shell("git status --short")
     if not status.stdout.strip():
+        # 작업 폴더는 깨끗 → 아직 GitHub에 안 올라간 커밋이 있는지 확인
+        ahead = run_shell("git rev-list --count origin/main..HEAD")
+        ahead_n = (ahead.stdout or "").strip()
+        if ahead_n.isdigit() and int(ahead_n) > 0:
+            info(f"커밋은 됐지만 GitHub에 안 올라간 게 {ahead_n}개 있어요 → 올릴게요")
+            print("  GitHub 최신 받기 (rebase)...")
+            pr = run_shell("git pull --rebase -X ours")
+            if pr.returncode != 0:
+                run_shell("git rebase --abort")
+                fail("⚠️  GitHub와 충돌 - '🆘_충돌해결_업로드.bat' 를 사용하세요")
+                return False
+            print("  git push ...")
+            push_result = subprocess.run("git push", shell=True, cwd=str(ROOT))
+            if push_result.returncode != 0:
+                fail("git push 실패 - 인터넷 / 로그인 / 권한 확인하세요")
+                return False
+            ok("GitHub 푸시 완료!")
+            return True
         info("✨ 업로드할 변경 사항이 없어요 (모두 최신)")
         return True
 
