@@ -43,6 +43,7 @@ def fail(msg): print(f"  [FAIL] {msg}")
 def build_words_array(words):
     lines = ["const WORDS = ["]
     for w in words:
+        w = {k: (v.replace('\\', '\\\\').replace('"', '\\"') if isinstance(v, str) else v) for k, v in w.items()}
         lines.append(f'  {{ word: "{w["word"]}", ipa: "{w["ipa"]}", meaning: "{w["meaning"]}", emoji: "{w["emoji"]}",')
         lines.append(f'    example: "{w["example"]}",')
         lines.append(f'    exampleKo: "{w["exampleKo"]}",')
