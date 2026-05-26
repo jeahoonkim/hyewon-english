@@ -3491,6 +3491,28 @@ function applySheetState(data) {
   if (typeof refreshLuckyBanner === 'function') refreshLuckyBanner();
   if (typeof renderCoupons === 'function') renderCoupons();
 
+  // ─── 🆕 학습 날짜 (달력 기기간 동기화) ───
+  // 시트의 날짜 + 이 기기 로컬 history 날짜를 합쳐서 저장.
+  // 이 기기에만 있는 날짜는 시트로 밀어올려서 다른 기기도 보이게.
+  if (Array.isArray(data.studied_dates)) {
+    const sheetDates = new Set(data.studied_dates);
+    const localDates = new Set();
+    try {
+      const vh = JSON.parse(localStorage.getItem('hyewon_vocab_history') || '[]');
+      vh.forEach(r => { const d = r.scheduledDate || r.date; if (d) localDates.add(d); });
+      const qh = JSON.parse(localStorage.getItem('hyewon_quiz_history') || '[]');
+      qh.forEach(r => { const d = r.scheduledDate || r.date; if (d) localDates.add(d); });
+    } catch(e) {}
+    const toPush = [];
+    localDates.forEach(d => { if (!sheetDates.has(d)) toPush.push(d); });
+    if (toPush.length > 0) {
+      console.log('[🌐 동기화] 로컬에만 있는 학습일 ' + toPush.length + '개 → 시트로 푸시');
+      syncStateToSheet({ studied_dates_add: toPush });
+    }
+    const merged = new Set([...sheetDates, ...localDates]);
+    localStorage.setItem('hyewon_studied_dates_sheet', JSON.stringify([...merged]));
+  }
+
   // 🌐 동기화 표시
   const indicator = document.getElementById('syncIndicator');
   if (indicator) {
@@ -4865,6 +4887,9 @@ try {
   qh.forEach(r => {
     studiedDates.add(r.scheduledDate || r.date);
   });
+  // 🆕 시트에서 받은 다른 기기 학습일도 합치기 (달력 기기간 동기화)
+  const sd = JSON.parse(localStorage.getItem('hyewon_studied_dates_sheet') || '[]');
+  sd.forEach(d => { if (d) studiedDates.add(d); });
 } catch(e) {}
 
 // ========== 달력 (◀ ▶ 화살표로 월 이동) ==========

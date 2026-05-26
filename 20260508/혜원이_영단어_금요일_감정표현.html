@@ -814,6 +814,16 @@ function finishLearning() {
     const history = JSON.parse(localStorage.getItem('hyewon_vocab_history') || '[]');
     history.push(record);
     localStorage.setItem('hyewon_vocab_history', JSON.stringify(history));
+    // 🌐 학습 날짜 시트 동기화 (달력 기기간 표시용)
+    if (typeof GAS_URL !== 'undefined' && GAS_URL && record.scheduledDate) {
+      try {
+        fetch(GAS_URL, {
+          method: 'POST', mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain' },
+          body: JSON.stringify({ sync_state: { studied_date: record.scheduledDate } })
+        }).catch(function(){});
+      } catch(e) {}
+    }
 
     // 🎁 포인트 적립: 단어장 완료 = 100P (오늘 첫 완료만)
     const pointsKey = 'hyewon_vocab_completed_' + today;

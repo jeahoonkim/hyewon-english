@@ -297,6 +297,13 @@ function getFullState() {
     try { saturdayQuiz = JSON.parse(sqRaw); } catch(e) { saturdayQuiz = null; }
   }
 
+  // 🆕 학습한 날짜 목록 (달력 기기간 동기화용)
+  let studiedDates = [];
+  const sdRaw = _getSyncValue('studied_dates');
+  if (sdRaw) {
+    try { studiedDates = JSON.parse(sdRaw) || []; } catch(e) { studiedDates = []; }
+  }
+
   // 쿠폰 목록 (사용 안 한 것 + 사용한 것 모두)
   const sheet = _getCouponsSheet();
   const lastRow = sheet.getLastRow();
@@ -326,6 +333,7 @@ function getFullState() {
     lucky_received_date: lucky,
     last_streak_reward: lastStreakReward,
     last_saturday_quiz: saturdayQuiz,  // 🆕 { date, wrongWords[], score, total }
+    studied_dates: studiedDates,        // 🆕 학습한 날짜 목록 (달력용)
     coupons: coupons,
     server_time: Utilities.formatDate(new Date(), 'Asia/Seoul', 'yyyy-MM-dd HH:mm:ss')
   };
@@ -384,6 +392,22 @@ function syncSetState(state) {
       ? state.last_saturday_quiz
       : JSON.stringify(state.last_saturday_quiz);
     _setSyncValue('last_saturday_quiz', v);
+  }
+  // 🆕 학습 날짜 추가 — union (중복 안 함). 단일 문자열 OR 배열 받음
+  if (state.studied_date !== undefined || state.studied_dates_add !== undefined) {
+    var _newDates = [];
+    if (typeof state.studied_date === 'string' && state.studied_date) _newDates.push(state.studied_date);
+    if (Array.isArray(state.studied_dates_add)) _newDates = _newDates.concat(state.studied_dates_add);
+    if (_newDates.length > 0) {
+      var _existing = [];
+      var _exRaw = _getSyncValue('studied_dates');
+      if (_exRaw) { try { _existing = JSON.parse(_exRaw) || []; } catch(e) { _existing = []; } }
+      var _set = {};
+      _existing.forEach(function(d){ if (d) _set[d] = true; });
+      _newDates.forEach(function(d){ if (d) _set[d] = true; });
+      var _merged = Object.keys(_set).sort();
+      _setSyncValue('studied_dates', JSON.stringify(_merged));
+    }
   }
 }
 
