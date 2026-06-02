@@ -3511,6 +3511,10 @@ function applySheetState(data) {
     }
     const merged = new Set([...sheetDates, ...localDates]);
     localStorage.setItem('hyewon_studied_dates_sheet', JSON.stringify([...merged]));
+    // 🆕 학습일 새로 받았으니 홈/달력 즉시 새로고침
+    if (typeof _buildStudiedDates === 'function') studiedDates = _buildStudiedDates();
+    if (typeof renderTodayCard === 'function') renderTodayCard();
+    if (typeof renderCalendar === 'function') renderCalendar();
   }
 
   // 🌐 동기화 표시
@@ -4610,63 +4614,84 @@ if (upcoming) {
   nextEl.innerHTML = `준비중<span class="unit"></span>`;
 }
 
-// ========== 오늘의 학습 ==========
-const todayItem = SCHEDULE.find(s => s.date === todayStr);
-const todayBadge = document.getElementById('todayBadge');
-const todayTitle = document.getElementById('todayTitle');
-const todaySub = document.getElementById('todaySub');
-const todayContent = document.getElementById('todayContent');
-
-if (todayItem) {
-  // 주말 = 시험/복습만 (단어장 X) — 토(종합시험) / 일(일요일 복습)
-  const isWeekendExam = (todayItem.dayKo === '토' || todayItem.dayKo === '일');
-
-  if (isWeekendExam) {
-    // 토요일: 종합시험, 일요일: 복습 퀴즈
-    const isSat = todayItem.dayKo === '토';
-    todayBadge.textContent = isSat ? `오늘은 시험 날! 🏆` : `오늘은 복습 날! 🌻`;
-    todayTitle.innerHTML = `${todayItem.theme} ${todayItem.emoji}`;
-    todaySub.textContent = isSat
-      ? `이번 주 배운 단어로 종합시험 도전!`
-      : `이번 주 틀린 단어만 복습해봐요!`;
-    todayContent.innerHTML = `
-      <div class="today-links single">
-        <a class="today-link wide" href="${todayItem.folder}/${encodeURIComponent(todayItem.quiz)}">
-          <div class="link-cat">${miniCats.star}</div>
-          <div class="link-title">${isSat ? '🏆 종합시험 시작!' : '🌻 복습 퀴즈 시작!'}</div>
-          <div class="link-desc">${isSat ? '한 주 마무리 도전!' : '틀린 것 다시 맞춰봐요!'}</div>
-        </a>
-      </div>
-    `;
-  } else {
-    // 평일 (월~금): 단어장 + 퀴즈 둘 다
-    todayBadge.textContent = `오늘의 수업 ✨`;
-    todayTitle.innerHTML = `${todayItem.theme} ${todayItem.emoji}`;
-    todaySub.textContent = `새로운 20개 단어가 기다려요!`;
-    todayContent.innerHTML = `
-      <div class="today-links">
-        <a class="today-link" href="${todayItem.folder}/${encodeURIComponent(todayItem.vocab)}">
-          <div class="link-cat">${miniCats.sunny}</div>
-          <div class="link-title">🌅 아침 단어장</div>
-          <div class="link-desc">단어 20개 배우기</div>
-        </a>
-        <a class="today-link" href="${todayItem.folder}/${encodeURIComponent(todayItem.quiz)}">
-          <div class="link-cat">${miniCats.star}</div>
-          <div class="link-title">✨ 오후 퀴즈</div>
-          <div class="link-desc">문제 풀기 도전!</div>
-        </a>
-      </div>
-      <div style="text-align:center;margin-top:8px;font-family:'Gaegu',sans-serif;font-size:.85em;color:#888;">
-        💡 퀴즈 다 풀고 ⬇️ <b style="color:#ff8fb5;">매일 영어 표현 퀴즈</b>도 잊지 마요!
-      </div>
-    `;
-  }
-} else {
-  todayBadge.textContent = `쉬는 날`;
-  todayTitle.textContent = `오늘은 쉬어가요 🍵`;
-  todaySub.textContent = `아래에서 지난 단어 복습해볼까요?`;
-  todayContent.innerHTML = `<div class="today-no-class">😸 내일은 새 단어가 있을지도 몰라요!</div>`;
+// ========== 🎯 학습한 날짜 모음 헬퍼 (로컬 + 시트동기화 합쳐서) ==========
+function _buildStudiedDates() {
+  const s = new Set();
+  try {
+    JSON.parse(localStorage.getItem('hyewon_vocab_history')||'[]').forEach(r => { const d=r.scheduledDate||r.date; if (d) s.add(d); });
+    JSON.parse(localStorage.getItem('hyewon_quiz_history')||'[]').forEach(r => { const d=r.scheduledDate||r.date; if (d) s.add(d); });
+    JSON.parse(localStorage.getItem('hyewon_studied_dates_sheet')||'[]').forEach(d => { if (d) s.add(d); });
+  } catch(e) {}
+  return s;
 }
+
+// ========== 오늘의 학습 (똑똑한 모드 — 못 한 수업 자동 따라잡기) ==========
+function renderTodayCard() {
+  const studiedNow = _buildStudiedDates();
+  // 오늘 이전(또는 오늘)인데 아직 안 한 수업이 있으면 그걸 먼저 보여줌
+  const _missedPast = SCHEDULE.filter(s => s.date <= todayStr && !studiedNow.has(s.date));
+  const todayItem = _missedPast[0] || SCHEDULE.find(s => s.date === todayStr) || null;
+  const isCatchUp = !!(todayItem && todayItem.date !== todayStr);
+  const todayBadge = document.getElementById('todayBadge');
+  const todayTitle = document.getElementById('todayTitle');
+  const todaySub = document.getElementById('todaySub');
+  const todayContent = document.getElementById('todayContent');
+
+  if (todayItem) {
+    const isWeekendExam = (todayItem.dayKo === '토' || todayItem.dayKo === '일');
+
+    if (isWeekendExam) {
+      const isSat = todayItem.dayKo === '토';
+      todayBadge.textContent = isCatchUp
+        ? `🔥 못 한 ${todayItem.date} ${isSat ? '시험' : '복습'} 따라잡자!`
+        : (isSat ? `오늘은 시험 날! 🏆` : `오늘은 복습 날! 🌻`);
+      todayTitle.innerHTML = `${todayItem.theme} ${todayItem.emoji}`;
+      todaySub.textContent = isSat
+        ? `이번 주 배운 단어로 종합시험 도전!`
+        : `이번 주 틀린 단어만 복습해봐요!`;
+      todayContent.innerHTML = `
+        <div class="today-links single">
+          <a class="today-link wide" href="${todayItem.folder}/${encodeURIComponent(todayItem.quiz)}">
+            <div class="link-cat">${miniCats.star}</div>
+            <div class="link-title">${isSat ? '🏆 종합시험 시작!' : '🌻 복습 퀴즈 시작!'}</div>
+            <div class="link-desc">${isSat ? '한 주 마무리 도전!' : '틀린 것 다시 맞춰봐요!'}</div>
+          </a>
+        </div>
+      `;
+    } else {
+      todayBadge.textContent = isCatchUp
+        ? `🔥 못 한 ${todayItem.date} (${todayItem.dayKo}) 따라잡자!`
+        : `오늘의 수업 ✨`;
+      todayTitle.innerHTML = `${todayItem.theme} ${todayItem.emoji}`;
+      todaySub.textContent = isCatchUp
+        ? `안 한 수업이 기다리고 있어요. 천천히 따라가요!`
+        : `새로운 20개 단어가 기다려요!`;
+      todayContent.innerHTML = `
+        <div class="today-links">
+          <a class="today-link" href="${todayItem.folder}/${encodeURIComponent(todayItem.vocab)}">
+            <div class="link-cat">${miniCats.sunny}</div>
+            <div class="link-title">🌅 아침 단어장</div>
+            <div class="link-desc">단어 20개 배우기</div>
+          </a>
+          <a class="today-link" href="${todayItem.folder}/${encodeURIComponent(todayItem.quiz)}">
+            <div class="link-cat">${miniCats.star}</div>
+            <div class="link-title">✨ 오후 퀴즈</div>
+            <div class="link-desc">문제 풀기 도전!</div>
+          </a>
+        </div>
+        <div style="text-align:center;margin-top:8px;font-family:'Gaegu',sans-serif;font-size:.85em;color:#888;">
+          💡 퀴즈 다 풀고 ⬇️ <b style="color:#ff8fb5;">매일 영어 표현 퀴즈</b>도 잊지 마요!
+        </div>
+      `;
+    }
+  } else {
+    todayBadge.textContent = `쉬는 날`;
+    todayTitle.textContent = `다 따라잡았어요! 🎉`;
+    todaySub.textContent = `오늘은 쉬어가요. 지난 단어 다시 봐도 좋아요.`;
+    todayContent.innerHTML = `<div class="today-no-class">🎊 모든 수업 완료! 다음 새 수업을 기다려요!</div>`;
+  }
+}
+renderTodayCard();
 
 // ════════════════════════════════════════════════
 // 🇺🇸 매일 영어 표현 퀴즈 카드 (월~일 매일 표시)
@@ -4875,22 +4900,8 @@ if (todayItem) {
   todayCard.parentNode.insertBefore(card, todayCard.nextSibling);
 })();
 
-// ========== 🎯 실제 학습한 날짜 모음 (localStorage 기반) ==========
-// 단어장 또는 퀴즈를 실제로 완료한 날짜들 (scheduledDate 우선, 없으면 date)
-const studiedDates = new Set();
-try {
-  const vh = JSON.parse(localStorage.getItem('hyewon_vocab_history') || '[]');
-  vh.forEach(r => {
-    studiedDates.add(r.scheduledDate || r.date);
-  });
-  const qh = JSON.parse(localStorage.getItem('hyewon_quiz_history') || '[]');
-  qh.forEach(r => {
-    studiedDates.add(r.scheduledDate || r.date);
-  });
-  // 🆕 시트에서 받은 다른 기기 학습일도 합치기 (달력 기기간 동기화)
-  const sd = JSON.parse(localStorage.getItem('hyewon_studied_dates_sheet') || '[]');
-  sd.forEach(d => { if (d) studiedDates.add(d); });
-} catch(e) {}
+// ========== 🎯 학습한 날짜 모음 (헬퍼 사용 — 재호출 가능) ==========
+let studiedDates = _buildStudiedDates();
 
 // ========== 달력 (◀ ▶ 화살표로 월 이동) ==========
 let displayedYear = today.getFullYear();
