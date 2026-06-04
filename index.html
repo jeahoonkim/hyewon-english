@@ -1723,6 +1723,22 @@
 </head>
 <body>
 
+<!-- 🔧 수리 중 공지 팝업 (수리 끝나면 이 블록 삭제) -->
+<div id="maintenanceModal" style="position:fixed;inset:0;background:rgba(0,0,0,0.55);display:flex;align-items:center;justify-content:center;z-index:99999;font-family:'Jua','Gaegu',sans-serif;padding:20px;">
+  <div style="background:#fff;border-radius:24px;padding:32px 26px 26px;max-width:340px;width:100%;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,0.35);position:relative;">
+    <div style="font-size:64px;line-height:1;margin-bottom:6px;">🛠️</div>
+    <h2 style="font-family:'Jua',sans-serif;color:#ff5fa2;margin:6px 0 12px;font-size:1.5em;">수리 중이에요!</h2>
+    <div style="color:#444;font-size:1.05em;line-height:1.55;margin-bottom:20px;">
+      혜원이 영어 놀이터를 더 좋게<br>고치고 있어요.<br>
+      잠깐만 기다려줘! 🦜💚
+    </div>
+    <button onclick="document.getElementById('maintenanceModal').remove();document.body.style.overflow=''" style="background:linear-gradient(135deg,#ff8fb5,#ff5fa2);color:#fff;border:none;border-radius:50px;padding:12px 36px;font-family:'Jua',sans-serif;font-size:1.05em;cursor:pointer;box-shadow:0 4px 12px rgba(255,95,162,0.4);">
+      알았어요! 👌
+    </button>
+  </div>
+</div>
+<script>document.body.style.overflow='hidden';setTimeout(function(){if(!document.getElementById('maintenanceModal'))document.body.style.overflow='';},100);</script>
+
 <!-- 배경 장식 -->
 <div class="bg-decor s1">⭐</div>
 <div class="bg-decor s2">💕</div>

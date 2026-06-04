@@ -314,15 +314,18 @@ function getFullState() {
       if (_last < 2) return;
       const _vals = _sh.getRange(2, 1, _last - 1, 1).getValues();
       _vals.forEach(function(r) {
-        let d = r[0];
+        var d = r[0];
         if (!d) return;
         if (d instanceof Date) {
           d = Utilities.formatDate(d, 'Asia/Seoul', 'yyyy-MM-dd');
         } else {
           d = String(d).trim();
-          // 'YYYY/M/D' 또는 'YYYY-M-D' 같은 변형도 yyyy-MM-dd로 정규화
-          const m = d.match(/^(\d{4})[-\/](\d{1,2})[-\/](\d{1,2})/);
-          if (m) d = m[1] + '-' + ('0'+m[2]).slice(-2) + '-' + ('0'+m[3]).slice(-2);
+          // 날짜 형식 정규화: 'YYYY/M/D' 또는 'YYYY-M-D' → 'YYYY-MM-DD'
+          var sep = (d.indexOf('/') >= 0) ? '/' : '-';
+          var parts = d.split(sep);
+          if (parts.length >= 3 && parts[0].length === 4) {
+            d = parts[0] + '-' + ('0' + parts[1]).slice(-2) + '-' + ('0' + parts[2]).slice(-2);
+          }
         }
         if (d) _dateSet.add(d);
       });
