@@ -303,6 +303,32 @@ function getFullState() {
   if (sdRaw) {
     try { studiedDates = JSON.parse(sdRaw) || []; } catch(e) { studiedDates = []; }
   }
+  // 🆕 옛 기록도 합치기 — 단어장기록·퀴즈기록 시트의 모든 날짜(과거 학습 이력)
+  try {
+    const _ss = SpreadsheetApp.openById(SHEET_ID);
+    const _dateSet = new Set(studiedDates);
+    [VOCAB_SHEET_NAME, QUIZ_SHEET_NAME].forEach(function(nm) {
+      const _sh = _ss.getSheetByName(nm);
+      if (!_sh) return;
+      const _last = _sh.getLastRow();
+      if (_last < 2) return;
+      const _vals = _sh.getRange(2, 1, _last - 1, 1).getValues();
+      _vals.forEach(function(r) {
+        let d = r[0];
+        if (!d) return;
+        if (d instanceof Date) {
+          d = Utilities.formatDate(d, 'Asia/Seoul', 'yyyy-MM-dd');
+        } else {
+          d = String(d).trim();
+          // 'YYYY/M/D' 또는 'YYYY-M-D' 같은 변형도 yyyy-MM-dd로 정규화
+          const m = d.match(/^(\d{4})[-\/](\d{1,2})[-\/](\d{1,2})/);
+          if (m) d = m[1] + '-' + ('0'+m[2]).slice(-2) + '-' + ('0'+m[3]).slice(-2);
+        }
+        if (d) _dateSet.add(d);
+      });
+    });
+    studiedDates = Array.from(_dateSet).sort();
+  } catch(e) { /* 시트 없으면 무시 */ }
 
   // 쿠폰 목록 (사용 안 한 것 + 사용한 것 모두)
   const sheet = _getCouponsSheet();
