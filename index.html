@@ -4011,19 +4011,30 @@ fetch('events/manifest.json?t=' + Date.now())
     refreshEventCard();
   });
 
-// 헬퍼: 오늘 이벤트 가져오기 (매번 EVENTS에서 다시 조회)
-function getTodayEvent() {
-  return EVENTS[todayStr];
+// 🆕 따라잡기: 오늘 이전인데 안 한 이벤트 우선, 다 했으면 오늘
+function _pickEventDate() {
+  const dates = Object.keys(EVENTS || {}).filter(d => d <= todayStr).sort();
+  for (let i = 0; i < dates.length; i++) {
+    let done = null;
+    try { done = JSON.parse(localStorage.getItem('hyewon_event_done_' + dates[i]) || 'null'); } catch(e) {}
+    if (!done) return dates[i];
+  }
+  return todayStr;
 }
 
-// 호환성용: todayEvent 변수 (getter 역할)
+// 헬퍼: 현재 보여줄 이벤트 (따라잡기 우선)
+function getTodayEvent() {
+  return EVENTS[_pickEventDate()];
+}
+
+// 호환성용: todayEvent 변수 (getter 역할 — 따라잡기 우선)
 Object.defineProperty(window, 'todayEvent', {
-  get: function() { return EVENTS[todayStr]; }
+  get: function() { return EVENTS[_pickEventDate()]; }
 });
 const eventCard = document.getElementById('eventCard');
-const eventCompletedKey = 'hyewon_event_done_' + todayStr;
+function _eventKey() { return 'hyewon_event_done_' + _pickEventDate(); }
 const eventDoneInfo = (function() {
-  try { return JSON.parse(localStorage.getItem(eventCompletedKey) || 'null'); } catch(e) { return null; }
+  try { return JSON.parse(localStorage.getItem(_eventKey()) || 'null'); } catch(e) { return null; }
 })();
 
 function refreshEventCard() {
@@ -4039,19 +4050,22 @@ function refreshEventCard() {
     return;
   }
 
+  const isCatchUp = _pickEventDate() !== todayStr;
   eventCard.classList.remove('no-event');
   iconEl.textContent = todayEvent.icon;
-  themeEl.textContent = todayEvent.theme;
+  themeEl.textContent = (isCatchUp ? '🔥 ' : '') + todayEvent.theme;
 
   const done = (function() {
-    try { return JSON.parse(localStorage.getItem(eventCompletedKey) || 'null'); } catch(e) { return null; }
+    try { return JSON.parse(localStorage.getItem(_eventKey()) || 'null'); } catch(e) { return null; }
   })();
   if (done) {
     eventCard.classList.add('completed');
     bonusEl.textContent = '✅ +' + done.earned + 'P 받음!';
   } else {
     eventCard.classList.remove('completed');
-    bonusEl.textContent = '최대 +200P 🎁';
+    bonusEl.textContent = isCatchUp
+      ? ('🔥 못 한 ' + _pickEventDate() + ' 따라잡자! 최대 +200P')
+      : '최대 +200P 🎁';
   }
 }
 refreshEventCard();
@@ -4069,7 +4083,7 @@ eventCard.addEventListener('click', function() {
 
   // 이미 했으면 상태 표시
   const done = (function() {
-    try { return JSON.parse(localStorage.getItem(eventCompletedKey) || 'null'); } catch(e) { return null; }
+    try { return JSON.parse(localStorage.getItem(_eventKey()) || 'null'); } catch(e) { return null; }
   })();
   const statusEl = document.getElementById('eventStatus');
   if (done) {
@@ -4088,58 +4102,57 @@ document.getElementById('eventModal').addEventListener('click', function(e) {
   if (e.target === this) closeModal('eventModal');
 });
 
-// 🎯 이벤트 자동 적립 체크 (퀴즈 풀고 돌아왔을 때)
+// 🎯 이벤트 자동 적립 체크 — 모든 pending 스캔 (따라잡기 모드 옛 이벤트도 처리)
 function checkEventAutoCredit() {
-  if (!todayEvent) return;
-  const pendingKey = 'hyewon_event_pending_' + todayStr;
-  let pending = null;
-  try {
-    const raw = localStorage.getItem(pendingKey);
-    if (raw) pending = JSON.parse(raw);
-  } catch(e) { return; }
-  if (!pending || typeof pending.score !== 'number') return;
-
-  // 이미 적립 완료한 점수인지 체크
-  let done = null;
-  try {
-    const rawDone = localStorage.getItem(eventCompletedKey);
-    if (rawDone) done = JSON.parse(rawDone);
-  } catch(e) {}
-
-  // 이미 적립한 timestamp랑 같으면 스킵
-  if (done && done.timestamp === pending.timestamp) return;
-
-  const earned = pending.score * 10;
-  // 기존에 받은 게 있으면 차감 후 새로 적립
-  if (done && done.earned) {
-    setPoints(Math.max(0, getPoints() - done.earned));
+  const toCredit = [];
+  for (let i = 0; i < localStorage.length; i++) {
+    const k = localStorage.key(i);
+    if (!k || k.indexOf('hyewon_event_pending_') !== 0) continue;
+    const eventDate = k.replace('hyewon_event_pending_', '');
+    let pending = null;
+    try { pending = JSON.parse(localStorage.getItem(k)); } catch(e) { continue; }
+    if (!pending || typeof pending.score !== 'number') continue;
+    let done = null;
+    try { done = JSON.parse(localStorage.getItem('hyewon_event_done_' + eventDate) || 'null'); } catch(e) {}
+    if (done && done.timestamp === pending.timestamp) continue;
+    toCredit.push({ date: eventDate, pending: pending, prevDone: done });
   }
-  setPoints(getPoints() + earned);
+  if (toCredit.length === 0) return;
 
-  // 적립 완료 기록
-  localStorage.setItem(eventCompletedKey, JSON.stringify({
-    score: pending.score,
-    total: pending.total,
-    earned: earned,
-    time: new Date().toISOString(),
-    theme: todayEvent.theme,
-    timestamp: pending.timestamp
-  }));
+  let lastCredited = null;
+  toCredit.forEach(function(item) {
+    const eventInfo = EVENTS[item.date] || { theme: '이벤트 퀴즈' };
+    const earned = item.pending.score * 10;
+    if (item.prevDone && item.prevDone.earned) {
+      setPoints(Math.max(0, getPoints() - item.prevDone.earned));
+    }
+    setPoints(getPoints() + earned);
+    localStorage.setItem('hyewon_event_done_' + item.date, JSON.stringify({
+      score: item.pending.score,
+      total: item.pending.total,
+      earned: earned,
+      time: new Date().toISOString(),
+      theme: eventInfo.theme,
+      timestamp: item.pending.timestamp
+    }));
+    if (typeof syncToSheet === 'function') {
+      syncToSheet('🎯 이벤트 퀴즈', eventInfo.theme + ' (' + item.pending.score + '/' + item.pending.total + ')', earned);
+    }
+    lastCredited = { earned: earned, score: item.pending.score, total: item.pending.total, theme: eventInfo.theme };
+  });
 
   refreshRewardCards();
   refreshEventCard();
 
-  // 화려한 팝업 (1.5초 뒤)
-  setTimeout(function() {
-    showCelebration(
-      '🎯 ' + todayEvent.theme + ' 완료!\n' +
-      '정답 ' + pending.score + '/' + pending.total + '개\n\n' +
-      '🎁 +' + earned + 'P 자동 적립! ✨'
-    );
-  }, 1500);
-
-  if (typeof syncToSheet === 'function') {
-    syncToSheet('🎯 이벤트 퀴즈', todayEvent.theme + ' (' + pending.score + '/' + pending.total + ')', earned);
+  // 화려한 팝업 (가장 최근 적립건 기준, 1.5초 뒤)
+  if (lastCredited) {
+    setTimeout(function() {
+      showCelebration(
+        '🎯 ' + lastCredited.theme + ' 완료!\n' +
+        '정답 ' + lastCredited.score + '/' + lastCredited.total + '개\n\n' +
+        '🎁 +' + lastCredited.earned + 'P 자동 적립! ✨'
+      );
+    }, 1500);
   }
 }
 
@@ -4163,7 +4176,7 @@ document.getElementById('eventScoreBtn').addEventListener('click', function() {
   if (!todayEvent) return;
 
   const done = (function() {
-    try { return JSON.parse(localStorage.getItem(eventCompletedKey) || 'null'); } catch(e) { return null; }
+    try { return JSON.parse(localStorage.getItem(_eventKey()) || 'null'); } catch(e) { return null; }
   })();
   if (done) {
     if (!confirm('오늘 이미 ' + done.earned + 'P 받았어요!\n다시 입력할까요? (이전 기록은 사라져요)')) return;
@@ -4183,7 +4196,7 @@ document.getElementById('eventScoreBtn').addEventListener('click', function() {
     setPoints(Math.max(0, getPoints() - done.earned));
   }
   setPoints(getPoints() + earned);
-  localStorage.setItem(eventCompletedKey, JSON.stringify({
+  localStorage.setItem(_eventKey(), JSON.stringify({
     score: num,
     earned: earned,
     time: new Date().toISOString(),
@@ -4697,9 +4710,6 @@ renderTodayCard();
 // 🇺🇸 매일 영어 표현 퀴즈 카드 (월~일 매일 표시)
 // ════════════════════════════════════════════════
 (function injectEnglishExpressionCard() {
-  const todayDateStr = todayStr.replace(/-/g, '');  // 2026-05-11 → 20260511
-  const quizFile = `english_quiz/영어퀴즈_${todayDateStr}.html`;
-
   // todayCard 영역 다음에 별도 박스 삽입
   const todayCard = document.querySelector('#todayCard') || document.getElementById('todayContent')?.closest('.card-block') || document.getElementById('todayContent');
   if (!todayCard) return;
@@ -4837,29 +4847,35 @@ renderTodayCard();
     '2026-09-05': { theme: '주말 외출', emoji: '🚶' },
     '2026-09-06': { theme: '개학 전 마무리', emoji: '🎒' }
   };
-  const todayInfo = dateThemes[todayStr] || { theme: '영어 표현', emoji: '🇺🇸' };
 
-  // 오늘 영어 퀴즈 풀었는지 체크
+  // 🆕 따라잡기: 가장 먼저 안 한 영어 표현 퀴즈 우선, 다 했으면 오늘
+  function _pickExpressionDate() {
+    let qh = [];
+    try { qh = JSON.parse(localStorage.getItem('hyewon_quiz_history') || '[]'); } catch(e) {}
+    const done = new Set(qh.filter(r => r.type === '영어표현퀴즈').map(r => r.date));
+    const dates = Object.keys(dateThemes).filter(d => d <= todayStr).sort();
+    for (const d of dates) if (!done.has(d)) return d;
+    return todayStr;
+  }
+  const targetDate = _pickExpressionDate();
+  const isCatchUp = (targetDate !== todayStr);
+  const todayDateStr = targetDate.replace(/-/g, '');
+  const quizFile = `english_quiz/영어퀴즈_${todayDateStr}.html`;
+  const todayInfo = dateThemes[targetDate] || { theme: '영어 표현', emoji: '🇺🇸' };
+
+  // 이 날짜 영어 퀴즈 풀었는지 체크
   let alreadyDone = false;
   try {
     const qh = JSON.parse(localStorage.getItem('hyewon_quiz_history') || '[]');
-    alreadyDone = qh.some(r =>
-      r.type === '영어표현퀴즈' &&
-      r.date === todayInfo.dateForCheck &&
-      r.score === r.total  // 100점 만점
-    );
-    // 100점 아니어도 풀기만 했으면 부드러운 표시
-    if (!alreadyDone) {
-      alreadyDone = qh.some(r => r.type === '영어표현퀴즈' && r.date === todayStr);
-    }
+    alreadyDone = qh.some(r => r.type === '영어표현퀴즈' && r.date === targetDate);
   } catch(e) {}
 
-  // 안내 문구 (완료 여부에 따라)
-  const subText = alreadyDone
-    ? '✨ 오늘 풀었어요! 한번 더? +10P × 20문제'
-    : '🎯 꼭 풀어요! 200P 가져갈 수 있어요!';
-  const titleEmoji = alreadyDone ? '✅' : '🌟';
-  const animation = alreadyDone ? '' : 'animation: englishCardPulse 2s ease-in-out infinite;';
+  // 안내 문구 (따라잡기/완료 여부에 따라)
+  const subText = isCatchUp
+    ? '🔥 못 한 ' + targetDate + ' 따라잡자! +10P × 20'
+    : (alreadyDone ? '✨ 오늘 풀었어요! 한번 더? +10P × 20문제' : '🎯 꼭 풀어요! 200P 가져갈 수 있어요!');
+  const titleEmoji = isCatchUp ? '🔥' : (alreadyDone ? '✅' : '🌟');
+  const animation = (isCatchUp || !alreadyDone) ? 'animation: englishCardPulse 2s ease-in-out infinite;' : '';
 
   // 카드 생성
   const card = document.createElement('div');
