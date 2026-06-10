@@ -4753,6 +4753,47 @@ renderTodayCard();
 })();
 
 
+// ════════════════════════════════════════════════
+// 🎴 메모리 매칭 게임 카드
+// ════════════════════════════════════════════════
+(function injectMemoryMatchCard() {
+  const todayCard = document.querySelector('#todayCard') || document.getElementById('todayContent')?.closest('.card-block') || document.getElementById('todayContent');
+  if (!todayCard) return;
+
+  const card = document.createElement('div');
+  card.id = 'memoryMatchCard';
+  card.style.cssText = `
+    background: linear-gradient(135deg, #66bb6a 0%, #c5e1a5 50%, #ffd54f 100%);
+    color: white; border-radius: 22px; padding: 18px 18px;
+    margin: 14px auto; max-width: 560px;
+    box-shadow: 0 6px 0 rgba(110,140,80,0.18), 0 6px 24px rgba(76,175,80,0.4);
+    display: flex; align-items: center; gap: 14px;
+    cursor: pointer; transition: transform 0.18s ease;
+    border: 3px solid white;
+  `;
+  card.onmouseover = () => card.style.transform = 'translateY(-2px) scale(1.02)';
+  card.onmouseout  = () => card.style.transform = '';
+  card.onclick     = () => { window.location.href = 'memory_match.html'; };
+  card.innerHTML = `
+    <div style="font-size:2.6em;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.2));">🎴</div>
+    <div style="flex:1;">
+      <div style="font-size:0.8em;opacity:0.95;font-family:'Jua',sans-serif;">🌟 새 게임!</div>
+      <div style="font-size:1.18em;font-weight:bold;font-family:'Jua',sans-serif;text-shadow:1px 2px 0 rgba(0,0,0,0.1);">메모리 매칭</div>
+      <div style="font-size:0.85em;opacity:0.95;margin-top:3px;font-weight:bold;">오늘 단어 짝짓기! 최대 +280P 🎁</div>
+    </div>
+    <div style="font-size:1.5em;background:rgba(255,255,255,0.28);border-radius:50%;width:42px;height:42px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">▶</div>
+  `;
+
+  // 영어 표현 카드 다음에 삽입 (없으면 today 카드 다음)
+  const expressionCard = document.getElementById('englishQuizCard');
+  if (expressionCard) {
+    expressionCard.parentNode.insertBefore(card, expressionCard.nextSibling);
+  } else {
+    todayCard.parentNode.insertBefore(card, todayCard.nextSibling);
+  }
+})();
+
+
 // ========== 지난 학습 ==========
 const archiveList = document.getElementById('archiveList');
 const pastLearning = SCHEDULE.filter(s => s.date <= todayStr).sort((a,b) => b.date.localeCompare(a.date));

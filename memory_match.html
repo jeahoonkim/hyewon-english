@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>🎴 메모리 매칭 — 혜원이 영어 놀이터</title>
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Gaegu:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    min-height:100vh;
+    background: linear-gradient(180deg, #fff3e0 0%, #f8bbd0 50%, #c5e1a5 100%);
+    font-family: 'Jua','Gaegu',sans-serif;
+    color: #2c3e50;
+    padding: 20px 12px 60px;
+  }
+  .wrap { max-width: 520px; margin: 0 auto; }
+  .screen { display: none; }
+  .screen.active { display: block; }
+
+  /* 시작 화면 */
+  #startScreen { text-align: center; padding-top: 20px; }
+  .start-title { font-size: 2.2em; color: #ec407a; margin-bottom: 10px; text-shadow: 2px 3px 0 rgba(255,255,255,0.6); }
+  .start-mascot { width: 140px; height: 140px; object-fit: contain; margin: 14px auto; display: block;
+    animation: bob 2s ease-in-out infinite; filter: drop-shadow(0 8px 12px rgba(0,0,0,0.15)); }
+  @keyframes bob { 0%,100%{transform:translateY(0) rotate(-3deg);} 50%{transform:translateY(-8px) rotate(3deg);} }
+  .start-sub { font-size: 1.1em; color: #6a1b4d; margin: 12px 0 24px; line-height: 1.55; }
+  .start-btn {
+    background: linear-gradient(135deg, #66bb6a, #2e7d32);
+    color: white; font-family: 'Jua',sans-serif;
+    font-size: 1.35em; padding: 16px 48px;
+    border: none; border-radius: 50px; cursor: pointer;
+    box-shadow: 0 6px 0 #1b5e20, 0 6px 18px rgba(76,175,80,0.4);
+    transition: transform 0.15s;
+  }
+  .start-btn:active { transform: translateY(3px); box-shadow: 0 3px 0 #1b5e20; }
+  .start-rules {
+    background: rgba(255,255,255,0.7); border-radius: 18px; padding: 14px 18px;
+    margin: 20px auto; max-width: 380px; text-align: left;
+    font-family: 'Gaegu',sans-serif; font-size: 1em; color: #4a3650; line-height: 1.7;
+  }
+  .start-rules b { color: #ec407a; }
+  #loadingNote { margin-top: 14px; font-size: 0.9em; color: #888; }
+
+  /* 게임 화면 */
+  .status-bar {
+    display: flex; justify-content: space-around; align-items: center;
+    background: white; border-radius: 20px; padding: 14px 14px;
+    margin-bottom: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    font-size: 1em; color: #6a1b4d;
+  }
+  .status-item { display: flex; align-items: center; gap: 6px; }
+  .status-item b { font-family: 'Jua',sans-serif; font-size: 1.25em; color: #ec407a; }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .card {
+    aspect-ratio: 3 / 4;
+    perspective: 800px;
+    cursor: pointer;
+  }
+  .card-inner {
+    position: relative; width: 100%; height: 100%;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+  }
+  .card.flipped .card-inner { transform: rotateY(180deg); }
+  .card-face {
+    position: absolute; inset: 0; backface-visibility: hidden;
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 0 rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 6px;
+    word-break: keep-all;
+    overflow: hidden;
+  }
+  .card-back {
+    background: linear-gradient(135deg, #81c784 0%, #4caf50 100%);
+    color: white;
+    font-size: 2em;
+    font-family: 'Jua',sans-serif;
+  }
+  .card-front {
+    background: white;
+    transform: rotateY(180deg);
+    font-weight: bold;
+  }
+  .card.eng .card-front {
+    border: 3px solid #66bb6a;
+    color: #2e7d32;
+    font-family: 'Jua',sans-serif;
+    font-size: 1em;
+  }
+  .card.kor .card-front {
+    border: 3px solid #ec407a;
+    color: #ad1457;
+    font-family: 'Gaegu',sans-serif;
+    font-size: 1.05em;
+  }
+  .card.matched .card-front {
+    background: linear-gradient(135deg, #fff9c4, #ffeb3b);
+    border-color: #fbc02d;
+    animation: matchGlow 0.6s;
+  }
+  @keyframes matchGlow {
+    0% { transform: rotateY(180deg) scale(1); }
+    50% { transform: rotateY(180deg) scale(1.15); box-shadow: 0 0 22px #ffeb3b; }
+    100% { transform: rotateY(180deg) scale(1); }
+  }
+  .card.wrong .card-inner { animation: wrongShake 0.4s; }
+  @keyframes wrongShake {
+    0%,100% { transform: rotateY(180deg) translateX(0); }
+    25% { transform: rotateY(180deg) translateX(-5px); }
+    75% { transform: rotateY(180deg) translateX(5px); }
+  }
+
+  /* 끝 화면 */
+  #endScreen { text-align: center; padding-top: 20px; }
+  .end-emoji { font-size: 80px; margin: 10px 0; animation: bob 2s ease-in-out infinite; }
+  .end-title { font-size: 2em; color: #ec407a; margin-bottom: 14px; text-shadow: 2px 3px 0 rgba(255,255,255,0.6); }
+  .end-stats {
+    background: white; border-radius: 20px; padding: 18px 22px;
+    margin: 16px auto; max-width: 360px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    font-family: 'Gaegu',sans-serif; font-size: 1.05em;
+  }
+  .end-stat { display: flex; justify-content: space-between; padding: 8px 0; }
+  .end-stat:not(:last-child) { border-bottom: 1px dashed #eee; }
+  .end-stat .v { font-family:'Jua',sans-serif; color: #ec407a; }
+  .end-points {
+    background: linear-gradient(135deg, #ffd54f, #ff9800);
+    color: white;
+    border-radius: 20px; padding: 18px 28px;
+    margin: 16px auto; max-width: 360px;
+    font-family: 'Jua',sans-serif; font-size: 1.9em;
+    box-shadow: 0 6px 0 #e65100, 0 6px 18px rgba(255,152,0,0.4);
+  }
+  .end-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 16px; }
+  .end-btn {
+    background: white; color: #ec407a;
+    font-family: 'Jua',sans-serif; font-size: 1.1em;
+    border: 2.5px solid #ec407a; border-radius: 50px; padding: 12px 28px;
+    cursor: pointer; text-decoration: none; display: inline-block;
+  }
+  .end-btn.primary {
+    background: linear-gradient(135deg, #66bb6a, #2e7d32);
+    color: white; border-color: transparent;
+    box-shadow: 0 4px 0 #1b5e20;
+  }
+  .end-btn:hover { transform: translateY(-2px); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- 시작 화면 -->
+<section class="screen active" id="startScreen">
+  <h1 class="start-title">🎴 메모리 매칭</h1>
+  <img class="start-mascot" src="assets/animals/parrot_3d.png" alt="폴리">
+  <div class="start-sub" id="startSub">오늘 단어로<br>짝을 찾아봐! 🌟</div>
+  <button class="start-btn" onclick="startGame()">시작하기 🚀</button>
+  <div class="start-rules">
+    <div>🎴 카드 두 장 뒤집어서 <b>영단어 ↔ 한글 뜻</b> 짝 맞추기!</div>
+    <div>✨ 맞히면 폴리가 발음 들려줘요</div>
+    <div>💎 매칭 1쌍 = <b>+10P</b></div>
+    <div>⏱ 1분 안에 다 맞히면 <b>+50P</b></div>
+    <div>🎯 시도 15번 이하 <b>+30P</b></div>
+    <div>🌟 한 번도 안 틀리면 <b>+100P</b> 완벽 보너스!</div>
+  </div>
+  <div id="loadingNote">단어 불러오는 중...</div>
+</section>
+
+<!-- 게임 화면 -->
+<section class="screen" id="gameScreen">
+  <div class="status-bar">
+    <div class="status-item">⏱ <b id="timerEl">00:00</b></div>
+    <div class="status-item">🔄 <b id="attemptsEl">0</b>번</div>
+    <div class="status-item">✅ <b id="matchedEl">0</b>/10</div>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<!-- 끝 화면 -->
+<section class="screen" id="endScreen">
+  <div class="end-emoji" id="endEmoji">🎉</div>
+  <div class="end-title" id="endTitle">완성!</div>
+  <div class="end-stats">
+    <div class="end-stat">⏱ 시간 <span class="v" id="finalTime"></span></div>
+    <div class="end-stat">🔄 시도 <span class="v" id="finalAttempts"></span></div>
+    <div class="end-stat">✨ 평가 <span class="v" id="finalPerfect"></span></div>
+  </div>
+  <div class="end-points">+<span id="finalPoints">0</span>P</div>
+  <div class="end-actions">
+    <button class="end-btn primary" onclick="restart()">다시! 🔄</button>
+    <a class="end-btn" href="index.html">🏠 홈으로</a>
+  </div>
+</section>
+
+</div>
+
+<script>
+// ═══════ 🔊 발음 엔진 v5 (인라인 — 모든 페이지 통일) ═══════
+var TTS_VOLUME = 0.8;
+var TTS_API = 'https://api.streamelements.com/kappa/v2/speech?voice=Joanna&text=';
+var _ttsNativeVolume = (function() {
+  var ua = (typeof navigator !== 'undefined' && navigator.userAgent) ? navigator.userAgent : '';
+  if (/Edg/i.test(ua))          return 0.5;
+  if (/Firefox/i.test(ua))      return 0.9;
+  if (/CriOS|Chrome/i.test(ua)) return 1.0;
+  if (/Safari/i.test(ua))       return 0.95;
+  return 0.85;
+})();
+var _ttsVoices = [];
+var _ttsReady = false;
+var _ttsAudio = (typeof Audio !== 'undefined') ? new Audio() : null;
+function _ttsLoadVoices() {
+  if (!('speechSynthesis' in window)) return;
+  try { _ttsVoices = window.speechSynthesis.getVoices() || []; } catch(e) {}
+}
+if ('speechSynthesis' in window) {
+  _ttsLoadVoices();
+  if (window.speechSynthesis.onvoiceschanged !== undefined) window.speechSynthesis.onvoiceschanged = _ttsLoadVoices;
+}
+function _ttsPrime() {
+  if (_ttsReady) return;
+  _ttsReady = true;
+  if (_ttsAudio) {
+    try { _ttsAudio.src = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA=';
+      _ttsAudio.volume = 0; var pr = _ttsAudio.play(); if (pr && pr.catch) pr.catch(function(){}); } catch(e) {}
+  }
+  try { if ('speechSynthesis' in window) { _ttsLoadVoices(); var w = new SpeechSynthesisUtterance(' '); w.volume = 0.01; window.speechSynthesis.speak(w); } } catch(e) {}
+}
+document.addEventListener('click', _ttsPrime, { capture: true });
+document.addEventListener('touchstart', _ttsPrime, { capture: true, passive: true });
+function _ttsPickVoice() {
+  if (_ttsVoices.length === 0) _ttsLoadVoices();
+  for (var i = 0; i < _ttsVoices.length; i++) if (_ttsVoices[i].lang === 'en-US') return _ttsVoices[i];
+  for (var i = 0; i < _ttsVoices.length; i++) if (_ttsVoices[i].lang && _ttsVoices[i].lang.indexOf('en') === 0) return _ttsVoices[i];
+  return null;
+}
+function _ttsNativeFallback(text, onDone) {
+  if (!('speechSynthesis' in window)) { if (onDone) onDone(); return; }
+  try {
+    window.speechSynthesis.cancel();
+    setTimeout(function() {
+      var u = new SpeechSynthesisUtterance(text);
+      u.lang = 'en-US'; u.rate = 0.85; u.pitch = 1.05; u.volume = _ttsNativeVolume;
+      if (_ttsVoices.length === 0) _ttsLoadVoices();
+      var v = _ttsPickVoice(); if (v) u.voice = v;
+      u.onend = function() { if (onDone) onDone(); };
+      u.onerror = function() { if (onDone) onDone(); };
+      window.speechSynthesis.speak(u);
+      setTimeout(function() { try { window.speechSynthesis.resume(); } catch(e) {} }, 100);
+    }, 60);
+  } catch(e) { if (onDone) onDone(); }
+}
+function playTTS(text, onStart, onDone) {
+  if (!text) { if (onStart) onStart(); if (onDone) onDone(); return; }
+  text = String(text).trim();
+  try { if (_ttsAudio) _ttsAudio.pause(); } catch(e) {}
+  try { if ('speechSynthesis' in window) window.speechSynthesis.cancel(); } catch(e) {}
+  if (onStart) onStart();
+  var settled = false;
+  function done() { if (settled) return; settled = true; if (onDone) onDone(); }
+  function fallback() { if (settled) return; settled = true; _ttsNativeFallback(text, function() { if (onDone) onDone(); }); }
+  if (!_ttsAudio) { fallback(); return; }
+  var audio = _ttsAudio;
+  audio.onended = function() { done(); };
+  audio.onerror = function() { fallback(); };
+  try {
+    audio.volume = TTS_VOLUME;
+    audio.src = TTS_API + encodeURIComponent(text);
+    var p = audio.play();
+    if (p && p.catch) p.catch(function() { fallback(); });
+  } catch(e) { fallback(); }
+}
+
+// ═══════ 🎴 게임 상태 ═══════
+var WORDS = [];
+var cards = [];
+var flippedIdxs = [];
+var matchedCount = 0;
+var attempts = 0;
+var startTime = 0;
+var timerInterval = null;
+var SOURCE_DATE = '';
+var lock = false;
+
+var GAS_URL = "https://script.google.com/macros/s/AKfycbyg0RNvnjzeUpWBu3KDrwre_ngHxjfSINUnI-JNEULMHSPYsVChf3eEogE7crF14BdpJg/exec";
+
+// ═══════ 단어 데이터 로드 (오늘 또는 가장 가까운 평일) ═══════
+async function loadVocab() {
+  const today = new Date();
+  for (let off = 0; off < 14; off++) {
+    const d = new Date(today);
+    d.setDate(today.getDate() - off);
+    const dow = d.getDay();
+    if (dow < 1 || dow > 5) continue;
+    const ds = d.getFullYear() + ('0' + (d.getMonth() + 1)).slice(-2) + ('0' + d.getDate()).slice(-2);
+    try {
+      const r = await fetch('data/' + ds + '.json?t=' + Date.now());
+      if (!r.ok) continue;
+      const j = await r.json();
+      if (j.words && j.words.length >= 10) {
+        WORDS = j.words;
+        SOURCE_DATE = j.date || (d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2));
+        return true;
+      }
+    } catch (e) {}
+  }
+  return false;
+}
+
+(async () => {
+  const ok = await loadVocab();
+  const note = document.getElementById('loadingNote');
+  const sub = document.getElementById('startSub');
+  if (!ok) {
+    note.innerHTML = '<span style="color:#e74c3c">⚠️ 단어를 못 불러왔어요. 인터넷 확인해주세요.</span>';
+    return;
+  }
+  note.textContent = SOURCE_DATE + ' 단어 ' + WORDS.length + '개 준비 완료!';
+  sub.innerHTML = '<b>' + SOURCE_DATE + '</b>의 단어로<br>10쌍을 짝지어봐! 🌟';
+})();
+
+function escapeHTML(s) {
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+}
+
+// ═══════ 게임 시작 ═══════
+function startGame() {
+  if (WORDS.length < 10) {
+    alert('단어를 불러오는 중이에요. 잠시만요!');
+    return;
+  }
+  const picked = WORDS.slice().sort(() => Math.random() - 0.5).slice(0, 10);
+  cards = [];
+  picked.forEach((w, i) => {
+    cards.push({ pair: i, side: 'eng', text: w.word,    word: w.word, meaning: w.meaning, matched: false, flipped: false });
+    cards.push({ pair: i, side: 'kor', text: w.meaning, word: w.word, meaning: w.meaning, matched: false, flipped: false });
+  });
+  cards.sort(() => Math.random() - 0.5);
+
+  matchedCount = 0;
+  attempts = 0;
+  flippedIdxs = [];
+  lock = false;
+  document.getElementById('attemptsEl').textContent = '0';
+  document.getElementById('matchedEl').textContent = '0';
+  document.getElementById('timerEl').textContent = '00:00';
+
+  const grid = document.getElementById('grid');
+  grid.innerHTML = '';
+  cards.forEach((c, idx) => {
+    const div = document.createElement('div');
+    div.className = 'card ' + c.side;
+    div.dataset.idx = idx;
+    div.innerHTML = '<div class="card-inner"><div class="card-face card-back">?</div><div class="card-face card-front">' + escapeHTML(c.text) + '</div></div>';
+    div.addEventListener('click', () => flipCard(idx));
+    grid.appendChild(div);
+    c.el = div;
+  });
+
+  document.getElementById('startScreen').classList.remove('active');
+  document.getElementById('endScreen').classList.remove('active');
+  document.getElementById('gameScreen').classList.add('active');
+
+  startTime = Date.now();
+  if (timerInterval) clearInterval(timerInterval);
+  timerInterval = setInterval(updateTimer, 200);
+}
+
+function updateTimer() {
+  const elapsed = Math.floor((Date.now() - startTime) / 1000);
+  const m = String(Math.floor(elapsed / 60)).padStart(2, '0');
+  const s = String(elapsed % 60).padStart(2, '0');
+  document.getElementById('timerEl').textContent = m + ':' + s;
+}
+
+function flipCard(idx) {
+  if (lock) return;
+  const c = cards[idx];
+  if (c.matched || c.flipped) return;
+  c.flipped = true;
+  c.el.classList.add('flipped');
+  flippedIdxs.push(idx);
+  if (flippedIdxs.length === 2) {
+    attempts++;
+    document.getElementById('attemptsEl').textContent = attempts;
+    lock = true;
+    setTimeout(checkMatch, 600);
+  }
+}
+
+function checkMatch() {
+  const [a, b] = flippedIdxs;
+  const ca = cards[a], cb = cards[b];
+  if (ca.pair === cb.pair) {
+    ca.matched = true; cb.matched = true;
+    ca.el.classList.add('matched');
+    cb.el.classList.add('matched');
+    matchedCount++;
+    document.getElementById('matchedEl').textContent = matchedCount;
+    playTTS(ca.word);
+    flippedIdxs = [];
+    lock = false;
+    if (matchedCount === 10) setTimeout(endGame, 900);
+  } else {
+    ca.el.classList.add('wrong');
+    cb.el.classList.add('wrong');
+    setTimeout(() => {
+      ca.flipped = false; cb.flipped = false;
+      ca.el.classList.remove('flipped', 'wrong');
+      cb.el.classList.remove('flipped', 'wrong');
+      flippedIdxs = [];
+      lock = false;
+    }, 850);
+  }
+}
+
+function endGame() {
+  clearInterval(timerInterval);
+  const elapsed = Math.floor((Date.now() - startTime) / 1000);
+  const m = Math.floor(elapsed / 60), s = elapsed % 60;
+  const timeStr = String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+  const perfect = (attempts === 10);
+
+  let pts = 100;
+  if (elapsed <= 60)  pts += 50;
+  if (attempts <= 15) pts += 30;
+  if (perfect)        pts += 100;
+
+  document.getElementById('finalTime').textContent = timeStr;
+  document.getElementById('finalAttempts').textContent = attempts + '번';
+  document.getElementById('finalPerfect').textContent = perfect ? '🌟 완벽!' : (attempts <= 15 ? '✨ 잘했어!' : '👏 화이팅!');
+  document.getElementById('finalPoints').textContent = pts;
+  document.getElementById('endEmoji').textContent = perfect ? '🌟' : (attempts <= 15 ? '🎉' : '👏');
+  document.getElementById('endTitle').textContent = perfect ? '완벽해, 혜원아!' : (attempts <= 15 ? '잘했어!' : '잘했어 혜원아!');
+
+  // 포인트 적립 + 시트 동기화
+  try {
+    const cur = parseInt(localStorage.getItem('hyewon_points') || '0');
+    const newTotal = cur + pts;
+    localStorage.setItem('hyewon_points', String(newTotal));
+    if (GAS_URL) {
+      fetch(GAS_URL, {
+        method: 'POST', mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain' },
+        body: JSON.stringify({ sync_state: { points: newTotal } })
+      }).catch(function(){});
+    }
+    // 학습 기록
+    const h = JSON.parse(localStorage.getItem('hyewon_quiz_history') || '[]');
+    h.push({
+      date: SOURCE_DATE,
+      type: '메모리매칭',
+      time: timeStr,
+      attempts: attempts,
+      pointsEarned: pts,
+      perfect: perfect,
+      timestamp: new Date().toISOString()
+    });
+    localStorage.setItem('hyewon_quiz_history', JSON.stringify(h));
+  } catch(e) {}
+
+  document.getElementById('gameScreen').classList.remove('active');
+  document.getElementById('endScreen').classList.add('active');
+}
+
+function restart() { startGame(); }
+</script>
+</body>
+</html>
