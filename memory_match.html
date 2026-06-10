@@ -307,29 +307,85 @@ var attempts = 0;
 var startTime = 0;
 var timerInterval = null;
 var SOURCE_DATE = '';
+var IS_CATCHUP = false;
 var lock = false;
 
 var GAS_URL = "https://script.google.com/macros/s/AKfycbyg0RNvnjzeUpWBu3KDrwre_ngHxjfSINUnI-JNEULMHSPYsVChf3eEogE7crF14BdpJg/exec";
 
-// ═══════ 단어 데이터 로드 (오늘 또는 가장 가까운 평일) ═══════
+// ═══════ 헬퍼: 날짜 → 'YYYY-MM-DD' ═══════
+function fmtDate(d) {
+  return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+}
+
+// ═══════ 학습 기록 합치기 (로컬 + 시트 동기화분) ═══════
+function _buildStudiedSet() {
+  const s = new Set();
+  try {
+    JSON.parse(localStorage.getItem('hyewon_vocab_history') || '[]').forEach(r => { const d = r.scheduledDate || r.date; if (d) s.add(d); });
+    JSON.parse(localStorage.getItem('hyewon_quiz_history')  || '[]').forEach(r => {
+      if (r.type === '영어표현퀴즈') return;        // 영어표현은 단어장 안 한 거랑 별개
+      const d = r.scheduledDate || r.date; if (d) s.add(d);
+    });
+    JSON.parse(localStorage.getItem('hyewon_studied_dates_sheet') || '[]').forEach(d => { if (d) s.add(d); });
+  } catch(e) {}
+  return s;
+}
+
+// ═══════ 따라잡기 대상 날짜 고르기 (가장 먼저 안 한 평일) ═══════
+function _pickCatchupVocabDate() {
+  const studied = _buildStudiedSet();
+  const today   = new Date();
+  const start   = new Date(2026, 3, 21);  // 4월 21일 — 학습 시작일
+  const tdayStr = fmtDate(today);
+  for (let d = new Date(start); d <= today; d.setDate(d.getDate() + 1)) {
+    const dow = d.getDay();
+    if (dow < 1 || dow > 5) continue;       // 평일만
+    const ds = fmtDate(d);
+    if (!studied.has(ds)) return { date: ds, catchup: ds !== tdayStr };
+  }
+  // 다 따라잡았으면 오늘(평일) 또는 가장 가까운 평일
+  const tdow = today.getDay();
+  if (tdow >= 1 && tdow <= 5) return { date: tdayStr, catchup: false };
+  const d = new Date(today);
+  while (d.getDay() === 0 || d.getDay() === 6) d.setDate(d.getDate() - 1);
+  return { date: fmtDate(d), catchup: false };
+}
+
+// ═══════ 단어 데이터 로드 (따라잡기 우선, 실패 시 최근 평일) ═══════
 async function loadVocab() {
+  const picked = _pickCatchupVocabDate();
+  const ds = picked.date.replace(/-/g, '');
+  try {
+    const r = await fetch('data/' + ds + '.json?t=' + Date.now());
+    if (r.ok) {
+      const j = await r.json();
+      if (j.words && j.words.length >= 10) {
+        WORDS = j.words;
+        SOURCE_DATE = j.date || picked.date;
+        IS_CATCHUP  = picked.catchup;
+        return true;
+      }
+    }
+  } catch(e) {}
+  // 폴백 — 최근 14일 평일 중 데이터 있는 거 아무거나
   const today = new Date();
   for (let off = 0; off < 14; off++) {
     const d = new Date(today);
     d.setDate(today.getDate() - off);
     const dow = d.getDay();
     if (dow < 1 || dow > 5) continue;
-    const ds = d.getFullYear() + ('0' + (d.getMonth() + 1)).slice(-2) + ('0' + d.getDate()).slice(-2);
+    const ds2 = d.getFullYear() + ('0' + (d.getMonth() + 1)).slice(-2) + ('0' + d.getDate()).slice(-2);
     try {
-      const r = await fetch('data/' + ds + '.json?t=' + Date.now());
+      const r = await fetch('data/' + ds2 + '.json?t=' + Date.now());
       if (!r.ok) continue;
       const j = await r.json();
       if (j.words && j.words.length >= 10) {
         WORDS = j.words;
-        SOURCE_DATE = j.date || (d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2));
+        SOURCE_DATE = j.date || fmtDate(d);
+        IS_CATCHUP  = false;
         return true;
       }
-    } catch (e) {}
+    } catch(e) {}
   }
   return false;
 }
@@ -343,7 +399,14 @@ async function loadVocab() {
     return;
   }
   note.textContent = SOURCE_DATE + ' 단어 ' + WORDS.length + '개 준비 완료!';
-  sub.innerHTML = '<b>' + SOURCE_DATE + '</b>의 단어로<br>10쌍을 짝지어봐! 🌟';
+  if (IS_CATCHUP) {
+    sub.innerHTML = '🔥 못 한 <b>' + SOURCE_DATE + '</b> 단어로<br>따라잡기 매칭!';
+    // 타이틀에도 따라잡기 표시
+    const title = document.querySelector('.start-title');
+    if (title) title.innerHTML = '🔥 따라잡기 매칭';
+  } else {
+    sub.innerHTML = '<b>' + SOURCE_DATE + '</b>의 단어로<br>10쌍을 짝지어봐! 🌟';
+  }
 })();
 
 function escapeHTML(s) {
@@ -485,18 +548,18 @@ function endGame() {
         body: JSON.stringify({ sync_state: { points: newTotal } })
       }).catch(function(){});
     }
-    // 학습 기록
-    const h = JSON.parse(localStorage.getItem('hyewon_quiz_history') || '[]');
+    // 게임 기록 — 별도 키 (따라잡기 로직에 영향 안 줌)
+    const h = JSON.parse(localStorage.getItem('hyewon_memory_history') || '[]');
     h.push({
       date: SOURCE_DATE,
-      type: '메모리매칭',
+      catchup: IS_CATCHUP,
       time: timeStr,
       attempts: attempts,
       pointsEarned: pts,
       perfect: perfect,
       timestamp: new Date().toISOString()
     });
-    localStorage.setItem('hyewon_quiz_history', JSON.stringify(h));
+    localStorage.setItem('hyewon_memory_history', JSON.stringify(h));
   } catch(e) {}
 
   document.getElementById('gameScreen').classList.remove('active');
