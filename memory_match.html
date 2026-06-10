@@ -295,26 +295,8 @@ function playTTS(text, onStart, onDone) {
   } catch(e) { fallback(); }
 }
 
-// ═══════ 🐱 귀여운 고양이 SVG (카드 뒷면 문양) ═══════
-var CAT_SVG = '<svg class="card-cat" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">'
-  + '<path d="M22 30 L28 8 L42 28 Z" fill="#fffbe8"/>'
-  + '<path d="M58 28 L72 8 L78 30 Z" fill="#fffbe8"/>'
-  + '<path d="M27 26 L31 16 L37 26 Z" fill="#ffb0c8"/>'
-  + '<path d="M63 26 L69 16 L73 26 Z" fill="#ffb0c8"/>'
-  + '<circle cx="50" cy="55" r="30" fill="#fffbe8"/>'
-  + '<circle cx="32" cy="62" r="5" fill="#ffc0d6" opacity="0.6"/>'
-  + '<circle cx="68" cy="62" r="5" fill="#ffc0d6" opacity="0.6"/>'
-  + '<ellipse cx="40" cy="52" rx="3.5" ry="5.5" fill="#2c3e50"/>'
-  + '<ellipse cx="60" cy="52" rx="3.5" ry="5.5" fill="#2c3e50"/>'
-  + '<circle cx="41" cy="50" r="1.4" fill="white"/>'
-  + '<circle cx="61" cy="50" r="1.4" fill="white"/>'
-  + '<path d="M47 60 L53 60 L50 64 Z" fill="#e91e63"/>'
-  + '<path d="M50 64 Q45 70 41 67 M50 64 Q55 70 59 67" stroke="#2c3e50" stroke-width="1.8" fill="none" stroke-linecap="round"/>'
-  + '<line x1="18" y1="58" x2="32" y2="60" stroke="#2c3e50" stroke-width="1.5" stroke-linecap="round"/>'
-  + '<line x1="18" y1="66" x2="32" y2="66" stroke="#2c3e50" stroke-width="1.5" stroke-linecap="round"/>'
-  + '<line x1="68" y1="60" x2="82" y2="58" stroke="#2c3e50" stroke-width="1.5" stroke-linecap="round"/>'
-  + '<line x1="68" y1="66" x2="82" y2="66" stroke="#2c3e50" stroke-width="1.5" stroke-linecap="round"/>'
-  + '</svg>';
+// ═══════ 🐱 귀여운 고양이 (Fluent 3D, 카드 뒷면) ═══════
+var CAT_IMG = '<img class="card-cat" src="data:image/png;base64,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" alt="cat">';
 
 // ═══════ 🎴 게임 상태 ═══════
 var WORDS = [];
@@ -407,7 +389,7 @@ function startGame() {
     const label = c.side === 'eng' ? '🇺🇸 영어' : '🇰🇷 한글';
     div.innerHTML =
       '<div class="card-inner">' +
-        '<div class="card-face card-back">' + CAT_SVG + '<div class="card-label">' + label + '</div></div>' +
+        '<div class="card-face card-back">' + CAT_IMG + '<div class="card-label">' + label + '</div></div>' +
         '<div class="card-face card-front" style="font-size:' + fz + ';">' + escapeHTML(c.text) + '</div>' +
       '</div>';
     div.addEventListener('click', () => flipCard(idx));
