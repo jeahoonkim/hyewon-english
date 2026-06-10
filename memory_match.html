@@ -74,27 +74,48 @@
     overflow: hidden;
   }
   .card-back {
-    background: linear-gradient(135deg, #81c784 0%, #4caf50 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     color: white;
-    font-size: 2em;
-    font-family: 'Jua',sans-serif;
+    font-family: 'Jua', sans-serif;
+    padding: 6px 4px;
+    gap: 2px;
+  }
+  .card.eng .card-back {
+    background: linear-gradient(135deg, #4fc3f7 0%, #1565c0 100%);
+  }
+  .card.kor .card-back {
+    background: linear-gradient(135deg, #f48fb1 0%, #c2185b 100%);
+  }
+  .card-cat {
+    width: 70%;
+    height: auto;
+    flex-shrink: 0;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.15));
+  }
+  .card-label {
+    font-size: 0.9em;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+    letter-spacing: 0.3px;
+    margin-top: 2px;
   }
   .card-front {
     background: white;
     transform: rotateY(180deg);
     font-weight: bold;
+    line-height: 1.15;
   }
   .card.eng .card-front {
-    border: 3px solid #66bb6a;
-    color: #2e7d32;
-    font-family: 'Jua',sans-serif;
-    font-size: 1em;
+    border: 3px solid #1976d2;
+    color: #0d47a1;
+    font-family: 'Jua', sans-serif;
   }
   .card.kor .card-front {
     border: 3px solid #ec407a;
     color: #ad1457;
-    font-family: 'Gaegu',sans-serif;
-    font-size: 1.05em;
+    font-family: 'Gaegu', sans-serif;
   }
   .card.matched .card-front {
     background: linear-gradient(135deg, #fff9c4, #ffeb3b);
@@ -274,6 +295,27 @@ function playTTS(text, onStart, onDone) {
   } catch(e) { fallback(); }
 }
 
+// ═══════ 🐱 귀여운 고양이 SVG (카드 뒷면 문양) ═══════
+var CAT_SVG = '<svg class="card-cat" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">'
+  + '<path d="M22 30 L28 8 L42 28 Z" fill="#fffbe8"/>'
+  + '<path d="M58 28 L72 8 L78 30 Z" fill="#fffbe8"/>'
+  + '<path d="M27 26 L31 16 L37 26 Z" fill="#ffb0c8"/>'
+  + '<path d="M63 26 L69 16 L73 26 Z" fill="#ffb0c8"/>'
+  + '<circle cx="50" cy="55" r="30" fill="#fffbe8"/>'
+  + '<circle cx="32" cy="62" r="5" fill="#ffc0d6" opacity="0.6"/>'
+  + '<circle cx="68" cy="62" r="5" fill="#ffc0d6" opacity="0.6"/>'
+  + '<ellipse cx="40" cy="52" rx="3.5" ry="5.5" fill="#2c3e50"/>'
+  + '<ellipse cx="60" cy="52" rx="3.5" ry="5.5" fill="#2c3e50"/>'
+  + '<circle cx="41" cy="50" r="1.4" fill="white"/>'
+  + '<circle cx="61" cy="50" r="1.4" fill="white"/>'
+  + '<path d="M47 60 L53 60 L50 64 Z" fill="#e91e63"/>'
+  + '<path d="M50 64 Q45 70 41 67 M50 64 Q55 70 59 67" stroke="#2c3e50" stroke-width="1.8" fill="none" stroke-linecap="round"/>'
+  + '<line x1="18" y1="58" x2="32" y2="60" stroke="#2c3e50" stroke-width="1.5" stroke-linecap="round"/>'
+  + '<line x1="18" y1="66" x2="32" y2="66" stroke="#2c3e50" stroke-width="1.5" stroke-linecap="round"/>'
+  + '<line x1="68" y1="60" x2="82" y2="58" stroke="#2c3e50" stroke-width="1.5" stroke-linecap="round"/>'
+  + '<line x1="68" y1="66" x2="82" y2="66" stroke="#2c3e50" stroke-width="1.5" stroke-linecap="round"/>'
+  + '</svg>';
+
 // ═══════ 🎴 게임 상태 ═══════
 var WORDS = [];
 var cards = [];
@@ -354,7 +396,20 @@ function startGame() {
     const div = document.createElement('div');
     div.className = 'card ' + c.side;
     div.dataset.idx = idx;
-    div.innerHTML = '<div class="card-inner"><div class="card-face card-back">?</div><div class="card-face card-front">' + escapeHTML(c.text) + '</div></div>';
+    // 글자 수에 따라 폰트 크기 자동 조정 — 짧으면 크게, 길면 알맞게
+    const len = c.text.length;
+    let fz;
+    if (c.side === 'kor') {
+      fz = len <= 5 ? '1.55em' : len <= 8 ? '1.3em' : '1.1em';
+    } else {
+      fz = len <= 6 ? '1.45em' : len <= 10 ? '1.2em' : '0.95em';
+    }
+    const label = c.side === 'eng' ? '🇺🇸 영어' : '🇰🇷 한글';
+    div.innerHTML =
+      '<div class="card-inner">' +
+        '<div class="card-face card-back">' + CAT_SVG + '<div class="card-label">' + label + '</div></div>' +
+        '<div class="card-face card-front" style="font-size:' + fz + ';">' + escapeHTML(c.text) + '</div>' +
+      '</div>';
     div.addEventListener('click', () => flipCard(idx));
     grid.appendChild(div);
     c.el = div;
