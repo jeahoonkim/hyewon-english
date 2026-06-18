@@ -824,6 +824,16 @@ function finishLearning() {
         }).catch(function(){});
       } catch(e) {}
     }
+    // 🌐 단어장 전체 기록도 시트로 (시간·단어·발음듣기 횟수 → 단어장기록 시트)
+    if (typeof GAS_URL !== 'undefined' && GAS_URL) {
+      try {
+        fetch(GAS_URL, {
+          method: 'POST', mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain' },
+          body: JSON.stringify({ vocab: record })
+        }).catch(function(){});
+      } catch(e) {}
+    }
 
     // 🎁 포인트 적립: 단어장 완료 = 100P (오늘 첫 완료만)
     const pointsKey = 'hyewon_vocab_completed_' + today;

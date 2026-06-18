@@ -1568,8 +1568,7 @@ function sendToServer(vocabRec, quizRec) {
   // ① Google Sheets 저장 (새 Apps Script)
   // ========================================
   const sheetsPayload = {
-    vocab: vocabRec,
-    quiz: quizRec
+    quiz: quizRec  // 단어장은 단어장 페이지에서 직접 보냄 (중복 방지)
   };
 
   const sheetsPromise = GAS_URL

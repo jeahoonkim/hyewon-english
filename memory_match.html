@@ -547,6 +547,22 @@ function endGame() {
         headers: { 'Content-Type': 'text/plain' },
         body: JSON.stringify({ sync_state: { points: newTotal } })
       }).catch(function(){});
+      // 🌐 활동기록 시트에 사유 남기기 (포인트 쌓인 이유)
+      const _n = new Date();
+      const _p = function(n){ return String(n).padStart(2,'0'); };
+      const _d = _n.getFullYear()+'-'+_p(_n.getMonth()+1)+'-'+_p(_n.getDate());
+      const _t = _p(_n.getHours())+':'+_p(_n.getMinutes());
+      const _det = (IS_CATCHUP ? '🔥 ' : '') + SOURCE_DATE + ' (' + attempts + '시도 ' + timeStr + (perfect ? ' · 완벽!' : '') + ')';
+      fetch(GAS_URL, {
+        method:'POST', mode:'no-cors',
+        headers:{'Content-Type':'text/plain'},
+        body: JSON.stringify({ activity: {
+          date: _d, time: _t,
+          type: '🎴 메모리 매칭',
+          detail: _det,
+          delta: pts, points: newTotal, coupons: 0, wallet: 0
+        } })
+      }).catch(function(){});
     }
     // 게임 기록 — 별도 키 (따라잡기 로직에 영향 안 줌)
     const h = JSON.parse(localStorage.getItem('hyewon_memory_history') || '[]');

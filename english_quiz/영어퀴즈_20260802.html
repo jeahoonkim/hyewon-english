@@ -755,6 +755,24 @@ function finishQuiz() {
       time: new Date().toISOString()
     });
     localStorage.setItem('hyewon_quiz_history', JSON.stringify(history));
+    // 🌐 활동기록 시트에도 사유 남기기 (포인트 쌓인 이유 추적용)
+    if (typeof GAS_URL !== 'undefined' && GAS_URL) {
+      const _now = new Date();
+      const _pad = function(n){ return String(n).padStart(2,'0'); };
+      const _d = _now.getFullYear()+'-'+_pad(_now.getMonth()+1)+'-'+_pad(_now.getDate());
+      const _t = _pad(_now.getHours())+':'+_pad(_now.getMinutes());
+      const _pts = parseInt(localStorage.getItem('hyewon_points')||'0');
+      fetch(GAS_URL, {
+        method:'POST', mode:'no-cors',
+        headers:{'Content-Type':'text/plain'},
+        body: JSON.stringify({ activity: {
+          date: _d, time: _t,
+          type: '🇺🇸 영어 표현 퀴즈',
+          detail: '8월의 시작 ('+score+'/'+TOTAL+' · '+pointsEarned+'P)',
+          delta: pointsEarned, points: _pts, coupons: 0, wallet: 0
+        } })
+      }).catch(function(){});
+    }
   } catch(e) {}
 }
 
